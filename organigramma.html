@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Organigramma - Partecipazione Attiva</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',sans-serif;background:#f5f5f5;color:#222;}
+.topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em;}
+.topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600;}
+.navbar{background:#fff;border-bottom:3px solid #e8900a;display:flex;align-items:center;justify-content:space-between;padding:0 32px;box-shadow:0 2px 12px rgba(0,0,0,0.08);}
+.nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0;text-decoration:none;}
+.nav-logo img{width:82px;height:82px;border-radius:50%;}
+.nav-nome{font-weight:900;font-size:1.45em;color:#8a4e00;line-height:1.1;}
+.nav-nome small{display:block;font-weight:400;font-size:.45em;color:#aaa;letter-spacing:2px;text-transform:uppercase;}
+.nav-links a{padding:18px 14px;color:#444;text-decoration:none;font-size:1em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;}
+.nav-links a:hover{color:#e8900a;}
+.btn-iscr{background:#e8900a;color:#fff;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.85em;font-weight:700;margin-left:16px;}
+
+.hero{background:linear-gradient(135deg,#8a4e00,#e8900a);padding:56px 32px;text-align:center;}
+.hero h1{font-family:'Merriweather',serif;font-size:2.2em;color:#fff;margin-bottom:12px;}
+.hero p{color:rgba(255,255,255,.85);font-size:1.05em;max-width:560px;margin:0 auto;}
+
+.sezione{padding:56px 32px;max-width:1100px;margin:0 auto;}
+.sezione h2{font-family:'Merriweather',serif;font-size:1.6em;color:#8a4e00;margin-bottom:8px;}
+.linea{width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:36px;}
+
+/* PRESIDENTE - card grande centrata */
+.presidente-wrap{display:flex;justify-content:center;margin-bottom:48px;}
+.card-presidente{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(200,116,10,0.2);border-top:6px solid #e8900a;max-width:340px;width:100%;transition:transform .25s;}
+.card-presidente:hover{transform:translateY(-6px);}
+.card-presidente img{width:100%;height:380px;object-fit:cover;object-position:top;}
+.card-presidente .info{padding:24px;text-align:center;}
+.card-presidente .ruolo{color:#e8900a;font-size:.75em;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.card-presidente h3{font-family:'Merriweather',serif;color:#8a4e00;font-size:1.4em;}
+
+/* GRID 3 colonne per direttivo */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:48px;}
+.card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.08);border-top:4px solid #e8900a;transition:transform .25s;}
+.card:hover{transform:translateY(-5px);}
+.card img{width:100%;height:280px;object-fit:cover;object-position:top;}
+.card .info{padding:18px 20px;}
+.card .ruolo{color:#e8900a;font-size:.68em;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.card h3{font-family:'Merriweather',serif;color:#8a4e00;font-size:1.05em;margin-bottom:4px;}
+.card .territorio{color:#aaa;font-size:.78em;font-style:italic;}
+
+/* ALTRI RUOLI - 2 colonne */
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+
+.sezione-alt{background:#fff3e0;padding:56px 32px;}
+.sezione-alt .sezione-inner{max-width:1100px;margin:0 auto;}
+
+footer{background:#1a0d00;color:rgba(255,255,255,.5);padding:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.8em;}
+footer img{width:52px;height:52px;border-radius:50%;opacity:.7;}
+footer a{color:#f5a623;text-decoration:none;}
+@media(max-width:900px){.grid3{grid-template-columns:1fr 1fr;}.grid2{grid-template-columns:1fr;}.nav-links{display:none;}}
+@media(max-width:600px){.grid3{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>📧 partecipazioneattiva21@gmail.com</span>
+  <div>
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank">Facebook</a>
+    <a href="index.html">Home</a>
+  </div>
+</div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="LOGO-PA.png" alt="Logo">
+    <div class="nav-nome">Partecipazione Attiva<small>Movimento politico</small></div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="napoli.html">Napoli</a>
+    <a href="parlero.html">Parlerò</a>
+    <a href="territori.html">Territori</a>
+    <a href="organigramma.html" style="color:#e8900a;">Organigramma</a>
+    <a href="index.html#iscriviti">Iscriviti</a>
+  </div>
+  <a href="mailto:partecipazioneattiva21@gmail.com?subject=Richiesta di Iscrizione" class="btn-iscr">Iscriviti</a>
+</nav>
+
+<div class="hero">
+  <h1>Organigramma</h1>
+  <p>Le persone che guidano Partecipazione Attiva con dedizione, trasparenza e passione civica.</p>
+</div>
+
+<!-- PRESIDENTE -->
+<section class="sezione">
+  <h2>Presidente</h2>
+  <div class="linea"></div>
+  <div class="presidente-wrap">
+    <div class="card-presidente">
+      <img src="images/organigramma/angelo-nicotra.png" alt="Angelo Nicotra">
+      <div class="info">
+        <div class="ruolo">Presidente</div>
+        <h3>Angelo Nicotra</h3>
+      </div>
+    </div>
+  </div>
+
+  <h2>Comitato Direttivo</h2>
+  <div class="linea"></div>
+  <div class="grid3">
+    <div class="card">
+      <img src="images/organigramma/paolo-neri.png" alt="Paolo Neri">
+      <div class="info">
+        <div class="ruolo">Membro del Direttivo</div>
+        <h3>Paolo Neri</h3>
+        <div class="territorio">Napoli</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/organigramma/stefano-piva.png" alt="Stefano Francesco Piva">
+      <div class="info">
+        <div class="ruolo">Membro del Direttivo</div>
+        <h3>Stefano Francesco Piva</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/organigramma/daniele-tandura.png" alt="Daniele Tandura">
+      <div class="info">
+        <div class="ruolo">Membro del Direttivo</div>
+        <h3>Daniele Tandura</h3>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/organigramma/antonio-cristiano.png" alt="Antonio Cristiano">
+      <div class="info">
+        <div class="ruolo">Membro del Direttivo</div>
+        <h3>Antonio Cristiano</h3>
+        <div class="territorio">Napoli</div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="images/organigramma/fernando-farina.png" alt="Fernando Farina">
+      <div class="info">
+        <div class="ruolo">Membro del Direttivo</div>
+        <h3>Fernando Farina</h3>
+        <div class="territorio">Roma</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALTRI RUOLI -->
+<div class="sezione-alt">
+  <div class="sezione-inner">
+    <h2 style="font-family:'Merriweather',serif;font-size:1.6em;color:#8a4e00;margin-bottom:8px;">Altri ruoli</h2>
+    <div class="linea"></div>
+    <div class="grid2">
+      <div class="card">
+        <img src="images/organigramma/luigi-spanu.jpg" alt="Luigi Spanu">
+        <div class="info">
+          <div class="ruolo">Portavoce</div>
+          <h3>Luigi Spanu</h3>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/organigramma/amilcare-mollica.png" alt="Amilcare Mollica">
+        <div class="info">
+          <div class="ruolo">Esperto Legale</div>
+          <h3>Avv. Amilcare Mollica</h3>
+        </div>
+      </div>
+      <div class="card">
+        <img src="images/organigramma/rosa-ugon.png" alt="Rosa Ugon">
+        <div class="info">
+          <div class="ruolo">Membro Organizzativo</div>
+          <h3>Rosa Ugon</h3>
+          <div class="territorio">Napoli</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <img src="LOGO-PA.png" alt="Logo">
+  <div>
+    <p>Partecipazione Attiva - Organigramma</p>
+    <p>Email: <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a></p>
+  </div>
+  <div><a href="index.html">Home</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a></div>
+</footer>
+
+</body>
+</html>
