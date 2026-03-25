@@ -15,13 +15,13 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#222;}
 .topbar a:hover{color:#fff;}
 
 /* ===== NAVBAR ===== */
-.navbar{position:sticky;top:0;z-index:999;background:#fff;border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;padding:0 32px;}
+.navbar{position:sticky;top:0;z-index:999;background:#fff;border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;padding:0 32px;min-height:80px;}
 .nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0;}
-.nav-logo img{width:52px;height:52px;border-radius:50%;}
-.nav-nome{font-weight:900;font-size:1.05em;color:#8a4e00;line-height:1.1;}
+.nav-logo img{width:68px;height:68px;border-radius:50%;}
+.nav-nome{font-weight:900;font-size:1.25em;color:#8a4e00;line-height:1.1;}
 .nav-nome small{display:block;font-weight:400;font-size:.58em;color:#aaa;letter-spacing:2px;text-transform:uppercase;}
 .nav-links{display:flex;align-items:center;gap:0;}
-.nav-links a{padding:18px 14px;color:#444;text-decoration:none;font-size:.82em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.nav-links a{padding:18px 14px;color:#444;text-decoration:none;font-size:.92em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
 .nav-links a:hover{color:#e8900a;border-bottom-color:#e8900a;}
 .nav-cta{display:flex;gap:10px;margin-left:16px;}
 .btn-iscr{background:#e8900a;color:#fff;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.82em;font-weight:700;transition:all .2s;}
@@ -172,7 +172,7 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
     <a href="#napoli" style="color:#e8900a;">&#9679; Napoli</a><a href="#blog">Notizie</a>
     <a href="#chisiamo">Chi Siamo</a>
     <a href="#statuto">Documenti</a>
-    <a href="#facebook">Facebook</a>
+    <a href="#parlero">Parler&ograve;</a><a href="#facebook">Facebook</a>
     <a href="#iscriviti">Iscriviti</a>
     <a href="#contatti">Contatti</a>
   </div>
@@ -187,26 +187,13 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
     <a href="#napoli" onclick="chiudi()" style="color:#e8900a;">&#9679; Napoli</a><a href="#blog" onclick="chiudi()">Notizie</a>
     <a href="#chisiamo" onclick="chiudi()">Chi Siamo</a>
     <a href="#statuto" onclick="chiudi()">Documenti</a>
-    <a href="#facebook" onclick="chiudi()">Facebook</a>
+    <a href="#parlero" onclick="chiudi()">Parler&ograve;</a><a href="#facebook" onclick="chiudi()">Facebook</a>
     <a href="#iscriviti" onclick="chiudi()">Iscriviti</a>
     <a href="#contatti" onclick="chiudi()">Contatti</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay"></div><img src="LOGO-PA.png" style="position:absolute;right:5%;top:50%;transform:translateY(-50%);height:75%;max-height:420px;opacity:1;z-index:2;filter:drop-shadow(0 8px 32px rgba(0,0,0,0.3));" alt="Logo Partecipazione Attiva">
-  
-  <div class="hero-content">
-    <div class="hero-badge">Movimento politico dei cittadini</div>
-    <h1>Insieme per cambiare l'Italia</h1>
-    <p>Una libera associazione per una politica trasparente, partecipata e al servizio delle persone. Ispirati dalla Costituzione italiana.</p>
-    <div class="hero-btns">
-      <a href="#iscriviti" class="btn-w">Iscriviti ora</a>
-      <a href="#chisiamo" class="btn-wout">Chi siamo</a>
-    </div>
-  </div>
-</section>
+
 
 <!-- NOTIZIE MAGAZINE -->
 
@@ -250,6 +237,25 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
           <h4 style="color:#fff;font-size:1.15em;font-family:'Merriweather',serif;margin-bottom:8px;">Rosa Ugon</h4>
           <p style="color:rgba(255,255,255,.6);font-size:.85em;line-height:1.6;">Membro dell organizzativo di Partecipazione Attiva per il territorio napoletano.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="parlero" style="background:#fff8ee;padding:64px 32px;">
+  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+    <img src="images/antonio-cristiano.jpeg" alt="Parlero - Antonio Cristiano" style="width:100%;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,0.15);">
+    <div>
+      <span style="background:#e8900a;color:#fff;font-size:.75em;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 18px;border-radius:50px;">TV Flegrea Napoli</span>
+      <h2 style="font-family:'Merriweather',serif;font-size:2em;color:#8a4e00;margin-top:16px;margin-bottom:4px;">Parler&ograve;</h2>
+      <p style="color:#e8900a;font-style:italic;font-size:1.1em;margin-bottom:20px;">Salotto Culturale Napoletano</p>
+      <div style="width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:24px;"></div>
+      <p style="color:#555;line-height:1.8;margin-bottom:14px;">Un programma ideato e condotto da <strong>Antonio Cristiano</strong>, membro di Partecipazione Attiva per Napoli. Un salotto culturale dedicato alla musica, alla cultura e alla napoletanita.</p>
+      <p style="color:#555;line-height:1.8;margin-bottom:28px;">Storie, passioni e identita della nostra terra attraverso le voci di chi la vive e la ama. Con ospiti d eccezione su <strong>TV Flegrea</strong>, canale 69.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" style="display:inline-block;background:#e8900a;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;">Seguici su Facebook</a>
+        <a href="https://www.tiktok.com/@partecipazione.at" target="_blank" style="display:inline-block;background:#000;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;">TikTok</a>
       </div>
     </div>
   </div>
