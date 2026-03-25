@@ -4,158 +4,295 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partecipazione Attiva</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Open Sans',sans-serif;background:#fff;color:#222;}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#222;}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:3px solid #e8900a;display:flex;align-items:center;justify-content:space-between;padding:10px 28px;box-shadow:0 2px 12px rgba(0,0,0,0.08);}
-.nav-logo{display:flex;align-items:center;gap:12px;}
-.nav-logo img{width:48px;height:48px;border-radius:50%;}
-.nav-nome{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.1em;color:#8a4e00;line-height:1.1;}
-.nav-nome small{display:block;font-weight:400;font-size:0.58em;color:#999;letter-spacing:2px;text-transform:uppercase;}
+/* ===== TOPBAR ===== */
+.topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em;}
+.topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600;}
+.topbar a:hover{color:#fff;}
 
-/* BURGER */
-.burger{background:none;border:none;cursor:pointer;display:flex;flex-direction:column;gap:5px;padding:8px;border-radius:6px;}
-.burger span{display:block;width:24px;height:2px;background:#8a4e00;border-radius:2px;transition:all .3s cubic-bezier(.23,1,.32,1);}
+/* ===== NAVBAR ===== */
+.navbar{position:sticky;top:0;z-index:999;background:#fff;border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;padding:0 32px;}
+.nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0;}
+.nav-logo img{width:52px;height:52px;border-radius:50%;}
+.nav-nome{font-weight:900;font-size:1.05em;color:#8a4e00;line-height:1.1;}
+.nav-nome small{display:block;font-weight:400;font-size:.58em;color:#aaa;letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:0;}
+.nav-links a{padding:18px 14px;color:#444;text-decoration:none;font-size:.82em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.nav-links a:hover{color:#e8900a;border-bottom-color:#e8900a;}
+.nav-cta{display:flex;gap:10px;margin-left:16px;}
+.btn-iscr{background:#e8900a;color:#fff;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.82em;font-weight:700;transition:all .2s;}
+.btn-iscr:hover{background:#8a4e00;}
+.btn-sost{background:transparent;color:#e8900a;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.82em;font-weight:700;border:2px solid #e8900a;transition:all .2s;}
+.btn-sost:hover{background:#fff8ee;}
+
+/* BURGER solo mobile */
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px;}
+.burger span{display:block;width:24px;height:2px;background:#8a4e00;border-radius:2px;transition:all .3s;}
 .burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.burger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.burger.open span:nth-child(2){opacity:0;}
 .burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* OVERLAY E DRAWER */
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:990;opacity:0;pointer-events:none;transition:opacity .3s;}
-.overlay.on{opacity:1;pointer-events:all;}
-.drawer{position:fixed;right:0;top:0;height:100vh;width:300px;background:#fff;z-index:995;transform:translateX(100%);transition:transform .35s cubic-bezier(.23,1,.32,1);box-shadow:-4px 0 30px rgba(0,0,0,0.12);display:flex;flex-direction:column;padding-top:80px;}
-.drawer.on{transform:translateX(0);}
-.drawer a{padding:15px 32px;color:#333;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95em;border-bottom:1px solid #f0f0f0;display:flex;align-items:center;gap:12px;transition:all .2s;}
-.drawer a:hover{background:#fff8ee;color:#e8900a;padding-left:40px;}
-.drawer-foot{margin-top:auto;padding:20px 32px;font-size:.78em;color:#999;}
-.drawer-foot a{color:#e8900a;text-decoration:none;font-weight:700;}
+/* MOBILE MENU */
+.mob-menu{display:none;flex-direction:column;background:#fff;border-top:2px solid #f0f0f0;position:absolute;top:100%;left:0;right:0;box-shadow:0 8px 24px rgba(0,0,0,0.1);}
+.mob-menu.on{display:flex;}
+.mob-menu a{padding:14px 32px;color:#333;text-decoration:none;font-weight:700;font-size:.9em;border-bottom:1px solid #f5f5f5;}
+.mob-menu a:hover{background:#fff8ee;color:#e8900a;}
 
-/* HERO */
-.hero{min-height:100vh;background:linear-gradient(135deg,#fff8ee 0%,#fff 60%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:100px 24px 60px;}
-.hero img{width:160px;height:160px;border-radius:50%;box-shadow:0 8px 40px rgba(232,144,10,0.25);margin-bottom:28px;animation:pulse 3s ease-in-out infinite;}
-@keyframes pulse{0%,100%{box-shadow:0 8px 40px rgba(232,144,10,0.25);}50%{box-shadow:0 12px 60px rgba(232,144,10,0.45);}}
-.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2em,5vw,3.2em);font-weight:900;color:#8a4e00;margin-bottom:14px;line-height:1.15;}
-.hero h1 span{color:#e8900a;}
-.hero p{font-size:1.05em;color:#666;max-width:520px;line-height:1.75;margin-bottom:36px;}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;}
-.btn-oro{background:linear-gradient(135deg,#f5a623,#e8900a);color:#fff;padding:13px 32px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95em;box-shadow:0 4px 18px rgba(232,144,10,0.35);transition:all .25s;}
-.btn-oro:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,144,10,0.45);}
-.btn-out{background:transparent;color:#e8900a;padding:13px 32px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95em;border:2px solid #e8900a;transition:all .25s;}
-.btn-out:hover{background:#fff8ee;transform:translateY(-2px);}
+/* ===== HERO ===== */
+.hero{position:relative;min-height:520px;background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);display:flex;align-items:center;overflow:hidden;}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35);}
+.hero-content{position:relative;z-index:2;padding:60px 48px;max-width:620px;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.4);color:#fff;font-size:.72em;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:20px;}
+.hero h1{font-family:'Merriweather',serif;font-size:clamp(1.8em,4vw,3em);font-weight:700;color:#fff;line-height:1.2;margin-bottom:16px;text-shadow:0 2px 8px rgba(0,0,0,0.3);}
+.hero p{color:rgba(255,255,255,.88);font-size:1.05em;line-height:1.75;margin-bottom:32px;max-width:480px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-w{background:#fff;color:#8a4e00;padding:13px 30px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .25s;box-shadow:0 4px 16px rgba(0,0,0,0.15);}
+.btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,0.2);}
+.btn-wout{background:transparent;color:#fff;padding:13px 30px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;border:2px solid rgba(255,255,255,.7);transition:all .25s;}
+.btn-wout:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);}
+.hero-logo{position:absolute;right:6%;bottom:0;height:90%;opacity:.15;z-index:1;}
 
-/* SEZIONI */
-.sez{padding:64px 24px;max-width:880px;margin:0 auto;}
-.sez-alt{background:#fafafa;}
-.sez-alt .sez{max-width:100%;}
-.sez-alt .inner{max-width:880px;margin:0 auto;}
-.sez h2{font-family:'Montserrat',sans-serif;font-weight:900;font-size:1.7em;color:#8a4e00;margin-bottom:6px;}
-.linea{width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:28px;}
-.sez p{color:#555;line-height:1.8;font-size:1em;margin-bottom:14px;}
+/* ===== NOTIZIE MAGAZINE ===== */
+.magazine{padding:56px 32px;max-width:1100px;margin:0 auto;}
+.mag-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px;}
+.mag-header h2{font-family:'Merriweather',serif;font-size:1.6em;color:#8a4e00;}
+.mag-header a{color:#e8900a;font-size:.85em;font-weight:700;text-decoration:none;}
+.mag-header a:hover{text-decoration:underline;}
+.mag-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px;}
+.mag-main{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#111;}
+.mag-main img{width:100%;height:360px;object-fit:cover;opacity:.75;transition:opacity .3s;}
+.mag-main:hover img{opacity:.6;}
+.mag-main-info{position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 100%);}
+.mag-main-info .cat{display:inline-block;background:#e8900a;color:#fff;font-size:.68em;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:4px;margin-bottom:10px;}
+.mag-main-info h3{font-family:'Merriweather',serif;color:#fff;font-size:1.35em;line-height:1.3;margin-bottom:8px;}
+.mag-main-info p{color:rgba(255,255,255,.75);font-size:.85em;}
+.mag-side{display:flex;flex-direction:column;gap:16px;}
+.mag-card{display:flex;gap:14px;background:#fafafa;border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;border:1.5px solid #eee;}
+.mag-card:hover{border-color:#e8900a;background:#fff8ee;}
+.mag-card img{width:100px;height:80px;object-fit:cover;flex-shrink:0;}
+.mag-card-info{padding:10px 12px 10px 0;}
+.mag-card-info .cat{font-size:.65em;font-weight:700;color:#e8900a;text-transform:uppercase;letter-spacing:1px;}
+.mag-card-info h4{font-size:.88em;color:#333;font-weight:700;line-height:1.35;margin-top:4px;}
+.mag-card-info span{font-size:.72em;color:#aaa;margin-top:4px;display:block;}
 
-/* CARDS NOTIZIE */
-.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;}
-.card{background:#fff;border-radius:14px;padding:24px;box-shadow:0 2px 16px rgba(0,0,0,0.07);border-top:4px solid #e8900a;transition:transform .2s,box-shadow .2s;}
-.card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(232,144,10,0.15);}
-.card .data{font-size:.75em;font-weight:700;color:#e8900a;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
-.card h4{color:#8a4e00;font-family:'Montserrat',sans-serif;font-size:1em;margin-bottom:8px;line-height:1.4;}
-.card p{color:#666;font-size:.9em;line-height:1.6;margin:0;}
+/* ===== FACEBOOK SECTION ===== */
+.fb-section{background:#f5f5f5;padding:56px 32px;}
+.fb-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
+.fb-testo h2{font-family:'Merriweather',serif;font-size:1.6em;color:#8a4e00;margin-bottom:8px;}
+.fb-testo .linea{width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:20px;}
+.fb-testo p{color:#555;line-height:1.8;margin-bottom:20px;}
+.fb-testo a{display:inline-flex;align-items:center;gap:8px;background:#1877f2;color:#fff;padding:11px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .25s;}
+.fb-testo a:hover{background:#1565d8;transform:translateY(-2px);}
+.fb-widget{border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,0.1);}
 
-/* DOCUMENTI */
-.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
-.doc{display:flex;align-items:center;gap:14px;background:#fff;border-radius:10px;padding:16px 18px;text-decoration:none;color:#333;border:1.5px solid #eee;transition:all .2s;}
+/* ===== CHI SIAMO ===== */
+.chisiamo{padding:56px 32px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.cs-testo h2{font-family:'Merriweather',serif;font-size:1.6em;color:#8a4e00;margin-bottom:8px;}
+.linea{width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:20px;}
+.cs-testo p{color:#555;line-height:1.8;margin-bottom:14px;}
+.valori{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.valore{background:#fff8ee;border-radius:10px;padding:18px;border-left:4px solid #e8900a;}
+.valore h4{color:#8a4e00;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+.valore p{color:#666;font-size:.85em;line-height:1.6;margin:0;}
+
+/* ===== DOCUMENTI ===== */
+.documenti{background:#fafafa;padding:56px 32px;}
+.doc-inner{max-width:1100px;margin:0 auto;}
+.doc-inner h2{font-family:'Merriweather',serif;font-size:1.6em;color:#8a4e00;margin-bottom:8px;}
+.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:28px;}
+.doc{display:flex;align-items:center;gap:12px;background:#fff;border-radius:10px;padding:15px 16px;text-decoration:none;color:#333;border:1.5px solid #eee;transition:all .2s;}
 .doc:hover{border-color:#e8900a;background:#fff8ee;transform:translateY(-2px);}
-.doc-ico{width:40px;height:40px;background:linear-gradient(135deg,#ff6b6b,#ee5a24);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1em;flex-shrink:0;}
-.doc strong{display:block;font-size:.9em;color:#8a4e00;font-family:'Montserrat',sans-serif;}
-.doc span{font-size:.72em;color:#999;text-transform:uppercase;letter-spacing:.5px;}
+.doc-ico{width:38px;height:38px;background:linear-gradient(135deg,#ff6b6b,#ee5a24);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1em;flex-shrink:0;}
+.doc strong{display:block;font-size:.85em;color:#8a4e00;font-weight:700;}
+.doc span{font-size:.68em;color:#aaa;text-transform:uppercase;letter-spacing:.5px;}
 
-/* ISCRIVITI BOX */
-.iscr{background:linear-gradient(135deg,#8a4e00,#e8900a);border-radius:20px;padding:48px 40px;text-align:center;color:#fff;}
-.iscr h2{font-family:'Montserrat',sans-serif;font-size:1.8em;margin-bottom:12px;}
-.iscr p{opacity:.9;margin-bottom:32px;max-width:460px;margin-left:auto;margin-right:auto;line-height:1.7;}
-.steps{display:flex;justify-content:center;gap:28px;margin-bottom:32px;flex-wrap:wrap;}
-.step{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:140px;}
-.step-n{width:38px;height:38px;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;font-family:'Montserrat',sans-serif;font-weight:900;}
-.step p{font-size:.82em;opacity:.88;margin:0;text-align:center;}
-.btn-w{display:inline-block;background:#fff;color:#8a4e00;padding:13px 32px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;margin:6px;transition:all .25s;box-shadow:0 4px 16px rgba(0,0,0,0.15);}
-.btn-w:hover{transform:translateY(-2px);}
-.btn-wout{display:inline-block;background:transparent;color:#fff;padding:13px 32px;border-radius:50px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;margin:6px;border:2px solid rgba(255,255,255,.6);transition:all .25s;}
-.btn-wout:hover{background:rgba(255,255,255,.1);transform:translateY(-2px);}
+/* ===== ISCRIVITI ===== */
+.iscriviti{padding:56px 32px;max-width:1100px;margin:0 auto;}
+.iscr-box{background:linear-gradient(135deg,#8a4e00,#e8900a);border-radius:20px;padding:52px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.iscr-testo h2{font-family:'Merriweather',serif;font-size:1.8em;color:#fff;margin-bottom:12px;}
+.iscr-testo p{color:rgba(255,255,255,.88);line-height:1.75;margin-bottom:24px;}
+.iscr-btns{display:flex;flex-direction:column;gap:12px;}
+.iscr-btns a{display:block;text-align:center;padding:14px 24px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .25s;}
+.iscr-btns a.primo{background:#fff;color:#8a4e00;box-shadow:0 4px 16px rgba(0,0,0,0.15);}
+.iscr-btns a.primo:hover{transform:translateY(-2px);}
+.iscr-btns a.secondo{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6);}
+.iscr-btns a.secondo:hover{background:rgba(255,255,255,.1);}
+.iscr-steps{display:flex;flex-direction:column;gap:14px;}
+.step{display:flex;align-items:center;gap:14px;}
+.step-n{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;flex-shrink:0;}
+.step p{color:rgba(255,255,255,.88);font-size:.9em;line-height:1.5;margin:0;}
 
-/* SOCIAL */
-.social{background:#8a4e00;padding:28px 24px;text-align:center;}
-.social p{color:rgba(255,255,255,.7);margin-bottom:14px;font-size:.9em;}
-.fb-btn{display:inline-flex;align-items:center;gap:8px;background:#1877f2;color:#fff;padding:11px 26px;border-radius:8px;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95em;transition:all .25s;}
-.fb-btn:hover{background:#1565d8;transform:translateY(-2px);}
+/* ===== FOOTER ===== */
+footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
+.foot-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+.foot-brand img{width:60px;height:60px;border-radius:50%;margin-bottom:14px;}
+.foot-brand p{font-size:.82em;line-height:1.7;margin-top:8px;}
+.foot-col h4{color:#f5a623;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+.foot-col a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.82em;margin-bottom:8px;transition:color .2s;}
+.foot-col a:hover{color:#f5a623;}
+.foot-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;font-size:.75em;flex-wrap:wrap;gap:10px;}
+.foot-bottom a{color:#f5a623;text-decoration:none;}
 
-/* FOOTER */
-footer{background:#1a0d00;color:rgba(255,255,255,.5);padding:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:.8em;}
-footer img{width:52px;height:52px;border-radius:50%;opacity:.7;}
-footer a{color:#f5a623;text-decoration:none;}
-@media(max-width:600px){.hero img{width:120px;height:120px;}.iscr{padding:32px 20px;}.steps{gap:16px;}footer{justify-content:center;text-align:center;}}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none;}
+  .burger{display:flex;}
+  .navbar{position:relative;}
+  .mag-grid{grid-template-columns:1fr;}
+  .mag-main img{height:260px;}
+  .fb-inner,.chisiamo,.iscr-box{grid-template-columns:1fr;}
+  .valori{grid-template-columns:1fr;}
+  .foot-grid{grid-template-columns:1fr;}
+  .hero-content{padding:60px 24px;}
+}
 </style>
 </head>
 <body>
 
-<nav>
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>📧 partecipazioneattiva21@gmail.com</span>
+  <div>
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank">Facebook</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
   <div class="nav-logo">
     <img src="LOGO-PA.png" alt="Logo">
     <div class="nav-nome">Partecipazione Attiva<small>Movimento politico</small></div>
   </div>
+  <div class="nav-links">
+    <a href="#blog">Notizie</a>
+    <a href="#chisiamo">Chi Siamo</a>
+    <a href="#statuto">Documenti</a>
+    <a href="#facebook">Facebook</a>
+    <a href="#iscriviti">Iscriviti</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+  <div class="nav-cta">
+    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Richiesta di Iscrizione" class="btn-iscr">Iscriviti</a>
+    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Donazione" class="btn-sost">Sostienici</a>
+  </div>
   <button class="burger" id="burger">
     <span></span><span></span><span></span>
   </button>
+  <div class="mob-menu" id="mobmenu">
+    <a href="#blog" onclick="chiudi()">Notizie</a>
+    <a href="#chisiamo" onclick="chiudi()">Chi Siamo</a>
+    <a href="#statuto" onclick="chiudi()">Documenti</a>
+    <a href="#facebook" onclick="chiudi()">Facebook</a>
+    <a href="#iscriviti" onclick="chiudi()">Iscriviti</a>
+    <a href="#contatti" onclick="chiudi()">Contatti</a>
+  </div>
 </nav>
 
-<div class="overlay" id="overlay"></div>
-<div class="drawer" id="drawer">
-  <a href="#home" onclick="chiudi()">🏠 Home Page</a>
-  <a href="#blog" onclick="chiudi()">📰 Blog</a>
-  <a href="#chisiamo" onclick="chiudi()">👥 Chi Siamo</a>
-  <a href="#statuto" onclick="chiudi()">📄 Statuto e Manifesto</a>
-  <a href="#organigramma" onclick="chiudi()">🏛️ Organigramma</a>
-  <a href="#votazioni" onclick="chiudi()">🗳️ Votazioni Online</a>
-  <a href="#iscriviti" onclick="chiudi()">✍️ Iscriviti</a>
-  <a href="#sostenici" onclick="chiudi()">❤️ Sostienici</a>
-  <a href="#multimedia" onclick="chiudi()">🎬 Multimedia</a>
-  <a href="#contatti" onclick="chiudi()">✉️ Contatti</a>
-  <div class="drawer-foot">
-    <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>
-  </div>
-</div>
-
-<section class="hero" id="home">
-  <img src="LOGO-PA.png" alt="Logo Partecipazione Attiva">
-  <h1>Partecipazione <span>Attiva</span></h1>
-  <p>Una libera associazione di cittadini per una politica trasparente, partecipata e al servizio delle persone.</p>
-  <div class="hero-btns">
-    <a href="#iscriviti" class="btn-oro">Iscriviti ora</a>
-    <a href="#chisiamo" class="btn-out">Chi siamo</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <img src="LOGO-PA.png" class="hero-logo" alt="">
+  <div class="hero-content">
+    <div class="hero-badge">Movimento politico dei cittadini</div>
+    <h1>Insieme per cambiare l'Italia</h1>
+    <p>Una libera associazione per una politica trasparente, partecipata e al servizio delle persone. Ispirati dalla Costituzione italiana.</p>
+    <div class="hero-btns">
+      <a href="#iscriviti" class="btn-w">Iscriviti ora</a>
+      <a href="#chisiamo" class="btn-wout">Chi siamo</a>
+    </div>
   </div>
 </section>
 
-<div class="sez-alt" id="blog">
-  <div class="sez"><div class="inner">
-    <h2>Blog</h2><div class="linea"></div>
-    <div class="grid3">
-      <div class="card"><div class="data">25 Mar 2026</div><h4>Assemblea pubblica 10 aprile 2026</h4><p>Vi aspettiamo per discutere le proposte per il prossimo semestre. Aperta a tutti i cittadini.</p></div>
-      <div class="card"><div class="data">20 Mar 2026</div><h4>Nuovo documento programmatico</h4><p>Disponibile il testo completo delle nostre proposte per il territorio.</p></div>
-      <div class="card"><div class="data">15 Mar 2026</div><h4>Raccolta firme avviata</h4><p>Avviata la raccolta firme per la proposta di legge sulla partecipazione popolare.</p></div>
+<!-- NOTIZIE MAGAZINE -->
+<section class="magazine" id="blog">
+  <div class="mag-header">
+    <h2>Ultime Notizie</h2>
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank">Tutte le notizie &rarr;</a>
+  </div>
+  <div class="mag-grid">
+    <div class="mag-main" onclick="location.href='https://www.facebook.com/PartecipazioneAttiva21/'">
+      <img src="https://picsum.photos/800/400?grayscale" alt="Notizia principale">
+      <div class="mag-main-info">
+        <div class="cat">In primo piano</div>
+        <h3>Assemblea pubblica 10 aprile 2026: partecipa anche tu</h3>
+        <p>25 marzo 2026 &bull; Aperta a tutti i cittadini</p>
+      </div>
     </div>
-  </div></div>
-</div>
+    <div class="mag-side">
+      <div class="mag-card" onclick="location.href='https://www.facebook.com/PartecipazioneAttiva21/'">
+        <img src="https://picsum.photos/200/160?grayscale&random=1" alt="">
+        <div class="mag-card-info">
+          <div class="cat">Documenti</div>
+          <h4>Nuovo documento programmatico pubblicato</h4>
+          <span>20 marzo 2026</span>
+        </div>
+      </div>
+      <div class="mag-card" onclick="location.href='https://www.facebook.com/PartecipazioneAttiva21/'">
+        <img src="https://picsum.photos/200/160?grayscale&random=2" alt="">
+        <div class="mag-card-info">
+          <div class="cat">Iniziative</div>
+          <h4>Raccolta firme avviata per la partecipazione popolare</h4>
+          <span>15 marzo 2026</span>
+        </div>
+      </div>
+      <div class="mag-card" onclick="location.href='https://www.facebook.com/PartecipazioneAttiva21/'">
+        <img src="https://picsum.photos/200/160?grayscale&random=3" alt="">
+        <div class="mag-card-info">
+          <div class="cat">Territorio</div>
+          <h4>Incontro con i cittadini: le nostre proposte per il territorio</h4>
+          <span>10 marzo 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="sez" id="chisiamo">
-  <h2>Chi Siamo</h2><div class="linea"></div>
-  <p>PARTECIPAZIONE ATTIVA e una libera associazione di persone che vuole concorrere alla determinazione della politica nazionale secondo quanto previsto agli articoli 18 e 49 della Costituzione italiana.</p>
-  <p>I principi fondanti sono quelli della Costituzione della Repubblica e della Dichiarazione universale dei diritti umani. Promuoviamo un azione politica innovativa, condivisa e priva di interessi di parte.</p>
-</div>
+<!-- FACEBOOK WIDGET -->
+<section class="fb-section" id="facebook">
+  <div class="fb-inner">
+    <div class="fb-testo">
+      <h2>Seguici su Facebook</h2>
+      <div class="linea"></div>
+      <p>Resta aggiornato su tutte le nostre attivita, eventi e iniziative. La nostra pagina Facebook e il posto dove pubblichiamo ogni giorno notizie, video e aggiornamenti in tempo reale.</p>
+      <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Vai alla pagina Facebook
+      </a>
+    </div>
+    <div class="fb-widget">
+      <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FPartecipazioneAttiva21%2F&tabs=timeline&width=500&height=400&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true" width="500" height="400" style="border:none;overflow:hidden;width:100%;display:block;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay;clipboard-write;encrypted-media;picture-in-picture;web-share"></iframe>
+    </div>
+  </div>
+</section>
 
-<div class="sez-alt" id="statuto">
-  <div class="sez"><div class="inner">
-    <h2>Statuto e Documenti</h2><div class="linea"></div>
+<!-- CHI SIAMO -->
+<section id="chisiamo">
+  <div class="chisiamo">
+    <div class="cs-testo">
+      <h2>Chi Siamo</h2>
+      <div class="linea"></div>
+      <p>PARTECIPAZIONE ATTIVA e una libera associazione di persone che vuole concorrere alla determinazione della politica nazionale secondo quanto previsto agli articoli 18 e 49 della Costituzione italiana.</p>
+      <p>I principi fondanti sono quelli della Costituzione della Repubblica e della Dichiarazione universale dei diritti umani. Promuoviamo un azione politica innovativa, condivisa e priva di interessi di parte.</p>
+    </div>
+    <div class="valori">
+      <div class="valore"><h4>Partecipazione</h4><p>Ogni voce conta. La politica deve essere di tutti.</p></div>
+      <div class="valore"><h4>Trasparenza</h4><p>Agiamo con onesta e rispetto delle regole.</p></div>
+      <div class="valore"><h4>Condivisione</h4><p>Le idee migliori nascono dal dialogo.</p></div>
+      <div class="valore"><h4>Legalita</h4><p>Ispirati dalla Costituzione italiana.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTI -->
+<section class="documenti" id="statuto">
+  <div class="doc-inner">
+    <h2>Statuto e Documenti</h2>
+    <div class="linea"></div>
     <div class="doc-grid">
       <a href="files/Statuto-PA.pdf" class="doc" target="_blank"><div class="doc-ico">📄</div><div><strong>Statuto</strong><span>PDF</span></div></a>
       <a href="files/Manifesto-PA.pdf" class="doc" target="_blank"><div class="doc-ico">📋</div><div><strong>Manifesto Politico</strong><span>PDF</span></div></a>
@@ -165,89 +302,64 @@ footer a{color:#f5a623;text-decoration:none;}
       <a href="files/Reg-Assemblee.pdf" class="doc" target="_blank"><div class="doc-ico">📋</div><div><strong>Reg. Assemblee</strong><span>PDF</span></div></a>
       <a href="files/Reg-Territoriali.pdf" class="doc" target="_blank"><div class="doc-ico">📋</div><div><strong>Reg. Unita Territoriali</strong><span>PDF</span></div></a>
     </div>
-  </div></div>
-</div>
+  </div>
+</section>
 
-<div class="sez" id="organigramma">
-  <h2>Organigramma</h2><div class="linea"></div>
-  <p>La struttura di Partecipazione Attiva si basa su organi democraticamente eletti. Il Comitato Direttivo coordina le attivita garantendo trasparenza e partecipazione in ogni decisione.</p>
-</div>
-
-<div class="sez-alt" id="votazioni">
-  <div class="sez"><div class="inner">
-    <h2>Votazioni Online</h2><div class="linea"></div>
-    <p>Partecipa alle votazioni riservate agli iscritti.</p>
-    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Accesso Votazioni" class="btn-oro" style="display:inline-block;margin-top:8px;">Accedi per votare</a>
-  </div></div>
-</div>
-
-<div class="sez" id="iscriviti">
-  <div class="iscr">
-    <h2>Iscriviti a Partecipazione Attiva</h2>
-    <p>Scegli di essere protagonista del cambiamento. Unisciti a noi.</p>
-    <div class="steps">
-      <div class="step"><div class="step-n">1</div><p>Invia la richiesta</p></div>
-      <div class="step"><div class="step-n">2</div><p>Conferma del Direttivo</p></div>
-      <div class="step"><div class="step-n">3</div><p>Benvenuto nella community</p></div>
+<!-- ISCRIVITI -->
+<section class="iscriviti" id="iscriviti">
+  <div class="iscr-box">
+    <div class="iscr-testo">
+      <h2>Iscriviti a Partecipazione Attiva</h2>
+      <p>Scegli di essere protagonista del cambiamento. Unisciti a noi e contribuisci a costruire una politica piu giusta.</p>
+      <div class="iscr-btns">
+        <a href="mailto:partecipazioneattiva21@gmail.com?subject=Richiesta di Iscrizione" class="primo">Richiesta di Iscrizione</a>
+        <a href="mailto:partecipazioneattiva21@gmail.com" class="secondo">Invia un messaggio</a>
+      </div>
     </div>
-    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Richiesta di Iscrizione" class="btn-w">Richiesta di Iscrizione</a>
-    <a href="mailto:partecipazioneattiva21@gmail.com" class="btn-wout">Invia un messaggio</a>
+    <div class="iscr-steps">
+      <div class="step"><div class="step-n">1</div><p>Compila e invia la richiesta di iscrizione via email</p></div>
+      <div class="step"><div class="step-n">2</div><p>Attendi la conferma di accettazione dal Direttivo</p></div>
+      <div class="step"><div class="step-n">3</div><p>Ricevi il benvenuto e accedi alla community degli iscritti</p></div>
+    </div>
   </div>
-</div>
+</section>
 
-<div class="sez" id="sostenici">
-  <h2>Sostienici</h2><div class="linea"></div>
-  <p>Il tuo contributo e fondamentale. Ogni donazione ci aiuta a portare avanti le nostre battaglie per una politica piu giusta.</p>
-  <a href="mailto:partecipazioneattiva21@gmail.com?subject=Donazione" class="btn-oro" style="display:inline-block;margin-top:8px;">Effettua una donazione</a>
-</div>
-
-<div class="sez-alt" id="multimedia">
-  <div class="sez"><div class="inner">
-    <h2>Multimedia</h2><div class="linea"></div>
-    <p>Segui i nostri video, interviste e assemblee sulla pagina Facebook.</p>
-    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" class="btn-oro" style="display:inline-block;margin-top:8px;">Vai al Facebook</a>
-  </div></div>
-</div>
-
-<div class="sez" id="contatti">
-  <h2>Contatti</h2><div class="linea"></div>
-  <p>Per informazioni scrivi a: <a href="mailto:partecipazioneattiva21@gmail.com" style="color:#e8900a;font-weight:700;">partecipazioneattiva21@gmail.com</a></p>
-</div>
-
-<div class="social">
-  <p>Seguici su Facebook</p>
-  <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" class="fb-btn">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-    Facebook
-  </a>
-</div>
-
-<footer>
-  <img src="LOGO-PA.png" alt="Logo">
-  <div>
-    <p>All Right Reserved. Il sito non risponde dell eventuale utilizzo improprio dei contenuti.</p>
-    <p>Email: <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a></p>
+<!-- FOOTER -->
+<footer id="contatti">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img src="LOGO-PA.png" alt="Logo">
+      <div class="nav-nome" style="color:#f5a623;font-size:1em;">Partecipazione Attiva</div>
+      <p>Una libera associazione di cittadini per una politica trasparente e partecipata, ispirata alla Costituzione italiana.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigazione</h4>
+      <a href="#blog">Notizie</a>
+      <a href="#chisiamo">Chi Siamo</a>
+      <a href="#statuto">Documenti</a>
+      <a href="#iscriviti">Iscriviti</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contatti</h4>
+      <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>
+      <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank">Facebook</a>
+    </div>
   </div>
-  <div><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Cookie Policy</a></div>
+  <div class="foot-bottom">
+    <span>All Right Reserved. Il sito non risponde dell eventuale utilizzo improprio dei contenuti.</span>
+    <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Cookie Policy</a></span>
+  </div>
 </footer>
 
 <script>
 const burger=document.getElementById('burger');
-const drawer=document.getElementById('drawer');
-const overlay=document.getElementById('overlay');
+const mob=document.getElementById('mobmenu');
 burger.addEventListener('click',()=>{
-  const o=drawer.classList.toggle('on');
-  overlay.classList.toggle('on',o);
+  const o=mob.classList.toggle('on');
   burger.classList.toggle('open',o);
-  document.body.style.overflow=o?'hidden':'';
 });
-overlay.addEventListener('click',chiudi);
-function chiudi(){
-  drawer.classList.remove('on');
-  overlay.classList.remove('on');
-  burger.classList.remove('open');
-  document.body.style.overflow='';
-}
+function chiudi(){mob.classList.remove('on');burger.classList.remove('open');}
 </script>
 </body>
 </html>
