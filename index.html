@@ -173,7 +173,7 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
     <a href="index.html">Home</a><a href="napoli.html" style="color:#e8900a;font-weight:900;">&#9679; Napoli</a><a href="#blog">Notizie</a>
     <a href="territori.html">Territori</a><a href="organigramma.html">Organigramma</a><a href="#chisiamo">Chi Siamo</a>
     <a href="#statuto">Documenti</a>
-    <a href="parlero.html">Parler&ograve;</a><a href="#facebook">Facebook</a>
+    <a href="parlero.html">Parler&ograve;</a><a href="#rassegna">Rassegna</a><a href="#facebook">Facebook</a>
     <a href="#iscriviti">Iscriviti</a>
     <a href="#contatti">Contatti</a>
   </div>
@@ -417,6 +417,50 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
 </section>
 
 <!-- FOOTER -->
+
+<section style="background:#fff;padding:48px 32px;border-top:3px solid #e8900a;">
+  <div style="max-width:1100px;margin:0 auto;">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;">
+      <h2 style="font-family:'Merriweather',serif;font-size:1.6em;color:#8a4e00;">📰 Rassegna Stampa</h2>
+      <span style="font-size:.78em;color:#aaa;">Aggiornato automaticamente</span>
+    </div>
+    <div id="rss-feed" style="display:grid;gap:12px;">
+      <div style="color:#aaa;font-size:.9em;">Caricamento notizie...</div>
+    </div>
+    <div style="text-align:center;margin-top:24px;">
+      <a href="https://www.ilfattoquotidiano.it/" target="_blank" style="color:#e8900a;font-weight:700;font-size:.9em;text-decoration:none;">Tutte le notizie su Il Fatto Quotidiano →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+async function loadRSS() {
+  const feed = document.getElementById('rss-feed');
+  try {
+    const url = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.ilfattoquotidiano.it/feed/&count=6&api_key=pwdnrsfhzxejdq9mxbyqfhqxrjkfcm4zmqxgkvs';
+    const res = await fetch(url);
+    const data = await res.json();
+    if (data.status === 'ok' && data.items.length > 0) {
+      feed.innerHTML = data.items.map(item => {
+        const date = new Date(item.pubDate).toLocaleDateString('it-IT', {day:'numeric',month:'long',year:'numeric'});
+        return \`<a href="\${item.link}" target="_blank" style="display:flex;gap:16px;align-items:center;padding:14px 16px;background:#fafafa;border-radius:10px;text-decoration:none;border:1.5px solid #eee;transition:all .2s;" onmouseover="this.style.borderColor='#e8900a';this.style.background='#fff8ee'" onmouseout="this.style.borderColor='#eee';this.style.background='#fafafa'">
+          \${item.thumbnail ? \`<img src="\${item.thumbnail}" style="width:80px;height:60px;object-fit:cover;border-radius:6px;flex-shrink:0;" onerror="this.style.display='none'">\` : ''}
+          <div>
+            <div style="font-size:.68em;color:#e8900a;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Il Fatto Quotidiano • \${date}</div>
+            <div style="font-size:.92em;color:#333;font-weight:700;line-height:1.4;">\${item.title}</div>
+          </div>
+        </a>\`;
+      }).join('');
+    } else {
+      feed.innerHTML = '<div style="color:#aaa;font-size:.9em;">Notizie temporaneamente non disponibili.</div>';
+    }
+  } catch(e) {
+    feed.innerHTML = '<div style="color:#aaa;font-size:.9em;">Notizie temporaneamente non disponibili.</div>';
+  }
+}
+loadRSS();
+</script>
+
 <footer id="contatti">
   <div class="foot-grid">
     <div class="foot-brand">
