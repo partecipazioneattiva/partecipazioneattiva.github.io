@@ -437,25 +437,42 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
 async function loadRSS() {
   const feed = document.getElementById('rss-feed');
   try {
-    const url = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.ilfattoquotidiano.it/feed/&count=6&api_key=pwdnrsfhzxejdq9mxbyqfhqxrjkfcm4zmqxgkvs';
-    const res = await fetch(url);
+    const url = 'https://cors-anywhere.herokuapp.com/https://www.ilfattoquotidiano.it/feed/';
+    const res = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent('https://www.ilfattoquotidiano.it/feed/'));
     const data = await res.json();
-    if (data.status === 'ok' && data.items.length > 0) {
-      feed.innerHTML = data.items.map(item => {
-        const date = new Date(item.pubDate).toLocaleDateString('it-IT', {day:'numeric',month:'long',year:'numeric'});
-        return \`<a href="\${item.link}" target="_blank" style="display:flex;gap:16px;align-items:center;padding:14px 16px;background:#fafafa;border-radius:10px;text-decoration:none;border:1.5px solid #eee;transition:all .2s;" onmouseover="this.style.borderColor='#e8900a';this.style.background='#fff8ee'" onmouseout="this.style.borderColor='#eee';this.style.background='#fafafa'">
-          \${item.thumbnail ? \`<img src="\${item.thumbnail}" style="width:80px;height:60px;object-fit:cover;border-radius:6px;flex-shrink:0;" onerror="this.style.display='none'">\` : ''}
-          <div>
-            <div style="font-size:.68em;color:#e8900a;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Il Fatto Quotidiano • \${date}</div>
-            <div style="font-size:.92em;color:#333;font-weight:700;line-height:1.4;">\${item.title}</div>
-          </div>
-        </a>\`;
-      }).join('');
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(data.contents, 'text/xml');
+    const items = xml.querySelectorAll('item');
+    if (items.length > 0) {
+      let html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">';
+      let count = 0;
+      items.forEach(item => {
+        if (count >= 4) return;
+        const title = item.querySelector('title')?.textContent || '';
+        const link = item.querySelector('link')?.nextSibling?.textContent || item.querySelector('link')?.textContent || '';
+        const pubDate = item.querySelector('pubDate')?.textContent || '';
+        const desc = item.querySelector('description')?.textContent || '';
+        const imgMatch = desc.match(/src="([^"]+)"/);
+        const img = imgMatch ? imgMatch[1] : '';
+        const date = pubDate ? new Date(pubDate).toLocaleDateString('it-IT', {day:'numeric',month:'long'}) : '';
+        if (count === 0) {
+          html = '<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;"><a href="' + link + '" target="_blank" style="grid-column:1/-1;display:block;border-radius:12px;overflow:hidden;text-decoration:none;border:1.5px solid #eee;transition:all .2s;background:#fff;" onmouseover="this.style.borderColor='#e8900a'" onmouseout="this.style.borderColor='#eee'">' +
+            (img ? '<img src="' + img + '" style="width:100%;height:220px;object-fit:cover;" onerror="this.style.display='none'">' : '') +
+            '<div style="padding:16px;"><div style="font-size:.7em;color:#e8900a;font-weight:700;text-transform:uppercase;margin-bottom:6px;">In primo piano • ' + date + '</div><div style="font-size:1.05em;color:#333;font-weight:700;line-height:1.4;">' + title + '</div></div></a>';
+        } else {
+          html += '<a href="' + link + '" target="_blank" style="display:block;border-radius:10px;overflow:hidden;text-decoration:none;border:1.5px solid #eee;transition:all .2s;background:#fff;" onmouseover="this.style.borderColor='#e8900a'" onmouseout="this.style.borderColor='#eee'">' +
+            (img ? '<img src="' + img + '" style="width:100%;height:130px;object-fit:cover;" onerror="this.style.display='none'">' : '') +
+            '<div style="padding:12px;"><div style="font-size:.65em;color:#e8900a;font-weight:700;text-transform:uppercase;margin-bottom:4px;">' + date + '</div><div style="font-size:.88em;color:#333;font-weight:700;line-height:1.4;">' + title + '</div></div></a>';
+        }
+        count++;
+      });
+      html += '</div>';
+      feed.innerHTML = html;
     } else {
-      feed.innerHTML = '<div style="color:#aaa;font-size:.9em;">Notizie temporaneamente non disponibili.</div>';
+      feed.innerHTML = '<div style="color:#aaa;">Notizie temporaneamente non disponibili.</div>';
     }
   } catch(e) {
-    feed.innerHTML = '<div style="color:#aaa;font-size:.9em;">Notizie temporaneamente non disponibili.</div>';
+    feed.innerHTML = '<div style="color:#aaa;">Notizie temporaneamente non disponibili.</div>';
   }
 }
 loadRSS();
