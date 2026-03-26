@@ -216,7 +216,7 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
 <script>
 async function loadHeroNews() {
   try {
-    const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://www.ilfattoquotidiano.it/feed/') + '&count=1');
+    const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://www.ilfattoquotidiano.it/feed/') + '&api_key=nkozsgcqeibrbkg3xxszfahetmajwkz1ncsgntp2&count=1');
     const data = await res.json();
     if (data.status === 'ok' && data.items && data.items.length > 0) {
       const item = data.items[0];
