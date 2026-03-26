@@ -207,7 +207,32 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
         <a href="#iscriviti" style="background:#fff;color:#8a4e00;padding:13px 30px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;">Iscriviti ora</a>
         <a href="#chisiamo" style="background:transparent;color:#fff;padding:13px 30px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;border:2px solid rgba(255,255,255,.7);">Chi siamo</a>
       </div>
+      <div id="hero-notizia" style="margin-top:28px;border-radius:14px;overflow:hidden;background:rgba(255,255,255,0.12);border:1.5px solid rgba(255,255,255,0.25);">
+        <div style="padding:10px 14px;font-size:.68em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#ffd580;">📰 Ultima notizia</div>
+        <div id="hero-news-content" style="padding:0 14px 14px;"><div style="color:rgba(255,255,255,.6);font-size:.85em;">Caricamento...</div></div>
+      </div>
     </div>
+
+<script>
+async function loadHeroNews() {
+  try {
+    const res = await fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://www.ilfattoquotidiano.it/feed/') + '&count=1');
+    const data = await res.json();
+    if (data.status === 'ok' && data.items && data.items.length > 0) {
+      const item = data.items[0];
+      const date = new Date(item.pubDate).toLocaleDateString('it-IT',{day:'numeric',month:'long',year:'numeric'});
+      const img = item.thumbnail || '';
+      document.getElementById('hero-news-content').innerHTML =
+        '<a href="' + item.link + '" target="_blank" style="text-decoration:none;display:block;">' +
+        (img ? '<img src="' + img + '" style="width:100%;height:140px;object-fit:cover;border-radius:8px;margin-bottom:10px;" onerror="this.style.display='none'">' : '') +
+        '<div style="font-size:.7em;color:#ffd580;margin-bottom:5px;">' + date + '</div>' +
+        '<div style="font-size:.92em;font-weight:700;color:#fff;line-height:1.4;">' + item.title + '</div>' +
+        '<div style="font-size:.75em;color:rgba(255,255,255,.7);margin-top:6px;">Leggi su Il Fatto Quotidiano →</div></a>';
+    }
+  } catch(e) {}
+}
+loadHeroNews();
+</script>
     <div style="position:relative;">
       <div style="background:linear-gradient(135deg,#8a4e00,#e8900a);color:#fff;text-align:center;padding:10px 16px;font-family:'Montserrat',sans-serif;font-weight:900;font-size:.9em;letter-spacing:3px;text-transform:uppercase;border-radius:10px;margin-bottom:12px;">&#9679; Insieme per Napoli</div><a href="#napoli" style="display:block;"><img src="images/insieme-napoli.png" alt="Insieme per Napoli" style="width:100%;border-radius:16px;box-shadow:0 12px 48px rgba(0,0,0,0.35);"></a>
       <div style="position:absolute;bottom:16px;left:16px;right:16px;background:rgba(0,0,0,0.6);border-radius:10px;padding:12px 16px;text-align:center;">
