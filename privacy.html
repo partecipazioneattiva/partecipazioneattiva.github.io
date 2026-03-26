@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="Privacy Policy e Cookie Policy di Partecipazione Attiva - Informativa sul trattamento dei dati personali.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy e Cookie Policy - Partecipazione Attiva</title>
+<link rel="canonical" href="https://partecipazioneattiva.github.io/privacy.html">
+<meta property="og:title" content="Privacy e Cookie Policy - Partecipazione Attiva">
+<meta property="og:description" content="Informativa sul trattamento dei dati personali di Partecipazione Attiva.">
+<meta property="og:image" content="https://partecipazioneattiva.github.io/LOGO-PA.png">
+<meta property="og:url" content="https://partecipazioneattiva.github.io/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',sans-serif;background:#fff;color:#222;}
+.topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em;}
+.topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600;}
+.topbar a:hover{color:#fff;}
+.navbar{position:sticky;top:0;z-index:999;background:#fff;border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;padding:0 32px;min-height:80px;}
+.nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0;}
+.nav-logo img{width:68px;height:68px;border-radius:50%;}
+.nav-nome{font-weight:900;font-size:1.25em;color:#8a4e00;line-height:1.1;}
+.nav-nome small{display:block;font-weight:400;font-size:.58em;color:#aaa;letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;max-width:700px;}
+.nav-links a{padding:18px 14px;color:#444;text-decoration:none;font-size:.92em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
+.nav-links a:hover{color:#e8900a;border-bottom-color:#e8900a;}
+.nav-cta{display:flex;gap:10px;margin-left:16px;}
+.btn-iscr{background:#e8900a;color:#fff;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.82em;font-weight:700;transition:all .2s;}
+.btn-iscr:hover{background:#8a4e00;}
+.btn-sost{background:transparent;color:#e8900a;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.82em;font-weight:700;border:2px solid #e8900a;transition:all .2s;}
+.btn-sost:hover{background:#fff8ee;}
+.burger{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px;}
+.burger span{display:block;width:24px;height:2px;background:#8a4e00;border-radius:2px;transition:all .3s;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-menu{display:none;flex-direction:column;background:#fff;border-top:2px solid #f0f0f0;position:absolute;top:100%;left:0;right:0;box-shadow:0 8px 24px rgba(0,0,0,0.1);}
+.mob-menu.on{display:flex;}
+.mob-menu a{padding:14px 32px;color:#333;text-decoration:none;font-weight:700;font-size:.9em;border-bottom:1px solid #f5f5f5;}
+.mob-menu a:hover{background:#fff8ee;color:#e8900a;}
+.content{max-width:800px;margin:0 auto;padding:48px 32px 64px;}
+.content h1{font-family:'Merriweather',serif;font-size:1.8em;color:#8a4e00;margin-bottom:8px;}
+.content .linea{width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:28px;}
+.content h2{font-family:'Merriweather',serif;font-size:1.2em;color:#8a4e00;margin-top:32px;margin-bottom:12px;}
+.content p{color:#555;line-height:1.8;margin-bottom:14px;font-size:.92em;}
+.content ul{color:#555;line-height:1.8;margin-bottom:14px;font-size:.92em;padding-left:24px;}
+.content li{margin-bottom:6px;}
+.content a{color:#e8900a;text-decoration:none;font-weight:600;}
+.content a:hover{text-decoration:underline;}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:#e8900a;text-decoration:none;font-weight:700;font-size:.9em;margin-bottom:24px;}
+.back-link:hover{text-decoration:underline;}
+footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
+.foot-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+.foot-brand img{width:60px;height:60px;border-radius:50%;margin-bottom:14px;}
+.foot-brand p{font-size:.82em;line-height:1.7;margin-top:8px;}
+.foot-col h4{color:#f5a623;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
+.foot-col a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.82em;margin-bottom:8px;transition:color .2s;}
+.foot-col a:hover{color:#f5a623;}
+.foot-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;font-size:.75em;flex-wrap:wrap;gap:10px;}
+.foot-bottom a{color:#f5a623;text-decoration:none;}
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none;}
+  .burger{display:flex;}
+  .navbar{position:relative;}
+  .foot-grid{grid-template-columns:1fr;}
+  .content{padding:32px 20px 48px;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <span>&#128231; partecipazioneattiva21@gmail.com</span>
+  <div>
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="index.html#contatti">Contatti</a>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">
+    <a href="index.html"><img src="LOGO-PA.png" alt="Logo Partecipazione Attiva"></a>
+    <div class="nav-nome">Partecipazione Attiva<small>Movimento politico</small></div>
+  </div>
+  <div class="nav-links">
+    <a href="index.html">Home</a><a href="napoli.html" style="color:#e8900a;font-weight:900;">&#9679; Napoli</a><a href="index.html#blog">Notizie</a>
+    <a href="territori.html">Territori</a><a href="organigramma.html">Organigramma</a><a href="index.html#chisiamo">Chi Siamo</a>
+    <a href="index.html#statuto">Documenti</a>
+    <a href="parlero.html">Parler&ograve;</a><a href="index.html#rassegna">Rassegna</a><a href="index.html#facebook">Facebook</a>
+    <a href="index.html#iscriviti">Iscriviti</a>
+    <a href="index.html#contatti">Contatti</a>
+  </div>
+  <div class="nav-cta">
+    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Richiesta di Iscrizione" class="btn-iscr">Iscriviti</a>
+    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Donazione" class="btn-sost">Sostienici</a>
+  </div>
+  <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  <div class="mob-menu" id="mobmenu">
+    <a href="index.html">Home</a>
+    <a href="napoli.html" style="color:#e8900a;" onclick="chiudi()">&#9679; Napoli</a>
+    <a href="index.html#blog" onclick="chiudi()">Notizie</a>
+    <a href="index.html#chisiamo" onclick="chiudi()">Chi Siamo</a>
+    <a href="index.html#statuto" onclick="chiudi()">Documenti</a>
+    <a href="parlero.html" onclick="chiudi()">Parler&ograve;</a>
+    <a href="index.html#facebook" onclick="chiudi()">Facebook</a>
+    <a href="index.html#iscriviti" onclick="chiudi()">Iscriviti</a>
+    <a href="index.html#contatti" onclick="chiudi()">Contatti</a>
+  </div>
+</nav>
+
+<!-- CONTENUTO -->
+<div class="content">
+  <a href="index.html" class="back-link">&larr; Torna alla Home</a>
+
+  <h1>Privacy Policy</h1>
+  <div class="linea"></div>
+
+  <p><strong>Ultimo aggiornamento:</strong> 26 marzo 2026</p>
+
+  <h2>1. Titolare del trattamento</h2>
+  <p>Il titolare del trattamento dei dati personali è <strong>Partecipazione Attiva</strong>, libera associazione di cittadini, contattabile all'indirizzo email: <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>.</p>
+
+  <h2>2. Dati raccolti</h2>
+  <p>Il presente sito web è un sito statico ospitato su GitHub Pages e non raccoglie direttamente dati personali degli utenti. Non sono presenti moduli di registrazione, aree riservate o sistemi di tracciamento proprietari.</p>
+  <p>I dati che potrebbero essere trattati sono:</p>
+  <ul>
+    <li><strong>Dati di navigazione:</strong> GitHub Pages può raccogliere automaticamente dati tecnici come indirizzo IP, tipo di browser e sistema operativo per finalità di erogazione del servizio.</li>
+    <li><strong>Dati forniti volontariamente:</strong> inviando un'email all'indirizzo dell'associazione, l'utente comunica volontariamente il proprio indirizzo email e i dati contenuti nel messaggio.</li>
+  </ul>
+
+  <h2>3. Finalità del trattamento</h2>
+  <p>I dati eventualmente raccolti sono utilizzati esclusivamente per rispondere alle richieste degli utenti e per le attività istituzionali dell'associazione. I dati non vengono ceduti a terzi, venduti o utilizzati per finalità commerciali.</p>
+
+  <h2>4. Servizi di terze parti</h2>
+  <p>Il sito utilizza i seguenti servizi di terze parti:</p>
+  <ul>
+    <li><strong>GitHub Pages:</strong> per l'hosting del sito web (<a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages" target="_blank" rel="noopener noreferrer">informativa GitHub</a>).</li>
+    <li><strong>Google Fonts:</strong> per il caricamento dei caratteri tipografici (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">informativa Google</a>).</li>
+    <li><strong>rss2json.com:</strong> per la conversione dei feed RSS in formato leggibile.</li>
+    <li><strong>Facebook:</strong> link alla pagina ufficiale dell'associazione.</li>
+  </ul>
+
+  <h2>5. Diritti dell'utente</h2>
+  <p>Ai sensi del Regolamento UE 2016/679 (GDPR), l'utente ha il diritto di accedere ai propri dati, richiederne la rettifica o la cancellazione, limitarne il trattamento e opporsi al trattamento stesso. Per esercitare tali diritti, contattare: <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>.</p>
+
+  <h2>6. Link esterni</h2>
+  <p>Il sito contiene link a siti web esterni (Facebook, Il Fatto Quotidiano, TikTok). Partecipazione Attiva non è responsabile delle politiche sulla privacy di tali siti. Si consiglia di consultare le rispettive informative.</p>
+
+  <br>
+  <h1 id="cookie">Cookie Policy</h1>
+  <div class="linea"></div>
+
+  <h2>7. Cosa sono i cookie</h2>
+  <p>I cookie sono piccoli file di testo che i siti web memorizzano sul dispositivo dell'utente durante la navigazione. Vengono utilizzati per diverse finalità, come ricordare le preferenze dell'utente o raccogliere informazioni statistiche.</p>
+
+  <h2>8. Cookie utilizzati da questo sito</h2>
+  <p>Il presente sito, essendo un sito statico ospitato su GitHub Pages, <strong>non utilizza cookie propri</strong> per il tracciamento o la profilazione degli utenti.</p>
+  <p>Potrebbero essere presenti cookie tecnici di terze parti relativi a:</p>
+  <ul>
+    <li><strong>GitHub Pages:</strong> cookie tecnici necessari per l'erogazione del servizio di hosting.</li>
+    <li><strong>Google Fonts:</strong> cookie tecnici per il caricamento dei caratteri.</li>
+  </ul>
+
+  <h2>9. Come gestire i cookie</h2>
+  <p>L'utente può gestire le preferenze sui cookie direttamente dal proprio browser. Ecco i link alle guide dei principali browser:</p>
+  <ul>
+    <li><a href="https://support.google.com/chrome/answer/95647" target="_blank" rel="noopener noreferrer">Google Chrome</a></li>
+    <li><a href="https://support.mozilla.org/it/kb/protezione-antitracciamento-avanzata-firefox-desktop" target="_blank" rel="noopener noreferrer">Mozilla Firefox</a></li>
+    <li><a href="https://support.apple.com/it-it/guide/safari/sfri11471/mac" target="_blank" rel="noopener noreferrer">Apple Safari</a></li>
+    <li><a href="https://support.microsoft.com/it-it/microsoft-edge/eliminare-i-cookie-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09" target="_blank" rel="noopener noreferrer">Microsoft Edge</a></li>
+  </ul>
+
+  <h2>10. Modifiche alla presente informativa</h2>
+  <p>Partecipazione Attiva si riserva il diritto di modificare questa informativa in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina con aggiornamento della data indicata in alto.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer id="contatti">
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <img loading="lazy" src="LOGO-PA.png" alt="Logo Partecipazione Attiva">
+      <div class="nav-nome" style="color:#f5a623;font-size:1em;">Partecipazione Attiva</div>
+      <p>Una libera associazione di cittadini per una politica trasparente e partecipata, ispirata alla Costituzione italiana.</p>
+    </div>
+    <div class="foot-col">
+      <h4>Navigazione</h4>
+      <a href="index.html">Home</a><a href="napoli.html" style="color:#e8900a;font-weight:900;">&#9679; Napoli</a><a href="index.html#blog">Notizie</a>
+      <a href="territori.html">Territori</a><a href="organigramma.html">Organigramma</a><a href="index.html#chisiamo">Chi Siamo</a>
+      <a href="index.html#statuto">Documenti</a>
+      <a href="index.html#iscriviti">Iscriviti</a>
+      <a href="index.html#contatti">Contatti</a>
+    </div>
+    <div class="foot-col">
+      <h4>Contatti</h4>
+      <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>
+      <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>All Right Reserved. Il sito non risponde dell'eventuale utilizzo improprio dei contenuti.</span>
+    <span><a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="privacy.html#cookie">Cookie Policy</a></span>
+  </div>
+</footer>
+
+<script>
+const burger=document.getElementById('burger');
+const mob=document.getElementById('mobmenu');
+burger.addEventListener('click',()=>{
+  const o=mob.classList.toggle('on');
+  burger.classList.toggle('open',o);
+});
+function chiudi(){mob.classList.remove('on');burger.classList.remove('open');}
+</script>
+</body>
+</html>
