@@ -313,42 +313,15 @@ loadHeroNews();
 <section class="magazine" id="blog">
   <div class="mag-header">
     <h2>Ultime Notizie</h2>
-    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Tutte le notizie &rarr;</a>
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Vai alla pagina Facebook &rarr;</a>
   </div>
-  <div class="mag-grid">
-    <div class="mag-main" onclick="location.href='https://www.facebook.com/PartecipazioneAttiva21/'">
-      <img loading="lazy" src="https://picsum.photos/800/400?grayscale" alt="Notizia in primo piano - Partecipazione Attiva">
-      <div class="mag-main-info">
-        <div class="cat">In primo piano</div>
-        <h3>Assemblea pubblica 10 aprile 2026: partecipa anche tu</h3>
-        <p>25 marzo 2026 &bull; Aperta a tutti i cittadini</p>
-      </div>
-    </div>
-    <div class="mag-side">
-      <div class="mag-card" onclick="location.href='https://www.facebook.com/PartecipazioneAttiva21/'">
-        <img loading="lazy" src="https://picsum.photos/200/160?grayscale&random=1" alt="">
-        <div class="mag-card-info">
-          <div class="cat">Documenti</div>
-          <h4>Nuovo documento programmatico pubblicato</h4>
-          <span>20 marzo 2026</span>
-        </div>
-      </div>
-      <div class="mag-card" onclick="location.href='https://www.facebook.com/PartecipazioneAttiva21/'">
-        <img loading="lazy" src="https://picsum.photos/200/160?grayscale&random=2" alt="">
-        <div class="mag-card-info">
-          <div class="cat">Iniziative</div>
-          <h4>Raccolta firme avviata per la partecipazione popolare</h4>
-          <span>15 marzo 2026</span>
-        </div>
-      </div>
-      <div class="mag-card" onclick="location.href='https://www.facebook.com/PartecipazioneAttiva21/'">
-        <img loading="lazy" src="https://picsum.photos/200/160?grayscale&random=3" alt="">
-        <div class="mag-card-info">
-          <div class="cat">Territorio</div>
-          <h4>Incontro con i cittadini: le nostre proposte per il territorio</h4>
-          <span>10 marzo 2026</span>
-        </div>
-      </div>
+  <div style="display:flex;justify-content:center;">
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v21.0"></script>
+    <div class="fb-page" data-href="https://www.facebook.com/PartecipazioneAttiva21/" data-tabs="timeline" data-width="500" data-height="600" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+      <blockquote cite="https://www.facebook.com/PartecipazioneAttiva21/" class="fb-xfbml-parse-ignore">
+        <a href="https://www.facebook.com/PartecipazioneAttiva21/">Partecipazione Attiva</a>
+      </blockquote>
     </div>
   </div>
 </section>
