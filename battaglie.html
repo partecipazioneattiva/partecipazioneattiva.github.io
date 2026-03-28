@@ -2,12 +2,12 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Le Nostre Battaglie - Le cause e le iniziative approvate dall'assemblea di Partecipazione Attiva.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Le battaglie di Partecipazione Attiva: iniziative approvate dall'assemblea per i diritti dei cittadini. Prima battaglia: tariffe RC Auto uguali per tutti, senza discriminazioni territoriali.">
 <title>Le Nostre Battaglie - Partecipazione Attiva</title>
 <link rel="canonical" href="https://partecipazioneattiva.github.io/battaglie.html">
 <meta property="og:title" content="Le Nostre Battaglie - Partecipazione Attiva">
-<meta property="og:description" content="Le cause e le iniziative approvate dall'assemblea di Partecipazione Attiva.">
+<meta property="og:description" content="Iniziative approvate dall'assemblea per i diritti dei cittadini. Prima battaglia: RC Auto uguale per tutti.">
 <meta property="og:image" content="https://partecipazioneattiva.github.io/LOGO-PA.png">
 <meta property="og:url" content="https://partecipazioneattiva.github.io/battaglie.html">
 <meta property="og:type" content="website">
@@ -18,9 +18,13 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Montserrat',sans-serif;background:#fff;color:#222;}
+
+/* TOPBAR */
 .topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em;}
 .topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600;}
 .topbar a:hover{color:#fff;}
+
+/* NAVBAR */
 .navbar{position:sticky;top:0;z-index:999;background:#fff;border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,0.08);display:flex;align-items:center;justify-content:space-between;padding:0 32px;min-height:80px;}
 .nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0;}
 .nav-logo img{width:68px;height:68px;border-radius:50%;}
@@ -28,7 +32,7 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#222;}
 .nav-nome small{display:block;font-weight:400;font-size:.58em;color:#aaa;letter-spacing:2px;text-transform:uppercase;}
 .nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;max-width:700px;}
 .nav-links a{padding:18px 14px;color:#444;text-decoration:none;font-size:.92em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap;}
-.nav-links a:hover{color:#e8900a;border-bottom-color:#e8900a;}
+.nav-links a:hover,.nav-links a.active{color:#e8900a;border-bottom-color:#e8900a;}
 .nav-cta{display:flex;gap:10px;margin-left:16px;}
 .btn-iscr{background:#e8900a;color:#fff;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.82em;font-weight:700;transition:all .2s;}
 .btn-iscr:hover{background:#8a4e00;}
@@ -45,46 +49,103 @@ body{font-family:'Montserrat',sans-serif;background:#fff;color:#222;}
 .mob-menu a:hover{background:#fff8ee;color:#e8900a;}
 
 /* HERO BATTAGLIE */
-.hero-bat{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);padding:64px 32px;text-align:center;}
-.hero-bat h1{font-family:'Merriweather',serif;font-size:clamp(1.6em,3vw,2.4em);color:#fff;margin-bottom:12px;}
-.hero-bat p{color:rgba(255,255,255,.85);font-size:1.05em;max-width:600px;margin:0 auto;line-height:1.7;}
+.hero-bat{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);padding:64px 32px;text-align:center;position:relative;overflow:hidden;}
+.hero-bat::before{content:'✊';position:absolute;font-size:12em;opacity:.07;right:-40px;top:-20px;}
+.hero-bat .badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:.72em;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:16px;}
+.hero-bat h1{font-family:'Merriweather',serif;font-size:clamp(1.8em,4vw,2.8em);color:#fff;margin-bottom:16px;text-shadow:0 2px 8px rgba(0,0,0,.2);}
+.hero-bat p{color:rgba(255,255,255,.88);font-size:1.05em;max-width:600px;margin:0 auto;line-height:1.75;}
 
-/* BATTAGLIE GRID */
-.battaglie-section{max-width:1100px;margin:0 auto;padding:56px 32px;}
-.battaglie-section .linea{width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:28px;}
-.battaglie-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
-.battaglia-card{background:#fff;border-radius:14px;border:1.5px solid #eee;padding:28px;transition:all .25s;border-left:4px solid #e8900a;}
-.battaglia-card:hover{border-color:#e8900a;background:#fff8ee;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08);}
-.battaglia-card .tag{display:inline-block;background:#fff3e0;color:#e8900a;font-size:.68em;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:4px;margin-bottom:12px;}
-.battaglia-card h3{font-family:'Merriweather',serif;font-size:1.1em;color:#8a4e00;margin-bottom:10px;line-height:1.3;}
-.battaglia-card p{color:#666;font-size:.88em;line-height:1.7;}
-.battaglia-card .data{color:#aaa;font-size:.75em;margin-top:12px;}
+/* CONTAINER */
+.container{max-width:900px;margin:0 auto;padding:0 24px;}
 
-/* MESSAGGIO VUOTO */
-.empty-msg{text-align:center;padding:64px 32px;max-width:600px;margin:0 auto;}
-.empty-msg .icona{font-size:3em;margin-bottom:16px;}
-.empty-msg h2{font-family:'Merriweather',serif;font-size:1.4em;color:#8a4e00;margin-bottom:12px;}
-.empty-msg p{color:#888;font-size:.95em;line-height:1.7;margin-bottom:24px;}
-.empty-msg a{display:inline-block;background:#e8900a;color:#fff;padding:12px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .2s;}
-.empty-msg a:hover{background:#8a4e00;}
+/* BATTAGLIA CARD */
+.battaglia-wrap{padding:56px 24px;}
+.battaglia-card{background:#fff;border-radius:20px;box-shadow:0 4px 32px rgba(0,0,0,.09);overflow:hidden;margin-bottom:48px;}
+.bat-header{background:linear-gradient(135deg,#8a4e00,#e8900a);padding:32px 40px;display:flex;align-items:center;gap:20px;}
+.bat-numero{background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.4);color:#fff;font-size:1em;font-weight:900;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.bat-titolo{color:#fff;}
+.bat-titolo .label{font-size:.7em;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.8;margin-bottom:6px;}
+.bat-titolo h2{font-family:'Merriweather',serif;font-size:1.5em;line-height:1.2;}
+.bat-body{padding:40px;}
+
+/* SEZIONI INTERNE */
+.bat-section{margin-bottom:36px;}
+.bat-section h3{font-size:1em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#8a4e00;margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.bat-section p{color:#444;line-height:1.8;font-size:.97em;}
+
+/* DATI NUMERICI */
+.dati-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:20px 0;}
+.dato{background:#fff8ee;border:1px solid #f5d9a8;border-radius:14px;padding:20px;text-align:center;}
+.dato .num{font-size:1.9em;font-weight:900;color:#e8900a;line-height:1;}
+.dato .desc{font-size:.72em;color:#666;margin-top:6px;text-transform:uppercase;letter-spacing:.5px;}
+.dato .luogo{font-size:.8em;font-weight:700;color:#8a4e00;margin-top:4px;}
+
+/* CONFRONTO */
+.confronto{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:14px;overflow:hidden;margin:20px 0;border:1px solid #eee;}
+.conf-nord{background:#f0f7ff;padding:24px;text-align:center;}
+.conf-sud{background:#fff3e0;padding:24px;text-align:center;}
+.conf-label{font-size:.72em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.conf-nord .conf-label{color:#1a6fc4;}
+.conf-sud .conf-label{color:#e8900a;}
+.conf-prezzo{font-size:2.2em;font-weight:900;line-height:1;}
+.conf-nord .conf-prezzo{color:#1a6fc4;}
+.conf-sud .conf-prezzo{color:#e8900a;}
+.conf-sub{font-size:.78em;color:#666;margin-top:6px;}
+.conf-divider{display:flex;align-items:center;justify-content:center;background:#f5f5f5;padding:8px;font-weight:900;color:#555;font-size:.85em;}
+
+/* PROPOSTA */
+.proposta-list{list-style:none;margin-top:12px;}
+.proposta-list li{padding:10px 0 10px 28px;position:relative;color:#444;line-height:1.6;border-bottom:1px solid #f5f5f5;font-size:.95em;}
+.proposta-list li:last-child{border-bottom:none;}
+.proposta-list li::before{content:'→';position:absolute;left:0;color:#e8900a;font-weight:900;}
+
+/* CTA FIRMARE */
+.bat-cta{background:linear-gradient(135deg,#fff8ee,#fff3d6);border-top:3px solid #e8900a;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.bat-cta-testo h3{font-size:1.1em;font-weight:900;color:#8a4e00;margin-bottom:6px;}
+.bat-cta-testo p{font-size:.88em;color:#666;line-height:1.6;}
+.bat-cta-btns{display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;}
+.btn-firma{background:#e8900a;color:#fff;padding:13px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .2s;white-space:nowrap;}
+.btn-firma:hover{background:#8a4e00;transform:translateY(-2px);}
+.btn-condividi{background:transparent;color:#1877f2;padding:13px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;border:2px solid #1877f2;transition:all .2s;white-space:nowrap;}
+.btn-condividi:hover{background:#f0f4ff;transform:translateY(-2px);}
+
+/* PROSSIME BATTAGLIE */
+.prossime{background:#fafafa;border-top:1px solid #eee;padding:48px 24px;text-align:center;}
+.prossime h2{font-family:'Merriweather',serif;color:#8a4e00;margin-bottom:12px;}
+.prossime p{color:#666;max-width:500px;margin:0 auto 28px;}
+.btn-seguici{display:inline-flex;align-items:center;gap:10px;background:#1877f2;color:#fff;padding:13px 28px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .2s;}
+.btn-seguici:hover{background:#1558b0;transform:translateY(-2px);}
+
+/* FONTE */
+.fonte{font-size:.75em;color:#999;margin-top:12px;font-style:italic;}
 
 /* FOOTER */
-footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
-.foot-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px;}
-.foot-brand img{width:60px;height:60px;border-radius:50%;margin-bottom:14px;}
-.foot-brand p{font-size:.82em;line-height:1.7;margin-top:8px;}
-.foot-col h4{color:#f5a623;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px;}
-.foot-col a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.82em;margin-bottom:8px;transition:color .2s;}
-.foot-col a:hover{color:#f5a623;}
-.foot-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.08);padding-top:20px;display:flex;justify-content:space-between;font-size:.75em;flex-wrap:wrap;gap:10px;}
-.foot-bottom a{color:#f5a623;text-decoration:none;}
+footer{background:#1a1a1a;color:#ccc;padding:48px 32px 24px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1100px;margin:0 auto;}
+.footer-brand img{width:56px;height:56px;border-radius:50%;margin-bottom:12px;}
+.footer-brand p{font-size:.85em;line-height:1.7;color:#aaa;margin-top:8px;}
+footer h4{font-size:.82em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#e8900a;margin-bottom:14px;}
+footer a{color:#ccc;text-decoration:none;font-size:.85em;display:block;margin-bottom:8px;}
+footer a:hover{color:#e8900a;}
+.footer-bottom{border-top:1px solid #333;margin-top:32px;padding-top:20px;text-align:center;font-size:.78em;color:#666;max-width:1100px;margin-left:auto;margin-right:auto;}
 
 @media(max-width:900px){
+  .topbar{padding:6px 16px;}
+  .navbar{padding:0 16px;}
   .nav-links,.nav-cta{display:none;}
   .burger{display:flex;}
-  .navbar{position:relative;}
-  .battaglie-grid{grid-template-columns:1fr;}
-  .foot-grid{grid-template-columns:1fr;}
+  .dati-grid{grid-template-columns:1fr 1fr;}
+  .confronto{grid-template-columns:1fr;}
+  .bat-cta{flex-direction:column;}
+  .bat-cta-btns{width:100%;}
+  .bat-header{padding:24px;}
+  .bat-body{padding:24px;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  .dati-grid{grid-template-columns:1fr;}
+  .bat-cta-btns{flex-direction:column;}
+  .btn-firma,.btn-condividi{text-align:center;}
 }
 </style>
 </head>
@@ -92,116 +153,224 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <span>&#128231; partecipazioneattiva21@gmail.com</span>
-  <div>
+  <span>📧 partecipazioneattiva21@gmail.com</span>
+  <span>
     <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Facebook</a>
     <a href="index.html#contatti">Contatti</a>
-  </div>
+  </span>
 </div>
 
 <!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="nav-logo">
-    <a href="index.html"><img src="LOGO-PA.png" alt="Logo Partecipazione Attiva"></a>
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="LOGO-PA.png" alt="Logo Partecipazione Attiva" width="68" height="68">
     <div class="nav-nome">Partecipazione Attiva<small>Movimento politico</small></div>
-  </div>
+  </a>
   <div class="nav-links">
-    <a href="index.html">Home</a><a href="napoli.html" style="color:#e8900a;font-weight:900;">&#9679; Napoli</a><a href="index.html#blog">Notizie</a>
-    <a href="territori.html">Territori</a><a href="organigramma.html">Organigramma</a><a href="index.html#chisiamo">Chi Siamo</a>
+    <a href="index.html">Home</a>
+    <a href="napoli.html">● Napoli</a>
+    <a href="index.html#blog">Notizie</a>
+    <a href="territori.html">Territori</a>
+    <a href="organigramma.html">Organigramma</a>
+    <a href="index.html#chisiamo">Chi Siamo</a>
     <a href="index.html#statuto">Documenti</a>
-    <a href="parlero.html">Parler&ograve;</a><a href="battaglie.html" style="color:#e8900a;font-weight:900;">Battaglie</a><a href="index.html#facebook">Facebook</a>
-    <a href="index.html#iscriviti">Iscriviti</a>
-    <a href="index.html#contatti">Contatti</a>
+    <a href="parlero.html">Parlerò</a>
+    <a href="battaglie.html" class="active">Battaglie</a>
   </div>
   <div class="nav-cta">
-    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Richiesta di Iscrizione" class="btn-iscr">Iscriviti</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1_6wKpGKMCnlCyo-yU1W6IuXHNJMESnzRDUbg92qjDE-6SQ/viewform" target="_blank" rel="noopener noreferrer" class="btn-iscr">Iscriviti — è gratis</a>
     <a href="mailto:partecipazioneattiva21@gmail.com?subject=Donazione" class="btn-sost">Sostienici</a>
   </div>
-  <button class="burger" id="burger"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   <div class="mob-menu" id="mobmenu">
     <a href="index.html" onclick="chiudi()">Home</a>
-    <a href="napoli.html" style="color:#e8900a;" onclick="chiudi()">&#9679; Napoli</a>
+    <a href="napoli.html" onclick="chiudi()">● Napoli</a>
     <a href="index.html#blog" onclick="chiudi()">Notizie</a>
     <a href="territori.html" onclick="chiudi()">Territori</a>
     <a href="organigramma.html" onclick="chiudi()">Organigramma</a>
     <a href="index.html#chisiamo" onclick="chiudi()">Chi Siamo</a>
     <a href="index.html#statuto" onclick="chiudi()">Documenti</a>
-    <a href="parlero.html" onclick="chiudi()">Parler&ograve;</a>
+    <a href="parlero.html" onclick="chiudi()">Parlerò</a>
     <a href="battaglie.html" onclick="chiudi()">Le Nostre Battaglie</a>
-    <a href="index.html#facebook" onclick="chiudi()">Facebook</a>
-    <a href="index.html#iscriviti" onclick="chiudi()">Iscriviti</a>
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer" onclick="chiudi()">Facebook</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1_6wKpGKMCnlCyo-yU1W6IuXHNJMESnzRDUbg92qjDE-6SQ/viewform" target="_blank" rel="noopener noreferrer" onclick="chiudi()" style="color:#e8900a;">Iscriviti — è gratis</a>
     <a href="index.html#contatti" onclick="chiudi()">Contatti</a>
-    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Donazione" onclick="chiudi()" style="background:#e8900a;color:#fff;text-align:center;font-weight:900;">Sostienici</a>
+    <a href="mailto:partecipazioneattiva21@gmail.com?subject=Donazione" onclick="chiudi()">Sostienici</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero-bat">
+  <div class="badge">Iniziative approvate dall'assemblea</div>
   <h1>Le Nostre Battaglie</h1>
-  <p>Le cause e le iniziative approvate dall'assemblea dei soci. Ogni battaglia nasce dalla voce dei cittadini.</p>
+  <p>Ogni battaglia nasce dalla voce dei cittadini e viene approvata dall'assemblea. Qui trovi le iniziative concrete che Partecipazione Attiva porta avanti per i diritti di tutti.</p>
 </div>
 
-<!-- BATTAGLIE -->
-<section class="battaglie-section">
-  <div class="linea"></div>
+<!-- BATTAGLIA #1 -->
+<div class="battaglia-wrap">
+  <div class="container">
+    <div class="battaglia-card" id="rcauto">
 
-  <!-- MESSAGGIO QUANDO NON CI SONO ANCORA BATTAGLIE -->
-  <div class="empty-msg">
-    <div class="icona">&#9994;</div>
-    <h2>In arrivo</h2>
-    <p>Le battaglie di Partecipazione Attiva vengono approvate dall'assemblea dei soci. Questa sezione verrà aggiornata con ogni nuova iniziativa. Resta connesso!</p>
-    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Seguici su Facebook</a>
+      <div class="bat-header">
+        <div class="bat-numero">01</div>
+        <div class="bat-titolo">
+          <div class="label">✅ Approvata dall'assemblea</div>
+          <h2>RC Auto uguale per tutti — basta discriminazioni territoriali</h2>
+        </div>
+      </div>
+
+      <div class="bat-body">
+
+        <!-- IL PROBLEMA -->
+        <div class="bat-section">
+          <h3>🚨 Il problema</h3>
+          <p>In Italia pagare l'assicurazione RC Auto dipende anche da dove sei nato. A parità di guidatore, veicolo e anni di patente, chi risiede al Sud paga centinaia di euro in più rispetto a chi vive al Nord. Una discriminazione geografica inaccettabile, certificata ogni anno dall'IVASS — l'istituto di vigilanza sulle assicurazioni — e denunciata dalle associazioni dei consumatori.</p>
+        </div>
+
+        <!-- DATI -->
+        <div class="bat-section">
+          <h3>📊 I numeri che fanno arrabbiare</h3>
+          <p>I dati ufficiali IVASS del terzo trimestre 2025 parlano chiaro. La forbice tra le province più care e quelle più economiche è ormai di <strong>300 euro all'anno</strong> per la stessa polizza:</p>
+
+          <div class="dati-grid">
+            <div class="dato">
+              <div class="num">617€</div>
+              <div class="luogo">📍 Napoli</div>
+              <div class="desc">Premio medio annuo RC Auto</div>
+            </div>
+            <div class="dato">
+              <div class="num">550€</div>
+              <div class="luogo">📍 Caserta</div>
+              <div class="desc">Premio medio annuo RC Auto</div>
+            </div>
+            <div class="dato">
+              <div class="num">355€</div>
+              <div class="luogo">📍 Nord Italia</div>
+              <div class="desc">Premio medio province più economiche</div>
+            </div>
+          </div>
+
+          <div class="confronto">
+            <div class="conf-nord">
+              <div class="conf-label">🔵 Media Nord Italia</div>
+              <div class="conf-prezzo">390€</div>
+              <div class="conf-sub">premio medio annuo</div>
+            </div>
+            <div class="conf-divider">VS</div>
+            <div class="conf-sud">
+              <div class="conf-label">🔴 Media Sud e Isole</div>
+              <div class="conf-prezzo">530€</div>
+              <div class="conf-sub">premio medio annuo · +5,2% nel 2025</div>
+            </div>
+          </div>
+
+          <p class="fonte">Fonte: IVASS — Indagine IPER, 3° trimestre 2025 · elaborazione Assoutenti</p>
+
+          <p style="margin-top:16px;">Tradotto in soldoni: <strong>un cittadino di Napoli paga fino a 262 euro in più all'anno</strong> rispetto a un suo coetaneo con la stessa auto e lo stesso profilo di rischio che vive al Nord. Non per colpa sua, ma solo per il codice postale.</p>
+        </div>
+
+        <!-- PERCHÉ È SBAGLIATO -->
+        <div class="bat-section">
+          <h3>⚖️ Perché è ingiusto</h3>
+          <p>Le compagnie assicurative giustificano i rincari con la maggiore frequenza di sinistri e frodi nel Sud. Ma questo ragionamento punisce <strong>tutti i cittadini onesti</strong> per i comportamenti di una minoranza, in violazione del principio costituzionale di uguaglianza. Un cittadino che non ha mai fatto un incidente non deve pagare per i comportamenti altrui. E chi vive in una regione più povera non può permettersi di pagare di più per lo stesso servizio obbligatorio per legge.</p>
+        </div>
+
+        <!-- COSA CHIEDIAMO -->
+        <div class="bat-section">
+          <h3>✊ Cosa chiede Partecipazione Attiva</h3>
+          <ul class="proposta-list">
+            <li>Introduzione di un <strong>tetto massimo alla differenza tariffaria tra province</strong>: nessun cittadino deve pagare più del 20% rispetto alla media nazionale per lo stesso profilo di rischio individuale.</li>
+            <li>Calcolo del premio basato <strong>esclusivamente sul profilo individuale</strong> del guidatore (anni di patente, classe di merito, sinistri passati) — non sulla residenza.</li>
+            <li><strong>Riforma della governance IVASS</strong> con nomina di componenti indipendenti dal mondo assicurativo, che vigilino davvero nell'interesse dei cittadini.</li>
+            <li>Campagna nazionale per la <strong>trasparenza delle tariffe</strong>: ogni compagnia deve pubblicare i criteri di calcolo del premio in modo comprensibile.</li>
+            <li>Sostegno a chi non può permettersi l'RC Auto obbligatoria: <strong>fondo di garanzia regionale</strong> per i redditi più bassi.</li>
+          </ul>
+        </div>
+
+        <!-- EVENTO -->
+        <div class="bat-section">
+          <h3>📅 Prossimo evento</h3>
+          <div style="background:#f0f7ff;border-left:4px solid #1877f2;border-radius:0 12px 12px 0;padding:20px 24px;">
+            <div style="font-weight:700;color:#1a3a5c;font-size:1em;margin-bottom:6px;">Presentazione pubblica della proposta</div>
+            <div style="color:#444;font-size:.9em;line-height:1.7;">
+              📍 <strong>Bagnoli, Napoli</strong><br>
+              📄 Con presentazione del documento ufficiale approvato dall'assemblea<br>
+              🗓 Data da confermare — seguici su Facebook per gli aggiornamenti
+            </div>
+          </div>
+        </div>
+
+      </div><!-- fine bat-body -->
+
+      <!-- CTA -->
+      <div class="bat-cta">
+        <div class="bat-cta-testo">
+          <h3>Sostieni questa battaglia</h3>
+          <p>Iscriviti a Partecipazione Attiva e aggiungi la tua voce. Il primo anno è completamente gratuito.</p>
+        </div>
+        <div class="bat-cta-btns">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe1_6wKpGKMCnlCyo-yU1W6IuXHNJMESnzRDUbg92qjDE-6SQ/viewform" target="_blank" rel="noopener noreferrer" class="btn-firma">✊ Iscriviti e sostieni</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://partecipazioneattiva.github.io/battaglie.html" target="_blank" rel="noopener noreferrer" class="btn-condividi">👍 Condividi su Facebook</a>
+        </div>
+      </div>
+
+    </div><!-- fine battaglia-card -->
   </div>
+</div>
 
-  <!-- TEMPLATE BATTAGLIA (commentato, da duplicare per ogni nuova battaglia)
-  <div class="battaglie-grid">
-    <div class="battaglia-card">
-      <div class="tag">Tema</div>
-      <h3>Titolo della battaglia</h3>
-      <p>Descrizione della battaglia e degli obiettivi che l'assemblea ha approvato.</p>
-      <div class="data">Approvata il GG mese AAAA</div>
-    </div>
+<!-- PROSSIME BATTAGLIE -->
+<div class="prossime">
+  <div class="container">
+    <h2>Altre battaglie in arrivo</h2>
+    <p>Le battaglie di Partecipazione Attiva vengono approvate dall'assemblea dei soci. Seguici per essere il primo a sapere delle prossime iniziative.</p>
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer" class="btn-seguici">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Seguici su Facebook
+    </a>
   </div>
-  -->
-
-</section>
+</div>
 
 <!-- FOOTER -->
 <footer>
-  <div class="foot-grid">
-    <div class="foot-brand">
-      <img loading="lazy" src="LOGO-PA.png" alt="Logo Partecipazione Attiva">
-      <div class="nav-nome" style="color:#f5a623;font-size:1em;">Partecipazione Attiva</div>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="LOGO-PA.png" alt="Logo Partecipazione Attiva" width="56" height="56" loading="lazy">
+      <strong style="color:#fff;display:block;margin-top:4px;">Partecipazione Attiva</strong>
       <p>Una libera associazione di cittadini per una politica trasparente e partecipata, ispirata alla Costituzione italiana.</p>
     </div>
-    <div class="foot-col">
+    <div>
       <h4>Navigazione</h4>
-      <a href="index.html">Home</a><a href="napoli.html" style="color:#e8900a;font-weight:900;">&#9679; Napoli</a><a href="index.html#blog">Notizie</a>
-      <a href="territori.html">Territori</a><a href="organigramma.html">Organigramma</a><a href="index.html#chisiamo">Chi Siamo</a>
+      <a href="index.html">Home</a>
+      <a href="napoli.html">Napoli</a>
+      <a href="territori.html">Territori</a>
+      <a href="organigramma.html">Organigramma</a>
       <a href="index.html#statuto">Documenti</a>
-      <a href="index.html#iscriviti">Iscriviti</a>
-      <a href="index.html#contatti">Contatti</a>
+      <a href="battaglie.html">Battaglie</a>
     </div>
-    <div class="foot-col">
+    <div>
       <h4>Contatti</h4>
       <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>
       <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Facebook</a>
+      <a href="https://www.tiktok.com/@partecipazione.at" target="_blank" rel="noopener noreferrer">TikTok</a>
     </div>
   </div>
-  <div class="foot-bottom">
-    <span>All Right Reserved. Il sito non risponde dell'eventuale utilizzo improprio dei contenuti.</span>
-    <span><a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="privacy.html#cookie">Cookie Policy</a></span>
+  <div class="footer-bottom">
+    All Right Reserved. Il sito non risponde dell'eventuale utilizzo improprio dei contenuti. &nbsp;|&nbsp;
+    <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="privacy.html#cookie">Cookie Policy</a>
   </div>
 </footer>
 
 <script>
-const burger=document.getElementById('burger');
-const mob=document.getElementById('mobmenu');
-burger.addEventListener('click',()=>{
-  const o=mob.classList.toggle('on');
-  burger.classList.toggle('open',o);
+const burger = document.getElementById('burger');
+const mob = document.getElementById('mobmenu');
+burger.addEventListener('click', () => {
+  const o = mob.classList.toggle('on');
+  burger.classList.toggle('open', o);
 });
-function chiudi(){mob.classList.remove('on');burger.classList.remove('open');}
+function chiudi() {
+  mob.classList.remove('on');
+  burger.classList.remove('open');
+}
 </script>
 </body>
 </html>
