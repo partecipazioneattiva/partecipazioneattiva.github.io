@@ -169,6 +169,10 @@ footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px;}
   .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
   .fade-in.visible{opacity:1;transform:translateY(0);}
 
+
+  /* === SCROLL PROGRESS BAR === */
+  #scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#8a4e00,#e8900a,#ffd580);z-index:99999;transition:width .1s linear;}
+
   /* === RESPONSIVE MOBILE === */
   /* Bottoni hero: compatti e affiancati */
   .mob-btns{flex-direction:row !important;flex-wrap:wrap !important;}
@@ -655,6 +659,19 @@ burger.addEventListener('click',()=>{
 function chiudi(){mob.classList.remove('on');burger.classList.remove('open');}
 </script>
 
+
+<script>
+(function(){
+  var bar = document.createElement('div');
+  bar.id = 'scroll-progress';
+  document.body.prepend(bar);
+  window.addEventListener('scroll', function(){
+    var s = document.documentElement;
+    var pct = (s.scrollTop || document.body.scrollTop) / (s.scrollHeight - s.clientHeight) * 100;
+    bar.style.width = pct + '%';
+  }, {passive: true});
+})();
+</script>
 
 <script>
 (function(){
