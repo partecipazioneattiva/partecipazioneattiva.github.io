@@ -83,6 +83,8 @@ footer a{color:#f5a623;text-decoration:none;}
 
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#e85d04">
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/pagefind/pagefind-ui.js"></script>
 </head>
 <body>
 
@@ -216,6 +218,13 @@ document.addEventListener('click',function(e){if(e.target===document.getElementB
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register('/sw.js');
 }
+</script>
+
+<div id="search" style="max-width:600px;margin:0 auto;padding:1rem"></div>
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  new PagefindUI({ element: "#search", showImages: false, placeholder: "Cerca nel sito..." });
+});
 </script>
 </body>
 </html>
