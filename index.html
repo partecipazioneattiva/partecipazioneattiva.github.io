@@ -27,6 +27,14 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:'Montserrat',sans-serif;background:#fff;color:#222;}
 
+/* ===== NOTIZIE CARD RESPONSIVE ===== */
+.notizia-card-grid{display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:center;}
+@media(max-width:700px){
+  .notizia-card-grid{grid-template-columns:1fr !important;gap:16px;}
+  .notizia-card-grid > a img{max-height:240px;object-fit:cover;border-radius:12px;}
+  .notizia-badge{font-size:.65em !important;padding:4px 10px !important;white-space:normal !important;}
+}
+
 /* ===== TOPBAR ===== */
 .topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em;}
 .topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600;}
@@ -394,7 +402,7 @@ loadHeroNews();
     <div style="display:inline-flex;align-items:center;gap:8px;background:#c0392b;color:#fff;font-family:'Montserrat',sans-serif;font-size:.72em;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:50px;margin-bottom:20px;">
       📰 Attualità politica — 29 marzo 2026
     </div>
-    <div style="display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:center;">
+    <div style="display:grid;grid-template-columns:280px 1fr;gap:32px;align-items:center;" class="notizia-card-grid">
       <a href="stabilicum.html" style="display:block;line-height:0;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.12);">
         <img src="images/pensattivo-stabilicum.jpg" alt="Pensattivo nella sezione elettorale — Stabilicum" style="width:100%;display:block;" loading="lazy">
       </a>
