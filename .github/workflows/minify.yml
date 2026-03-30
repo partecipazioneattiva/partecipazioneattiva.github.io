@@ -1,7 +1,6 @@
 name: Minify HTML
 on:
-  push:
-    branches: [main]
+  workflow_dispatch
 jobs:
   minify:
     runs-on: ubuntu-latest
