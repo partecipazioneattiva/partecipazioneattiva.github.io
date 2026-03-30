@@ -5,15 +5,18 @@ on:
 jobs:
   minify:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - name: Minify HTML files
-        uses: Justintime50/html-minifier-action@v1.0.0
-        with:
-          files: "*.html"
-          options: "--collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes --use-short-doctype"
+        run: |
+          sudo apt-get install -y minify
+          for f in *.html; do minify --type html "$f" -o "$f"; done
       - name: Commit minified files
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git diff --quiet || git commit -am "Minify HTML" && git push
+          git config user.email "webmaster.partecipazione.attiva@gmail.com"
+          git config user.name "Partecipazione Attiva"
+          git add *.html
+          git diff --staged --quiet || git commit -m "Minifica HTML automaticamente"
+          git push
