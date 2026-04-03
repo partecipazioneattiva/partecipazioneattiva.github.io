@@ -60,4 +60,8 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://partecipazioneattiva.github.io/spanu-sire.html</loc>
+    <lastmod>2026-04-03</lastmod>
+  </url>
 </urlset>
