@@ -1,0 +1,13 @@
+/* TEAM */
+Presidente: Angelo Nicotra
+Portavoce: Luigi Spanu
+Membro Direttivo Napoli: Paolo Neri
+Webmaster: Partecipazione Attiva
+Contatto: partecipazioneattiva21@gmail.com
+Da: Napoli, Italia
+
+/* SITO */
+Ultimo aggiornamento: 2026-04-05
+Linguaggio: Italiano
+Piattaforma: GitHub Pages
+Tecnologie: HTML5, CSS3, JavaScript, Pagefind
