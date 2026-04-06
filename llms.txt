@@ -1,0 +1,31 @@
+# Partecipazione Attiva — llms.txt
+# Movimento politico dei cittadini fondato sulla Costituzione Italiana
+
+> Partecipazione Attiva è una libera associazione di cittadini per una politica trasparente, partecipata e al servizio delle persone. Fondata nel settembre 2021, opera a Napoli e in tutta Italia.
+
+## Pagine principali
+
+- [Home](https://partecipazioneattiva.github.io/index.html): Presentazione del movimento, notizie, battaglie in corso
+- [Chi Siamo / Organigramma](https://partecipazioneattiva.github.io/organigramma.html): Presidente Angelo Nicotra, Portavoce Luigi Spanu, Direttivo completo
+- [Le Nostre Battaglie](https://partecipazioneattiva.github.io/battaglie.html): Elenco delle campagne politiche attive
+
+## Articoli e analisi
+
+- [RC Auto 2026: discriminazioni territoriali](https://partecipazioneattiva.github.io/rcauto.html): Napoli paga 597€, Enna 299€ — analisi delle discriminazioni geografiche nelle tariffe RC Auto
+- [Salute in Vendita: crisi della sanità pubblica](https://partecipazioneattiva.github.io/sanitapubblica.html): 4,5 milioni di italiani rinunciano alle cure, liste d'attesa fino a 2 anni
+- [Stabilicum: legge elettorale spiegata](https://partecipazioneattiva.github.io/stabilicum.html): Analisi della riforma elettorale, iter parlamentare dal 1 aprile 2026
+- [Proposta SIRE: emergenze senza debito](https://partecipazioneattiva.github.io/spanu-sire.html): Luigi Spanu alla Camera il 9 aprile 2026
+- [Stabilicum: aggiornamento iter parlamentare](https://partecipazioneattiva.github.io/spanu-stabilicum.html): Aggiornamento di Luigi Spanu sull'iter
+- [Astensionismo 2022](https://partecipazioneattiva.github.io/astensionismo.html): Il partito che ha vinto le elezioni del 2022 non era in lista
+
+## Territorio
+
+- [Napoli](https://partecipazioneattiva.github.io/napoli.html): Coordinamento napoletano — Paolo Neri, Antonio Cristiano, Rosa Ugon
+- [Territori](https://partecipazioneattiva.github.io/territori.html): Gruppi territoriali in Italia
+- [Parlerò](https://partecipazioneattiva.github.io/parlero.html): Salotto Culturale su TV Flegrea
+
+## Contatti
+
+- Email: partecipazioneattiva21@gmail.com
+- Facebook: https://www.facebook.com/PartecipazioneAttiva21/
+- YouTube: https://www.youtube.com/@partecipazioneattiva
