@@ -1,104 +1,122 @@
-import json, re
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# Script: crea_congresso_bp.py
+# Crea spanu-congresso-bp.html + card hero in index.html + sitemap + llms.txt
+# Seguire il manuale v13 — path assoluti, json.dumps per FAQPage
+
+import json, re, os
+from PIL import Image
+
 base = '/Users/osxssd/Desktop/partecipazioneattiva/'
 
-# ── DATI ARTICOLO ──────────────────────────────────────────────
-slug      = 'spanu-congresso-base-popolare.html'
-img_event = 'images/congresso-base-popolare-2026.webp'
-img_spanu = 'images/organigramma/luigi-spanu.webp'
-url_base  = 'https://partecipazioneattiva.github.io/'
-url_art   = url_base + slug
-data_pub  = '2026-04-07'
-titolo60  = 'Spanu al Congresso Nazionale Base Popolare — 11 aprile'
-desc155   = 'Luigi Spanu porta la voce di Partecipazione Attiva al Congresso Nazionale di Base Popolare. Roma, Sala Umberto, 11 aprile 2026.'
+# ---------------------------------------------------------------------------
+# 0. CONVERTI congresso-nazionale-2026.jpg → images/congresso-bp-2026.webp
+# ---------------------------------------------------------------------------
+jpg_src = base + 'congresso-nazionale-2026.jpg'
+webp_dst = base + 'images/congresso-bp-2026.webp'
 
-# ── FAQ ────────────────────────────────────────────────────────
-faq = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+if os.path.exists(jpg_src):
+    img = Image.open(jpg_src)
+    img.save(webp_dst, 'WEBP', quality=82)
+    w, h = img.size
+    print(f'0. Immagine convertita: {w}x{h}px → images/congresso-bp-2026.webp')
+else:
+    # Se già convertita o non presente, usa dimensioni di fallback
+    w, h = 800, 600
+    print('0. congresso-nazionale-2026.jpg non trovato — uso dimensioni 800x600 (aggiorna manualmente)')
+
+# ---------------------------------------------------------------------------
+# 1. CREA spanu-congresso-bp.html
+# ---------------------------------------------------------------------------
+
+faq_data = [
     {
-      "@type": "Question",
-      "name": "Dove si tiene il Congresso Nazionale di Base Popolare?",
-      "acceptedAnswer": {"@type": "Answer",
-        "text": "Il Congresso si tiene a Roma, presso la Sala Umberto, l'11 aprile 2026."}
+        "@type": "Question",
+        "name": "Quando si tiene il Congresso Nazionale di Base Popolare?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Il Congresso Nazionale di Base Popolare si terrà sabato 11 aprile 2026 a partire dalle ore 09:00 presso la Sala Umberto, Via della Mercede 50, Roma."
+        }
     },
     {
-      "@type": "Question",
-      "name": "Chi rappresenta Partecipazione Attiva all'evento?",
-      "acceptedAnswer": {"@type": "Answer",
-        "text": "Luigi Spanu, Portavoce di Partecipazione Attiva, interverrà al Congresso in rappresentanza del movimento."}
+        "@type": "Question",
+        "name": "Chi rappresenta Partecipazione Attiva al Congresso di Base Popolare?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Luigi Spanu, Portavoce di Partecipazione Attiva, porterà l'intervento del movimento al Congresso Nazionale di Base Popolare dell'11 aprile 2026."
+        }
     },
     {
-      "@type": "Question",
-      "name": "Di cosa parlerà Spanu al Congresso?",
-      "acceptedAnswer": {"@type": "Answer",
-        "text": "Spanu affronterà i temi della costruzione di coalizioni politiche solide, dell'importanza delle regole condivise e del radicamento territoriale come prerequisiti per un cambiamento reale."}
+        "@type": "Question",
+        "name": "Perché Partecipazione Attiva partecipa al Congresso di Base Popolare?",
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Partecipazione Attiva condivide con Base Popolare i valori del riformismo popolare, la visione europea e l'impegno per una politica al servizio dei cittadini. La partecipazione al Congresso Nazionale è un'occasione di confronto e dialogo con le forze politiche che credono in una democrazia reale e partecipata."
+        }
     }
-  ]
-}
-faq_json = json.dumps(faq, ensure_ascii=False, indent=2)
+]
 
-# ── SCHEMA NewsArticle + Author ────────────────────────────────
-news = {
-  "@context": "https://schema.org",
-  "@type": "NewsArticle",
-  "headline": titolo60,
-  "description": desc155,
-  "image": url_base + img_event,
-  "datePublished": data_pub,
-  "dateModified": data_pub,
-  "author": {
-    "@type": "Person",
-    "name": "Luigi Spanu",
-    "jobTitle": "Portavoce di Partecipazione Attiva",
-    "image": url_base + img_spanu,
-    "url": url_base + "organigramma.html"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Partecipazione Attiva",
-    "logo": {"@type": "ImageObject", "url": url_base + "LOGO-PA.webp"}
-  },
-  "mainEntityOfPage": url_art
+schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "NewsArticle",
+            "headline": "Spanu al Congresso Nazionale di Base Popolare — 11 aprile",
+            "description": "Luigi Spanu porta la voce di Partecipazione Attiva al Congresso Nazionale di Base Popolare, sabato 11 aprile 2026 a Roma.",
+            "image": "https://partecipazioneattiva.github.io/images/congresso-bp-2026.webp",
+            "datePublished": "2026-04-07",
+            "dateModified": "2026-04-07",
+            "author": {
+                "@type": "Person",
+                "name": "Luigi Spanu",
+                "jobTitle": "Portavoce di Partecipazione Attiva",
+                "image": "https://partecipazioneattiva.github.io/images/organigramma/luigi-spanu.webp",
+                "url": "https://partecipazioneattiva.github.io/organigramma.html"
+            },
+            "publisher": {
+                "@type": "Organization",
+                "name": "Partecipazione Attiva",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://partecipazioneattiva.github.io/LOGO-PA.webp"
+                }
+            },
+            "mainEntityOfPage": "https://partecipazioneattiva.github.io/spanu-congresso-bp.html"
+        },
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://partecipazioneattiva.github.io/"},
+                {"@type": "ListItem", "position": 2, "name": "Battaglie", "item": "https://partecipazioneattiva.github.io/battaglie.html"},
+                {"@type": "ListItem", "position": 3, "name": "Spanu al Congresso Base Popolare", "item": "https://partecipazioneattiva.github.io/spanu-congresso-bp.html"}
+            ]
+        },
+        {
+            "@type": "FAQPage",
+            "mainEntity": faq_data
+        }
+    ]
 }
-news_json = json.dumps(news, ensure_ascii=False, indent=2)
 
-# ── BREADCRUMB ─────────────────────────────────────────────────
-bread = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home",
-     "item": url_base},
-    {"@type": "ListItem", "position": 2, "name": "Battaglie",
-     "item": url_base + "battaglie.html"},
-    {"@type": "ListItem", "position": 3, "name": titolo60,
-     "item": url_art}
-  ]
-}
-bread_json = json.dumps(bread, ensure_ascii=False, indent=2)
+schema_json = json.dumps(schema, ensure_ascii=False, indent=2)
 
-# ── HTML COMPLETO ──────────────────────────────────────────────
-html = f"""<!DOCTYPE html>
+html = f'''<!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>{titolo60} | Partecipazione Attiva</title>
-  <meta name="description" content="{desc155}">
-  <link rel="canonical" href="{url_art}">
-  <link rel="alternate" hreflang="it" href="{url_art}">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spanu al Congresso Base Popolare — 11 aprile 2026</title>
+  <meta name="description" content="Luigi Spanu porta la voce di Partecipazione Attiva al Congresso Nazionale di Base Popolare, sabato 11 aprile 2026, Sala Umberto Roma.">
+  <link rel="canonical" href="https://partecipazioneattiva.github.io/spanu-congresso-bp.html">
+  <link rel="alternate" hreflang="it" href="https://partecipazioneattiva.github.io/spanu-congresso-bp.html">
 
   <!-- OG + Twitter -->
-  <meta property="og:title" content="{titolo60}">
-  <meta property="og:description" content="{desc155}">
-  <meta property="og:image" content="{url_base}{img_event}">
-  <meta property="og:url" content="{url_art}">
+  <meta property="og:title" content="Spanu al Congresso Nazionale di Base Popolare — 11 aprile">
+  <meta property="og:description" content="Luigi Spanu porta la voce di Partecipazione Attiva al Congresso Nazionale di Base Popolare, sabato 11 aprile 2026 a Roma.">
+  <meta property="og:image" content="https://partecipazioneattiva.github.io/images/congresso-bp-2026.webp">
+  <meta property="og:url" content="https://partecipazioneattiva.github.io/spanu-congresso-bp.html">
   <meta property="og:type" content="article">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{titolo60}">
-  <meta name="twitter:description" content="{desc155}">
-  <meta name="twitter:image" content="{url_base}{img_event}">
 
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C0VVYWW9EM"></script>
@@ -108,99 +126,89 @@ html = f"""<!DOCTYPE html>
   <script>(function(e,t,n,s,o,i,a){{e[n]=e[n]||function(){{(e[n].q=e[n].q||[]).push(arguments)}},i=t.createElement(s),i.async=1,i.src="https://www.clarity.ms/tag/"+o,a=t.getElementsByTagName(s)[0],a.parentNode.insertBefore(i,a)}})(window,document,"clarity","script","w3i2jjth4h")</script>
 
   <!-- Schema.org -->
-  <script type="application/ld+json">{news_json}</script>
-  <script type="application/ld+json">{faq_json}</script>
-  <script type="application/ld+json">{bread_json}</script>
+  <script type="application/ld+json">
+{schema_json}
+  </script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="manifest" href="manifest.json">
 
   <style>
     *{{box-sizing:border-box;margin:0;padding:0}}
-    body{{font-family:'Open Sans',sans-serif;background:#f9f9f7;color:#222;line-height:1.7}}
-    /* ── TOPBAR ── */
-    .topbar{{background:#1a3a5c;color:#fff;font-size:.8rem;padding:6px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}}
-    .topbar a{{color:#f0c040;text-decoration:none}}
-    /* ── NAVBAR ── */
-    nav{{background:#fff;border-bottom:3px solid #1a3a5c;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.1)}}
-    .nav-inner{{max-width:1100px;margin:0 auto;padding:0 20px}}
-    .nav-row1{{display:flex;align-items:center;justify-content:space-between;padding:10px 0 4px}}
-    .nav-logo{{display:flex;align-items:center;gap:10px;text-decoration:none}}
-    .nav-logo img{{height:44px;width:auto}}
-    .nav-logo span{{font-family:'Merriweather',serif;font-size:1.05rem;color:#1a3a5c;font-weight:700;line-height:1.2}}
-    .nav-btns{{display:flex;gap:8px}}
-    .btn-iscriviti{{background:#e63329;color:#fff;border:none;padding:7px 14px;border-radius:4px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none}}
-    .btn-sostieni{{background:#f0c040;color:#1a3a5c;border:none;padding:7px 14px;border-radius:4px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none}}
-    .nav-row2{{display:flex;align-items:center;gap:4px;padding:4px 0 8px;flex-wrap:wrap}}
-    .nav-row2 a{{color:#1a3a5c;text-decoration:none;font-size:.82rem;font-weight:600;padding:4px 8px;border-radius:3px;transition:background .2s}}
-    .nav-row2 a:hover{{background:#eef2f7}}
-    .nav-sep{{color:#ccc;font-size:.9rem}}
-    /* ── BURGER ── */
-    .burger{{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}}
-    .burger span{{display:block;width:24px;height:2px;background:#1a3a5c;transition:.3s}}
-    /* ── HERO ── */
-    .hero{{background:#1a3a5c;color:#fff;padding:48px 20px 40px;text-align:center}}
-    .hero-badge{{display:inline-block;background:#e63329;color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.08em;padding:4px 12px;border-radius:20px;margin-bottom:14px;text-transform:uppercase}}
-    .hero h1{{font-family:'Merriweather',serif;font-size:clamp(1.4rem,4vw,2.2rem);line-height:1.3;max-width:780px;margin:0 auto 16px}}
-    .hero-sub{{font-size:1rem;opacity:.85;max-width:640px;margin:0 auto}}
-    /* ── MAIN ── */
-    .container{{max-width:820px;margin:0 auto;padding:40px 20px}}
-    /* Manifesto evento */
-    .manifesto-wrap{{text-align:center;margin-bottom:36px}}
-    .manifesto-wrap img{{width:100%;height:auto;display:block;border-radius:8px;box-shadow:0 4px 20px rgba(0,0,0,.15)}}
-    /* Scheda evento */
-    .scheda{{background:#fff;border-left:5px solid #e63329;border-radius:6px;padding:24px 28px;margin-bottom:36px;box-shadow:0 2px 10px rgba(0,0,0,.07)}}
-    .scheda h2{{font-family:'Merriweather',serif;color:#1a3a5c;font-size:1.1rem;margin-bottom:14px}}
-    .scheda-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}}
-    .scheda-item{{display:flex;align-items:flex-start;gap:10px;font-size:.92rem}}
-    .scheda-icon{{font-size:1.2rem;flex-shrink:0}}
-    .scheda-label{{font-weight:700;color:#1a3a5c;display:block;font-size:.78rem;text-transform:uppercase;letter-spacing:.05em}}
-    /* Corpo articolo */
-    .articolo h2{{font-family:'Merriweather',serif;color:#1a3a5c;font-size:1.25rem;margin:32px 0 12px}}
-    .articolo p{{margin-bottom:16px;font-size:.97rem}}
-    .articolo .intro{{font-size:1.08rem;font-weight:600;color:#1a3a5c;border-left:4px solid #f0c040;padding-left:16px;margin-bottom:28px}}
-    /* Quote */
-    blockquote{{background:#f0f4f9;border-left:4px solid #1a3a5c;padding:16px 20px;margin:24px 0;border-radius:0 6px 6px 0;font-style:italic;color:#333}}
-    /* Author card */
-    .author-card{{display:flex;align-items:center;gap:18px;background:#fff;border-radius:8px;padding:20px 24px;margin:36px 0;box-shadow:0 2px 10px rgba(0,0,0,.07)}}
-    .author-card img{{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid #1a3a5c;flex-shrink:0}}
-    .author-info strong{{display:block;font-size:1rem;color:#1a3a5c}}
-    .author-info span{{font-size:.85rem;color:#555}}
-    /* Leggi anche */
-    .leggi-anche{{background:#eef2f7;border-radius:8px;padding:20px 24px;margin-top:40px}}
-    .leggi-anche h3{{font-family:'Merriweather',serif;color:#1a3a5c;font-size:.95rem;margin-bottom:12px}}
-    .leggi-anche ul{{list-style:none;display:flex;flex-direction:column;gap:8px}}
-    .leggi-anche ul li a{{color:#e63329;text-decoration:none;font-size:.9rem;font-weight:600}}
-    .leggi-anche ul li a:hover{{text-decoration:underline}}
-    /* FAQ */
-    .faq{{margin-top:40px}}
-    .faq h2{{font-family:'Merriweather',serif;color:#1a3a5c;font-size:1.2rem;margin-bottom:20px}}
-    details{{background:#fff;border:1px solid #dde3ea;border-radius:6px;margin-bottom:10px}}
-    summary{{padding:14px 18px;font-weight:600;cursor:pointer;color:#1a3a5c;list-style:none;display:flex;justify-content:space-between}}
-    summary::after{{content:"+"}}
-    details[open] summary::after{{content:"−"}}
-    details p{{padding:0 18px 16px;font-size:.92rem;color:#444}}
-    /* Footer */
-    footer{{background:#1a3a5c;color:#ccd6e0;text-align:center;padding:30px 20px;font-size:.82rem;margin-top:60px}}
-    footer a{{color:#f0c040;text-decoration:none}}
-    /* Modal */
-    .modal-overlay{{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:999;align-items:center;justify-content:center}}
-    .modal-overlay.open{{display:flex}}
-    .modal-box{{background:#fff;border-radius:10px;padding:32px;max-width:440px;width:90%;position:relative}}
-    .modal-close{{position:absolute;top:12px;right:16px;font-size:1.4rem;cursor:pointer;border:none;background:none;color:#666}}
-    .modal-box h3{{font-family:'Merriweather',serif;color:#1a3a5c;margin-bottom:16px}}
-    .modal-box p{{font-size:.9rem;margin-bottom:10px}}
-    .modal-box .iban{{font-family:monospace;background:#f0f4f9;padding:8px 12px;border-radius:4px;font-size:.9rem;margin:8px 0;display:block}}
-    /* Mobile menu */
-    .mobile-menu{{display:none;flex-direction:column;background:#fff;border-top:1px solid #eee;padding:12px 20px;gap:8px}}
+    body{{font-family:"Inter",sans-serif;background:#f5f0e8;color:#1a1a1a}}
+    /* TOPBAR */
+    .topbar{{background:#b8860b;color:#fff;font-size:0.78rem;padding:6px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}}
+    .topbar a{{color:#fff;text-decoration:none;font-weight:600}}
+    /* NAVBAR */
+    nav{{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}}
+    .nav-inner{{max-width:1200px;margin:0 auto;padding:0 20px}}
+    .nav-row{{display:flex;align-items:center;justify-content:space-between;padding:12px 0 4px}}
+    .logo-area{{display:flex;align-items:center;gap:10px;text-decoration:none}}
+    .logo-area img{{height:52px;width:auto}}
+    .logo-text{{display:flex;flex-direction:column;line-height:1.1}}
+    .logo-text strong{{font-size:1.15rem;font-weight:800;color:#b8860b}}
+    .logo-text span{{font-size:0.68rem;letter-spacing:.12em;color:#666;text-transform:uppercase}}
+    .nav-links{{display:flex;align-items:center;gap:24px;flex-wrap:wrap}}
+    .nav-links a{{text-decoration:none;font-size:0.82rem;font-weight:700;color:#333;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}}
+    .nav-links a:hover,.nav-links a.active{{color:#b8860b}}
+    .nav-links .dot{{color:#b8860b;font-size:1.1rem}}
+    .nav-btns{{display:flex;gap:10px}}
+    .btn-iscriviti{{background:#b8860b;color:#fff;border:none;padding:9px 18px;border-radius:24px;font-weight:700;font-size:0.82rem;cursor:pointer;text-decoration:none;transition:background .2s}}
+    .btn-iscriviti:hover{{background:#9a7009}}
+    .btn-sostienici{{background:transparent;color:#b8860b;border:2px solid #b8860b;padding:7px 16px;border-radius:24px;font-weight:700;font-size:0.82rem;cursor:pointer;text-decoration:none;transition:all .2s}}
+    .btn-sostienici:hover{{background:#b8860b;color:#fff}}
+    .nav-row2{{display:flex;align-items:center;gap:24px;padding:4px 0 10px;flex-wrap:wrap}}
+    .nav-row2 a{{text-decoration:none;font-size:0.82rem;font-weight:700;color:#333;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}}
+    .nav-row2 a:hover{{color:#b8860b}}
+    .nav-row2 .parlero-wrap{{display:flex;flex-direction:column;line-height:1.1}}
+    .nav-row2 .parlero-sub{{font-size:0.62rem;color:#999;font-weight:400;letter-spacing:.05em;text-transform:uppercase}}
+    /* BURGER */
+    .burger{{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;aria-label:"Menu"}}
+    .burger span{{display:block;width:24px;height:2px;background:#333;transition:.3s}}
+    .mobile-menu{{display:none;flex-direction:column;gap:0;background:#fff;border-top:1px solid #eee}}
+    .mobile-menu a{{padding:14px 20px;text-decoration:none;font-weight:700;font-size:0.9rem;color:#333;border-bottom:1px solid #f0e8d0;letter-spacing:.04em;text-transform:uppercase}}
+    .mobile-menu a:hover{{color:#b8860b;background:#fdf8ee}}
     .mobile-menu.open{{display:flex}}
-    .mobile-menu a{{color:#1a3a5c;text-decoration:none;font-weight:600;font-size:.9rem;padding:6px 0;border-bottom:1px solid #f0f0f0}}
-    @media(max-width:700px){{
-      .nav-row2{{display:none}}
+    /* ARTICLE */
+    .article-wrap{{max-width:780px;margin:48px auto;padding:0 20px 60px}}
+    .article-meta{{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}}
+    .badge-new{{background:#b8860b;color:#fff;font-size:0.72rem;font-weight:700;padding:4px 12px;border-radius:12px;letter-spacing:.06em;text-transform:uppercase}}
+    .article-date{{font-size:0.85rem;color:#888}}
+    .article-author{{font-size:0.85rem;color:#555;font-weight:600}}
+    h1{{font-size:2rem;font-weight:800;color:#1a1a1a;line-height:1.2;margin-bottom:18px}}
+    .article-img{{width:100%;height:auto;display:block;border-radius:12px;margin:24px 0;box-shadow:0 4px 18px rgba(0,0,0,.10)}}
+    .article-body{{font-size:1.05rem;line-height:1.75;color:#333}}
+    .article-body p{{margin-bottom:1.2em}}
+    .article-body h2{{font-size:1.3rem;font-weight:700;color:#b8860b;margin:2em 0 0.6em}}
+    .article-body ul{{margin:0.8em 0 1.2em 1.4em}}
+    .article-body li{{margin-bottom:0.5em}}
+    .info-box{{background:#fff8e6;border-left:4px solid #b8860b;border-radius:8px;padding:18px 20px;margin:28px 0;font-size:0.97rem}}
+    .info-box strong{{display:block;margin-bottom:6px;color:#b8860b;font-size:1rem}}
+    /* LEGGI ANCHE */
+    .leggi-anche{{background:#fff;border-radius:12px;padding:24px;margin-top:40px;box-shadow:0 2px 12px rgba(0,0,0,.06)}}
+    .leggi-anche h3{{font-size:0.8rem;font-weight:700;color:#b8860b;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}}
+    .leggi-anche a{{display:block;padding:10px 0;border-bottom:1px solid #f0e8d0;text-decoration:none;color:#333;font-weight:600;font-size:0.95rem;transition:color .2s}}
+    .leggi-anche a:last-child{{border-bottom:none}}
+    .leggi-anche a:hover{{color:#b8860b}}
+    /* FOOTER */
+    footer{{background:#1a1a1a;color:#ccc;padding:40px 20px;text-align:center;font-size:0.85rem}}
+    footer a{{color:#b8860b;text-decoration:none}}
+    /* MODAL */
+    .modal-overlay{{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;align-items:center;justify-content:center}}
+    .modal-overlay.open{{display:flex}}
+    .modal-box{{background:#fff;border-radius:16px;padding:32px;max-width:420px;width:90%;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.15)}}
+    .modal-close{{position:absolute;top:12px;right:16px;font-size:1.4rem;cursor:pointer;color:#999;background:none;border:none}}
+    .modal-box h3{{font-size:1.2rem;font-weight:800;margin-bottom:16px;color:#1a1a1a}}
+    .modal-box p{{font-size:0.92rem;color:#444;margin-bottom:10px;line-height:1.5}}
+    .iban-box{{background:#f5f0e8;border-radius:8px;padding:12px 16px;font-family:monospace;font-size:0.95rem;color:#b8860b;font-weight:700;letter-spacing:.05em;margin:10px 0}}
+    /* RESPONSIVE */
+    @media(max-width:768px){{
+      .nav-links,.nav-row2,.nav-btns{{display:none}}
       .burger{{display:flex}}
-      .nav-btns .btn-iscriviti{{display:none}}
+      h1{{font-size:1.5rem}}
     }}
   </style>
 </head>
@@ -208,249 +216,225 @@ html = f"""<!DOCTYPE html>
 
 <!-- TOPBAR -->
 <div class="topbar">
-  <span>📍 Partecipazione Attiva — Movimento civico nazionale</span>
-  <span>✉ <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a></span>
+  <span>📣 Movimento Politico dei Cittadini — <a href="index.html">partecipazioneattiva.github.io</a></span>
+  <span>✉️ <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a></span>
 </div>
 
 <!-- NAVBAR -->
 <nav>
   <div class="nav-inner">
-    <div class="nav-row1">
-      <a class="nav-logo" href="index.html">
-        <img src="LOGO-PA.webp" alt="Logo Partecipazione Attiva" width="44" height="44">
-        <span>Partecipazione<br>Attiva</span>
-      </a>
-      <div style="display:flex;align-items:center;gap:12px">
-        <div class="nav-btns">
-          <a class="btn-iscriviti" href="https://forms.gle/esempio" target="_blank" rel="noopener">Iscriviti</a>
-          <button class="btn-sostieni" onclick="document.getElementById('modal-sostieni').classList.add('open')">Sostienici</button>
+    <div class="nav-row">
+      <a href="index.html" class="logo-area">
+        <img src="LOGO-PA.webp" alt="Logo Partecipazione Attiva" width="52" height="52">
+        <div class="logo-text">
+          <strong>Partecipazione Attiva</strong>
+          <span>Movimento Politico</span>
         </div>
-        <button class="burger" aria-label="Apri menu" onclick="document.getElementById('mobile-menu').classList.toggle('open')">
-          <span></span><span></span><span></span>
-        </button>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">HOME</a>
+        <span class="dot">•</span>
+        <a href="napoli.html">NAPOLI</a>
+        <a href="territori.html">TERRITORI</a>
+        <a href="battaglie.html">BATTAGLIE</a>
+        <a href="chisiamo.html">CHI SIAMO</a>
+        <a href="documenti.html">DOCUMENTI</a>
+        <a href="organigramma.html">ORGANIGRAMMA</a>
       </div>
+      <div class="nav-btns">
+        <a href="https://forms.gle/9xFU3E76zMo8m1gT6" target="_blank" rel="noopener" class="btn-iscriviti">Iscriviti — è gratis</a>
+        <button class="btn-sostienici" onclick="document.getElementById('modalSostieni').classList.add('open')">Sostienici</button>
+      </div>
+      <button class="burger" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
+        <span></span><span></span><span></span>
+      </button>
     </div>
     <div class="nav-row2">
-      <a href="index.html">Home</a>
-      <span class="nav-sep">•</span>
-      <a href="napoli.html">Napoli</a>
-      <a href="territori.html">Territori</a>
-      <a href="battaglie.html">Battaglie</a>
-      <a href="organigramma.html">Chi siamo</a>
-      <a href="files/" target="_blank">Documenti</a>
-      <a href="organigramma.html">Organigramma</a>
-      <span class="nav-sep">|</span>
-      <a href="parlero.html">Parlerò <small style="font-weight:400;color:#888">Salotto Culturale</small></a>
-      <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener">News FB</a>
-      <a href="https://www.youtube.com/@partecipazioneattiva" target="_blank" rel="noopener">YouTube</a>
+      <a href="parlero.html" class="parlero-wrap">
+        <span>PARLERÒ</span>
+        <span class="parlero-sub">Salotto Culturale</span>
+      </a>
+      <a href="newsfb.html">NEWS FB</a>
+      <a href="youtube.html">YOUTUBE</a>
     </div>
   </div>
-  <!-- Mobile menu -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">Home</a>
-    <a href="napoli.html">Napoli</a>
-    <a href="territori.html">Territori</a>
-    <a href="battaglie.html">Battaglie</a>
-    <a href="organigramma.html">Chi siamo / Organigramma</a>
-    <a href="parlero.html">Parlerò</a>
-    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener">News Facebook</a>
-    <a href="https://www.youtube.com/@partecipazioneattiva" target="_blank" rel="noopener">YouTube</a>
-    <a class="btn-iscriviti" href="https://forms.gle/esempio" target="_blank" rel="noopener" style="text-align:center;border-radius:4px;padding:8px">Iscriviti</a>
+  <div class="mobile-menu">
+    <a href="index.html">HOME</a>
+    <a href="napoli.html">NAPOLI</a>
+    <a href="territori.html">TERRITORI</a>
+    <a href="battaglie.html">BATTAGLIE</a>
+    <a href="chisiamo.html">CHI SIAMO</a>
+    <a href="documenti.html">DOCUMENTI</a>
+    <a href="organigramma.html">ORGANIGRAMMA</a>
+    <a href="parlero.html">PARLERÒ — Salotto Culturale</a>
+    <a href="newsfb.html">NEWS FB</a>
+    <a href="youtube.html">YOUTUBE</a>
+    <a href="https://forms.gle/9xFU3E76zMo8m1gT6" target="_blank" rel="noopener">Iscriviti — è gratis</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <span class="hero-badge">📅 Evento — 11 aprile 2026</span>
-  <h1>Spanu porta la voce di Partecipazione Attiva al Congresso Nazionale di Base Popolare</h1>
-  <p class="hero-sub">Roma, Sala Umberto — Il nostro Portavoce interviene sul futuro del centrosinistra e sulla costruzione di coalizioni radicate nei territori</p>
+<!-- MODAL SOSTIENICI -->
+<div class="modal-overlay" id="modalSostieni">
+  <div class="modal-box">
+    <button class="modal-close" onclick="document.getElementById('modalSostieni').classList.remove('open')" aria-label="Chiudi">×</button>
+    <h3>💛 Sostieni Partecipazione Attiva</h3>
+    <p>Il tuo contributo ci permette di portare avanti le battaglie per i diritti dei cittadini.</p>
+    <p><strong>Bonifico bancario:</strong></p>
+    <div class="iban-box">IT60 X076 0115 8000 0104 3110 679</div>
+    <p>Intestato a: <strong>Partecipazione Attiva APS</strong></p>
+    <p style="margin-top:14px"><strong>Oppure con PayPal:</strong></p>
+    <p><a href="https://paypal.me/partecipazioneattiva" target="_blank" rel="noopener" style="color:#b8860b;font-weight:700">paypal.me/partecipazioneattiva</a></p>
+  </div>
 </div>
 
-<!-- MAIN -->
-<main class="container">
+<!-- ARTICLE -->
+<main>
+  <article class="article-wrap">
 
-  <!-- Manifesto evento -->
-  <div class="manifesto-wrap">
-    <img src="{img_event}" alt="Manifesto Congresso Nazionale Base Popolare 11 aprile 2026" style="width:100%;height:auto;display:block">
-  </div>
-
-  <!-- Scheda evento -->
-  <div class="scheda">
-    <h2>📌 L'evento in breve</h2>
-    <div class="scheda-grid">
-      <div class="scheda-item">
-        <span class="scheda-icon">📅</span>
-        <div><span class="scheda-label">Data</span>Sabato 11 aprile 2026</div>
-      </div>
-      <div class="scheda-item">
-        <span class="scheda-icon">📍</span>
-        <div><span class="scheda-label">Luogo</span>Sala Umberto, Roma</div>
-      </div>
-      <div class="scheda-item">
-        <span class="scheda-icon">🏛️</span>
-        <div><span class="scheda-label">Organizzatore</span>Base Popolare</div>
-      </div>
-      <div class="scheda-item">
-        <span class="scheda-icon">🎙️</span>
-        <div><span class="scheda-label">Relatore PA</span>Luigi Spanu, Portavoce</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Corpo articolo -->
-  <div class="articolo">
-    <p class="intro">L'11 aprile 2026 Luigi Spanu, Portavoce di Partecipazione Attiva, sarà tra i relatori del Congresso Nazionale di Base Popolare a Roma. Un appuntamento che mette al centro le condizioni concrete per costruire un'alternativa politica credibile e radicata.</p>
-
-    <h2>Perché siamo presenti</h2>
-    <p>Partecipazione Attiva ha scelto di partecipare al Congresso Nazionale di Base Popolare perché condivide una convinzione di fondo: le parole non bastano. Servono metodo, regole condivise e un lavoro reale tra i territori. Non un altro manifesto, ma un contratto tra forze politiche disposte a rinunciare a qualcosa pur di costruire qualcosa di duraturo.</p>
-    <p>Spanu porterà all'assemblea la prospettiva di un movimento civico che nasce dal basso, che ha scelto di lavorare sui problemi concreti degli italiani — dalla sanità pubblica alle pensioni, dal costo della vita alla crisi demografica — senza trincerarsi dietro slogan.</p>
-
-    <h2>I temi al centro dell'intervento</h2>
-    <p>L'intervento di Spanu toccherà tre nodi che considera dirimenti per chiunque voglia costruire oggi un'alternativa seria:</p>
-    <blockquote>«Le coalizioni costruite contro un avversario durano quanto dura quell'avversario. Se non abbiamo un'identità fondata su problemi reali e soluzioni concrete, non reggeremo nemmeno questa volta.»</blockquote>
-    <p><strong>Regole scritte, pubbliche e vincolanti.</strong> Come si decide quando non si è d'accordo? Come si scelgono i candidati? Cosa succede se qualcuno si tira indietro? Senza risposte chiare a queste domande, ogni coalizione è destinata a sgretolarsi al primo stress test.</p>
-    <p><strong>Problemi reali, non valori generici.</strong> L'Italia perde 200.000 residenti ogni anno. I giovani emigrano. La sanità pubblica è sotto pressione. Questi non sono temi di destra né di sinistra — sono fatti. Ed è su questi fatti che si deve costruire l'identità politica di una coalizione.</p>
-    <p><strong>Costruire dal basso, non dagli accordi di vertice.</strong> Le coalizioni che hanno retto in Italia sono quelle nate tra persone che si conoscevano già, che avevano già lavorato insieme nei territori. Non gli accordi firmati nelle stanze romane pochi mesi prima delle elezioni.</p>
-
-    <h2>Base Popolare e il percorso verso le elezioni</h2>
-    <p>Il Congresso Nazionale di Base Popolare è un momento importante nel panorama del centrosinistra italiano. <a href="https://basepopolare.it/?l=it" target="_blank" rel="noopener">Base Popolare</a> si propone come soggetto aggregatore di forze civiche e progressiste che vogliono superare le divisioni storiche del centrosinistra attraverso un percorso dal basso. La presenza di Partecipazione Attiva a questo appuntamento è coerente con il lavoro che il movimento porta avanti ogni giorno sui territori.</p>
-
-    <!-- Author card -->
-    <div class="author-card">
-      <img src="{img_spanu}" alt="Luigi Spanu, Portavoce di Partecipazione Attiva" width="72" height="72" loading="lazy">
-      <div class="author-info">
-        <strong>Luigi Spanu</strong>
-        <span>Portavoce di Partecipazione Attiva</span>
-      </div>
+    <div class="article-meta">
+      <span class="badge-new">🗓️ EVENTO — 11 APRILE 2026</span>
+      <span class="article-date">7 aprile 2026</span>
     </div>
 
-    <!-- Leggi anche -->
+    <p class="article-author">Luigi Spanu — Portavoce di Partecipazione Attiva</p>
+
+    <h1>Spanu al Congresso Nazionale di Base Popolare: Partecipazione Attiva porta la sua voce a Roma</h1>
+
+    <img
+      src="images/congresso-bp-2026.webp"
+      alt="Manifesto Congresso Nazionale Base Popolare — 11 aprile 2026, Sala Umberto Roma"
+      class="article-img"
+      width="{w}" height="{h}"
+      loading="lazy"
+    >
+
+    <div class="article-body">
+
+      <p><strong>Sabato 11 aprile 2026</strong>, Luigi Spanu parteciperà al <strong>Congresso Nazionale di Base Popolare</strong> a Roma, portando l'intervento di <strong>Partecipazione Attiva</strong>. L'appuntamento è fissato alle ore 09:00 presso la <strong>Sala Umberto, Via della Mercede 50</strong>.</p>
+
+      <div class="info-box">
+        <strong>📍 Dettagli dell'evento</strong>
+        <strong>Quando:</strong> Sabato 11 aprile 2026 — ore 09:00<br>
+        <strong>Dove:</strong> Sala Umberto, Via della Mercede 50, Roma<br>
+        <strong>Chi:</strong> Luigi Spanu, Portavoce di Partecipazione Attiva
+      </div>
+
+      <h2>Un confronto tra forze riformiste</h2>
+      <p>Il Congresso Nazionale di Base Popolare rappresenta un'importante occasione di confronto tra le forze politiche che credono in una democrazia autentica, nel riformismo popolare e nel progetto europeo. Partecipazione Attiva ha scelto di essere presente, in linea con la propria vocazione al dialogo e alla costruzione di reti tra movimenti civici e politici che mettono i cittadini al centro.</p>
+
+      <h2>I temi dell'intervento di Spanu</h2>
+      <p>L'intervento di Luigi Spanu toccherà i temi fondamentali del programma di Partecipazione Attiva: la riforma del sistema di finanziamento pubblico, la trasparenza nelle istituzioni, e la necessità di dare voce ai cittadini nelle scelte che li riguardano. Un messaggio chiaro: <em>la politica deve tornare a essere uno strumento al servizio delle persone, non dei poteri forti.</em></p>
+
+      <h2>Base Popolare e il PPE</h2>
+      <p>Base Popolare è il partito italiano aderente al <strong>Partito Popolare Europeo (PPE)</strong>, la principale famiglia politica del centro europeo. Il Congresso Nazionale è il momento in cui il partito definisce le sue linee programmatiche e rinnova la sua classe dirigente. La presenza di Partecipazione Attiva testimonia la volontà di costruire ponti tra sensibilità politiche diverse, unite dai valori della partecipazione democratica.</p>
+
+    </div>
+
+    <!-- LEGGI ANCHE -->
     <div class="leggi-anche">
-      <h3>📚 Leggi anche</h3>
-      <ul>
-        <li><a href="spanu-sire.html">Spanu all'evento SIRE alla Camera dei Deputati — 9 aprile 2026</a></li>
-        <li><a href="spanu-stabilicum.html">Luigi Spanu e la battaglia per lo Stabilicum</a></li>
-        <li><a href="stabilicum.html">Cos'è lo Stabilicum e perché cambia le pensioni</a></li>
-        <li><a href="battaglie.html">Tutte le nostre battaglie</a></li>
-      </ul>
+      <h3>Leggi anche</h3>
+      <a href="spanu-sire.html">SIRE: finanziare le emergenze senza debito — 9 aprile alla Camera</a>
+      <a href="stabilicum.html">Stabilicum: il progetto di legge che cambia tutto</a>
+      <a href="spanu-stabilicum.html">Luigi Spanu e l'iter parlamentare dello Stabilicum</a>
+      <a href="battaglie.html">Tutte le battaglie di Partecipazione Attiva</a>
     </div>
 
-    <!-- FAQ -->
-    <div class="faq">
-      <h2>Domande frequenti</h2>
-      <details>
-        <summary>Dove si tiene il Congresso Nazionale di Base Popolare?</summary>
-        <p>Il Congresso si tiene a Roma, presso la Sala Umberto, l'11 aprile 2026.</p>
-      </details>
-      <details>
-        <summary>Chi rappresenta Partecipazione Attiva all'evento?</summary>
-        <p>Luigi Spanu, Portavoce di Partecipazione Attiva, interverrà al Congresso in rappresentanza del movimento.</p>
-      </details>
-      <details>
-        <summary>Di cosa parlerà Spanu al Congresso?</summary>
-        <p>Spanu affronterà i temi della costruzione di coalizioni politiche solide, dell'importanza delle regole condivise e del radicamento territoriale come prerequisiti per un cambiamento reale.</p>
-      </details>
-    </div>
-
-  </div><!-- /articolo -->
+  </article>
 </main>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 Partecipazione Attiva — <a href="privacy.html">Privacy & Cookie Policy</a> — <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a></p>
+  <p>© 2026 <strong>Partecipazione Attiva</strong> — Movimento Politico dei Cittadini</p>
+  <p style="margin-top:8px">
+    <a href="privacy.html">Privacy & Cookie Policy</a> ·
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener">Facebook</a> ·
+    <a href="https://www.youtube.com/@partecipazioneattiva" target="_blank" rel="noopener">YouTube</a>
+  </p>
 </footer>
 
-<!-- MODAL SOSTIENICI -->
-<div class="modal-overlay" id="modal-sostieni">
-  <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('modal-sostieni').classList.remove('open')">✕</button>
-    <h3>Sostieni Partecipazione Attiva</h3>
-    <p><strong>Bonifico bancario</strong></p>
-    <span class="iban">IT00 X000 0000 0000 0000 0000 000</span>
-    <p>Causale: <em>Donazione Partecipazione Attiva</em></p>
-    <p style="margin-top:14px"><strong>PayPal</strong><br>
-      <a href="https://paypal.me/partecipazioneattiva" target="_blank" rel="noopener" style="color:#e63329">paypal.me/partecipazioneattiva</a>
-    </p>
-  </div>
-</div>
-
 </body>
-</html>"""
+</html>
+'''
 
-with open(base + slug, 'w', encoding='utf-8') as f:
+with open(base + 'spanu-congresso-bp.html', 'w', encoding='utf-8') as f:
     f.write(html)
-print('1. ✅ Articolo HTML creato:', slug)
+print('1. spanu-congresso-bp.html creato')
 
-# ── CONVERTI JPG → WEBP ────────────────────────────────────────
-import os
-from PIL import Image
-jpg_src = base + 'congresso-nazionale-2026.jpg'
-webp_dst = base + img_event
-if os.path.exists(jpg_src):
-    img = Image.open(jpg_src)
-    img.save(webp_dst, 'WEBP', quality=82)
-    print(f'2. ✅ Immagine convertita in WebP ({img.size[0]}x{img.size[1]})')
-else:
-    print('2. ⚠️  JPG non trovato — controlla il path')
-
-# ── CARD HERO IN INDEX.HTML ────────────────────────────────────
+# ---------------------------------------------------------------------------
+# 2. AGGIUNGI CARD HERO IN index.html — PRIMA di tutte le altre card
+# ---------------------------------------------------------------------------
 with open(base + 'index.html', 'r', encoding='utf-8') as f:
-    idx = f.read()
+    content = f.read()
 
-card = f"""<a href="{slug}" style="display:block;text-decoration:none;color:inherit">
-  <div style="background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 2px 10px rgba(0,0,0,.1);transition:transform .2s" onmouseover="this.style.transform='translateY(-3px)'" onmouseout="this.style.transform=''">
-    <img src="{img_event}" alt="Congresso Nazionale Base Popolare 11 aprile 2026" style="width:100%;height:auto;display:block" loading="lazy">
-    <div style="padding:16px">
-      <span style="background:#e63329;color:#fff;font-size:.72rem;font-weight:700;padding:3px 9px;border-radius:12px;letter-spacing:.06em">EVENTO — 11 APR 2026</span>
-      <p style="font-family:'Merriweather',serif;font-size:.97rem;font-weight:700;color:#1a3a5c;margin:10px 0 6px;line-height:1.4">Spanu al Congresso Nazionale di Base Popolare</p>
-      <p style="font-size:.83rem;color:#555;line-height:1.5">Roma, Sala Umberto — Partecipazione Attiva porta la sua voce nel dibattito sul futuro del centrosinistra italiano.</p>
-    </div>
+card = '''<a href="spanu-congresso-bp.html" style="display:flex;align-items:stretch;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);text-decoration:none;color:inherit;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 6px 24px rgba(0,0,0,.14)'" onmouseout="this.style.boxShadow='0 2px 12px rgba(0,0,0,.08)'">
+  <div style="width:220px;min-width:220px;overflow:hidden;flex-shrink:0">
+    <img src="images/organigramma/luigi-spanu.webp" alt="Luigi Spanu al Congresso Base Popolare" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">
+  </div>
+  <div style="padding:22px 24px;display:flex;flex-direction:column;justify-content:center;gap:8px">
+    <span style="background:#f5f0e8;color:#b8860b;font-size:0.72rem;font-weight:700;padding:5px 14px;border-radius:12px;letter-spacing:.06em;text-transform:uppercase;width:fit-content">🆕 NUOVO — 7 APRILE 2026</span>
+    <p style="font-size:0.85rem;color:#888;margin:0">Luigi Spanu — Portavoce PA</p>
+    <p style="font-size:1.05rem;font-weight:700;color:#1a1a1a;margin:0;line-height:1.3">Spanu al Congresso Nazionale di Base Popolare — 11 aprile a Roma</p>
+    <span style="color:#b8860b;font-weight:700;font-size:0.9rem">Leggi l\'articolo →</span>
   </div>
 </a>
-"""
+'''
 
-# Inserisce PRIMA della prima card esistente (dopo loadHeroNews())
-target = 'loadHeroNews()</script>'
-if target in idx:
-    # trova il primo <a href= dopo il target
-    pos = idx.find(target) + len(target)
-    idx = idx[:pos] + '\n' + card + idx[pos:]
-    with open(base + 'index.html', 'w', encoding='utf-8') as f:
-        f.write(idx)
-    print('3. ✅ Card hero aggiunta in index.html')
+# Inserisce la nuova card PRIMA della card SIRE (quella più recente precedente)
+target = 'loadHeroNews()</script><a href="spanu-sire.html"'
+if target in content:
+    content = content.replace(target, 'loadHeroNews()</script>' + card + '<a href="spanu-sire.html"')
+    print('2. Card hero inserita prima di spanu-sire')
 else:
-    print('3. ⚠️  Target loadHeroNews() non trovato in index.html — inserisci la card manualmente')
+    # Fallback: cerca il primo <a href nell'area hero dopo loadHeroNews
+    target2 = 'loadHeroNews()</script>'
+    if target2 in content:
+        content = content.replace(target2, target2 + card, 1)
+        print('2. Card hero inserita (fallback dopo loadHeroNews)')
+    else:
+        print('2. ⚠️  ATTENZIONE: target non trovato — card NON inserita. Verifica manualmente index.html')
 
-# ── SITEMAP ────────────────────────────────────────────────────
+with open(base + 'index.html', 'w', encoding='utf-8') as f:
+    f.write(content)
+
+# ---------------------------------------------------------------------------
+# 3. AGGIORNA sitemap.xml
+# ---------------------------------------------------------------------------
 with open(base + 'sitemap.xml', 'r', encoding='utf-8') as f:
     sm = f.read()
 
-if slug not in sm:
-    entry = f"""  <url>
-    <loc>{url_art}</loc>
-    <lastmod>{data_pub}</lastmod>
+new_url = '''  <url>
+    <loc>https://partecipazioneattiva.github.io/spanu-congresso-bp.html</loc>
+    <lastmod>2026-04-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-  </url>"""
-    sm = sm.replace('</urlset>', entry + '\n</urlset>')
+  </url>'''
+
+if 'spanu-congresso-bp.html' not in sm:
+    sm = sm.replace('</urlset>', new_url + '\n</urlset>')
     with open(base + 'sitemap.xml', 'w', encoding='utf-8') as f:
         f.write(sm)
-    print('4. ✅ Sitemap aggiornata')
+    print('3. Sitemap aggiornata')
 else:
-    print('4. ℹ️  URL già presente in sitemap')
+    print('3. URL già in sitemap — nessuna modifica')
 
-# ── LLMS.TXT ───────────────────────────────────────────────────
-with open(base + 'llms.txt', 'r', encoding='utf-8') as f:
-    llms = f.read()
-
-entry_llms = f'- [{titolo60}]({url_art})'
-if slug not in llms:
-    llms = llms.replace('## Articoli e analisi', '## Articoli e analisi\n' + entry_llms)
-    with open(base + 'llms.txt', 'w', encoding='utf-8') as f:
-        f.write(llms)
-    print('5. ✅ llms.txt aggiornato')
+# ---------------------------------------------------------------------------
+# 4. AGGIORNA llms.txt
+# ---------------------------------------------------------------------------
+llms_path = base + 'llms.txt'
+if os.path.exists(llms_path):
+    with open(llms_path, 'r', encoding='utf-8') as f:
+        llms = f.read()
+    entry = '- Spanu al Congresso Nazionale di Base Popolare (11 aprile 2026): https://partecipazioneattiva.github.io/spanu-congresso-bp.html'
+    if 'spanu-congresso-bp' not in llms:
+        # Aggiunge dopo la prima riga della sezione articoli
+        llms = llms.replace('- SIRE:', entry + '\n- SIRE:', 1)
+        with open(llms_path, 'w', encoding='utf-8') as f:
+            f.write(llms)
+        print('4. llms.txt aggiornato')
+    else:
+        print('4. Voce già in llms.txt')
 else:
-    print('5. ℹ️  Già presente in llms.txt')
+    print('4. llms.txt non trovato — skip')
 
-print('\n✅ Script completato. Ora esegui:')
+print('\n✅ TUTTO FATTO. Ora esegui lo Step 2:')
 print('cd ~/Desktop/partecipazioneattiva && npx pagefind --site . --output-path pagefind && python3 indexnow.py && git add . && git commit -m "nuovo articolo: Spanu al Congresso Nazionale Base Popolare 11 aprile 2026" && git push')
