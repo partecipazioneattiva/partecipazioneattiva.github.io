@@ -115,41 +115,7 @@
   <link rel="manifest" href="manifest.json">
 
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Inter",sans-serif;background:#f5f0e8;color:#1a1a1a}
-    /* TOPBAR */
-    .topbar{background:#b8860b;color:#fff;font-size:0.78rem;padding:6px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
-    .topbar a{color:#fff;text-decoration:none;font-weight:600}
-    /* NAVBAR */
-    nav{background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.08);position:sticky;top:0;z-index:100}
-    .nav-inner{max-width:1200px;margin:0 auto;padding:0 20px}
-    .nav-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0 4px}
-    .logo-area{display:flex;align-items:center;gap:10px;text-decoration:none}
-    .logo-area img{height:52px;width:auto}
-    .logo-text{display:flex;flex-direction:column;line-height:1.1}
-    .logo-text strong{font-size:1.15rem;font-weight:800;color:#b8860b}
-    .logo-text span{font-size:0.68rem;letter-spacing:.12em;color:#666;text-transform:uppercase}
-    .nav-links{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-    .nav-links a{text-decoration:none;font-size:0.82rem;font-weight:700;color:#333;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
-    .nav-links a:hover,.nav-links a.active{color:#b8860b}
-    .nav-links .dot{color:#b8860b;font-size:1.1rem}
-    .nav-btns{display:flex;gap:10px}
-    .btn-iscriviti{background:#b8860b;color:#fff;border:none;padding:9px 18px;border-radius:24px;font-weight:700;font-size:0.82rem;cursor:pointer;text-decoration:none;transition:background .2s}
-    .btn-iscriviti:hover{background:#9a7009}
-    .btn-sostienici{background:transparent;color:#b8860b;border:2px solid #b8860b;padding:7px 16px;border-radius:24px;font-weight:700;font-size:0.82rem;cursor:pointer;text-decoration:none;transition:all .2s}
-    .btn-sostienici:hover{background:#b8860b;color:#fff}
-    .nav-row2{display:flex;align-items:center;gap:24px;padding:4px 0 10px;flex-wrap:wrap}
-    .nav-row2 a{text-decoration:none;font-size:0.82rem;font-weight:700;color:#333;letter-spacing:.04em;text-transform:uppercase;transition:color .2s}
-    .nav-row2 a:hover{color:#b8860b}
-    .nav-row2 .parlero-wrap{display:flex;flex-direction:column;line-height:1.1}
-    .nav-row2 .parlero-sub{font-size:0.62rem;color:#999;font-weight:400;letter-spacing:.05em;text-transform:uppercase}
-    /* BURGER */
-    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;aria-label:"Menu"}
-    .burger span{display:block;width:24px;height:2px;background:#333;transition:.3s}
-    .mobile-menu{display:none;flex-direction:column;gap:0;background:#fff;border-top:1px solid #eee}
-    .mobile-menu a{padding:14px 20px;text-decoration:none;font-weight:700;font-size:0.9rem;color:#333;border-bottom:1px solid #f0e8d0;letter-spacing:.04em;text-transform:uppercase}
-    .mobile-menu a:hover{color:#b8860b;background:#fdf8ee}
-    .mobile-menu.open{display:flex}
+    topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em}.topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600}.topbar a:hover{color:#fff}.navbar{position:sticky;top:0;z-index:999;background:#fff;border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,8%);display:flex;align-items:center;justify-content:space-between;padding:0 32px;min-height:80px}.nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0}.nav-logo img{width:68px;height:68px;border-radius:50%}.nav-nome{font-weight:900;font-size:1.25em;color:#8a4e00;line-height:1.1}.nav-nome small{display:block;font-weight:400;font-size:.58em;color:#aaa;letter-spacing:2px;text-transform:uppercase}.nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;max-width:700px}.nav-links a{padding:18px 14px;color:#444;text-decoration:none;font-size:.92em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}.nav-links a:hover{color:#e8900a;border-bottom-color:#e8900a}.nav-cta{display:flex;gap:10px;margin-left:16px}.btn-iscr{background:#e8900a;color:#fff;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.82em;font-weight:700;transition:all .2s}.btn-iscr:hover{background:#8a4e00}.btn-sost{background:0 0;color:#e8900a;padding:9px 20px;border-radius:50px;text-decoration:none;font-size:.82em;font-weight:700;border:2px solid #e8900a;transition:all .2s}.btn-sost:hover{background:#fff8ee}.burger{display:none;background:0 0;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}.burger span{display:block;width:24px;height:2px;background:#8a4e00;border-radius:2px;transition:all .3s}.burger.open span:nth-child(1){transform:translateY(7px)rotate(45deg)}.burger.open span:nth-child(2){opacity:0}.burger.open span:nth-child(3){transform:translateY(-7px)rotate(-45deg)}.mob-menu{display:none;flex-direction:column;background:#fff;border-top:2px solid #f0f0f0;position:absolute;top:100%;left:0;right:0;box-shadow:0 8px 24px rgba(0,0,0,.1)}.mob-menu.on{display:flex}.mob-menu a{padding:14px 32px;color:#333;text-decoration:none;font-weight:700;font-size:.9em;border-bottom:1px solid #f5f5f5}.mob-menu a:hover{background:#fff8ee;color:#e8900a}.hero{position:relative;min-height:520px;background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);display:flex;align-items:center;overflow:hidden}.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,.35)}.hero-content{position:relative;z-index:2;padding:60px 48px;max-width:620px}.hero-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:.72em;font-weight:700;letter-spacing:3px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:20px}.hero h1{font-family:merriweather,serif;font-size:clamp(1.8em,4vw,3em);font-weight:700;color:#fff;line-height:1.2;margin-bottom:16px;text-shadow:0 2px 8px rgba(0,0,0,.3)}.hero p{color:rgba(255,255,255,.88);font-size:1.05em;line-height:1.75;margin-bottom:32px;max-width:480px}.hero-btns{display:flex;gap:14px;flex-wrap:wrap}.btn-w{background:#fff;color:#8a4e00;padding:13px 30px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .25s;box-shadow:0 4px 16px rgba(0,0,0,.15)}.btn-w:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.2)}.btn-wout{background:0 0;color:#fff;padding:13px 30px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;border:2px solid rgba(255,255,255,.7);transition:all .25s}.btn-wout:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}.magazine{padding:56px 32px;max-width:1100px;margin:0 auto}.mag-header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:28px}.mag-header h2{font-family:merriweather,serif;font-size:1.6em;color:#8a4e00}.mag-header a{color:#e8900a;font-size:.85em;font-weight:700;text-decoration:none}.mag-header a:hover{text-decoration:underline}.mag-grid{display:grid;grid-template-columns:2fr 1fr;gap:24px}.mag-main{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;background:#111}.mag-main img{width:100%;height:360px;object-fit:cover;opacity:.75;transition:opacity .3s}.mag-main:hover img{opacity:.6}.mag-main-info{position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(0deg,rgba(0,0,0,.85) 0%,transparent 100%)}.mag-main-info .cat{display:inline-block;background:#e8900a;color:#fff;font-size:.68em;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:3px 10px;border-radius:4px;margin-bottom:10px}.mag-main-info h3{font-family:merriweather,serif;color:#fff;font-size:1.35em;line-height:1.3;margin-bottom:8px}.mag-main-info p{color:rgba(255,255,255,.75);font-size:.85em}.mag-side{display:flex;flex-direction:column;gap:16px}.mag-card{display:flex;gap:14px;background:#fafafa;border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;border:1.5px solid #eee}.mag-card:hover{border-color:#e8900a;background:#fff8ee}.mag-card img{width:100px;height:80px;object-fit:cover;flex-shrink:0}.mag-card-info{padding:10px 12px 10px 0}.mag-card-info .cat{font-size:.65em;font-weight:700;color:#e8900a;text-transform:uppercase;letter-spacing:1px}.mag-card-info h4{font-size:.88em;color:#333;font-weight:700;line-height:1.35;margin-top:4px}.mag-card-info span{font-size:.72em;color:#aaa;margin-top:4px;display:block}.fb-section{background:#f5f5f5;padding:56px 32px}.fb-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}.fb-testo h2{font-family:merriweather,serif;font-size:1.6em;color:#8a4e00;margin-bottom:8px}.fb-testo .linea{width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:20px}.fb-testo p{color:#555;line-height:1.8;margin-bottom:20px}.fb-testo a{display:inline-flex;align-items:center;gap:8px;background:#1877f2;color:#fff;padding:11px 24px;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .25s}.fb-testo a:hover{background:#1565d8;transform:translateY(-2px)}.fb-widget{border-radius:12px;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.1)}.chisiamo{padding:56px 32px;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}.cs-testo h2{font-family:merriweather,serif;font-size:1.6em;color:#8a4e00;margin-bottom:8px}.linea{width:48px;height:4px;background:linear-gradient(90deg,#f5a623,#e8900a);border-radius:2px;margin-bottom:20px}.cs-testo p{color:#555;line-height:1.8;margin-bottom:14px}.valori{display:grid;grid-template-columns:1fr 1fr;gap:14px}.valore{background:#fff8ee;border-radius:10px;padding:18px;border-left:4px solid #e8900a}.valore h4{color:#8a4e00;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}.valore p{color:#666;font-size:.85em;line-height:1.6;margin:0}.documenti{background:#fafafa;padding:56px 32px}.doc-inner{max-width:1100px;margin:0 auto}.doc-inner h2{font-family:merriweather,serif;font-size:1.6em;color:#8a4e00;margin-bottom:8px}.doc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:28px}.doc{display:flex;align-items:center;gap:12px;background:#fff;border-radius:10px;padding:15px 16px;text-decoration:none;color:#333;border:1.5px solid #eee;transition:all .2s}.doc:hover{border-color:#e8900a;background:#fff8ee;transform:translateY(-2px)}.doc-ico{width:38px;height:38px;background:linear-gradient(135deg,#ff6b6b,#ee5a24);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1em;flex-shrink:0}.doc strong{display:block;font-size:.85em;color:#8a4e00;font-weight:700}.doc span{font-size:.68em;color:#aaa;text-transform:uppercase;letter-spacing:.5px}.iscriviti{padding:56px 32px;max-width:1100px;margin:0 auto}.iscr-box{background:linear-gradient(135deg,#8a4e00,#e8900a);border-radius:20px;padding:52px 48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}.iscr-testo h2{font-family:merriweather,serif;font-size:1.8em;color:#fff;margin-bottom:12px}.iscr-testo p{color:rgba(255,255,255,.88);line-height:1.75;margin-bottom:24px}.iscr-btns{display:flex;flex-direction:column;gap:12px}.iscr-btns a{display:block;text-align:center;padding:14px 24px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9em;transition:all .25s}.iscr-btns a.primo{background:#fff;color:#8a4e00;box-shadow:0 4px 16px rgba(0,0,0,.15)}.iscr-btns a.primo:hover{transform:translateY(-2px)}.iscr-btns a.secondo{background:0 0;color:#fff;border:2px solid rgba(255,255,255,.6)}.iscr-btns a.secondo:hover{background:rgba(255,255,255,.1)}.iscr-steps{display:flex;flex-direction:column;gap:14px}.step{display:flex;align-items:center;gap:14px}.step-n{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.2);border:2px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;flex-shrink:0}.step p{color:rgba(255,255,255,.88);font-size:.9em;line-height:1.5;margin:0}footer{background:#1a0d00;color:rgba(255,255,255,.55);padding:48px 32px 28px}.foot-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:36px}.foot-brand img{width:60px;height:60px;border-radius:50%;margin-bottom:14px}.foot-brand p{font-size:.82em;line-height:1.7;margin-top:8px}.foot-col h4{color:#f5a623;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}.foot-col a{display:block;color:rgba(255,255,255,.5);text-decoration:none;font-size:.82em;margin-bottom:8px;transition:color .2s}.foot-col a:hover{color:#f5a623}.foot-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,8%);padding-top:20px;display:flex;justify-content:space-between;font-size:.75em;flex-wrap:wrap;gap:10px}.foot-bottom a{color:#f5a623;text-decoration:none}@media(max-width:900px){.nav-links,.nav-cta{display:none}.burger{display:flex}.navbar{position:relative}.mag-grid{grid-template-columns:1fr}.mag-main img{height:260px}.fb-inner,.chisiamo,.iscr-box{grid-template-columns:1fr}.valori{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr}.hero-content{padding:60px 24px}.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}.fade-in.visible{opacity:1;transform:translateY(0)}#scroll-progress{position:fixed;top:0;left:0;width:0%;height:3px;background:linear-gradient(90deg,#8a4e00,#e8900a,#ffd580);z-index:99999;transition:width .1s linear}.mob-btns{flex-direction:row!important;flex-wrap:wrap!important}.mob-btns a{padding:11px 20px!important;font-size:.82em!important;flex:none!important}.mob-evento{align-items:flex-start!important}.iscr-btns{flex-direction:column!important;gap:12px!important}.iscr-btns a{text-align:center!important;white-space:normal!important;font-size:.82em!important}.primo{white-space:normal!important;text-align:center!important}.mob-1col{grid-template-columns:1fr!important;gap:20px!important}.mob-flex-col{flex-direction:column!important;padding:24px 20px!important;gap:16px!important}section[style*="padding:64px 48px"]{padding:36px 16px!important}#perche-pa{padding:40px 16px!important}.topbar{flex-wrap:wrap;padding:6px 16px;gap:4px}.topbar>div{flex-wrap:wrap;gap:2px}}
     /* ARTICLE */
     .article-wrap{max-width:780px;margin:48px auto;padding:0 20px 60px}
     .article-meta{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap}
@@ -188,84 +154,32 @@
       .burger{display:flex}
       h1{font-size:1.5rem}
     }
+  
+  
   </style>
 </head>
 <body>
-
-<!-- TOPBAR -->
-<div class="topbar">
-  <span>📣 Movimento Politico dei Cittadini — <a href="index.html">partecipazioneattiva.github.io</a></span>
-  <span>✉️ <a href="/cdn-cgi/l/email-protection#314150434554525841504b585e5f54504545584750030071565c50585d1f525e5c"><span class="__cf_email__" data-cfemail="5d2d3c2f29383e342d3c27343233383c2929342b3c6f6c1d3a303c3431733e3230">[email&#160;protected]</span></a></span>
-</div>
-
-<!-- NAVBAR -->
-<nav>
-  <div class="nav-inner">
-    <div class="nav-row">
-      <a href="index.html" class="logo-area">
-        <img src="LOGO-PA.webp" alt="Logo Partecipazione Attiva" width="52" height="52">
-        <div class="logo-text">
-          <strong>Partecipazione Attiva</strong>
-          <span>Movimento Politico</span>
-        </div>
-      </a>
-      <div class="nav-links">
-        <a href="index.html">HOME</a>
-        <span class="dot">•</span>
-        <a href="napoli.html">NAPOLI</a>
-        <a href="territori.html">TERRITORI</a>
-        <a href="battaglie.html">BATTAGLIE</a>
-        <a href="chisiamo.html">CHI SIAMO</a>
-        <a href="documenti.html">DOCUMENTI</a>
-        <a href="organigramma.html">ORGANIGRAMMA</a>
-      </div>
-      <div class="nav-btns">
-        <a href="https://forms.gle/9xFU3E76zMo8m1gT6" target="_blank" rel="noopener" class="btn-iscriviti">Iscriviti — è gratis</a>
-        <button class="btn-sostienici" onclick="document.getElementById('modalSostieni').classList.add('open')">Sostienici</button>
-      </div>
-      <button class="burger" aria-label="Menu" onclick="document.querySelector('.mobile-menu').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-    <div class="nav-row2">
-      <a href="parlero.html" class="parlero-wrap">
-        <span>PARLERÒ</span>
-        <span class="parlero-sub">Salotto Culturale</span>
-      </a>
-      <a href="newsfb.html">NEWS FB</a>
-      <a href="youtube.html">YOUTUBE</a>
-    </div>
-  </div>
-  <div class="mobile-menu">
-    <a href="index.html">HOME</a>
-    <a href="napoli.html">NAPOLI</a>
-    <a href="territori.html">TERRITORI</a>
-    <a href="battaglie.html">BATTAGLIE</a>
-    <a href="chisiamo.html">CHI SIAMO</a>
-    <a href="documenti.html">DOCUMENTI</a>
-    <a href="organigramma.html">ORGANIGRAMMA</a>
-    <a href="parlero.html">PARLERÒ — Salotto Culturale</a>
-    <a href="newsfb.html">NEWS FB</a>
-    <a href="youtube.html">YOUTUBE</a>
-    <a href="https://forms.gle/9xFU3E76zMo8m1gT6" target="_blank" rel="noopener">Iscriviti — è gratis</a>
-  </div>
-</nav>
-
-<!-- MODAL SOSTIENICI -->
-<div class="modal-overlay" id="modalSostieni">
-  <div class="modal-box">
-    <button class="modal-close" onclick="document.getElementById('modalSostieni').classList.remove('open')" aria-label="Chiudi">×</button>
-    <h3>💛 Sostieni Partecipazione Attiva</h3>
-    <p>Il tuo contributo ci permette di portare avanti le battaglie per i diritti dei cittadini.</p>
-    <p><strong>Bonifico bancario:</strong></p>
-    <div class="iban-box">IT60 X076 0115 8000 0104 3110 679</div>
-    <p>Intestato a: <strong>Partecipazione Attiva APS</strong></p>
-    <p style="margin-top:14px"><strong>Oppure con PayPal:</strong></p>
-    <p><a href="https://paypal.me/partecipazioneattiva" target="_blank" rel="noopener" style="color:#b8860b;font-weight:700">paypal.me/partecipazioneattiva</a></p>
-  </div>
-</div>
-
-<!-- ARTICLE -->
+<div class=topbar><span>📧 <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="720213000617111b0213081b1d1c171306061b0413404332151f131b1e5c111d1f">[email&#160;protected]</a></span><div><a href=https://www.facebook.com/PartecipazioneAttiva21/ target=_blank rel="noopener noreferrer">Facebook</a>
+<a href=https://www.youtube.com/@partecipazioneattiva target=_blank rel="noopener noreferrer">YouTube</a>
+<a href=#contatti>Contatti</a></div></div><nav class=navbar id=navbar><div class=nav-logo><img src=LOGO-PA.webp alt="Partecipazione Attiva — Movimento Politico" width=48 height=48><div class=nav-nome>Partecipazione Attiva<small>Movimento politico</small></div></div><div class=nav-links><a href=index.html>Home</a><a href=napoli.html style=color:#e8900a;font-weight:900>&#9679; Napoli</a><a href=territori.html>Territori</a><a href=battaglie.html>Battaglie</a><a href=#chisiamo>Chi Siamo</a><a href=#statuto>Documenti</a><a href=organigramma.html>Organigramma</a>
+<a href=parlero.html style=text-align:center;line-height:1.2;display:inline-flex;flex-direction:column;align-items:center><span style=font-weight:900;letter-spacing:.5px>PARLER&#210;</span><span style=font-size:.75em;font-weight:700;color:#8a4e00;text-transform:none;letter-spacing:0>Salotto Culturale</span></a><a href=#blog>News FB</a><a href=https://www.youtube.com/@partecipazioneattiva target=_blank rel="noopener noreferrer">YouTube</a></div><div class=nav-cta><a href=https://docs.google.com/forms/d/e/1FAIpQLSdUJHaPB9o6gA7TXHNLNgsKcftZjwCsjepZ3r_C9TH2ODsr3A/viewform target=_blank rel="noopener noreferrer" class=btn-iscr>Iscriviti</a>
+<a href=# onclick=apriSostienici(event) class=btn-sost>Sostienici</a></div><button class=burger id=burger aria-label="Apri menu">
+<span></span><span></span><span></span></button><div class=mob-menu id=mobmenu><a href=index.html onclick=chiudi()>Home</a>
+<a href=napoli.html style=color:#e8900a onclick=chiudi()>&#9679; Napoli</a>
+<a href=#blog onclick=chiudi()>Notizie</a>
+<a href=territori.html onclick=chiudi()>Territori</a>
+<a href=organigramma.html onclick=chiudi()>Organigramma</a>
+<a href=#chisiamo onclick=chiudi()>Chi Siamo</a>
+<a href=#statuto onclick=chiudi()>Documenti</a>
+<a href=parlero.html onclick=chiudi()>Parler&#242;</a>
+<a href=battaglie.html onclick=chiudi()>Le Nostre Battaglie</a>
+<a href=#facebook onclick=chiudi()>Facebook</a>
+<a href=https://www.youtube.com/@partecipazioneattiva target=_blank rel="noopener noreferrer" onclick=chiudi()>YouTube</a>
+<a href=#iscriviti onclick=chiudi()>Iscriviti</a>
+<a href=#contatti onclick=chiudi()>Contatti</a>
+<a href=# onclick=chiudi(),apriSostienici(event) style=background:#e8900a;color:#fff;text-align:center;font-weight:900>Sostienici</a></div></nav>
+<div id=modal-sostienici style=display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center><div style="background:#fff;border-radius:16px;padding:36px;max-width:480px;width:90%;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.2)"><button onclick='document.getElementById("modal-sostienici").style.display="none"' style="position:absolute;top:14px;right:18px;background:0 0;border:none;font-size:1.4em;cursor:pointer;color:#888">✕</button><div style=text-align:center;margin-bottom:20px><img src=LOGO-PA.webp width="400" height="300" loading=lazy alt="Logo Partecipazione Attiva — Movimento Politico dei Cittadini" style=height:60px></div><h2 style=font-family:merriweather,serif;color:#8a4e00;font-size:1.2em;margin-bottom:6px;text-align:center>Sostieni Partecipazione Attiva</h2><p style=color:#333;font-size:.85em;text-align:center;margin-bottom:24px>Ogni contributo ci aiuta a portare avanti le nostre battaglie.<div style="background:#fff8ee;border-radius:12px;padding:18px;margin-bottom:16px;border:1.5px solid #e8900a"><div style=font-weight:700;color:#8a4e00;font-size:.85em;margin-bottom:10px>🏦 Bonifico Bancario</div><div style=font-size:.82em;color:#222;line-height:1.9;font-weight:500><strong>Intestato a:</strong> Daniele Tandura (Tesoriere P.A.)<br><strong>IBAN:</strong> IT70A0366901600557449712670<br><strong>SWIFT:</strong> REVOITM2<br><strong>Causale:</strong> Iscrizione/Rinnovo/Donazione progetto politico</div>
+<script>function apriSostienici(e){e.preventDefault();var t=document.getElementById("modal-sostienici");t.style.display="flex"}document.addEventListener("click",function(e){e.target===document.getElementById("modal-sostienici")&&(document.getElementById("modal-sostienici").style.display="none")})</script>
 <main>
   <article class="article-wrap">
 
@@ -322,10 +236,15 @@
 
   </article>
 </main>
-
-<!-- FOOTER -->
-<footer>
-  <p>© 2026 <strong>Partecipazione Attiva</strong> — Movimento Politico dei Cittadini</p>
-  <p style="margin-top:8px">
-    <a href="privacy.html">Privacy & Cookie Policy</a> ·
-    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="no
+<footer id=contatti><div class=foot-grid><div class=foot-brand><img src=LOGO-PA.webp alt="Partecipazione Attiva — Movimento Politico" width=48 height=48><div class=nav-nome style=color:#f5a623;font-size:1em>Partecipazione Attiva</div><p>Una libera associazione di cittadini per una politica trasparente e partecipata, ispirata alla Costituzione italiana.</div><div class=foot-col><h4>Navigazione</h4><a href=index.html>Home</a><a href=napoli.html style=color:#e8900a;font-weight:900>&#9679; Napoli</a><a href=#blog>News FB</a>
+<a href=territori.html>Territori</a><a href=organigramma.html>Organigramma</a><a href=#chisiamo>Chi Siamo</a>
+<a href=#statuto>Documenti</a>
+<a href=#iscriviti>Iscriviti</a>
+<a href=#contatti>Contatti</a></div><div class=foot-col><h4>Contatti</h4><a href="/cdn-cgi/l/email-protection#b7c7d6c5c3d2d4dec7d6cdded8d9d2d6c3c3dec1d68586f7d0dad6dedb99d4d8da"><span class="__cf_email__" data-cfemail="423223303627212b3223382b2d2c272336362b3423707302252f232b2e6c212d2f">[email&#160;protected]</span></a>
+<a href=https://www.facebook.com/PartecipazioneAttiva21/ target=_blank rel="noopener noreferrer">Facebook</a></div></div><div class=foot-bottom><span>All Right Reserved. Il sito non risponde dell'eventuale utilizzo improprio dei contenuti.</span>
+<span><a href=privacy.html>Privacy Policy</a> &nbsp;|&nbsp; <a href=privacy.html#cookie>Cookie Policy</a></span></div></footer>
+<script>(function(){var e=document.createElement("div");e.id="scroll-progress",document.body.prepend(e),window.addEventListener("scroll",function(){var t=document.documentElement,n=(t.scrollTop||document.body.scrollTop)/(t.scrollHeight-t.clientHeight)*100;e.style.width=n+"%"},{passive:!0})})()</script>
+<script>(function(){var e,t=document.querySelectorAll(".fade-in");if(!t.length)return;e=new IntersectionObserver(function(t){t.forEach(function(t){t.isIntersecting&&(t.target.classList.add("visible"),e.unobserve(t.target))})},{threshold:.12}),t.forEach(function(t){e.observe(t)})})()</script>
+<script>const burger=document.getElementById("burger"),mob=document.getElementById("mobmenu");burger.addEventListener("click",()=>{const e=mob.classList.toggle("on");burger.classList.toggle("open",e)});function chiudi(){mob.classList.remove("on"),burger.classList.remove("open")}</script>
+</body>
+</html>
