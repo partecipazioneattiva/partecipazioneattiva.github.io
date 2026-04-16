@@ -14,6 +14,7 @@
 
 - [RC Auto 2026: discriminazioni territoriali](https://partecipazioneattiva.github.io/rcauto.html): Napoli paga 597€, Enna 299€ — analisi delle discriminazioni geografiche nelle tariffe RC Auto
 - [Salute in Vendita: crisi della sanità pubblica](https://partecipazioneattiva.github.io/sanitapubblica.html): 4,5 milioni di italiani rinunciano alle cure, liste d'attesa fino a 2 anni
+- [Antonio Cristiano: il problema della sanità pubblica](https://partecipazioneattiva.github.io/cristiano-sanita.html): Video-articolo di Antonio Cristiano sulla crisi della sanità pubblica italiana.
 - [Stabilicum: legge elettorale spiegata](https://partecipazioneattiva.github.io/stabilicum.html): Analisi della riforma elettorale, iter parlamentare dal 1 aprile 2026
 - [Proposta SIRE: emergenze senza debito](https://partecipazioneattiva.github.io/spanu-sire.html): Luigi Spanu alla Camera il 9 aprile 2026
 - [Stabilicum: aggiornamento iter parlamentare](https://partecipazioneattiva.github.io/spanu-stabilicum.html): Aggiornamento di Luigi Spanu sull'iter
