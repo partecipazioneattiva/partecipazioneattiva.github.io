@@ -1,7 +1,7 @@
 import urllib.request, json
 
 KEY = "4bb4591fa00166eacb3cfeccea85e890"
-HOST = "partecipazioneattiva.github.io"
+HOST = "partecipazione-attiva.it"
 PAGES = [
     "index.html","battaglie.html","rcauto.html","sanitapubblica.html",
     "stabilicum.html","napoli.html","parlero.html","territori.html",
