@@ -5,31 +5,32 @@
 
 ## Pagine principali
 
-- [Home](https://partecipazioneattiva.github.io/index.html): Presentazione del movimento, notizie, battaglie in corso
-- [Chi Siamo / Organigramma](https://partecipazioneattiva.github.io/organigramma.html): Presidente Angelo Nicotra, Portavoce Luigi Spanu, Direttivo completo
-- [Le Nostre Battaglie](https://partecipazioneattiva.github.io/battaglie.html): Elenco delle campagne politiche attive
+- [Home](https://partecipazione-attiva.it/index.html): Presentazione del movimento, notizie, battaglie in corso
+- [Chi Siamo / Organigramma](https://partecipazione-attiva.it/organigramma.html): Presidente Angelo Nicotra, Portavoce Luigi Spanu, Direttivo completo
+- [Le Nostre Battaglie](https://partecipazione-attiva.it/battaglie.html): Elenco delle campagne politiche attive
 
 ## Articoli e analisi
 - [Il 3D-CBS di Crosetto: due voci di PA per la diagnosi precoce](https://partecipazione-attiva.it/crosetto-diagnosi-precoce-3dcbs.html)
-- [Stabilicum: Spanu audito alla Camera dei Deputati](https://partecipazioneattiva.github.io/stabilicum-audizione-maggio2026.html)
-- [Spanu al Congresso Nazionale Base Popolare — 11 aprile](https://partecipazioneattiva.github.io/spanu-congresso-base-popolare.html)
+- [Stabilicum: Spanu audito alla Camera dei Deputati](https://partecipazione-attiva.it/stabilicum-audizione-maggio2026.html)
+- [Spanu al Congresso Nazionale Base Popolare — 11 aprile](https://partecipazione-attiva.it/spanu-congresso-base-popolare.html)
 
-- [RC Auto 2026: discriminazioni territoriali](https://partecipazioneattiva.github.io/rcauto.html): Napoli paga 597€, Enna 299€ — analisi delle discriminazioni geografiche nelle tariffe RC Auto
-- [Salute in Vendita: crisi della sanità pubblica](https://partecipazioneattiva.github.io/sanitapubblica.html): 4,5 milioni di italiani rinunciano alle cure, liste d'attesa fino a 2 anni
-- [Antonio Cristiano: il problema della sanità pubblica](https://partecipazioneattiva.github.io/cristiano-sanita.html): Video-articolo di Antonio Cristiano sulla crisi della sanità pubblica italiana.
-- [Stabilicum: legge elettorale spiegata](https://partecipazioneattiva.github.io/stabilicum.html): Analisi della riforma elettorale, iter parlamentare dal 1 aprile 2026
-- [Proposta SIRE: emergenze senza debito](https://partecipazioneattiva.github.io/spanu-sire.html): Luigi Spanu alla Camera il 9 aprile 2026
-- [Stabilicum: aggiornamento iter parlamentare](https://partecipazioneattiva.github.io/spanu-stabilicum.html): Aggiornamento di Luigi Spanu sull'iter
-- [Astensionismo 2022](https://partecipazioneattiva.github.io/astensionismo.html): Il partito che ha vinto le elezioni del 2022 non era in lista
+- [RC Auto 2026: discriminazioni territoriali](https://partecipazione-attiva.it/rcauto.html): Napoli paga 597€, Enna 299€ — analisi delle discriminazioni geografiche nelle tariffe RC Auto
+- [Salute in Vendita: crisi della sanità pubblica](https://partecipazione-attiva.it/sanitapubblica.html): 4,5 milioni di italiani rinunciano alle cure, liste d'attesa fino a 2 anni
+- [Antonio Cristiano: il problema della sanità pubblica](https://partecipazione-attiva.it/cristiano-sanita.html): Video-articolo di Antonio Cristiano sulla crisi della sanità pubblica italiana.
+- [Stabilicum: legge elettorale spiegata](https://partecipazione-attiva.it/stabilicum.html): Analisi della riforma elettorale, iter parlamentare dal 1 aprile 2026
+- [Proposta SIRE: emergenze senza debito](https://partecipazione-attiva.it/spanu-sire.html): Luigi Spanu alla Camera il 9 aprile 2026
+- [Stabilicum: aggiornamento iter parlamentare](https://partecipazione-attiva.it/spanu-stabilicum.html): Aggiornamento di Luigi Spanu sull'iter
+- [Astensionismo 2022](https://partecipazione-attiva.it/astensionismo.html): Il partito che ha vinto le elezioni del 2022 non era in lista
 
 ## Territorio
 
-- [Napoli](https://partecipazioneattiva.github.io/napoli.html): Coordinamento napoletano — Paolo Neri, Antonio Cristiano, Rosa Ugon
-- [Territori](https://partecipazioneattiva.github.io/territori.html): Gruppi territoriali in Italia
-- [Parlerò](https://partecipazioneattiva.github.io/parlero.html): Salotto Culturale su TV Flegrea
+- [Napoli](https://partecipazione-attiva.it/napoli.html): Coordinamento napoletano — Paolo Neri, Antonio Cristiano, Rosa Ugon
+- [Territori](https://partecipazione-attiva.it/territori.html): Gruppi territoriali in Italia
+- [Parlerò](https://partecipazione-attiva.it/parlero.html): Salotto Culturale su TV Flegrea
 
 ## Contatti
 
 - Email: partecipazioneattiva21@gmail.com
 - Facebook: https://www.facebook.com/PartecipazioneAttiva21/
 - YouTube: https://www.youtube.com/@partecipazioneattiva
+- https://partecipazione-attiva.it/crisi-energetica-sire.html
