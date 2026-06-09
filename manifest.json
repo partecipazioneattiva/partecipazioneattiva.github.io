@@ -5,18 +5,18 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#e85d04",
+  "theme_color": "#e8900a",
   "lang": "it",
   "icons": [
     {
-      "src": "images/logo-pa.png",
+      "src": "LOGO-PA.webp",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/webp"
     },
     {
-      "src": "images/logo-pa.png",
+      "src": "LOGO-PA.webp",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/webp"
     }
   ]
 }
