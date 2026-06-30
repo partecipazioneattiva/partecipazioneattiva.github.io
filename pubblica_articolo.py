@@ -38,7 +38,9 @@ ART = {
   'card_cat'     : 'CATEGORIA',                # maiuscolo
   'card_title'   : 'Titolo card homepage',
   'card_desc'    : 'Sommario breve per la card.',
-  'ticker'       : '&#x2696;&#xFE0F; <strong>TEMA:</strong> frase ticker &nbsp;&nbsp;&bull;&nbsp;&nbsp; ',
+  'ticker_emoji' : '⚖️',                       # emoji voce ticker
+  'ticker_tema'  : 'TEMA',                      # etichetta in grassetto (maiuscolo)
+  'ticker_testo' : 'frase del ticker',          # testo della voce
   'body'         : '<article class="article-wrap"><h2>Sezione</h2><p>Corpo.</p></article>',
 }
 # ===========================================================================
@@ -46,6 +48,8 @@ ART = {
 GOLD = BASE + 'spanu-sire.html'
 IDX  = BASE + 'index.html'
 SMP  = BASE + 'sitemap.xml'
+TEMI = BASE + 'temi.json'
+MAX_TICKER = 8   # tetto voci ticker (auto-pulizia delle piu' vecchie)
 
 VIETATE = ['SIRE', 'Camera dei Deputati', 'luigi-spanu.jpg', 'Evento alla Camera', 'spanu-sire']
 
@@ -143,11 +147,19 @@ def aggiorna_index(a):
     html = html[:pos] + card_html(a) + html[pos:]
     # 2) regola badge: togli il badge dalle card di giorni diversi da oggi
     html = pulisci_badge_vecchi(html, a['data_badge'])
-    # 3) ticker: voce in testa
-    tko = '<div id="tk" data-pa-section="ticker" style="position:absolute;white-space:nowrap;will-change:transform; color:#ffffff;">'
-    assert html.count(tko) == 1, 'STOP: apertura ticker non trovata (1 attesa)'
-    html = html.replace(tko, tko + a['ticker'], 1)
     open(IDX, 'w', encoding='utf-8').write(html)
+
+def aggiorna_temi(a):
+    # inserisce la voce del nuovo articolo in cima a temi.json, dedup per tema, tetto MAX_TICKER
+    try:
+        d = json.load(open(TEMI, encoding='utf-8'))
+    except FileNotFoundError:
+        d = {'voci': []}
+    voci = [v for v in d.get('voci', []) if v.get('tema') != a['ticker_tema']]  # dedup per tema
+    voci.insert(0, {'emoji': a['ticker_emoji'], 'tema': a['ticker_tema'], 'testo': a['ticker_testo']})
+    d['voci'] = voci[:MAX_TICKER]   # in cima + auto-pulizia
+    json.dump(d, open(TEMI, 'w', encoding='utf-8'), ensure_ascii=False, indent=2)
+    return f"temi.json: voce '{a['ticker_tema']}' in cima ({len(d['voci'])}/{MAX_TICKER} voci)"
 
 def aggiorna_sitemap(a):
     sm = open(SMP, encoding='utf-8').read()
@@ -168,9 +180,10 @@ def main():
     assert not errs, 'CHECK FALLITI: ' + '; '.join(errs)
     print(f'OK articolo: {a["slug"]} ({len(html)} char) - 8 check superati')
     aggiorna_index(a)
-    print('OK index.html: card in cima + badge per-data + ticker')
+    print('OK index.html: card in cima + badge per-data')
+    print('OK ' + aggiorna_temi(a))
     print('OK ' + aggiorna_sitemap(a))
-    print('--- FATTO. Ora esegui il PUSH (vedi manuale §35.4) ---')
+    print('--- FATTO. Esegui il PUSH: include aggiorna_ticker.py che rigenera la barra da temi.json ---')
 
 if __name__ == '__main__':
     main()
