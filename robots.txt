@@ -44,4 +44,4 @@ Allow: /
 User-agent: anthropic-ai
 Allow: /
 
-Sitemap: https://partecipazioneattiva.github.io/sitemap.xml
+Sitemap: https://partecipazione-attiva.it/sitemap.xml
