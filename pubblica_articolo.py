@@ -76,7 +76,23 @@ def build_articolo(a):
     html = re.sub(r'<script type="application/ld\+json">.*?</script>',
                   '<script type="application/ld+json">'+json.dumps(schema, ensure_ascii=False)+'</script>',
                   html, flags=re.DOTALL, count=1)
-    hero = (f'<div class="article-hero">\n  <div class="categoria">{a["categoria_hero"]}</div>\n'
+    # BreadcrumbList: Home > {card_cat|Battaglie} > {h1}
+    brc_mid = a.get('card_cat') or 'Battaglie'
+    breadcrumb = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":U},
+        {"@type":"ListItem","position":2,"name":brc_mid,"item":U+"battaglie.html"},
+        {"@type":"ListItem","position":3,"name":a['h1'],"item":U+a['slug']}]}
+    html = html.replace('</head>',
+        '<script type="application/ld+json">'+json.dumps(breadcrumb, ensure_ascii=False)+'</script></head>', 1)
+    brc_mid = a.get('card_cat') or 'Battaglie'
+    brc_vis = (f'<nav class="breadcrumb" aria-label="Percorso" style="max-width:820px;margin:0 auto;padding:14px 24px 0;'
+               f'font-family:montserrat,sans-serif;font-size:.82em;color:#9c5b00">'
+               f'<a href="index.html" style="color:#9c5b00;text-decoration:none">Home</a>'
+               f' <span aria-hidden="true">&rsaquo;</span> '
+               f'<a href="battaglie.html" style="color:#9c5b00;text-decoration:none">{brc_mid}</a>'
+               f' <span aria-hidden="true">&rsaquo;</span> '
+               f'<span style="color:#8a4e00">{a["card_title"]}</span></nav>')
+    hero = (brc_vis + f'<div class="article-hero">\n  <div class="categoria">{a["categoria_hero"]}</div>\n'
             f'  <h1>{a["h1"]}</h1>\n  <p class="sottotitolo">{a["sottotitolo"]}</p>\n'
             f'  <div class="author-hero">\n    <img loading=lazy src="{foto}" alt="{nome} {ruolo} Partecipazione Attiva">\n'
             f'    <div class="author-hero-info">\n      <div class="nome">{nome}</div>\n'
@@ -104,7 +120,7 @@ def check_articolo(path):
     if 'type=application/ld+json' in h: errs.append('schema fantasma')
     for v in VIETATE:
         if v in h: errs.append(f'residuo GOLD: {v}')
-    if h.count('<script type="application/ld+json">') != 1: errs.append('schema non singolo')
+    if h.count('<script type="application/ld+json">') != 2: errs.append('schema: attesi 2 blocchi (NewsArticle + BreadcrumbList)')
     return errs
 
 BADGE = ('<span style="display:inline-block;background:#c0392b;color:#fff;font-size:0.69em;'
