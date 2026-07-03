@@ -248,10 +248,11 @@ def build_articolo(a):
     html = re.sub(r'<link rel="alternate" hreflang="it" href="[^"]*">', f"<link rel=\"alternate\" hreflang=\"it\" href=\"{U}{a['slug']}\">", html, 1)
     html = re.sub(r'<link rel="canonical" href="[^"]*">', f"<link rel=\"canonical\" href=\"{U}{a['slug']}\">", html, 1)
     html = re.sub(r'<meta property="og:image" content="[^"]*">', f"<meta property=\"og:image\" content=\"{U}{a['og_image']}\">", html, 1)
+    html = html.replace('</title>', '</title>' + f'<meta property="og:article:published_time" content="{a["data_iso"]}T00:00:00+02:00">', 1) if 'og:article:published_time' not in html else html
     schema = {"@context":"https://schema.org","@type":"NewsArticle","headline":a['h1'],
               "description":a['meta_desc'],"image":U+a['og_image'],"datePublished":a['data_iso'],
               "dateModified":a['data_iso'],
-              "author":{"@type":"Person","name":nome,"jobTitle":ruolo,"url":U+"organigramma.html"},
+              "author":{"@type":"Person","@id":U+"organigramma.html#"+a['autore'],"name":nome,"jobTitle":ruolo,"url":U+"organigramma.html"},
               "publisher":{"@type":"Organization","name":"Partecipazione Attiva",
                            "logo":{"@type":"ImageObject","url":U+"LOGO-PA.webp"}},
               "mainEntityOfPage":U+a['slug']}
