@@ -6,7 +6,21 @@
     <description>Notizie, battaglie e proposte di Partecipazione Attiva</description>
     <language>it</language>
     <atom:link href="https://partecipazione-attiva.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 01 Jul 2026 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 12:00:00 +0200</lastBuildDate>
+  <item>
+    <title>PensAttivo: guarda i fatti, non la maglietta</title>
+    <link>https://partecipazione-attiva.it/pensattivo.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/pensattivo.html</guid>
+    <description>PensAttivo è la mascotte aliena di Partecipazione Attiva: un invito a valutare le proposte per quello che dicono, non per la parte che le firma.</description>
+    <pubDate>Fri, 03 Jul 2026 12:00:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Una legge elettorale giusta: cosa vogliamo, cosa chiediamo subito</title>
+    <link>https://partecipazione-attiva.it/legge-elettorale-giusta.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/legge-elettorale-giusta.html</guid>
+    <description>La proposta di Partecipazione Attiva per una legge elettorale giusta: scelta dei cittadini, tetto ai 3/5 a tutela delle garanzie, simulazione sui dati 2022.</description>
+    <pubDate>Fri, 03 Jul 2026 12:00:00 +0200</pubDate>
+  </item>
   <item>
     <title>Stabilicum in Aula: cosa cambia per chi vota | Luigi Spanu</title>
     <link>https://partecipazione-attiva.it/stabilicum-aula-camera-giugno2026.html</link>

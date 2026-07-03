@@ -1,6 +1,16 @@
 {
   "voci": [
     {
+      "emoji": "👽",
+      "tema": "PENSATTIVO",
+      "testo": "chi è l’alieno verde di PA e perché guardiamo i fatti, non le bandiere"
+    },
+    {
+      "emoji": "⚖️",
+      "tema": "LEGGE ELETTORALE",
+      "testo": "la proposta di PA: scelta dei cittadini e tetto ai 3/5 a tutela delle garanzie"
+    },
+    {
       "emoji": "⚖️",
       "tema": "STABILICUM",
       "testo": "il 26 giugno la riforma approda in Aula a Montecitorio — premio 42%, liste bloccate, nodo preferenze"
@@ -29,16 +39,6 @@
       "emoji": "🚗",
       "tema": "RC AUTO",
       "testo": "stangata 2026 — premio medio 492€, +10% in un anno, Napoli paga 252€ più di Aosta"
-    },
-    {
-      "emoji": "🌿",
-      "tema": "RETE APE",
-      "testo": "nasce la rete civica per l’Assemblea Popolare Ecumenica — aderisci"
-    },
-    {
-      "emoji": "✊",
-      "tema": "BATTAGLIA IN CORSO",
-      "testo": "RC Auto — basta discriminazioni territoriali"
     }
   ]
 }
