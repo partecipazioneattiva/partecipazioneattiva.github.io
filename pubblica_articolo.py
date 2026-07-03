@@ -287,7 +287,7 @@ def build_articolo(a):
     # link di condivisione corretti dentro il corpo (se l'autore non li mette)
     start = html.index('<div class="article-hero">')
     end   = html.index('</article>') + len('</article>')
-    html  = html[:start] + hero + '\n\n' + body + html[end:]
+    html  = html[:start] + '<main id="contenuto">' + hero + '\n\n' + body + '</main>' + html[end:]
     # bonifica residui share GOLD
     for bad in ['u=https://partecipazione-attiva.it/spanu-sire.html', '%20https://partecipazione-attiva.it/spanu-sire.html']:
         html = html.replace(bad, bad.replace('spanu-sire.html', a['slug']))
