@@ -12,36 +12,46 @@ Allow: /
 # AI Search & Citations (permettono di essere citati nelle risposte AI)
 User-agent: OAI-SearchBot
 Allow: /
+Crawl-delay: 10
 
 User-agent: ChatGPT-User
 Allow: /
+Crawl-delay: 10
 
 User-agent: PerplexityBot
 Allow: /
+Crawl-delay: 10
 
 User-agent: Perplexity-User
 Allow: /
+Crawl-delay: 10
 
 User-agent: Google-Extended
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
+Crawl-delay: 10
 
 User-agent: claude-web
 Allow: /
+Crawl-delay: 10
 
 User-agent: Amazonbot
 Allow: /
+Crawl-delay: 10
 
 User-agent: DuckAssistBot
 Allow: /
+Crawl-delay: 10
 
 # Training bots (permettiamo anche questi per massima visibilità)
 User-agent: GPTBot
 Allow: /
+Crawl-delay: 10
 
 User-agent: anthropic-ai
 Allow: /
+Crawl-delay: 10
 
 Sitemap: https://partecipazione-attiva.it/sitemap.xml
