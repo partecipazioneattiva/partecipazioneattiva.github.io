@@ -205,25 +205,85 @@ Chi vuole cambiare le cose in modo giusto, senza tifoseria di squadra, alla fine
 '''
 
 # ============================== CONFIG ARTICOLO =============================
+# Incollare SUBITO SOPRA la riga  ART = {  in pubblica_articolo.py
+# e impostare 'body' : BODY_CAVALLEGGERI
+
+BODY_CAVALLEGGERI = '''
+<style>
+.pa-hero-img{display:block;max-width:100%;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.15);margin:0 0 28px}
+.pa-lead{font-size:1.12em!important;color:#8a4e00!important;font-weight:600}
+.pa-fig{margin:32px 0}
+.pa-fig img{width:100%;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.82em;color:#9c5b00;margin-top:10px;text-align:center;font-style:italic}
+.pa-box{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:24px 28px;margin:28px 0}
+.pa-box h3{font-family:montserrat,sans-serif;color:#9c5b00;font-size:1em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px}
+</style>
+
+<article class="article-wrap">
+
+<img class="pa-hero-img" src="images/cavalleggeri-museo.webp" alt="Rendering del progetto: corridoio di murales lungo Via Marco Polo a Cavalleggeri d'Aosta, Fuorigrotta">
+
+<p class="pa-lead">Un rione di Fuorigrotta pu&ograve; diventare un museo a cielo aperto &mdash; e con l&rsquo;America&rsquo;s Cup 2027 alle porte, il momento &egrave; adesso.</p>
+
+<p>Partecipazione Attiva propone al Comune di Napoli e alla Municipalit&agrave; 10 un progetto di rigenerazione urbana attraverso l&rsquo;arte: trasformare Via Marco Polo e il Rione Cavalleggeri d&rsquo;Aosta in un percorso di murales che racconti l&rsquo;identit&agrave; del quartiere, ne rafforzi il decoro e la sicurezza percepita, e lo colleghi idealmente al waterfront di Bagnoli, a due passi dalla fermata della Linea 2.</p>
+
+<div class="pa-fig">
+<img src="images/cavalleggeri-oggi.webp" alt="Un edificio reale di Via Marco Polo con muro cieco, oggi">
+<figcaption>Oggi: facciate cieche e anonime lungo un asse ad altissimo passaggio pedonale &mdash; scuole, negozi, la metro a due fermate.</figcaption>
+</div>
+
+<h2>Perch&eacute; proprio qui</h2>
+<p>Cavalleggeri d&rsquo;Aosta &egrave; tra le zone meglio collegate della citt&agrave;: fermata Linea 2, Cumana, numerose linee di bus, alta concentrazione di scuole e attivit&agrave; di prossimit&agrave;. Un intervento qui ha una ricaduta reale e visibile, non confinata a un pubblico di soli residenti. Il quartiere ha inoltre un patrimonio identitario da raccontare, dalla memoria dell&rsquo;edilizia popolare ai segni della dismessa funivia Fuorigrotta&ndash;Posillipo.</p>
+
+<h2>L&rsquo;occasione: America&rsquo;s Cup 2027</h2>
+<p>Nel 2027 Napoli ospiter&agrave; la 38&ordf; edizione dell&rsquo;America&rsquo;s Cup, con le basi dei team a Bagnoli, quartiere immediatamente adiacente. Cavalleggeri d&rsquo;Aosta &egrave; la naturale soglia di accesso tra la metro e il waterfront: un museo diffuso qui estenderebbe i benefici dell&rsquo;evento anche a un quartiere che, come tanti, resta spesso escluso dalle ricadute dirette dei grandi eventi.</p>
+
+<div class="pa-fig">
+<img src="images/cavalleggeri-piazza.webp" alt="Rendering della strada pedonalizzata con murale del golfo di Napoli e della funivia">
+<figcaption>La visione: strada pedonalizzata, alberi, panchine &mdash; e le facciate che raccontano la memoria del quartiere.</figcaption>
+</div>
+
+<h2>Non solo estetica: una leva economica e di servizio</h2>
+<p>Il museo diffuso non cancella la vita economica del rione: la valorizza. Il mercato di Via Marco Polo &mdash; commercio popolare vivo e servizio di prossimit&agrave; per le famiglie &mdash; diventa una tappa del percorso, non un elemento da nascondere. Rigenerare qui significa banchi ordinati, spazio curato, pi&ugrave; passaggio: non sgombero del popolare.</p>
+
+<div class="pa-fig">
+<img src="images/cavalleggeri-mercato.webp" alt="Rendering del mercato di Via Marco Polo rigenerato, con murale sullo sfondo">
+<figcaption>Il mercato di Via Marco Polo in una piazza rigenerata, circondata dalle opere del percorso.</figcaption>
+</div>
+
+<div class="pa-box">
+<h3>Il nodo burocratico</h3>
+<p>I murales sono legalmente manutenzione straordinaria (Consiglio di Stato, sent. 1289/2023): servono permessi edilizi. La Regione Campania finanzia la creativit&agrave; urbana con la L.R. 3/2023 (200.000&euro;/anno), ma per accedervi il Comune di Napoli deve prima adottare un regolamento comunale e iscrivere le superfici nell&rsquo;Albo regionale. &Egrave; il passaggio che chiediamo di sbloccare.</p>
+</div>
+
+<p>Il modello a cui guardiamo &egrave; quello sperimentato con successo a Ponticelli dal collettivo INWARD: programmi di creativit&agrave; urbana condotti con la partecipazione delle comunit&agrave; residenti, capaci di trasformare complessi popolari anonimi in distretti artistici e poli di attrazione.</p>
+
+<img src="images/cavalleggeri-fumetto.webp" alt="Fumetto PensAttivo: PensAttivo ti porta a Cavalleggeri" style="width:100%;border-radius:14px;margin:32px 0;box-shadow:0 6px 20px rgba(0,0,0,.12)">
+
+<p class="pa-lead">Nessun quartiere &egrave; di serie B. Il fascicolo completo &egrave; stato presentato al Comune di Napoli, alla Municipalit&agrave; 10 e, per conoscenza, alla Regione Campania.</p>
+
+</article>
+'''
+
 ART = {
-  'slug'         : 'pensattivo.html',
+  'slug'         : 'cavalleggeri-cielo-aperto.html',
   'autore'       : 'pa',
-  'data_iso'     : '2026-07-03',
-  'data_human'   : '3 luglio 2026',
-  'data_badge'   : '3 LUGLIO 2026',
-  'lettura_min'  : 3,
-  'categoria_hero': '\U0001F47D PensAttivo',
-  'og_image'     : 'images/pensattivo-astensionismo.webp',
-  'h1'           : 'PensAttivo: guarda i fatti, non la maglietta',
-  'sottotitolo'  : 'Chi \u00e8 l\u2019alieno verde di Partecipazione Attiva, e perch\u00e9 ragionare senza tifo di squadra \u00e8 l\u2019unico modo per non farsi fregare.',
-  'meta_desc'    : 'PensAttivo \u00e8 la mascotte aliena di Partecipazione Attiva: un invito a valutare le proposte per quello che dicono, non per la parte che le firma.',
-  'card_cat'     : 'PENSATTIVO',
-  'card_title'   : 'PensAttivo: guarda i fatti, non la maglietta',
-  'card_desc'    : 'Chi \u00e8 l\u2019alieno verde di PA e perch\u00e9 guardare la politica \u201cda fuori\u201d, senza tifoseria, \u00e8 il nostro metodo.',
-  'ticker_emoji' : '\U0001F47D',
-  'ticker_tema'  : 'PENSATTIVO',
-  'ticker_testo' : 'chi \u00e8 l\u2019alieno verde di PA e perch\u00e9 guardiamo i fatti, non le bandiere',
-  'body'         : BODY_PENSATTIVO,
+  'data_iso'     : '2026-07-05',
+  'data_human'   : '5 luglio 2026',
+  'data_badge'   : '5 LUGLIO 2026',
+  'lettura_min'  : 4,
+  'categoria_hero': '\U0001F3A8 Riqualificazione Urbana',
+  'og_image'     : 'images/cavalleggeri-museo.webp',
+  'h1'           : 'Cavalleggeri a cielo aperto: un museo di murales per Fuorigrotta',
+  'sottotitolo'  : 'La proposta di Partecipazione Attiva per Via Marco Polo, agganciata all\u2019America\u2019s Cup 2027 e alla rigenerazione di Bagnoli.',
+  'meta_desc'    : 'Partecipazione Attiva propone al Comune di Napoli un museo diffuso di street art a Cavalleggeri d\u2019Aosta, Fuorigrotta: decoro, identit\u00e0 e leva economica per il quartiere.',
+  'card_cat'     : 'RIQUALIFICAZIONE URBANA',
+  'card_title'   : 'Cavalleggeri a cielo aperto: un museo di murales per Fuorigrotta',
+  'card_desc'    : 'La proposta di PA per Via Marco Polo, agganciata all\u2019America\u2019s Cup 2027 e alla rigenerazione di Bagnoli.',
+  'ticker_emoji' : '\U0001F3A8',
+  'ticker_tema'  : 'CAVALLEGGERI',
+  'ticker_testo' : 'un museo di murales a cielo aperto per Fuorigrotta: la proposta di PA al Comune di Napoli',
+  'body'         : BODY_CAVALLEGGERI,
 }
 # ===========================================================================
 
