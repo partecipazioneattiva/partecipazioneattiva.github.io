@@ -27,17 +27,17 @@
 body{font-family:montserrat,sans-serif;background:#fafafa;color:#222}
 .topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em}
 .topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600}
-.navbar{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,8%);padding:0 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.navbar{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,8%);padding:8px 18px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
 .nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0}
 .nav-logo img{height:48px;width:auto;display:block}
-.nav-nome{font-weight:900;font-size:.95em;color:#8a4e00;line-height:1.2}
+.nav-nome{font-weight:900;font-size:.85em;color:#8a4e00;line-height:1.2}
 .nav-nome small{display:block;font-weight:400;font-size:.45em;color:#aaa;letter-spacing:2px;text-transform:uppercase}
-.nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;max-width:700px}
-.nav-links a{padding:18px 10px;color:#444;text-decoration:none;font-size:.82em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+.nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;flex:0 1 auto}
+.nav-links a{padding:14px 6px;color:#444;text-decoration:none;font-size:.76em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
 .nav-links a:hover{color:#9c5b00;border-bottom-color:#9c5b00}
-.nav-cta{display:flex;gap:10px;margin-left:16px}
-.btn-iscr{background:#1a8f3c;color:#fff;padding:13px 28px;border-radius:50px;text-decoration:none;font-size:.95em;font-weight:900;transition:all .2s;box-shadow:0 4px 14px rgba(26,143,60,.35)}
-.btn-sost{background:#e8900a;color:#fff;padding:13px 28px;border-radius:50px;text-decoration:none;font-size:.95em;font-weight:900;border:2px solid #e8900a;transition:all .2s;box-shadow:0 4px 14px rgba(232,144,10,.35)}
+.nav-cta{display:flex;gap:10px;margin-left:20px;flex-shrink:0;align-self:center}
+.btn-iscr{background:#1a8f3c;color:#fff;padding:11px 18px;border-radius:50px;text-decoration:none;font-size:.85em;font-weight:900;transition:all .2s;box-shadow:0 4px 14px rgba(26,143,60,.35)}
+.btn-sost{background:#e8900a;color:#fff;padding:11px 18px;border-radius:50px;text-decoration:none;font-size:.85em;font-weight:900;border:2px solid #e8900a;transition:all .2s;box-shadow:0 4px 14px rgba(232,144,10,.35)}
 .burger{display:none;background:0 0;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
 .burger span{display:block;width:24px;height:2px;background:#8a4e00;border-radius:2px}
 .mob-menu{display:none;flex-direction:column;background:#fff;border-top:2px solid #f0f0f0;position:absolute;top:100%;left:0;right:0;box-shadow:0 8px 24px rgba(0,0,0,.1)}
@@ -47,12 +47,12 @@ body{font-family:montserrat,sans-serif;background:#fafafa;color:#222}
 .article-hero .categoria{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:.72em;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:20px}
 .article-hero h1{font-family:merriweather,serif;font-size:2em;font-weight:700;line-height:1.3;max-width:800px;margin:0 auto 20px}
 .article-hero .sottotitolo{font-size:1em;color:rgba(255,255,255,.85);max-width:680px;margin:0 auto 28px;line-height:1.6}
-.article-meta{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;font-size:.78em;color:rgba(255,255,255,.75);margin-bottom:36px}
+.article-meta{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:.78em;color:rgba(255,255,255,.75);margin-bottom:36px}
 .article-meta .badge-pa{background:#fff;color:#9c5b00;font-weight:900;padding:3px 12px;border-radius:50px;font-size:.9em}
 .author-hero{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px}
 .author-hero img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.4)}
 .author-hero-info{text-align:left}
-.author-hero-info .nome{font-weight:900;color:#fff;font-size:.95em}
+.author-hero-info .nome{font-weight:900;color:#fff;font-size:.85em}
 .author-hero-info .ruolo{color:#ffd580;font-size:.78em;font-weight:600}
 .article-wrap{max-width:780px;margin:0 auto;padding:56px 24px 80px}
 .article-wrap p{font-family:merriweather,serif;font-size:1em;line-height:1.85;color:#333;margin-bottom:24px}
@@ -62,21 +62,21 @@ body{font-family:montserrat,sans-serif;background:#fafafa;color:#222}
 .box-evento{background:#fff8ee;border:2px solid #e8900a;border-radius:14px;padding:28px 24px;margin:32px 0;text-align:center;font-family:montserrat,sans-serif}
 .box-evento .data-evento{font-family:merriweather,serif;font-size:1.6em;color:#8a4e00;font-weight:900;margin-bottom:6px}
 .box-evento .luogo-evento{font-size:1.1em;color:#333;font-weight:700;margin-bottom:4px}
-.box-evento .orario-evento{font-size:.95em;color:#555}
+.box-evento .orario-evento{font-size:.85em;color:#555}
 .box-evento .streaming{font-size:.9em;color:#9c5b00;margin-top:12px;font-weight:600}
 .box-comunicato{background:#fff3f3;border:2px solid #c0392b;border-radius:12px;padding:28px 32px;margin:36px 0}
 .box-comunicato .label{display:inline-flex;align-items:center;gap:8px;background:#c0392b;color:#fff;font-size:.7em;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:50px;margin-bottom:16px}
-.box-comunicato p{font-family:merriweather,serif;font-size:.95em;line-height:1.8;color:#333;margin-bottom:0;font-style:italic}
+.box-comunicato p{font-family:merriweather,serif;font-size:.85em;line-height:1.8;color:#333;margin-bottom:0;font-style:italic}
 .condividi{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:48px 0 0;padding:24px;background:#fff8ee;border-radius:16px;border:1px solid #f0e6d3}
 .condividi-label{font-family:montserrat,sans-serif;font-size:.85em;font-weight:700;color:#8a4e00}
-.condividi a{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:50px;text-decoration:none;font-family:montserrat,sans-serif;font-size:.82em;font-weight:700}
+.condividi a{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:50px;text-decoration:none;font-family:montserrat,sans-serif;font-size:.76em;font-weight:700}
 .btn-wa{background:#25d366;color:#fff}
 .btn-fb{background:#1877f2;color:#fff}
 .cta-finale{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);color:#fff;padding:56px 32px;text-align:center;margin-top:60px}
 .cta-finale h2{font-family:merriweather,serif;font-size:1.8em;font-weight:700;margin-bottom:16px}
-.cta-finale p{font-size:.95em;color:rgba(255,255,255,.85);max-width:560px;margin:0 auto 28px;line-height:1.6}
+.cta-finale p{font-size:.85em;color:rgba(255,255,255,.85);max-width:560px;margin:0 auto 28px;line-height:1.6}
 .cta-finale a{display:inline-block;background:#fff;color:#9c5b00;padding:14px 36px;border-radius:50px;text-decoration:none;font-weight:900;font-size:.9em}
-footer{background:#222;color:#aaa;padding:32px;text-align:center;font-size:.82em}
+footer{background:#222;color:#aaa;padding:32px;text-align:center;font-size:.76em}
 footer a{color:#ffd580;text-decoration:none}
 .modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:999;align-items:center;justify-content:center}
 .modal-box{background:#fff;border-radius:16px;padding:32px;max-width:420px;width:90%;text-align:center;position:relative}
@@ -85,7 +85,7 @@ footer a{color:#ffd580;text-decoration:none}
 .modal-box .iban{background:#fff8ee;padding:12px;border-radius:8px;font-family:monospace;font-size:.85em;color:#8a4e00;font-weight:700;margin:12px 0;word-break:break-all}
 .modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.4em;cursor:pointer;color:#999}
 @media(max-width:768px){.nav-links,.nav-cta{display:none}.burger{display:flex}.navbar{position:relative}.article-hero h1{font-size:1.4em}.article-wrap{padding:32px 18px 60px}.box-comunicato{padding:20px}.topbar{padding:6px 16px;font-size:.7em}}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}</style>
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}/*PA-NAV-1250*/@media(max-width:1400px){.nav-links{display:none!important}.burger{display:flex!important}.nav-cta{display:flex!important}}/*PA-NAV-MOBILE*/@media(max-width:600px){.navbar{padding:8px 12px!important}.nav-logo img{width:44px!important;height:44px!important}.nav-nome{font-size:.95em!important}.nav-nome small{display:none!important}.nav-cta{gap:6px!important;margin-left:8px!important}.btn-iscr,.btn-sost{padding:9px 14px!important;font-size:.8em!important}}/*PA-NAV-V2*/.nav-nome small{display:none!important}.nav-logo{order:0!important}.nav-cta{order:2!important;margin-left:16px!important;flex-shrink:0!important;align-self:center!important}.nav-links{order:3!important;flex:1 1 auto!important;flex-wrap:wrap!important;justify-content:flex-start!important;max-width:none!important}@media(min-width:701px){.nav-links{display:flex!important}.burger{display:none!important}.nav-cta{display:flex!important}}@media(max-width:700px){.nav-links{display:none!important}.burger{display:flex!important;order:1!important}.nav-cta{display:flex!important;gap:6px!important}.nav-logo img{width:44px!important;height:44px!important}.btn-iscr,.btn-sost{padding:9px 14px!important;font-size:.8em!important}}</style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -183,7 +183,7 @@ redatti e diffusi dai Comitati e dal Tavolo NOAD — un documento che fotografa 
 stato della battaglia contro la <em>"secessione dei ricchi"</em> e traccia le prossime azioni comuni.
 </p>
 <hr style="border:none;border-top:2px solid #e8900a;margin:32px 0">
-<h2 style="font-family:montserrat,sans-serif;font-size:1.45em;color:#8a4e00;margin:32px 0 14px;font-weight:700">Oltre 100 partecipanti da 20 province</h2>
+<h2 style="font-family:montserrat,sans-serif;font-size:1.20em;color:#8a4e00;margin:32px 0 14px;font-weight:700">Oltre 100 partecipanti da 20 province</h2>
 <p style="font-family:merriweather,serif;font-size:1.05em;color:#333;line-height:1.85;margin-bottom:22px">
 Arrivati da 20 province di tutta Italia, a titolo individuale o in rappresentanza di 33 tra
 associazioni, partiti e sindacati, i partecipanti si sono riuniti per discutere delle minacce
@@ -197,7 +197,7 @@ in solidarietà con la contemporanea manifestazione di Aviano (FVG) contro guerr
 nucleari. Il secondo di <strong>Carmen D'Anzi</strong>, Garante dei diritti delle persone detenute della Provincia
 di Potenza, sui gravi ostacoli al diritto alla salute dei carcerati.
 </p>
-<h2 style="font-family:montserrat,sans-serif;font-size:1.45em;color:#8a4e00;margin:32px 0 14px;font-weight:700">Il nodo: sentenza 192/24 e le Intese preliminari</h2>
+<h2 style="font-family:montserrat,sans-serif;font-size:1.20em;color:#8a4e00;margin:32px 0 14px;font-weight:700">Il nodo: sentenza 192/24 e le Intese preliminari</h2>
 <p style="font-family:merriweather,serif;font-size:1.05em;color:#333;line-height:1.85;margin-bottom:22px">
 Al centro del dibattito la violazione della <strong>sentenza 192/24 della Corte Costituzionale</strong> da parte
 del governo, che procede con le <strong>Intese preliminari</strong> di Veneto, Piemonte, Lombardia e Liguria
@@ -215,14 +215,14 @@ A metà lavori è stato letto il saluto del presidente campano <strong>Roberto F
 messaggio del presidente dell'Emilia-Romagna <strong>Michele de Pascale</strong>, già ricorrente alla Consulta
 contro norme discriminatorie della legge di Bilancio.
 </p>
-<h2 style="font-family:montserrat,sans-serif;font-size:1.45em;color:#8a4e00;margin:32px 0 14px;font-weight:700">La questione meridionale</h2>
+<h2 style="font-family:montserrat,sans-serif;font-size:1.20em;color:#8a4e00;margin:32px 0 14px;font-weight:700">La questione meridionale</h2>
 <p style="font-family:merriweather,serif;font-size:1.05em;color:#333;line-height:1.85;margin-bottom:22px">
 Un documento predisposto da <strong>Maria Teresa Capozza e Loretta Mussi</strong> ha affrontato la questione
 meridionale: il Sud sfruttato come mercato di sbocco, fonte di manodopera a basso costo, discarica
 di scarti inquinanti (la "Terra dei fuochi" docet). Il disegno di governo Meloni e Commissione UE
 per il Mezzogiorno è hub energetico e snodo logistico mediterraneo — un destino da <em>zona emarginata speciale</em>.
 </p>
-<h2 style="font-family:montserrat,sans-serif;font-size:1.45em;color:#8a4e00;margin:32px 0 14px;font-weight:700">Il piano d'azione: otto mosse concrete</h2>
+<h2 style="font-family:montserrat,sans-serif;font-size:1.20em;color:#8a4e00;margin:32px 0 14px;font-weight:700">Il piano d'azione: otto mosse concrete</h2>
 <ul style="font-family:merriweather,serif;font-size:1.02em;color:#333;line-height:1.85;margin:0 0 22px 24px;padding:0">
 <li style="margin-bottom:12px"><strong>Parlamento:</strong> una pioggia di emendamenti per bloccare l'iter delle Intese e denuncia pubblica anche fuori dalle aule istituzionali.</li>
 <li style="margin-bottom:12px"><strong>Regioni PD/M5S:</strong> prepararsi a impugnare le Intese davanti alla Corte Costituzionale, pubblicando i testi dei ricorsi prima dell'approvazione definitiva.</li>
@@ -233,7 +233,7 @@ per il Mezzogiorno è hub energetico e snodo logistico mediterraneo — un desti
 <li style="margin-bottom:12px"><strong>Titolo V:</strong> lavorare con costituzionalisti ed economisti per una ridefinizione guidata dal regionalismo cooperativo (artt. 2, 3 e 5 Cost.).</li>
 <li style="margin-bottom:12px"><strong>Elezioni 2027:</strong> chiedere a tutte le forze candidate la <strong>cancellazione del comma 3 dell'art. 116</strong> — unica misura definitiva contro l'AD.</li>
 </ul>
-<h2 style="font-family:montserrat,sans-serif;font-size:1.45em;color:#8a4e00;margin:32px 0 14px;font-weight:700">Le conclusioni: esiste un popolo che resiste</h2>
+<h2 style="font-family:montserrat,sans-serif;font-size:1.20em;color:#8a4e00;margin:32px 0 14px;font-weight:700">Le conclusioni: esiste un popolo che resiste</h2>
 <p style="font-family:merriweather,serif;font-size:1.05em;color:#333;line-height:1.85;margin-bottom:22px">
 I Comitati ricordano che <strong>1.300.000 firme</strong> sono state apposte per abrogare la legge SpaccaItalia,
 e che <strong>15 milioni di "no"</strong> hanno bocciato la riforma della magistratura — che era la contropartita
@@ -258,7 +258,7 @@ differenziata, l'Unità della Repubblica, l'Uguaglianza dei Diritti e del Tavolo
 
 </article>
 
-<div style="max-width:800px;margin:32px auto;padding:0 24px"><div style="background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:28px 32px"><h3 style="font-family:merriweather,serif;color:#8a4e00;font-size:1.1em;margin-bottom:16px">Leggi anche</h3><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:10px"><a href="stabilicum.html" style="color:#9c5b00;font-weight:700;text-decoration:none;font-size:.95em">Stabilicum: legge elettorale spiegata ai cittadini</a></li><li style="margin-bottom:10px"><a href="stabilicum.html" style="color:#9c5b00;font-weight:700;text-decoration:none;font-size:.95em">Luigi Spanu segue l'iter parlamentare dello Stabilicum</a></li><li style="margin-bottom:10px"><a href="rcauto.html" style="color:#9c5b00;font-weight:700;text-decoration:none;font-size:.95em">RC Auto 2026: le discriminazioni territoriali</a></li><li><a href="astensionismo.html" style="color:#9c5b00;font-weight:700;text-decoration:none;font-size:.95em">Il partito che ha vinto le elezioni del 2022 non era in lista</a></li></ul></div></div>
+<div style="max-width:800px;margin:32px auto;padding:0 24px"><div style="background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:28px 32px"><h3 style="font-family:merriweather,serif;color:#8a4e00;font-size:1.1em;margin-bottom:16px">Leggi anche</h3><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:10px"><a href="stabilicum.html" style="color:#9c5b00;font-weight:700;text-decoration:none;font-size:.85em">Stabilicum: legge elettorale spiegata ai cittadini</a></li><li style="margin-bottom:10px"><a href="stabilicum.html" style="color:#9c5b00;font-weight:700;text-decoration:none;font-size:.85em">Luigi Spanu segue l'iter parlamentare dello Stabilicum</a></li><li style="margin-bottom:10px"><a href="rcauto.html" style="color:#9c5b00;font-weight:700;text-decoration:none;font-size:.85em">RC Auto 2026: le discriminazioni territoriali</a></li><li><a href="astensionismo.html" style="color:#9c5b00;font-weight:700;text-decoration:none;font-size:.85em">Il partito che ha vinto le elezioni del 2022 non era in lista</a></li></ul></div></div>
 <div class="cta-finale">
 <h2>Unisciti a Partecipazione Attiva</h2>
 <p>Crediamo nella partecipazione dei cittadini per cambiare le cose. Iscriviti e fai sentire la tua voce.</p>
