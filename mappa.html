@@ -130,6 +130,7 @@ footer a{color:var(--ar)}
     <p>Chi siamo, dove siamo, cosa ci sta a cuore. Cerca per tema o per competenza e trova le persone e le associazioni che si battono per le stesse cose, vicino a te. <strong>Anche fuori dall&rsquo;Italia.</strong></p>
     <div class="azioni-hero">
       <a class="bhero" href="#iscriviti">Entra nella Mappa</a>
+      <a class="bhero ghost" href="#proponi">Proponi un&rsquo;idea</a>
       <a class="bhero ghost" href="perche-la-mappa.html">Perch&eacute; una mappa</a>
     </div>
   </div>
@@ -257,7 +258,7 @@ footer a{color:var(--ar)}
 </section>
 
 <section class="wrap">
-  <div class="propbox">
+  <div id="proponi" class="propbox">
     <h2>Hai un&rsquo;idea? Proponila.</h2>
     <p>Una battaglia da aprire, una proposta di legge, una mozione da portare in un consiglio comunale, un&rsquo;iniziativa nel tuo territorio.</p>
     <p><strong style="color:#c8941a">Le proposte non vengono pubblicate.</strong> Le legge il direttivo. Se una convince, diventa un&rsquo;<a href="azioni.html" style="color:#ffd580">Azione</a> pubblica &mdash; con una soglia di adesioni, un referente e una scadenza &mdash; e la vedrai partire davvero.</p>
@@ -567,6 +568,18 @@ document.getElementById('p_invia').onclick=function(){
       }
     }).catch(function(){ ko('Connessione non riuscita. Riprova.'); });
 };
+</script>
+<script>
+(function(){
+  function apri(){
+    var f=document.querySelector(".propform");
+    if(f) f.classList.add("on");
+  }
+  document.querySelectorAll('a[href="#proponi"]').forEach(function(a){
+    a.addEventListener("click",function(){setTimeout(apri,50);});
+  });
+  if(location.hash==="#proponi") setTimeout(apri,80);
+})();
 </script>
 </body>
 </html>
