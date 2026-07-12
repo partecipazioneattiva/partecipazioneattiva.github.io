@@ -250,7 +250,7 @@ footer a{color:var(--ar)}
     <strong>Base giuridica:</strong> il tuo consenso esplicito (art. 6.1.a e art. 9.2.a GDPR).<br>
     <strong>Dati raccolti:</strong> nome, cognome, email, comune o citt&agrave;, temi, competenze, descrizione. <strong>Pubblicati:</strong> solo nome + iniziale del cognome (o denominazione dell&rsquo;associazione), comune o citt&agrave;, temi, competenze, descrizione. Email e cognome per esteso non sono mai pubblicati n&eacute; accessibili dall&rsquo;esterno.<br>
     <strong>Localizzazione:</strong> il punto sulla mappa &egrave; il centro del comune (o del Paese, se vivi all&rsquo;estero), mai il tuo indirizzo. Non usiamo il GPS.<br>
-    <strong>Adesioni e proposte:</strong> chi aderisce a un&rsquo;azione o invia una proposta non &egrave; pubblico: quei dati li conosce solo il direttivo.<br>
+    <strong>Adesioni e proposte:</strong> chi aderisce a un&rsquo;azione o invia una proposta non &egrave; pubblico: quei dati li conosce solo chi cura la mappa.<br>
     <strong>Conservazione:</strong> finch&eacute; resti iscritto. <strong>Cancellazione:</strong> immediata, con il link presente in ogni email che ti inviamo.<br>
     <strong>Diritti:</strong> accesso, rettifica, cancellazione, opposizione, revoca del consenso in qualsiasi momento (artt. 15-22 GDPR); reclamo al Garante Privacy.<br>
     <strong>Dove stanno i dati:</strong> database Supabase, server nell&rsquo;Unione Europea (Francoforte). Nessun trasferimento extra-UE.</p>
@@ -261,7 +261,7 @@ footer a{color:var(--ar)}
   <div id="proponi" class="propbox">
     <h2>Hai un&rsquo;idea? Proponila.</h2>
     <p>Una battaglia da aprire, una proposta di legge, una mozione da portare in un consiglio comunale, un&rsquo;iniziativa nel tuo territorio.</p>
-    <p><strong style="color:#c8941a">Le proposte non vengono pubblicate.</strong> Le legge il direttivo. Se una convince, diventa un&rsquo;<a href="azioni.html" style="color:#ffd580">Azione</a> pubblica &mdash; con una soglia di adesioni, un referente e una scadenza &mdash; e la vedrai partire davvero.</p>
+    <p><strong style="color:#c8941a">Le proposte non vengono pubblicate.</strong> Le leggiamo tutte. Se una convince, diventa un&rsquo;<a href="azioni.html" style="color:#ffd580">Azione</a> pubblica &mdash; con una soglia di adesioni, un referente e una scadenza &mdash; e la vedrai partire davvero.</p>
     <p style="font-size:.88em;color:rgba(255,255,255,.65)">Per proporre devi essere gi&agrave; sulla mappa.</p>
 
     <button class="btn" id="apri_prop" style="margin-top:8px">Scrivi una proposta</button>
@@ -537,7 +537,7 @@ var P_ERR={
   non_iscritto:'Per proporre devi prima essere sulla mappa. <a href="#iscriviti" style="color:#8b1a1a;text-decoration:underline">Iscriviti qui</a>, poi torna.',
   email_non_confermata:'Devi prima confermare la tua email: controlla la posta (anche lo spam).',
   in_attesa_approvazione:'La tua iscrizione \u00e8 ancora in attesa del controllo antiabuso. Riprova tra qualche giorno.',
-  troppe_proposte:'Hai gi\u00e0 tre proposte in valutazione. Aspetta che il direttivo risponda.',
+  troppe_proposte:'Hai gi\u00e0 tre proposte in valutazione. Aspetta una risposta.',
   titolo_troppo_breve:'Il titolo \u00e8 troppo breve.',
   testo_troppo_breve:'La proposta \u00e8 troppo breve: servono almeno 50 caratteri.'
 };
@@ -561,7 +561,7 @@ document.getElementById('p_invia').onclick=function(){
     .then(function(res){
       if(res.ok){
         msg.className='msg ok';
-        msg.innerHTML='<b>Proposta ricevuta.</b> La legger\u00e0 il direttivo. Se convince, diventer\u00e0 un\u2019Azione pubblica e ti scriveremo.';
+        msg.innerHTML='<b>Proposta ricevuta.</b> La leggeremo. Se convince, diventer\u00e0 un\u2019Azione pubblica e ti scriveremo.';
         btn.style.display='none';
       } else {
         ko(P_ERR[res.errore]||'Errore durante l\u2019invio. Riprova pi\u00f9 tardi.');

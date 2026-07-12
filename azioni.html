@@ -113,7 +113,7 @@ footer a{color:var(--ar)}
       <li>Al raggiungimento della soglia <b>convochiamo una riunione su Zoom entro 10 giorni</b>, e ricevi data e link via email.</li>
       <li>Dopo la riunione <b>pubblichiamo qui cosa abbiamo deciso</b>. Cos&igrave; sai che aderire &egrave; servito a qualcosa.</li>
     </ol>
-    <p style="margin:12px 0 0;font-size:.9em;color:#6b6255"><b>Chi aderisce non &egrave; pubblico.</b> Vedi solo il contatore. I nomi degli aderenti sono noti soltanto al direttivo, perch&eacute; l&rsquo;adesione a un&rsquo;azione rivela un&rsquo;opinione politica ed &egrave; un dato protetto (art. 9 GDPR).</p>
+    <p style="margin:12px 0 0;font-size:.9em;color:#6b6255"><b>Chi aderisce non &egrave; pubblico.</b> Vedi solo il contatore. I nomi degli aderenti sono noti soltanto a chi cura la mappa, perch&eacute; l&rsquo;adesione a un&rsquo;azione rivela un&rsquo;opinione politica ed &egrave; un dato protetto (art. 9 GDPR).</p>
   </div>
 </section>
 
@@ -204,7 +204,7 @@ function disegna(A){
       +   '<input type="email" id="em_' + a.slug + '" maxlength="120" placeholder="nome@esempio.it">'
       +   '<label for="nt_' + a.slug + '">Cosa puoi fare (facoltativo)</label>'
       +   '<textarea id="nt_' + a.slug + '" maxlength="300" placeholder="Es. posso tenere un banchetto il sabato, conosco un consigliere comunale..."></textarea>'
-      +   '<div class="hint">La nota la legge solo il direttivo. Non viene pubblicata.</div>'
+      +   '<div class="hint">La nota la legge solo chi cura la mappa. Non viene pubblicata.</div>'
       +   '<button onclick="aderisci(\'' + a.slug + '\')" id="inv_' + a.slug + '">Conferma adesione</button>'
       +   '<div class="msg" id="msg_' + a.slug + '"></div>'
       + '</div>'
