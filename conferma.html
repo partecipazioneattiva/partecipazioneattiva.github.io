@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Conferma iscrizione — Partecipazione Attiva</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:Merriweather,Georgia,serif;background:#fffdf8;color:#222;line-height:1.6}
+.hero{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);color:#fff;padding:40px 18px;text-align:center}
+.hero h1{margin:0;font-family:Montserrat,sans-serif;font-size:1.7em;font-weight:800}
+.box{max-width:620px;margin:36px auto;padding:0 18px;text-align:center}
+.esito{background:#fff;border:1px solid #e3d9c8;border-radius:12px;padding:34px 26px}
+.esito h2{font-family:Montserrat,sans-serif;font-size:1.4em;margin:0 0 12px}
+.ok h2{color:#2e7d32}
+.ko h2{color:#c0392b}
+.btn{display:inline-block;margin-top:20px;background:#e8900a;color:#fff;text-decoration:none;
+     padding:13px 30px;border-radius:50px;font-family:Montserrat,sans-serif;font-weight:700}
+.btn:hover{background:#8a4e00}
+footer{text-align:center;padding:24px;color:#8a8175;font-size:.85em}
+footer a{color:#e8900a}
+</style>
+</head>
+<body>
+<div class="hero"><h1>Partecipazione Attiva</h1></div>
+<div class="box">
+  <div class="esito" id="esito">
+    <h2>Verifica in corso…</h2>
+    <p>Un istante.</p>
+  </div>
+</div>
+<footer><a href="https://partecipazione-attiva.it">partecipazione-attiva.it</a></footer>
+<script>
+var SB_URL = 'https://hfraarlzltoiuvplushi.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
+
+function mostra(cls, titolo, testo, link){
+  document.getElementById('esito').className = 'esito ' + cls;
+  document.getElementById('esito').innerHTML =
+    '<h2>' + titolo + '</h2><p>' + testo + '</p>' +
+    (link ? '<a class="btn" href="mappa.html">Vai alla mappa</a>' : '');
+}
+
+var t = new URLSearchParams(location.search).get('t');
+if(!t){
+  mostra('ko','Link non valido','Il link di conferma non &egrave; completo. Controlla di averlo copiato per intero dalla email.',false);
+} else {
+  fetch(SB_URL + '/rest/v1/rpc/conferma_email', {
+    method:'POST',
+    headers:{apikey:SB_KEY, Authorization:'Bearer '+SB_KEY, 'Content-Type':'application/json'},
+    body: JSON.stringify({p_token: t})
+  }).then(function(r){ return r.json(); })
+    .then(function(res){
+      if(res === 'confermato'){
+        mostra('ok','Email confermata',
+          'Grazie. La tua richiesta &egrave; ora in attesa di approvazione da parte del direttivo. Riceverai la conferma appena la tua scheda sar&agrave; pubblicata sulla mappa.', true);
+      } else if(res === 'non_valido'){
+        mostra('ok','Gia confermata',
+          'Questo indirizzo risulta gi&agrave; confermato. Non devi fare altro: la tua richiesta &egrave; in valutazione.', true);
+      } else {
+        mostra('ko','Link non riconosciuto',
+          'Non troviamo nessuna iscrizione con questo link. Potrebbe essere scaduto o gi&agrave; cancellato.', false);
+      }
+    })
+    .catch(function(){
+      mostra('ko','Errore di collegamento','Non riusciamo a contattare il server. Riprova tra qualche minuto.', false);
+    });
+}
+</script>
+</body>
+</html>

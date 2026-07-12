@@ -7,3 +7,4 @@ config_legge.py
 config_pensattivo.py
 crea_template.py
 images/pensattivo-hero.jpeg
+admin/

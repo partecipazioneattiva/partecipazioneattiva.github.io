@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Azioni &mdash; Partecipazione Attiva</title>
+<meta name="description" content="Le azioni aperte di Partecipazione Attiva: obiettivi concreti, una soglia di adesioni, e quando si raggiunge si parte. Dai la tua disponibilit&agrave;.">
+<link rel="canonical" href="https://partecipazione-attiva.it/azioni.html">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ar:#e8900a;--br:#8a4e00;--tx:#222;--bd:#e3d9c8;--bg:#fffdf8;--vd:#2e7d32}
+*{box-sizing:border-box}
+body{margin:0;font-family:Merriweather,Georgia,serif;color:var(--tx);background:var(--bg);line-height:1.7}
+.wrap{max-width:860px;margin:0 auto;padding:0 18px}
+h1,h2,h3,.mono{font-family:Montserrat,system-ui,sans-serif}
+.hero{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);color:#fff;padding:48px 0 40px;text-align:center}
+.hero h1{margin:0 0 10px;font-size:2.1em;font-weight:900}
+.hero p{margin:0 auto;max-width:620px;font-size:1.03em;opacity:.94}
+section{padding:34px 0}
+#conta{font-family:Montserrat,sans-serif;font-size:.85em;color:#6b6255;margin-bottom:18px}
+
+.az{background:#fff;border:1px solid var(--bd);border-left:5px solid var(--ar);
+    border-radius:12px;padding:22px 24px;margin-bottom:18px}
+.az.raggiunta{border-left-color:var(--vd);background:#f6fbf6}
+.az.conclusa{border-left-color:#999;opacity:.85}
+.az.non_raggiunta{border-left-color:#999;opacity:.7}
+
+.tag{display:inline-block;font-family:Montserrat,sans-serif;font-size:.68em;font-weight:700;
+     text-transform:uppercase;letter-spacing:1px;padding:3px 10px;border-radius:4px;
+     background:#fff3e0;color:var(--br);margin:0 6px 8px 0}
+.tag.st{background:var(--ar);color:#fff}
+.tag.st.ok{background:var(--vd)}
+.tag.st.ko{background:#999}
+.az h2{font-size:1.28em;margin:2px 0 8px;color:var(--br);line-height:1.3}
+.somm{margin:0 0 14px;color:#4a443c}
+.det{display:none;margin:0 0 14px}
+.det p{margin:0 0 10px}
+.serve{background:#fffdf8;border:1px dashed var(--bd);border-radius:8px;padding:12px 14px;margin:12px 0;font-size:.94em}
+.serve b{color:var(--br);font-family:Montserrat,sans-serif;font-size:.85em;text-transform:uppercase;letter-spacing:.5px}
+.esito{background:#f0f6f0;border-left:3px solid var(--vd);border-radius:6px;padding:12px 14px;margin:12px 0;font-size:.94em}
+.esito b{color:var(--vd);font-family:Montserrat,sans-serif}
+
+.barra{height:12px;background:#f0e8d8;border-radius:50px;overflow:hidden;margin:12px 0 6px}
+.barra i{display:block;height:100%;background:var(--ar);border-radius:50px;transition:width .5s}
+.az.raggiunta .barra i{background:var(--vd)}
+.numeri{display:flex;justify-content:space-between;align-items:baseline;
+        font-family:Montserrat,sans-serif;font-size:.85em;margin-bottom:14px}
+.numeri b{font-size:1.5em;font-weight:900;color:var(--br)}
+.az.raggiunta .numeri b{color:var(--vd)}
+.manca{color:var(--ar);font-weight:700}
+.piede{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+       border-top:1px solid #f2ede3;padding-top:14px;margin-top:6px}
+.meta{font-size:.82em;color:#8a8175}
+button{background:var(--ar);color:#fff;border:0;border-radius:50px;padding:11px 26px;
+       font-family:Montserrat,sans-serif;font-weight:700;font-size:.92em;cursor:pointer}
+button:hover{background:var(--br)}
+button:disabled{background:#ccc;cursor:not-allowed}
+.piu{background:none;color:var(--ar);padding:0;font-size:.85em;text-decoration:underline}
+.piu:hover{background:none;color:var(--br)}
+
+.msg{padding:11px 14px;border-radius:8px;margin-top:12px;font-size:.9em;display:none}
+.msg.ok{background:#e8f5e9;border-left:4px solid var(--vd);color:#1b5e20;display:block}
+.msg.ko{background:#ffebee;border-left:4px solid #c0392b;color:#8b1a1a;display:block}
+.adesione{margin-top:12px;padding-top:12px;border-top:1px dashed var(--bd);display:none}
+.adesione.on{display:block}
+.adesione label{display:block;font-family:Montserrat,sans-serif;font-weight:600;font-size:.82em;
+                color:var(--br);margin-bottom:5px}
+.adesione input,.adesione textarea{width:100%;padding:10px 12px;border:1px solid var(--bd);
+  border-radius:7px;font-family:Merriweather,serif;font-size:.92em;background:#fffdf8;margin-bottom:10px}
+.adesione textarea{min-height:60px;resize:vertical}
+.hint{font-size:.8em;color:#8a8175;margin:-6px 0 10px}
+
+.spiega{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:22px 24px;margin-top:30px;font-size:.92em}
+.spiega h3{margin:0 0 12px;font-size:1.05em;color:var(--br)}
+.spiega ol{margin:0;padding-left:20px}
+.spiega li{margin-bottom:8px}
+footer{background:#2b2620;color:#c9c0b3;text-align:center;padding:26px 18px;font-size:.85em;margin-top:40px}
+footer a{color:var(--ar)}
+</style>
+</head>
+<body>
+<div style="background:#2b2620;padding:12px 18px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center">
+    <a href="index.html" style="display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto">
+      <img src="LOGO-PA.webp" alt="Partecipazione Attiva" width="34" height="34" style="display:block">
+      <span style="font-family:Montserrat,system-ui,sans-serif;font-weight:800;color:#fff;font-size:.9em">Partecipazione Attiva</span>
+    </a>
+    <a href="index.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Home</a>
+    <a href="mappa.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Mappa</a>
+    <a href="azioni.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Azioni</a>
+    <a href="battaglie.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Battaglie</a>
+    <a href="chi-siamo.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Chi Siamo</a>
+  </div>
+</div>
+
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Azioni</h1>
+    <p>Obiettivi concreti, con una soglia. Quando abbastanza persone dicono &ldquo;ci sono&rdquo;, si parte: convochiamo una riunione operativa e ci dividiamo i compiti.</p>
+  </div>
+</div>
+
+<section class="wrap">
+  <div id="conta">Caricamento...</div>
+  <div id="lista"></div>
+
+  <div class="spiega">
+    <h3>Come funziona</h3>
+    <ol>
+      <li>Ogni azione ha un <b>obiettivo</b>, una <b>scadenza</b> e una <b>soglia di adesioni</b>.</li>
+      <li>Se ti interessa, clicchi <b>Ci sono</b>. Serve essere gi&agrave; sulla <a href="mappa.html" style="color:#e8900a">Mappa</a>: se non ci sei, ti iscrivi in due minuti.</li>
+      <li>Al raggiungimento della soglia <b>convochiamo una riunione su Zoom entro 10 giorni</b>, e ricevi data e link via email.</li>
+      <li>Dopo la riunione <b>pubblichiamo qui cosa abbiamo deciso</b>. Cos&igrave; sai che aderire &egrave; servito a qualcosa.</li>
+    </ol>
+    <p style="margin:12px 0 0;font-size:.9em;color:#6b6255"><b>Chi aderisce non &egrave; pubblico.</b> Vedi solo il contatore. I nomi degli aderenti sono noti soltanto al direttivo, perch&eacute; l&rsquo;adesione a un&rsquo;azione rivela un&rsquo;opinione politica ed &egrave; un dato protetto (art. 9 GDPR).</p>
+  </div>
+</section>
+
+<footer>
+  <p>Partecipazione Attiva &middot; <a href="https://partecipazione-attiva.it">partecipazione-attiva.it</a> &middot; <a href="mappa.html">La Mappa</a></p>
+</footer>
+
+<script>
+var SB_URL = 'https://hfraarlzltoiuvplushi.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
+
+var ETICHETTA = {
+  aperta: 'Aperta', soglia_raggiunta: 'Soglia raggiunta',
+  conclusa: 'Conclusa', non_raggiunta: 'Non raggiunta'
+};
+var ERRORI = {
+  non_iscritto: 'Per aderire devi prima essere sulla Mappa. <a href="mappa.html" style="color:#8b1a1a;text-decoration:underline">Iscriviti qui</a>, poi torna.',
+  email_non_confermata: 'Devi prima confermare la tua email: controlla la posta (anche lo spam).',
+  in_attesa_approvazione: 'La tua iscrizione alla Mappa \u00e8 ancora in attesa di approvazione. Riprova tra qualche giorno.',
+  gia_aderito: 'Risulti gi\u00e0 fra gli aderenti a questa azione. Grazie!',
+  azione_chiusa: 'Questa azione \u00e8 chiusa: non si raccolgono pi\u00f9 adesioni.',
+  azione_non_aperta: 'Questa azione non \u00e8 ancora aperta.'
+};
+
+function esc(s){
+  return String(s == null ? '' : s).replace(/[<>&"]/g, function(c){
+    return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];
+  });
+}
+function data(d){
+  if(!d) return '';
+  var p = d.split('-');
+  return p[2] + '/' + p[1] + '/' + p[0];
+}
+
+function disegna(A){
+  if(!A.length){
+    document.getElementById('conta').textContent = 'Nessuna azione aperta in questo momento.';
+    document.getElementById('lista').innerHTML =
+      '<p style="color:#8a8175">Torna presto: le azioni vengono aperte man mano che le battaglie entrano nel vivo.</p>';
+    return;
+  }
+  var aperte = A.filter(function(a){ return a.stato === 'aperta' || a.stato === 'soglia_raggiunta'; }).length;
+  document.getElementById('conta').textContent =
+    aperte + (aperte === 1 ? ' azione aperta' : ' azioni aperte') +
+    (A.length > aperte ? ' \u00b7 ' + (A.length - aperte) + ' concluse' : '');
+
+  document.getElementById('lista').innerHTML = A.map(function(a){
+    var perc = Math.min(100, Math.round(a.adesioni / a.soglia * 100));
+    var ok   = a.stato === 'soglia_raggiunta';
+    var chiusa = a.stato === 'conclusa' || a.stato === 'non_raggiunta';
+    var cls  = ok ? 'raggiunta' : (a.stato === 'conclusa' ? 'conclusa' : (a.stato === 'non_raggiunta' ? 'non_raggiunta' : ''));
+    var stcls = ok ? 'ok' : (chiusa ? 'ko' : '');
+
+    return '<div class="az ' + cls + '" id="az_' + a.slug + '">'
+      + '<div>'
+      +   '<span class="tag st ' + stcls + '">' + ETICHETTA[a.stato] + '</span>'
+      +   '<span class="tag">' + esc(a.tema) + '</span>'
+      +   (a.luogo ? '<span class="tag">' + esc(a.luogo) + '</span>' : '')
+      + '</div>'
+      + '<h2>' + esc(a.titolo) + '</h2>'
+      + '<p class="somm">' + esc(a.sommario) + '</p>'
+
+      + '<div class="det" id="det_' + a.slug + '">'
+      +   '<p>' + esc(a.descrizione).replace(/\n/g, '<br>') + '</p>'
+      +   '<div class="serve"><b>Serve:</b><br>' + esc(a.serve) + '</div>'
+      + '</div>'
+      + '<button class="piu" onclick="apri(\'' + a.slug + '\')" id="piu_' + a.slug + '">Leggi tutto</button>'
+
+      + (a.esito ? '<div class="esito"><b>Esito &mdash; ' + data(a.esito_il) + '</b><br>'
+                   + esc(a.esito).replace(/\n/g,'<br>') + '</div>' : '')
+
+      + '<div class="barra"><i style="width:' + perc + '%"></i></div>'
+      + '<div class="numeri">'
+      +   '<span><b>' + a.adesioni + '</b> / ' + a.soglia + ' adesioni</span>'
+      +   (ok ? '<span style="color:#2e7d32;font-weight:700">Soglia raggiunta \u2014 riunione in arrivo</span>'
+             : (chiusa ? '' : '<span class="manca">mancano ' + a.mancano + '</span>'))
+      + '</div>'
+
+      + '<div class="piede">'
+      +   '<span class="meta">Referente: ' + esc(a.referente)
+      +     (chiusa ? '' : ' \u00b7 adesioni entro il ' + data(a.scadenza)) + '</span>'
+      +   (chiusa ? '' : '<button onclick="mostraForm(\'' + a.slug + '\')" id="btn_' + a.slug + '">Ci sono</button>')
+      + '</div>'
+
+      + '<div class="adesione" id="ad_' + a.slug + '">'
+      +   '<label for="em_' + a.slug + '">La tua email (quella con cui sei sulla Mappa)</label>'
+      +   '<input type="email" id="em_' + a.slug + '" maxlength="120" placeholder="nome@esempio.it">'
+      +   '<label for="nt_' + a.slug + '">Cosa puoi fare (facoltativo)</label>'
+      +   '<textarea id="nt_' + a.slug + '" maxlength="300" placeholder="Es. posso tenere un banchetto il sabato, conosco un consigliere comunale..."></textarea>'
+      +   '<div class="hint">La nota la legge solo il direttivo. Non viene pubblicata.</div>'
+      +   '<button onclick="aderisci(\'' + a.slug + '\')" id="inv_' + a.slug + '">Conferma adesione</button>'
+      +   '<div class="msg" id="msg_' + a.slug + '"></div>'
+      + '</div>'
+      + '</div>';
+  }).join('');
+}
+
+function apri(slug){
+  var d = document.getElementById('det_' + slug);
+  var b = document.getElementById('piu_' + slug);
+  var on = d.style.display === 'block';
+  d.style.display = on ? 'none' : 'block';
+  b.textContent = on ? 'Leggi tutto' : 'Chiudi';
+}
+function mostraForm(slug){
+  var f = document.getElementById('ad_' + slug);
+  f.classList.toggle('on');
+  if(f.classList.contains('on')) document.getElementById('em_' + slug).focus();
+}
+
+function aderisci(slug){
+  var msg = document.getElementById('msg_' + slug);
+  var btn = document.getElementById('inv_' + slug);
+  var em  = document.getElementById('em_' + slug).value.trim();
+  var nt  = document.getElementById('nt_' + slug).value.trim();
+
+  function ko(t){ msg.className = 'msg ko'; msg.innerHTML = t; btn.disabled = false; btn.textContent = 'Conferma adesione'; }
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)) return ko('Inserisci un indirizzo email valido.');
+
+  btn.disabled = true; btn.textContent = 'Invio...';
+  fetch(SB_URL + '/functions/v1/aderisci', {
+    method: 'POST',
+    headers: {apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY, 'Content-Type': 'application/json'},
+    body: JSON.stringify({slug: slug, email: em, nota: nt})
+  }).then(function(r){ return r.json(); })
+    .then(function(res){
+      if(res.ok){
+        msg.className = 'msg ok';
+        msg.innerHTML = res.soglia_raggiunta
+          ? '<b>Soglia raggiunta!</b> Con la tua adesione siamo arrivati a ' + res.adesioni +
+            '. Riceverai a breve data e link della riunione su Zoom.'
+          : 'Adesione registrata. Siamo a <b>' + res.adesioni + ' su ' + res.soglia +
+            '</b>. Quando raggiungiamo la soglia ti scriviamo per la riunione.';
+        btn.style.display = 'none';
+        setTimeout(carica, 1200);
+      } else {
+        ko(ERRORI[res.errore] || 'Si è verificato un errore. Riprova più tardi.');
+      }
+    })
+    .catch(function(){ ko('Connessione non riuscita. Riprova.'); });
+}
+
+function carica(){
+  fetch(SB_URL + '/rest/v1/azioni_pubbliche?select=*', {
+    headers: {apikey: SB_KEY, Authorization: 'Bearer ' + SB_KEY}
+  }).then(function(r){ return r.json(); })
+    .then(function(d){ disegna(Array.isArray(d) ? d : []); })
+    .catch(function(){
+      document.getElementById('conta').textContent = 'Azioni non raggiungibili in questo momento.';
+    });
+}
+carica();
+</script>
+</body>
+</html>
