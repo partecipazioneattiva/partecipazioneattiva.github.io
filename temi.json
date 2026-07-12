@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🗺️",
+      "tema": "LA MAPPA",
+      "testo": "cittadini e associazioni sulla mappa d’Italia — cerca per tema o competenza e trova chi si batte per le stesse cose vicino a te"
+    },
+    {
       "emoji": "👽",
       "tema": "PENSATTIVO",
       "testo": "chi è l’alieno verde di PA e perché guardiamo i fatti, non le bandiere"
