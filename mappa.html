@@ -80,6 +80,20 @@ footer a{color:var(--ar)}
 </style>
 </head>
 <body>
+<div style="background:#2b2620;padding:12px 18px">
+  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center">
+    <a href="index.html" style="display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto">
+      <img src="LOGO-PA.webp" alt="Partecipazione Attiva" width="34" height="34" style="display:block">
+      <span style="font-family:Montserrat,system-ui,sans-serif;font-weight:800;color:#fff;font-size:.9em">Partecipazione Attiva</span>
+    </a>
+    <a href="index.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Home</a>
+    <a href="perche-la-mappa.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Perch&eacute;</a>
+    <a href="azioni.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Azioni</a>
+    <a href="battaglie.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Battaglie</a>
+    <a href="chi-siamo.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Chi Siamo</a>
+  </div>
+</div>
+
 <div class="hero">
   <div class="wrap">
     <h1>La Mappa di Partecipazione Attiva</h1>
@@ -182,8 +196,8 @@ footer a{color:var(--ar)}
 const SB_URL = 'https://hfraarlzltoiuvplushi.supabase.co';
 const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
 
-const TEMI = ['legge elettorale','sanita','lavoro','ambiente','scuola e universita','giustizia','casa e abitare','trasporti','fisco','energia','agricoltura','sicurezza','cultura','digitale','democrazia partecipativa','rigenerazione urbana'];
-const COMPETENZE = ['legale','medico-sanitaria','chimica','ingegneria','economia e finanza','informatica','insegnamento','comunicazione','architettura e urbanistica','agronomia','contabilita','amministrazione pubblica','ricerca scientifica','artigianato','volontariato'];
+const TEMI = ['legge elettorale','sanit\u00e0','lavoro','ambiente','scuola e universit\u00e0','giustizia','casa e abitare','trasporti','fisco','energia','agricoltura','sicurezza','cultura','digitale','democrazia partecipativa','rigenerazione urbana'];
+const COMPETENZE = ['legale','medico-sanitaria','chimica','ingegneria','economia e finanza','informatica','insegnamento','comunicazione','architettura e urbanistica','agronomia','contabilità','amministrazione pubblica','ricerca scientifica','artigianato','volontariato'];
 
 function pillole(box, voci, pre){
   document.getElementById(box).innerHTML = voci.map(function(v,i){
@@ -324,7 +338,7 @@ function filtra(){
 document.getElementById('q').oninput = filtra;
 
 document.getElementById('chips').innerHTML =
-  ['legge elettorale','sanita','ambiente','lavoro','legale','medico-sanitaria'].map(function(t){
+  ['legge elettorale','sanit\u00e0','ambiente','lavoro','legale','medico-sanitaria'].map(function(t){
     return '<span class="chip" onclick="document.getElementById(\'q\').value=\''+t+'\';filtra()">'+t+'</span>';
   }).join('')
   + '<span class="chip" onclick="document.getElementById(\'q\').value=\'\';filtra()">tutti</span>';
