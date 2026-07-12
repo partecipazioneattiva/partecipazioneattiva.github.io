@@ -111,7 +111,7 @@ footer a{color:var(--ar)}
 </section>
 <section class="wrap" id="iscriviti">
   <h2>Entra nella mappa</h2>
-  <p class="sub">Compila e riceverai un&rsquo;email di conferma. La tua scheda comparir&agrave; solo dopo la conferma e l&rsquo;approvazione del direttivo.</p>
+  <p class="sub">Compila e riceverai un&rsquo;email di conferma. Dopo che avrai cliccato il link, un breve controllo antiabuso &mdash; serve solo a impedire che qualcuno iscriva altre persone a loro insaputa &mdash; e la tua scheda comparir&agrave; sulla mappa, in genere entro pochi giorni. <strong>Non c&rsquo;&egrave; nessuna selezione: chi condivide la Costituzione entra.</strong></p>
   <div class="form">
     <div class="tipo">
       <input type="radio" name="tipo" id="t_cit" value="cittadino" checked>
@@ -380,7 +380,7 @@ document.getElementById('invia').onclick = function(){
   }).then(function(r){
     if(r.ok){
       msg.className = 'msg ok';
-      msg.textContent = 'Richiesta ricevuta. Dopo la conferma via email e la verifica del direttivo la tua scheda comparir\u00e0 sulla mappa.';
+      msg.innerHTML = '<b>Richiesta ricevuta.</b> Ti abbiamo inviato un\u2019email: clicca il link per confermare che l\u2019indirizzo \u00e8 tuo. Dopo il controllo antiabuso la tua scheda comparir\u00e0 sulla mappa.';
       btn.style.display = 'none';
       return;
     }

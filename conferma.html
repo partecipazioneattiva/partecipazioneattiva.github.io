@@ -54,7 +54,7 @@ if(!t){
     .then(function(res){
       if(res === 'confermato'){
         mostra('ok','Email confermata',
-          'Grazie. La tua richiesta &egrave; ora in attesa di approvazione da parte del direttivo. Riceverai la conferma appena la tua scheda sar&agrave; pubblicata sulla mappa.', true);
+          'Grazie. Facciamo un ultimo controllo antiabuso &mdash; serve solo a evitare che qualcuno iscriva altre persone a loro insaputa &mdash; e poi la tua scheda comparir&agrave; sulla mappa, in genere entro pochi giorni.', true);
       } else if(res === 'non_valido'){
         mostra('ok','Gia confermata',
           'Questo indirizzo risulta gi&agrave; confermato. Non devi fare altro: la tua richiesta &egrave; in valutazione.', true);
