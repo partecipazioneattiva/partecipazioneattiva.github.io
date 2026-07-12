@@ -4,41 +4,69 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>La Mappa di Partecipazione Attiva</title>
-<meta name="description" content="La mappa dei cittadini e delle associazioni di Partecipazione Attiva: cerca chi si occupa dei temi che ti stanno a cuore, vicino a te.">
+<meta name="description" content="La mappa dei cittadini e delle associazioni di Partecipazione Attiva: cerca chi si occupa dei temi che ti stanno a cuore, vicino a te. Anche italiani all'estero.">
 <link rel="canonical" href="https://partecipazione-attiva.it/mappa.html">
+<meta property="og:title" content="La Mappa di Partecipazione Attiva">
+<meta property="og:description" content="Chi siamo, dove siamo, cosa ci sta a cuore. Cerca per tema o competenza.">
+<meta property="og:image" content="https://partecipazione-attiva.it/images/mappa-italia.webp">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{--ar:#e8900a;--br:#8a4e00;--tx:#222;--bd:#e3d9c8;--bg:#fffdf8}
+:root{--ar:#e8900a;--br:#8a4e00;--tx:#222;--bd:#e3d9c8;--bg:#fffdf8;--vd:#2e7d32;--bl:#0d1b4b}
 *{box-sizing:border-box}
 body{margin:0;font-family:Merriweather,Georgia,serif;color:var(--tx);background:var(--bg);line-height:1.6}
-.wrap{max-width:1100px;margin:0 auto;padding:0 18px}
-h1,h2,h3,.mono{font-family:Montserrat,system-ui,sans-serif}
-.hero{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);color:#fff;padding:46px 0 38px;text-align:center}
-.hero h1{margin:0 0 10px;font-size:2.1em;font-weight:800}
-.hero p{margin:0 auto;max-width:640px;font-size:1.03em;opacity:.95}
-section{padding:34px 0}
-h2{font-size:1.5em;color:var(--br);margin:0 0 6px}
-.sub{color:#6b6255;margin:0 0 18px;font-size:.94em}
-#q{width:100%;padding:15px 18px;font-size:1.1em;font-family:Montserrat,sans-serif;border:2px solid var(--bd);border-radius:50px;outline:none;background:#fff}
+.wrap{max-width:1060px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:Montserrat,system-ui,sans-serif}
+a{color:var(--ar)}
+.navb{background:#2b2620;padding:12px 18px}
+.navb .in{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center}
+.navb a{font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none}
+.navb a:hover{color:#fff}
+.navb .logo{display:flex;align-items:center;gap:9px;margin-right:auto}
+.navb .logo span{font-family:Montserrat,sans-serif;font-weight:800;color:#fff;font-size:.9em;text-transform:none;letter-spacing:0}
+.hero{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);color:#fff;padding:44px 0 36px;text-align:center}
+.hero h1{margin:0 0 10px;font-size:2.1em;font-weight:900}
+.hero p{margin:0 auto 20px;max-width:640px;font-size:1.03em;opacity:.95}
+.hero .azioni-hero{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.bhero{display:inline-block;background:#fff;color:var(--br);text-decoration:none;padding:12px 28px;border-radius:50px;font-family:Montserrat,sans-serif;font-weight:800;font-size:.92em}
+.bhero:hover{background:#fff3e0}
+.bhero.ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.6)}
+.bhero.ghost:hover{background:rgba(255,255,255,.15)}
+section{padding:30px 0}
+h2{font-size:1.45em;color:var(--br);margin:0 0 6px}
+.sub{color:#6b6255;margin:0 0 16px;font-size:.94em}
+#q{width:100%;padding:15px 18px;font-size:1.08em;font-family:Montserrat,sans-serif;border:2px solid var(--bd);border-radius:50px;outline:none;background:#fff}
 #q:focus{border-color:var(--ar)}
 .chips{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:7px}
 .chip{background:#fff;border:1px solid var(--bd);border-radius:50px;padding:5px 13px;font-family:Montserrat,sans-serif;font-size:.8em;cursor:pointer;color:var(--br)}
-.chip:hover{background:var(--ar);color:#fff;border-color:var(--ar)}
-#conta{font-family:Montserrat,sans-serif;font-size:.85em;color:#6b6255;margin:14px 0 10px}
+.chip:hover,.chip.on{background:var(--ar);color:#fff;border-color:var(--ar)}
+#conta{font-family:Montserrat,sans-serif;font-size:.88em;color:#6b6255;margin:16px 0 10px;font-weight:600}
 #map{height:520px;border-radius:12px;border:1px solid var(--bd);z-index:1}
+@media(max-width:820px){#map{height:400px}}
+.sottomappa{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--bd);border-radius:12px;padding:16px 20px;margin-top:14px}
+.sottomappa p{margin:0;font-size:.93em;color:#4a443c}
+.sottomappa b{color:var(--br)}
+.btn{display:inline-block;background:var(--ar);color:#fff;border:0;text-decoration:none;border-radius:50px;padding:12px 26px;font-family:Montserrat,sans-serif;font-weight:700;font-size:.9em;cursor:pointer;white-space:nowrap}
+.btn:hover{background:var(--br)}
+.btn:disabled{background:#ccc;cursor:not-allowed}
+.btn.sec{background:#fff;color:var(--br);border:2px solid var(--bd)}
+.btn.sec:hover{background:#fff3e0;border-color:var(--ar)}
 .griglia{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
-@media(max-width:820px){.griglia{grid-template-columns:1fr}#map{height:400px}}
+@media(max-width:820px){.griglia{grid-template-columns:1fr}}
 .card{background:#fff;border:1px solid var(--bd);border-left:4px solid var(--ar);border-radius:8px;padding:14px 16px;cursor:pointer}
 .card:hover{box-shadow:0 3px 14px rgba(138,78,0,.14)}
 .card.hi{border-left-color:var(--br);background:#fff8ec}
+.card.est{border-left-color:var(--bl)}
 .card h3{margin:0;font-size:1.02em}
 .card .loc{font-family:Montserrat,sans-serif;font-size:.78em;color:var(--ar);text-transform:uppercase;letter-spacing:.5px;font-weight:600;margin:2px 0 7px}
+.card.est .loc{color:var(--bl)}
 .card p{margin:0 0 9px;font-size:.9em;color:#4a443c}
 .tag{display:inline-block;background:#fff3e0;color:var(--br);border-radius:50px;padding:2px 9px;font-family:Montserrat,sans-serif;font-size:.72em;margin:0 4px 4px 0}
 .tag.cmp{background:#e8f2ff;color:#1a4f8a}
 .badge{font-family:Montserrat,sans-serif;font-size:.66em;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:2px 8px;border-radius:4px;background:#eee;color:#555;vertical-align:middle}
 .badge.a{background:var(--br);color:#fff}
+#altri{text-align:center;margin-top:16px}
+.vuoto{text-align:center;color:#8a8175;padding:24px;font-size:.95em}
 .form{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:26px}
 .riga{margin-bottom:18px}
 label{display:block;font-family:Montserrat,sans-serif;font-weight:600;font-size:.86em;margin-bottom:5px;color:var(--br)}
@@ -48,12 +76,6 @@ textarea{min-height:110px;resize:vertical}
 .due{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 @media(max-width:600px){.due{grid-template-columns:1fr}}
 .hint{font-size:.8em;color:#8a8175;margin-top:4px}
-#sugg{position:absolute;left:0;right:0;top:100%;z-index:500;background:#fff;border:1px solid var(--bd);
-  border-radius:0 0 7px 7px;max-height:240px;overflow-y:auto;display:none;box-shadow:0 6px 18px rgba(138,78,0,.15)}
-#sugg div{padding:10px 13px;cursor:pointer;font-size:.92em;border-bottom:1px solid #f4efe6}
-#sugg div:last-child{border-bottom:0}
-#sugg div:hover,#sugg div.sel{background:#fff3e0;color:var(--br)}
-#sugg .pr{color:#8a8175;font-size:.85em}
 .scelte{display:flex;flex-wrap:wrap;gap:7px}
 .scelte input{display:none}
 .scelte label{display:inline-block;background:#fffdf8;border:1px solid var(--bd);border-radius:50px;padding:6px 13px;font-size:.82em;font-weight:500;cursor:pointer;margin:0;color:var(--tx)}
@@ -65,53 +87,75 @@ textarea{min-height:110px;resize:vertical}
 .consenso{background:#fff8ec;border:1px solid #f0dcb8;border-radius:8px;padding:14px;margin-bottom:11px;display:flex;gap:11px}
 .consenso input{margin-top:4px;width:18px;height:18px;flex-shrink:0;accent-color:var(--ar)}
 .consenso label{font-family:Merriweather,serif;font-weight:400;font-size:.87em;color:#4a443c;margin:0;line-height:1.5}
-button{background:var(--ar);color:#fff;border:0;border-radius:50px;padding:15px 40px;font-family:Montserrat,sans-serif;font-weight:700;font-size:1em;cursor:pointer}
-button:hover{background:var(--br)}
-button:disabled{background:#ccc;cursor:not-allowed}
 .msg{padding:14px 16px;border-radius:8px;margin-top:16px;font-size:.92em;display:none}
-.msg.ok{background:#e8f5e9;border-left:4px solid #2e7d32;color:#1b5e20;display:block}
+.msg.ok{background:#e8f5e9;border-left:4px solid var(--vd);color:#1b5e20;display:block}
 .msg.ko{background:#ffebee;border-left:4px solid #c0392b;color:#8b1a1a;display:block}
+#sugg{position:absolute;left:0;right:0;top:100%;z-index:500;background:#fff;border:1px solid var(--bd);border-radius:0 0 7px 7px;max-height:240px;overflow-y:auto;display:none;box-shadow:0 6px 18px rgba(138,78,0,.15)}
+#sugg div{padding:10px 13px;cursor:pointer;font-size:.92em;border-bottom:1px solid #f4efe6}
+#sugg div:last-child{border-bottom:0}
+#sugg div:hover{background:#fff3e0;color:var(--br)}
+#sugg .pr{color:#8a8175;font-size:.85em}
 .privacy{font-size:.84em;color:#6b6255;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:18px 20px;margin-top:24px}
 .privacy strong{color:var(--br)}
+.propbox{background:var(--bl);color:#fff;border-radius:12px;padding:26px 28px}
+.propbox h2{color:#fff;margin:0 0 8px}
+.propbox p{color:rgba(255,255,255,.85);font-size:.94em;margin:0 0 8px}
+.propbox label{color:#c8941a}
+.propbox input,.propbox textarea,.propbox select{background:rgba(255,255,255,.95);border-color:transparent}
+.propbox .hint{color:rgba(255,255,255,.6)}
+.propform{display:none;margin-top:18px}
+.propform.on{display:block}
 footer{background:#2b2620;color:#c9c0b3;text-align:center;padding:26px 18px;font-size:.85em;margin-top:40px}
 footer a{color:var(--ar)}
 .leaflet-tooltip.pa{background:var(--br);color:#fff;border:0;font-family:Montserrat,sans-serif;font-size:.8em;font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .leaflet-tooltip.pa:before{border-top-color:var(--br)}
+.leaflet-tooltip.pa.est{background:var(--bl)}
+.leaflet-tooltip.pa.est:before{border-top-color:var(--bl)}
 </style>
 </head>
 <body>
-<div style="background:#2b2620;padding:12px 18px">
-  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center">
-    <a href="index.html" style="display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto">
-      <img src="LOGO-PA.webp" alt="Partecipazione Attiva" width="34" height="34" style="display:block">
-      <span style="font-family:Montserrat,system-ui,sans-serif;font-weight:800;color:#fff;font-size:.9em">Partecipazione Attiva</span>
-    </a>
-    <a href="index.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Home</a>
-    <a href="perche-la-mappa.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Perch&eacute;</a>
-    <a href="azioni.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Azioni</a>
-    <a href="battaglie.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Battaglie</a>
-    <a href="chi-siamo.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Chi Siamo</a>
-  </div>
-</div>
+
+<div class="navb"><div class="in">
+  <a href="index.html" class="logo"><img src="LOGO-PA.webp" alt="Partecipazione Attiva" width="34" height="34"><span>Partecipazione Attiva</span></a>
+  <a href="index.html">Home</a>
+  <a href="perche-la-mappa.html">Perch&eacute;</a>
+  <a href="azioni.html">Azioni</a>
+  <a href="battaglie.html">Battaglie</a>
+  <a href="chi-siamo.html">Chi Siamo</a>
+</div></div>
 
 <div class="hero">
   <div class="wrap">
     <h1>La Mappa di Partecipazione Attiva</h1>
-    <p>Chi siamo, dove siamo, cosa ci sta a cuore. Cerca per tema o per competenza e trova le persone e le associazioni che si battono per le stesse cose, vicino a te.</p>
+    <p>Chi siamo, dove siamo, cosa ci sta a cuore. Cerca per tema o per competenza e trova le persone e le associazioni che si battono per le stesse cose, vicino a te. <strong>Anche fuori dall&rsquo;Italia.</strong></p>
+    <div class="azioni-hero">
+      <a class="bhero" href="#iscriviti">Entra nella Mappa</a>
+      <a class="bhero ghost" href="perche-la-mappa.html">Perch&eacute; una mappa</a>
+    </div>
   </div>
 </div>
+
 <section class="wrap">
   <h2>Cerca</h2>
-  <p class="sub">Scrivi anche una sola parola: legge elettorale, sanit&agrave;, ambiente, legale, Napoli&hellip;</p>
+  <p class="sub">Scrivi anche una sola parola: <em>legge elettorale</em>, <em>sanit&agrave;</em>, <em>ambiente</em>, <em>legale</em>, <em>Napoli</em>, <em>Germania</em>&hellip;</p>
   <input id="q" type="text" placeholder="Cerca un tema, una competenza, un luogo..." autocomplete="off">
   <div class="chips" id="chips"></div>
-  <div id="conta">Caricamento...</div>
+  <div id="conta">Caricamento&hellip;</div>
   <div id="map"></div>
+
+  <div class="sottomappa">
+    <p id="wayfind"><b>Non ci sei ancora?</b> Mettiti sulla mappa: bastano due minuti.</p>
+    <a class="btn" href="#iscriviti">Entra nella Mappa</a>
+  </div>
+
   <div class="griglia" id="lista"></div>
+  <div id="altri"></div>
 </section>
+
 <section class="wrap" id="iscriviti">
   <h2>Entra nella mappa</h2>
   <p class="sub">Compila e riceverai un&rsquo;email di conferma. Dopo che avrai cliccato il link, un breve controllo antiabuso &mdash; serve solo a impedire che qualcuno iscriva altre persone a loro insaputa &mdash; e la tua scheda comparir&agrave; sulla mappa, in genere entro pochi giorni. <strong>Non c&rsquo;&egrave; nessuna selezione: chi condivide la Costituzione entra.</strong></p>
+
   <div class="form">
     <div class="tipo">
       <input type="radio" name="tipo" id="t_cit" value="cittadino" checked>
@@ -119,28 +163,36 @@ footer a{color:var(--ar)}
       <input type="radio" name="tipo" id="t_ass" value="associazione">
       <label for="t_ass"><strong>Associazione</strong><br><span style="font-size:.82em;color:#6b6255">ente o gruppo organizzato</span></label>
     </div>
+
     <div class="riga" id="riga_den" style="display:none">
       <label for="denominazione">Denominazione dell&rsquo;associazione *</label>
       <input type="text" id="denominazione" maxlength="120" placeholder="Es. Comitato Civico Bagnoli">
       <div class="hint">Verr&agrave; pubblicata per esteso sulla mappa.</div>
     </div>
+
     <div class="due">
-      <div class="riga">
-        <label for="nome">Nome *</label>
-        <input type="text" id="nome" maxlength="60">
-      </div>
-      <div class="riga">
-        <label for="cognome">Cognome *</label>
-        <input type="text" id="cognome" maxlength="60">
-        <div class="hint" id="hint_cog">Sulla mappa comparir&agrave; solo l&rsquo;iniziale (es. Mario R.).</div>
-      </div>
+      <div class="riga"><label for="nome">Nome *</label><input type="text" id="nome" maxlength="60"></div>
+      <div class="riga"><label for="cognome">Cognome *</label><input type="text" id="cognome" maxlength="60">
+        <div class="hint" id="hint_cog">Sulla mappa comparir&agrave; solo l&rsquo;iniziale (es. &ldquo;Mario R.&rdquo;).</div></div>
     </div>
+
     <div class="riga">
       <label for="email">Email *</label>
       <input type="email" id="email" maxlength="120">
       <div class="hint">Non viene mai pubblicata. Serve per la conferma e per cancellarti quando vuoi.</div>
     </div>
+
     <div class="riga">
+      <label>Dove vivi *</label>
+      <div class="tipo" style="margin-bottom:12px">
+        <input type="radio" name="dove" id="d_it" value="it" checked>
+        <label for="d_it"><strong>In Italia</strong></label>
+        <input type="radio" name="dove" id="d_es" value="es">
+        <label for="d_es"><strong>All&rsquo;estero</strong></label>
+      </div>
+    </div>
+
+    <div class="riga" id="riga_it">
       <label for="comune">Comune *</label>
       <div style="position:relative">
         <input type="text" id="comune" maxlength="80" autocomplete="off" placeholder="Inizia a scrivere il nome del comune...">
@@ -148,252 +200,372 @@ footer a{color:var(--ar)}
       </div>
       <div class="hint">Sulla mappa compare il comune, mai l&rsquo;indirizzo.</div>
     </div>
-    <div class="riga">
-      <label>Temi che ti stanno a cuore *</label>
-      <div class="scelte" id="temi"></div>
+
+    <div class="riga" id="riga_es" style="display:none">
+      <div class="due">
+        <div>
+          <label for="paese">Paese *</label>
+          <select id="paese"></select>
+        </div>
+        <div>
+          <label for="citta">Citt&agrave; *</label>
+          <input type="text" id="citta" maxlength="80" placeholder="Es. Bruxelles">
+        </div>
+      </div>
+      <div class="hint">Il punto sulla mappa &egrave; il centro del Paese, mai il tuo indirizzo.</div>
     </div>
-    <div class="riga">
-      <label>Competenze che metti a disposizione</label>
-      <div class="scelte" id="competenze"></div>
-    </div>
+
+    <div class="riga"><label>Temi che ti stanno a cuore *</label><div class="scelte" id="temi"></div></div>
+    <div class="riga"><label>Competenze che metti a disposizione</label><div class="scelte" id="competenze"></div></div>
+
     <div class="riga">
       <label for="descrizione">Racconta in poche righe *</label>
       <textarea id="descrizione" maxlength="600" placeholder="Di cosa ti occupi, cosa ti sta a cuore, cosa puoi offrire al movimento..."></textarea>
       <div class="hint">Questo testo &egrave; pubblico ed &egrave; ci&ograve; che il motore di ricerca legge. <span id="cc">0</span>/600</div>
     </div>
+
     <div class="riga">
       <label for="sito">Sito web o pagina social (facoltativo)</label>
       <input type="text" id="sito" maxlength="200" placeholder="https://...">
     </div>
+
     <div class="consenso">
       <input type="checkbox" id="c1">
       <label for="c1"><strong>Consenso al trattamento.</strong> Ho letto l&rsquo;informativa qui sotto e acconsento al trattamento dei miei dati da parte di Partecipazione Attiva per la gestione della mappa. So che i temi che indico possono rivelare le mie opinioni politiche (art. 9 GDPR) e presto un consenso esplicito.</label>
     </div>
     <div class="consenso">
       <input type="checkbox" id="c2">
-      <label for="c2"><strong>Consenso alla pubblicazione.</strong> Acconsento a che nome puntato (o denominazione), comune, temi, competenze e descrizione siano pubblicati sulla mappa pubblica del sito.</label>
+      <label for="c2"><strong>Consenso alla pubblicazione.</strong> Acconsento a che nome puntato (o denominazione), comune o citt&agrave;, temi, competenze e descrizione siano pubblicati sulla mappa pubblica del sito.</label>
     </div>
-    <button id="invia">Invia richiesta</button>
+
+    <button class="btn" id="invia">Invia richiesta</button>
     <div class="msg" id="msg"></div>
   </div>
+
   <div class="privacy">
     <p><strong>Informativa privacy (art. 13 GDPR)</strong></p>
     <p><strong>Titolare:</strong> Partecipazione Attiva &mdash; webmaster.partecipazione.attiva@gmail.com.<br>
-    <strong>Finalit&agrave;:</strong> creare una mappa pubblica di cittadini e associazioni per metterli in contatto sui temi comuni.<br>
+    <strong>Finalit&agrave;:</strong> creare una mappa pubblica di cittadini e associazioni per metterli in contatto sui temi comuni e organizzare azioni condivise.<br>
     <strong>Base giuridica:</strong> il tuo consenso esplicito (art. 6.1.a e art. 9.2.a GDPR).<br>
-    <strong>Dati raccolti:</strong> nome, cognome, email, comune, temi, competenze, descrizione. <strong>Pubblicati:</strong> solo nome + iniziale del cognome (o denominazione dell&rsquo;associazione), comune, temi, competenze, descrizione. Email e cognome per esteso non sono mai pubblicati n&eacute; accessibili dall&rsquo;esterno.<br>
-    <strong>Localizzazione:</strong> il punto sulla mappa &egrave; il centro del comune, mai il tuo indirizzo. Non usiamo il GPS.<br>
+    <strong>Dati raccolti:</strong> nome, cognome, email, comune o citt&agrave;, temi, competenze, descrizione. <strong>Pubblicati:</strong> solo nome + iniziale del cognome (o denominazione dell&rsquo;associazione), comune o citt&agrave;, temi, competenze, descrizione. Email e cognome per esteso non sono mai pubblicati n&eacute; accessibili dall&rsquo;esterno.<br>
+    <strong>Localizzazione:</strong> il punto sulla mappa &egrave; il centro del comune (o del Paese, se vivi all&rsquo;estero), mai il tuo indirizzo. Non usiamo il GPS.<br>
+    <strong>Adesioni e proposte:</strong> chi aderisce a un&rsquo;azione o invia una proposta non &egrave; pubblico: quei dati li conosce solo il direttivo.<br>
     <strong>Conservazione:</strong> finch&eacute; resti iscritto. <strong>Cancellazione:</strong> immediata, con il link presente in ogni email che ti inviamo.<br>
     <strong>Diritti:</strong> accesso, rettifica, cancellazione, opposizione, revoca del consenso in qualsiasi momento (artt. 15-22 GDPR); reclamo al Garante Privacy.<br>
     <strong>Dove stanno i dati:</strong> database Supabase, server nell&rsquo;Unione Europea (Francoforte). Nessun trasferimento extra-UE.</p>
   </div>
 </section>
+
+<section class="wrap">
+  <div class="propbox">
+    <h2>Hai un&rsquo;idea? Proponila.</h2>
+    <p>Una battaglia da aprire, una proposta di legge, una mozione da portare in un consiglio comunale, un&rsquo;iniziativa nel tuo territorio.</p>
+    <p><strong style="color:#c8941a">Le proposte non vengono pubblicate.</strong> Le legge il direttivo. Se una convince, diventa un&rsquo;<a href="azioni.html" style="color:#ffd580">Azione</a> pubblica &mdash; con una soglia di adesioni, un referente e una scadenza &mdash; e la vedrai partire davvero.</p>
+    <p style="font-size:.88em;color:rgba(255,255,255,.65)">Per proporre devi essere gi&agrave; sulla mappa.</p>
+
+    <button class="btn" id="apri_prop" style="margin-top:8px">Scrivi una proposta</button>
+
+    <div class="propform" id="propform">
+      <div class="riga"><label for="p_email">La tua email (quella con cui sei sulla mappa) *</label>
+        <input type="email" id="p_email" maxlength="120"></div>
+      <div class="riga"><label for="p_titolo">Titolo della proposta *</label>
+        <input type="text" id="p_titolo" maxlength="140" placeholder="Es. Mozione contro il caro RC Auto nei consigli comunali"></div>
+      <div class="due">
+        <div class="riga"><label for="p_tema">Tema *</label><select id="p_tema"></select></div>
+        <div class="riga"><label for="p_ambito">Ambito *</label>
+          <select id="p_ambito">
+            <option value="nazionale">Nazionale</option>
+            <option value="regionale">Regionale</option>
+            <option value="comunale">Comunale</option>
+          </select></div>
+      </div>
+      <div class="riga"><label for="p_luogo">Dove (se regionale o comunale)</label>
+        <input type="text" id="p_luogo" maxlength="80" placeholder="Es. Campania, oppure Napoli"></div>
+      <div class="riga"><label for="p_testo">La proposta *</label>
+        <textarea id="p_testo" maxlength="2000" placeholder="Cosa vorresti fare, perche', cosa serve per farlo. Piu' e' concreta, piu' ha possibilita' di diventare un'azione."></textarea>
+        <div class="hint">Minimo 50 caratteri. <span id="pc">0</span>/2000</div></div>
+      <button class="btn" id="p_invia">Invia la proposta</button>
+      <div class="msg" id="p_msg"></div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>Partecipazione Attiva &middot; <a href="https://partecipazione-attiva.it">partecipazione-attiva.it</a></p>
+  <p>Partecipazione Attiva &middot; <a href="https://partecipazione-attiva.it">partecipazione-attiva.it</a> &middot; <a href="azioni.html">Azioni</a> &middot; <a href="perche-la-mappa.html">Perch&eacute; una mappa</a></p>
 </footer>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-const SB_URL = 'https://hfraarlzltoiuvplushi.supabase.co';
-const SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
+var SB_URL = 'https://hfraarlzltoiuvplushi.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
 
-const TEMI = ['legge elettorale','sanit\u00e0','lavoro','ambiente','scuola e universit\u00e0','giustizia','casa e abitare','trasporti','fisco','energia','agricoltura','sicurezza','cultura','digitale','democrazia partecipativa','rigenerazione urbana'];
-const COMPETENZE = ['legale','medico-sanitaria','chimica','ingegneria','economia e finanza','informatica','insegnamento','comunicazione','architettura e urbanistica','agronomia','contabilità','amministrazione pubblica','ricerca scientifica','artigianato','volontariato'];
+var TEMI = ['legge elettorale','sanit\u00e0','lavoro','ambiente','scuola e universit\u00e0','giustizia','casa e abitare','trasporti','fisco','energia','agricoltura','sicurezza','cultura','digitale','democrazia partecipativa','rigenerazione urbana','italiani all\u2019estero'];
+var COMPETENZE = ['legale','medico-sanitaria','chimica','ingegneria','economia e finanza','informatica','insegnamento','comunicazione','architettura e urbanistica','agronomia','contabilit\u00e0','amministrazione pubblica','ricerca scientifica','artigianato','volontariato'];
 
-function pillole(box, voci, pre){
+var PAESI = [["AL","Albania",41.153,20.168],["DZ","Algeria",28.034,1.66],["SA","Arabia Saudita",23.886,45.079],["AR","Argentina",-38.416,-63.617],["AU","Australia",-25.274,133.775],["AT","Austria",47.516,14.55],["BE","Belgio",50.503,4.47],["BA","Bosnia ed Erzegovina",43.916,17.679],["BR","Brasile",-14.235,-51.925],["BG","Bulgaria",42.733,25.486],["CA","Canada",56.13,-106.347],["CL","Cile",-35.675,-71.543],["CN","Cina",35.862,104.195],["CY","Cipro",35.126,33.429],["CO","Colombia",4.571,-74.297],["KR","Corea del Sud",35.908,127.767],["HR","Croazia",45.1,15.2],["DK","Danimarca",56.264,9.502],["EG","Egitto",26.821,30.802],["AE","Emirati Arabi Uniti",23.424,53.848],["EE","Estonia",58.595,25.014],["PH","Filippine",12.88,121.774],["FI","Finlandia",61.924,25.748],["FR","Francia",46.228,2.214],["JP","Giappone",36.205,138.253],["DE","Germania",51.166,10.452],["GR","Grecia",39.074,21.824],["IN","India",20.594,78.963],["ID","Indonesia",-0.789,113.921],["IR","Iran",32.428,53.688],["IE","Irlanda",53.413,-8.244],["IS","Islanda",64.963,-19.021],["IL","Israele",31.046,34.852],["KZ","Kazakistan",48.02,66.924],["LB","Libano",33.855,35.862],["LY","Libia",26.335,17.229],["LT","Lituania",55.169,23.881],["LV","Lettonia",56.88,24.603],["LU","Lussemburgo",49.815,6.13],["MT","Malta",35.937,14.375],["MA","Marocco",31.792,-7.093],["MX","Messico",23.635,-102.553],["MC","Monaco",43.75,7.413],["ME","Montenegro",42.708,19.374],["NG","Nigeria",9.082,8.675],["NO","Norvegia",60.472,8.469],["NZ","Nuova Zelanda",-40.9,174.886],["NL","Paesi Bassi",52.133,5.291],["PK","Pakistan",30.375,69.345],["PE","Per\u00f9",-9.19,-75.015],["PL","Polonia",51.919,19.145],["PT","Portogallo",39.4,-8.224],["QA","Qatar",25.355,51.184],["GB","Regno Unito",55.378,-3.436],["CZ","Repubblica Ceca",49.818,15.473],["RO","Romania",45.943,24.967],["RU","Russia",61.524,105.319],["SM","San Marino",43.942,12.458],["RS","Serbia",44.017,21.006],["SG","Singapore",1.352,103.82],["SY","Siria",34.802,38.997],["SK","Slovacchia",48.669,19.699],["SI","Slovenia",46.151,14.995],["ES","Spagna",40.464,-3.749],["US","Stati Uniti",37.09,-95.713],["ZA","Sudafrica",-30.559,22.938],["SE","Svezia",60.128,18.644],["CH","Svizzera",46.818,8.228],["TH","Thailandia",15.87,100.993],["TN","Tunisia",33.887,9.537],["TR","Turchia",38.964,35.243],["UA","Ucraina",48.379,31.166],["HU","Ungheria",47.162,19.503],["UY","Uruguay",-32.523,-55.766],["VE","Venezuela",6.424,-66.59],["VN","Vietnam",14.058,108.277],["OTHER","Altro paese",20,0]];
+
+function esc(s){ return String(s==null?'':s).replace(/[<>&"]/g,function(c){return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c];}); }
+
+/* ---------- form: pillole ---------- */
+function pillole(box,voci,pre){
   document.getElementById(box).innerHTML = voci.map(function(v,i){
     return '<input type="checkbox" id="'+pre+i+'" value="'+v+'"><label for="'+pre+i+'">'+v+'</label>';
   }).join('');
 }
-pillole('temi', TEMI, 'tm');
-pillole('competenze', COMPETENZE, 'cp');
-function sel(box){
-  return Array.prototype.slice.call(document.querySelectorAll('#'+box+' input:checked')).map(function(i){return i.value;});
-}
+pillole('temi',TEMI,'tm'); pillole('competenze',COMPETENZE,'cp');
+function sel(box){ return Array.prototype.slice.call(document.querySelectorAll('#'+box+' input:checked')).map(function(i){return i.value;}); }
 
-var COMUNI = [], IDX = {};
+document.getElementById('paese').innerHTML =
+  PAESI.map(function(p){ return '<option value="'+p[0]+'">'+p[1]+'</option>'; }).join('');
+document.getElementById('p_tema').innerHTML =
+  TEMI.map(function(t){ return '<option value="'+t+'">'+t+'</option>'; }).join('');
+
+/* ---------- comuni ---------- */
+var COMUNI=[], IDX={};
 fetch('dati/comuni.json').then(function(r){return r.json();}).then(function(d){
-  COMUNI = d;
-  d.forEach(function(c){ IDX[c[0].toLowerCase()] = c; });
+  COMUNI=d; d.forEach(function(c){ IDX[c[0].toLowerCase()]=c; });
 });
-
-var inpC = document.getElementById('comune');
-var boxC = document.getElementById('sugg');
-
-function chiudiSugg(){ boxC.style.display = 'none'; boxC.innerHTML = ''; }
-
+var inpC=document.getElementById('comune'), boxC=document.getElementById('sugg');
+function chiudiSugg(){ boxC.style.display='none'; boxC.innerHTML=''; }
 function cercaComuni(q){
-  q = q.trim().toLowerCase();
-  if(q.length < 2 || !COMUNI.length){ chiudiSugg(); return; }
-  var ini = [], dentro = [];
-  for(var i = 0; i < COMUNI.length; i++){
-    var n = COMUNI[i][0].toLowerCase();
-    if(n.indexOf(q) === 0) ini.push(COMUNI[i]);
-    else if(n.indexOf(q) > 0) dentro.push(COMUNI[i]);
-    if(ini.length >= 12) break;
+  q=q.trim().toLowerCase();
+  if(q.length<2||!COMUNI.length){ chiudiSugg(); return; }
+  var ini=[],dentro=[];
+  for(var i=0;i<COMUNI.length;i++){
+    var n=COMUNI[i][0].toLowerCase();
+    if(n.indexOf(q)===0) ini.push(COMUNI[i]);
+    else if(n.indexOf(q)>0) dentro.push(COMUNI[i]);
+    if(ini.length>=12) break;
   }
-  var res = ini.concat(dentro).slice(0, 12);
+  var res=ini.concat(dentro).slice(0,12);
   if(!res.length){ chiudiSugg(); return; }
-  boxC.innerHTML = res.map(function(c){
-    return '<div data-n="' + c[0] + '">' + c[0] + ' <span class="pr">(' + c[1] + ' — ' + c[2] + ')</span></div>';
+  boxC.innerHTML=res.map(function(c){
+    return '<div data-n="'+c[0]+'">'+c[0]+' <span class="pr">('+c[1]+' \u2014 '+c[2]+')</span></div>';
   }).join('');
-  boxC.style.display = 'block';
+  boxC.style.display='block';
   Array.prototype.slice.call(boxC.children).forEach(function(el){
-    el.onmousedown = function(e){
-      e.preventDefault();
-      inpC.value = el.getAttribute('data-n');
-      chiudiSugg();
-    };
+    el.onmousedown=function(e){ e.preventDefault(); inpC.value=el.getAttribute('data-n'); chiudiSugg(); };
   });
 }
+inpC.oninput=function(){ cercaComuni(inpC.value); };
+inpC.onblur=function(){ setTimeout(chiudiSugg,150); };
 
-inpC.oninput = function(){ cercaComuni(inpC.value); };
-inpC.onblur  = function(){ setTimeout(chiudiSugg, 150); };
-inpC.onfocus = function(){ if(inpC.value.length >= 2) cercaComuni(inpC.value); };
-
+/* ---------- interruttori ---------- */
 document.querySelectorAll('input[name=tipo]').forEach(function(r){
-  r.onchange = function(){
-    var ass = document.getElementById('t_ass').checked;
-    document.getElementById('riga_den').style.display = ass ? 'block' : 'none';
-    document.getElementById('hint_cog').textContent = ass
+  r.onchange=function(){
+    var ass=document.getElementById('t_ass').checked;
+    document.getElementById('riga_den').style.display=ass?'block':'none';
+    document.getElementById('hint_cog').textContent=ass
       ? 'Referente. Non viene pubblicato: sulla mappa compare la denominazione.'
-      : 'Sulla mappa comparir\u00e0 solo l\u2019iniziale del cognome (es. Mario R.).';
+      : 'Sulla mappa comparir\u00e0 solo l\u2019iniziale (es. \u201cMario R.\u201d).';
   };
 });
-document.getElementById('descrizione').oninput = function(e){
-  document.getElementById('cc').textContent = e.target.value.length;
+document.querySelectorAll('input[name=dove]').forEach(function(r){
+  r.onchange=function(){
+    var est=document.getElementById('d_es').checked;
+    document.getElementById('riga_it').style.display=est?'none':'block';
+    document.getElementById('riga_es').style.display=est?'block':'none';
+  };
+});
+document.getElementById('descrizione').oninput=function(e){ document.getElementById('cc').textContent=e.target.value.length; };
+document.getElementById('p_testo').oninput=function(e){ document.getElementById('pc').textContent=e.target.value.length; };
+document.getElementById('apri_prop').onclick=function(){
+  var f=document.getElementById('propform');
+  f.classList.toggle('on');
+  if(f.classList.contains('on')) document.getElementById('p_email').focus();
 };
 
-var map = L.map('map').setView([42.0, 12.5], 5);
+/* ---------- mappa ---------- */
+var map=L.map('map').setView([42.0,12.5],5);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{attribution:'&copy; OpenStreetMap',maxZoom:18}).addTo(map);
-var layer = L.layerGroup().addTo(map);
-var DATI = [], MARK = {};
+var layer=L.layerGroup().addTo(map);
+var DATI=[], MARK={}, VISTI=[], MOSTRA=6;
 
 function disegna(items){
-  layer.clearLayers(); MARK = {};
+  layer.clearLayers(); MARK={};
   items.forEach(function(r,i){
-    var jx = (i % 7 - 3) * 0.006, jy = ((i*3) % 7 - 3) * 0.006;
-    var m = L.circleMarker([r.lat + jx, r.lon + jy], {
-      radius: r.tipo === 'associazione' ? 9 : 7,
-      color: '#8a4e00', weight: 2,
-      fillColor: r.tipo === 'associazione' ? '#8a4e00' : '#e8900a',
-      fillOpacity: .85
-    }).bindTooltip('<b>'+r.etichetta+'</b><br>'+r.comune+' ('+r.provincia+')', {className:'pa', direction:'top'});
-    m.on('mouseover', function(){ evidenzia(r.id, true); });
-    m.on('mouseout',  function(){ evidenzia(r.id, false); });
-    m.on('click', function(){
-      var c = document.getElementById('c_'+r.id);
-      if(c) c.scrollIntoView({behavior:'smooth', block:'center'});
-    });
-    m.addTo(layer); MARK[r.id] = m;
+    var est = r.paese && r.paese !== 'IT';
+    var jx=(i%7-3)*0.006, jy=((i*3)%7-3)*0.006;
+    var m=L.circleMarker([r.lat+jx,r.lon+jy],{
+      radius: r.tipo==='associazione'?9:7,
+      color: est?'#0d1b4b':'#8a4e00', weight:2,
+      fillColor: est ? '#3a5fa8' : (r.tipo==='associazione'?'#8a4e00':'#e8900a'),
+      fillOpacity:.85
+    }).bindTooltip('<b>'+esc(r.etichetta)+'</b><br>'+esc(r.comune)+(est?' ('+esc(r.paese)+')':' ('+esc(r.provincia)+')'),
+      {className:'pa'+(est?' est':''),direction:'top'});
+    m.on('mouseover',function(){ evidenzia(r.id,true); });
+    m.on('mouseout', function(){ evidenzia(r.id,false); });
+    m.on('click', function(){ mostraScheda(r.id); });
+    m.addTo(layer); MARK[r.id]=m;
   });
 }
-
-function evidenzia(id, on){
-  var c = document.getElementById('c_'+id);
-  if(c) c.classList.toggle('hi', on);
-  var m = MARK[id];
-  if(m){
-    m.setStyle({weight: on ? 4 : 2});
-    if(on) m.openTooltip(); else m.closeTooltip();
-  }
+function evidenzia(id,on){
+  var c=document.getElementById('c_'+id);
+  if(c) c.classList.toggle('hi',on);
+  var m=MARK[id];
+  if(m){ m.setStyle({weight:on?4:2}); if(on) m.openTooltip(); else m.closeTooltip(); }
 }
+function mostraScheda(id){
+  var r=DATI.filter(function(x){return x.id===id;})[0];
+  if(!r) return;
+  VISTI=[r]; schede(VISTI);
+  document.getElementById('conta').textContent='1 scheda selezionata \u00b7 cancella la ricerca per vederle tutte';
+  var c=document.getElementById('c_'+id);
+  if(c) c.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function volaSu(id){ var m=MARK[id]; if(m){ map.setView(m.getLatLng(),9,{animate:true}); m.openTooltip(); } }
 
+function scheda(r){
+  var est = r.paese && r.paese !== 'IT';
+  return '<div class="card'+(est?' est':'')+'" id="c_'+r.id+'"'
+    + ' onmouseover="evidenzia(\''+r.id+'\',true)" onmouseout="evidenzia(\''+r.id+'\',false)"'
+    + ' onclick="volaSu(\''+r.id+'\')">'
+    + '<h3>'+esc(r.etichetta)+' <span class="badge '+(r.tipo==='associazione'?'a':'')+'">'+esc(r.tipo)+'</span></h3>'
+    + '<div class="loc">'+esc(r.comune)+(est?' \u2014 '+esc(r.regione):' ('+esc(r.provincia)+') \u2014 '+esc(r.regione))+'</div>'
+    + '<p>'+esc(r.descrizione)+'</p>'
+    + '<div>'+(r.temi||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join('')
+    + (r.competenze||[]).map(function(t){return '<span class="tag cmp">'+esc(t)+'</span>';}).join('')+'</div>'
+    + (r.sito_web?'<div style="margin-top:8px"><a href="'+esc(r.sito_web)+'" target="_blank" rel="noopener nofollow" style="font-size:.85em">'+esc(r.sito_web)+'</a></div>':'')
+    + '</div>';
+}
 function schede(items){
-  var h = items.map(function(r){
-    return '<div class="card" id="c_'+r.id+'" onmouseover="evidenzia(\''+r.id+'\',true)" onmouseout="evidenzia(\''+r.id+'\',false)" onclick="volaSu(\''+r.id+'\')">'
-      + '<h3>'+r.etichetta+' <span class="badge '+(r.tipo==='associazione'?'a':'')+'">'+r.tipo+'</span></h3>'
-      + '<div class="loc">'+r.comune+' ('+r.provincia+') &mdash; '+r.regione+'</div>'
-      + '<p>'+r.descrizione+'</p>'
-      + '<div>'+(r.temi||[]).map(function(t){return '<span class="tag">'+t+'</span>';}).join('')
-      + (r.competenze||[]).map(function(t){return '<span class="tag cmp">'+t+'</span>';}).join('')+'</div>'
-      + (r.sito_web ? '<div style="margin-top:8px"><a href="'+r.sito_web+'" target="_blank" rel="noopener nofollow" style="color:#e8900a;font-size:.85em">'+r.sito_web+'</a></div>' : '')
-      + '</div>';
-  }).join('');
-  document.getElementById('lista').innerHTML = h || '<p style="color:#8a8175">Nessun risultato per questa ricerca.</p>';
+  var L1=document.getElementById('lista'), A=document.getElementById('altri');
+  if(!items.length){ L1.innerHTML=''; A.innerHTML=''; return; }
+  L1.innerHTML=items.slice(0,MOSTRA).map(scheda).join('');
+  A.innerHTML = items.length>MOSTRA
+    ? '<button class="btn sec" onclick="MOSTRA+=12;schede(VISTI)">Mostra altri '+Math.min(12,items.length-MOSTRA)+'</button>'
+    : '';
 }
 
-function volaSu(id){
-  var m = MARK[id];
-  if(m){ map.setView(m.getLatLng(), 11, {animate:true}); m.openTooltip(); }
-}
-
+/* ---------- ricerca (tutta nel browser) ---------- */
 function testo(r){
-  return (r.etichetta+' '+r.comune+' '+r.provincia+' '+r.regione+' '+r.descrizione+' '+(r.temi||[]).join(' ')+' '+(r.competenze||[]).join(' ')).toLowerCase();
+  return (r.etichetta+' '+r.comune+' '+r.provincia+' '+r.regione+' '+(r.paese||'')+' '+r.descrizione+' '+
+    (r.temi||[]).join(' ')+' '+(r.competenze||[]).join(' ')).toLowerCase();
 }
 function filtra(){
-  var q = document.getElementById('q').value.trim().toLowerCase();
-  var out = DATI;
+  var q=document.getElementById('q').value.trim().toLowerCase();
+  MOSTRA=6;
+  var out=DATI;
   if(q){
-    var parti = q.split(/\s+/);
-    out = DATI.filter(function(r){
-      var t = testo(r);
-      return parti.every(function(p){ return t.indexOf(p) !== -1; });
-    });
+    var parti=q.split(/\s+/);
+    out=DATI.filter(function(r){ var t=testo(r); return parti.every(function(p){return t.indexOf(p)!==-1;}); });
   }
-  document.getElementById('conta').textContent = out.length
-    + (out.length === 1 ? ' scheda trovata' : ' schede trovate')
-    + (q ? ' per "'+q+'"' : ' sulla mappa');
-  disegna(out); schede(out);
+  VISTI=out;
+  var est=DATI.filter(function(r){return r.paese && r.paese!=='IT';}).length;
+  if(q){
+    document.getElementById('conta').textContent =
+      out.length + (out.length===1?' scheda trovata':' schede trovate') + ' per "'+q+'"';
+  } else {
+    document.getElementById('conta').textContent =
+      DATI.length + (DATI.length===1?' persona o associazione sulla mappa':' persone e associazioni sulla mappa')
+      + (est ? ' \u00b7 ' + est + ' fuori dall\u2019Italia' : '')
+      + ' \u00b7 cerca un tema o clicca un punto per vedere le schede';
+  }
+  disegna(out);
+  schede(q ? out : []);          // schede solo quando si cerca
+  if(!q) document.getElementById('altri').innerHTML='';
 }
-document.getElementById('q').oninput = filtra;
+document.getElementById('q').oninput=filtra;
 
 document.getElementById('chips').innerHTML =
-  ['legge elettorale','sanit\u00e0','ambiente','lavoro','legale','medico-sanitaria'].map(function(t){
-    return '<span class="chip" onclick="document.getElementById(\'q\').value=\''+t+'\';filtra()">'+t+'</span>';
-  }).join('')
-  + '<span class="chip" onclick="document.getElementById(\'q\').value=\'\';filtra()">tutti</span>';
+  ['legge elettorale','sanit\u00e0','ambiente','lavoro','legale','medico-sanitaria','italiani all\u2019estero']
+  .map(function(t){ return '<span class="chip" onclick="document.getElementById(\'q\').value=\''+t+'\';filtra()">'+t+'</span>'; }).join('')
+  + '<span class="chip" onclick="document.getElementById(\'q\').value=\'\';filtra()">azzera</span>';
 
-fetch(SB_URL+'/rest/v1/mappa_pubblica?select=*', {headers:{apikey:SB_KEY, Authorization:'Bearer '+SB_KEY}})
-  .then(function(r){ return r.json(); })
-  .then(function(d){ DATI = Array.isArray(d) ? d : []; filtra(); })
-  .catch(function(){ document.getElementById('conta').textContent = 'Mappa non raggiungibile in questo momento.'; });
+fetch(SB_URL+'/rest/v1/mappa_pubblica?select=*',{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
+  .then(function(r){return r.json();})
+  .then(function(d){ DATI=Array.isArray(d)?d:[]; filtra(); })
+  .catch(function(){ document.getElementById('conta').textContent='Mappa non raggiungibile in questo momento.'; });
 
-document.getElementById('invia').onclick = function(){
-  var msg = document.getElementById('msg'), btn = document.getElementById('invia');
-  function ko(t){ msg.className = 'msg ko'; msg.textContent = t; }
+/* ---------- invio iscrizione ---------- */
+document.getElementById('invia').onclick=function(){
+  var msg=document.getElementById('msg'), btn=document.getElementById('invia');
+  function ko(t){ msg.className='msg ko'; msg.innerHTML=t; btn.disabled=false; btn.textContent='Invia richiesta'; }
   function v(id){ return document.getElementById(id).value.trim(); }
-  var ass = document.getElementById('t_ass').checked;
+  var ass=document.getElementById('t_ass').checked;
+  var est=document.getElementById('d_es').checked;
 
   if(ass && !v('denominazione')) return ko('Inserisci la denominazione dell\u2019associazione.');
-  if(!v('nome') || !v('cognome')) return ko('Nome e cognome sono obbligatori.');
+  if(!v('nome')||!v('cognome'))  return ko('Nome e cognome sono obbligatori.');
   if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('email'))) return ko('Email non valida.');
-  var c = IDX[v('comune').toLowerCase()];
-  if(!c) return ko('Comune non riconosciuto: scegline uno dall\u2019elenco che compare mentre scrivi.');
-  if(sel('temi').length === 0) return ko('Scegli almeno un tema.');
-  if(v('descrizione').length < 20) return ko('La descrizione \u00e8 troppo breve (almeno 20 caratteri).');
-  if(!document.getElementById('c1').checked || !document.getElementById('c2').checked) return ko('Per procedere servono entrambi i consensi.');
 
-  btn.disabled = true; btn.textContent = 'Invio...';
-  var body = {
-    tipo: ass ? 'associazione' : 'cittadino',
-    nome: v('nome'), cognome: v('cognome'), email: v('email').toLowerCase(),
-    denominazione: ass ? v('denominazione') : null,
-    comune: c[0], provincia: c[1], regione: c[2], lat: c[3], lon: c[4],
-    temi: sel('temi'), competenze: sel('competenze'),
-    descrizione: v('descrizione'), sito_web: v('sito') || null,
-    consenso: true
-  };
-  fetch(SB_URL+'/functions/v1/iscrivi', {
-    method: 'POST',
-    headers: {apikey: SB_KEY, Authorization: 'Bearer '+SB_KEY, 'Content-Type':'application/json'},
-    body: JSON.stringify(body)
-  }).then(function(r){
-    if(r.ok){
-      msg.className = 'msg ok';
-      msg.innerHTML = '<b>Richiesta ricevuta.</b> Ti abbiamo inviato un\u2019email: clicca il link per confermare che l\u2019indirizzo \u00e8 tuo. Dopo il controllo antiabuso la tua scheda comparir\u00e0 sulla mappa.';
-      btn.style.display = 'none';
-      return;
-    }
-    return r.text().then(function(e){
-      ko(e.indexOf('email_gia_iscritta') !== -1
-        ? 'Questa email risulta gi\u00e0 iscritta.'
-        : 'Errore durante l\u2019invio. Riprova pi\u00f9 tardi.');
-      btn.disabled = false; btn.textContent = 'Invia richiesta';
-    });
-  }).catch(function(){
-    ko('Connessione non riuscita. Riprova.');
-    btn.disabled = false; btn.textContent = 'Invia richiesta';
-  });
+  var body={ tipo: ass?'associazione':'cittadino',
+    nome:v('nome'), cognome:v('cognome'), email:v('email').toLowerCase(),
+    denominazione: ass?v('denominazione'):null,
+    temi:sel('temi'), competenze:sel('competenze'),
+    descrizione:v('descrizione'), sito_web:v('sito')||null, consenso:true };
+
+  if(est){
+    var cod=document.getElementById('paese').value;
+    var p=PAESI.filter(function(x){return x[0]===cod;})[0];
+    if(!p) return ko('Scegli un Paese.');
+    if(!v('citta')) return ko('Inserisci la citt\u00e0 in cui vivi.');
+    body.paese=cod; body.paese_nome=p[1]; body.citta=v('citta'); body.lat=p[2]; body.lon=p[3];
+  } else {
+    var c=IDX[v('comune').toLowerCase()];
+    if(!c) return ko('Comune non riconosciuto: scegline uno dall\u2019elenco che compare mentre scrivi.');
+    body.paese='IT'; body.comune=c[0]; body.provincia=c[1]; body.regione=c[2]; body.lat=c[3]; body.lon=c[4];
+  }
+
+  if(sel('temi').length===0) return ko('Scegli almeno un tema.');
+  if(v('descrizione').length<20) return ko('La descrizione \u00e8 troppo breve (almeno 20 caratteri).');
+  if(!document.getElementById('c1').checked||!document.getElementById('c2').checked)
+    return ko('Per procedere servono entrambi i consensi.');
+
+  btn.disabled=true; btn.textContent='Invio...';
+  fetch(SB_URL+'/functions/v1/iscrivi',{
+    method:'POST',
+    headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},
+    body:JSON.stringify(body)
+  }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok,j:j}; }); })
+    .then(function(res){
+      if(res.ok && res.j.ok){
+        msg.className='msg ok';
+        msg.innerHTML='<b>Richiesta ricevuta.</b> Ti abbiamo inviato un\u2019email: clicca il link per confermare che l\u2019indirizzo \u00e8 tuo. Dopo il controllo antiabuso la tua scheda comparir\u00e0 sulla mappa.';
+        btn.style.display='none';
+      } else {
+        ko(res.j.errore==='email_gia_iscritta'
+          ? 'Questa email risulta gi\u00e0 iscritta.'
+          : 'Errore durante l\u2019invio. Riprova pi\u00f9 tardi.');
+      }
+    }).catch(function(){ ko('Connessione non riuscita. Riprova.'); });
+};
+
+/* ---------- invio proposta ---------- */
+var P_ERR={
+  non_iscritto:'Per proporre devi prima essere sulla mappa. <a href="#iscriviti" style="color:#8b1a1a;text-decoration:underline">Iscriviti qui</a>, poi torna.',
+  email_non_confermata:'Devi prima confermare la tua email: controlla la posta (anche lo spam).',
+  in_attesa_approvazione:'La tua iscrizione \u00e8 ancora in attesa del controllo antiabuso. Riprova tra qualche giorno.',
+  troppe_proposte:'Hai gi\u00e0 tre proposte in valutazione. Aspetta che il direttivo risponda.',
+  titolo_troppo_breve:'Il titolo \u00e8 troppo breve.',
+  testo_troppo_breve:'La proposta \u00e8 troppo breve: servono almeno 50 caratteri.'
+};
+document.getElementById('p_invia').onclick=function(){
+  var msg=document.getElementById('p_msg'), btn=document.getElementById('p_invia');
+  function ko(t){ msg.className='msg ko'; msg.innerHTML=t; btn.disabled=false; btn.textContent='Invia la proposta'; }
+  function v(id){ return document.getElementById(id).value.trim(); }
+
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v('p_email'))) return ko('Inserisci l\u2019email con cui sei sulla mappa.');
+  if(v('p_titolo').length<5)  return ko('Scrivi un titolo.');
+  if(v('p_testo').length<50)  return ko('La proposta \u00e8 troppo breve: servono almeno 50 caratteri.');
+
+  btn.disabled=true; btn.textContent='Invio...';
+  fetch(SB_URL+'/functions/v1/proponi',{
+    method:'POST',
+    headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},
+    body:JSON.stringify({ email:v('p_email').toLowerCase(), titolo:v('p_titolo'),
+      tema:document.getElementById('p_tema').value, ambito:document.getElementById('p_ambito').value,
+      luogo:v('p_luogo')||null, testo:v('p_testo') })
+  }).then(function(r){ return r.json(); })
+    .then(function(res){
+      if(res.ok){
+        msg.className='msg ok';
+        msg.innerHTML='<b>Proposta ricevuta.</b> La legger\u00e0 il direttivo. Se convince, diventer\u00e0 un\u2019Azione pubblica e ti scriveremo.';
+        btn.style.display='none';
+      } else {
+        ko(P_ERR[res.errore]||'Errore durante l\u2019invio. Riprova pi\u00f9 tardi.');
+      }
+    }).catch(function(){ ko('Connessione non riuscita. Riprova.'); });
 };
 </script>
 </body>
