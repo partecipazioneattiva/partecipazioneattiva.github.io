@@ -9,13 +9,14 @@ import sys
 from pathlib import Path
 
 def aggiungi_card(url, titolo, autore, data, foto, ruolo):
-    file_path = Path("/Users/osxssd/Desktop/partecipazioneattiva/index.html")
+    file_path = Path("/Users/luigia/SITO-PA/index.html")
     
     with open(file_path, 'r') as f:
         content = f.read()
     
     # Cerca la prima card con data-pa-section="homepage-card" (per posizionarsi)
-    pattern = r'(<a[^>]*data-pa-section="homepage-card"[^>]*>.*?</a>)'
+    # le card con data-pa-pin restano sempre in cima: si inserisce dopo di esse
+    pattern = r'<a(?![^>]*data-pa-pin)[^>]*data-pa-section="homepage-card"[^>]*>.*?</a>'
     match = re.search(pattern, content, re.DOTALL)
     
     if not match:
