@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Richiesta di contatto &mdash; La Mappa</title>
+<meta name="robots" content="noindex,nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--ar:#e8900a;--br:#8a4e00;--tx:#222;--bd:#e3d9c8;--bg:#fffdf8}
+*{box-sizing:border-box}
+body{margin:0;font-family:Merriweather,Georgia,serif;color:var(--tx);background:var(--bg);line-height:1.6}
+.hero{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);color:#fff;padding:36px 18px;text-align:center}
+.hero .occhiello{font-family:Montserrat,sans-serif;font-size:.9em;font-weight:800;text-transform:uppercase;letter-spacing:4px}
+.hero h1{font-family:Montserrat,sans-serif;margin:6px 0 0;font-size:2em;font-weight:900}
+.wrap{max-width:640px;margin:0 auto;padding:34px 18px}
+.box{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:26px}
+h2{font-family:Montserrat,sans-serif;color:var(--br);margin:0 0 10px}
+.msg{padding:16px 18px;border-radius:8px;margin-top:18px;font-size:.95em}
+.ok{background:#e8f5e9;border-left:4px solid #2e7d32;color:#1b5e20}
+.ko{background:#ffebee;border-left:4px solid #c0392b;color:#8b1a1a}
+footer{background:#2b2620;color:#c9c0b3;text-align:center;padding:24px;font-size:.85em;margin-top:40px}
+footer a{color:var(--ar)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="occhiello">Uniti per unire</div>
+  <h1>La Mappa</h1>
+</div>
+
+<div class="wrap">
+  <div class="box">
+    <h2 id="tit">Un momento&hellip;</h2>
+    <div id="out"><p>Stiamo registrando la tua scelta.</p></div>
+  </div>
+</div>
+
+<footer>Partecipazione Attiva &middot; <a href="https://partecipazione-attiva.it">partecipazione-attiva.it</a></footer>
+
+<script>
+var SB_URL = 'https://hfraarlzltoiuvplushi.supabase.co';
+var SB_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
+
+var q = new URLSearchParams(location.search);
+var token = q.get('t'), azione = q.get('a');
+var tit = document.getElementById('tit'), out = document.getElementById('out');
+
+function mostra(titolo, html, classe){
+  tit.textContent = titolo;
+  out.innerHTML = '<div class="msg ' + classe + '">' + html + '</div>';
+}
+
+var ERR = {
+  non_trovata: 'Questo link non &egrave; valido. Potrebbe essere stato gi&agrave; usato.',
+  gia_decisa: 'Hai gi&agrave; risposto a questa richiesta.',
+  dati_mancanti: 'Link incompleto.'
+};
+
+if(!token || !azione){
+  mostra('Link non valido', 'Manca qualche informazione nel link. Riapri quello che hai ricevuto per email.', 'ko');
+} else {
+  fetch(SB_URL + '/functions/v1/decidi', {
+    method:'POST',
+    headers:{'Content-Type':'application/json', apikey:SB_KEY, Authorization:'Bearer ' + SB_KEY},
+    body: JSON.stringify({token:token, azione:azione})
+  })
+  .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+  .then(function(res){
+    if(!res.ok){
+      mostra('Non ha funzionato', ERR[res.j.errore] || 'Si &egrave; verificato un problema.', 'ko');
+      return;
+    }
+    if(res.j.stato === 'accettata'){
+      mostra('Contatto accettato',
+        '<b>Fatto.</b> Vi abbiamo mandato a entrambi l\'indirizzo dell\'altro: da ora potete scrivervi direttamente.' +
+        '<br><br>La conversazione &egrave; vostra: la Mappa non la vede e non la conserva.', 'ok');
+    } else if(res.j.stato === 'bloccata'){
+      mostra('Persona bloccata', 'Non ricever&agrave; il tuo indirizzo e non potr&agrave; pi&ugrave; scriverti tramite la Mappa.', 'ok');
+    } else {
+      mostra('Richiesta ignorata', 'Non succede nulla. Chi ti ha scritto non avr&agrave; mai il tuo indirizzo.', 'ok');
+    }
+  })
+  .catch(function(){
+    mostra('Non raggiungibile', 'Riprova tra qualche minuto.', 'ko');
+  });
+</script>
+</body>
+</html>

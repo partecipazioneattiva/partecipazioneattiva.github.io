@@ -74,6 +74,13 @@ h2{font-size:1.45em;color:var(--br);margin:0 0 6px}
 .badge.a{background:var(--br);color:#fff}
 #altri{text-align:center;margin-top:16px}
 .vuoto{text-align:center;color:#8a8175;padding:24px;font-size:.95em}
+.bcont{margin-top:10px;background:#fff3e0;color:var(--br);border:1px solid var(--bd);border-radius:50px;padding:6px 15px;font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;cursor:pointer}
+.bcont:hover{background:var(--ar);color:#fff;border-color:var(--ar)}
+#mod{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2000;display:none;align-items:center;justify-content:center;padding:18px}
+#mod.on{display:flex}
+#mod .in{background:#fff;border-radius:14px;max-width:520px;width:100%;padding:26px;max-height:90vh;overflow-y:auto}
+#mod h3{font-family:Montserrat,sans-serif;color:var(--br);margin:0 0 6px}
+#mod .chiudi{float:right;background:0;border:0;font-size:1.5em;cursor:pointer;color:#8a8175;line-height:1}
 .form{background:#fff;border:1px solid var(--bd);border-radius:12px;padding:26px}
 .riga{margin-bottom:18px}
 label{display:block;font-family:Montserrat,sans-serif;font-weight:600;font-size:.86em;margin-bottom:5px;color:var(--br)}
@@ -258,6 +265,7 @@ footer a{color:var(--ar)}
     <strong>Base giuridica:</strong> il tuo consenso esplicito (art. 6.1.a e art. 9.2.a GDPR).<br>
     <strong>Dati raccolti:</strong> nome, cognome, email, comune o citt&agrave;, temi, competenze, descrizione. <strong>Pubblicati:</strong> solo nome + iniziale del cognome (o denominazione dell&rsquo;associazione), comune o citt&agrave;, temi, competenze, descrizione. Email e cognome per esteso non sono mai pubblicati n&eacute; accessibili dall&rsquo;esterno.<br>
     <strong>Localizzazione:</strong> il punto sulla mappa &egrave; il centro del comune (o del Paese, se vivi all&rsquo;estero), mai il tuo indirizzo. Non usiamo il GPS.<br>
+    <strong>Contatti fra iscritti:</strong> chi ti scrive tramite il tasto &ldquo;Contatta&rdquo; <b>non vede la tua email</b>. Ricevi il messaggio e decidi tu: solo se accetti, vi scambiate gli indirizzi e da quel momento parlate direttamente fra voi (la Mappa non legge n&eacute; conserva la vostra conversazione). Puoi anche ignorare la richiesta o bloccare chi te l&rsquo;ha inviata.<br>
     <strong>Adesioni e proposte:</strong> chi aderisce a un&rsquo;azione o invia una proposta non &egrave; pubblico: quei dati li conosce solo chi cura la mappa.<br>
     <strong>Conservazione:</strong> finch&eacute; resti iscritto. <strong>Cancellazione:</strong> immediata, con il link presente in ogni email che ti inviamo.<br>
     <strong>Diritti:</strong> accesso, rettifica, cancellazione, opposizione, revoca del consenso in qualsiasi momento (artt. 15-22 GDPR); reclamo al Garante Privacy.<br>
@@ -435,6 +443,7 @@ function scheda(r){
     + '<div>'+(r.temi||[]).map(function(t){return '<span class="tag">'+esc(t)+'</span>';}).join('')
     + (r.competenze||[]).map(function(t){return '<span class="tag cmp">'+esc(t)+'</span>';}).join('')+'</div>'
     + (r.sito_web?'<div style="margin-top:8px"><a href="'+esc(r.sito_web)+'" target="_blank" rel="noopener nofollow" style="font-size:.85em">'+esc(r.sito_web)+'</a></div>':'')
+    + '<button class="bcont" onclick="event.stopPropagation();apriContatto(\''+r.id+'\',\''+esc(r.etichetta).replace(/'/g,"&#39;")+'\')">Contatta</button>'
     + '</div>';
 }
 function schede(items){
@@ -588,6 +597,70 @@ document.getElementById('p_invia').onclick=function(){
   });
   if(location.hash==="#proponi") setTimeout(apri,80);
 })();
+</script>
+
+<div id="mod" onclick="if(event.target.id==='mod')chiudiContatto()">
+  <div class="in">
+    <button class="chiudi" onclick="chiudiContatto()">&times;</button>
+    <h3>Contatta <span id="m_chi"></span></h3>
+    <p class="hint" style="margin:0 0 16px">Il messaggio arriva a lei/lui. <b>Il tuo indirizzo resta nascosto</b>: lo vedr&agrave; solo se accetta il contatto.</p>
+    <div class="riga">
+      <label for="m_email">La tua email (devi essere gi&agrave; sulla mappa) *</label>
+      <input type="email" id="m_email" placeholder="quella con cui ti sei iscritto">
+    </div>
+    <div class="riga">
+      <label for="m_testo">Il tuo messaggio *</label>
+      <textarea id="m_testo" placeholder="Presentati: di cosa ti occupi, perch&eacute; lo contatti..."></textarea>
+      <div class="hint">Da 20 a 1000 caratteri.</div>
+    </div>
+    <button class="btn" id="m_invia">Invia la richiesta</button>
+    <div class="msg" id="m_msg"></div>
+  </div>
+</div>
+<script>
+var C_ERR = {
+  non_iscritto:'Questa email non risulta sulla mappa. Devi essere iscritto per contattare gli altri.',
+  email_non_confermata:'Devi prima confermare la tua email (controlla la posta).',
+  in_attesa_approvazione:'La tua iscrizione &egrave; ancora in attesa.',
+  troppe_richieste:'Hai gi&agrave; inviato 3 richieste oggi. Riprova domani.',
+  bloccato:'Questa persona ha scelto di non ricevere tuoi messaggi.',
+  stesso_utente:'Non puoi scrivere a te stesso.',
+  destinatario_non_valido:'Scheda non pi&ugrave; disponibile.',
+  messaggio_lunghezza:'Il messaggio deve stare fra 20 e 1000 caratteri.',
+  dati_mancanti:'Compila tutti i campi.'
+};
+var C_ID = null;
+function apriContatto(id, chi){
+  C_ID = id;
+  document.getElementById('m_chi').textContent = chi;
+  document.getElementById('m_msg').className = 'msg';
+  document.getElementById('m_msg').innerHTML = '';
+  document.getElementById('mod').classList.add('on');
+}
+function chiudiContatto(){ document.getElementById('mod').classList.remove('on'); }
+document.getElementById('m_invia').onclick = function(){
+  var btn = this, msg = document.getElementById('m_msg');
+  var email = document.getElementById('m_email').value.trim();
+  var testo = document.getElementById('m_testo').value.trim();
+  function ko(t){ msg.className='msg ko'; msg.innerHTML=t; btn.disabled=false; btn.textContent='Invia la richiesta'; }
+  if(!email) return ko('Scrivi la tua email.');
+  if(testo.length < 20) return ko('Il messaggio &egrave; troppo breve: almeno 20 caratteri.');
+  btn.disabled = true; btn.textContent = 'Invio...';
+  fetch(SB_URL + '/functions/v1/presenta', {
+    method:'POST',
+    headers:{'Content-Type':'application/json', apikey:SB_KEY, Authorization:'Bearer '+SB_KEY},
+    body: JSON.stringify({email:email, destinatario_id:C_ID, messaggio:testo})
+  })
+  .then(function(r){ return r.json().then(function(j){ return {ok:r.ok, j:j}; }); })
+  .then(function(res){
+    if(!res.ok) return ko(C_ERR[res.j.errore] || 'Si &egrave; verificato un problema.');
+    msg.className = 'msg ok';
+    msg.innerHTML = '<b>Richiesta inviata.</b> Se accetta, riceverai la sua email e potrete parlarvi direttamente.';
+    btn.disabled = true; btn.textContent = 'Inviata';
+    document.getElementById('m_testo').value = '';
+  })
+  .catch(function(){ ko('Non raggiungibile. Riprova.'); });
+};
 </script>
 </body>
 </html>
