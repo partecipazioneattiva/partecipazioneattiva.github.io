@@ -3,14 +3,14 @@
 # ============================================================================
 #  PUBBLICA_ARTICOLO.PY  —  motore unico di pubblicazione sito PA
 #  Per ogni nuovo articolo: compila SOLO il blocco CONFIG qui sotto e lancia:
-#      python3 /Users/osxssd/Desktop/LAVORI/partecipazioneattiva/pubblica_articolo.py
+#      python3 /Users/luigia/SITO-PA/pubblica_articolo.py
 #  Fa: articolo da GOLD (spanu-sire.html) + card in cima + badge automatico
 #  per data + voce ticker + riga sitemap + 8 check. Idempotente (assert).
 #  NON tocca aggiorna_feed/pagefind/git: quelli restano nel comando di push.
 # ============================================================================
 import re, json, sys, os
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 
 # Anagrafica autori: chiave -> (Nome, Ruolo, foto). Aggiungere qui se serve.
 AUTORI = {

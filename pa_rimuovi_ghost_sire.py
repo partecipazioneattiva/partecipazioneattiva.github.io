@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+import os
 # -*- coding: utf-8 -*-
 # PASSO 2: rimuove SOLO il blocco ld+json "ghost" (headline SIRE) dalle 9 pagine.
 # Preserva ogni altro blocco (NewsArticle corretto / FAQPage / BreadcrumbList).
 # Con assert: in ogni pagina deve esserci ESATTAMENTE 1 blocco ghost.
 import re, sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 
 PAGINE = ['rete-ape.html','rcauto-aggiornamento-maggio2026.html','cristiano-sanita.html',

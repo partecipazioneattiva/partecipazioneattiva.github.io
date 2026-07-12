@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 # -*- coding: utf-8 -*-
 # PASSO 1 (fix certi, basso rischio):
 #   - 3 canonical errati (puntano a spanu-sire.html) -> puntano a se stessi
@@ -6,7 +7,7 @@
 # Ogni modifica ha count->assert. Idempotente.
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 U = 'https://partecipazione-attiva.it/'
 

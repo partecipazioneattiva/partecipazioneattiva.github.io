@@ -7,8 +7,7 @@
 import json, re, os
 from PIL import Image
 
-base = '/Users/osxssd/Desktop/partecipazioneattiva/'
-
+base = os.path.dirname(os.path.abspath(__file__)) + '/'
 # ---------------------------------------------------------------------------
 # 0. CONVERTI congresso-nazionale-2026.jpg → images/congresso-bp-2026.webp
 # ---------------------------------------------------------------------------

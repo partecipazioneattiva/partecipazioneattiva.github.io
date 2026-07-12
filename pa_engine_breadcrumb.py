@@ -7,7 +7,7 @@
 # Ogni patch verifica l'ancora esatta (assert). Idempotente: se gia applicata, avvisa e non tocca.
 import sys, shutil, os
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 ENG = BASE + 'pubblica_articolo.py'
 

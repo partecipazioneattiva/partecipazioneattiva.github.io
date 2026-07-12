@@ -8,7 +8,7 @@ Operazioni:
 """
 import re, os
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva'
+BASE = os.path.dirname(os.path.abspath(__file__))
 fpath = os.path.join(BASE, 'territori.html')
 
 with open(fpath, encoding='utf-8') as f:

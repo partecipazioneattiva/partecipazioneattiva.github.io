@@ -5,7 +5,7 @@
 # restano intatte. Site-wide, idempotente.
 import glob, os, sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 
 # stringhe ESATTE del menu desktop (il mobile ha onclick=chiudi(), quindi non combacia)

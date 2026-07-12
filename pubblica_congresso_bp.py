@@ -8,7 +8,7 @@
 import os, shutil, json
 from pathlib import Path
 
-base = Path('/Users/osxssd/Desktop/partecipazioneattiva/')
+base = Path('/Users/luigia/SITO-PA/')
 
 # ─────────────────────────────────────────────────────────────
 # 1. COPIA L'IMMAGINE DEL MANIFESTO

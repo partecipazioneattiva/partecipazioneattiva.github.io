@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+import os
 # -*- coding: utf-8 -*-
 # Fix mirati: #1 schema curriculum, #6 llms.txt, #7 link mobile Iscriviti.
 # Ogni modifica ha count->assert. Idempotente dove possibile.
 import re, sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 
 # ---------- #1 CURRICULUM: rimuovi i 2 blocchi ld+json impropri ----------

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 # -*- coding: utf-8 -*-
 # A2: aggiunge un @id stabile "#org" all'entita' principale (PoliticalParty su index,
 # Organization su chi-siamo e organigramma), per unificarle in un unico nodo del grafo.
@@ -6,7 +7,7 @@
 # Idempotente, con assert di unicita'.
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 OID = '"@id":"https://partecipazione-attiva.it/#org",'
 

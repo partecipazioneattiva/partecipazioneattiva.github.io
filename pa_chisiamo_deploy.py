@@ -8,7 +8,7 @@ pa_chisiamo_deploy.py
 """
 import os, re, shutil, glob
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva'
+BASE = os.path.dirname(os.path.abspath(__file__))
 SRC  = os.path.join(BASE, 'chi-siamo.html')
 
 # ── 0. Verifica che chi-siamo.html esiste nel repo ──

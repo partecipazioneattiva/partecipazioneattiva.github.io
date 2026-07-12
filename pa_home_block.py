@@ -4,7 +4,7 @@
 # Il numero di analisi e' letto da articoli.json (veritiero). Solo index.html.
 import json, os, sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 IDX = BASE + 'index.html'
 

@@ -4,7 +4,7 @@
 # schema "@type": "NewsArticle". Fonte di verita' per i "correlati per tema".
 import re, json, glob, os, html as H, sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 OUT = BASE + 'articoli.json'
 

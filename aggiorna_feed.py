@@ -2,7 +2,7 @@
 import re, os
 from datetime import timezone
 
-BASE = "/Users/osxssd/Desktop/LAVORI/partecipazioneattiva"
+BASE = os.path.dirname(os.path.abspath(__file__))
 DOMAIN = "https://partecipazione-attiva.it"
 
 SKIP = {

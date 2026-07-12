@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
+import os
 # -*- coding: utf-8 -*-
 # Rigenera la barra scorrevole (#tk) della home dalla FONTE DI VERITA' temi.json.
 # Le voci sono triplicate per il loop senza stacchi (il JS usa scrollWidth/3).
 # Uso:  python3 aggiorna_ticker.py        (agisce sul repo)
 import json, sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 IDX  = BASE + 'index.html'
 DATA = BASE + 'temi.json'

@@ -10,8 +10,7 @@ Operazioni:
 
 import os, re, sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva'
-
+BASE = os.path.dirname(os.path.abspath(__file__))
 def read(path):
     with open(path, encoding='utf-8') as f: return f.read()
 

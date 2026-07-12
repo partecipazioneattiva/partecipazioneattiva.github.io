@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+import os
 # -*- coding: utf-8 -*-
 # Aggiunge la meta description (assente) alle due pagine regione, subito dopo <title>.
 # Chirurgico, idempotente, con assert.
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 if len(sys.argv) > 1: BASE = sys.argv[1] if sys.argv[1].endswith('/') else sys.argv[1] + '/'
 
 PAGINE = {
