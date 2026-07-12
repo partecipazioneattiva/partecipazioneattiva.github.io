@@ -492,7 +492,13 @@ document.getElementById('chips').innerHTML =
 
 fetch(SB_URL+'/rest/v1/mappa_pubblica?select=*',{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
   .then(function(r){return r.json();})
-  .then(function(d){ DATI=Array.isArray(d)?d:[]; filtra(); })
+  .then(function(d){
+    DATI=Array.isArray(d)?d:[]; filtra();
+    var id=new URLSearchParams(location.search).get('scheda');
+    if(id && DATI.filter(function(x){return x.id===id;}).length){
+      mostraScheda(id); volaSu(id);
+    }
+  })
   .catch(function(){ document.getElementById('conta').textContent='Mappa non raggiungibile in questo momento.'; });
 
 /* ---------- invio iscrizione ---------- */
