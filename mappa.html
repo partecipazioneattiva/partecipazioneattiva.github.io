@@ -81,6 +81,24 @@ h2{font-size:1.45em;color:var(--br);margin:0 0 6px}
 .badge.a{background:var(--br);color:#fff}
 #altri{text-align:center;margin-top:16px}
 .vuoto{text-align:center;color:#8a8175;padding:24px;font-size:.95em}
+.elenco{margin-top:16px;border:1px solid var(--bd);border-radius:10px;overflow:hidden;background:#fff}
+.voce{border-bottom:1px solid #f0e9dc}
+.voce:last-child{border-bottom:0}
+.voce>summary{list-style:none;cursor:pointer;padding:11px 16px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;border-left:4px solid var(--ar)}
+.voce.est>summary{border-left-color:var(--bl)}
+.voce>summary::-webkit-details-marker{display:none}
+.voce>summary:hover{background:#fff8ec}
+.voce[open]>summary{background:#fff8ec;font-weight:600}
+.voce .nome{font-family:Montserrat,sans-serif;font-weight:700;font-size:.94em;color:var(--tx)}
+.voce .dove{font-family:Montserrat,sans-serif;font-size:.78em;color:var(--ar);text-transform:uppercase;letter-spacing:.4px;font-weight:600}
+.voce.est .dove{color:var(--bl)}
+.voce .temi{font-size:.84em;color:#8a8175;margin-left:auto}
+@media(max-width:700px){.voce .temi{margin-left:0;flex-basis:100%}}
+.voce .det{padding:2px 16px 16px 20px;font-size:.9em;color:#4a443c}
+.voce .det p{margin:0 0 9px}
+.elenco .oltre{display:none}
+.elenco.tutto .oltre{display:block}
+#elenco-piu{text-align:center;margin-top:14px}
 .bcont{margin-top:10px;background:#fff3e0;color:var(--br);border:1px solid var(--bd);border-radius:50px;padding:6px 15px;font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;cursor:pointer}
 .bcont:hover{background:var(--ar);color:#fff;border-color:var(--ar)}
 #mod{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:2000;display:none;align-items:center;justify-content:center;padding:18px}
@@ -133,6 +151,9 @@ footer a{color:var(--ar)}
 .leaflet-tooltip.pa.est{background:var(--bl)}
 .leaflet-tooltip.pa.est:before{border-top-color:var(--bl)}
 </style>
+<!-- START:SCHEMA_MAPPA -->
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "La Mappa di Partecipazione Attiva", "numberOfItems": 11, "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "Organization", "name": "Associazione Mercatari", "description": "Associazione mercatari da più di 10 anni si occupa su tutto il territorio nazionale di di organi,are lavoro su are publiche allo scopo di produrre benessere sociale", "address": {"@type": "PostalAddress", "addressLocality": "Napoli", "addressRegion": "Campania", "addressCountry": "IT"}, "knowsAbout": ["lavoro", "ambiente", "scuola e università", "giustizia", "casa e abitare", "trasporti", "agricoltura", "sicurezza", "cultura", "rigenerazione urbana", "ingegneria", "economia e finanza", "insegnamento", "architettura e urbanistica", "amministrazione pubblica", "ricerca scientifica", "artigianato", "volontariato"]}}, {"@type": "ListItem", "position": 2, "item": {"@type": "Person", "name": "Circolo V.", "description": "Non conosciamo nulla in zona di Ferrara quindi preferiamo conoscere in primo luogo \n\nBuon lavoro", "address": {"@type": "PostalAddress", "addressLocality": "Ferrara", "addressRegion": "Emilia-Romagna", "addressCountry": "IT"}, "knowsAbout": ["lavoro", "giustizia", "casa e abitare", "democrazia partecipativa", "legale", "economia e finanza", "contabilità", "amministrazione pubblica"]}}, {"@type": "ListItem", "position": 3, "item": {"@type": "Person", "name": "Stefano Francesco P.", "description": "Faccio parte del gruppo consumatori Aura che porta avanti un progetto di energie rinnovabili ed altro.", "address": {"@type": "PostalAddress", "addressLocality": "Montescudo - Monte Colombo", "addressRegion": "Emilia-Romagna", "addressCountry": "IT"}, "knowsAbout": ["legge elettorale", "sanità", "ambiente", "scuola e università", "casa e abitare", "fisco", "energia", "cultura", "digitale", "democrazia partecipativa", "rigenerazione urbana", "italiani all’estero", "economia e finanza", "comunicazione", "volontariato"]}}, {"@type": "ListItem", "position": 4, "item": {"@type": "Person", "name": "Alessandro M.", "description": "Volontariato in ambito ambientale, sanitario, sociale e sportivo. Formazione in campo contabile, enogastronomia, agricolo, sportivo, ambientale e micologico.", "address": {"@type": "PostalAddress", "addressLocality": "Cerveteri", "addressRegion": "Lazio", "addressCountry": "IT"}, "knowsAbout": ["sanità", "lavoro", "ambiente", "scuola e università", "giustizia", "casa e abitare", "trasporti", "energia", "agricoltura", "sicurezza", "cultura", "democrazia partecipativa", "rigenerazione urbana", "italiani all’estero", "chimica", "economia e finanza", "insegnamento", "architettura e urbanistica", "agronomia", "contabilità", "amministrazione pubblica", "ricerca scientifica", "volontariato"]}}, {"@type": "ListItem", "position": 5, "item": {"@type": "Person", "name": "Roberta B.", "description": "Sono madre di una figlia con disabilita’ e sono interprete LIS iscritta all’Albo ANIMU", "address": {"@type": "PostalAddress", "addressLocality": "Cerveteri", "addressRegion": "Lazio", "addressCountry": "IT"}, "knowsAbout": ["disabilità", "insegnamento", "comunicazione"]}}, {"@type": "ListItem", "position": 6, "item": {"@type": "Person", "name": "Fernando F.", "description": "Faccio parte del direttivo di PA e spero che si riesca davvero a portare a buon fine le istanze dei cittadini siano esse locali che nazionali", "address": {"@type": "PostalAddress", "addressLocality": "Ladispoli", "addressRegion": "Lazio", "addressCountry": "IT"}, "knowsAbout": ["legge elettorale", "sanità", "lavoro", "casa e abitare", "democrazia partecipativa", "volontariato"]}}, {"@type": "ListItem", "position": 7, "item": {"@type": "Person", "name": "LUIGI S.", "description": "Presentare con gli strumenti della democrazia diretta, proposte di legge di iniziativa popolare e/o modifica/abrogazione di leggi per il rispetto dei diritti sanciti nella costituzione.", "address": {"@type": "PostalAddress", "addressLocality": "Roma", "addressRegion": "Lazio", "addressCountry": "IT"}, "knowsAbout": ["legge elettorale", "democrazia partecipativa", "informatica"]}}, {"@type": "ListItem", "position": 8, "item": {"@type": "Person", "name": "PAOLO N.", "description": "Militare in pensione.... visto il grado rivestito...so tutto 🤣", "address": {"@type": "PostalAddress", "addressLocality": "Salisano", "addressRegion": "Lazio", "addressCountry": "IT"}, "knowsAbout": ["sanità", "giustizia", "energia", "sicurezza"]}}, {"@type": "ListItem", "position": 9, "item": {"@type": "Person", "name": "Angelo N.", "description": "Ex imprenditore ora in pensione. Oltre alla mia esperienza lavorativa iniziata nel 1980, ho maturato quella politica, dal 1976 mi sono occupato di politica come cittadino attivo, non per professione ma per passione. Ho sempre pensato che ogni cittadino debba essere parte attiva nel proprio territorio e portare avanti con impegno e costanza, un'attività politica al fine di migliorare la vita comunitaria e farsì che tutti possano vivere in una società attenta e più a misura d'uomo. Ho ricoperto anche la funzione di amministratore pubblico. Attualmente sono il presidente di Partecipazione Attiva", "address": {"@type": "PostalAddress", "addressLocality": "Como", "addressRegion": "Lombardia", "addressCountry": "IT"}, "knowsAbout": ["legge elettorale", "sanità", "lavoro", "ambiente", "scuola e università", "giustizia", "casa e abitare", "democrazia partecipativa", "comunicazione", "amministrazione pubblica", "artigianato"]}}, {"@type": "ListItem", "position": 10, "item": {"@type": "Person", "name": "Michele S.", "description": "Comunicazione e tecnologie informatiche.", "address": {"@type": "PostalAddress", "addressLocality": "Ancona", "addressRegion": "Marche", "addressCountry": "IT"}, "knowsAbout": ["sanità", "lavoro", "scuola e università", "cultura", "digitale", "democrazia partecipativa", "informatica", "comunicazione"]}}, {"@type": "ListItem", "position": 11, "item": {"@type": "Person", "name": "Daniele T.", "description": "In questo periodo mi dedicherò soprattutto al tema unione e collaborazione fra tutti i cittadini che cercano, in uno dei tantissimi modi, di modificare il deleterio sistema sociopoliticoeconomico che ci sta soggiogando.  Molti di loro appartengono ad associazioni ma queste, divise, non hanno abbastanza forza e difficilmente riescono adper ottenere risultati significativi. Voglio contattare tutte le associazioni che conosco sperando che accolgano il mio invito a far iscrivere i loro associati a questa piattaforma.", "address": {"@type": "PostalAddress", "addressLocality": "Agrate Conturbia", "addressRegion": "Piemonte", "addressCountry": "IT"}, "knowsAbout": ["legge elettorale", "ambiente", "casa e abitare", "democrazia partecipativa", "comunicazione", "volontariato"]}}]}</script>
+<!-- END:SCHEMA_MAPPA -->
 </head>
 <body>
 
@@ -177,6 +198,140 @@ footer a{color:var(--ar)}
   <div class="griglia" id="lista"></div>
   <div id="altri"></div>
 </section>
+
+<!-- START:ELENCO -->
+<section class="wrap" id="elenco">
+  <h2>Chi c&rsquo;&egrave; sulla mappa</h2>
+  <p class="sub">11 fra cittadini e associazioni. Clicca una riga per aprirla, oppure usa la ricerca qui sopra per filtrare per tema, competenza o luogo.</p>
+  <div class="elenco" id="elenco-box">
+    <details class="voce">
+      <summary>
+        <span class="nome">Associazione Mercatari</span>
+        <span class="dove">Napoli, Campania</span>
+        <span class="temi">lavoro, ambiente, scuola e università +7</span>
+      </summary>
+      <div class="det">
+        <p>Associazione mercatari da più di 10 anni si occupa su tutto il territorio nazionale di di organi,are lavoro su are publiche allo scopo di produrre benessere sociale</p>
+        <div><span class="tag">lavoro</span><span class="tag">ambiente</span><span class="tag">scuola e università</span><span class="tag">giustizia</span><span class="tag">casa e abitare</span><span class="tag">trasporti</span><span class="tag">agricoltura</span><span class="tag">sicurezza</span><span class="tag">cultura</span><span class="tag">rigenerazione urbana</span><span class="tag cmp">ingegneria</span><span class="tag cmp">economia e finanza</span><span class="tag cmp">insegnamento</span><span class="tag cmp">architettura e urbanistica</span><span class="tag cmp">amministrazione pubblica</span><span class="tag cmp">ricerca scientifica</span><span class="tag cmp">artigianato</span><span class="tag cmp">volontariato</span></div>
+      </div>
+    </details>
+    <details class="voce">
+      <summary>
+        <span class="nome">Circolo V.</span>
+        <span class="dove">Ferrara, Emilia-Romagna</span>
+        <span class="temi">lavoro, giustizia, casa e abitare +1</span>
+      </summary>
+      <div class="det">
+        <p>Non conosciamo nulla in zona di Ferrara quindi preferiamo conoscere in primo luogo 
+    
+    Buon lavoro</p>
+        <div><span class="tag">lavoro</span><span class="tag">giustizia</span><span class="tag">casa e abitare</span><span class="tag">democrazia partecipativa</span><span class="tag cmp">legale</span><span class="tag cmp">economia e finanza</span><span class="tag cmp">contabilità</span><span class="tag cmp">amministrazione pubblica</span></div>
+      </div>
+    </details>
+    <details class="voce">
+      <summary>
+        <span class="nome">Stefano Francesco P.</span>
+        <span class="dove">Montescudo - Monte Colombo, Emilia-Romagna</span>
+        <span class="temi">legge elettorale, sanità, ambiente +9</span>
+      </summary>
+      <div class="det">
+        <p>Faccio parte del gruppo consumatori Aura che porta avanti un progetto di energie rinnovabili ed altro.</p>
+        <div><span class="tag">legge elettorale</span><span class="tag">sanità</span><span class="tag">ambiente</span><span class="tag">scuola e università</span><span class="tag">casa e abitare</span><span class="tag">fisco</span><span class="tag">energia</span><span class="tag">cultura</span><span class="tag">digitale</span><span class="tag">democrazia partecipativa</span><span class="tag">rigenerazione urbana</span><span class="tag">italiani all’estero</span><span class="tag cmp">economia e finanza</span><span class="tag cmp">comunicazione</span><span class="tag cmp">volontariato</span></div><div style="margin-top:8px"><a href="www.auragruppoconsumatori.it.    www.omniaworld.it www.partecipazione-attiva.it" rel="noopener nofollow" target="_blank">www.auragruppoconsumatori.it.    www.omniaworld.it www.partecipazione-attiva.it</a></div>
+      </div>
+    </details>
+    <details class="voce oltre">
+      <summary>
+        <span class="nome">Alessandro M.</span>
+        <span class="dove">Cerveteri, Lazio</span>
+        <span class="temi">sanità, lavoro, ambiente +11</span>
+      </summary>
+      <div class="det">
+        <p>Volontariato in ambito ambientale, sanitario, sociale e sportivo. Formazione in campo contabile, enogastronomia, agricolo, sportivo, ambientale e micologico.</p>
+        <div><span class="tag">sanità</span><span class="tag">lavoro</span><span class="tag">ambiente</span><span class="tag">scuola e università</span><span class="tag">giustizia</span><span class="tag">casa e abitare</span><span class="tag">trasporti</span><span class="tag">energia</span><span class="tag">agricoltura</span><span class="tag">sicurezza</span><span class="tag">cultura</span><span class="tag">democrazia partecipativa</span><span class="tag">rigenerazione urbana</span><span class="tag">italiani all’estero</span><span class="tag cmp">chimica</span><span class="tag cmp">economia e finanza</span><span class="tag cmp">insegnamento</span><span class="tag cmp">architettura e urbanistica</span><span class="tag cmp">agronomia</span><span class="tag cmp">contabilità</span><span class="tag cmp">amministrazione pubblica</span><span class="tag cmp">ricerca scientifica</span><span class="tag cmp">volontariato</span></div>
+      </div>
+    </details>
+    <details class="voce oltre">
+      <summary>
+        <span class="nome">Roberta B.</span>
+        <span class="dove">Cerveteri, Lazio</span>
+        <span class="temi">disabilità</span>
+      </summary>
+      <div class="det">
+        <p>Sono madre di una figlia con disabilita’ e sono interprete LIS iscritta all’Albo ANIMU</p>
+        <div><span class="tag">disabilità</span><span class="tag cmp">insegnamento</span><span class="tag cmp">comunicazione</span></div>
+      </div>
+    </details>
+    <details class="voce oltre">
+      <summary>
+        <span class="nome">Fernando F.</span>
+        <span class="dove">Ladispoli, Lazio</span>
+        <span class="temi">legge elettorale, sanità, lavoro +2</span>
+      </summary>
+      <div class="det">
+        <p>Faccio parte del direttivo di PA e spero che si riesca davvero a portare a buon fine le istanze dei cittadini siano esse locali che nazionali</p>
+        <div><span class="tag">legge elettorale</span><span class="tag">sanità</span><span class="tag">lavoro</span><span class="tag">casa e abitare</span><span class="tag">democrazia partecipativa</span><span class="tag cmp">volontariato</span></div><div style="margin-top:8px"><a href="https://partecipazione-attiva.it/" rel="noopener nofollow" target="_blank">https://partecipazione-attiva.it/</a></div>
+      </div>
+    </details>
+    <details class="voce oltre">
+      <summary>
+        <span class="nome">LUIGI S.</span>
+        <span class="dove">Roma, Lazio</span>
+        <span class="temi">legge elettorale, democrazia partecipativa</span>
+      </summary>
+      <div class="det">
+        <p>Presentare con gli strumenti della democrazia diretta, proposte di legge di iniziativa popolare e/o modifica/abrogazione di leggi per il rispetto dei diritti sanciti nella costituzione.</p>
+        <div><span class="tag">legge elettorale</span><span class="tag">democrazia partecipativa</span><span class="tag cmp">informatica</span></div>
+      </div>
+    </details>
+    <details class="voce oltre">
+      <summary>
+        <span class="nome">PAOLO N.</span>
+        <span class="dove">Salisano, Lazio</span>
+        <span class="temi">sanità, giustizia, energia +1</span>
+      </summary>
+      <div class="det">
+        <p>Militare in pensione.... visto il grado rivestito...so tutto 🤣</p>
+        <div><span class="tag">sanità</span><span class="tag">giustizia</span><span class="tag">energia</span><span class="tag">sicurezza</span></div>
+      </div>
+    </details>
+    <details class="voce oltre">
+      <summary>
+        <span class="nome">Angelo N.</span>
+        <span class="dove">Como, Lombardia</span>
+        <span class="temi">legge elettorale, sanità, lavoro +5</span>
+      </summary>
+      <div class="det">
+        <p>Ex imprenditore ora in pensione. Oltre alla mia esperienza lavorativa iniziata nel 1980, ho maturato quella politica, dal 1976 mi sono occupato di politica come cittadino attivo, non per professione ma per passione. Ho sempre pensato che ogni cittadino debba essere parte attiva nel proprio territorio e portare avanti con impegno e costanza, un&#x27;attività politica al fine di migliorare la vita comunitaria e farsì che tutti possano vivere in una società attenta e più a misura d&#x27;uomo. Ho ricoperto anche la funzione di amministratore pubblico. Attualmente sono il presidente di Partecipazione Attiva</p>
+        <div><span class="tag">legge elettorale</span><span class="tag">sanità</span><span class="tag">lavoro</span><span class="tag">ambiente</span><span class="tag">scuola e università</span><span class="tag">giustizia</span><span class="tag">casa e abitare</span><span class="tag">democrazia partecipativa</span><span class="tag cmp">comunicazione</span><span class="tag cmp">amministrazione pubblica</span><span class="tag cmp">artigianato</span></div><div style="margin-top:8px"><a href="partecipazione-attiva. it" rel="noopener nofollow" target="_blank">partecipazione-attiva. it</a></div>
+      </div>
+    </details>
+    <details class="voce oltre">
+      <summary>
+        <span class="nome">Michele S.</span>
+        <span class="dove">Ancona, Marche</span>
+        <span class="temi">sanità, lavoro, scuola e università +3</span>
+      </summary>
+      <div class="det">
+        <p>Comunicazione e tecnologie informatiche.</p>
+        <div><span class="tag">sanità</span><span class="tag">lavoro</span><span class="tag">scuola e università</span><span class="tag">cultura</span><span class="tag">digitale</span><span class="tag">democrazia partecipativa</span><span class="tag cmp">informatica</span><span class="tag cmp">comunicazione</span></div>
+      </div>
+    </details>
+    <details class="voce oltre">
+      <summary>
+        <span class="nome">Daniele T.</span>
+        <span class="dove">Agrate Conturbia, Piemonte</span>
+        <span class="temi">legge elettorale, ambiente, casa e abitare +1</span>
+      </summary>
+      <div class="det">
+        <p>In questo periodo mi dedicherò soprattutto al tema unione e collaborazione fra tutti i cittadini che cercano, in uno dei tantissimi modi, di modificare il deleterio sistema sociopoliticoeconomico che ci sta soggiogando.  Molti di loro appartengono ad associazioni ma queste, divise, non hanno abbastanza forza e difficilmente riescono adper ottenere risultati significativi. Voglio contattare tutte le associazioni che conosco sperando che accolgano il mio invito a far iscrivere i loro associati a questa piattaforma.</p>
+        <div><span class="tag">legge elettorale</span><span class="tag">ambiente</span><span class="tag">casa e abitare</span><span class="tag">democrazia partecipativa</span><span class="tag cmp">comunicazione</span><span class="tag cmp">volontariato</span></div>
+      </div>
+    </details>
+  </div>
+  <div id="elenco-piu"><button class="btn sec" type="button" id="btn-elenco" onclick="apriElenco()">Mostra tutti (11)</button></div>
+</section>
+<script>function apriElenco(){  var box=document.getElementById("elenco-box"), b=document.getElementById("btn-elenco");  var aperto=box.classList.toggle("tutto");  b.textContent = aperto ? "Mostra meno" : "Mostra tutti (" + 11 + ")";  if(!aperto){ box.querySelectorAll("details.oltre[open]").forEach(function(d){d.open=false;});                 document.getElementById("elenco").scrollIntoView({behavior:"smooth",block:"start"}); }}</script>
+<!-- END:ELENCO -->
 
 <section class="wrap" id="iscriviti">
   <h2>Entra nella mappa</h2>
