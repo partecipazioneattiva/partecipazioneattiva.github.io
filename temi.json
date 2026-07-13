@@ -2,6 +2,11 @@
   "voci": [
     {
       "emoji": "🗺️",
+      "tema": "CITTADINI ATTIVI",
+      "testo": "non mancano i cittadini attivi, manca che si vedano — ecco perché abbiamo costruito una mappa"
+    },
+    {
+      "emoji": "🗺️",
       "tema": "LA MAPPA",
       "testo": "cittadini e associazioni in Italia e nel mondo — cerca per tema o competenza e trova chi si batte per le stesse cose vicino a te"
     },
@@ -34,11 +39,6 @@
       "emoji": "🩺",
       "tema": "SANITÀ",
       "testo": "OCSE maggio 2026 — 5,8 milioni di italiani rinunciano alle cure"
-    },
-    {
-      "emoji": "🚗",
-      "tema": "RC AUTO",
-      "testo": "stangata 2026 — premio medio 492€, +10% in un anno, Napoli paga 252€ più di Aosta"
     }
   ]
 }

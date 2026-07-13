@@ -6,7 +6,14 @@
     <description>Notizie, battaglie e proposte di Partecipazione Attiva</description>
     <language>it</language>
     <atom:link href="https://partecipazione-attiva.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sun, 12 Jul 2026 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2026 12:00:00 +0200</lastBuildDate>
+  <item>
+    <title>Non mancano i cittadini attivi. Manca che si vedano.</title>
+    <link>https://partecipazione-attiva.it/mappa-cittadini-attivi.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/mappa-cittadini-attivi.html</guid>
+    <description>Ogni comitato riparte da zero, ogni battaglia si combatte da soli. Non è scarsità di persone: è invisibilità reciproca. La Mappa di Partecipazione Attiva.</description>
+    <pubDate>Mon, 13 Jul 2026 12:00:00 +0200</pubDate>
+  </item>
   <item>
     <title>PensAttivo: guarda i fatti, non la maglietta</title>
     <link>https://partecipazione-attiva.it/pensattivo.html</link>

@@ -265,25 +265,96 @@ BODY_CAVALLEGGERI = '''
 </article>
 '''
 
+BODY_MAPPA = '''
+<style>
+.pa-lead{font-size:1.12em!important;color:#8a4e00!important;font-weight:600}
+.pa-box{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:24px 28px;margin:28px 0}
+.pa-cta{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:28px 32px;margin:36px 0;text-align:center}
+.pa-cta p{font-family:merriweather,serif;color:#333;font-size:1.1em;font-weight:700;margin-bottom:16px}
+.pa-cta a{display:inline-block;background:#e8900a;color:#fff;text-decoration:none;padding:14px 32px;border-radius:50px;font-family:montserrat,sans-serif;font-weight:700;font-size:.95em}
+</style>
+
+<p class="pa-lead">C\u2019\u00e8 una frase che in ogni assemblea civica torna sempre, uguale a s\u00e9 stessa: \u201cIl problema \u00e8 che siamo divisi. Bisognerebbe fare rete.\u201d</p>
+
+<p>La si dice, tutti annuiscono, e poi ognuno torna nel proprio gruppo. Alla riunione successiva la frase ricompare, identica. \u00c8 una diagnosi che tutti condividono e che nessuno ha mai tradotto in uno strumento.</p>
+
+<p>Non \u00e8 ipocrisia. \u00c8 che <strong>manca l\u2019infrastruttura</strong>. Non sappiamo nemmeno chi c\u2019\u00e8.</p>
+
+<h2>Il disarmo delle competenze</h2>
+
+<p>Il danno non \u00e8 astratto. Si misura ogni volta che un comitato di cittadini si oppone a una decisione amministrativa e perde.</p>
+
+<p>Chi ha attraversato quelle battaglie lo sa: un gruppo civico non possiede, o possiede solo in parte, gli strumenti di conoscenza che rendano qualificata e fattibile una proposta alternativa. Contestare una delibera richiede dati tecnici, competenze acquisite, capacit\u00e0 di leggere un progetto. Senza quelle, la protesta resta protesta \u2014 e viene archiviata.</p>
+
+<p>Il punto \u00e8 che quelle competenze esistono. C\u2019\u00e8 un ingegnere in pensione a due isolati. C\u2019\u00e8 un\u2019avvocata che si occupa di diritto amministrativo nello stesso quartiere. C\u2019\u00e8 chi sa leggere un bilancio comunale, chi ha lavorato in una ASL, chi conosce l\u2019urbanistica.</p>
+
+<p>Ma le tematiche della cittadinanza attiva richiedono competenze diversificate, che \u00e8 difficile trovare tutte in una sola persona. E quelle persone, semplicemente, <strong>non si trovano</strong>. Non perch\u00e9 si nascondano: perch\u00e9 non c\u2019\u00e8 nessun posto dove guardare.</p>
+
+<h2>Ogni volta si riparte da zero</h2>
+
+<p>La conseguenza \u00e8 uno spreco continuo.</p>
+
+<p>Un gruppo apre una battaglia sulla sanit\u00e0 in una provincia, e non sa che a quaranta chilometri un altro gruppo ha gi\u00e0 raccolto i dati, gi\u00e0 scritto l\u2019esposto, gi\u00e0 incassato il rifiuto e imparato dove stava l\u2019errore. Un comitato si costituisce contro una delibera, e ignora che nella stessa regione c\u2019\u00e8 chi quella delibera l\u2019ha gi\u00e0 impugnata.</p>
+
+<p>Nel frattempo, chi ha il potere di decidere non ha questo problema. Ha uffici, consulenti, banche dati, continuit\u00e0. <strong>La disparit\u00e0 non \u00e8 solo di forza: \u00e8 di organizzazione.</strong></p>
+
+<h2>Cosa abbiamo costruito</h2>
+
+<p>Partecipazione Attiva ha una mappa.</p>
+
+<p>Ognuno scrive dove si trova, quali temi gli stanno a cuore e quali competenze pu\u00f2 mettere a disposizione. Poi si cerca \u2014 per tema, per competenza, per luogo \u2014 e si trova chi si sta battendo per le stesse cose l\u00ec vicino. Cittadini singoli e associazioni, in Italia e nel mondo.</p>
+
+<p><strong>Non \u00e8 un tesseramento.</strong> Entrare nella mappa non \u00e8 iscriversi a Partecipazione Attiva: non c\u2019\u00e8 quota, non c\u2019\u00e8 adesione, non si rinuncia alla propria sigla n\u00e9 alla propria autonomia. La mappa l\u2019abbiamo costruita noi e ne paghiamo i costi, ma \u00e8 uno spazio comune.</p>
+
+<p>Chi entra resta esattamente quello che era. In pi\u00f9, <strong>diventa trovabile</strong>.</p>
+
+<h2>Le persone, non i dati</h2>
+
+<p>Una precisazione che conta, perch\u00e9 sappiamo che \u00e8 la prima obiezione.</p>
+
+<p>Sulla mappa compaiono solo il nome con l\u2019iniziale del cognome \u2014 o il nome dell\u2019associazione \u2014 il comune, i temi, le competenze e la descrizione che ciascuno scrive di s\u00e9. <strong>L\u2019email non \u00e8 mai pubblica.</strong> Il punto sulla mappa \u00e8 il centro del comune, mai l\u2019indirizzo di casa: <strong>non usiamo il GPS</strong>.</p>
+
+<p>Se qualcuno vuole mettersi in contatto, manda un messaggio. Chi lo riceve legge, valuta e decide: solo se accetta, i due indirizzi vengono scambiati. Chi non risponde non subisce nulla, e chi ha scritto non avr\u00e0 mai il suo recapito.</p>
+
+<p>I dati stanno su server europei e <strong>si cancellano con un click</strong>, in qualsiasi momento.</p>
+
+<h2>Perch\u00e9 lo facciamo</h2>
+
+<p>Il nostro Manifesto, nel 2022, si proponeva di:</p>
+
+<blockquote style="border-left:4px solid #e8900a;padding:18px 24px;margin:32px 0;background:#fff8ee;border-radius:0 12px 12px 0;font-family:merriweather,serif;font-style:italic;color:#5a3200;font-size:1.08em;line-height:1.8">
+\u201cporre in atto azioni pubbliche di superamento dell\u2019individualismo, favorendo una cooperazione che permetta di creare quella massa critica e rete di condivisione, per consentire al gruppo di ottenere risultati solidali.\u201d
+</blockquote>
+
+<p>La Mappa \u00e8 quella frase resa strumento.</p>
+
+<p>Serve massa critica: con venti nomi resta un esercizio. Con duecento, cambia il modo in cui ci si muove. Ma il primo passo non lo pu\u00f2 fare un movimento \u2014 lo fanno le persone, una alla volta.</p>
+
+<div class="pa-cta">
+<p>Entra nella Mappa. Cerca chi ti somiglia. Cominciamo a contarci.</p>
+<a href="mappa.html">\U0001F5FA\ufe0f Vai alla Mappa</a>
+</div>
+'''
+
 ART = {
-  'slug'         : 'cavalleggeri-cielo-aperto.html',
+  'slug'         : 'mappa-cittadini-attivi.html',
   'autore'       : 'pa',
-  'data_iso'     : '2026-07-05',
-  'data_human'   : '5 luglio 2026',
-  'data_badge'   : '5 LUGLIO 2026',
+  'data_iso'     : '2026-07-13',
+  'data_human'   : '13 luglio 2026',
+  'data_badge'   : '13 LUGLIO 2026',
   'lettura_min'  : 4,
-  'categoria_hero': '\U0001F3A8 Riqualificazione Urbana',
-  'og_image'     : 'images/cavalleggeri-museo.webp',
-  'h1'           : 'Cavalleggeri a cielo aperto: un museo di murales per Fuorigrotta',
-  'sottotitolo'  : 'La proposta di Partecipazione Attiva per Via Marco Polo, agganciata all\u2019America\u2019s Cup 2027 e alla rigenerazione di Bagnoli.',
-  'meta_desc'    : 'Partecipazione Attiva propone al Comune di Napoli un museo diffuso di street art a Cavalleggeri d\u2019Aosta, Fuorigrotta: decoro, identit\u00e0 e leva economica per il quartiere.',
-  'card_cat'     : 'RIQUALIFICAZIONE URBANA',
-  'card_title'   : 'Cavalleggeri a cielo aperto: un museo di murales per Fuorigrotta',
-  'card_desc'    : 'La proposta di PA per Via Marco Polo, agganciata all\u2019America\u2019s Cup 2027 e alla rigenerazione di Bagnoli.',
-  'ticker_emoji' : '\U0001F3A8',
-  'ticker_tema'  : 'CAVALLEGGERI',
-  'ticker_testo' : 'un museo di murales a cielo aperto per Fuorigrotta: la proposta di PA al Comune di Napoli',
-  'body'         : BODY_CAVALLEGGERI,
+  'categoria_hero': '\U0001F5FA\ufe0f Democrazia partecipativa',
+  'og_image'     : 'images/mappa-og.jpg',
+  'h1'           : 'Non mancano i cittadini attivi. Manca che si vedano.',
+  'sottotitolo'  : 'Ogni comitato riparte da zero, ogni battaglia si combatte da soli. Il problema non \u00e8 la scarsit\u00e0 di persone: \u00e8 che sono invisibili le une alle altre. La Mappa \u00e8 il nostro tentativo di risolverlo.',
+  'meta_desc'    : 'Ogni comitato riparte da zero, ogni battaglia si combatte da soli. Non \u00e8 scarsit\u00e0 di persone: \u00e8 invisibilit\u00e0 reciproca. La Mappa di Partecipazione Attiva.',
+  'card_cat'     : 'DEMOCRAZIA PARTECIPATIVA',
+  'card_title'   : 'Non mancano i cittadini attivi. Manca che si vedano.',
+  'card_desc'    : 'Ogni comitato riparte da zero. Il problema non \u00e8 la scarsit\u00e0 di persone: \u00e8 che sono invisibili le une alle altre. La Mappa \u00e8 il nostro tentativo.',
+  'ticker_emoji' : '\U0001F5FA\ufe0f',
+  'ticker_tema'  : 'CITTADINI ATTIVI',
+  'ticker_testo' : 'non mancano i cittadini attivi, manca che si vedano \u2014 ecco perch\u00e9 abbiamo costruito una mappa',
+  'body'         : BODY_MAPPA,
 }
 # ===========================================================================
 
