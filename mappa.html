@@ -44,6 +44,11 @@ h2{font-size:1.45em;color:var(--br);margin:0 0 6px}
 .sub{color:#6b6255;margin:0 0 16px;font-size:.94em}
 #q{width:100%;padding:15px 18px;font-size:1.08em;font-family:Montserrat,sans-serif;border:2px solid var(--bd);border-radius:50px;outline:none;background:#fff}
 #q:focus{border-color:var(--ar)}
+.qbox{position:relative}
+#q{padding-right:52px}
+#qx{position:absolute;right:8px;top:50%;transform:translateY(-50%);display:none;width:34px;height:34px;border:0;border-radius:50%;background:#f2ede4;color:#6b6255;font-size:1.05em;line-height:1;cursor:pointer;align-items:center;justify-content:center}
+#qx.on{display:flex}
+#qx:hover{background:#6b6255;color:#fff}
 .chips{margin:12px 0 0;display:flex;flex-wrap:wrap;gap:7px}
 .chip{background:#fff;border:1px solid var(--bd);border-radius:50px;padding:5px 13px;font-family:Montserrat,sans-serif;font-size:.8em;cursor:pointer;color:var(--br)}
 .chip:hover,.chip.on{background:var(--ar);color:#fff;border-color:var(--ar)}
@@ -156,7 +161,10 @@ footer a{color:var(--ar)}
 <section class="wrap">
   <h2>Cerca</h2>
   <p class="sub">Scrivi anche una sola parola: <em>legge elettorale</em>, <em>sanit&agrave;</em>, <em>ambiente</em>, <em>legale</em>, <em>Napoli</em>, <em>Germania</em>&hellip;</p>
-  <input id="q" type="text" placeholder="Cerca un tema, una competenza, un luogo..." autocomplete="off">
+  <div class="qbox">
+    <input id="q" type="text" placeholder="Cerca un tema, una competenza, un luogo..." autocomplete="off">
+    <button id="qx" type="button" title="Azzera la ricerca" aria-label="Azzera la ricerca">&#10005;</button>
+  </div>
   <div class="chips" id="chips"></div>
   <div id="conta">Caricamento&hellip;</div>
   <div id="map"></div>
@@ -485,12 +493,18 @@ function filtra(){
   schede(q ? out : []);          // schede solo quando si cerca
   if(!q) document.getElementById('altri').innerHTML='';
 }
-document.getElementById('q').oninput=filtra;
+function aggiornaX(){
+  document.getElementById('qx').classList.toggle('on', document.getElementById('q').value.trim() !== '');
+}
+document.getElementById('q').oninput=function(){ filtra(); aggiornaX(); };
+document.getElementById('qx').onclick=function(){
+  var q=document.getElementById('q');
+  q.value=''; filtra(); aggiornaX(); q.focus();
+};
 
 document.getElementById('chips').innerHTML =
   ['legge elettorale','sanit\u00e0','disabilit\u00e0','ambiente','animali','lavoro','legale','medico-sanitaria','italiani all\u2019estero']
-  .map(function(t){ return '<span class="chip" onclick="document.getElementById(\'q\').value=\''+t+'\';filtra()">'+t+'</span>'; }).join('')
-  + '<span class="chip azz" onclick="document.getElementById(\'q\').value=\'\';filtra()">\u2715 azzera ricerca</span>';
+  .map(function(t){ return '<span class="chip" onclick="document.getElementById(\'q\').value=\''+t+'\';filtra();aggiornaX()">'+t+'</span>'; }).join('');
 
 fetch(SB_URL+'/rest/v1/mappa_pubblica?select=*',{headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
   .then(function(r){return r.json();})
