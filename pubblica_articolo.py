@@ -399,13 +399,14 @@ def pulisci_badge_vecchi(html, data_badge_oggi):
         if 'pulse-live' in seg and f'&#x1F195; {data_badge_oggi}' not in seg:
             seg = seg.replace(BADGE, '')
         return seg
-    return re.sub(r'<a [^>]*data-pa-section="homepage-card".*?</a>', repl, html, flags=re.DOTALL)
+    return re.sub(r'<a (?![^>]*data-pa-pin)[^>]*data-pa-section="homepage-card".*?</a>', repl, html, flags=re.DOTALL)
 
 def aggiorna_index(a):
     html = open(IDX, encoding='utf-8').read()
     assert a['slug'] not in html, 'STOP: card gia presente (gia pubblicato?)'
-    # 1) trova la card attualmente in cima (prima ancora homepage-card) e inserisci la nuova prima
-    m = re.search(r'<a [^>]*data-pa-section="homepage-card"', html)
+    # 1) inserisci la nuova card PRIMA della prima card NON pinnata.
+    #    Le card con data-pa-pin="1" (es. la Mappa) restano sempre in cima.
+    m = re.search(r'<a (?![^>]*data-pa-pin)[^>]*data-pa-section="homepage-card"', html)
     assert m, 'STOP: nessuna card homepage trovata'
     pos = m.start()
     html = html[:pos] + card_html(a) + html[pos:]
