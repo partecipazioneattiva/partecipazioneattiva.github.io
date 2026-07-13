@@ -486,7 +486,7 @@ function filtra(){
 document.getElementById('q').oninput=filtra;
 
 document.getElementById('chips').innerHTML =
-  ['legge elettorale','sanit\u00e0','ambiente','animali','lavoro','legale','medico-sanitaria','italiani all\u2019estero']
+  ['legge elettorale','sanit\u00e0','disabilit\u00e0','ambiente','animali','lavoro','legale','medico-sanitaria','italiani all\u2019estero']
   .map(function(t){ return '<span class="chip" onclick="document.getElementById(\'q\').value=\''+t+'\';filtra()">'+t+'</span>'; }).join('')
   + '<span class="chip" onclick="document.getElementById(\'q\').value=\'\';filtra()">azzera</span>';
 
