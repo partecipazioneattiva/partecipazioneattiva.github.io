@@ -438,25 +438,131 @@ BODY_STABILICUM_LUGLIO = '''
 </div>
 '''
 
+BODY_NOTTE_DEMOCRAZIA = '''
+<style>
+.pa-lead{font-size:1.12em!important;color:#8a4e00!important;font-weight:600}
+.pa-fig{margin:32px 0}
+.pa-fig img{width:100%;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.82em;color:#9c5b00;margin-top:10px;text-align:center;font-style:italic}
+.pa-event{background:#8a4e00;color:#fff;border-radius:16px;padding:26px 30px;margin:32px 0;text-align:center}
+.pa-event .tit{font-family:montserrat,sans-serif;font-weight:900;letter-spacing:1px;font-size:1.15em;margin-bottom:12px}
+.pa-event p{color:#fff!important;margin:6px 0}
+.pa-cta{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:28px 32px;margin:36px 0;text-align:center}
+.pa-cta p{font-family:merriweather,serif;color:#333;font-size:1.1em;font-weight:700;margin-bottom:16px}
+.pa-cta a{display:inline-block;background:#e8900a;color:#fff;text-decoration:none;padding:14px 32px;border-radius:50px;font-family:montserrat,sans-serif;font-weight:700;font-size:.95em}
+</style>
+
+<p class="pa-lead">Oggi, marted&igrave; 14 luglio, la Camera comincia a votare la nuova legge elettorale. Il centrodestra la chiama Stabilicum. Le opposizioni la chiamano Melonellum.</p>
+
+<p>Stasera Partecipazione Attiva sar&agrave; in piazza Montecitorio, insieme ad altre associazioni e movimenti, per la Notte della Democrazia.</p>
+
+<p>Dalle 18, punto stampa. A seguire, veglia con talk, musica e flash mob.</p>
+
+<p>Il nostro portavoce <strong>Luigi Spanu</strong> sar&agrave; presente con i volantini del movimento, per riprendere la manifestazione e rilasciare interviste.</p>
+
+<h2>Perch&eacute; ci siamo</h2>
+
+<p>Non &egrave; una questione di schieramento. &Egrave; una questione di chi tiene la penna.</p>
+
+<p>Questa mattina abbiamo pubblicato l&rsquo;analisi di cosa la Camera sta davvero votando: una preferenza che, nella maggior parte dei collegi, non sposterebbe nulla, perch&eacute; il seggio andrebbe comunque al capolista scelto dalla segreteria.</p>
+
+<p><a href="preferenze-stabilicum-luglio2026.html">La preferenza che non ti fa scegliere</a></p>
+
+<p>Ma il problema non &egrave; solo quello.</p>
+
+<h3>Un premierato mascherato da legge elettorale</h3>
+
+<p>Le liste dovranno indicare, al momento del deposito del contrassegno, il nome del candidato Presidente del Consiglio. <strong>Non &egrave; una legge elettorale: &egrave; una modifica di fatto della forma di governo</strong>, ottenuta senza passare da una riforma costituzionale &mdash; e quindi senza il referendum che la Costituzione prevede.</p>
+
+<p>L&rsquo;articolo 92 della Costituzione affida al Presidente della Repubblica la nomina del Presidente del Consiglio. Indicare il premier sulla scheda comprime quella prerogativa senza dirlo apertamente.</p>
+
+<h3>Liste bloccate</h3>
+
+<p>Il cittadino vota un simbolo. I nomi li hanno gi&agrave; scelti le segreterie.</p>
+
+<p>&Egrave; esattamente il meccanismo che la Corte Costituzionale, con la sentenza 1/2014, dichiar&ograve; illegittimo per il Porcellum:</p>
+
+<blockquote style="border-left:4px solid #e8900a;padding:18px 24px;margin:32px 0;background:#fff8ee;border-radius:0 12px 12px 0;font-family:merriweather,serif;font-style:italic;color:#5a3200;font-size:1.08em;line-height:1.8">
+&ldquo;coartano la libert&agrave; di scelta degli elettori nell&rsquo;elezione dei propri rappresentanti in Parlamento&rdquo; &mdash; Corte Costituzionale, sentenza n. 1/2014
+</blockquote>
+
+<p><strong>Dodici anni dopo, siamo ancora qui.</strong></p>
+
+<h3>Chi c&rsquo;&egrave; gi&agrave; dentro, ci resta pi&ugrave; facilmente</h3>
+
+<p>Un emendamento esenta dalla raccolta firme i partiti che a dicembre 2025 avevano un gruppo parlamentare. Chi &egrave; nato dopo, o viene da fuori, le firme le raccoglie &mdash; e in Italia il numero richiesto &egrave; tra i pi&ugrave; alti d&rsquo;Europa.</p>
+
+<p>Una legge elettorale scritta da chi &egrave; in Parlamento, che rende pi&ugrave; facile restarci a chi c&rsquo;&egrave; gi&agrave;.</p>
+
+<h3>Il voto ai fuorisede, all&rsquo;ultimo momento</h3>
+
+<p>Circa cinque milioni di elettori vivono lontano dalla residenza per studio, lavoro o cura. Per votare devono pagarsi un viaggio: <strong>il 5% degli elettori affronta oltre quattro ore tra andata e ritorno</strong>. L&rsquo;Italia &egrave; l&rsquo;unico grande Paese europeo senza una legge stabile sul voto fuorisede.</p>
+
+<p>L&rsquo;emendamento della maggioranza &egrave; arrivato all&rsquo;ultimo momento, dopo essere stato assente dalle versioni precedenti. Ed &egrave; scritto in modo cos&igrave; rigido &mdash; dicono le opposizioni &mdash; da rischiare di non funzionare davvero.</p>
+
+<p>Su questo varrebbe la pena litigare. Invece si litiga su una preferenza che non fa scegliere.</p>
+
+<h2>Non basta dire no</h2>
+
+<p>E qui va detta una cosa che non far&agrave; piacere a nessuno.</p>
+
+<p><strong>Respingere il Melonellum non basta.</strong> Perch&eacute; il Rosatellum oggi in vigore &egrave; altrettanto incostituzionale, e altrettanto pericoloso: le liste bloccate ci sono gi&agrave;, il voto congiunto pure, le pluricandidature anche.</p>
+
+<p>Se domani il Melonellum cadesse, torneremmo a votare con una legge che nega esattamente le stesse cose.</p>
+
+<p>Per questo, insieme a Lista Civica Italiana, chiediamo alle forze del cosiddetto campo largo di rendere pubblica adesso la legge elettorale che si impegnano ad approvare in caso di vittoria.</p>
+
+<p><strong>Non dopo il voto. Adesso.</strong></p>
+
+<p>Perch&eacute; una legge elettorale rispettosa della Costituzione &mdash; semplice, breve, comprensibile &mdash; &egrave; il presupposto di tutto il resto. E chi chiede il voto dei cittadini contro una legge che toglie loro la scelta, <strong>ha il dovere di dire con quale legge intende restituirgliela</strong>.</p>
+
+<div class="pa-fig">
+<img src="images/volantino-melonellum.webp" alt="Volantino di Partecipazione Attiva e Lista Civica Italiana contro il Melonellum">
+<figcaption>Il volantino di Partecipazione Attiva e Lista Civica Italiana, distribuito stasera in piazza.</figcaption>
+</div>
+
+<h2>Se non puoi venire a Roma</h2>
+
+<p>C&rsquo;&egrave; comunque una cosa che puoi fare, e servono lo SPID e cinque minuti.</p>
+
+<p>Tre proposte di legge di iniziativa popolare, depositate dall&rsquo;associazione Voto LibEguale, chiedono esattamente ci&ograve; che manca: preferenze vere su nomi prestampati, primarie per tutti i candidati, abolizione delle pluricandidature e del voto congiunto.</p>
+
+<p>L&rsquo;articolo 74 del Regolamento del Senato obbliga a calendarizzarle entro tre mesi. Se le firme arrivassero adesso, l&rsquo;esame cadrebbe mentre lo Stabilicum &egrave; al Senato.</p>
+
+<p>Si firma su <a href="https://votolibeguale.it" target="_blank" rel="noopener">votolibeguale.it</a></p>
+
+<div class="pa-event">
+<div class="tit">\u270a NOTTE DELLA DEMOCRAZIA</div>
+<p><strong>Marted&igrave; 14 luglio, dalle 18.00</strong></p>
+<p>Roma, Piazza Montecitorio</p>
+<p>Punto stampa, veglia, talk, musica, flash mob</p>
+</div>
+
+<div class="pa-cta">
+<p>Ti occupi di questo tema? Mettiti sulla mappa e trova chi se ne occupa vicino a te.</p>
+<a href="mappa.html">\U0001F5FA\ufe0f Vai alla Mappa</a>
+</div>
+'''
+
 ART = {
-  'slug'         : 'preferenze-stabilicum-luglio2026.html',
+  'slug'         : 'notte-democrazia-montecitorio.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-07-14',
   'data_human'   : '14 luglio 2026',
   'data_badge'   : '14 LUGLIO 2026',
-  'lettura_min'  : 6,
-  'categoria_hero': '\u2696\ufe0f Riforma elettorale',
-  'og_image'     : 'images/pensattivo-stabilicum.webp',
-  'h1'           : 'La preferenza che non ti fa scegliere',
-  'sottotitolo'  : 'Da oggi la Camera vota lo Stabilicum. Ti raccontano che il litigio nella maggioranza \u00e8 sul tuo diritto di scegliere il deputato. I conti dicono un\u2019altra cosa.',
-  'meta_desc'    : 'Capolista bloccato e tre preferenze: sembra una vittoria per l\u2019elettore. Ma nella maggior parte dei collegi la tua preferenza non sposter\u00e0 nulla. Cosa vota davvero la Camera.',
-  'card_cat'     : 'RIFORMA ELETTORALE',
-  'card_title'   : 'La preferenza che non ti fa scegliere',
-  'card_desc'    : 'La Camera vota lo Stabilicum. Ti dicono che si litiga sul tuo diritto di scegliere il deputato. I conti dicono un\u2019altra cosa.',
-  'ticker_emoji' : '\u2696\ufe0f',
-  'ticker_tema'  : 'STABILICUM',
-  'ticker_testo' : 'la Camera vota \u2014 la preferenza proposta non sposta quasi nulla: nella maggior parte dei collegi vince il capolista',
-  'body'         : BODY_STABILICUM_LUGLIO,
+  'lettura_min'  : 4,
+  'categoria_hero': '\u270a Mobilitazione',
+  'og_image'     : 'images/notte-democrazia.webp',
+  'h1'           : 'Stasera siamo a Montecitorio',
+  'sottotitolo'  : 'Mentre l\u2019Aula vota lo Stabilicum, Partecipazione Attiva \u00e8 in piazza con la Notte della Democrazia. Il nostro portavoce Luigi Spanu sar\u00e0 presente dalle 18.',
+  'meta_desc'    : 'Partecipazione Attiva in piazza Montecitorio per la Notte della Democrazia. No alle liste bloccate, no al premierato mascherato da legge elettorale.',
+  'card_cat'     : 'MOBILITAZIONE',
+  'card_title'   : 'Stasera siamo a Montecitorio',
+  'card_desc'    : 'Mentre l\u2019Aula vota lo Stabilicum, PA \u00e8 in piazza per la Notte della Democrazia. Il portavoce Luigi Spanu presente dalle 18.',
+  'ticker_emoji' : '\u270a',
+  'ticker_tema'  : 'NOTTE DELLA DEMOCRAZIA',
+  'ticker_testo' : 'PA in piazza Montecitorio stasera dalle 18 contro lo Stabilicum \u2014 con il portavoce Luigi Spanu',
+  'body'         : BODY_NOTTE_DEMOCRAZIA,
 }
 # ===========================================================================
 

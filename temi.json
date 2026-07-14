@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "✊",
+      "tema": "NOTTE DELLA DEMOCRAZIA",
+      "testo": "PA in piazza Montecitorio stasera dalle 18 contro lo Stabilicum — con il portavoce Luigi Spanu"
+    },
+    {
       "emoji": "⚖️",
       "tema": "STABILICUM",
       "testo": "la Camera vota — la preferenza proposta non sposta quasi nulla: nella maggior parte dei collegi vince il capolista"
@@ -34,11 +39,6 @@
       "emoji": "🗳️",
       "tema": "BALLOTTAGGI 8 GIUGNO",
       "testo": "affluenza 52,07%, −8,4 punti — quasi 1 elettore su 2 non vota per il sindaco"
-    },
-    {
-      "emoji": "🩺",
-      "tema": "SANITÀ",
-      "testo": "OCSE maggio 2026 — 5,8 milioni di italiani rinunciano alle cure"
     }
   ]
 }
