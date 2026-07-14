@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "⚖️",
+      "tema": "STABILICUM",
+      "testo": "la Camera vota — la preferenza proposta non sposta quasi nulla: nella maggior parte dei collegi vince il capolista"
+    },
+    {
       "emoji": "🗺️",
       "tema": "CITTADINI ATTIVI",
       "testo": "non mancano i cittadini attivi, manca che si vedano — ecco perché abbiamo costruito una mappa"
@@ -14,11 +19,6 @@
       "emoji": "👽",
       "tema": "PENSATTIVO",
       "testo": "chi è l’alieno verde di PA e perché guardiamo i fatti, non le bandiere"
-    },
-    {
-      "emoji": "⚖️",
-      "tema": "STABILICUM",
-      "testo": "il 26 giugno la riforma approda in Aula a Montecitorio — premio 42%, liste bloccate, nodo preferenze"
     },
     {
       "emoji": "⚖️",

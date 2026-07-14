@@ -336,25 +336,127 @@ BODY_MAPPA = '''
 </div>
 '''
 
+BODY_STABILICUM_LUGLIO = '''
+<style>
+.pa-lead{font-size:1.12em!important;color:#8a4e00!important;font-weight:600}
+.pa-cta{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:28px 32px;margin:36px 0;text-align:center}
+.pa-cta p{font-family:merriweather,serif;color:#333;font-size:1.1em;font-weight:700;margin-bottom:16px}
+.pa-cta a{display:inline-block;background:#e8900a;color:#fff;text-decoration:none;padding:14px 32px;border-radius:50px;font-family:montserrat,sans-serif;font-weight:700;font-size:.95em}
+</style>
+
+<p class="pa-lead">Da marted&igrave; 14 luglio l&rsquo;Aula della Camera comincia a votare la nuova legge elettorale. La chiamano Stabilicum. Le opposizioni la chiamano Melonellum. Il nome cambia poco: quello che conta &egrave; cosa fa.</p>
+
+<p>E in questi giorni tutto ruota attorno a una parola: preferenze.</p>
+
+<p>Il racconto che arriva ai cittadini &egrave; semplice. Fratelli d&rsquo;Italia vuole restituirti il potere di scegliere il tuo deputato. Forza Italia e la Lega non vogliono. &Egrave; una battaglia per la democrazia.</p>
+
+<p><strong>Guardiamo i fatti, non la maglietta.</strong></p>
+
+<h2>La preferenza che non &egrave; una preferenza</h2>
+
+<p>L&rsquo;emendamento presentato da Fratelli d&rsquo;Italia, Noi Moderati e UDC prevede un capolista bloccato &mdash; cio&egrave; scelto dal partito &mdash; e sotto di lui sei candidati, tra cui potrai indicare fino a tre preferenze.</p>
+
+<p>Sembra un passo avanti. Ma leggiamo cosa succede davvero quando si contano i voti.</p>
+
+<p>Chi tra i candidati non bloccati prende pi&ugrave; preferenze pu&ograve; essere eletto solo se in quel collegio il partito elegge pi&ugrave; di un candidato. Se ne elegge uno solo, va al capolista &mdash; a prescindere da quante preferenze abbiano preso gli altri.</p>
+
+<p>Ora, la domanda concreta: in quanti collegi un partito elegge pi&ugrave; di un deputato?</p>
+
+<p>In pochi. Nella grande maggioranza dei collegi plurinominali, un partito di medie dimensioni elegge un solo candidato. E quel candidato &egrave; il capolista.</p>
+
+<p>Il che significa: <strong>nella maggior parte dei casi, la tua preferenza non sposta nulla</strong>. Il deputato lo ha gi&agrave; scelto la segreteria. Tu puoi tracciare tutte le X che vuoi.</p>
+
+<p>Non &egrave; una preferenza. &Egrave; l&rsquo;ombra di una preferenza.</p>
+
+<h2>Perch&eacute; litigano davvero</h2>
+
+<p>Se il litigio non &egrave; sul tuo diritto di scegliere, su cosa &egrave;?</p>
+
+<p><strong>Sui soldi e sui seggi.</strong></p>
+
+<p>Lega e Forza Italia sono contrarie per una ragione che nessuno dei loro dirigenti dir&agrave; mai a un microfono: con i sondaggi attuali, i loro candidati sanno gi&agrave; di non avere concrete possibilit&agrave; di essere eletti. E fare campagna con le preferenze &egrave; costoso: si parla di decine di migliaia di euro, e per i candidati pi&ugrave; ricchi si arriva a centinaia. Chi non pu&ograve; spendere, non compete.</p>
+
+<p>Forza Italia, ufficialmente, adduce un&rsquo;altra ragione: il rischio di infiltrazioni della criminalit&agrave; organizzata in alcune aree. &Egrave; un argomento serio, in astratto. Ma nessuno spiega perch&eacute; lo stesso rischio non valga per le elezioni regionali ed europee, dove le preferenze ci sono da sempre.</p>
+
+<p>Fratelli d&rsquo;Italia le vuole per ragioni altrettanto poco nobili: Meloni le ha promesse per anni, e ora che la legge la scrive lei non pu&ograve; fare marcia indietro senza perdere la faccia &mdash; anche perch&eacute; Vannacci la incalza da destra.</p>
+
+<p>E c&rsquo;&egrave; il ricatto, che &egrave; la parte pi&ugrave; istruttiva. Se l&rsquo;emendamento sulle preferenze cade, Fratelli d&rsquo;Italia minaccia di tornare al testo base: premio di maggioranza alla lista pi&ugrave; votata, non alla coalizione. Tradotto: FdI prende tutto, e a Lega e Forza Italia non resta un seggio blindato.</p>
+
+<p><strong>Il cittadino, in questo calcolo, non compare mai.</strong></p>
+
+<h2>Il motivo tecnico che non ti dicono</h2>
+
+<p>C&rsquo;&egrave; un&rsquo;ultima ragione per cui le preferenze fanno comodo, e riguarda un&rsquo;aula diversa da quella di Montecitorio.</p>
+
+<p>Un sistema interamente a liste bloccate rischia grosso davanti alla Corte Costituzionale. Non &egrave; una previsione: &egrave; gi&agrave; successo. L&rsquo;Italicum &mdash; la legge di Renzi, che a questa somigliava &mdash; fu bocciato dalla Consulta nel 2017 proprio su quel terreno.</p>
+
+<p>Inserire un simulacro di preferenza serve anche a questo: blindare la legge da un possibile siluro della Corte.</p>
+
+<p>Il che spiega perch&eacute; la preferenza proposta sia congegnata come &egrave;: <strong>abbastanza da poter dire che c&rsquo;&egrave;, troppo poco perch&eacute; cambi qualcosa</strong>.</p>
+
+<h2>Cosa succede in Aula</h2>
+
+<p>Da marted&igrave; la Camera vota. Si comincia con le pregiudiziali di costituzionalit&agrave; sollevate dalle opposizioni.</p>
+
+<p>Poi, quasi certamente, si passa allo scrutinio segreto &mdash; il regolamento lo prevede per le materie elettorali. &Egrave; il momento in cui i deputati votano senza che il partito sappia come. E in cui si scopre quanti, dentro la maggioranza, la pensano diversamente da chi li comanda.</p>
+
+<p>Anche dentro Fratelli d&rsquo;Italia, viene riferito, non tutti sono d&rsquo;accordo.</p>
+
+<p>Alle 18, davanti a Montecitorio, ci sar&agrave; la piazza convocata da Riccardo Magi &mdash; la &ldquo;Notte della democrazia&rdquo; &mdash; con Conte, Fratoianni e Bonelli.</p>
+
+<h2>Le cose serie di cui nessuno parla</h2>
+
+<p>Mentre l&rsquo;attenzione &egrave; tutta sulle preferenze, nella stessa legge passano cose che riguardano milioni di persone.</p>
+
+<p><strong>Il voto ai fuorisede.</strong> Un emendamento della maggioranza permetterebbe a chi studia o lavora lontano dalla residenza di votare dov&rsquo;&egrave;. Riguarderebbe circa cinque milioni di cittadini, che oggi per votare devono pagarsi un viaggio. &Egrave; una misura giusta, chiesta da anni. Ma il Partito Democratico sostiene che cos&igrave; com&rsquo;&egrave; scritta sia troppo rigida &mdash; un bluff. Su questo varrebbe la pena litigare.</p>
+
+<p><strong>La circoscrizione Estero</strong>, ridotta da quattro a due ripartizioni per la Camera e a una sola per il Senato. Milioni di italiani residenti all&rsquo;estero, rappresentati da un numero di seggi invariato ma su aree geografiche enormemente pi&ugrave; grandi.</p>
+
+<p><strong>Le firme per presentarsi.</strong> Un emendamento esenta dalla raccolta firme i partiti che a dicembre 2025 avevano un gruppo parlamentare. Chi &egrave; nato dopo &mdash; o chi viene da fuori &mdash; le firme le raccoglie. Chi c&rsquo;era gi&agrave;, no.</p>
+
+<p>Quest&rsquo;ultima merita una riflessione. Una legge elettorale scritta da chi &egrave; in Parlamento, che rende pi&ugrave; facile restarci a chi c&rsquo;&egrave; gi&agrave; e pi&ugrave; difficile entrare a chi non c&rsquo;&egrave;.</p>
+
+<h2>La domanda che resta</h2>
+
+<p>Qualunque sia l&rsquo;esito del voto di questa settimana &mdash; preferenze s&igrave;, preferenze no, preferenze finte &mdash; una cosa non cambia.</p>
+
+<p>Chi decide i candidati? Le segreterie.</p>
+
+<p>Chi decide chi guida il Paese? Un premio di maggioranza che scatta al 42%, assegnando 70 seggi alla Camera e 35 al Senato a chi arriva primo.</p>
+
+<p>E il cittadino? Il cittadino sceglie tra liste che qualcun altro ha compilato, per un premier che qualcun altro ha indicato, con una preferenza che nella maggior parte dei casi non sposter&agrave; nulla.</p>
+
+<p>Poi torna a casa, e per cinque anni non gli viene chiesto pi&ugrave; niente.</p>
+
+<p><strong>Questo &egrave; il punto che nessuno, in questa settimana di grande agitazione, sta discutendo. E non &egrave; una questione di destra o di sinistra: &egrave; una questione di chi tiene la penna.</strong></p>
+
+<p style="font-style:italic;font-size:.88em;color:#888;margin-top:28px">Partecipazione Attiva segue l&rsquo;iter dello Stabilicum e sostiene il ricorso pendente in Cassazione contro il Rosatellum, la cui udienza &egrave; fissata per il 29 ottobre.</p>
+
+<div class="pa-cta">
+<p>Ti occupi di questo tema? Mettiti sulla mappa e trova chi se ne occupa vicino a te.</p>
+<a href="mappa.html">\U0001F5FA\ufe0f Vai alla Mappa</a>
+</div>
+'''
+
 ART = {
-  'slug'         : 'mappa-cittadini-attivi.html',
+  'slug'         : 'preferenze-stabilicum-luglio2026.html',
   'autore'       : 'pa',
-  'data_iso'     : '2026-07-13',
-  'data_human'   : '13 luglio 2026',
-  'data_badge'   : '13 LUGLIO 2026',
-  'lettura_min'  : 4,
-  'categoria_hero': '\U0001F5FA\ufe0f Democrazia partecipativa',
-  'og_image'     : 'images/mappa-og.jpg',
-  'h1'           : 'Non mancano i cittadini attivi. Manca che si vedano.',
-  'sottotitolo'  : 'Ogni comitato riparte da zero, ogni battaglia si combatte da soli. Il problema non \u00e8 la scarsit\u00e0 di persone: \u00e8 che sono invisibili le une alle altre. La Mappa \u00e8 il nostro tentativo di risolverlo.',
-  'meta_desc'    : 'Ogni comitato riparte da zero, ogni battaglia si combatte da soli. Non \u00e8 scarsit\u00e0 di persone: \u00e8 invisibilit\u00e0 reciproca. La Mappa di Partecipazione Attiva.',
-  'card_cat'     : 'DEMOCRAZIA PARTECIPATIVA',
-  'card_title'   : 'Non mancano i cittadini attivi. Manca che si vedano.',
-  'card_desc'    : 'Ogni comitato riparte da zero. Il problema non \u00e8 la scarsit\u00e0 di persone: \u00e8 che sono invisibili le une alle altre. La Mappa \u00e8 il nostro tentativo.',
-  'ticker_emoji' : '\U0001F5FA\ufe0f',
-  'ticker_tema'  : 'CITTADINI ATTIVI',
-  'ticker_testo' : 'non mancano i cittadini attivi, manca che si vedano \u2014 ecco perch\u00e9 abbiamo costruito una mappa',
-  'body'         : BODY_MAPPA,
+  'data_iso'     : '2026-07-14',
+  'data_human'   : '14 luglio 2026',
+  'data_badge'   : '14 LUGLIO 2026',
+  'lettura_min'  : 6,
+  'categoria_hero': '\u2696\ufe0f Riforma elettorale',
+  'og_image'     : 'images/pensattivo-stabilicum.webp',
+  'h1'           : 'La preferenza che non ti fa scegliere',
+  'sottotitolo'  : 'Da oggi la Camera vota lo Stabilicum. Ti raccontano che il litigio nella maggioranza \u00e8 sul tuo diritto di scegliere il deputato. I conti dicono un\u2019altra cosa.',
+  'meta_desc'    : 'Capolista bloccato e tre preferenze: sembra una vittoria per l\u2019elettore. Ma nella maggior parte dei collegi la tua preferenza non sposter\u00e0 nulla. Cosa vota davvero la Camera.',
+  'card_cat'     : 'RIFORMA ELETTORALE',
+  'card_title'   : 'La preferenza che non ti fa scegliere',
+  'card_desc'    : 'La Camera vota lo Stabilicum. Ti dicono che si litiga sul tuo diritto di scegliere il deputato. I conti dicono un\u2019altra cosa.',
+  'ticker_emoji' : '\u2696\ufe0f',
+  'ticker_tema'  : 'STABILICUM',
+  'ticker_testo' : 'la Camera vota \u2014 la preferenza proposta non sposta quasi nulla: nella maggior parte dei collegi vince il capolista',
+  'body'         : BODY_STABILICUM_LUGLIO,
 }
 # ===========================================================================
 

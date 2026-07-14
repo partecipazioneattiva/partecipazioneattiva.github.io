@@ -6,7 +6,14 @@
     <description>Notizie, battaglie e proposte di Partecipazione Attiva</description>
     <language>it</language>
     <atom:link href="https://partecipazione-attiva.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 13 Jul 2026 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2026 12:00:00 +0200</lastBuildDate>
+  <item>
+    <title>La preferenza che non ti fa scegliere</title>
+    <link>https://partecipazione-attiva.it/preferenze-stabilicum-luglio2026.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/preferenze-stabilicum-luglio2026.html</guid>
+    <description>Capolista bloccato e tre preferenze: sembra una vittoria per l’elettore. Ma nella maggior parte dei collegi la tua preferenza non sposterà nulla. Cosa vota davvero la Camera.</description>
+    <pubDate>Tue, 14 Jul 2026 12:00:00 +0200</pubDate>
+  </item>
   <item>
     <title>Non mancano i cittadini attivi. Manca che si vedano.</title>
     <link>https://partecipazione-attiva.it/mappa-cittadini-attivi.html</link>
