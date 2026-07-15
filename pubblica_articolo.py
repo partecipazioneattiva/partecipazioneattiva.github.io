@@ -544,7 +544,7 @@ BODY_NOTTE_DEMOCRAZIA = '''
 </div>
 '''
 
-ART = {
+ART_NOTTE_DEMOCRAZIA = {
   'slug'         : 'notte-democrazia-montecitorio.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-07-14',
@@ -563,6 +563,59 @@ ART = {
   'ticker_tema'  : 'NOTTE DELLA DEMOCRAZIA',
   'ticker_testo' : 'PA in piazza Montecitorio stasera dalle 18 contro lo Stabilicum \u2014 con il portavoce Luigi Spanu',
   'body'         : BODY_NOTTE_DEMOCRAZIA,
+}
+# ===========================================================================
+
+BODY_STABILICUM_PREFERENZE = '''
+<article class="article-wrap">
+
+<div class="box-info" style="border-left-color:#8a4e00">
+<strong>In breve</strong>
+La Camera boccia a scrutinio segreto l&rsquo;emendamento della maggioranza sulle preferenze: 188 contrari, 187 favorevoli, manca un solo voto. Il governo resta in carica; il testo torna ora al Senato, dove il voto sar&agrave; palese.
+</div>
+
+<p>Ieri pomeriggio, marted&igrave; 14 luglio 2026, la Camera ha bocciato a scrutinio segreto l&rsquo;emendamento della maggioranza sulle preferenze nella nuova legge elettorale. &Egrave; mancato un solo voto: 188 contrari, 187 favorevoli.</p>
+
+<p>L&rsquo;emendamento &mdash; a prima firma Fratelli d&rsquo;Italia, Noi Moderati e UDC &mdash; introduceva un sistema misto con capolista bloccato e fino a tre preferenze in una scheda con sette nomi. Nelle ore precedenti Giorgia Meloni si era esposta in prima persona: aveva chiamato i ministri in aula e, con un post sui social, aveva contestato la richiesta di voto segreto avanzata dalle opposizioni, invitando i parlamentari a &laquo;metterci la faccia&raquo;. Governo e relatori avevano dato parere favorevole. A far mancare i numeri sono stati, secondo i primi conti, una trentina di franchi tiratori interni alla stessa maggioranza.</p>
+
+<p>Subito dopo il voto, i leader delle opposizioni &mdash; in aula e al presidio davanti a Montecitorio &mdash; hanno chiesto compatti le dimissioni della premier. Giuseppe Conte ha invitato Meloni ad aprire la crisi di governo; Elly Schlein ha parlato di un voto contro l&rsquo;arroganza dell&rsquo;esecutivo e di un&rsquo;occasione per dare al Paese un governo capace di affrontare i problemi reali; Nicola Fratoianni ha letto il risultato come una sfiducia sostanziale. Dall&rsquo;aula si sono levati i cori &laquo;elezioni&raquo; e &laquo;dimissioni&raquo;.</p>
+
+<p>Va detto con precisione, per non alimentare equivoci: la bocciatura di un singolo emendamento non fa cadere il governo, che resta in carica. La maggioranza ha gi&agrave; annunciato di voler proseguire &mdash; il ministro Antonio Tajani ha derubricato l&rsquo;accaduto a &laquo;incidente di percorso&raquo; &mdash; e il presidente del Senato Ignazio La Russa ha ricordato che a Palazzo Madama, dove sul punto non &egrave; previsto il voto segreto, il testo potr&agrave; essere corretto. La premier, a caldo, ha commentato con amarezza: &laquo;ha vinto di nuovo la palude&raquo;.</p>
+
+<h2>Partecipazione Attiva al presidio</h2>
+
+<p>All&rsquo;iniziativa era presente anche Partecipazione Attiva, in qualit&agrave; di comitato referendario &mdash; lo stesso che nel 2024 aveva promosso il referendum su questi temi. Il nostro portavoce ha ribadito la posizione del movimento: la nuova legge elettorale, cos&igrave; com&rsquo;&egrave; impostata, rischia di maturare l&rsquo;ennesimo atto di incostituzionalit&agrave;, costringendo poi a inseguirla con iniziative giudiziarie. Il nodo resta quello di sempre, la libert&agrave; di scelta dell&rsquo;elettore: liste e capilista bloccati svuotano il voto, e l&rsquo;emendamento sulle preferenze, per come era congegnato, non lo restituiva davvero ai cittadini.</p>
+
+<div style="max-width:360px;margin:32px auto;aspect-ratio:9/16;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.15)">
+<iframe src="https://www.youtube.com/embed/Z29yksFdA4k" title="Partecipazione Attiva al presidio davanti a Montecitorio" width="100%" height="100%" style="display:block;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+</div>
+
+<h2>Cosa succede ora</h2>
+
+<p>L&rsquo;esame della legge &mdash; il cosiddetto &laquo;Stabilicum&raquo;, sistema proporzionale con premio di maggioranza per chi supera maggiormente il 42% dei voti &mdash; prosegue. Con la bocciatura delle preferenze restano le liste bloccate, e la partita si sposta al Senato, dove il voto palese cambia gli equilibri. Partecipazione Attiva continuer&agrave; a seguire il percorso del provvedimento e a vigilare sui profili di costituzionalit&agrave;, come fa dalla stagione referendaria del 2024.</p>
+
+</article>
+'''
+
+ART = {
+  'slug'         : 'stabilicum-preferenze-bocciate-14lug2026.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-07-15',
+  'data_human'   : '15 luglio 2026',
+  'data_badge'   : '15 LUGLIO 2026',
+  'lettura_min'  : 3,
+  'categoria_hero': '⚖️ Riforma elettorale',
+  'og_image'     : 'images/stabilicum-preferenze-bocciate-14lug2026.jpg',
+  'h1'           : 'Legge elettorale, la maggioranza battuta alla Camera sulle preferenze',
+  'sottotitolo'  : 'A scrutinio segreto, la Camera boccia per un solo voto l’emendamento sulle preferenze. Le opposizioni chiedono le dimissioni della premier, la maggioranza resta in carica.',
+  'meta_desc'    : 'La Camera boccia a scrutinio segreto l’emendamento sulle preferenze nella legge elettorale: 188 contrari, 187 favorevoli. Il resoconto e la posizione di Partecipazione Attiva al presidio di Montecitorio.',
+  'card_cat'     : 'RIFORMA ELETTORALE',
+  'card_title'   : 'La maggioranza battuta alla Camera sulle preferenze',
+  'card_desc'    : 'Bocciato per un solo voto l’emendamento sulle preferenze. PA al presidio di Montecitorio: la nuova legge rischia un altro atto di incostituzionalità.',
+  'ticker_emoji' : '⚖️',
+  'ticker_tema'  : 'STABILICUM',
+  'ticker_testo' : 'la Camera boccia per un voto l’emendamento sulle preferenze, la maggioranza resta in carica',
+  'body'         : BODY_STABILICUM_PREFERENZE,
 }
 # ===========================================================================
 
