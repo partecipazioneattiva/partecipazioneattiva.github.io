@@ -8,3 +8,13 @@ config_pensattivo.py
 crea_template.py
 images/pensattivo-hero.jpeg
 admin/
+pubblica_articolo.BAK.py
+pubblica_articolo.BAK2.py
+pubblica_articolo.py.bak
+*.bak
+pa_add_canonical.py
+pa_crawl_delay.py
+pa_engine_m4_m6.py
+pa_engine_main.py
+pa_website_schema.py
+_bagnoli_review/
