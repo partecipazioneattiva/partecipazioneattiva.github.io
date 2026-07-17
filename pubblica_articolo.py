@@ -597,7 +597,7 @@ La Camera boccia a scrutinio segreto l&rsquo;emendamento della maggioranza sulle
 </article>
 '''
 
-ART = {
+ART_STABILICUM_PREFERENZE_BOCCIATE = {
   'slug'         : 'stabilicum-preferenze-bocciate-14lug2026.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-07-15',
@@ -616,6 +616,52 @@ ART = {
   'ticker_tema'  : 'STABILICUM',
   'ticker_testo' : 'la Camera boccia per un voto l’emendamento sulle preferenze, la maggioranza resta in carica',
   'body'         : BODY_STABILICUM_PREFERENZE,
+}
+# ===========================================================================
+
+BODY_STABILICUM_NOTA_SPANU = '''
+<article class="article-wrap">
+
+<p>Ieri, 16 luglio 2026, la Camera ha approvato la nuova legge elettorale — lo Stabilicum — con 217 voti favorevoli, 152 contrari e 2 astenuti, a scrutinio segreto. Il testo passa ora al Senato. Come portavoce nazionale di Partecipazione Attiva voglio dire con chiarezza cosa pensiamo, e perché la questione riguarda ogni cittadino, di qualsiasi orientamento.</p>
+
+<p>Partiamo da un punto che teniamo a non lasciare equivoco: <strong>non siamo contrari alla stabilità di governo</strong>. È un obiettivo legittimo, e chi lo persegue non fa nulla di sbagliato. Il nostro problema è un altro, ed è di metodo prima ancora che di merito.</p>
+
+<p>Una legge elettorale non è una legge come le altre. È la regola con cui i cittadini esercitano la sovranità che la Costituzione affida loro. Per questo non può essere scritta da una sola parte, a proprio vantaggio. E colpisce che l'approvazione sia arrivata a scrutinio segreto, due giorni dopo che la stessa maggioranza, sempre nel segreto dell'urna, aveva affossato per un solo voto le preferenze, con oltre trenta franchi tiratori nelle proprie file. Quando una maggioranza teme i propri stessi voti, il segnale è chiaro: si è scelto di sottrarre ai cittadini la possibilità di scegliere i propri rappresentanti.</p>
+
+<p>Perché è di questo che si tratta. Con le liste bloccate previste dallo Stabilicum, a scegliere gli eletti non sono gli elettori ma le segreterie dei partiti. Non è un dettaglio tecnico: è il cuore del rapporto tra chi vota e chi viene votato.</p>
+
+<p>Ci sono poi altri aspetti su cui vigileremo:</p>
+
+<ul style="font-family:merriweather,serif;font-size:1em;line-height:1.85;color:#333;margin:0 0 24px;padding-left:22px"><li style="margin-bottom:14px">Il <strong>premio di governabilità</strong> che scatta al 42% dei voti — 70 seggi in più alla Camera, 35 al Senato — riporta il sistema verso quei premi che la Corte costituzionale ha già bocciato in passato, con il Porcellum nel 2014 e con parti dell'Italicum nel 2017. La questione di costituzionalità è aperta, e non a caso è già stato annunciato un fronte di ricorsi.</li><li style="margin-bottom:14px">L'<strong>esenzione dalla raccolta firme</strong> riservata a chi aveva un gruppo parlamentare entro il 31 dicembre 2025 favorisce chi è già dentro e alza il muro davanti ai movimenti più recenti. È l'opposto di regole uguali per tutti.</li></ul>
+
+<p>Il percorso non è concluso. Il testo va al Senato, dove può ancora cambiare, e dove la partita sulle preferenze può riaprirsi — questa volta, ci auguriamo, alla luce del sole. Chiediamo che questo passaggio avvenga con il confronto che finora è mancato, e nel rispetto dei tempi: anche dal Quirinale è arrivato il richiamo a non toccare la legge elettorale troppo a ridosso del voto.</p>
+
+<p>Partecipazione Attiva continuerà a seguire l'iter passo dopo passo e a informare i cittadini, come ha fatto dal primo giorno. Su come si vota non esistono spettatori. Riguarda tutti noi.</p>
+
+<p style="font-style:italic;color:#8a4e00;margin-top:32px">Luigi Spanu<br>Portavoce nazionale — Partecipazione Attiva</p>
+
+</article>
+'''
+
+ART = {
+  'slug'         : 'stabilicum-nota-spanu-17lug2026.html',
+  'autore'       : 'spanu',
+  'data_iso'     : '2026-07-17',
+  'data_human'   : '17 luglio 2026',
+  'data_badge'   : '17 LUGLIO 2026',
+  'lettura_min'  : 3,
+  'categoria_hero': '⚖️ Riforma elettorale',
+  'og_image'     : 'images/spanu-audizione-stabilicum.webp',
+  'h1'           : 'Stabilicum, la nota del portavoce Luigi Spanu: «Le regole del voto non le scrive una parte sola»',
+  'sottotitolo'  : 'Dopo l’approvazione a scrutinio segreto alla Camera, il portavoce di Partecipazione Attiva: liste bloccate e premio di maggioranza restano il nodo. Ora il testo passa al Senato.',
+  'meta_desc'    : 'La nota del portavoce nazionale Luigi Spanu dopo il sì della Camera allo Stabilicum: una legge elettorale non può essere scritta da una sola parte. Il testo passa ora al Senato.',
+  'card_cat'     : 'RIFORMA ELETTORALE',
+  'card_title'   : 'La nota del portavoce Luigi Spanu sullo Stabilicum',
+  'card_desc'    : 'Dopo il sì della Camera a scrutinio segreto: liste bloccate e premio di maggioranza restano il nodo. Il testo passa al Senato.',
+  'ticker_emoji' : '⚖️',
+  'ticker_tema'  : 'STABILICUM',
+  'ticker_testo' : 'la Camera approva lo Stabilicum a scrutinio segreto, la nota del portavoce Luigi Spanu — ora il testo va al Senato',
+  'body'         : BODY_STABILICUM_NOTA_SPANU,
 }
 # ===========================================================================
 
