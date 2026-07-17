@@ -643,7 +643,7 @@ BODY_STABILICUM_NOTA_SPANU = '''
 </article>
 '''
 
-ART = {
+ART_STABILICUM_NOTA_SPANU = {
   'slug'         : 'stabilicum-nota-spanu-17lug2026.html',
   'autore'       : 'spanu',
   'data_iso'     : '2026-07-17',
@@ -662,6 +662,70 @@ ART = {
   'ticker_tema'  : 'STABILICUM',
   'ticker_testo' : 'la Camera approva lo Stabilicum a scrutinio segreto, la nota del portavoce Luigi Spanu — ora il testo va al Senato',
   'body'         : BODY_STABILICUM_NOTA_SPANU,
+}
+# ===========================================================================
+
+BODY_STABILICUM_CREPE = '''
+<article class="article-wrap">
+
+<p>Immagina di votare una lista, e che il tuo voto — invece di eleggere chi hai scelto — finisca per rafforzare qualcun altro. Oppure di non poter scegliere nessun nome, perché gli eletti li decide la segreteria del partito. Non è fantapolitica: sono due dei nodi della nuova legge elettorale che la Camera ha appena approvato, lo Stabilicum.</p>
+
+<p>Il testo ora passa al Senato. Ma se il Senato lo confermerà così com'è, la partita si sposterà davanti alla Corte costituzionale. E lì, secondo chi conosce quel terreno, la legge rischia grosso.</p>
+
+<p>A metterlo nero su bianco è l'avvocato Beppe Sarno, in <a href="https://www.criticasociale.net/articolo-primo-piano-it.php?id=57" target="_blank" rel="noopener nofollow">un'analisi su Critica Sociale</a>: sette punti di sospetta incostituzionalità. Sarno è tra i giuristi che hanno affiancato Felice Besostri nelle battaglie che hanno già portato due leggi elettorali davanti alla Consulta — e le hanno viste cadere. Vale la pena tradurre il suo ragionamento in parole semplici, perché parla del peso del voto di ciascuno di noi.</p>
+
+<h2>La Corte queste cose le ha già bocciate</h2>
+<p>Non partiamo da zero. Nel 2014, con la sentenza n. 1, la Corte costituzionale bocciò il "Porcellum": premio di maggioranza troppo grande e senza soglia minima, e liste bloccate che nascondevano i candidati agli elettori. Nel 2017, con la sentenza n. 35, dichiarò incostituzionali pezzi dell'"Italicum", tra cui il ballottaggio e il trucco per cui un capolista poteva candidarsi ovunque e poi scegliere dove farsi eleggere.</p>
+<p>Lo Stabilicum torna a muoversi sugli stessi terreni. Ecco i più fragili.</p>
+
+<h2>Il premio può essere troppo generoso</h2>
+<p>Chi arriva al 42% dei voti riceve 70 deputati e 35 senatori in più. Sempre gli stessi, sia che tu raggiunga appena il 42%, sia che tu sia già vicino alla maggioranza da solo. È un premio "fisso", non tagliato su misura dei seggi che servono davvero a governare. Nel primo caso può non bastare; nel secondo diventa un regalo che gonfia una maggioranza già forte. È qui, nella sproporzione tra mezzo e fine, la crepa più profonda.</p>
+<p>Il tetto di 220 deputati e 113 senatori limita i danni, ma non li chiude: se i seggi delle circoscrizioni speciali si sommassero al limite, la maggioranza reale supererebbe quella dichiarata. E c'è un dettaglio non da poco: il premio va anche a una coalizione, che può nascere per incassarlo e sciogliersi il giorno dopo il voto. Si sacrifica la rappresentanza in nome della stabilità, senza garanzia che quella stabilità duri.</p>
+
+<h2>Il tuo voto può andare a chi non hai scelto</h2>
+<p>È il punto più tecnico, ed è quello a cui Besostri ha dedicato la vita. La legge somma soglia su soglia: per le liste, per le coalizioni, per il premio. Il rischio concreto è che il voto a una piccola lista sotto soglia non elegga nessuno di quella lista — ma finisca comunque per contribuire al premio della coalizione. In parole povere: il tuo voto non porta in Parlamento chi volevi, però aiuta chi non volevi. Un voto dovrebbe avere un effetto chiaro e prevedibile, non essere spostato per automatismo verso qualcun altro.</p>
+
+<h2>Gli eletti li scegli tu, o il partito?</h2>
+<p>Con le liste bloccate, la risposta è: il partito. È il cuore della <a href="stabilicum-nota-spanu-17lug2026.html">nota del nostro portavoce Luigi Spanu</a>. La Corte non ha vietato ogni lista bloccata, ma nel 2014 ha bocciato quelle così lunghe da impedire ai cittadini di sapere chi stanno votando. Il premio peggiora tutto: anche i seggi in più vengono assegnati nell'ordine deciso dagli apparati, e a volte non sai nemmeno in quale territorio scatterà l'elezione.</p>
+
+<h2>Il premier stampato sulla scheda</h2>
+<p>Lo Stabilicum mette sulla scheda il nome del candidato premier. In sé non è vietato. Ma l'Italia è una Repubblica parlamentare: il Presidente del Consiglio lo nomina il Capo dello Stato e deve avere la fiducia delle Camere. La norma regge solo se quell'indicazione ha un valore politico, non giuridico. Se invece facesse credere di eleggere direttamente il premier, si cambierebbe di fatto la forma di governo con una legge ordinaria — scavalcando la revisione costituzionale che servirebbe.</p>
+
+<h2>E chi vuole entrare in campo?</h2>
+<p>Resta il nodo già segnalato: l'esenzione dalla raccolta firme riservata a chi aveva già un gruppo in Parlamento. Una legge può aiutare chi c'è, ma non può blindare il sistema esistente chiudendo la porta ai movimenti nuovi. Firme numerose, tempi stretti, niente raccolta digitale ed esenzioni "per pochi": messe insieme, toccano princìpi di uguaglianza e libertà di partecipazione.</p>
+
+<h2>Come si arriva alla Corte</h2>
+<p>Sarno è realista: non basta un ricorso il giorno dopo la firma della legge. La Consulta pretende un danno concreto e attuale, non solo ipotetico; con le elezioni lontane, un ricorso prematuro verrebbe respinto. La strada solida è un fronte articolato — elettori, nuove formazioni, candidati — sul modello dell'azione che nel 2014 aprì la breccia. Con un limite ancora aperto: manca una tutela rapida, prima del voto, per contestare firme, simboli e ammissione delle liste davanti a un giudice terzo.</p>
+
+<h2>Perché ne parliamo</h2>
+<p>Non è tifo per una parte contro l'altra. La legge, avverte Sarno, difficilmente cadrà tutta: più probabile un colpo mirato della Corte sul premio fisso, sulle liste bloccate, sulle candidature multiple, sui voti sotto soglia. Il problema non è una singola norma, ma il modo in cui tutti questi meccanismi si sommano.</p>
+
+<p>E il punto, per noi, è sempre lo stesso: che il voto continui a esprimere liberamente la rappresentanza, e non serva a costruire in anticipo — per automatismi di legge — una maggioranza già decisa e parlamentari scelti dagli apparati. Su come si vota non esistono spettatori. Noi continueremo a seguirlo, passaggio dopo passaggio.</p>
+
+<p style="font-style:italic;font-size:.88em;color:#888;margin-top:28px">Analisi giuridica completa: Beppe Sarno, «Le crepe costituzionali della nuova legge elettorale», <a href="https://www.criticasociale.net/articolo-primo-piano-it.php?id=57" target="_blank" rel="noopener nofollow">Critica Sociale</a>.</p>
+
+</article>
+'''
+
+ART = {
+  'slug'         : 'stabilicum-crepe-costituzionali-17lug2026.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-07-17',
+  'data_human'   : '17 luglio 2026',
+  'data_badge'   : '17 LUGLIO 2026',
+  'lettura_min'  : 5,
+  'categoria_hero': '⚖️ Riforma elettorale',
+  'og_image'     : 'images/pensattivo-stabilicum.webp',
+  'h1'           : 'Stabilicum, la legge che rischia la bocciatura: cosa dice chi la porterà davanti alla Corte',
+  'sottotitolo'  : 'Un’analisi giuridica individua sette profili di sospetta incostituzionalità nel testo approvato dalla Camera. Il testo passa ora al Senato, in attesa del giudizio della Consulta.',
+  'meta_desc'    : 'Sette profili di incostituzionalità nello Stabilicum secondo l’avvocato Beppe Sarno: premio fisso, liste bloccate, firme, premierato di fatto.',
+  'card_cat'     : 'RIFORMA ELETTORALE',
+  'card_title'   : 'Stabilicum, la legge che rischia la bocciatura',
+  'card_desc'    : 'Un’analisi giuridica individua sette profili di incostituzionalità nello Stabilicum. Il testo passa ora al Senato.',
+  'ticker_emoji' : '⚖️',
+  'ticker_tema'  : 'STABILICUM',
+  'ticker_testo' : 'un’analisi giuridica individua sette profili di incostituzionalità nello Stabilicum prima del passaggio al Senato',
+  'body'         : BODY_STABILICUM_CREPE,
 }
 # ===========================================================================
 
