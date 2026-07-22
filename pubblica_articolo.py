@@ -16,7 +16,7 @@ BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 AUTORI = {
     'spanu':    ('Luigi Spanu',  'Portavoce', 'images/organigramma/luigi-spanu.webp'),
     'neri':     ('Paolo Neri',   'Direttivo', 'images/organigramma/paolo-neri.webp'),
-    'nicotra':  ('Angelo Nicotra','Presidente','images/organigramma/angelo-nicotra.webp'),
+    'nicotra':  ('Angelo Nicotra','Presidente','images/organigramma/angelo-nicotra-finale.webp'),
     'cristiano':('Antonio Cristiano','Direttivo','images/organigramma/antonio-cristiano.webp'),
     'mollica':  ('Amilcare Mollica','Consulente legale','images/organigramma/amilcare-mollica.webp'),
     'pa':       ('Partecipazione Attiva','Documento di posizione','LOGO-PA.webp'),
@@ -707,7 +707,150 @@ BODY_STABILICUM_CREPE = '''
 </article>
 '''
 
-ART = {
+BODY_APE = '''
+<style>
+.pa-hero-img{display:block;max-width:100%;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,.15);margin:0 0 28px}
+.pa-lead{font-size:1.12em!important;color:#8a4e00!important;font-weight:600}
+.pa-fig{margin:32px 0}
+.pa-fig video{width:100%;max-width:480px;display:block;margin:0 auto;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.85em;color:#9c5b00;margin-top:14px;text-align:center;font-weight:700;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5}
+.pa-box{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:24px 28px;margin:28px 0}
+.pa-box h3{font-family:montserrat,sans-serif;color:#9c5b00;font-size:1em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px}
+.pa-tbl{width:100%;border-collapse:collapse;margin:22px 0;font-family:montserrat,sans-serif;font-size:.86em}
+.pa-tbl th,.pa-tbl td{border:1px solid #f0e6d3;padding:9px 12px;text-align:left;vertical-align:top}
+.pa-tbl thead th{background:#8a4e00;color:#fff;font-weight:700}
+.pa-tbl tbody th{background:#fff8ee;color:#8a4e00;font-weight:700}
+.pa-stat{display:flex;flex-wrap:wrap;gap:14px;margin:26px 0}
+.pa-stat .s{flex:1 1 220px;background:#fff8ee;border-radius:12px;padding:18px 20px}
+.pa-stat .n{font-family:merriweather,serif;font-size:1.8em;font-weight:900;line-height:1;color:#8a4e00}
+.pa-stat .l{font-size:.82em;color:#555;margin-top:6px;font-family:montserrat,sans-serif;line-height:1.5}
+.pa-dl{display:flex;align-items:center;gap:16px;border:2px solid #e8900a;border-radius:14px;padding:20px 22px;margin:30px 0;background:#fff8ee}
+.pa-dl .ico{flex:0 0 auto;width:46px;height:46px;border-radius:10px;background:#8a4e00;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.72em;font-family:montserrat,sans-serif}
+.pa-dl .t{flex:1 1 auto;font-family:montserrat,sans-serif;font-size:.84em;color:#555;line-height:1.5}
+.pa-dl .t b{color:#8a4e00;display:block;margin-bottom:3px}
+.pa-dl a.btn{flex:0 0 auto;background:#e8900a;color:#fff;text-decoration:none;padding:11px 20px;border-radius:50px;font-family:montserrat,sans-serif;font-weight:700;font-size:.84em}
+.pa-confini{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:24px 0}
+.pa-confini div{background:#fff8ee;border-left:4px solid #e8900a;border-radius:0 10px 10px 0;padding:16px 18px;font-size:.88em;color:#444;line-height:1.6}
+.pa-confini strong{color:#8a4e00;display:block;margin-bottom:4px}
+</style>
+
+<article class="article-wrap">
+
+<img class="pa-hero-img" src="images/ape-copertina.webp" alt="APE — Assemblea Popolare Ecumenica: un canale permanente di voce dei cittadini. Angelo Nicotra, Partecipazione Attiva">
+
+<p class="pa-lead">Con APE (Assemblea Popolare Ecumenica), Partecipazione Attiva lancia una nuova idea di Democrazia Partecipativa per rendere i cittadini parte attiva nella gestione politica del nostro Paese.</p>
+
+<p>È la proposta di legge più importante del movimento: una riforma costituzionale che non aggiunge un partito né un candidato, ma uno strumento permanente attraverso cui ogni cittadino può obbligare le istituzioni ad ascoltare e a rispondere. Elaborata da Angelo Nicotra, Presidente di Partecipazione Attiva, ed è oggi proposta ufficiale del movimento.</p>
+
+<div class="pa-fig">
+<video controls preload="metadata" playsinline poster="images/ape-copertina.webp">
+<source src="video/ape-tocca-a-noi.mp4" type="video/mp4">
+Il tuo browser non supporta il video.
+</video>
+<figcaption>Con APE (Assemblea Popolare Ecumenica), Partecipazione Attiva lancia una nuova idea di Democrazia Partecipativa per rendere i cittadini parte attiva nella gestione politica del nostro Paese.</figcaption>
+</div>
+
+<div class="pa-dl">
+<div class="ico">PDF</div>
+<div class="t"><b>Il documento integrale</b>25 pagine: articolato costituzionale, allegati tecnici, obiezioni e risposte, confronto con le esperienze estere. Approvato dal direttivo.</div>
+<a class="btn" href="documenti/APE_Assemblea_Popolare_Ecumenica_v6.8.pdf" target="_blank" rel="noopener">Scarica il PDF</a>
+</div>
+
+<h2>Il problema che l'APE vuole risolvere</h2>
+<p>Tra un'elezione e l'altra, per cinque anni, il cittadino non ha più voce. La democrazia italiana funziona per delega: si vota, si affida il mandato a chi è eletto, e fino al voto successivo la partecipazione è di fatto sospesa. Il modello ha retto finché esistevano i corpi intermedi — partiti di massa, sindacati, associazioni capillari — che tenevano aperto un canale permanente tra società e istituzioni. Quei corpi si sono dissolti.</p>
+
+<div class="pa-stat">
+<div class="s"><div class="n">39,84%</div><div class="l">degli aventi diritto non si è recato alle urne alle politiche del 25 settembre 2022 (36,34% considerando i soli residenti in Italia): il minimo storico assoluto della Repubblica</div></div>
+</div>
+
+<p>Non è apatia: gli studi mostrano che è rifiuto consapevole di un sistema percepito come distante e non più influenzabile. L'APE non sostiene che «il sistema ha fallito, quindi va rimpiazzato» — sarebbe una tesi sbagliata e pericolosa. Sostiene qualcosa di più modesto e più solido: manca un meccanismo istituzionale che mantenga viva la voce dei cittadini nel tempo che intercorre tra le elezioni, e che obblighi le istituzioni a prendere posizione su quella voce invece di ignorarla.</p>
+
+<h2>Cos'è l'APE, e cosa non è</h2>
+<p>Prima di descrivere cosa fa l'APE, è più importante fissare con precisione cosa l'APE <em>non</em> fa e non potrà mai fare — è proprio da questi confini che dipende la sua legittimità costituzionale.</p>
+
+<div class="pa-confini">
+<div><strong>Non legifera.</strong> Non approva leggi, non abroga norme. La funzione legislativa resta integralmente del Parlamento.</div>
+<div><strong>Non governa.</strong> Non adotta provvedimenti amministrativi, non nomina, non gestisce risorse pubbliche.</div>
+<div><strong>Non vincola il voto del parlamentare.</strong> Nessun suo atto introduce un vincolo di mandato.</div>
+<div><strong>Non sostituisce alcun organo.</strong> Non prende il posto del Senato, della Camera, delle Regioni o dei Comuni: è aggiuntiva, non un rimpiazzo.</div>
+<div><strong>Non ha carriere né poteri permanenti.</strong> Nessun membro acquisisce posizioni di vantaggio o canali privilegiati.</div>
+</div>
+
+<p>La sua forza è procedurale e reputazionale, non giuridico-sanzionatoria. Gli atti dell'Assemblea Popolare producono effetti esclusivamente procedurali: attivano il dovere dell'istituzione destinataria di esaminare l'istanza e di pronunciarsi con relazione motivata e pubblica. Non producono effetti normativi diretti né vincolano nel merito il contenuto delle leggi o i singoli voti parlamentari.</p>
+
+<h2>Il sorteggio, non l'elezione</h2>
+<p>I componenti dell'APE sono scelti per sorteggio fra i cittadini, mai per elezione — è la scelta più identitaria del progetto, e anche la più contro-intuitiva. L'elezione, per quanto democratica, produce inevitabilmente ciò che si vuole tenere fuori dall'APE: candidature, campagne, raccolta di consenso, schieramenti, carriere. Il sorteggio, al contrario, produce uno specchio statistico della popolazione: persone comuni che portano il punto di vista reale del Paese, non quello filtrato dagli apparati — lo stesso principio già in uso nei giudici popolari delle Corti d'Assise.</p>
+<p>L'estrazione avviene dalle liste elettorali, con stratificazione per età, genere e territorio, così che lo specchio sia fedele. La partecipazione è volontaria nel senso che chi è estratto può rinunciare, ma la base di estrazione è l'intero corpo elettorale, non un registro di volontari.</p>
+
+<h2>Tre livelli orizzontali, nessuna gerarchia</h2>
+<p>L'APE si articola su tre livelli — comunale (<strong>APEC</strong>), regionale (<strong>APER</strong>) e nazionale (<strong>APEN</strong>) — ma questi non sono gradini di una scala: nessun livello comanda sull'altro. Sono microfoni accordati ciascuno al proprio interlocutore istituzionale: l'APEC parla al Comune, l'APER alla Regione, l'APEN allo Stato. Un'istanza sale di livello solo quando emerge in modo ricorrente su più territori diversi, o quando riguarda una materia di competenza esclusiva di un livello superiore — mai per decisione discrezionale di un "centro".</p>
+<p>Nel canale che porta le istanze territoriali verso il livello nazionale, ogni territorio ha pari rappresentanza, indipendentemente dalla popolazione: è una garanzia contro la discriminazione, non un favore ai piccoli comuni — nessun cittadino deve pesare meno nel farsi ascoltare per il solo fatto di vivere in un luogo meno popoloso.</p>
+
+<h2>Il ciclo dell'istanza: voce, risposta, verifica, referendum</h2>
+<p>È il cuore operativo del progetto: come una richiesta nasce dal cittadino, percorre l'APE, raggiunge l'istituzione e ne ottiene una risposta — e cosa succede quando la risposta manca, è negativa, o resta sulla carta.</p>
+<ol style="color:#444;line-height:2;padding-left:20px;font-family:merriweather,serif">
+<li><strong>Voce.</strong> Il cittadino deposita un'istanza; l'APE competente la riceve, la istruisce e la formalizza.</li>
+<li><strong>Dovere di esame.</strong> L'istituzione destinataria ha il dovere di prenderla in carico e di non lasciarla cadere nel silenzio.</li>
+<li><strong>Relazione motivata pubblica.</strong> L'istituzione si pronuncia con una relazione pubblica che dice sì o no e ne espone le ragioni.</li>
+<li><strong>Verifica dell'attuazione.</strong> Entro un anno, l'istituzione riferisce pubblicamente sullo stato di attuazione di ciò che ha accolto.</li>
+<li><strong>In caso di rifiuto o di stallo.</strong> Si apre la via del referendum propositivo: la decisione torna ai cittadini.</li>
+</ol>
+<p>Il referendum propositivo è la leva dura del sistema — l'unica — attivabile solo a procedimento ordinario esaurito, e costruito in tre stadi: pronuncia parlamentare obbligatoria, raccolta firme a soglia oggettiva se il Parlamento non recepisce, e infine il referendum, valido senza quorum di partecipazione quando i voti favorevoli superano un quarto degli aventi diritto al voto — circa 12,5 milioni di "sì" su un corpo elettorale di 50 milioni: alta, ma raggiungibile da una mobilitazione reale, e immune al boicottaggio per assenteismo che affligge il quorum classico.</p>
+
+<h2>Indennità e permessi di lavoro</h2>
+<p>Perché la partecipazione sia davvero aperta a tutti — e non solo a chi può dedicarvi tempo gratuitamente — chi è sorteggiato riceve un'indennità e ha diritto a permessi di lavoro retribuiti. Senza copertura del reddito perduto, l'orizzontalità diventerebbe una finzione: l'assemblea si distorcerebbe verso i ceti abbienti, diventando lo specchio di chi può permetterselo invece che del Paese reale.</p>
+
+<h2>Una proposta distinta: l'abolizione del Senato</h2>
+<p>Il progetto include, su un binario separato e indipendente, anche l'abolizione del Senato — una riforma che non dipende in alcun modo dall'esistenza dell'APE, e viceversa. Le due cose restano volutamente slegate: se una delle due proposte si ferma in Parlamento, l'altra prosegue per conto suo.</p>
+
+<h2>Difese contro lo svuotamento e contro il carrozzone</h2>
+<p>Chi legge questo progetto ha due timori legittimi e opposti: che l'APE venga svuotata e resa innocua da una maggioranza ostile, oppure che cresca fino a diventare un nuovo carrozzone costoso e autoreferenziale. Una clausola di non-regressione impedisce che una legge ordinaria riduca le garanzie e i poteri di voce dell'APE al di sotto del livello costituzionale. Sul fronte opposto, un Collegio di Garanzia vigila su regolarità del sorteggio, trasparenza e congruità delle risposte — ma non ha potere sanzionatorio proprio: accerta, sospende in via cautelare gli atti viziati, e trasmette all'autorità competente, che è obbligata ad aprire il procedimento e concluderlo con atto motivato.</p>
+
+<h2>I costi, detti con onestà</h2>
+<p>Un organo di partecipazione ha un costo reale, dichiarato senza abbellimenti: indennità ai sorteggiati, permessi di lavoro, uffici territoriali, piattaforma digitale, trasparenza in streaming.</p>
+
+<div class="pa-stat">
+<div class="s"><div class="n">≈36,2 mln €</div><div class="l">stima annua a regime, per l'intera struttura APEC + APER + APEN, Collegio di Garanzia incluso</div></div>
+<div class="s"><div class="n">0,67%</div><div class="l">di quanto costa oggi la sola Presidenza del Consiglio (5,4 miliardi €/anno nel 2025) — e una frazione minima del bilancio statale complessivo</div></div>
+<div class="s"><div class="n">9.830</div><div class="l">cittadini sorteggiati in totale nell'ipotesi illustrativa, contro i ~46.000 di impostazioni capillari alternative: un sistema deliberatamente snello</div></div>
+</div>
+
+<h2>Cosa insegna il mondo</h2>
+<p>Il modello APE non nasce nel vuoto: dialoga con le esperienze di democrazia partecipativa già sperimentate altrove, prendendone i pregi ed evitandone gli errori.</p>
+
+<table class="pa-tbl">
+<thead><tr><th>Esperienza</th><th>Cosa insegna all'APE</th></tr></thead>
+<tbody>
+<tr><th>Irlanda — Citizens' Assembly (2016-2018)</th><td>Un'assemblea di cittadini sorteggiati può affrontare temi divisivi e produrre proposte che il sistema recepisce. Conferma la praticabilità del sorteggio.</td></tr>
+<tr><th>Belgio — Ostbelgien (dal 2019)</th><td>Primo Consiglio dei cittadini permanente per legge, con dovere delle istituzioni di rispondere e di rendicontare l'attuazione a un anno.</td></tr>
+<tr><th>Francia — Convention Citoyenne (2019-2020)</th><td>Lezione cautelativa: raccogliere la voce e poi disattenderla senza risposta chiara la fa fallire. Da qui l'obbligo di relazione motivata, la verifica a un anno e il referendum come ultima istanza.</td></tr>
+<tr><th>Italia — giudici popolari</th><td>Il sorteggio per una funzione pubblica delicata è già nel nostro ordinamento e funziona. L'APE ne estende il principio.</td></tr>
+</tbody>
+</table>
+
+<p>Va detto con chiarezza cosa la Convention Citoyenne francese dimostra e cosa no: non dimostra che il sorteggio non funziona — dimostra che il sorteggio senza obbligo di risposta e senza sbocco è teatro. L'APE aggiunge esattamente le cose che alla Francia mancavano.</p>
+
+<div class="pa-dl">
+<div class="ico">PDF</div>
+<div class="t"><b>Leggi il progetto completo</b>Articolato costituzionale integrale, i 15 confronti con le obiezioni più dure, il dettaglio dei costi e il cronoprogramma.</div>
+<a class="btn" href="documenti/APE_Assemblea_Popolare_Ecumenica_v6.8.pdf" target="_blank" rel="noopener">Scarica il PDF</a>
+</div>
+
+<h2>La Rete APE</h2>
+<p>Partecipazione Attiva ha aperto una rete che invita altre associazioni, movimenti e comitati civici a condividere questi principi, con peso paritario per ogni soggetto aderente: nessuna gerarchia tra chi aderisce, indipendentemente dalla dimensione o dalla storia di ciascuno.</p>
+<p><a href="rete-ape.html" style="color:#9c5b00;font-weight:700">→ Scopri la Rete APE e come aderire</a></p>
+
+<div class="pa-box">
+<h3>Il documento, in una frase</h3>
+<p style="color:#555;font-size:.92em;line-height:1.7;margin:0">L'APE non promette che le proposte dei cittadini vengano approvate — sarebbe falso. Promette qualcosa di più solido e verificabile: che nessuna proposta possa essere diluita o sepolta nel silenzio, che ciò che è accolto sia poi verificato in pubblico, e che chi è respinto abbia una via d'uscita reale.</p>
+</div>
+
+<p class="pa-lead">Non un salvatore. Noi. I leader di noi stessi. Il documento integrale, con l'articolato costituzionale completo e tutte le garanzie, è disponibile per il download in questa pagina.</p>
+
+</article>
+'''
+
+ART_STABILICUM_CREPE = {
   'slug'         : 'stabilicum-crepe-costituzionali-17lug2026.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-07-17',
@@ -726,6 +869,28 @@ ART = {
   'ticker_tema'  : 'STABILICUM',
   'ticker_testo' : 'un’analisi giuridica individua sette profili di incostituzionalità nello Stabilicum prima del passaggio al Senato',
   'body'         : BODY_STABILICUM_CREPE,
+}
+# ===========================================================================
+
+ART = {
+  'slug'         : 'ape.html',
+  'autore'       : 'nicotra',
+  'data_iso'     : '2026-07-22',
+  'data_human'   : '22 luglio 2026',
+  'data_badge'   : '22 LUGLIO 2026',
+  'lettura_min'  : 9,
+  'categoria_hero': '\U0001F41D Proposta di Legge',
+  'og_image'     : 'images/ape-og.jpg',
+  'h1'           : 'APE — Assemblea Popolare Ecumenica',
+  'sottotitolo'  : 'La proposta di Partecipazione Attiva per un canale permanente di voce dei cittadini, oltre la democrazia delegativa.',
+  'meta_desc'    : 'Con APE, Partecipazione Attiva propone un’assemblea permanente di cittadini sorteggiati che obbliga le istituzioni a rispondere: come funziona, cosa non fa, quanto costa.',
+  'card_cat'     : 'PROPOSTA DI LEGGE',
+  'card_title'   : 'APE — Assemblea Popolare Ecumenica',
+  'card_desc'    : 'La più grande proposta di Partecipazione Attiva: un canale permanente di voce dei cittadini, con i sorteggiati che le istituzioni sono obbligate ad ascoltare.',
+  'ticker_emoji' : '\U0001F41D',
+  'ticker_tema'  : 'APE',
+  'ticker_testo' : 'Partecipazione Attiva lancia l’Assemblea Popolare Ecumenica: la proposta che dà ai cittadini una voce permanente',
+  'body'         : BODY_APE,
 }
 # ===========================================================================
 

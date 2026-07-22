@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🐝",
+      "tema": "APE",
+      "testo": "Partecipazione Attiva lancia l’Assemblea Popolare Ecumenica: la proposta che dà ai cittadini una voce permanente"
+    },
+    {
       "emoji": "🎨",
       "tema": "CAVALLEGGERI",
       "testo": "un museo di murales a cielo aperto per Fuorigrotta: la proposta di PA al Comune di Napoli"
@@ -34,11 +39,6 @@
       "emoji": "⚖️",
       "tema": "CASSAZIONE",
       "testo": "udienza 29 ottobre sul Rosatellum, PA chiede anticipazione"
-    },
-    {
-      "emoji": "📋",
-      "tema": "ASSEMBLEA NOAD NAPOLI",
-      "testo": "resoconto ufficiale — tre membri PA presenti"
     }
   ]
 }
