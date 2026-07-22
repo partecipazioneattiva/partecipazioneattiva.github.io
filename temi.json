@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🎨",
+      "tema": "CAVALLEGGERI",
+      "testo": "un museo di murales a cielo aperto per Fuorigrotta: la proposta di PA al Comune di Napoli"
+    },
+    {
       "emoji": "⚖️",
       "tema": "STABILICUM",
       "testo": "un’analisi giuridica individua sette profili di incostituzionalità nello Stabilicum prima del passaggio al Senato"
@@ -34,11 +39,6 @@
       "emoji": "📋",
       "tema": "ASSEMBLEA NOAD NAPOLI",
       "testo": "resoconto ufficiale — tre membri PA presenti"
-    },
-    {
-      "emoji": "🗳️",
-      "tema": "BALLOTTAGGI 8 GIUGNO",
-      "testo": "affluenza 52,07%, −8,4 punti — quasi 1 elettore su 2 non vota per il sindaco"
     }
   ]
 }
