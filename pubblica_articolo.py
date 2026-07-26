@@ -1042,6 +1042,25 @@ def aggiorna_sitemap(a):
     open(SMP, 'w', encoding='utf-8').write(sm.replace('</urlset>', row + '\n</urlset>', 1))
     return 'sitemap: url aggiunto'
 
+def aggiorna_trascrizioni(a):
+    """Mette in pagina la trascrizione dei video, cosi' e' cercabile anche
+    quello che viene detto a voce. Va PRIMA di aggiorna_ricerca: se l'indice
+    si costruisse prima, la trascrizione appena inserita resterebbe fuori.
+    Serve un video/NOME.txt accanto a video/NOME.mp4 (si genera con
+    vtrascrivi, vedi MANUALE_VIDEO)."""
+    import subprocess
+    r = subprocess.run([sys.executable, BASE + '_tools/trascrizioni_ricerca.py',
+                        '--applica'], capture_output=True, text=True)
+    if r.returncode != 0:
+        return f'trascrizioni: NON aggiornate - rilancia _tools/trascrizioni_ricerca.py --applica'
+    n = re.search(r'trascrizioni in pagina:\s*(\d+)', r.stdout)
+    senza = re.search(r'video senza trascrizione \((\d+)\)', r.stdout)
+    msg = f'trascrizioni: {n.group(1) if n else "?"} in pagina'
+    if senza:
+        msg += f' ({senza.group(1)} video ancora senza .txt: lancia vtrascrivi)'
+    return msg
+
+
 def aggiorna_ricerca(a):
     """Rigenera l'indice Pagefind: senza, l'articolo appena pubblicato non e'
     cercabile. Prima del 26/07/2026 si rigenerava a mano e l'indice era fermo
@@ -1068,6 +1087,7 @@ def main():
     print('OK index.html: card in cima + badge per-data')
     print('OK ' + aggiorna_temi(a))
     print('OK ' + aggiorna_sitemap(a))
+    print('OK ' + aggiorna_trascrizioni(a))
     print('OK ' + aggiorna_ricerca(a))
     print('--- FATTO. Esegui il PUSH: include aggiorna_ticker.py che rigenera la barra da temi.json ---')
     print('--- Nel push aggiungi anche: pagefind/ (indice di ricerca appena rigenerato) ---')
