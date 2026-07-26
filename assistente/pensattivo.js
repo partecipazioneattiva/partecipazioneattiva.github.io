@@ -91,9 +91,15 @@ color:#96856f;text-align:center;padding:0 16px 10px;margin:0}\
   var K1 = 1.5, B = 0.75;
   var indice = null;
 
+  /* Le elisioni si tolgono PRIMA di spezzare le parole: "all'estero" darebbe
+     il pezzo "all", raro nel corpus e percio' pesantissimo per BM25, che pesa
+     le parole rare. Misurato: "quanto si paga all'anno" finiva su "i dati
+     vanno all'estero". In italiano la parola corta prima dell'apostrofo e'
+     sempre un articolo o una preposizione elisa.                            */
   function pulisci(t) {
     return (t || '').toLowerCase()
       .normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/\b[a-z]{1,5}['’]/g, ' ')
       .match(/[a-z0-9]+/g) || [];
   }
 
