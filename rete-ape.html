@@ -21,70 +21,7 @@
 
 <link rel=manifest href=/manifest.json>
 <meta name=theme-color content="#e85d04">
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:montserrat,sans-serif;background:#fafafa;color:#222}
-.topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em}
-.topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600}
-.navbar{background:#fff;box-shadow:0 2px 12px rgba(0,0,0,8%);padding:8px 18px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100}
-.nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0}
-.nav-logo img{height:48px;width:auto;display:block}
-.nav-nome{font-weight:900;font-size:.85em;color:#8a4e00;line-height:1.2}
-.nav-nome small{display:block;font-weight:400;font-size:.45em;color:#aaa;letter-spacing:2px;text-transform:uppercase}
-.nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;flex:0 1 auto}
-.nav-links a{padding:14px 6px;color:#444;text-decoration:none;font-size:.76em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
-.nav-links a:hover{color:#9c5b00;border-bottom-color:#9c5b00}
-.nav-cta{display:flex;gap:10px;margin-left:20px;flex-shrink:0;align-self:center}
-.btn-iscr{background:#1a8f3c;color:#fff;padding:11px 18px;border-radius:50px;text-decoration:none;font-size:.85em;font-weight:900;transition:all .2s;box-shadow:0 4px 14px rgba(26,143,60,.35)}
-.btn-sost{background:#e8900a;color:#fff;padding:11px 18px;border-radius:50px;text-decoration:none;font-size:.85em;font-weight:900;border:2px solid #e8900a;transition:all .2s;box-shadow:0 4px 14px rgba(232,144,10,.35)}
-.burger{display:none;background:0 0;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
-.burger span{display:block;width:24px;height:2px;background:#8a4e00;border-radius:2px}
-.mob-menu{display:none;flex-direction:column;background:#fff;border-top:2px solid #f0f0f0;position:absolute;top:100%;left:0;right:0;box-shadow:0 8px 24px rgba(0,0,0,.1)}
-.mob-menu.on{display:flex}
-.mob-menu a{padding:14px 32px;color:#333;text-decoration:none;font-weight:700;font-size:.9em;border-bottom:1px solid #f5f5f5}
-.article-hero{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);padding:56px 32px 0;color:#fff;text-align:center}
-.article-hero .categoria{display:inline-block;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.4);color:#fff;font-size:.72em;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:20px}
-.article-hero h1{font-family:merriweather,serif;font-size:2em;font-weight:700;line-height:1.3;max-width:800px;margin:0 auto 20px}
-.article-hero .sottotitolo{font-size:1em;color:rgba(255,255,255,.85);max-width:680px;margin:0 auto 28px;line-height:1.6}
-.article-meta{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:.78em;color:rgba(255,255,255,.75);margin-bottom:36px}
-.article-meta .badge-pa{background:#fff;color:#9c5b00;font-weight:900;padding:3px 12px;border-radius:50px;font-size:.9em}
-.author-hero{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:36px}
-.author-hero img{width:72px;height:72px;border-radius:50%;object-fit:cover;border:3px solid rgba(255,255,255,.4)}
-.author-hero-info{text-align:left}
-.author-hero-info .nome{font-weight:900;color:#fff;font-size:.85em}
-.author-hero-info .ruolo{color:#ffd580;font-size:.78em;font-weight:600}
-.article-wrap{max-width:780px;margin:0 auto;padding:56px 24px 80px}
-.article-wrap p{font-family:merriweather,serif;font-size:1em;line-height:1.85;color:#333;margin-bottom:24px}
-.article-wrap h2{font-family:montserrat,sans-serif;font-size:1.2em;font-weight:900;color:#8a4e00;text-transform:uppercase;letter-spacing:1px;margin:44px 0 16px;padding-left:16px;border-left:4px solid #e8900a}
-.box-info{background:#fff8ee;border-left:4px solid #e8900a;border-radius:0 12px 12px 0;padding:20px 24px;margin:32px 0;font-family:montserrat,sans-serif;font-size:.9em;line-height:1.6;color:#555}
-.box-info strong{color:#8a4e00;display:block;margin-bottom:6px}
-.box-evento{background:#fff8ee;border:2px solid #e8900a;border-radius:14px;padding:28px 24px;margin:32px 0;text-align:center;font-family:montserrat,sans-serif}
-.box-evento .data-evento{font-family:merriweather,serif;font-size:1.6em;color:#8a4e00;font-weight:900;margin-bottom:6px}
-.box-evento .luogo-evento{font-size:1.1em;color:#333;font-weight:700;margin-bottom:4px}
-.box-evento .orario-evento{font-size:.85em;color:#555}
-.box-evento .streaming{font-size:.9em;color:#9c5b00;margin-top:12px;font-weight:600}
-.box-comunicato{background:#fff3f3;border:2px solid #c0392b;border-radius:12px;padding:28px 32px;margin:36px 0}
-.box-comunicato .label{display:inline-flex;align-items:center;gap:8px;background:#c0392b;color:#fff;font-size:.7em;font-weight:900;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border-radius:50px;margin-bottom:16px}
-.box-comunicato p{font-family:merriweather,serif;font-size:.85em;line-height:1.8;color:#333;margin-bottom:0;font-style:italic}
-.condividi{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:48px 0 0;padding:24px;background:#fff8ee;border-radius:16px;border:1px solid #f0e6d3}
-.condividi-label{font-family:montserrat,sans-serif;font-size:.85em;font-weight:700;color:#8a4e00}
-.condividi a{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:50px;text-decoration:none;font-family:montserrat,sans-serif;font-size:.76em;font-weight:700}
-.btn-wa{background:#25d366;color:#fff}
-.btn-fb{background:#1877f2;color:#fff}
-.cta-finale{background:linear-gradient(120deg,#8a4e00 0%,#e8900a 100%);color:#fff;padding:56px 32px;text-align:center;margin-top:60px}
-.cta-finale h2{font-family:merriweather,serif;font-size:1.8em;font-weight:700;margin-bottom:16px}
-.cta-finale p{font-size:.85em;color:rgba(255,255,255,.85);max-width:560px;margin:0 auto 28px;line-height:1.6}
-.cta-finale a{display:inline-block;background:#fff;color:#9c5b00;padding:14px 36px;border-radius:50px;text-decoration:none;font-weight:900;font-size:.9em}
-footer{background:#222;color:#aaa;padding:32px;text-align:center;font-size:.76em}
-footer a{color:#ffd580;text-decoration:none}
-.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.6);z-index:999;align-items:center;justify-content:center}
-.modal-box{background:#fff;border-radius:16px;padding:32px;max-width:420px;width:90%;text-align:center;position:relative}
-.modal-box h3{color:#8a4e00;margin-bottom:12px}
-.modal-box p{font-size:.9em;color:#555;line-height:1.6;margin-bottom:8px}
-.modal-box .iban{background:#fff8ee;padding:12px;border-radius:8px;font-family:monospace;font-size:.85em;color:#8a4e00;font-weight:700;margin:12px 0;word-break:break-all}
-.modal-close{position:absolute;top:12px;right:16px;background:none;border:none;font-size:1.4em;cursor:pointer;color:#999}
-@media(max-width:768px){.nav-links,.nav-cta{display:none}.burger{display:flex}.navbar{position:relative}.article-hero h1{font-size:1.4em}.article-wrap{padding:32px 18px 60px}.box-comunicato{padding:20px}.topbar{padding:6px 16px;font-size:.7em}}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}/*PA-NAV-V2*/.nav-nome small{display:none!important}.nav-logo{order:0!important}.nav-cta{order:2!important;margin-left:16px!important;flex-shrink:0!important;align-self:center!important}.nav-links{order:3!important;flex:1 1 auto!important;flex-wrap:wrap!important;justify-content:flex-start!important;max-width:none!important}@media(min-width:701px){.nav-links{display:flex!important}.burger{display:none!important}.nav-cta{display:flex!important}}@media(max-width:700px){.nav-links{display:none!important}.burger{display:flex!important;order:1!important}.nav-cta{display:flex!important;gap:6px!important}.nav-logo img{width:44px!important;height:44px!important}.btn-iscr,.btn-sost{padding:9px 14px!important;font-size:.8em!important}}</style>
+<link rel="stylesheet" href="css/pa-base.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -260,35 +197,7 @@ footer a{color:#ffd580;text-decoration:none}
 </div>
 
 <!-- start webpushr code --><script>(function(w,d, s, id) {if(typeof(w.webpushr)!='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BImMkQK81tVOC2zGWmAVd9911j3Cxf9I4YldvZCN39biUc8N6241kYsB2N_yjhnseMRQCSpgGSEGaQUYHGy8d0o'});</script><!-- end webpushr code --><!--PA-NAVFIX--><style>@media(max-width:900px){.navbar{flex-wrap:wrap}.nav-cta{margin-left:0}}</style><!--/PA-NAVFIX--><!--PA-CERCA-->
-<style>
-.pa-cerca-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;margin-left:10px;background:0 0;border:2px solid #e8900a;border-radius:50%;color:#9c5b00;cursor:pointer;transition:all .2s;align-self:center}
-.pa-cerca-btn:hover{background:#e8900a;color:#fff;transform:scale(1.06)}
-/* La variante scura DEVE stare dopo .pa-cerca-btn: stessa specificita', vince
-   l'ultima. Messa prima, il colore tornava #9c5b00 e su fondo scuro l'icona
-   spariva (cerchio vuoto). */
-/* Le pagine-strumento hanno CSS proprio che schiacciava il pulsante (56x36) e
-   azzerava l'icona (larghezza 0). Queste regole la rendono indipendente da
-   quello che trova intorno. */
-.pa-cerca-btn{padding:0!important;box-sizing:border-box}
-.pa-cerca-btn svg{width:21px!important;height:21px!important;flex:0 0 auto;display:block}
-.pa-cerca-btn--scuro{border-color:#c9c0b3!important;color:#e8dcc8!important;width:36px!important;height:36px!important;min-width:36px;flex:0 0 36px}
-.pa-cerca-btn--scuro svg{width:18px!important;height:18px!important}
-.pa-cerca-btn--scuro:hover{background:#e8900a!important;border-color:#e8900a!important;color:#fff!important}
-.pa-cerca-ov{display:none;position:fixed;inset:0;z-index:100000;background:rgba(26,13,0,.72);backdrop-filter:blur(3px);padding:80px 20px 20px;overflow-y:auto}
-.pa-cerca-ov.on{display:block}
-.pa-cerca-box{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;padding:28px 26px 32px;box-shadow:0 24px 70px rgba(0,0,0,.45);position:relative;animation:paCercaIn .22s ease}
-@keyframes paCercaIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
-.pa-cerca-box h2{font-family:montserrat,sans-serif;font-size:1.15em;font-weight:900;color:#8a4e00;margin:0 0 4px;padding-right:40px}
-.pa-cerca-box .pa-cerca-sub{font-family:merriweather,serif;font-size:.82em;color:#777;margin:0 0 18px}
-.pa-cerca-x{position:absolute;top:16px;right:18px;width:34px;height:34px;border:0;border-radius:50%;background:#f4f4f4;color:#8a4e00;font-size:1.3em;line-height:1;cursor:pointer;transition:all .2s}
-.pa-cerca-x:hover{background:#e8900a;color:#fff}
-.pa-cerca-att{font-family:merriweather,serif;color:#888;font-size:.86em;text-align:center;padding:18px 0}
-#pa-cerca-ui{--pagefind-ui-primary:#8a4e00;--pagefind-ui-text:#333;--pagefind-ui-background:#fff;--pagefind-ui-border:#e6d8c2;--pagefind-ui-tag:#fff3e0;--pagefind-ui-border-width:2px;--pagefind-ui-border-radius:10px;--pagefind-ui-font:montserrat,sans-serif;--pagefind-ui-scale:.9}
-#pa-cerca-ui .pagefind-ui__result-title a{color:#8a4e00;font-weight:800}
-#pa-cerca-ui .pagefind-ui__result-excerpt{font-family:merriweather,serif;color:#555;line-height:1.6}
-#pa-cerca-ui mark{background:#ffe9c2;color:#8a4e00;font-weight:700;padding:0 2px;border-radius:3px}
-@media(max-width:900px){.pa-cerca-btn{margin-left:auto}.pa-cerca-ov{padding:60px 12px 12px}.pa-cerca-box{padding:24px 18px 26px}}
-</style>
+<link rel="stylesheet" href="css/pa-ricerca.css">
 <div class="pa-cerca-ov" id="pa-cerca-ov" data-pagefind-ignore role="dialog" aria-modal="true" aria-label="Cerca nel sito">
 <div class="pa-cerca-box">
 <button class="pa-cerca-x" type="button" onclick="paChiudiCerca()" aria-label="Chiudi la ricerca">&times;</button>

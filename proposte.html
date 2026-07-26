@@ -210,35 +210,7 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') chiudiVideo()
 </script>
 
 <!--PA-NAVFIX--><style>@media(max-width:900px){.navbar{flex-wrap:wrap}.nav-cta{margin-left:0}}</style><!--/PA-NAVFIX--><!--PA-CERCA-->
-<style>
-.pa-cerca-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;margin-left:10px;background:0 0;border:2px solid #e8900a;border-radius:50%;color:#9c5b00;cursor:pointer;transition:all .2s;align-self:center}
-.pa-cerca-btn:hover{background:#e8900a;color:#fff;transform:scale(1.06)}
-/* La variante scura DEVE stare dopo .pa-cerca-btn: stessa specificita', vince
-   l'ultima. Messa prima, il colore tornava #9c5b00 e su fondo scuro l'icona
-   spariva (cerchio vuoto). */
-/* Le pagine-strumento hanno CSS proprio che schiacciava il pulsante (56x36) e
-   azzerava l'icona (larghezza 0). Queste regole la rendono indipendente da
-   quello che trova intorno. */
-.pa-cerca-btn{padding:0!important;box-sizing:border-box}
-.pa-cerca-btn svg{width:21px!important;height:21px!important;flex:0 0 auto;display:block}
-.pa-cerca-btn--scuro{border-color:#c9c0b3!important;color:#e8dcc8!important;width:36px!important;height:36px!important;min-width:36px;flex:0 0 36px}
-.pa-cerca-btn--scuro svg{width:18px!important;height:18px!important}
-.pa-cerca-btn--scuro:hover{background:#e8900a!important;border-color:#e8900a!important;color:#fff!important}
-.pa-cerca-ov{display:none;position:fixed;inset:0;z-index:100000;background:rgba(26,13,0,.72);backdrop-filter:blur(3px);padding:80px 20px 20px;overflow-y:auto}
-.pa-cerca-ov.on{display:block}
-.pa-cerca-box{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;padding:28px 26px 32px;box-shadow:0 24px 70px rgba(0,0,0,.45);position:relative;animation:paCercaIn .22s ease}
-@keyframes paCercaIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
-.pa-cerca-box h2{font-family:montserrat,sans-serif;font-size:1.15em;font-weight:900;color:#8a4e00;margin:0 0 4px;padding-right:40px}
-.pa-cerca-box .pa-cerca-sub{font-family:merriweather,serif;font-size:.82em;color:#777;margin:0 0 18px}
-.pa-cerca-x{position:absolute;top:16px;right:18px;width:34px;height:34px;border:0;border-radius:50%;background:#f4f4f4;color:#8a4e00;font-size:1.3em;line-height:1;cursor:pointer;transition:all .2s}
-.pa-cerca-x:hover{background:#e8900a;color:#fff}
-.pa-cerca-att{font-family:merriweather,serif;color:#888;font-size:.86em;text-align:center;padding:18px 0}
-#pa-cerca-ui{--pagefind-ui-primary:#8a4e00;--pagefind-ui-text:#333;--pagefind-ui-background:#fff;--pagefind-ui-border:#e6d8c2;--pagefind-ui-tag:#fff3e0;--pagefind-ui-border-width:2px;--pagefind-ui-border-radius:10px;--pagefind-ui-font:montserrat,sans-serif;--pagefind-ui-scale:.9}
-#pa-cerca-ui .pagefind-ui__result-title a{color:#8a4e00;font-weight:800}
-#pa-cerca-ui .pagefind-ui__result-excerpt{font-family:merriweather,serif;color:#555;line-height:1.6}
-#pa-cerca-ui mark{background:#ffe9c2;color:#8a4e00;font-weight:700;padding:0 2px;border-radius:3px}
-@media(max-width:900px){.pa-cerca-btn{margin-left:auto}.pa-cerca-ov{padding:60px 12px 12px}.pa-cerca-box{padding:24px 18px 26px}}
-</style>
+<link rel="stylesheet" href="css/pa-ricerca.css">
 <div class="pa-cerca-ov" id="pa-cerca-ov" data-pagefind-ignore role="dialog" aria-modal="true" aria-label="Cerca nel sito">
 <div class="pa-cerca-box">
 <button class="pa-cerca-x" type="button" onclick="paChiudiCerca()" aria-label="Chiudi la ricerca">&times;</button>
