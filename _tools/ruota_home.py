@@ -24,7 +24,7 @@ import shutil
 import sys
 from datetime import datetime
 
-QUANTE_IN_HOME = 8
+QUANTE_IN_HOME = 6
 INDEX = "index.html"
 ARCHIVIO = "archivio.html"
 
