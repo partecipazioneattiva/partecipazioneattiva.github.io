@@ -27,6 +27,7 @@ FUORI = {
     'conferma.html',    # pagine di servizio della Mappa (hanno noindex)
     'cancella.html',
     'contatto.html',
+    '404.html',         # "Pagina non trovata": usciva fra i risultati (26/07/2026)
 }
 
 
@@ -58,6 +59,11 @@ def main():
             shutil.copy(p, os.path.join(tmp, os.path.basename(p)))
 
         out = BASE + 'pagefind'
+        # Pagefind NON ripulisce la cartella: scrive i file nuovi e lascia i
+        # vecchi. Ogni rebuild accumulava fragment/index/meta orfani (il
+        # 26/07/2026: 319 fragment e 96 .pf_meta per 58 pagine vive, tutti
+        # committati). La cartella e' interamente output generato: si rifa'.
+        shutil.rmtree(out, ignore_errors=True)
         r = subprocess.run(
             [sys.executable, '-m', 'pagefind', '--site', tmp, '--output-path', out],
             capture_output=True, text=True)
