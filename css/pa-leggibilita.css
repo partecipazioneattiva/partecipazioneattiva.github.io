@@ -1,0 +1,26 @@
+/* Testo di lettura piu' grande, per chi legge dal telefono.
+
+   MISURATO il 26/07/2026: i paragrafi degli articoli venivano a 14,7 px,
+   perche' ogni pagina si portava dentro una regola p{font-size:.92em}. Lo
+   standard comodo per un testo lungo e' 16-17 px, e il pubblico di
+   Partecipazione Attiva legge soprattutto dal telefono.
+
+   I selettori partono da "body" apposta: cosi' pesano piu' delle regole
+   scritte dentro le singole pagine, e non serve badare a in che ordine i
+   fogli di stile vengono letti. */
+
+body .article-wrap p,
+body .article-wrap li,
+body .content p,
+body .content li {
+  font-size: 1.05rem;   /* 16,8 px */
+  line-height: 1.8;
+}
+
+/* Il testo introduttivo di un articolo puo' restare piu' grande del corpo,
+   ma non piu' piccolo. */
+body .article-wrap .article-sommario,
+body .article-wrap .sommario {
+  font-size: 1.15rem;
+  line-height: 1.7;
+}

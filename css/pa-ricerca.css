@@ -2,7 +2,7 @@
    Lo estrae _tools/estrai_css.py — le modifiche si fanno QUI, non nelle pagine. */
 
 .pa-cerca-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;margin-left:10px;background:0 0;border:2px solid #e8900a;border-radius:50%;color:#9c5b00;cursor:pointer;transition:all .2s;align-self:center}
-.pa-cerca-btn:hover{background:#e8900a;color:#fff;transform:scale(1.06)}
+.pa-cerca-btn:hover{background:#e8900a;color:#2b1a00;transform:scale(1.06)}
 /* La variante scura DEVE stare dopo .pa-cerca-btn: stessa specificita', vince
    l'ultima. Messa prima, il colore tornava #9c5b00 e su fondo scuro l'icona
    spariva (cerchio vuoto). */
@@ -21,7 +21,7 @@
 .pa-cerca-box h2{font-family:montserrat,sans-serif;font-size:1.15em;font-weight:900;color:#8a4e00;margin:0 0 4px;padding-right:40px}
 .pa-cerca-box .pa-cerca-sub{font-family:merriweather,serif;font-size:.82em;color:#777;margin:0 0 18px}
 .pa-cerca-x{position:absolute;top:16px;right:18px;width:34px;height:34px;border:0;border-radius:50%;background:#f4f4f4;color:#8a4e00;font-size:1.3em;line-height:1;cursor:pointer;transition:all .2s}
-.pa-cerca-x:hover{background:#e8900a;color:#fff}
+.pa-cerca-x:hover{background:#e8900a;color:#2b1a00}
 .pa-cerca-att{font-family:merriweather,serif;color:#888;font-size:.86em;text-align:center;padding:18px 0}
 #pa-cerca-ui{--pagefind-ui-primary:#8a4e00;--pagefind-ui-text:#333;--pagefind-ui-background:#fff;--pagefind-ui-border:#e6d8c2;--pagefind-ui-tag:#fff3e0;--pagefind-ui-border-width:2px;--pagefind-ui-border-radius:10px;--pagefind-ui-font:montserrat,sans-serif;--pagefind-ui-scale:.9}
 #pa-cerca-ui .pagefind-ui__result-title a{color:#8a4e00;font-weight:800}
