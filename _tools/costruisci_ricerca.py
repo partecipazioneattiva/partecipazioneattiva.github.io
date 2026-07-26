@@ -34,11 +34,24 @@ def escludi(nome):
     return nome in FUORI or nome.startswith('google')
 
 
+def noindex(path):
+    """Una pagina noindex e' nascosta a Google di proposito (bozze in attesa di
+    approvazione). Deve stare fuori anche dalla ricerca interna: il 26/07/2026
+    due bozze [BOZZA] PensAttivo uscivano fra i risultati del sito pubblico."""
+    with open(path, encoding='utf-8', errors='ignore') as f:
+        return 'noindex' in f.read(6000)
+
+
 def main():
-    pagine = [p for p in sorted(glob.glob(BASE + '*.html'))
-              if not escludi(os.path.basename(p))]
-    escluse = [os.path.basename(p) for p in sorted(glob.glob(BASE + '*.html'))
-               if escludi(os.path.basename(p))]
+    pagine, escluse = [], []
+    for p in sorted(glob.glob(BASE + '*.html')):
+        n = os.path.basename(p)
+        if escludi(n):
+            escluse.append((n, 'non e\' contenuto'))
+        elif noindex(p):
+            escluse.append((n, 'noindex: nascosta di proposito'))
+        else:
+            pagine.append(p)
 
     with tempfile.TemporaryDirectory(prefix='pa-indice-') as tmp:
         for p in pagine:
@@ -59,7 +72,9 @@ def main():
             sys.exit(1)
 
     print(f'\npagine indicizzate: {len(pagine)}')
-    print(f'pagine escluse:     {len(escluse)} -> {", ".join(escluse)}')
+    print(f'pagine escluse:     {len(escluse)}')
+    for n, perche in escluse:
+        print(f'   {n:44} {perche}')
     print(f'indice scritto in:  {BASE}pagefind')
 
 
