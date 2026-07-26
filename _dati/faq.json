@@ -1,6 +1,6 @@
 {
   "_nota": "Sorgente unica delle FAQ dell'assistente PensAttivo. Ogni risposta e' testo scritto da PA e mostrato parola per parola: l'assistente non genera mai testo. Le voci con \"sensibile\": true toccano materia normativa, politica o di bilancio e NON vengono pubblicate finche' \"approvato\" non passa a true (approvazione del direttivo). Costruisce gli embedding: _tools/costruisci_assistente.py",
-  "_stato": "bozza - in attesa di lettura del direttivo",
+  "_stato": "approvato dal direttivo il 26/07/2026",
   "_fonte": "Tutte le risposte derivano da pagine pubbliche del sito partecipazione-attiva.it. Nessun dato non pubblico e' stato inserito: nessun IBAN (per non servire un conto che potrebbe cambiare), nessun contatto privato, nessun nome che non sia gia' pubblicato su organigramma.html o napoli.html.",
   "faq": [
     {
@@ -15,7 +15,7 @@
       "risposta": "Partecipazione Attiva è un movimento popolare di cittadini italiani, non un partito: una libera associazione per una politica trasparente, partecipata e al servizio delle persone, fondata sui principi della Costituzione italiana. È nato nel settembre 2021.",
       "link": "chi-siamo.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "partito-o-no",
@@ -29,7 +29,7 @@
       "risposta": "No. Partecipazione Attiva si definisce un movimento civico, non un partito: lavora su temi concreti con analisi documentate e battaglie tangibili, senza tessere di partito né vincoli ideologici.",
       "link": "chi-siamo.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "valori",
@@ -43,7 +43,7 @@
       "risposta": "Quattro: Costituzione (ogni posizione radicata nei suoi principi), Trasparenza (analisi documentate con fonti verificabili, mai slogan), Partecipazione (decisioni prese insieme, chiunque può proporre un tema) e Territorio (si parte dal locale, quartiere per quartiere).",
       "link": "chi-siamo.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "dove-siete",
@@ -57,7 +57,7 @@
       "risposta": "Attualmente in Campania (coordinamento di Napoli) e Lazio (Roma, Ladispoli, Guidonia Montecelio). Altre regioni sono in arrivo, e si può proporre di aprirne una scrivendo al movimento.",
       "link": "territori.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "aprire-coordinamento",
@@ -71,7 +71,7 @@
       "risposta": "Scrivendo a partecipazioneattiva21@gmail.com: il movimento aiuta a costituire il gruppo territoriale e ad avviare le attività locali.",
       "link": "territori.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "come-iscriversi",
@@ -86,7 +86,7 @@
       "risposta": "Compilando il modulo online di richiesta di iscrizione, che trovi dal bottone \"Iscriviti\" in ogni pagina del sito. Dopo l'invio si attende la conferma di accettazione dal Comitato Direttivo, poi arriva il benvenuto e l'accesso alla community degli iscritti.",
       "link": "index.html#iscriviti",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "quota",
@@ -100,7 +100,7 @@
       "risposta": "Il primo anno l'iscrizione è completamente gratuita. Dal secondo anno è prevista una quota annuale stabilita dal Comitato Direttivo, attualmente 30 euro.",
       "link": "index.html#iscriviti",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "donazione",
@@ -114,7 +114,7 @@
       "risposta": "Dal bottone \"Sostienici\", presente in ogni pagina del sito, trovi le modalità aggiornate: bonifico bancario intestato al Tesoriere del movimento e donazione con PayPal.",
       "link": "index.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "proporre-tema",
@@ -128,7 +128,7 @@
       "risposta": "Sì. Scrivendo a partecipazioneattiva21@gmail.com con oggetto \"Proposta tema/battaglia\", oppure dalla sezione proposte della Mappa se sei già iscritto/a alla Mappa.",
       "link": "proposte.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "statuto",
@@ -142,7 +142,7 @@
       "risposta": "Nella sezione \"Statuto e Documenti\" in fondo alla homepage, scaricabili in PDF: Statuto, Manifesto Politico e i regolamenti interni (Comitato Direttivo, candidature degli iscritti, restituzioni, Assemblee, Unità Territoriali).",
       "link": "index.html#statuto",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "tutti-documenti",
@@ -156,7 +156,7 @@
       "risposta": "Nella pagina Documenti, che raccoglie tutti i PDF del movimento con un estratto del contenuto, così puoi cercarli anche per le parole che contengono.",
       "link": "documenti.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "cos-e-mappa",
@@ -170,7 +170,7 @@
       "risposta": "È una mappa pubblica di cittadini e associazioni in Italia e nel mondo: si cerca per tema o competenza e si trova chi si batte per le stesse cose vicino a te, anche fuori dall'Italia.",
       "link": "mappa.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "entrare-mappa",
@@ -184,7 +184,7 @@
       "risposta": "Compilando il modulo (cittadino o associazione): nome, dove vivi, i temi che ti stanno a cuore, le competenze e una breve descrizione pubblica. Ricevi un'email di conferma, poi c'è un breve controllo antiabuso e la scheda compare in genere entro pochi giorni. Non c'è selezione: chi condivide la Costituzione entra.",
       "link": "mappa.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "mappa-cosa-si-vede",
@@ -198,7 +198,7 @@
       "risposta": "Solo nome e iniziale del cognome (o il nome dell'associazione per esteso), comune o città, temi, competenze e la descrizione che scrivi. L'email e il cognome per esteso non sono mai pubblici.",
       "link": "mappa.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "mappa-indirizzo",
@@ -212,7 +212,7 @@
       "risposta": "No. Il punto è il centro del comune (o del Paese, se vivi all'estero): non si usa il GPS e l'indirizzo non viene mai richiesto né mostrato.",
       "link": "mappa.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "mappa-contatto",
@@ -226,7 +226,7 @@
       "risposta": "No. Chi ti scrive tramite il tasto \"Contatta\" non vede il tuo indirizzo: ricevi il messaggio e decidi tu se rispondere. Solo se accetti vi scambiate i contatti diretti.",
       "link": "mappa.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "mappa-cancellarsi",
@@ -243,7 +243,7 @@
       "risposta": "Sì, in qualsiasi momento, tramite il link di cancellazione presente in ogni email che l'associazione invia.",
       "link": "mappa.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "mappa-dati-dove",
@@ -257,7 +257,7 @@
       "risposta": "In un database Supabase su server nell'Unione Europea (Francoforte): nessun trasferimento fuori dall'UE.",
       "link": "mappa.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "proposta-legge",
@@ -271,7 +271,7 @@
       "risposta": "Sì, se sei già iscritto/a alla Mappa: puoi scrivere una proposta con titolo, tema, ambito (nazionale, regionale o comunale) e testo. Le proposte non vengono pubblicate, ma sono lette tutte; se una convince, diventa un'Azione pubblica del movimento.",
       "link": "proposte.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "cosa-sono-azioni",
@@ -285,7 +285,7 @@
       "risposta": "Obiettivi concreti con una scadenza e una soglia di adesioni: quando abbastanza persone dicono \"ci sono\", si convoca una riunione operativa e ci si divide i compiti.",
       "link": "azioni.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "aderire-azione",
@@ -299,7 +299,7 @@
       "risposta": "Cliccando \"Ci sono\" sulla pagina dell'Azione. Serve essere già sulla Mappa: se non ci sei, bastano due minuti per iscriversi.",
       "link": "azioni.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "azione-soglia",
@@ -312,7 +312,7 @@
       "risposta": "Si convoca una riunione operativa su Zoom entro 10 giorni: data e link arrivano via email. Dopo la riunione, sul sito viene pubblicato cosa è stato deciso.",
       "link": "azioni.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "azione-visibilita",
@@ -326,7 +326,7 @@
       "risposta": "No. È visibile solo il contatore delle adesioni. I nomi di chi aderisce sono noti soltanto a chi cura la Mappa, perché aderire a un'azione rivela un'opinione politica: è un dato particolare protetto dall'articolo 9 del GDPR.",
       "link": "azioni.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "battaglie-attuali",
@@ -335,12 +335,12 @@
       "varianti": [
         "di cosa vi occupate adesso",
         "su cosa state lavorando",
-        "quali sono le vostre campagne"
+        "quali sono le vostre iniziative"
       ],
       "risposta": "Tre, tutte approvate dal Comitato Direttivo: RC Auto (basta discriminazioni territoriali), Sanità pubblica (\"Salute in Vendita\") e la riforma elettorale (Stabilicum).",
       "link": "battaglie.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "rcauto",
@@ -354,7 +354,7 @@
       "risposta": "Denuncia che, a parità di guidatore, veicolo e anni di patente, chi vive al Sud paga centinaia di euro in più di RC Auto rispetto a chi vive al Nord. La proposta di Partecipazione Attiva: l'IVASS calcola un Premio Medio Nazionale per classe di merito e vieta le maggiorazioni basate solo sulla residenza geografica, ammettendo soltanto fattori di rischio individuali e documentati.",
       "link": "rcauto.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "sanita",
@@ -368,7 +368,7 @@
       "risposta": "Analizza il collasso del Servizio Sanitario Nazionale: milioni di italiani che rinunciano a curarsi per motivi economici o per le liste d'attesa, mortalità nei pronto soccorso in forte aumento, fondi ai laboratori convenzionati esauriti nei primi mesi dell'anno in Campania. Partecipazione Attiva propone un finanziamento distribuito sull'intero anno, il ripristino dei presidi nei territori penalizzati e la revisione del doppio regime di lista d'attesa fra pubblico e privato convenzionato.",
       "link": "sanitapubblica.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "cos-e-stabilicum",
@@ -382,7 +382,7 @@
       "risposta": "È la proposta di nuova legge elettorale discussa in Parlamento: sostituisce il Rosatellum con un sistema proporzionale, con un premio di maggioranza per la coalizione che supera una soglia di voti stabilita dalla legge. Se nessuno raggiunge quella soglia, si applica il proporzionale puro senza premio.",
       "link": "stabilicum.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "posizione-stabilicum",
@@ -398,7 +398,7 @@
       "risposta": "Partecipazione Attiva non è contraria in linea di principio alla stabilità di governo, ma si oppone a qualsiasi riforma elettorale che riduca il peso reale del voto dei cittadini o che venga approvata senza un ampio consenso tra le forze parlamentari. Chiede audizioni trasparenti e cittadini informati, senza propaganda di parte.",
       "link": "stabilicum.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "cos-e-ape",
@@ -412,7 +412,7 @@
       "risposta": "È la proposta di riforma costituzionale più importante del movimento: un canale permanente attraverso cui ogni cittadino può obbligare le istituzioni ad ascoltare e a rispondere, oltre la democrazia solo delegativa del voto ogni cinque anni.",
       "link": "ape.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "ape-sostituisce",
@@ -426,7 +426,7 @@
       "risposta": "No. L'APE non legifera, non governa, non vincola il voto dei parlamentari e non sostituisce nessun organo: né Camera, né Senato, né Regioni, né Comuni. È aggiuntiva, non un rimpiazzo. La sua forza è procedurale — obbliga le istituzioni a rispondere — non normativa diretta.",
       "link": "ape.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "ape-sorteggio",
@@ -440,7 +440,7 @@
       "risposta": "Per sorteggio dalle liste elettorali, mai per elezione, con stratificazione per età, genere e territorio: lo stesso principio già usato per i giudici popolari delle Corti d'Assise.",
       "link": "ape.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "ape-livelli",
@@ -454,7 +454,7 @@
       "risposta": "Tre, senza gerarchia tra loro: comunale (APEC), regionale (APER) e nazionale (APEN). Ciascuno parla alla propria istituzione di riferimento: Comune, Regione, Stato.",
       "link": "ape.html",
       "sensibile": true,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "ape-documento",
@@ -468,7 +468,7 @@
       "risposta": "Il documento completo è scaricabile in PDF dalla pagina dell'APE: contiene l'articolato costituzionale, gli allegati tecnici, le obiezioni con le relative risposte e il confronto con esperienze straniere.",
       "link": "ape.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "rete-ape",
@@ -482,7 +482,7 @@
       "risposta": "È una rete aperta ad associazioni, comitati civici, movimenti, liste civiche, gruppi di volontariato e organizzazioni per la tutela dei diritti che condividono i principi dell'Assemblea Popolare Ecumenica. Ogni soggetto aderente ha peso paritario, indipendentemente dalla sua dimensione. Si aderisce scrivendo a partecipazioneattiva21@gmail.com con nome dell'organizzazione, tipo, territorio e referente: l'adesione è gratuita.",
       "link": "rete-ape.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "chi-guida",
@@ -499,7 +499,7 @@
       "risposta": "Il Presidente è Angelo Nicotra e il portavoce è Luigi Spanu. La composizione completa del Comitato Direttivo e degli altri incarichi è pubblicata nella pagina Organigramma.",
       "link": "organigramma.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "napoli",
@@ -513,7 +513,7 @@
       "risposta": "L'impegno a Napoli si concentra su tre pilastri: lavoro e territorio (trasporti, scuole, degrado), partecipazione diretta (assemblee pubbliche, votazioni online, trasparenza) e beni comuni (acqua, ambiente, spazi pubblici). I riferimenti del coordinamento sono pubblicati nella pagina dedicata.",
       "link": "napoli.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "parlero",
@@ -527,7 +527,7 @@
       "risposta": "È un programma televisivo dedicato alla cultura, alla musica e all'identità napoletana, ideato e condotto da Antonio Cristiano, in onda su TV Flegrea (canale 69, Napoli). I contenuti vengono condivisi anche sulla pagina Facebook del movimento.",
       "link": "parlero.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "chi-e-pensattivo",
@@ -541,7 +541,7 @@
       "risposta": "PensAttivo è la mascotte di Partecipazione Attiva: un marziano che, venendo da fuori, non capisce il \"tifo di squadra\" della politica italiana e guarda ogni proposta solo per quello che dice, non per chi la firma. Il criterio con cui il movimento valuta ogni battaglia è: \"la accetteresti anche se a governare fosse chi non voti?\".",
       "link": "pensattivo.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "contatti",
@@ -559,7 +559,7 @@
       "risposta": "Via email a partecipazioneattiva21@gmail.com, oppure tramite la pagina Facebook ufficiale del movimento.",
       "link": "index.html#contatti",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "social",
@@ -573,7 +573,7 @@
       "risposta": "Su Facebook, YouTube e TikTok: i link ai canali ufficiali sono in fondo a ogni pagina del sito.",
       "link": "index.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "sito-dati",
@@ -587,7 +587,7 @@
       "risposta": "Il sito è statico e non ha moduli di registrazione, aree riservate o sistemi di tracciamento propri, né cookie di profilazione. Possono essere raccolti soltanto dati tecnici di navigazione dal servizio che ospita il sito, e i dati che scrivi volontariamente in un'email.",
       "link": "privacy.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "gdpr",
@@ -601,7 +601,7 @@
       "risposta": "Scrivendo a partecipazioneattiva21@gmail.com: puoi chiedere accesso, rettifica, cancellazione, opposizione o revoca del consenso in qualsiasi momento. Per la Mappa la cancellazione è immediata tramite il link presente in ogni email ricevuta.",
       "link": "privacy.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "webtv",
@@ -615,7 +615,7 @@
       "risposta": "Nella sezione WebTV del sito, che raccoglie video, interviste e dirette del movimento.",
       "link": "webtv.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     },
     {
       "id": "archivio",
@@ -629,7 +629,7 @@
       "risposta": "Nell'Archivio del sito, che raccoglie tutti gli articoli e gli aggiornamenti pubblicati, dal più recente. Puoi anche usare la lente d'ingrandimento in alto per cercare per parola.",
       "link": "archivio.html",
       "sensibile": false,
-      "approvato": false
+      "approvato": true
     }
   ]
 }

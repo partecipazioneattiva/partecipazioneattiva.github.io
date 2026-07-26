@@ -115,6 +115,9 @@ def main():
         'soglia_z': SOGLIA_Z,
         'scala': 1 / 127,
         'righe': righe,
+        # Le frasi in chiaro servono al confronto lessicale, che e' il primo
+        # livello e funziona subito, senza scaricare il modello.
+        'frasi_testo': frasi,
         'vettori_int8_base64': base64.b64encode(q.tobytes()).decode(),
         'faq': [{'id': f['id'], 'tema': f['tema'], 'domanda': f['domanda'],
                  'risposta': f['risposta'], 'link': f['link']} for f in faq],
