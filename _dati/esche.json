@@ -1,0 +1,28 @@
+{
+  "_nota": "Frasi ESCA: domande deliberatamente fuori tema messe nell'indice semantico per assorbire le domande che non riguardano Partecipazione Attiva. Se la domanda del visitatore somiglia piu' a un'esca che a una FAQ, l'assistente non risponde e propone la ricerca nel sito o l'email.",
+  "_perche": "Scoperto il 26/07/2026 misurando: le similarita' del modello e5 sono schiacciate in una fascia strettissima (in tema da 0,835, fuori tema fino a 0,836: sovrapposte). Nessuna soglia assoluta le separa, quindi la soglia 0,75 prevista dall'incarico non funziona. Le esche + il punteggio z (quanto il primo risultato spicca sugli altri) portano da 10/18 a 19/20 sulle domande di prova.",
+  "esche": [
+    "che tempo fa oggi",
+    "previsioni meteo domani",
+    "ricetta della pasta al forno",
+    "come si cucina la pizza",
+    "risultati della partita di calcio",
+    "classifica del campionato",
+    "orari dei treni per roma",
+    "come si cura il mal di testa",
+    "canzoni napoletane famose",
+    "quanto costa un volo per milano",
+    "come si installa un programma sul computer",
+    "quando escono i saldi",
+    "oroscopo di domani",
+    "come si fa un curriculum",
+    "numeri del lotto",
+    "traduzione in inglese di questa frase",
+    "qual è il senso della vita",
+    "raccontami una barzelletta",
+    "cosa vuol dire essere felici",
+    "scrivimi una poesia",
+    "quanto fa due più due",
+    "come si aggiusta una lavatrice"
+  ]
+}

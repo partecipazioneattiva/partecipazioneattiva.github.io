@@ -18,3 +18,10 @@ pa_engine_m4_m6.py
 pa_engine_main.py
 pa_website_schema.py
 _bagnoli_review/
+_modelli/
+
+# Assistente PensAttivo: il file generato contiene ancora le FAQ in bozza, non
+# approvate dal direttivo. Pubblicarlo metterebbe online posizioni politiche
+# non validate. TOGLIERE QUESTA RIGA quando le FAQ sono approvate e il file
+# viene rigenerato senza --includi-bozze.
+assistente/faq.json
