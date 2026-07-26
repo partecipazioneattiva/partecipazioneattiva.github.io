@@ -30,10 +30,21 @@
 <a href=organigramma.html>Chi Siamo</a>
 <a href=parlero.html>Parlerò</a>
 <a href=privacy.html>Privacy & Cookie</a></div><div class=footer-col><h4>Contatti</h4><a href=mailto:partecipazioneattiva21@gmail.com><!--email_off--><!--email_off-->partecipazioneattiva21@gmail.com<!--/email_off--><!--/email_off--></a><p style=margin-top:12px;font-size:.78rem>Sostieni PA:<br>IBAN IT70A0366901600557449712670<br>Intestato: Daniele Tandura</div></div><div class=footer-bottom><p>© 2026 Partecipazione Attiva — Tutti i diritti riservati | <a href=privacy.html style=color:#aaa>Privacy Policy</a></div></footer><div data-pagefind-ignore class=modal-overlay id=modal-sostieni><div class=modal-box><button class=modal-close onclick='document.getElementById("modal-sostieni").classList.remove("active")'>&#215;</button><h2>💛 Sostieni Partecipazione Attiva</h2><p>Il tuo contributo ci aiuta a portare avanti le battaglie per i cittadini.<div class=modal-iban><strong>Bonifico bancario</strong><br>IBAN: IT70A0366901600557449712670<br>Intestato: <strong>Daniele Tandura</strong> (Tesoriere P.A.)<br>SWIFT/BIC: REVOITM2<br>Causale: Donazione / Iscrizione Partecipazione Attiva</div><div class=modal-paypal><a href="https://www.paypal.com/donate/?hosted_button_id=MWQLS8ECREKCQ" target=_blank>💙 Dona con PayPal</a></div></div></div><script>window.addEventListener("scroll",()=>{const e=document.getElementById("scroll-progress"),t=window.scrollY/(document.body.scrollHeight-window.innerHeight)*100;e.style.width=t+"%"});const observer=new IntersectionObserver(e=>{e.forEach(e=>{e.isIntersecting&&e.target.classList.add("visible")})},{threshold:.1});document.querySelectorAll(".fade-in").forEach(e=>observer.observe(e))</script>
-<!--PA-CERCA-->
+<!--PA-NAVFIX--><style>@media(max-width:900px){.navbar{flex-wrap:wrap}.nav-cta{margin-left:0}}</style><!--/PA-NAVFIX--><!--PA-CERCA-->
 <style>
 .pa-cerca-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;margin-left:10px;background:0 0;border:2px solid #e8900a;border-radius:50%;color:#9c5b00;cursor:pointer;transition:all .2s;align-self:center}
 .pa-cerca-btn:hover{background:#e8900a;color:#fff;transform:scale(1.06)}
+/* La variante scura DEVE stare dopo .pa-cerca-btn: stessa specificita', vince
+   l'ultima. Messa prima, il colore tornava #9c5b00 e su fondo scuro l'icona
+   spariva (cerchio vuoto). */
+/* Le pagine-strumento hanno CSS proprio che schiacciava il pulsante (56x36) e
+   azzerava l'icona (larghezza 0). Queste regole la rendono indipendente da
+   quello che trova intorno. */
+.pa-cerca-btn{padding:0!important;box-sizing:border-box}
+.pa-cerca-btn svg{width:21px!important;height:21px!important;flex:0 0 auto;display:block}
+.pa-cerca-btn--scuro{border-color:#c9c0b3!important;color:#e8dcc8!important;width:36px!important;height:36px!important;min-width:36px;flex:0 0 36px}
+.pa-cerca-btn--scuro svg{width:18px!important;height:18px!important}
+.pa-cerca-btn--scuro:hover{background:#e8900a!important;border-color:#e8900a!important;color:#fff!important}
 .pa-cerca-ov{display:none;position:fixed;inset:0;z-index:100000;background:rgba(26,13,0,.72);backdrop-filter:blur(3px);padding:80px 20px 20px;overflow-y:auto}
 .pa-cerca-ov.on{display:block}
 .pa-cerca-box{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;padding:28px 26px 32px;box-shadow:0 24px 70px rgba(0,0,0,.45);position:relative;animation:paCercaIn .22s ease}
@@ -89,5 +100,5 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')paChiudiCerc
 document.addEventListener('click',function(e){if(e.target&&e.target.id==='pa-cerca-ov')paChiudiCerca()});
 </script>
 <!--/PA-CERCA-->
-<!--PA-NAVFIX--><style>@media(max-width:900px){.navbar{flex-wrap:wrap}.nav-cta{margin-left:0}}</style><!--/PA-NAVFIX--></body>
+</body>
 </html>

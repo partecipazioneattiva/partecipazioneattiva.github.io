@@ -17,10 +17,7 @@ from datetime import datetime
 
 BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
 
-# mappa.html e azioni.html hanno una barra scura tutta loro (pagine-strumento):
-# stessa esclusione di _tools/allinea_menu.py, la loro barra si aggiorna a parte.
-SALTA = {'template.html', 'conferma.html', 'cancella.html', 'contatto.html',
-         'mappa.html', 'azioni.html'}
+SALTA = {'template.html', 'conferma.html', 'cancella.html', 'contatto.html'}
 
 # ---------------------------------------------------------------- markup
 
@@ -32,10 +29,26 @@ BOTTONE = (
     '<line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button>'
 )
 
+# mappa/azioni/perche-la-mappa/esserci hanno barre scure tutte loro (#2b2620,
+# #222): la lente arancione su fondo scuro non si vedrebbe.
+BOTTONE_SCURO = BOTTONE.replace('class="pa-cerca-btn"',
+                                'class="pa-cerca-btn pa-cerca-btn--scuro"')
+
 BLOCCO = '''<!--PA-CERCA-->
 <style>
 .pa-cerca-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;margin-left:10px;background:0 0;border:2px solid #e8900a;border-radius:50%;color:#9c5b00;cursor:pointer;transition:all .2s;align-self:center}
 .pa-cerca-btn:hover{background:#e8900a;color:#fff;transform:scale(1.06)}
+/* La variante scura DEVE stare dopo .pa-cerca-btn: stessa specificita', vince
+   l'ultima. Messa prima, il colore tornava #9c5b00 e su fondo scuro l'icona
+   spariva (cerchio vuoto). */
+/* Le pagine-strumento hanno CSS proprio che schiacciava il pulsante (56x36) e
+   azzerava l'icona (larghezza 0). Queste regole la rendono indipendente da
+   quello che trova intorno. */
+.pa-cerca-btn{padding:0!important;box-sizing:border-box}
+.pa-cerca-btn svg{width:21px!important;height:21px!important;flex:0 0 auto;display:block}
+.pa-cerca-btn--scuro{border-color:#c9c0b3!important;color:#e8dcc8!important;width:36px!important;height:36px!important;min-width:36px;flex:0 0 36px}
+.pa-cerca-btn--scuro svg{width:18px!important;height:18px!important}
+.pa-cerca-btn--scuro:hover{background:#e8900a!important;border-color:#e8900a!important;color:#fff!important}
 .pa-cerca-ov{display:none;position:fixed;inset:0;z-index:100000;background:rgba(26,13,0,.72);backdrop-filter:blur(3px);padding:80px 20px 20px;overflow-y:auto}
 .pa-cerca-ov.on{display:block}
 .pa-cerca-box{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;padding:28px 26px 32px;box-shadow:0 24px 70px rgba(0,0,0,.45);position:relative;animation:paCercaIn .22s ease}
@@ -101,7 +114,10 @@ def pulisci(s):
     # blocco generato da questo stesso script (idempotenza)
     s2, k = re.subn(r'<!--PA-CERCA-->.*?<!--/PA-CERCA-->\s*', '', s, flags=re.S)
     s, n = s2, n + k
-    s2, k = re.subn(r'<button class="pa-cerca-btn".*?</button>', '', s, flags=re.S)
+    # [^"]* e' obbligatorio: la variante scura ha class="pa-cerca-btn pa-cerca-btn--scuro"
+    # e con la virgoletta subito dopo il nome non veniva riconosciuta -> se ne
+    # accumulava una a ogni esecuzione (3 lenti su azioni.html).
+    s2, k = re.subn(r'<button class="pa-cerca-btn[^"]*".*?</button>', '', s, flags=re.S)
     s, n = s2, n + k
     # vecchio contenitore in fondo alla pagina + init
     s2, k = re.subn(r'<div id=["\']?search["\']?[^>]*>\s*</div>\s*', '', s, flags=re.S)
@@ -131,16 +147,28 @@ def main():
         orig = open(path, encoding='utf-8').read()
         s, ripuliti = pulisci(orig)
 
-        # 1. pulsante lente: prima del burger (resta visibile su mobile).
-        #    Ripiego su </nav> per le navbar piu' vecchie che il burger non ce l'hanno
-        #    (sanitapubblica.html, pensattivo-rapporti.html).
+        # 1. pulsante lente. Tre strutture diverse sul sito, in ordine:
+        #    a) navbar standard -> prima del burger (resta visibile su mobile)
+        #    b) navbar vecchia senza burger -> prima di </nav>
+        #    c) barre scure delle pagine-strumento -> dopo l'ultima voce, in chiaro
         m = re.search(r'<button class=["\']?burger["\']?', s)
+        bottone = BOTTONE
         if not m:
             m = re.search(r'</nav>', s)
         if not m:
-            saltati.append((f, 'niente navbar: pagina fuori struttura'))
-            continue
-        s = s[:m.start()] + BOTTONE + s[m.start():]
+            # le barre scure finiscono tutte con "Chi Siamo</a>" o "Torna al sito</a>"
+            for pat in (r'Chi Siamo</a>', r'Torna al sito</a>'):
+                trovati = list(re.finditer(pat, s))
+                if trovati:
+                    m = trovati[-1]
+                    bottone = BOTTONE_SCURO
+                    s = s[:m.end()] + bottone + s[m.end():]
+                    break
+            else:
+                saltati.append((f, 'niente navbar: pagina fuori struttura'))
+                continue
+        else:
+            s = s[:m.start()] + bottone + s[m.start():]
 
         # 2. overlay + script: prima di </body>
         i = s.rfind('</body>')

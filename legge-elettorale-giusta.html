@@ -268,10 +268,21 @@ Nel breve accettiamo un filo meno di premio in cambio di un sistema che nessuno 
 </div>
 </div>
 
-<!-- start webpushr code --><script>(function(w,d, s, id) {if(typeof(w.webpushr)!='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BImMkQK81tVOC2zGWmAVd9911j3Cxf9I4YldvZCN39biUc8N6241kYsB2N_yjhnseMRQCSpgGSEGaQUYHGy8d0o'});</script><!-- end webpushr code --><!--PA-CERCA-->
+<!-- start webpushr code --><script>(function(w,d, s, id) {if(typeof(w.webpushr)!='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BImMkQK81tVOC2zGWmAVd9911j3Cxf9I4YldvZCN39biUc8N6241kYsB2N_yjhnseMRQCSpgGSEGaQUYHGy8d0o'});</script><!-- end webpushr code --><!--PA-NAVFIX--><style>@media(max-width:900px){.navbar{flex-wrap:wrap}.nav-cta{margin-left:0}}</style><!--/PA-NAVFIX--><!--PA-CERCA-->
 <style>
 .pa-cerca-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;margin-left:10px;background:0 0;border:2px solid #e8900a;border-radius:50%;color:#9c5b00;cursor:pointer;transition:all .2s;align-self:center}
 .pa-cerca-btn:hover{background:#e8900a;color:#fff;transform:scale(1.06)}
+/* La variante scura DEVE stare dopo .pa-cerca-btn: stessa specificita', vince
+   l'ultima. Messa prima, il colore tornava #9c5b00 e su fondo scuro l'icona
+   spariva (cerchio vuoto). */
+/* Le pagine-strumento hanno CSS proprio che schiacciava il pulsante (56x36) e
+   azzerava l'icona (larghezza 0). Queste regole la rendono indipendente da
+   quello che trova intorno. */
+.pa-cerca-btn{padding:0!important;box-sizing:border-box}
+.pa-cerca-btn svg{width:21px!important;height:21px!important;flex:0 0 auto;display:block}
+.pa-cerca-btn--scuro{border-color:#c9c0b3!important;color:#e8dcc8!important;width:36px!important;height:36px!important;min-width:36px;flex:0 0 36px}
+.pa-cerca-btn--scuro svg{width:18px!important;height:18px!important}
+.pa-cerca-btn--scuro:hover{background:#e8900a!important;border-color:#e8900a!important;color:#fff!important}
 .pa-cerca-ov{display:none;position:fixed;inset:0;z-index:100000;background:rgba(26,13,0,.72);backdrop-filter:blur(3px);padding:80px 20px 20px;overflow-y:auto}
 .pa-cerca-ov.on{display:block}
 .pa-cerca-box{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;padding:28px 26px 32px;box-shadow:0 24px 70px rgba(0,0,0,.45);position:relative;animation:paCercaIn .22s ease}
@@ -327,5 +338,5 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')paChiudiCerc
 document.addEventListener('click',function(e){if(e.target&&e.target.id==='pa-cerca-ov')paChiudiCerca()});
 </script>
 <!--/PA-CERCA-->
-<!--PA-NAVFIX--><style>@media(max-width:900px){.navbar{flex-wrap:wrap}.nav-cta{margin-left:0}}</style><!--/PA-NAVFIX--></body>
+</body>
 </html>
