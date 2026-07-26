@@ -1042,6 +1042,19 @@ def aggiorna_sitemap(a):
     open(SMP, 'w', encoding='utf-8').write(sm.replace('</urlset>', row + '\n</urlset>', 1))
     return 'sitemap: url aggiunto'
 
+def aggiorna_ricerca(a):
+    """Rigenera l'indice Pagefind: senza, l'articolo appena pubblicato non e'
+    cercabile. Prima del 26/07/2026 si rigenerava a mano e l'indice era fermo
+    da 23 giorni. Dura ~0,1s, non c'e' motivo di rimandarlo al push."""
+    import subprocess
+    r = subprocess.run([sys.executable, BASE + '_tools/costruisci_ricerca.py'],
+                       capture_output=True, text=True)
+    if r.returncode != 0:
+        return f'ricerca: NON aggiornata ({r.stderr.strip()[:120] or "errore"}) - rilancia _tools/costruisci_ricerca.py'
+    n = re.search(r'pagine indicizzate:\s*(\d+)', r.stdout)
+    return f'ricerca: indice rigenerato ({n.group(1) if n else "?"} pagine)'
+
+
 def main():
     a = ART
     out = BASE + a['slug']
@@ -1055,7 +1068,9 @@ def main():
     print('OK index.html: card in cima + badge per-data')
     print('OK ' + aggiorna_temi(a))
     print('OK ' + aggiorna_sitemap(a))
+    print('OK ' + aggiorna_ricerca(a))
     print('--- FATTO. Esegui il PUSH: include aggiorna_ticker.py che rigenera la barra da temi.json ---')
+    print('--- Nel push aggiungi anche: pagefind/ (indice di ricerca appena rigenerato) ---')
 
 if __name__ == '__main__':
     main()

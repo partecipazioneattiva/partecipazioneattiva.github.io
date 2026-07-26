@@ -109,7 +109,7 @@ footer a{color:#ffd580;text-decoration:none}
 </head>
 <body>
 
-<div class="topbar">
+<div data-pagefind-ignore class="topbar">
   <span>&#x2709;&#xFE0F; <!--email_off--><!--email_off-->partecipazioneattiva21@gmail.com<!--/email_off--><!--/email_off--></span>
   <div>
     <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank">Facebook</a>
@@ -118,7 +118,7 @@ footer a{color:#ffd580;text-decoration:none}
   </div>
 </div>
 
-<nav class="navbar">
+<nav data-pagefind-ignore class="navbar">
   <a href="index.html" class="nav-logo">
     <img loading=lazy src="LOGO-PA.webp" alt="Logo Partecipazione Attiva">
     <div class="nav-nome">Partecipazione Attiva<small>Movimento Popolare dei Cittadini Italiani</small></div>
@@ -128,10 +128,10 @@ footer a{color:#ffd580;text-decoration:none}
     <a href="mailto:partecipazioneattiva21@gmail.com?subject=Adesione%20Rete%20APE&body=Nome%20organizzazione%3A%0ATipo%20(associazione%2Fmovimento%2Fpartito%2Fcomitato%2Faltro)%3A%0ATerritorio%3A%0ANome%20referente%3A%0ABreve%20descrizione%3A" target="_blank" class="btn-iscr">Iscriviti</a>
     <a href="#" onclick="document.getElementById('modal-sost').style.display='flex';return false;" class="btn-sost" onclick="apriSostienici(event)">Sostienici</a>
   </div>
-  <button class="burger" onclick="this.classList.toggle('open');document.querySelector('.mob-menu').classList.toggle('on')">
+  <button class="pa-cerca-btn" data-pa-cerca="1" data-pagefind-ignore type="button" onclick="paApriCerca()" aria-label="Cerca nel sito" title="Cerca nel sito"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><button class="burger" onclick="this.classList.toggle('open');document.querySelector('.mob-menu').classList.toggle('on')">
     <span></span><span></span><span></span>
   </button>
-  <div class="mob-menu"><a href="index.html" onclick="chiudi()">Home</a><a href="napoli.html" onclick="chiudi()">&#9679; Napoli</a><a href="territori.html" onclick="chiudi()">Territori</a><a href="mappa.html" onclick="chiudi()">Mappa</a><a href="proposte.html" onclick="chiudi()">Proposte</a><a href="azioni.html" onclick="chiudi()">Azioni</a><a href="battaglie.html" onclick="chiudi()">Battaglie</a><a href="webtv.html" onclick="chiudi()">WebTV</a><a href="rete-ape.html" class="active" onclick="chiudi()">Rete APE</a><a href="chi-siamo.html" onclick="chiudi()">Chi Siamo</a><a href="organigramma.html" onclick="chiudi()">Organigramma</a><a href="parlero.html" onclick="chiudi()">Parler&ograve;</a></div>
+  <div data-pagefind-ignore class="mob-menu"><a href="index.html" onclick="chiudi()">Home</a><a href="napoli.html" onclick="chiudi()">&#9679; Napoli</a><a href="territori.html" onclick="chiudi()">Territori</a><a href="mappa.html" onclick="chiudi()">Mappa</a><a href="proposte.html" onclick="chiudi()">Proposte</a><a href="azioni.html" onclick="chiudi()">Azioni</a><a href="battaglie.html" onclick="chiudi()">Battaglie</a><a href="webtv.html" onclick="chiudi()">WebTV</a><a href="rete-ape.html" class="active" onclick="chiudi()">Rete APE</a><a href="chi-siamo.html" onclick="chiudi()">Chi Siamo</a><a href="organigramma.html" onclick="chiudi()">Organigramma</a><a href="parlero.html" onclick="chiudi()">Parler&ograve;</a></div>
 </nav>
 
 <div class="article-hero">
@@ -244,13 +244,13 @@ footer a{color:#ffd580;text-decoration:none}
 <a href="mailto:partecipazioneattiva21@gmail.com?subject=Adesione%20Rete%20APE&body=Nome%20organizzazione%3A%0ATipo%20(associazione%2Fmovimento%2Fpartito%2Fcomitato%2Faltro)%3A%0ATerritorio%3A%0ANome%20referente%3A%0ABreve%20descrizione%3A" target="_blank" rel="noopener">Iscriviti gratis &rarr;</a>
 </div>
 
-<div style="max-width:800px;margin:32px auto;padding:0 24px"><div style="background:#f0f7ff;border:2px solid #1877f2;border-radius:16px;padding:24px 28px;text-align:center"><p style="font-family:merriweather,serif;color:#333;font-size:1em;font-weight:700;margin-bottom:16px">Hai trovato utile questo articolo? Condividilo.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="https://www.facebook.com/sharer/sharer.php?u=https://partecipazione-attiva.it/spanu-sire.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#1877f2;color:#fff;padding:11px 22px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.88em">📘 Condividi su Facebook</a><a href="https://wa.me/?text=Leggi%20questo%20articolo%20di%20Partecipazione%20Attiva%3A%20https://partecipazione-attiva.it/spanu-sire.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:11px 22px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.88em">💬 Condividi su WhatsApp</a></div></div></div><footer>
+<div style="max-width:800px;margin:32px auto;padding:0 24px"><div style="background:#f0f7ff;border:2px solid #1877f2;border-radius:16px;padding:24px 28px;text-align:center"><p style="font-family:merriweather,serif;color:#333;font-size:1em;font-weight:700;margin-bottom:16px">Hai trovato utile questo articolo? Condividilo.</p><div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap"><a href="https://www.facebook.com/sharer/sharer.php?u=https://partecipazione-attiva.it/spanu-sire.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#1877f2;color:#fff;padding:11px 22px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.88em">📘 Condividi su Facebook</a><a href="https://wa.me/?text=Leggi%20questo%20articolo%20di%20Partecipazione%20Attiva%3A%20https://partecipazione-attiva.it/spanu-sire.html" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:11px 22px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.88em">💬 Condividi su WhatsApp</a></div></div></div><footer data-pagefind-ignore>
 <a href="index.html">Home</a> &middot; <a href="battaglie.html">Le Nostre Battaglie</a> &middot; <a href="privacy.html">Privacy Policy</a>
 <br><br>&copy; 2026 Partecipazione Attiva
 </footer>
 
-<div class="modal-overlay" id="modal-sost" onclick="if(event.target===this)this.style.display='none'">
-<div class="modal-box">
+<div data-pagefind-ignore class="modal-overlay" id="modal-sost" onclick="if(event.target===this)this.style.display='none'">
+<div data-pagefind-ignore class="modal-box">
 <button class="modal-close" onclick="document.getElementById('modal-sost').style.display='none'">&times;</button>
 <h3>&#x2764;&#xFE0F; Sostienici</h3>
 <p>Puoi sostenere Partecipazione Attiva con un bonifico:</p>
@@ -260,5 +260,64 @@ footer a{color:#ffd580;text-decoration:none}
 </div>
 </div>
 
-<!-- start webpushr code --><script>(function(w,d, s, id) {if(typeof(w.webpushr)!='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BImMkQK81tVOC2zGWmAVd9911j3Cxf9I4YldvZCN39biUc8N6241kYsB2N_yjhnseMRQCSpgGSEGaQUYHGy8d0o'});</script><!-- end webpushr code --></body>
+<!-- start webpushr code --><script>(function(w,d, s, id) {if(typeof(w.webpushr)!='undefined') return;w.webpushr=w.webpushr||function(){(w.webpushr.q=w.webpushr.q||[]).push(arguments)};var js, fjs = d.getElementsByTagName(s)[0];js = d.createElement(s); js.id = id;js.async=1;js.src = "https://cdn.webpushr.com/app.min.js";fjs.parentNode.appendChild(js);}(window,document, 'script', 'webpushr-jssdk'));webpushr('setup',{'key':'BImMkQK81tVOC2zGWmAVd9911j3Cxf9I4YldvZCN39biUc8N6241kYsB2N_yjhnseMRQCSpgGSEGaQUYHGy8d0o'});</script><!-- end webpushr code --><!--PA-CERCA-->
+<style>
+.pa-cerca-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;margin-left:10px;background:0 0;border:2px solid #e8900a;border-radius:50%;color:#9c5b00;cursor:pointer;transition:all .2s;align-self:center}
+.pa-cerca-btn:hover{background:#e8900a;color:#fff;transform:scale(1.06)}
+.pa-cerca-ov{display:none;position:fixed;inset:0;z-index:100000;background:rgba(26,13,0,.72);backdrop-filter:blur(3px);padding:80px 20px 20px;overflow-y:auto}
+.pa-cerca-ov.on{display:block}
+.pa-cerca-box{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;padding:28px 26px 32px;box-shadow:0 24px 70px rgba(0,0,0,.45);position:relative;animation:paCercaIn .22s ease}
+@keyframes paCercaIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.pa-cerca-box h2{font-family:montserrat,sans-serif;font-size:1.15em;font-weight:900;color:#8a4e00;margin:0 0 4px;padding-right:40px}
+.pa-cerca-box .pa-cerca-sub{font-family:merriweather,serif;font-size:.82em;color:#777;margin:0 0 18px}
+.pa-cerca-x{position:absolute;top:16px;right:18px;width:34px;height:34px;border:0;border-radius:50%;background:#f4f4f4;color:#8a4e00;font-size:1.3em;line-height:1;cursor:pointer;transition:all .2s}
+.pa-cerca-x:hover{background:#e8900a;color:#fff}
+.pa-cerca-att{font-family:merriweather,serif;color:#888;font-size:.86em;text-align:center;padding:18px 0}
+#pa-cerca-ui{--pagefind-ui-primary:#8a4e00;--pagefind-ui-text:#333;--pagefind-ui-background:#fff;--pagefind-ui-border:#e6d8c2;--pagefind-ui-tag:#fff3e0;--pagefind-ui-border-width:2px;--pagefind-ui-border-radius:10px;--pagefind-ui-font:montserrat,sans-serif;--pagefind-ui-scale:.9}
+#pa-cerca-ui .pagefind-ui__result-title a{color:#8a4e00;font-weight:800}
+#pa-cerca-ui .pagefind-ui__result-excerpt{font-family:merriweather,serif;color:#555;line-height:1.6}
+#pa-cerca-ui mark{background:#ffe9c2;color:#8a4e00;font-weight:700;padding:0 2px;border-radius:3px}
+@media(max-width:900px){.pa-cerca-btn{margin-left:auto}.pa-cerca-ov{padding:60px 12px 12px}.pa-cerca-box{padding:24px 18px 26px}}
+</style>
+<div class="pa-cerca-ov" id="pa-cerca-ov" data-pagefind-ignore role="dialog" aria-modal="true" aria-label="Cerca nel sito">
+<div class="pa-cerca-box">
+<button class="pa-cerca-x" type="button" onclick="paChiudiCerca()" aria-label="Chiudi la ricerca">&times;</button>
+<h2>Cerca nel sito</h2>
+<p class="pa-cerca-sub">Articoli, battaglie, documenti e video di Partecipazione Attiva.</p>
+<div id="pa-cerca-ui"><p class="pa-cerca-att">Sto preparando la ricerca&hellip;</p></div>
+</div></div>
+<script>
+var paCercaPronta=false;
+function paApriCerca(){
+  var ov=document.getElementById('pa-cerca-ov');
+  ov.classList.add('on');document.body.style.overflow='hidden';
+  if(paCercaPronta){var i=ov.querySelector('input');if(i)i.focus();return}
+  paCercaPronta=true;
+  var css=document.createElement('link');css.rel='stylesheet';css.href='/pagefind/pagefind-ui.css';
+  document.head.appendChild(css);
+  var js=document.createElement('script');js.src='/pagefind/pagefind-ui.js';
+  js.onload=function(){
+    document.getElementById('pa-cerca-ui').innerHTML='';
+    new PagefindUI({element:'#pa-cerca-ui',showImages:false,showSubResults:true,pageSize:6,
+      placeholder:'Cerca una parola, un tema, un nome\u2026',
+      translations:{placeholder:'Cerca una parola, un tema, un nome\u2026',
+        zero_results:'Nessun risultato per "[SEARCH_TERM]"',
+        many_results:'[COUNT] risultati per "[SEARCH_TERM]"',
+        one_result:'1 risultato per "[SEARCH_TERM]"',
+        searching:'Sto cercando\u2026',
+        load_more:'Mostra altri risultati',
+        clear_search:'Cancella',
+        alt_search:'Nessun risultato per "[SEARCH_TERM]". Mostro invece i risultati per "[DIFFERENT_TERM]"',
+        search_suggestion:'Nessun risultato per "[SEARCH_TERM]". Prova con una di queste ricerche:'}});
+    setTimeout(function(){var i=ov.querySelector('input');if(i)i.focus()},120);
+  };
+  js.onerror=function(){document.getElementById('pa-cerca-ui').innerHTML='<p class="pa-cerca-att">Ricerca non disponibile in questo momento.</p>'};
+  document.head.appendChild(js);
+}
+function paChiudiCerca(){document.getElementById('pa-cerca-ov').classList.remove('on');document.body.style.overflow=''}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')paChiudiCerca()});
+document.addEventListener('click',function(e){if(e.target&&e.target.id==='pa-cerca-ov')paChiudiCerca()});
+</script>
+<!--/PA-CERCA-->
+</body>
 </html>

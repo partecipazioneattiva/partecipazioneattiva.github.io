@@ -22,8 +22,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 <link rel="manifest" href="/manifest.json">
 <meta name="theme-color" content="#e85d04">
-<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-<script src="/pagefind/pagefind-ui.js"></script>
+
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:Montserrat,sans-serif;background:#fff;color:#222}
@@ -85,7 +85,7 @@ footer a:hover{color:#9c5b00}
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://partecipazione-attiva.it/"},{"@type":"ListItem","position":2,"name":"Battaglie","item":"https://partecipazione-attiva.it/battaglie.html"}]}</script>
 <script>(function(e,t,n,s,o,i,a){e[n]=e[n]||function(){(e[n].q=e[n].q||[]).push(arguments)},i=t.createElement(s),i.async=1,i.src="https://www.clarity.ms/tag/"+o,a=t.getElementsByTagName(s)[0],a.parentNode.insertBefore(i,a)})(window,document,"clarity","script","w3i2jjth4h")</script>
 
-<div class="topbar">
+<div data-pagefind-ignore class="topbar">
   <span>&#128231; <!--email_off--><!--email_off-->partecipazioneattiva21@gmail.com<!--/email_off--><!--/email_off--></span>
   <div>
     <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Facebook</a>
@@ -93,7 +93,7 @@ footer a:hover{color:#9c5b00}
     <a href="index.html#contatti">Contatti</a>
   </div>
 </div>
-<nav class="navbar">
+<nav data-pagefind-ignore class="navbar">
   <a href="index.html" class="nav-logo">
     <img src="LOGO-PA.webp" alt="Logo Partecipazione Attiva" width="68" height="68">
     <div class="nav-nome">Partecipazione Attiva<small>Movimento Popolare dei Cittadini Italiani</small></div>
@@ -103,8 +103,8 @@ footer a:hover{color:#9c5b00}
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUJHaPB9o6gA7TXHNLNgsKcftZjwCsjepZ3r_C9TH2ODsr3A/viewform" target="_blank" rel="noopener noreferrer" class="btn-iscr">Iscriviti</a>
     <a href="#" onclick="apriSostienici(event)" class="btn-sost">Sostienici</a>
   </div>
-  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
-  <div class="mob-menu" id="mobmenu"><a href="index.html" onclick="chiudi()">Home</a><a href="napoli.html" onclick="chiudi()">&#9679; Napoli</a><a href="territori.html" onclick="chiudi()">Territori</a><a href="mappa.html" onclick="chiudi()">Mappa</a><a href="proposte.html" onclick="chiudi()">Proposte</a><a href="azioni.html" onclick="chiudi()">Azioni</a><a href="battaglie.html" class="active" onclick="chiudi()">Battaglie</a><a href="webtv.html" onclick="chiudi()">WebTV</a><a href="rete-ape.html" onclick="chiudi()">Rete APE</a><a href="chi-siamo.html" onclick="chiudi()">Chi Siamo</a><a href="organigramma.html" onclick="chiudi()">Organigramma</a><a href="parlero.html" onclick="chiudi()">Parler&ograve;</a></div>
+  <button class="pa-cerca-btn" data-pa-cerca="1" data-pagefind-ignore type="button" onclick="paApriCerca()" aria-label="Cerca nel sito" title="Cerca nel sito"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div data-pagefind-ignore class="mob-menu" id="mobmenu"><a href="index.html" onclick="chiudi()">Home</a><a href="napoli.html" onclick="chiudi()">&#9679; Napoli</a><a href="territori.html" onclick="chiudi()">Territori</a><a href="mappa.html" onclick="chiudi()">Mappa</a><a href="proposte.html" onclick="chiudi()">Proposte</a><a href="azioni.html" onclick="chiudi()">Azioni</a><a href="battaglie.html" class="active" onclick="chiudi()">Battaglie</a><a href="webtv.html" onclick="chiudi()">WebTV</a><a href="rete-ape.html" onclick="chiudi()">Rete APE</a><a href="chi-siamo.html" onclick="chiudi()">Chi Siamo</a><a href="organigramma.html" onclick="chiudi()">Organigramma</a><a href="parlero.html" onclick="chiudi()">Parler&ograve;</a></div>
 </nav>
 
 <div class="hero-bat">
@@ -153,7 +153,7 @@ footer a:hover{color:#9c5b00}
 
 </div>
 
-<footer>
+<footer data-pagefind-ignore>
   <div class="footer-grid">
     <div class="footer-brand">
       <img src="LOGO-PA.webp" alt="Logo Partecipazione Attiva" width="56" height="56" loading="lazy">
@@ -188,7 +188,7 @@ burger.addEventListener("click",()=>{const e=mob.classList.toggle("on");burger.c
 function chiudi(){mob.classList.remove("on");burger.classList.remove("open")}
 </script>
 
-<div id="modal-sostienici" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center">
+<div data-pagefind-ignore id="modal-sostienici" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center">
   <div style="background:#fff;border-radius:16px;padding:36px;max-width:480px;width:90%;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.2)">
     <button onclick='document.getElementById("modal-sostienici").style.display="none"' style="position:absolute;top:14px;right:18px;background:transparent;border:none;font-size:1.4em;cursor:pointer;color:#888">&#10005;</button>
     <div style="text-align:center;margin-bottom:20px"><img src="LOGO-PA.webp" alt="Logo PA" style="height:60px"></div>
@@ -208,7 +208,64 @@ document.addEventListener("click",function(e){if(e.target===document.getElementB
 </script>
 <script>(function(e,t,n,s){if(typeof e.webpushr!="undefined")return;e.webpushr=e.webpushr||function(){(e.webpushr.q=e.webpushr.q||[]).push(arguments)};var i=t.getElementsByTagName(n)[0],o=t.createElement(n);o.id=s,o.async=1,o.src="https://cdn.webpushr.com/app.min.js",i.parentNode.appendChild(o)})(window,document,"script","webpushr-jssdk");webpushr("setup",{key:"BImMkQK81tVOC2zGWmAVd9911j3Cxf9I4YldvZCN39biUc8N6241kYsB2N_yjhnseMRQCSpgGSEGaQUYHGy8d0o"})</script>
 <script>"serviceWorker"in navigator&&navigator.serviceWorker.register("/sw.js")</script>
-<div id="search" style="max-width:600px;margin:0 auto;padding:1rem"></div>
-<script>window.addEventListener("DOMContentLoaded",()=>{new PagefindUI({element:"#search",showImages:false,placeholder:"Cerca nel sito..."})})</script>
+<!--PA-CERCA-->
+<style>
+.pa-cerca-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex-shrink:0;margin-left:10px;background:0 0;border:2px solid #e8900a;border-radius:50%;color:#9c5b00;cursor:pointer;transition:all .2s;align-self:center}
+.pa-cerca-btn:hover{background:#e8900a;color:#fff;transform:scale(1.06)}
+.pa-cerca-ov{display:none;position:fixed;inset:0;z-index:100000;background:rgba(26,13,0,.72);backdrop-filter:blur(3px);padding:80px 20px 20px;overflow-y:auto}
+.pa-cerca-ov.on{display:block}
+.pa-cerca-box{max-width:680px;margin:0 auto;background:#fff;border-radius:18px;padding:28px 26px 32px;box-shadow:0 24px 70px rgba(0,0,0,.45);position:relative;animation:paCercaIn .22s ease}
+@keyframes paCercaIn{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+.pa-cerca-box h2{font-family:montserrat,sans-serif;font-size:1.15em;font-weight:900;color:#8a4e00;margin:0 0 4px;padding-right:40px}
+.pa-cerca-box .pa-cerca-sub{font-family:merriweather,serif;font-size:.82em;color:#777;margin:0 0 18px}
+.pa-cerca-x{position:absolute;top:16px;right:18px;width:34px;height:34px;border:0;border-radius:50%;background:#f4f4f4;color:#8a4e00;font-size:1.3em;line-height:1;cursor:pointer;transition:all .2s}
+.pa-cerca-x:hover{background:#e8900a;color:#fff}
+.pa-cerca-att{font-family:merriweather,serif;color:#888;font-size:.86em;text-align:center;padding:18px 0}
+#pa-cerca-ui{--pagefind-ui-primary:#8a4e00;--pagefind-ui-text:#333;--pagefind-ui-background:#fff;--pagefind-ui-border:#e6d8c2;--pagefind-ui-tag:#fff3e0;--pagefind-ui-border-width:2px;--pagefind-ui-border-radius:10px;--pagefind-ui-font:montserrat,sans-serif;--pagefind-ui-scale:.9}
+#pa-cerca-ui .pagefind-ui__result-title a{color:#8a4e00;font-weight:800}
+#pa-cerca-ui .pagefind-ui__result-excerpt{font-family:merriweather,serif;color:#555;line-height:1.6}
+#pa-cerca-ui mark{background:#ffe9c2;color:#8a4e00;font-weight:700;padding:0 2px;border-radius:3px}
+@media(max-width:900px){.pa-cerca-btn{margin-left:auto}.pa-cerca-ov{padding:60px 12px 12px}.pa-cerca-box{padding:24px 18px 26px}}
+</style>
+<div class="pa-cerca-ov" id="pa-cerca-ov" data-pagefind-ignore role="dialog" aria-modal="true" aria-label="Cerca nel sito">
+<div class="pa-cerca-box">
+<button class="pa-cerca-x" type="button" onclick="paChiudiCerca()" aria-label="Chiudi la ricerca">&times;</button>
+<h2>Cerca nel sito</h2>
+<p class="pa-cerca-sub">Articoli, battaglie, documenti e video di Partecipazione Attiva.</p>
+<div id="pa-cerca-ui"><p class="pa-cerca-att">Sto preparando la ricerca&hellip;</p></div>
+</div></div>
+<script>
+var paCercaPronta=false;
+function paApriCerca(){
+  var ov=document.getElementById('pa-cerca-ov');
+  ov.classList.add('on');document.body.style.overflow='hidden';
+  if(paCercaPronta){var i=ov.querySelector('input');if(i)i.focus();return}
+  paCercaPronta=true;
+  var css=document.createElement('link');css.rel='stylesheet';css.href='/pagefind/pagefind-ui.css';
+  document.head.appendChild(css);
+  var js=document.createElement('script');js.src='/pagefind/pagefind-ui.js';
+  js.onload=function(){
+    document.getElementById('pa-cerca-ui').innerHTML='';
+    new PagefindUI({element:'#pa-cerca-ui',showImages:false,showSubResults:true,pageSize:6,
+      placeholder:'Cerca una parola, un tema, un nome\u2026',
+      translations:{placeholder:'Cerca una parola, un tema, un nome\u2026',
+        zero_results:'Nessun risultato per "[SEARCH_TERM]"',
+        many_results:'[COUNT] risultati per "[SEARCH_TERM]"',
+        one_result:'1 risultato per "[SEARCH_TERM]"',
+        searching:'Sto cercando\u2026',
+        load_more:'Mostra altri risultati',
+        clear_search:'Cancella',
+        alt_search:'Nessun risultato per "[SEARCH_TERM]". Mostro invece i risultati per "[DIFFERENT_TERM]"',
+        search_suggestion:'Nessun risultato per "[SEARCH_TERM]". Prova con una di queste ricerche:'}});
+    setTimeout(function(){var i=ov.querySelector('input');if(i)i.focus()},120);
+  };
+  js.onerror=function(){document.getElementById('pa-cerca-ui').innerHTML='<p class="pa-cerca-att">Ricerca non disponibile in questo momento.</p>'};
+  document.head.appendChild(js);
+}
+function paChiudiCerca(){document.getElementById('pa-cerca-ov').classList.remove('on');document.body.style.overflow=''}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')paChiudiCerca()});
+document.addEventListener('click',function(e){if(e.target&&e.target.id==='pa-cerca-ov')paChiudiCerca()});
+</script>
+<!--/PA-CERCA-->
 </body>
 </html>
