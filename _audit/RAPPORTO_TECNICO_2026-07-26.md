@@ -260,3 +260,67 @@ verificati **sul sito pubblico**, non solo in locale.
   cache del browser, e la finestra riaperta a larghezza zero dopo il riavvio
   del server. Prima di concludere "l'ho rotto io": ricaricare saltando la
   cache e controllare le dimensioni della finestra.
+
+---
+
+# SEGUITO — 27 luglio 2026: titoli e descrizioni
+
+Era la prima voce dell'elenco "cosa NON e' stato fatto": lavoro di scrittura,
+non di script. Fatto a mano, pagina per pagina, con `_tools/accorcia_meta.py`
+che contiene i testi nuovi e li scrive dove servono.
+
+| misura | prima | dopo |
+|---|---|---|
+| titoli oltre i 65 caratteri | 25 | **0** (resta solo una bozza `noindex`) |
+| descrizioni oltre i 160 | 18 | **0** |
+| articoli veri nell'indice `articoli.json` | 29 | **37** |
+
+**Perche' uno strumento e non 43 modifiche a mano.** La descrizione di una
+pagina e' scritta in **quattro punti**: `meta description`, `og:description`,
+`twitter:description` e il campo `description` del JSON-LD. Cambiarne una sola
+lascia il sito che dice una cosa a Google e un'altra a Facebook. Lo strumento
+le allinea tutte e si rifiuta di scrivere un testo ancora troppo lungo.
+
+**Il titolo si accorcia da solo, senza toccare i social.** `og:title` e
+`twitter:title` portano gia' il titolo lungo **senza** il suffisso del
+movimento, e li' non c'e' nessun taglio a 65 caratteri: le anteprime su
+Facebook e WhatsApp restano identiche a prima. Il taglio riguarda solo la riga
+azzurra dei risultati Google.
+
+**Una correzione di contenuto.** `spanu-congresso-base-popolare.html` aveva
+titolo e descrizione di un'altra pagina: parlavano del convegno SIRE del 9
+aprile, mentre il testo racconta il Congresso di Base Popolare dell'11. Rifatti
+sul testo vero.
+
+**Otto pagine avevano un `og:description` scritto apposta per i social**,
+diverso dalla descrizione per Google e gia' breve (per esempio `mappa.html`:
+«Chi siamo, dove siamo, cosa ci sta a cuore»). Lasciato com'era: non e' una
+svista, e' una scelta di chi ha scritto la pagina.
+
+## Un difetto trovato per strada
+
+`articoli.json` — l'indice che alimenta i "correlati per tema" — cercava le
+pagine con schema `NewsArticle` e **perdeva quattro articoli veri** che
+dichiarano solo `FAQPage` (`cristiano-sanita`, `rcauto-campania-mozione`,
+`stabilicum-aggiornamento-28maggio`, `spanu-sire`). Era anche fermo a maggio:
+mancavano undici articoli pubblicati dopo. Corretto `genera_indice_articoli.py`
+e rigenerato: da 29 a 37 articoli, e sono usciti solo `curriculum-luigi-spanu`,
+`rete-ape` e le due pagine regionali, che articoli non sono.
+
+## Verifiche fatte
+
+- `_tools/analizza_sito.py`: 0 titoli e 0 descrizioni fuori misura, 0 link
+  rotti, 0 ancore rotte, 245 immagini col testo alternativo (invariato).
+- Le 33 pagine toccate rilette con un analizzatore HTML: 0 errori di sintassi.
+- `feed.xml` rigenerato e validato con `xmllint`.
+- **Il motore di ricerca non va ricostruito**: Pagefind salva come titolo del
+  risultato l'`<h1>` della pagina, non il `<title>`. Verificato aprendo i
+  frammenti dell'indice — i titoli conservati sono gli h1, che non ho toccato.
+
+## Cosa resta ancora da fare
+
+- 8 pagine che saltano un livello di titolo (h1 -> h3) e 3 con piu' di un h1.
+- Il bottone "Iscriviti" di `rete-ape.html` (decisione del direttivo).
+- Le 4 immagini oltre i 300 KB, `sponsor-partenope.png` in testa con 2,3 MB:
+  e' l'unico PNG rimasto del sito e da solo pesa quanto un quarto delle
+  immagini di una pagina.

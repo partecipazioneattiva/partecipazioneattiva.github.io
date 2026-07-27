@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 # Costruisce/aggiorna l'indice articoli (articoli.json) scandendo i file con
-# schema "@type": "NewsArticle". Fonte di verita' per i "correlati per tema".
+# schema "@type": "NewsArticle" oppure "FAQPage". Fonte di verita' per i
+# "correlati per tema".
+# Il FAQPage serve perche' quattro articoli veri (cristiano-sanita,
+# rcauto-campania-mozione, stabilicum-aggiornamento-28maggio, spanu-sire)
+# dichiarano solo quello schema: cercando il solo NewsArticle sparivano
+# dall'indice.
 import re, json, glob, os, html as H, sys
 
 BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
@@ -16,10 +21,12 @@ def tema_key(s):
 def campo(h, pat, flags=0):
     m = re.search(pat, h, flags); return m.group(1).strip() if m else None
 
+SCHEMI = re.compile(r'"@type"\s*:\s*"(NewsArticle|FAQPage)"')
+
 articoli = []
 for p in sorted(glob.glob(BASE + '*.html')):
     h = open(p, encoding='utf-8').read()
-    if '"@type": "NewsArticle"' not in h and '"@type":"NewsArticle"' not in h:
+    if not SCHEMI.search(h):
         continue
     slug = os.path.basename(p)
     titolo = H.unescape(re.sub(r'\s*\|\s*[^|]*$', '', campo(h, r'<title>([^<]*)</title>') or ''))
