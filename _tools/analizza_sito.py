@@ -264,7 +264,10 @@ def main():
             no_desc.append(f)
         elif len(d) > 160:
             desc_lunga.append(f'{f} ({len(d)})')
-        if 'rel="canonical"' not in p.grezzo:
+        # Le pagine sono minificate: gli attributi possono essere senza
+        # virgolette (rel=canonical). Cercare solo la forma con le virgolette
+        # dava 17 falsi allarmi, index.html compresa.
+        if not re.search(r'rel=["\']?canonical', p.grezzo, re.I):
             no_canon.append(f)
         if 'og:image' not in p.meta:
             no_og.append(f)

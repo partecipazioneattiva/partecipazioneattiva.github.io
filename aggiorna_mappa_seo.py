@@ -29,6 +29,36 @@ e = lambda s: html.escape(str(s or ""), quote=True)
 
 # ---------- elenco HTML (righe compatte, espandibili) ----------
 righe = []
+
+def indirizzo_sito(v):
+    """Rende cliccabile un sito scritto da un cittadino.
+
+    I siti arrivano come li scrive chi si iscrive alla Mappa: senza "https://",
+    con uno spazio dentro il nome ("partecipazione-attiva. it"), o con tre
+    indirizzi in un campo solo. Senza normalizzarli il browser li cerca DENTRO
+    il sito e trova il nulla: erano 4 link rotti, misurati il 26/07/2026.
+
+    Uno spazio DOPO IL PUNTO e' un refuso e si richiude ("...attiva. it" ->
+    "...attiva.it"); uno spazio prima di un altro indirizzo separa, e si tiene
+    solo il primo. Il testo mostrato resta quello scritto dalla persona: cambia
+    solo dove porta il collegamento.
+    """
+    import re as _re
+    pezzi = [x for x in _re.split(r"[\s,;]+", str(v or "").strip()) if x]
+    if not pezzi:
+        return ""
+    t = pezzi[0]
+    for p in pezzi[1:]:
+        if t.endswith(".") and _re.fullmatch(r"[a-zA-Z]{2,4}", p):
+            t += p          # era un dominio spezzato da uno spazio
+        else:
+            break           # da qui in poi e' un altro indirizzo
+    t = t.rstrip(".,;")
+    if not t:
+        return ""
+    return t if _re.match(r"^https?://", t, _re.I) else "https://" + t
+
+
 for r in dati:
     est = r.get("paese") and r["paese"] != "IT"
     dove = (e(r.get("comune")) + " (" + e(r.get("paese")) + ")") if est else \
@@ -43,7 +73,7 @@ for r in dati:
     tag = "".join('<span class="tag">%s</span>' % e(x) for x in temi)
     cmp = "".join('<span class="tag cmp">%s</span>' % e(x) for x in comp)
     sito = ('<div style="margin-top:8px"><a href="%s" rel="noopener nofollow" target="_blank">%s</a></div>'
-            % (e(r.get("sito_web")), e(r.get("sito_web")))) if r.get("sito_web") else ""
+            % (e(indirizzo_sito(r.get("sito_web"))), e(r.get("sito_web")))) if r.get("sito_web") else ""
 
     righe.append(
         '<details class="voce%s">\n'
@@ -128,6 +158,7 @@ if ".elenco{" not in t:
     print("  CSS elenco aggiunto")
 
 # ---------- inserimento / aggiornamento ----------
+
 def sostituisci(testo, blocco, start, end, ancora):
     if start in testo:
         i = testo.index(start)
