@@ -200,3 +200,63 @@ Ordine consigliato, dal più urgente:
 
 I punti 3 e 4 sono lo stesso cantiere e vanno fatti insieme. Il punto 1 non è
 tecnico e aspetta una decisione.
+
+---
+
+# ESITO DEI LAVORI — 26 luglio 2026, sera
+
+Eseguito lo stesso giorno. Numeri rimisurati con `_tools/analizza_sito.py` e
+verificati **sul sito pubblico**, non solo in locale.
+
+| misura | prima | dopo |
+|---|---|---|
+| domini di terzi contattati dalla home | **9** | **3** (solo notifiche push) |
+| CSS identico ripetuto nelle pagine | 430 KB | **5 KB** |
+| HTML totale del sito | 1.874 KB | **1.414 KB** |
+| testo di lettura su telefono | 14,1 px | **16,8 px** |
+| contrasti sotto la soglia WCAG (home) | 23 | **2** (widget delle notifiche, di terzi) |
+| immagini con misure dichiarate | 21/245 | **215/247** |
+| link interni rotti | 4 | **0** |
+| pagine pubbliche nella sitemap | 46/57 | **57/57** |
+| script una-tantum nella cartella principale | 45 | **0** (in `_tools/archivio/`) |
+
+## Due correzioni al rapporto di stamattina
+
+1. **"17 pagine senza canonical" era un difetto del mio strumento**, non del
+   sito: cercavo `rel="canonical"` con le virgolette, ma le pagine minificate
+   scrivono `rel=canonical`. Le pagine davvero senza sono 8, tutte di servizio
+   o bozze `noindex`. Non c'era niente da correggere.
+2. **Le "8 versioni del menu" contavano anche i bottoni**, non solo le voci.
+   Il menu vero era gia' allineato (`_tools/allinea_menu.py` non ha trovato
+   nulla da fare). L'unica divergenza reale era il bottone "Iscriviti" di
+   `privacy.html`, che apriva un'email invece del modulo: corretto.
+
+## Cosa NON e' stato fatto, e perche'
+
+- **25 titoli oltre i 65 caratteri e 18 descrizioni oltre i 160.** Accorciarli
+  a macchina produrrebbe titoli sgraziati: e' lavoro di scrittura, non di
+  script. L'elenco esatto lo da' `python3 _tools/analizza_sito.py --dettagli`.
+- **8 pagine che saltano un livello di titolo** (da h1 a h3) e 3 con piu' di un
+  h1. Sono difetti veri ma piccoli, e toccare la struttura dei titoli senza
+  rileggere il testo e' rischioso.
+- **Il bottone "Iscriviti" di `rete-ape.html`** porta all'adesione della Rete
+  APE invece che al modulo generale. Potrebbe essere voluto: lo decide il
+  direttivo, non io.
+- **Le 4 immagini oltre i 300 KB** (`ape-copertina.webp` 636 KB): alleggerirle
+  significa ricomprimerle, e la perdita di qualita' va guardata a occhio su
+  ciascuna. Vale la pena solo se si vuole spingere ancora sui tempi.
+
+## Trappole incontrate, da non ripetere
+
+- **Il blocco di Analytics non combaciava su 41 pagine su 51**: fra i due
+  `<script>` alcune pagine hanno un a capo e altre no. Senza `\s*` nel modello
+  avrei tolto le chiamate lasciando lo script che le carica.
+- **Le dimensioni nei tag `<img>` fissano anche l'altezza**: senza
+  `img{height:auto}` le immagini larghe al 100% si stirano.
+- **Il testo piccolo non veniva dal CSS** ma da `style="font-size:.92em"`
+  scritto sul singolo paragrafo: un attributo sul tag batte qualsiasi foglio
+  di stile.
+- **Due falsi allarmi durante le verifiche**: un foglio di stile servito dalla
+  cache del browser, e la finestra riaperta a larghezza zero dopo il riavvio
+  del server. Prima di concludere "l'ho rotto io": ricaricare saltando la
+  cache e controllare le dimensioni della finestra.
