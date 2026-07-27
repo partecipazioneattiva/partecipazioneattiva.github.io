@@ -324,3 +324,108 @@ e rigenerato: da 29 a 37 articoli, e sono usciti solo `curriculum-luigi-spanu`,
 - Le 4 immagini oltre i 300 KB, `sponsor-partenope.png` in testa con 2,3 MB:
   e' l'unico PNG rimasto del sito e da solo pesa quanto un quarto delle
   immagini di una pagina.
+
+---
+
+# SEGUITO — 27 luglio 2026, parte seconda: struttura dei titoli e immagini
+
+Chiuse le ultime voci tecniche rimaste. Due difetti gravi trovati per strada,
+che nessuna delle analisi precedenti aveva visto.
+
+## 1. GRAVE — Un articolo era scritto due volte nella stessa pagina
+
+`stabilicum-giugno2026.html` conteneva **l'intero articolo due volte**: chi
+arrivava in fondo se lo ritrovava daccapo. 27 KB di pagina per 8 KB di testo.
+
+Le due copie non erano identiche: quella in alto aveva **tre frasi in piu'**
+(«Le opposizioni hanno scelto la procedura come terreno principale di
+scontro», «indipendentemente dalla distribuzione reale dei consensi»,
+«alterando l'equilibrio costituzionale»). Era la versione aggiornata, ma stava
+nel blocco sbagliato. Tenuta una sola copia, con le frasi buone: **da 27 KB a
+20 KB**, -25%.
+
+**Controllato tutto il sito**, non solo quella pagina: e' l'unica con testo
+duplicato. In `ape.html` una frase compare due volte ma e' la didascalia del
+video, non un errore.
+
+## 2. GRAVE — Testo bianco su fondo bianco: invisibile
+
+Cinque pagine avevano testo che **nessuno poteva leggere**, contrasto 1,04 su 1
+(la soglia di legge e' 4,5):
+
+| pagina | cosa era invisibile |
+|---|---|
+| `stabilicum-giugno2026.html` | il titolo dell'articolo |
+| `astensionismo-comunali2026.html` | il titolo dell'articolo |
+| `regione-campania.html` | data e minuti di lettura |
+| `regione-lazio.html` | data e minuti di lettura |
+| `resoconto-assemblea-noad-napoli-6giugno2026.html` | data e minuti di lettura |
+
+**Una sola causa per tutti.** Quei blocchi erano nati dentro l'intestazione
+colorata, dove il bianco e' giusto. Le pagine sono poi state rifatte e i
+blocchi sono finiti **fuori** dall'intestazione — sulle tre pagine con la data
+per via di un `</div>` di troppo che chiudeva l'intestazione troppo presto —
+portandosi dietro il colore bianco. Su fondo bianco.
+
+Corretta la struttura (il `</div>` al posto giusto) e tolti i due titoli
+invisibili, che erano copie di quello gia' visibile nell'intestazione.
+
+**Rimisurato tutto il sito con il browser: 0 testi invisibili.**
+
+## 3. Struttura dei titoli: 0 salti di livello, un solo h1 per pagina
+
+| misura | prima | dopo |
+|---|---|---|
+| pagine che saltano un livello (h1→h3, h2→h4) | 8 | **0** |
+| pagine con piu' di un h1 | 3 | **0** |
+
+Come, senza cambiare di un pixel l'aspetto delle pagine:
+
+- **I titoli delle colonne del pie' di pagina** (`Navigazione`, `Contatti`)
+  erano `<h4>` dopo un `<h2>`. Portati a `<h2>` su 6 pagine, con una regola
+  nel foglio condiviso che tiene la resa di prima. Quattro di quelle pagine
+  non avevano **nessuna** regola per quei titoli: ora ce l'hanno.
+- **Le card dell'archivio e della home** erano `<h3>` sotto l'`<h1>`, senza
+  niente in mezzo: portate a `<h2>`. Lo stile e' scritto nel tag, quindi si
+  vedono identiche.
+- **`privacy.html` conteneva due documenti con due `<h1>`**: "Cookie Policy"
+  e' diventato un `<h2>` grande come prima, e le sue sezioni 7-10 sono scese a
+  `<h3>`, cosi' stanno dentro al loro documento invece che accanto.
+
+## 4. Immagini: da 9,6 a 7,0 MB, e non resta piu' nessun PNG
+
+| immagine | prima | dopo |
+|---|---|---|
+| `sponsor-partenope.png` → `.webp` | 2.332 KB | **85 KB** |
+| `ape-copertina.webp` | 635 KB | **203 KB** |
+
+Erano enormi rispetto a come si vedono: la copertina APE era 2480x3507 (un A4
+a 300 dpi) per essere mostrata a 684 pixel. Ridotte al doppio della dimensione
+di resa — che e' quanto serve agli schermi buoni — e ricompresse.
+Confrontate a occhio con l'originale **ingrandite tre volte**: indistinguibili.
+
+Le altre due sopra i 300 KB (`crosetto-raccolta-firme-cuneo` 359 KB,
+`casa-fumetto-1-problema` 317 KB) **non sono state toccate**: sono gia'
+dimensionate bene per come si vedono, e ricomprimerle faceva risparmiare 3 KB
+perdendo qualita'. Non valeva.
+
+## Uno strumento buttato via, e perche'
+
+Avevo scritto un analizzatore Python che cercava il testo invisibile leggendo
+il codice: dava **55 allarmi dove il browser ne trovava 0**. Leggere gli
+attributi non basta, serve la cascata vera (selettori discendenti, id,
+specificita', trasparenze sovrapposte). L'ho cancellato e sostituito con
+`_tools/testo_invisibile.js`, che usa il browser come strumento di misura ed
+e' quello che ha trovato i difetti veri. Uno strumento che grida al lupo e'
+peggio di nessuno strumento.
+
+## Cosa resta
+
+- **`css/pa-base.css` e' caricato solo da 35 pagine su 66**, non da tutte: il
+  foglio davvero universale e' `pa-leggibilita.css` (63). Chi aggiunge una
+  regola condivisa deve saperlo, o la mette dove meta' sito non la vede.
+  (Scoperto qui: la prima versione della regola del pie' di pagina non
+  funzionava per questo.)
+- Il bottone "Iscriviti" di `rete-ape.html` — decisione del direttivo.
+- Le due pagine di verifica Google senza `lang` e senza titolo: **non vanno
+  toccate**, devono restare esattamente come Google le ha generate.

@@ -32,3 +32,8 @@ body .article-wrap .sommario {
    (loghi, foto tonde), perche' quelle regole sono piu' specifiche o vengono
    dopo. */
 img { height: auto; }
+
+/* Titoli delle colonne del pie' di pagina: erano <h4> dopo un <h2>,
+   cioe' un livello saltato. Portati a h2, questa regola tiene l'aspetto
+   di prima sulle pagine che non hanno una regola propria. */
+footer h2{font-size:1em;font-weight:700;color:inherit;margin:1.33em 0}
