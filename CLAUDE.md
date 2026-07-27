@@ -1,5 +1,21 @@
 # Regole operative — Partecipazione Attiva
 
+## PRIMA DI TOCCARE IL SITO: leggere il manuale
+
+Il manuale completo di gestione del sito sta **fuori da questo repository**
+(qui dentro no: il repository e' pubblico e il manuale contiene la mappa del
+computer):
+
+    ~/Desktop/LAVORI/_MANUALI_CLAUDE/MANUALE_SITO_PA_UNIVERSALE.md
+
+Dentro c'e' tutto: architettura, mappa del Mac e del repository, come si
+pubblica un articolo, ricerca, assistente, mappa iscritti, accessibilita',
+privacy, la tabella di **tutti** gli strumenti gia' pronti in `_tools/`, la
+checklist prima del push e il registro delle trappole gia' pagate.
+
+Vale per chiunque legga questo file: Claude, un'altra IA o una persona.
+**Prima di scrivere uno script nuovo, guardare se esiste gia'** (manuale §17).
+
 ## Decidere, non domandare — vale SEMPRE
 
 Fernando non ha competenze tecniche: una domanda tecnica non gli dà modo di

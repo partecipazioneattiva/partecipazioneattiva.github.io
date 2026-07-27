@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """RUOTA LE CARD DELLA HOME NELL'ARCHIVIO.
 
-Tiene in home le N pubblicazioni più recenti (default 8) e sposta tutte le
-altre in cima ad archivio.html, mantenendo l'ordine cronologico.
-Le card FISSATE (data-pa-pin="1", oggi APE e WebTV) non si toccano mai.
+Tiene in home le N pubblicazioni più recenti (QUANTE_IN_HOME, oggi 6) e
+sposta tutte le altre in cima ad archivio.html, in ordine cronologico.
+Le card FISSATE (data-pa-pin="1", oggi proposte.html, ape.html e webtv.html)
+non si toccano mai e non contano nel limite.
 
 USO:
     cd ~/Desktop/LAVORI/partecipazioneattiva
