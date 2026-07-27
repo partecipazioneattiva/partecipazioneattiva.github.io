@@ -24,3 +24,11 @@ body .article-wrap .sommario {
   font-size: 1.15rem;
   line-height: 1.7;
 }
+
+/* Le dimensioni scritte dentro i tag <img> servono a far RISERVARE il posto al
+   browser, cosi' la pagina non salta mentre carica. Non devono pero' fissare
+   l'altezza: un'immagine larga al 100% verrebbe stirata. Questa riga lo
+   impedisce, e cede il passo alle pagine che l'altezza la fissano apposta
+   (loghi, foto tonde), perche' quelle regole sono piu' specifiche o vengono
+   dopo. */
+img { height: auto; }
