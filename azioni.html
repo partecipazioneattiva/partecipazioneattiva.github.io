@@ -77,23 +77,76 @@ button:disabled{background:#ccc;cursor:not-allowed}
 footer{background:#2b2620;color:#c9c0b3;text-align:center;padding:26px 18px;font-size:.85em;margin-top:40px}
 footer a{color:var(--ar)}
 </style>
+<style>
+.topbar{background:#8a4e00;color:#fff;padding:6px 32px;display:flex;justify-content:space-between;align-items:center;font-size:.78em}
+.topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600}
+.topbar a:hover{color:#fff}
+.navbar{position:sticky;top:0;z-index:999;background:#fff;border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,8%);display:flex;align-items:center;gap:12px;padding:8px 18px;min-height:80px}
+.nav-logo{display:flex;align-items:center;gap:12px;padding:10px 0}
+.nav-logo img{width:68px;height:68px;border-radius:50%}
+.nav-nome{font-weight:900;font-size:1.25em;color:#8a4e00;line-height:1.1}
+.nav-nome small{display:block;font-weight:400;font-size:.58em;color:#666;letter-spacing:2px;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;flex:0 1 auto}
+.nav-links a{padding:18px 14px;color:#444;text-decoration:none;font-size:.92em;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-bottom:3px solid transparent;transition:all .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:#9c5b00;border-bottom-color:#9c5b00}
+.nav-cta{display:flex;gap:10px;margin-left:20px;flex-shrink:0;align-self:center}
+.btn-iscr{background:#188739;color:#fff;padding:11px 18px;border-radius:50px;text-decoration:none;font-size:.85em;font-weight:900;transition:all .2s;box-shadow:0 4px 14px rgba(26,143,60,.35)}
+.btn-iscr:hover{background:#146e2e}
+.btn-sost{background:#e8900a;color:#2b1a00;padding:11px 18px;border-radius:50px;text-decoration:none;font-size:.85em;font-weight:900;border:2px solid #e8900a;transition:all .2s;box-shadow:0 4px 14px rgba(232,144,10,.35)}
+.btn-sost:hover{background:#c77607}
+.burger{display:none;background:transparent;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:#8a4e00;border-radius:2px;transition:all .3s}
+.mob-menu{display:none;flex-direction:column;background:#fff;border-top:2px solid #f0f0f0;position:absolute;top:100%;left:0;right:0;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.mob-menu.on{display:flex}
+.mob-menu a{padding:14px 32px;color:#333;text-decoration:none;font-weight:700;font-size:.9em;border-bottom:1px solid #f5f5f5}
+.mob-menu a:hover{background:#fff8ee;color:#9c5b00}
+@media(max-width:900px){.topbar{padding:6px 16px}
+.navbar{padding:0 16px}
+.nav-links,.nav-cta{display:none}
+.burger{display:flex}
+/*PA-NAV-V2*/.nav-nome small{display:none!important}
+.nav-logo{order:0!important}
+.nav-cta{order:2!important;margin-left:16px!important;flex-shrink:0!important;align-self:center!important}
+.nav-links{order:3!important;flex:1 1 auto!important;flex-wrap:wrap!important;justify-content:flex-start!important;max-width:none!important}
+@media(min-width:701px){.nav-links{display:flex!important}
+.burger{display:none!important}
+.nav-cta{display:flex!important}
+@media(max-width:700px){.nav-links{display:none!important}
+.burger{display:flex!important;order:1!important}
+.nav-cta{display:flex!important;gap:6px!important}
+.nav-logo img{width:44px!important;height:44px!important}
+.btn-iscr,.btn-sost{padding:9px 14px!important;font-size:.8em!important}
+@media(max-width:900px){.navbar{flex-wrap:wrap}
+.nav-cta{margin-left:0}
+@media(max-width:900px){.topbar{padding:6px 16px}.navbar{padding:0 16px}.nav-links,.nav-cta{display:none}.burger{display:flex}.footer-grid{grid-template-columns:1fr}}
+@media(min-width:701px){.nav-links{display:flex!important}.burger{display:none!important}.nav-cta{display:flex!important}}
+@media(max-width:700px){.nav-links{display:none!important}.burger{display:flex!important;order:1!important}.nav-cta{display:flex!important;gap:6px!important}.nav-logo img{width:44px!important;height:44px!important}.btn-iscr,.btn-sost{padding:9px 14px!important;font-size:.8em!important}}
+@media(max-width:900px){.navbar{flex-wrap:wrap}.nav-cta{margin-left:0}}
+</style>
 </head>
 <body>
-<div style="background:#2b2620;padding:12px 18px">
-  <div style="max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center">
-    <a href="index.html" style="display:flex;align-items:center;gap:9px;text-decoration:none;margin-right:auto">
-      <img src="LOGO-PA.webp" alt="Partecipazione Attiva" width="34" height="34" style="display:block">
-      <span style="font-family:Montserrat,system-ui,sans-serif;font-weight:800;color:#fff;font-size:.9em">Partecipazione Attiva</span>
-    </a>
-    <a href="index.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Home</a>
-    <a href="mappa.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Mappa</a>
-    <a href="proposte.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Proposte</a>
-    <a href="azioni.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Azioni</a>
-    <a href="battaglie.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Battaglie</a>
-    <a href="webtv.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">WebTV</a>
-    <a href="chi-siamo.html" style="font-family:Montserrat,sans-serif;font-size:.78em;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#c9c0b3;text-decoration:none">Chi Siamo</a><button class="pa-cerca-btn pa-cerca-btn--scuro" data-pa-cerca="1" data-pagefind-ignore type="button" onclick="paApriCerca()" aria-label="Cerca nel sito" title="Cerca nel sito"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button>
+<div data-pagefind-ignore class="topbar">
+  <span>&#128231; <!--email_off--><!--email_off-->partecipazioneattiva21@gmail.com<!--/email_off--><!--/email_off--></span>
+  <div>
+    <a href="https://www.facebook.com/PartecipazioneAttiva21/" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a href="https://www.youtube.com/@partecipazioneattiva" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="index.html#contatti">Contatti</a>
   </div>
 </div>
+<nav data-pagefind-ignore class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="LOGO-PA.webp" alt="Logo Partecipazione Attiva" width="68" height="68">
+    <div class="nav-nome">Partecipazione Attiva<small>Movimento Popolare dei Cittadini Italiani</small></div>
+  </a>
+  <div class="nav-links"><a href="index.html">Home</a><a href="napoli.html">&#9679; Napoli</a><a href="territori.html">Territori</a><a href="mappa.html">Mappa</a><a href="proposte.html">Proposte</a><a href="azioni.html" class="active">Azioni</a><a href="battaglie.html">Battaglie</a><a href="webtv.html">WebTV</a><a href="rete-ape.html">Rete APE</a><a href="chi-siamo.html">Chi Siamo</a><a href="organigramma.html">Organigramma</a><a href="parlero.html">Parler&ograve;</a></div>
+  <div class="nav-cta">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUJHaPB9o6gA7TXHNLNgsKcftZjwCsjepZ3r_C9TH2ODsr3A/viewform" target="_blank" rel="noopener noreferrer" class="btn-iscr">Iscriviti</a>
+    <a href="#" onclick="apriSostienici(event)" class="btn-sost">Sostienici</a>
+  </div>
+  <button class="pa-cerca-btn" data-pa-cerca="1" data-pagefind-ignore type="button" onclick="paApriCerca()" aria-label="Cerca nel sito" title="Cerca nel sito"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <div data-pagefind-ignore class="mob-menu" id="mobmenu"><a href="index.html" onclick="chiudi()">Home</a><a href="napoli.html" onclick="chiudi()">&#9679; Napoli</a><a href="territori.html" onclick="chiudi()">Territori</a><a href="mappa.html" onclick="chiudi()">Mappa</a><a href="proposte.html" onclick="chiudi()">Proposte</a><a href="azioni.html" class="active" onclick="chiudi()">Azioni</a><a href="battaglie.html" onclick="chiudi()">Battaglie</a><a href="webtv.html" onclick="chiudi()">WebTV</a><a href="rete-ape.html" onclick="chiudi()">Rete APE</a><a href="chi-siamo.html" onclick="chiudi()">Chi Siamo</a><a href="organigramma.html" onclick="chiudi()">Organigramma</a><a href="parlero.html" onclick="chiudi()">Parler&ograve;</a></div>
+</nav>
+
 
 
 <div class="hero">
@@ -313,5 +366,26 @@ document.addEventListener('click',function(e){if(e.target&&e.target.id==='pa-cer
 </script>
 <!--/PA-CERCA-->
 <script src="assistente/pensattivo.js" defer data-pagefind-ignore></script>
+<div data-pagefind-ignore id="modal-sostienici" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:9999;align-items:center;justify-content:center">
+  <div style="background:#fff;border-radius:16px;padding:36px;max-width:480px;width:90%;position:relative;box-shadow:0 8px 40px rgba(0,0,0,.2)">
+    <button onclick='document.getElementById("modal-sostienici").style.display="none"' style="position:absolute;top:14px;right:18px;background:transparent;border:none;font-size:1.4em;cursor:pointer;color:#888">&#10005;</button>
+    <div style="text-align:center;margin-bottom:20px"><img src="LOGO-PA.webp" alt="Logo PA" style="height:60px" width="400" height="400"></div>
+    <h2 style="font-family:Merriweather,serif;color:#8a4e00;font-size:1.2em;margin-bottom:6px;text-align:center">Sostieni Partecipazione Attiva</h2>
+    <p style="color:#333;font-size:.85em;text-align:center;margin-bottom:24px">Ogni contributo ci aiuta a portare avanti le nostre battaglie.</p>
+    <div style="background:#fff8ee;border-radius:12px;padding:18px;margin-bottom:16px;border:1.5px solid #e8900a">
+      <div style="font-weight:700;color:#8a4e00;font-size:.85em;margin-bottom:10px">&#127974; Bonifico Bancario</div>
+      <div style="font-size:.76em;color:#222;line-height:1.9;font-weight:500"><strong>Intestato a:</strong> Daniele Tandura (Tesoriere P.A.)<br><strong>IBAN:</strong> IT70A0366901600557449712670<br><strong>SWIFT:</strong> REVOITM2<br><strong>Causale:</strong> Iscrizione/Rinnovo/Donazione progetto politico</div>
+    </div>
+    <a href="https://www.paypal.com/donate/?hosted_button_id=MWQLS8ECREKCQ" target="_blank" rel="noopener noreferrer" style="display:block;background:#009cde;color:#fff;text-align:center;padding:13px;border-radius:50px;text-decoration:none;font-weight:700;font-size:.92em;margin-bottom:10px">&#128153; Dona con PayPal</a>
+    <p style="font-size:.75em;color:#555;text-align:center;font-weight:600">Causale: Iscrizione/Rinnovo/Donazione progetto politico</p>
+  </div>
+</div>
+<script>
+const burger=document.getElementById("burger"),mob=document.getElementById("mobmenu");
+burger.addEventListener("click",()=>{const e=mob.classList.toggle("on");burger.classList.toggle("open",e)});
+function chiudi(){mob.classList.remove("on");burger.classList.remove("open")}
+function apriSostienici(e){e.preventDefault();document.getElementById("modal-sostienici").style.display="flex"}
+document.addEventListener("click",function(e){if(e.target===document.getElementById("modal-sostienici"))document.getElementById("modal-sostienici").style.display="none"})
+</script>
 </body>
 </html>

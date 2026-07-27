@@ -16,9 +16,9 @@ USO:
 PER AGGIUNGERE UNA VOCE IN FUTURO: modificare MENU qui sotto e rilanciare.
 Una riga qui, e cambia su tutte le pagine.
 
-NOTA: mappa.html e azioni.html hanno un'intestazione tutta loro (barra scura
-compatta, sono pagine-strumento). Non hanno la <nav> standard e questo script
-le salta apposta: la loro barra va aggiornata a parte.
+NOTA: mappa.html e azioni.html avevano un'intestazione tutta loro (barra scura
+compatta, 7 voci) e questo script le saltava. Dal 27/07/2026 hanno la barra
+standard (_tools/allinea_barra_strumento.py) e rientrano qui come le altre.
 """
 import glob
 import re
@@ -42,7 +42,7 @@ MENU = [
     ("parlero.html",      "Parler&ograve;"),
 ]
 
-SALTA = {'mappa.html', 'azioni.html', 'template.html', '404.html',
+SALTA = {'template.html', '404.html',
          'conferma.html', 'cancella.html', 'contatto.html', 'esserci.html'}
 
 
