@@ -32,6 +32,33 @@ lo faccio io.
   chiedere il permesso.
 - Le verifiche le faccio io: mai "controlla tu se funziona".
 
+### Tutto quello che posso fare io, lo faccio io (28 luglio 2026)
+
+Detto da Fernando: *«tutto quello che puoi fare tu fallo, io intervengo solo se
+non c'è altro modo»*. Non è un permesso occasionale, è la regola di ingaggio.
+
+**Non gli si passa il lavoro.** Niente "preferisci scriverlo tu?", niente
+"dimmi se lo aggiungo io", niente elenchi di cose da fare che potrei fare io.
+Se la sto scrivendo come domanda ma so già come si fa, allora la faccio.
+
+Restano a Fernando **solo** le cose che tecnicamente non posso fare al posto suo:
+
+- creare account, inserire password o credenziali;
+- pubblicare a nome del movimento su piattaforme esterne (Wikidata, social,
+  moduli, iscrizioni);
+- azioni dentro servizi che richiedono il suo accesso (Search Console:
+  «Richiedi indicizzazione», e simili);
+- risvolti legali o privacy, e i contenuti che espongono il movimento (unica
+  categoria in cui la domanda è dovuta, come sopra).
+
+Quando una di queste ricorre: **preparo tutto** — testo pronto da incollare,
+passaggi in ordine, dati verificati — e gli lascio solo il gesto finale. Mai
+la ricerca, mai la decisione, mai la stesura.
+
+Contenuto politico e fattuale (numeri di una legge, cronaca dell'iter) **lo
+scrivo io** con le fonti in mano: non rientra nell'eccezione, che riguarda ciò
+che espone il movimento, non ciò che lo informa.
+
 ## Consumo crediti (piano Pro) — vale SEMPRE, senza che l'utente lo chieda
 
 Il contesto viene rispedito e ripagato a ogni messaggio: il costo di una sessione
