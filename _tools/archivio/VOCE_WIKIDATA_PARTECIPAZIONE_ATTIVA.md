@@ -97,7 +97,19 @@ aggiungi:
 - lingua `en`, etichetta `Partecipazione Attiva`
 - descrizione `Italian civic political movement founded in 2021`
 
-# PASSO 4 — Le dichiarazioni
+# PASSO 4 — Le dichiarazioni: due strade
+
+**Strada A (consigliata): le scrivo io con uno script.** Wikidata permette di
+generare una password separata per gli script — non e' la password dell'account,
+vale solo per i permessi che scegli tu e si revoca da sola. La crei su
+`Special:BotPasswords`, la incolli in un file sul Mac fuori da questo repository,
+e lancio `python3 _tools/wikidata_scrivi_voce.py`: scrive tutte e 9 le
+dichiarazioni e le due fonti in una volta. La password non passa mai dalla chat.
+
+**Strada B: a mano**, una dichiarazione alla volta, come descritto qui sotto.
+Sempre valida, se preferisci vedere cosa succede passo per passo.
+
+# PASSO 4 — Le dichiarazioni a mano
 
 Scendi a **«Dichiarazioni»** e clicca **«+ aggiungi dichiarazione»**. Ogni volta:
 scrivi il nome della proprietà nella prima casella (comparirà nel menu a tendina),

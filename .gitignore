@@ -19,3 +19,7 @@ pa_engine_main.py
 pa_website_schema.py
 _bagnoli_review/
 _modelli/
+
+# credenziali: non devono MAI finire nel repository pubblico
+ACCESSO_WIKIDATA.txt
+*_ACCESSO*.txt
