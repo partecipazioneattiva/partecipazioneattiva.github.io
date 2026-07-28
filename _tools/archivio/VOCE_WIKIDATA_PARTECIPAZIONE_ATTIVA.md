@@ -54,8 +54,11 @@ cancellare la voce.
 
 1. Vai su **wikidata.org**
 2. In alto a destra: **«Crea un'utenza»**
-3. Servono solo un nome utente e una password. L'email è facoltativa: **mettila**,
-   serve a recuperare l'accesso se perdi la password.
+3. Servono un nome utente e una password. L'email è formalmente facoltativa:
+   **mettila comunque**, è l'unico modo per recuperare l'accesso se si perde la
+   password. Usare sempre l'indirizzo del webmaster:
+   `webmaster.partecipazione.attiva@gmail.com` — mai una casella personale, o il
+   giorno che cambia la persona si perde l'accesso alla voce.
 
 # PASSO 2 — Creare la voce
 

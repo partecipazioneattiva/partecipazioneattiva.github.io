@@ -59,6 +59,19 @@ Contenuto politico e fattuale (numeri di una legge, cronaca dell'iter) **lo
 scrivo io** con le fonti in mano: non rientra nell'eccezione, che riguarda ciò
 che espone il movimento, non ciò che lo informa.
 
+## Punti fissi — identità operative del movimento
+
+Valori da usare **sempre**, senza chiedere. Elenco da ampliare quando se ne
+fissano altri.
+
+- **Iscrizioni a servizi e verifiche via posta elettronica:**
+  `webmaster.partecipazione.attiva@gmail.com`
+  Vale per qualunque registrazione fatta per conto del movimento (Wikidata,
+  strumenti, piattaforme, verifiche). **Non** l'indirizzo personale di Fernando,
+  e **non** `partecipazioneattiva21@gmail.com`, che è l'indirizzo pubblico di
+  contatto mostrato sul sito e serve ad altro.
+  Fissato il 28 luglio 2026.
+
 ## Consumo crediti (piano Pro) — vale SEMPRE, senza che l'utente lo chieda
 
 Il contesto viene rispedito e ripagato a ogni messaggio: il costo di una sessione
