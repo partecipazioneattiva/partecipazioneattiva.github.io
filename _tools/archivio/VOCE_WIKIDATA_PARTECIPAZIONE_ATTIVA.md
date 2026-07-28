@@ -113,9 +113,17 @@ codice fra parentesi serve solo a confermare che hai scelto quella giusta.
 | 6 | **sede legale** (P159) | `Napoli` (Q2634) |
 | 7 | **identificativo Facebook** (P2013) | `PartecipazioneAttiva21` |
 | 8 | **nome utente TikTok** (P7085) | `partecipazione.at` |
+| 9 | **identificativo YouTube di un canale** (P2397) | `UC8ItFAjkb61SwpyuSA5xIpw` |
 
 **Se hai poco tempo, fai almeno la 1, la 3 e la 5**: bastano a rendere la voce
 valida. Le altre si aggiungono quando vuoi, anche fra un mese.
+
+*Sulla n. 9: YouTube mostra l'identificativo del canale solo dietro il banner dei
+cookie, che non accetto per conto vostro. L'ha preso Fernando il 28 luglio 2026 da
+`youtube.com/account_advanced`, campo «ID canale», e verificato a schermo: il
+campo «ID utente» accanto riporta lo stesso codice senza il prefisso `UC`, che è
+la prova che è quello giusto. Formato controllato: 24 caratteri, prefisso `UC`,
+nessun carattere anomalo.*
 
 # PASSO 5 — La fonte (fallo almeno sulla dichiarazione n. 1)
 
@@ -142,11 +150,6 @@ https://www.radioradicale.it/scheda/793958/nuova-legge-elettorale-ultimo-atto-di
   o vi registrate, si aggiunge allora — la voce resta la stessa e cambia una riga.
 - **Le persone** (presidente, portavoce): ognuna richiede una voce propria, che
   deve reggere da sola il requisito delle fonti. Semmai più avanti.
-- **L'identificativo del canale YouTube** (P2397): vuole il codice che comincia
-  per `UC`, non `@partecipazioneattiva`. Ho provato a recuperarlo ma YouTube lo
-  mostra solo dietro il banner dei cookie, che non accetto per conto vostro. Se lo
-  vuoi: canale → tre puntini → *Condividi canale* → *Copia ID canale*, e passamelo.
-  Meglio niente che un dato sbagliato.
 
 ## Se qualcuno propone la cancellazione
 
@@ -191,6 +194,7 @@ LAST	P856	"https://partecipazione-attiva.it/"
 LAST	P159	Q2634
 LAST	P2013	"PartecipazioneAttiva21"
 LAST	P7085	"partecipazione.at"
+LAST	P2397	"UC8ItFAjkb61SwpyuSA5xIpw"
 ```
 
 ---
