@@ -50,6 +50,14 @@ STILE = {
     'NOTIZIA': ('\U0001F4F0', '#1a8f3c'),
 }
 
+# DOVE STA LA CARD, e perche' li'.
+# Non e' piu' nell'elenco di destra: il 28/07/2026 e' stata spostata nella
+# colonna di sinistra, subito sotto la card della Mappa. E' lo stesso
+# trattamento che la Mappa aveva gia' ricevuto — tolta dall'elenco e promossa
+# in cima — e serve a far vedere senza scorrere le quattro card che contano:
+# Mappa, ultima uscita, Proposte, APE.
+# Lo spostamento e' stato fatto UNA VOLTA a mano sul file; questo script da
+# allora riscrive la card dove la trova, quindi la posizione resta quella.
 ANCORA = '<a href="webtv.html" data-pa-section="homepage-card"'
 
 
@@ -93,7 +101,8 @@ def card_html(n):
         raise SystemExit('STOP: novita.json senza youtube_id ne immagine')
 
     return (
-        f'{ANCORA} data-pa-pin="1" style="display:flex;align-items:stretch;'
+        f'{ANCORA} data-pa-pin="1" class="pa-novita-card" '
+        'style="display:flex;align-items:stretch;'
         'border-radius:16px;overflow:hidden;background:rgba(255,255,255,.12);'
         'border:4px solid #e8900a;text-decoration:none;margin-bottom:14px;'
         'min-height:180px">'
