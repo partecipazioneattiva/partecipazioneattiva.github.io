@@ -1,0 +1,29 @@
+{
+  "_come_si_usa": "FONTE DI VERITA' delle nuove uscite (TG, video, notizie). Si cambia SOLO questo file, poi si lancia:  python3 _tools/aggiorna_novita.py --applica  e  python3 aggiorna_ticker.py . Lo script riscrive da solo la card fissata in cima alla home e la prima voce della barra scorrevole. Non modificare quei due punti a mano: al lancio successivo verrebbero sovrascritti.",
+
+  "_perche_esiste": "Fino al 28/07/2026 la home non diceva in nessun modo che era uscito qualcosa di nuovo. La card WebTV mostrava da mesi la stessa insegna con l'etichetta 'Nuova sezione', che a forza di stare li' non segnalava piu' niente, e la barra scorrevole porta temi permanenti, non uscite datate. Chi arrivava dalla home non aveva modo di sapere che c'era un TG nuovo.",
+
+  "_campi": {
+    "tipo": "TG | VIDEO | NOTIZIA — decide l'emoji e il colore dell'etichetta",
+    "etichetta": "il testo della pillola colorata. Corto: due parole al massimo",
+    "titolo": "il titolo dell'uscita, come compare nella card",
+    "data": "AAAA-MM-GG. Lo script la scrive in italiano da solo",
+    "link": "dove porta il click. Per i video punta a webtv.html, NON a YouTube: sulla pagina c'e' la nota obbligatoria sulla voce sintetica",
+    "youtube_id": "se c'e', la miniatura viene presa da YouTube (non si caricano immagini nel repo). Vuoto per le notizie: si usa immagine",
+    "immagine": "alternativa a youtube_id, percorso nel repo",
+    "occhiello": "la riga piccola sopra il titolo",
+    "testo": "una frase, non due"
+  },
+
+  "ultima": {
+    "tipo": "TG",
+    "etichetta": "Nuovo TG",
+    "titolo": "PensAttivo News — edizione nazionale",
+    "data": "2026-07-28",
+    "link": "webtv.html",
+    "youtube_id": "bF0BjezVh4A",
+    "immagine": "",
+    "occhiello": "Partecipazione Attiva WebTV",
+    "testo": "Accise sul gasolio, l'ex Ilva fermata dai giudici, la rottamazione in scadenza: il notiziario visto da un alieno."
+  }
+}
