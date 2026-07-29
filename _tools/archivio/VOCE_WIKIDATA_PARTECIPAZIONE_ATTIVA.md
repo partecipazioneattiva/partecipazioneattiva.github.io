@@ -209,9 +209,15 @@ lo stesso file di credenziali dava «Incorrect username or password» con nome e
 formato intatti. Si rigenera l'accesso `scriptPA` e si riscrive **solo** la riga
 `password` del file fuori repository. Lo script non è rotto: quello si guarda dopo.
 
-**Resta aperto un solo passaggio, ed è tuo perché richiede il tuo accesso:** in
-Search Console, «Controllo URL» su `chi-siamo.html` e `organigramma.html` →
-«Richiedi indicizzazione». Google non usa IndexNow.
+4. Google avvisato a mano da Fernando il 29 luglio 2026: «Controllo URL» su
+   `chi-siamo.html` e `organigramma.html` → «Richiedi indicizzazione», entrambe
+   accettate nella coda di scansione prioritaria. Le due pagine risultavano già
+   indicizzate: la richiesta serve a far rileggere i dati strutturati nuovi, non
+   a farle entrare nell'indice. Google non usa IndexNow, questa è l'unica via.
+
+**Non resta niente in sospeso.** La prossima volta che si aggiunge un profilo
+ufficiale del movimento, il giro è: `sameAs` su tutte e tre le pagine → `llms.txt`
+→ `indexnow.py` → Search Console sulle pagine toccate.
 
 ---
 
