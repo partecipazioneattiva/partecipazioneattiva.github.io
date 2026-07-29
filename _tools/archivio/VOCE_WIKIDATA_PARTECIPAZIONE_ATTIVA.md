@@ -174,16 +174,44 @@ di solito resta.
 
 ---
 
-# Quando hai finito: passami il codice Q
+# FATTO — chiuso il 29 luglio 2026
 
-Il resto lo faccio io e chiude il cerchio:
+La voce è **[Q140733310](https://www.wikidata.org/wiki/Q140733310)**, creata da
+Fernando il 28 luglio. Stato verificato leggendo l'API di Wikidata:
 
-1. Aggiungo il link Wikidata ai dati strutturati del sito (`sameAs`). Serve a
-   legare le due identità nei due sensi: i marchi con **4 o più profili
-   verificati** ottengono il pannello informativo di Google **4,1 volte più
-   spesso**. Oggi ne avete 3 — Facebook, YouTube, TikTok: **Wikidata è il quarto**.
-2. Aggiorno `llms.txt`, la scheda che il sito offre alle intelligenze artificiali.
-3. Avviso Bing e Copilot con `python3 indexnow.py index.html`.
+- etichetta e descrizione in **italiano e inglese**;
+- alias `PA` e `Movimento Popolare dei Cittadini Italiani`;
+- **tutte e 9 le dichiarazioni** della tabella qui sopra, scritte dallo script;
+- **due fonti di terzi** — Articolo21 e Radio Radicale — su «istanza di →
+  movimento politico», che è la dichiarazione che regge la voce.
+
+E il cerchio dalla parte del sito:
+
+1. Link alla voce in `sameAs` su tutte e tre le pagine che si dichiarano
+   `Organization`: `index.html` il 28 luglio, `chi-siamo.html` e
+   `organigramma.html` il 29 (`chi-siamo.html` non citava nemmeno TikTok).
+   Ora tutte e tre dichiarano gli stessi **quattro** profili — Facebook, YouTube,
+   TikTok, Wikidata: è il numero oltre il quale i marchi ottengono il pannello
+   informativo di Google **4,1 volte più spesso**.
+2. `llms.txt`, la scheda che il sito offre alle intelligenze artificiali, cita la
+   voce alla riga «Wikidata (identita' del movimento)».
+3. Bing e Copilot avvisati con `python3 indexnow.py` — risposta 200.
+
+Il controllo, da rifare ogni volta che si aggiunge un profilo social:
+
+```bash
+grep -o 'sameAs":\[[^]]*\]' *.html
+```
+
+⚠️ **Se un domani lo script torna a servire:** la password di
+`Special:BotPasswords` decade. Ha scritto le dichiarazioni il 28 luglio, e il 29
+lo stesso file di credenziali dava «Incorrect username or password» con nome e
+formato intatti. Si rigenera l'accesso `scriptPA` e si riscrive **solo** la riga
+`password` del file fuori repository. Lo script non è rotto: quello si guarda dopo.
+
+**Resta aperto un solo passaggio, ed è tuo perché richiede il tuo accesso:** in
+Search Console, «Controllo URL» su `chi-siamo.html` e `organigramma.html` →
+«Richiedi indicizzazione». Google non usa IndexNow.
 
 ---
 
