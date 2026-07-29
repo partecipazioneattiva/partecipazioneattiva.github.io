@@ -72,7 +72,7 @@ fissano altri.
   contatto mostrato sul sito e serve ad altro.
   Fissato il 28 luglio 2026.
 
-## Consumo crediti (piano Pro) — vale SEMPRE, senza che l'utente lo chieda
+## Consumo crediti (piano **Max 5x**, 90 €/mese) — vale SEMPRE, senza che l'utente lo chieda
 
 Il contesto viene rispedito e ripagato a ogni messaggio: il costo di una sessione
 cresce col **quadrato** della sua lunghezza. 50 messaggi non costano 50, costano ~1.250.
@@ -96,6 +96,23 @@ Da applicare di default, non su richiesta:
    non riderivate in conversazione.
 
 Manuale completo: `~/Desktop/LAVORI/_MANUALI_CLAUDE/MANUALE_CREDITI_CLAUDE_v1.md`
+
+### Quale modello — abbiamo anche Fable 5 (29 luglio 2026)
+
+| Modello | Quando |
+|---|---|
+| **Fable 5** | il problema difficile lasciato girare **da solo, di notte**. ⚠️ **pesca dallo stesso serbatoio settimanale** degli altri modelli (la barra "Fable" è un tetto al 50%, non un'aggiunta) ed è il modello più caro: consuma più in fretta. In più i suoi turni durano molti minuti — **non** per il lavoro interattivo dove Fernando corregge in corsa |
+| **Opus 5** | il quotidiano che richiede giudizio: TG, debug, decisioni che poi si pagano |
+| **Sonnet 5** | ripetitivo ma non stupido: menu, script, card |
+| **Haiku 4.5** | meccanico e verificabile: rinominare, riordinare, formattare |
+
+Si cambia con `/model` e **la conversazione resta**: il modello nuovo vede tutto
+lo scambio. Ma il cambio **azzera la cache**, quindi si cambia quando cambia il
+lavoro, non avanti e indietro dentro lo stesso.
+
+⚠️ La continuita' vera non e' la conversazione, sono i **file**: manuali,
+`lessico/`, `archivio_notizie/`, script e memoria stanno su disco e li legge
+qualunque modello, anche dopo un `/clear`. Dettagli nel manuale crediti §3.1-3.2.
 
 ## Sito
 
