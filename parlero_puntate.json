@@ -1,0 +1,14 @@
+{
+  "_nota": "FONTE DI VERITA' del podcast Parlero. Si scrive qui, poi si lancia _tools/pubblica_parlero.py: rigenera la sezione in parlero.html e il feed podcast.xml. Mai modificare a mano ne' la sezione ne' il feed.",
+  "_campi": {
+    "n": "numero progressivo della puntata",
+    "titolo": "titolo della puntata, senza 'Parlero' davanti",
+    "data": "AAAA-MM-GG della pubblicazione",
+    "descrizione": "2-3 righe: il fatto e l'angolo del commento. Finisce nel feed e nella card.",
+    "audio": "percorso dell'mp3 dentro il repo, es. audio/parlero/parlero-001-slug.mp3",
+    "detto": "il detto napoletano con cui chiude la puntata (grafia_tts da lessico/detti_napoletani.json)",
+    "approvato": "data e mezzo con cui Antonio Cristiano ha approvato il testo, es. 'WhatsApp 2026-08-05'. ⛔ Senza questo campo lo script si ferma.",
+    "voce": "\"reale\" se l'ha registrata Antonio, \"sintetica\" se generata con la pipeline del TG. Se manca, si assume sintetica."
+  },
+  "puntate": []
+}
