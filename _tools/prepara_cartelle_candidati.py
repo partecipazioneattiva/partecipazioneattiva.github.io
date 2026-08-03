@@ -94,16 +94,23 @@ def main():
         if not nome or nome.lower() in salta:
             continue
 
-        candidate = []
+        candidate, piccole = [], []
         for f in sorted(os.listdir(cartella)):
             if f.startswith(".") or not f.lower().endswith(ESTENSIONI):
                 continue
             if GENERATE.search(f) or NON_FOTO.search(f):
                 continue
             src = os.path.join(cartella, f)
-            m = utile(src, a.lato_minimo)
-            if m:
-                candidate.append((m[0] * m[1], m, src, f))
+            m = utile(src, 1)
+            if not m:
+                continue
+            if min(m) < a.lato_minimo:
+                # ⚠️ Non si scartano in silenzio: le foto piccole restano foto.
+                # Di Daniele e Angelo esistevano SOLO scatti sotto i 600 px, e
+                # tacendo sembrava che non ne avessero nessuna.
+                piccole.append((m, f))
+                continue
+            candidate.append((m[0] * m[1], m, src, f))
 
         candidate.sort(reverse=True)
 
@@ -124,6 +131,8 @@ def main():
                 break
 
         print(f"\n{nome}: {len(tenute)} foto tenute su {len(candidate)} candidate")
+        for m, f in piccole:
+            print(f"   scartata perche' piccola: {m[0]}x{m[1]}  {f}")
         dest = os.path.join(uscita, nome)
         for misure, src, f in tenute:
             base = re.sub(r"[^a-z0-9]+", "_", os.path.splitext(f)[0].lower()).strip("_")[:28]
