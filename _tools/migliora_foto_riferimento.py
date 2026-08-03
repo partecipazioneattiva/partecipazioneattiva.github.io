@@ -64,6 +64,10 @@ def main():
                    help="si migliorano solo le foto sotto questo lato corto")
     p.add_argument("--obiettivo", type=int, default=1200,
                    help="lato corto a cui puntare")
+    p.add_argument("--lato-massimo", type=int, default=1600, dest="lato_massimo",
+                   help="lato lungo massimo: oltre non serve e appesantisce")
+    p.add_argument("--qualita", type=int, default=88,
+                   help="qualita' JPEG. Si salva in JPEG, non PNG: i file vanno")
     a = p.parse_args()
 
     if not acceso():
@@ -93,10 +97,18 @@ def main():
             # Un filo di contrasto locale: RealESRGAN lascia il risultato
             # leggermente molle, e un riferimento molle da' un volto molle.
             grande = grande.filter(ImageFilter.UnsharpMask(radius=2, percent=45, threshold=3))
+            # Si caricano su Meta AI e Gemini: oltre 1600 px di lato lungo non
+            # servono a niente e il caricamento diventa lento o rifiutato.
+            if max(grande.size) > a.lato_massimo:
+                k = a.lato_massimo / max(grande.size)
+                grande = grande.resize((round(grande.width * k), round(grande.height * k)),
+                                       Image.LANCZOS)
             os.makedirs(dest, exist_ok=True)
-            out = os.path.join(dest, os.path.splitext(f)[0] + f"_x{scala:g}.png")
-            grande.save(out)
-            print(f"{persona:<10} {lato:>4} px -> {min(grande.size):>4} px   {f}")
+            out = os.path.join(dest, os.path.splitext(f)[0] + "_migliorata.jpg")
+            grande.convert("RGB").save(out, quality=a.qualita, optimize=True,
+                                       progressive=True)
+            kb = os.path.getsize(out) // 1024
+            print(f"{persona:<10} {lato:>4} px -> {min(grande.size):>4} px  {kb:>5} kB   {f}")
             fatte += 1
         if fatte:
             print(f"{persona}: {fatte} migliorate\n")
