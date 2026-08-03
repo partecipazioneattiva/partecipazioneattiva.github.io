@@ -218,6 +218,9 @@ def costruisci(a, W, H):
         dr.rectangle((0, y, W, y + o(7)), fill=col)
 
     # ── 3. ritratto centrato, appoggiato alla fascia ─────────────────────────
+    if a.scena_unica:                      # la persona e' gia' dentro lo sfondo
+        return _chiudi(a, tela, ImageDraw.Draw(tela), W, H, o, v, margine, cx,
+                       y_fascia)
     rit = Image.open(a.ritratto).convert("RGBA")
     rit = rit.crop(rit.split()[3].point(lambda t: 255 if t > 12 else 0).getbbox())
     largh_rit = int(W * a.larghezza_ritratto)
@@ -248,6 +251,11 @@ def costruisci(a, W, H):
     tela.paste(rit, (x_rit, y_rit), rit)
     dr = ImageDraw.Draw(tela)
 
+    return _chiudi(a, tela, dr, W, H, o, v, margine, cx, y_fascia)
+
+
+def _chiudi(a, tela, dr, W, H, o, v, margine, cx, y_fascia):
+    so = W / 3308.0
     # ── 4. intestazione centrata: logo, marchio, riga in corsivo ─────────────
     lato_logo = o(600)
     logo = Image.open(a.logo).convert("RGBA").resize((lato_logo, lato_logo), Image.LANCZOS)
@@ -325,7 +333,9 @@ def adatta_social(master, larg, alt):
 
 def main():
     p = argparse.ArgumentParser(description="Manifesto elettorale PA, stile classico")
-    p.add_argument("--ritratto", required=True)
+    p.add_argument("--ritratto", default="")
+    p.add_argument("--scena-unica", action="store_true", dest="scena_unica",
+                   help="lo sfondo contiene gia' la persona: niente montaggio")
     p.add_argument("--sfondo", required=True)
     p.add_argument("--logo", default="LOGO-PA.webp")
     p.add_argument("--nome", required=True)
