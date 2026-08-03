@@ -71,6 +71,49 @@ AMBRA_FOOTER_NUOVA = '#ffb020'
 FACEBOOK_VECCHIO, FACEBOOK_NUOVO = '#1877f2', '#0d6ae0'
 ARANCIO_TESTO_NUOVO = '#a35f00'
 
+# ---------------------------------------------------------------------------
+# CASI MISURATI A MANO (03/08/2026)
+# ---------------------------------------------------------------------------
+# Questi non li puo' trovare la regola automatica, perche' il fondo e' scuro o
+# ereditato da un elemento piu' esterno: sono gli stessi casi che il 02/08 hanno
+# fatto tornare indietro 7 pagine. Ogni valore e' calcolato, e preso con margine
+# invece che al pelo. La colonna "prima -> dopo" e' il contrasto misurato.
+SOSTITUZIONI_MISURATE = [
+    # bottoni di condivisione: colori dei marchi, illeggibili col testo bianco.
+    # Valgono ovunque perche' sono SEMPRE fondo di un bottone con testo bianco.
+    (r'#25d366\b', '#127a38', 'WhatsApp 1,98 -> 5,43'),
+    (r'background:#1877f2\b', 'background:#0d6ae0', 'Facebook 4,23 -> 5,05'),
+    # riquadro verde chiaro dentro .cta-finale: eredita il testo BIANCO dal
+    # contenitore e finisce bianco su verde chiarissimo, 1,12 = invisibile
+    (r'background:#e8f5e9;border-left', 'background:#e8f5e9;color:#1b4d2a;border-left',
+     'riquadro verde 1,12 -> 8,72'),
+    # Il marrone del movimento #8a4e00 va bene come TESTO su bianco (5,37) ma e'
+    # troppo chiaro come FONDO: barra in alto, menu mobile e intestazioni delle
+    # tabelle ci mettono sopra testi chiari e finiscono a 2,85. Si scurisce dello
+    # stesso passo usato ovunque, mantenendo la tinta.
+    # ⚠️ SOLO dove fa da fondo: `background:` e `background-color:`. Il marrone
+    # scritto come `color:` NON si tocca, li' e' giusto com'e'.
+    # Misurato su sanitapubblica.html: 45 -> 18 difetti.
+    (r'background(-color)?:#8a4e00\b', r'background\1:#5f3500', 'fondo marrone 2,85 -> 4,9'),
+    # Il riquadro `.citazione` ha fondo scuro e dichiara `color:#fff`, ma il
+    # paragrafo dentro viene ripreso da `.article-body p{color:#333}`, che e' piu'
+    # specifico e vince: la citazione era **grigio scuro su marrone scuro**, 1,91
+    # gia' prima di ogni nostra modifica. Si rimette il bianco dove serve.
+    (r'\.citazione p\{(?!color)', '.citazione p{color:#fff;', 'citazione 1,91 -> 10,52'),
+]
+
+# ⚠️ Queste invece valgono SOLO se in quella pagina la barra in alto ha davvero
+# il fondo scuro. Misurato: su 38 pagine, 24 hanno `.topbar{background:#8a4e00}`,
+# una ha #222 e **13 non dichiarano alcun fondo** — la ereditano chiara.
+# Applicandole a tutte, il 03/08/2026 i link della barra sono passati da 4,12 a
+# **1,26**: schiarire un testo che sta su fondo chiaro lo cancella.
+SOSTITUZIONI_SE_BARRA_SCURA = [
+    (r'\.topbar\{([^}]*?)color:#ccc\b', r'.topbar{\1color:#f0f0f0', 'barra alto 4,12 -> 5,81'),
+    (r'\.topbar a\{([^}]*?)color:#ccc\b', r'.topbar a{\1color:#f0f0f0', 'link barra 4,12 -> 5,81'),
+    (r'\.separator\{([^}]*?)color:#555\b', r'.separator{\1color:#e8e8e8', 'separatore 2,13 -> 5,41'),
+]
+BARRA_SCURA = re.compile(r'\.topbar\{[^}]*background(?:-color)?:\s*#(?:8a4e00|222)\b', re.I)
+
 BLOCCO = re.compile(r'([^{}]+)\{([^{}]*)\}')
 BIANCO = re.compile(r'color:\s*(#fff(?:fff)?|white)\b', re.I)
 GRIGIO = re.compile(r'color:\s*#(?:aaa(?:aaa)?|999(?:999)?)\b', re.I)
@@ -95,6 +138,38 @@ def luminosita(esa):
 def fondo_scuro(dichiarazioni):
     """Vero se accanto al colore c'e' un fondo scuro dichiarato: li' non si tocca."""
     return any(luminosita(m.group(1)) < .4 for m in FONDO.finditer(dichiarazioni))
+
+
+# Fondi scuri dichiarati da altri selettori dello stesso foglio: {'.citazione', ...}
+CONTENITORI_SCURI = set()
+
+
+def raccogli_contenitori_scuri(testo):
+    """Segna i selettori che dichiarano un fondo scuro, per riconoscere i figli.
+
+    ⚠️ Serve a un errore preciso, pagato il 03/08/2026. `.citazione` dichiara
+    `background:#8a4e00`, ma la firma sotto la citazione sta in una regola a
+    parte, `.citazione cite{color:#aaa}`, che **non nomina alcun fondo**: lo
+    eredita. Scurendo quel grigio "perche' su bianco non regge" e' finito a
+    **1,20** sul marrone, cioe' illeggibile. Guardare solo la regola davanti agli
+    occhi non basta: bisogna sapere dentro cosa sta.
+    """
+    CONTENITORI_SCURI.clear()
+    for m in BLOCCO.finditer(testo):
+        if fondo_scuro(m.group(2)):
+            for sel in m.group(1).split(','):
+                primo = sel.strip().split()[0] if sel.strip() else ''
+                if primo:
+                    CONTENITORI_SCURI.add(primo)
+
+
+def dentro_contenitore_scuro(selettore):
+    """Vero se il selettore sta dentro qualcosa che ha un fondo scuro."""
+    for sel in selettore.split(','):
+        pezzi = sel.strip().split()
+        if any(p in CONTENITORI_SCURI for p in pezzi[:-1]):
+            return True
+    return False
 
 
 def contrasto(a, b):
@@ -173,7 +248,7 @@ def sistema_blocco(m):
         dich = BIANCO.sub('color:' + TESTO_SU_ARANCIO, dich)
         sistema_blocco.contati.append(('arancio', sel.strip()[:44]))
 
-    if not any(e in basso for e in SELETTORI_ESCLUSI):
+    if not any(e in basso for e in SELETTORI_ESCLUSI) and not dentro_contenitore_scuro(sel):
         # (4 e 7) ogni colore di testo troppo chiaro per un fondo chiaro
         dich, cambi = schiarisci_o_lascia(dich)
         if cambi:
@@ -184,6 +259,7 @@ def sistema_blocco(m):
 
 def lavora_css(testo):
     sistema_blocco.contati = []
+    raccogli_contenitori_scuri(testo)
     testo, n_verde = re.subn(VERDE_VECCHIO, VERDE_NUOVO, testo, flags=re.I)
     testo = BLOCCO.sub(sistema_blocco, testo)
     return testo, n_verde, list(sistema_blocco.contati)
@@ -217,8 +293,14 @@ def sistema_inline_qualsiasi(m):
 
 
 def lavora_html(testo):
-    """Sul documento intero: stili inline, verde, Facebook. Il footer si salta."""
-    taglio = testo.find('<footer')
+    """Sul documento intero: stili inline, verde, Facebook. Il footer si salta.
+
+    ⚠️ Si cerca l'**ULTIMO** `<footer`, non il primo: diversi articoli hanno un
+    `<footer>` proprio a fine testo, che sta su fondo CHIARO. Prendendo il primo,
+    il 03/08/2026 il riquadro «Leggi anche» di un articolo e' stato trattato come
+    footer scuro e i suoi link sono passati da leggibili a **1,73**.
+    """
+    taglio = testo.rfind('<footer')
     corpo, coda = (testo[:taglio], testo[taglio:]) if taglio > 0 else (testo, '')
 
     sistema_inline.contati = 0
@@ -231,6 +313,13 @@ def lavora_html(testo):
     testo = corpo + coda
     testo, n_verde = re.subn(VERDE_VECCHIO, VERDE_NUOVO, testo, flags=re.I)   # (1)
     testo, n_fb = re.subn(FACEBOOK_VECCHIO, FACEBOOK_NUOVO, testo, flags=re.I)  # (6)
+    for schema, rimpiazzo, _perche in SOSTITUZIONI_MISURATE:                 # casi a mano
+        testo, n = re.subn(schema, rimpiazzo, testo, flags=re.I)
+        n_fb += n
+    if BARRA_SCURA.search(testo):                    # solo se la barra e' davvero scura
+        for schema, rimpiazzo, _perche in SOSTITUZIONI_SE_BARRA_SCURA:
+            testo, n = re.subn(schema, rimpiazzo, testo, flags=re.I)
+            n_fb += n
     return testo, n_inline, n_ambra, n_verde, n_fb
 
 
@@ -263,6 +352,13 @@ def main():
             nuovo, n_ve, sel = lavora_css(originale)
             conti['verde'] += n_ve
             selettori += sel
+            # ⚠️ I fogli di stile esterni vanno trattati anche con le sostituzioni
+            # misurate: i bottoni di condivisione stanno in `css/pa-base.css`, non
+            # nelle pagine. Dimenticarlo il 03/08/2026 ha lasciato il bottone
+            # WhatsApp a 1,98 su tutti gli articoli, mentre sembrava corretto.
+            for schema, rimpiazzo, _perche in SOSTITUZIONI_MISURATE:
+                nuovo, n = re.subn(schema, rimpiazzo, nuovo, flags=re.I)
+                conti['facebook'] += n
 
         if nuovo != originale:
             file_toccati += 1
