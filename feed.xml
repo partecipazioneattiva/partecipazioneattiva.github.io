@@ -6,7 +6,14 @@
     <description>Notizie, battaglie e proposte di Partecipazione Attiva</description>
     <language>it</language>
     <atom:link href="https://partecipazione-attiva.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 27 Jul 2026 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2026 12:00:00 +0200</lastBuildDate>
+  <item>
+    <title>Stabilicum: cos'è e cosa significa la nuova legge elettorale</title>
+    <link>https://partecipazione-attiva.it/stabilicum.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/stabilicum.html</guid>
+    <description>Stabilicum spiegato ai cittadini: cos'è, come funziona, cosa cambia per chi vota. L'analisi di Partecipazione Attiva.</description>
+    <pubDate>Tue, 28 Jul 2026 12:00:00 +0200</pubDate>
+  </item>
   <item>
     <title>Cavalleggeri a cielo aperto: un museo di murales a Fuorigrotta</title>
     <link>https://partecipazione-attiva.it/cavalleggeri-cielo-aperto.html</link>
@@ -111,13 +118,6 @@
     <guid isPermaLink="true">https://partecipazione-attiva.it/resoconto-assemblea-noad-napoli-6giugno2026.html</guid>
     <description>Resoconto ufficiale dell'assemblea nazionale NO AD del 6 giugno 2026 a Napoli. Oltre 100 partecipanti da 20 province. Tre membri di PA presenti.</description>
     <pubDate>Tue, 09 Jun 2026 12:00:00 +0200</pubDate>
-  </item>
-  <item>
-    <title>Stabilicum: cos'è e cosa significa la nuova legge elettorale</title>
-    <link>https://partecipazione-attiva.it/stabilicum.html</link>
-    <guid isPermaLink="true">https://partecipazione-attiva.it/stabilicum.html</guid>
-    <description>Stabilicum spiegato ai cittadini: cos'è, come funziona, cosa cambia per chi vota. L'analisi di Partecipazione Attiva.</description>
-    <pubDate>Mon, 08 Jun 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
     <title>Stabilicum: Meloni accelera, obiettivo Camera entro giugno</title>
