@@ -322,6 +322,212 @@ def _chiudi(a, tela, dr, W, H, o, v, margine, cx, y_fascia):
     return grana(tela, forza=3.0 * max(0.55, so))
 
 
+def token_punti(testo):
+    """Spezzetta tenendo il separatore ' · ' ATTACCATO alla parola che lo precede.
+    Senza questo, andando a capo il punto finisce a inizio riga: difetto visto sul
+    manifesto generato da Meta AI il 3 agosto 2026."""
+    parti = [p.strip() for p in testo.split("·")]
+    return [p + " ·" for p in parti[:-1]] + [parti[-1]]
+
+
+def a_capo(testo, percorso, larg, dim, sp=0.0):
+    """Manda a capo per parole, scendendo di corpo finche' la parola piu' lunga
+    ci sta. Ritorna (font, corpo, righe)."""
+    tok = token_punti(testo) if "·" in testo else testo.split()
+    dim = int(dim)
+    while dim > 8 and max(larghezza(t, font(percorso, dim), dim * sp)
+                          for t in tok) > larg:
+        dim -= 2
+    fnt = font(percorso, dim)
+    righe, cur = [], ""
+    for t in tok:
+        prova = (cur + " " + t).strip()
+        if larghezza(prova, fnt, dim * sp) <= larg:
+            cur = prova
+        else:
+            if cur:
+                righe.append(cur)
+            cur = t
+    if cur:
+        righe.append(cur)
+    return fnt, dim, righe
+
+
+def blocco(dr, x, y, testo, percorso, larg, dim, colore, sp=0.0, interlinea=1.28,
+           spessore=0):
+    """Scrive un paragrafo allineato a sinistra. Ritorna la y dopo l'ultima riga."""
+    fnt, d, righe = a_capo(testo, percorso, larg, dim, sp)
+    for r in righe:
+        scrivi(dr, (x, y), r, fnt, colore, sp=d * sp, ancora="ls", spessore=spessore)
+        y += int(d * interlinea)
+    return y
+
+
+def costruisci_laterale(a, W, H):
+    """Impaginazione a colonna: testo in una colonna pergamena a SINISTRA, il
+    candidato a destra sul panorama. E' la variante chiesta il 3 agosto 2026 —
+    stessa lingua visiva del classico, solo ribaltata sull'asse verticale."""
+    so, sv = W / 3308.0, H / 4724.0
+    o = lambda x: int(round(x * so))
+    v = lambda x: int(round(x * sv))
+
+    x_col = int(W * 0.545)           # la colonna occupa poco piu' della meta'
+    margine = o(170)
+    larg_utile = x_col - 2 * margine
+
+    # ── 1. panorama su tutta la tela, caldo e luminoso ───────────────────────
+    sf = Image.open(a.sfondo).convert("RGB")
+    k = max(W * a.zoom / sf.width, H * a.zoom / sf.height)
+    sf = sf.resize((int(sf.width * k), int(sf.height * k)), Image.LANCZOS)
+    dx = int((sf.width - W) * 0.62)   # si tiene la parte destra: li' sta la figura
+    dy = int(max(0, sf.height - H) * a.fuoco)
+    sf = sf.crop((dx, dy, dx + W, dy + H))
+
+    sf = ImageEnhance.Brightness(sf).enhance(a.luce)
+    sf = ImageEnhance.Contrast(sf).enhance(1.10)
+    sf = ImageEnhance.Color(sf).enhance(1.10)
+    sf = Image.blend(sf, Image.new("RGB", sf.size, CREMA), 0.07)
+
+    vign = Image.new("L", sf.size, 0)
+    ImageDraw.Draw(vign).ellipse((-int(W * 0.30), -int(H * 0.26),
+                                  int(W * 1.30), int(H * 1.26)), fill=255)
+    vign = vign.filter(ImageFilter.GaussianBlur(o(380))).point(
+        lambda t: 255 - int(t * 0.34))
+    sf = Image.composite(Image.new("RGB", sf.size, (196, 158, 108)), sf, vign)
+
+    tela = Image.new("RGB", (W, H), PERGAMENA)
+    tela.paste(sf, (0, 0))
+
+    # ── 3. colonna pergamena a sinistra, con il filo dorato verticale ────────
+    col = Image.new("RGB", (x_col, H), PERGAMENA)
+    tela.paste(col, (0, 0))
+    dr = ImageDraw.Draw(tela)
+    dr.rectangle((x_col, 0, x_col + o(9), H), fill=ORO)
+    dr.rectangle((x_col + o(14), 0, x_col + o(20), H), fill=ORO_CHIARO)
+
+    # ── 4. testo: PRIMA si misura tutto, POI si distribuisce sull'altezza ────
+    #      Impilare i blocchi uno sotto l'altro lascia mezza colonna vuota in
+    #      basso — difetto visto sia sul nostro primo montaggio sia sulle prove
+    #      Gemini/Meta del 3 agosto 2026. Qui lo spazio avanzato si ripartisce
+    #      fra i blocchi, cosi' la colonna e' piena dall'alto in basso.
+    larg_bassa = int(larg_utile * 0.72)   # sotto, la figura invade la colonna
+
+    lato_logo = int(larg_utile * 0.46)
+    logo = Image.open(a.logo).convert("RGBA").resize((lato_logo, lato_logo), Image.LANCZOS)
+
+    parole = a.nome.upper().split()
+    righe_nome = [r for r in ([parole[0], " ".join(parole[1:])] if len(parole) > 1
+                              else parole) if r]
+    corpo_nome = min(adatta(r, SERIF_TESTO, larg_utile, o(330), 0.01)[1]
+                     for r in righe_nome)
+
+    def testo(t, percorso, larg, dim, colore, sp=0.0, interlinea=1.28, spessore=0):
+        fnt, d, righe = a_capo(t, percorso, larg, dim, sp)
+        alt = int(d * interlinea) * len(righe)
+        def disegna(y0):
+            y1 = y0 + d
+            for r in righe:
+                scrivi(dr, (margine, y1), r, fnt, colore, sp=d * sp, ancora="ls",
+                       spessore=spessore)
+                y1 += int(d * interlinea)
+        return alt, disegna
+
+    def filo(frazione, colore, spess):
+        def disegna(y0):
+            dr.rectangle((margine, y0, margine + int(larg_utile * frazione),
+                          y0 + spess), fill=colore)
+        return spess, disegna
+
+    blocchi = [(lato_logo, lambda y0: tela.paste(logo, (margine, y0), logo), 1.5)]
+    alt_nome = int(corpo_nome * 1.04) * len(righe_nome)
+
+    def disegna_nome(y0):
+        y1 = y0 + corpo_nome
+        for r in righe_nome:
+            scrivi(dr, (margine, y1), r, font(SERIF_TESTO, corpo_nome), BRUNO_SCURO,
+                   sp=corpo_nome * 0.01, ancora="ls", spessore=max(1, o(2)))
+            y1 += int(corpo_nome * 1.04)
+
+    blocchi.append((alt_nome, disegna_nome, 0.7))
+    blocchi.append(filo(0.34, ORO, o(9)) + (0.7,))
+    blocchi.append(testo(a.carica, SERIF_TESTO, larg_utile, o(165), BRUNO_SCURO,
+                         interlinea=1.16) + (0.9,))
+    if a.territori:
+        blocchi.append(testo(a.territori, "merriweather-400-italic.ttf", larg_utile,
+                             o(92), BRUNO, interlinea=1.34) + (0.9,))
+    blocchi.append(testo(a.occasione, "merriweather-400.ttf", larg_utile, o(86),
+                         BRUNO_TENUE, interlinea=1.30) + (1.2,))
+    blocchi.append(filo(0.22, ORO_CHIARO, o(6)) + (0.8,))
+    blocchi.append(testo(a.valori, LAPIDARIO, larg_bassa, o(74), BRUNO, sp=0.04,
+                         interlinea=1.40) + (0.8,))
+    blocchi.append(testo(a.sito, "merriweather-400.ttf", larg_bassa, o(78),
+                         BRUNO_SCURO) + (0.0,))
+
+    y_alto, y_basso = v(140), H - v(430)
+    somma = sum(b[0] for b in blocchi)
+    pesi = sum(b[2] for b in blocchi)
+    residuo = max(0, (y_basso - y_alto) - somma)
+
+    y = y_alto
+    for alt, disegna, peso in blocchi:
+        disegna(y)
+        y += alt + int(residuo * peso / pesi)
+
+    # ── 5. il candidato: grande, ancorato in basso a destra. Sconfina sulla
+    #       colonna, dove sotto il testo c'e' spazio vuoto: e' il gesto tipico
+    #       del manifesto stampato, e senza di quello un mezzo busto in una
+    #       colonna stretta resta piccolo e sperduto in un angolo.
+    if not a.scena_unica and a.ritratto:
+        rit = Image.open(a.ritratto).convert("RGBA")
+        rit = rit.crop(rit.split()[3].point(lambda t: 255 if t > 12 else 0).getbbox())
+
+        zona = W - x_col
+        largh_rit = int(zona * (a.larghezza_ritratto / 0.48) * 1.34)
+        rit = rit.resize((largh_rit, int(rit.height * largh_rit / rit.width)),
+                         Image.LANCZOS)
+        if rit.height > H * 0.72:                     # non deve arrivare al nome
+            k2 = H * 0.72 / rit.height
+            rit = rit.resize((int(rit.width * k2), int(rit.height * k2)), Image.LANCZOS)
+        rit = rit.filter(ImageFilter.UnsharpMask(radius=3.0, percent=62, threshold=3))
+
+        corpo = Image.merge("RGB", rit.split()[:3])
+        corpo = ImageEnhance.Brightness(corpo).enhance(1.10)
+        corpo = Image.blend(corpo, Image.new("RGB", corpo.size, (255, 226, 178)), 0.10)
+        rit = Image.merge("RGBA", corpo.split() + (rit.split()[3],))
+
+        x_rit = W - o(40) - rit.width
+        y_rit = H - rit.height                        # tocca il bordo inferiore
+        al = rit.split()[3]
+
+        alone = al.filter(ImageFilter.GaussianBlur(o(105))).point(lambda t: int(t * 0.40))
+        tela.paste(Image.new("RGB", rit.size, (255, 238, 205)), (x_rit, y_rit), alone)
+        ombra = al.filter(ImageFilter.GaussianBlur(o(38))).point(lambda t: int(t * 0.30))
+        tela.paste(Image.new("RGB", rit.size, (86, 56, 30)),
+                   (x_rit + o(12), y_rit + v(16)), ombra)
+        tela.paste(rit, (x_rit, y_rit), rit)
+        dr = ImageDraw.Draw(tela)
+
+    # ── 6. piede: barra tricolore e committente, sopra tutto il resto ────────
+    y_piede = H - v(230)
+    alt_barra = max(3, o(12))
+    barra = Image.new("RGB", (x_col, alt_barra))
+    bd = ImageDraw.Draw(barra)
+    for x in range(x_col):
+        t = x / x_col
+        da, aa, u = ((VERDE_PA, AMBRA_CALDA, t / 0.5) if t < 0.5
+                     else (AMBRA_CALDA, ROSSO_PA, (t - 0.5) / 0.5))
+        bd.line((x, 0, x, alt_barra),
+                fill=tuple(int(da[i] + (aa[i] - da[i]) * u) for i in range(3)))
+    tela.paste(barra, (0, y_piede))
+
+    if a.committente:
+        blocco(dr, margine, y_piede + v(120),
+               "Committente responsabile: " + a.committente,
+               "merriweather-400.ttf", larg_utile, o(40), BRUNO)
+
+    return grana(tela, forza=3.0 * max(0.55, so))
+
+
 def adatta_social(master, larg, alt):
     """Formato orizzontale: il manifesto non si ricompone, si appoggia intero."""
     k = larg / master.width
@@ -357,19 +563,22 @@ def main():
                    help="quanto si schiarisce il panorama")
     p.add_argument("--larghezza-ritratto", type=float, default=0.48,
                    dest="larghezza_ritratto")
+    p.add_argument("--laterale", action="store_true",
+                   help="testo in colonna a sinistra, candidato a destra")
     p.add_argument("--uscita", required=True)
     p.add_argument("--social", action="store_true")
     a = p.parse_args()
 
     prepara_font()
-    master = costruisci(a, W, H)
+    impagina = costruisci_laterale if a.laterale else costruisci
+    master = impagina(a, W, H)
     master.save(a.uscita, dpi=(120, 120))
     print("manifesto:", a.uscita, master.size)
 
     if a.social:
         base = os.path.splitext(a.uscita)[0]
         for suff, (lw, lh) in {"_post": (1080, 1350), "_storia": (1080, 1920)}.items():
-            costruisci(a, lw, lh).save(base + suff + ".jpg", quality=94)
+            impagina(a, lw, lh).save(base + suff + ".jpg", quality=94)
             print("social:", base + suff + ".jpg", (lw, lh))
         adatta_social(master, 1200, 630).save(base + "_anteprima.jpg", quality=92)
 
