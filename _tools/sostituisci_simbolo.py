@@ -87,11 +87,10 @@ def main():
     # ⚠️ MEDIANA, non media: l'anello puo' toccare una zona di colore diverso
     #    (su Paolo prendeva anche la colonna beige e la toppa usciva schiarita).
     #    La mediana ignora la minoranza e tiene il colore dominante.
-    px = [p for p, msk in zip(intorno.getdata(), anello.getdata()) if msk]
-    if px:
-        fondo = tuple(sorted(c[i] for c in px)[len(px) // 2] for i in range(3))
-    else:
-        fondo = (0, 0, 0)
+    dati, msk = intorno.tobytes(), anello.tobytes()   # tobytes: getdata e' deprecato
+    canali = [sorted(dati[i * 3 + k] for i in range(len(msk)) if msk[i])
+              for k in range(3)]
+    fondo = tuple(c[len(c) // 2] for c in canali) if canali[0] else (0, 0, 0)
 
     # ⚠️ La sfumatura mangia il bordo della toppa: il nucleo PIENO deve arrivare
     #    oltre i tratti da coprire, o quelli riaffiorano dove la maschera e'
