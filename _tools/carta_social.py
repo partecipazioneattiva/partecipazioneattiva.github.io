@@ -185,7 +185,9 @@ def costruisci_da_figura(immagine, larghezza=1024, frazione=0.45, zoom=1.0,
     #    in qualunque manifesto.
     alfa = fig.split()[-1].point(lambda v: 255 if v > 128 else 0)
     fascia = alfa.crop((0, 0, fig.width, max(1, int(testa * k)))).getbbox()
-    x = int(bordo + (W - bordo) * 0.52 - fig.width * 0.45)
+    # accostata al bordo destro, con un filo di spalla che esce: la striscia
+    # di fondo a destra fa sembrare la figura mozzata.
+    x = W - fig.width + int(W * 0.015)
     if fascia:
         margine_t = int(W * 0.02)
         x = min(x, W - margine_t - fascia[2])          # niente testa tagliata a destra
@@ -375,8 +377,18 @@ def componi_campagna(figura, c, com, logo, presidente=None):
     h = L - alta - bassa
     k = h / fig.height
     fig = fig.resize((max(1, int(fig.width * k)), h), Image.LANCZOS)
+    # ⛔ 4 agosto 2026: la figura si ACCOSTA al bordo destro e ci esce un poco.
+    #    Lasciare una striscia di fondo a destra la fa sembrare ritagliata
+    #    male — "mozzata" — mentre una spalla che esce dal bordo e' normale su
+    #    qualunque santino. La testa pero' resta tutta dentro: si arretra se il
+    #    bordo le arriva addosso.
+    alfa = fig.split()[-1].point(lambda v: 255 if v > 128 else 0)
+    banda = alfa.crop((0, 0, fig.width, max(1, int(fig.height * 0.30)))).getbbox()
+    x = L - fig.width + int(L * 0.015)
+    if banda:
+        x = min(x, L - int(L * 0.02) - banda[2])
     strato = Image.new("RGBA", (L, L), (0, 0, 0, 0))
-    strato.paste(fig, (int(L * 0.70 - fig.width * 0.5), alta))
+    strato.paste(fig, (x, alta))
     strato = strato.crop((int(L * 0.42), 0, L, L - bassa))
     tela.paste(strato, (int(L * 0.42), 0), strato)
 
