@@ -383,13 +383,37 @@ def componi_campagna(figura, c, com, logo, presidente=None):
     # 2 — VOTA
     x0 = int(L * 0.05)
     largo = int(L * 0.36)
-    y = alta + int(L * 0.045)
-    fv, cv = adatta("VOTA", NERETTO, largo, L * 0.085, 0.02)
+    y0 = alta + int(L * 0.045)
+    y = y0
+    disponibile = (L - bassa - int(L * 0.025)) - y0
+
+    # ⛔ 4 agosto 2026: su Luigi il cognome finiva sotto la fascia blu. La
+    #    colonna non si impagina "a scendere e speriamo": si misura prima
+    #    quanto serve e, se non ci sta, si stringe tutto insieme — simbolo
+    #    compreso — invece di tagliare l'ultima riga, che e' il cognome.
+    def _alto(fatt):
+        h = adatta("VOTA", NERETTO, largo, L * 0.085 * fatt, 0.02)[1] * 1.5
+        h += int(largo * 0.92 * fatt) * 1.06
+        if c["ruolo"] == "consigliere":
+            h += adatta("E SCRIVI", NERETTO, largo, L * 0.062 * fatt, 0.02)[1] * 1.45
+            h += adatta(c["nome"], NERETTO, largo, L * 0.058 * fatt, 0.01)[1] * 1.25
+            h += adatta(c["cognome"], NERETTO, largo, L * 0.085 * fatt, 0.01)[1] * 1.25
+        else:
+            h += adatta(c["nome"], NERETTO, largo, L * 0.058 * fatt, 0.01)[1] * 1.25
+            h += adatta(c["cognome"], NERETTO, largo, L * 0.085 * fatt, 0.01)[1] * 1.25
+            h += adatta("CANDIDATO PRESIDENTE", NERETTO, largo, L * 0.040 * fatt, 0.01)[1] * 1.3
+        return h
+
+    fatt = 1.0
+    while fatt > 0.5 and _alto(fatt) > disponibile:
+        fatt -= 0.04
+
+    fv, cv = adatta("VOTA", NERETTO, largo, L * 0.085 * fatt, 0.02)
     scrivi(dr, (x0, y + cv), "VOTA", fv, BLU_PA, cv * 0.02, "ls")
     y += int(cv * 1.5)
 
     # 3 — il simbolo con la X: qui la X e' GRANDE e nera, come sul santino
-    lato = int(largo * 0.92)
+    lato = int(largo * 0.92 * fatt)
     sim = Image.open(logo).convert("RGBA").resize((lato, lato), Image.LANCZOS)
     tela.paste(sim, (x0, y), sim)
     croce_sul_simbolo(tela, x0, y, lato, grande=True)
@@ -397,20 +421,20 @@ def componi_campagna(figura, c, com, logo, presidente=None):
 
     # 4 — E SCRIVI + cognome (il secondo gesto), solo per i consiglieri
     if c["ruolo"] == "consigliere":
-        fe, ce = adatta("E SCRIVI", NERETTO, largo, L * 0.062, 0.02)
+        fe, ce = adatta("E SCRIVI", NERETTO, largo, L * 0.062 * fatt, 0.02)
         scrivi(dr, (x0, y + ce), "E SCRIVI", fe, BLU_PA, ce * 0.02, "ls")
         y += int(ce * 1.45)
-        fn, cn = adatta(c["nome"], NERETTO, largo, L * 0.058, 0.01)
+        fn, cn = adatta(c["nome"], NERETTO, largo, L * 0.058 * fatt, 0.01)
         scrivi(dr, (x0, y + cn), c["nome"], fn, BLU_PA, cn * 0.01, "ls")
         y += int(cn * 1.25)
-        fc, cc = adatta(c["cognome"], NERETTO, largo, L * 0.085, 0.01)
+        fc, cc = adatta(c["cognome"], NERETTO, largo, L * 0.085 * fatt, 0.01)
         scrivi(dr, (x0, y + cc), c["cognome"], fc, BLU_PA, cc * 0.01, "ls")
     else:
         for riga, dim in ((c["nome"], 0.058), (c["cognome"], 0.085)):
-            fr, cr = adatta(riga, NERETTO, largo, L * dim, 0.01)
+            fr, cr = adatta(riga, NERETTO, largo, L * dim * fatt, 0.01)
             scrivi(dr, (x0, y + cr), riga, fr, BLU_PA, cr * 0.01, "ls")
             y += int(cr * 1.25)
-        fp, cp = adatta("CANDIDATO PRESIDENTE", NERETTO, largo, L * 0.040, 0.01)
+        fp, cp = adatta("CANDIDATO PRESIDENTE", NERETTO, largo, L * 0.040 * fatt, 0.01)
         scrivi(dr, (x0, y + cp), "CANDIDATO PRESIDENTE", fp, BLU_PA, cp * 0.01, "ls")
 
     # 5 — fascia in basso: il Presidente della lista
