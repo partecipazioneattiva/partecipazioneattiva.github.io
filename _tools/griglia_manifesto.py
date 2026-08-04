@@ -1,0 +1,175 @@
+#!/usr/bin/env python3
+"""La GRIGLIA del manifesto: dove va la persona, dove il simbolo, dove il testo.
+
+    python3 _tools/griglia_manifesto.py --schema griglia.png
+    python3 _tools/griglia_manifesto.py --verifica manifesto_generato.png
+
+⛔ PERCHE' ESISTE (4 agosto 2026, idea di Fernando)
+Il manifesto si fa generare con TUTTI gli spazi gia' vuoti: il posto del
+simbolo e il posto delle scritte. Il generatore mette solo la persona e il
+fondo — non sa nemmeno che li' andranno un simbolo e un testo, quindi non puo'
+sbagliarli. Simbolo e testo li mettiamo noi dopo, dal file vero.
+
+Perche' serva a qualcosa, pero', i vuoti devono cadere sempre negli STESSI
+posti: dieci candidati devono sembrare una campagna sola, e il testo lo scrive
+uno script che le coordinate le ha fisse. Qui stanno quelle coordinate, in un
+posto solo, e da qui le legge chiunque: il prompt, lo script del testo,
+sostituisci_simbolo.py.
+
+--schema disegna la griglia vuota, quotata in centimetri: e' il disegno da
+         guardare per capire, e da tenere accanto quando si scrive il prompt.
+--verifica prende un manifesto appena generato, ci stampa sopra la griglia e
+         dice quanto la figura invade gli spazi che dovevano restare liberi.
+         Sotto il 2% si passa, sopra si rigenera: il testo non si scrive su una
+         spalla.
+
+🟩 LE MISURE SONO SCELTE NOSTRE, non norme. La sola parte imposta per legge e'
+il committente (L. 212/1956 art. 3), che sta nella fascia in fondo e non si
+toglie. Il diametro del disco (0,414) non e' un numero tondo per caso: e'
+quello che Nano Banana ha prodotto davvero il 4 agosto 2026 sul manifesto di
+Luigi, misurato con _tools/misura_vuoto.py. Chiedere una misura che il
+generatore gia' produce da solo costa molto meno che imporgliene una nuova.
+"""
+import argparse
+
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+
+# Tutto in frazioni della tela (x e larghezze sulla larghezza, y e altezze
+# sull'altezza), cosi' valgono a qualunque misura di stampa.
+# (x0, y0, x1, y1, nome, a cosa serve)
+ZONE = [
+    (0.030, 0.025, 0.970, 0.095, "FASCIA ALTA",  "elezione e data"),
+    (0.560, 0.120, 0.970, 0.560, "COLONNA TESTO", "nome, carica, slogan"),
+    (0.560, 0.600, 0.970, 0.780, "ISTRUZIONE",   "come si vota"),
+    # parte da 0,47 e non da sinistra: sotto c'e' il disco, che scende fino a
+    # 0,97 dell'altezza. Il committente gli passa accanto, non sopra.
+    (0.470, 0.900, 0.970, 0.965, "FASCIA BASSA", "committente e sito"),
+]
+# Il disco del simbolo: bordo sinistro, bordo alto, diametro.
+DISCO = (0.035, 0.683, 0.414)
+# La persona: la meta' sinistra del foglio. Oltre questa colonna non deve
+# arrivare nulla della figura, o il testo finisce addosso a una spalla.
+FIGURA_FINO_A = 0.540
+
+
+def griglia(W, H):
+    """Le zone in pixel, per una tela W x H."""
+    fuori = [(int(x0 * W), int(y0 * H), int(x1 * W), int(y1 * H), n, s)
+             for x0, y0, x1, y1, n, s in ZONE]
+    dx, dy, d = DISCO
+    disco = (int(dx * W), int(dy * H), int((dx + d) * W), int(dy * H + d * W))
+    return fuori, disco
+
+
+def quota(cm_l, cm_h, x0, y0, x1, y1):
+    return "%.0f×%.0f cm, a %.0f cm da sinistra e %.0f dall'alto" % (
+        (x1 - x0) * cm_l, (y1 - y0) * cm_h, x0 * cm_l, y0 * cm_h)
+
+
+def schema(uscita, W, H, cm_l, cm_h):
+    im = Image.new("RGB", (W, H), (242, 224, 181))
+    d = ImageDraw.Draw(im)
+    try:
+        f = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 20)
+        fp = ImageFont.truetype("/System/Library/Fonts/Supplemental/Arial.ttf", 15)
+    except OSError:
+        f = fp = ImageFont.load_default()
+
+    # la meta' della persona
+    d.rectangle([0, 0, int(FIGURA_FINO_A * W), H - 1], fill=(214, 204, 186))
+    # sotto la fascia alta, o le due scritte si accavallano
+    d.text((20, int(0.13 * H)), "QUI LA PERSONA", font=f, fill=(90, 80, 60))
+    d.text((20, int(0.13 * H) + 26),
+           "ritratto di chiunque:\nl'unica cosa che cambia\nda un manifesto all'altro",
+           font=fp, fill=(110, 100, 80))
+
+    zone, disco = griglia(W, H)
+    for x0, y0, x1, y1, nome, uso in zone:
+        d.rectangle([x0, y0, x1, y1], fill=(252, 246, 230), outline=(180, 60, 40), width=3)
+        d.text((x0 + 10, y0 + 8), nome, font=f, fill=(180, 60, 40))
+        d.text((x0 + 10, y0 + 32), uso, font=fp, fill=(140, 120, 90))
+        d.text((x0 + 10, y1 - 24),
+               quota(cm_l, cm_h, x0 / W, y0 / H, x1 / W, y1 / H), font=fp, fill=(150, 130, 100))
+
+    d.ellipse(disco, fill=(252, 246, 230), outline=(180, 60, 40), width=3)
+    cx = (disco[0] + disco[2]) // 2
+    cy = (disco[1] + disco[3]) // 2
+    d.text((cx - 60, cy - 20), "IL SIMBOLO", font=f, fill=(180, 60, 40))
+    d.text((cx - 60, cy + 4), "disco vuoto, ø %.0f cm" % (DISCO[2] * cm_l),
+           font=fp, fill=(140, 120, 90))
+    im.save(uscita)
+    print("schema: %s (%d × %d px, carta %g × %g cm)" % (uscita, W, H, cm_l, cm_h))
+    for x0, y0, x1, y1, nome, uso in zone:
+        print("  %-14s %s  — %s" % (nome, quota(cm_l, cm_h, x0/W, y0/H, x1/W, y1/H), uso))
+    print("  %-14s ø %.0f cm, a %.1f cm da sinistra e %.1f dall'alto  — il simbolo"
+          % ("DISCO", DISCO[2]*cm_l, DISCO[0]*cm_l, DISCO[1]*cm_h))
+
+
+def verifica(percorso, uscita, cm_l, cm_h):
+    im = Image.open(percorso).convert("RGB")
+    a = np.array(im).astype(int)
+    H, W, _ = a.shape
+    # il fondo pergamena: tinta calda e chiara. Tutto il resto e' "roba".
+    fondo = (a[:, :, 0] > 228) & (a[:, :, 2] < 215) & (a[:, :, 0] - a[:, :, 2] > 25)
+    roba = ~fondo
+
+    zone, disco = griglia(W, H)
+    print("manifesto %s — %d × %d px" % (percorso, W, H))
+    tutto_bene = True
+    for x0, y0, x1, y1, nome, _ in zone:
+        fetta = roba[y0:y1, x0:x1]
+        sporco = fetta.mean()
+        segno = "✅" if sporco < 0.02 else "❌"
+        if sporco >= 0.02:
+            tutto_bene = False
+        print("  %s %-14s occupato per il %.1f%%" % (segno, nome, sporco * 100))
+
+    # la figura non deve sbordare oltre la colonna della persona
+    oltre = roba[:, int(FIGURA_FINO_A * W):]
+    colonne = np.nonzero(oltre.any(axis=0))[0]
+    if len(colonne):
+        fin_dove = (int(FIGURA_FINO_A * W) + colonne.max()) / W
+        segno = "✅" if fin_dove < 0.60 else "❌"
+        if fin_dove >= 0.60:
+            tutto_bene = False
+        print("  %s FIGURA         arriva fino a %.2f della larghezza (%.1f cm); "
+              "il limite e' %.2f" % (segno, fin_dove, fin_dove * cm_l, FIGURA_FINO_A))
+    else:
+        print("  ✅ FIGURA         resta nella sua meta'")
+
+    # anteprima con la griglia stampata sopra
+    sopra = im.convert("RGBA")
+    velo = Image.new("RGBA", sopra.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(velo)
+    for x0, y0, x1, y1, nome, _ in zone:
+        d.rectangle([x0, y0, x1, y1], fill=(180, 60, 40, 60), outline=(180, 60, 40, 220), width=3)
+    d.ellipse(disco, outline=(30, 90, 180, 220), width=4)
+    Image.alpha_composite(sopra, velo).convert("RGB").save(uscita)
+    print("  controllo a vista: %s" % uscita)
+    print("\n%s" % ("tutto libero: si puo' scrivere" if tutto_bene else
+                    "qualcosa invade i vuoti: rigenerare, o spostare le zone"))
+    return 0 if tutto_bene else 1
+
+
+def main():
+    p = argparse.ArgumentParser(description="La griglia del manifesto")
+    p.add_argument("--schema", help="disegna la griglia vuota in questo file")
+    p.add_argument("--verifica", help="controlla un manifesto generato")
+    p.add_argument("--uscita", default="controllo_griglia.png",
+                   help="dove salvare l'anteprima di --verifica")
+    p.add_argument("--tela", default="864x1232", help="px dello schema")
+    p.add_argument("--carta", default="70x100", help="cm del foglio stampato")
+    a = p.parse_args()
+    cm_l, cm_h = (float(v) for v in a.carta.lower().split("x"))
+    if a.schema:
+        W, H = (int(v) for v in a.tela.lower().split("x"))
+        schema(a.schema, W, H, cm_l, cm_h)
+        return 0
+    if a.verifica:
+        return verifica(a.verifica, a.uscita, cm_l, cm_h)
+    p.error("serve --schema o --verifica")
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
