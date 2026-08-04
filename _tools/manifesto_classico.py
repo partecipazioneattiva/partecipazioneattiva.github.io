@@ -580,14 +580,17 @@ def costruisci_elettorale(a, W, H):
             w0, h0 = rit.size
             m = Image.new("L", (w0, h0), 255)
             dm = ImageDraw.Draw(m)
-            sfuma = int(w0 * 0.18)
+            sfuma = int(w0 * 0.30)
             for i in range(sfuma):                       # bordo destro
                 dm.line((w0 - sfuma + i, 0, w0 - sfuma + i, h0),
-                        fill=int(255 * (1 - i / sfuma)))
-            m = m.filter(ImageFilter.GaussianBlur(int(w0 * 0.02)))
+                        fill=int(255 * (1 - i / sfuma) ** 1.4))
+            alto = int(h0 * 0.10)                        # e un filo in alto
+            for i in range(alto):
+                dm.line((0, i, w0, i), fill=int(255 * (i / alto)))
+            m = m.filter(ImageFilter.GaussianBlur(int(w0 * 0.03)))
             rit.putalpha(m)
 
-        largh = int(W * 0.64)
+        largh = int(W * 0.70)
         k = largh / rit.width
         if int(rit.height * k) > int(H * 0.94):        # non deve sfondare in alto
             k = int(H * 0.94) / rit.height
@@ -635,9 +638,9 @@ def costruisci_elettorale(a, W, H):
     #      PARTECIPAZIONE, e il simbolo e' l'unica cosa che l'elettore deve
     #      riconoscere sulla scheda.
     if a.logo and os.path.exists(a.logo):
-        lato = int(W * 0.30)
+        lato = int(W * 0.21)
         logo = Image.open(a.logo).convert("RGBA").resize((lato, lato), Image.LANCZOS)
-        lx, ly = margine, H - lato - v(230)
+        lx, ly = margine, H - lato - v(150)
         tela.paste(logo, (lx, ly), logo)
 
         segno = Image.new("RGBA", (lato, lato), (0, 0, 0, 0))
