@@ -46,26 +46,37 @@ VOTO = {"presidente": "sulla scheda della Municipalità",
         "consigliere": "e scrivi {cognome} sulla scheda"}
 
 
-def misura_pannello(im, tolleranza=14):
+def misura_pannello(im):
     """Larghezza del pannello vuoto, in pixel.
 
-    Il pannello e' una tinta piatta: si prende il colore di una colonna vicina
-    al bordo sinistro e si cammina verso destra finche' la colonna smette di
-    somigliargli. Si guarda lo scarto MASSIMO sulla colonna, non la media: un
-    panorama scuro in cima e chiaro in fondo puo' avere la stessa media della
-    pergamena.
+    ⛔ Prima prova, sbagliata: confrontare ogni colonna con il colore del bordo
+    sinistro. Sulla card di Rosa il pannello aveva una velatura dorata che
+    scurisce di qualche punto, e la misura si fermava a 8 px su 848.
+    Quello che distingue davvero le due meta' non e' il COLORE ma la
+    VARIAZIONE: la pergamena e' liscia (scarto quadratico medio quasi zero
+    lungo la colonna), il panorama no. Qui si cerca la prima colonna
+    "mossa", e se ne pretendono alcune di fila per non cadere su un artefatto.
     """
-    px = im.convert("RGB")
+    px = im.convert("L")
     w, h = px.size
-    campione = [px.getpixel((max(2, w // 100), y))
-                for y in range(h // 10, h - h // 10, max(1, h // 40))]
-    base = tuple(sorted(c[i] for c in campione)[len(campione) // 2] for i in range(3))
-    for x in range(w // 100, w):
-        col = [px.getpixel((x, y)) for y in range(0, h, max(1, h // 60))]
-        scarto = max(max(abs(c[i] - base[i]) for i in range(3)) for c in col)
-        if scarto > tolleranza:
-            return x, base
-    return w // 2, base
+    passo = max(1, h // 120)
+
+    def mosso(x):
+        col = [px.getpixel((x, y)) for y in range(0, h, passo)]
+        media = sum(col) / len(col)
+        return (sum((v - media) ** 2 for v in col) / len(col)) ** 0.5
+
+    liscio = sorted(mosso(x) for x in range(2, max(6, w // 20)))
+    soglia = max(6.0, 4 * liscio[len(liscio) // 2] + 3)
+    di_fila = 0
+    for x in range(w // 20, w):
+        if mosso(x) > soglia:
+            di_fila += 1
+            if di_fila >= 4:
+                return x - 3, soglia
+        else:
+            di_fila = 0
+    return w // 2, soglia
 
 
 def blocchi(c, com):
@@ -125,11 +136,11 @@ def main():
     prepara_font()
     im = Image.open(os.path.expanduser(a.immagine)).convert("RGB")
     W, H = im.size
-    bordo, tinta = misura_pannello(im)
+    bordo, soglia = misura_pannello(im)
     if a.bordo:
         bordo = int(W * a.bordo)
     print(f"pannello: {bordo} px su {W} ({bordo / W:.3f} della larghezza), "
-          f"tinta {tinta}", file=sys.stderr)
+          f"soglia {soglia:.1f}", file=sys.stderr)
     if bordo < W * 0.25:
         sys.exit("⛔ pannello troppo stretto: o l'immagine non e' quella vuota, "
                  "o la misura ha sbagliato. Forzarla con --bordo 0.45")
