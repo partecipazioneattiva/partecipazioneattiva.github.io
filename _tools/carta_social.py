@@ -164,6 +164,21 @@ def costruisci_da_figura(immagine, larghezza=1024, frazione=0.45, zoom=1.0,
     # il mento appena sopra meta': la testa e' alta 'bordo', quindi la cima
     # dei capelli sta a mezzo - bordo
     y = int(H * (0.48 - alza) - bordo)
+    # ⛔ 4 agosto 2026: la figura DEVE arrivare al bordo di sotto. Se resta
+    #    sospesa lascia una striscia di fondo vuoto sotto i piedi, e su un
+    #    manifesto quella striscia si vede come un errore di montaggio.
+    #    Prima si prova a scendere; se non basta perche' la foto di partenza
+    #    ha poco corpo, si ingrandisce quel tanto che serve e lo si dice.
+    if y + fig.height < H:
+        y = H - fig.height
+    if y + fig.height < H or y > H * 0.30:
+        allunga = (H - y) / fig.height
+        if allunga > 1:
+            fig = fig.resize((int(fig.width * allunga), int(fig.height * allunga)),
+                             Image.LANCZOS)
+            print(f"⚠️  poco corpo nella foto: figura ingrandita del "
+                  f"{(allunga - 1) * 100:.0f}% per arrivare al bordo di sotto",
+                  file=sys.stderr)
     x = int(bordo + (W - bordo) * 0.52 - fig.width * 0.45)
     strato = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     strato.paste(fig, (x, y))
@@ -290,8 +305,10 @@ def main():
     p.add_argument("--ritratto", help="la sola FOTOGRAFIA del candidato: pannello, "
                                       "scala e posizione li calcola questo script "
                                       "(consigliato)")
-    p.add_argument("--zoom", type=float, default=1.0,
-                   help="ritocco della grandezza della testa (1.0 = misura di Rosa)")
+    p.add_argument("--zoom", type=float, default=0.65,
+                   help="grandezza della testa. 0.65 e' la misura di serie scelta "
+                        "il 4 agosto 2026 sul confronto a tre: si vede il torace "
+                        "e la figura sta comoda nella sua meta'")
     p.add_argument("--alza", type=float, default=0.0,
                    help="alza (+) o abbassa (-) la figura, in frazione di altezza")
     p.add_argument("--candidato", required=True, help="chiave nel JSON (es. rosa)")
