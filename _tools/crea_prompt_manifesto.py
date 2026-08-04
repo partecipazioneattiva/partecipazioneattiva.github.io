@@ -53,6 +53,29 @@ VOTO = {
 #       lettera ("the final A carrying its grave accent");
 #    3. il bollino: su Gemini si genera da AI Studio, su Lumina resta e va
 #       ritagliato prima di pubblicare.
+# ⛔ 4 agosto 2026, due difetti visti sulle prime due prove di Luigi, e valgono
+#    per tutti: (1) il pannello TAGLIAVA la figura — mezza faccia dietro la
+#    pergamena, perche' il modello centra la persona su tutta la tela e poi ci
+#    disegna sopra il pannello; (2) la persona guardava FUORI dal manifesto.
+#    In un impaginato spezzato lo sguardo deve entrare nella pagina, verso il
+#    testo: e' la regola che fa sembrare le due meta' una cosa sola.
+#    Per questo qui non si dice piu' "shoulder bleeding off the right edge":
+#    era proprio l'istruzione che lo spingeva verso il bordo e sotto il taglio.
+POSA = ("{Lui} is photographed on the RIGHT side of the frame, waist up, "
+        "ENTIRELY inside the right portion: the whole head and both shoulders "
+        "are visible, with a clear margin of background between the figure and "
+        "the parchment panel. The panel never covers any part of the person and "
+        "the person never crosses into the panel: nothing of the face, the hair "
+        "or the shoulders is hidden, cut or overlapped. {Lui} is turned slightly "
+        "INWARDS, towards the panel on the left, and looks straight into the "
+        "camera with the head angled the same way, so that the gaze leads into "
+        "the poster and never out of the right edge. There is clear space above "
+        "the head.")
+
+def posa_di(f):
+    return POSA.format(Lui="She" if f else "He")
+
+
 CARICA_CARD = {
     "presidente": "CANDIDAT{a} ALLA PRESIDENZA",
     "consigliere": "CANDIDAT{a} AL CONSIGLIO",
@@ -85,16 +108,17 @@ def prompt_card_vuota(c):
     f = c["genere"] == "f"
     Lui = "She" if f else "He"
     uomo = "woman" if f else "man"
+    POSA = posa_di(f)
 
     return f"""Vertical editorial photograph, 2:3, warm golden hour, split composition: photograph on the right, plain empty panel on the left.
 
-Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']} {Lui} stands on the RIGHT HALF of the frame, waist up, turned slightly left, looking at the camera, shoulder bleeding off the right edge, the head with clear space above it. Behind {'her' if f else 'him'}, Naples from above at sunset: pale rooftops, the bay, Mount Vesuvius, clouds lit orange and gold. Warm light on the face from the left, natural skin texture, visible pores and lines, sharp focus on the eyes.
+Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']} {POSA} Behind {'her' if f else 'him'}, Naples from above at sunset: pale rooftops, the bay, Mount Vesuvius, clouds lit orange and gold. Warm light on the face from the left, natural skin texture, visible pores and lines, sharp focus on the eyes.
 
 The LEFT HALF is a plain warm parchment panel: one flat cream tone with a soft golden glow, smooth and COMPLETELY EMPTY. It covers the left 45 per cent of the width and runs from the top edge to the bottom edge, separated from the photograph by a single straight vertical division. Inside that panel there is absolutely nothing: no text, no letters, no numbers, no logo, no emblem, no symbol, no rules, no lines, no frame, no border, no ornament, no placeholder, no shadow and no texture. It is empty on purpose and it must stay empty.
 
 Photorealistic, natural colours, print quality, 4K.
 
-NEGATIVE PROMPT: text, letters, words, numbers, captions, titles, signature, logo, emblem, symbol, badge, ornament, decoration, gold rules, lines on the panel, frame, border, paper texture, grain, stains, shadow over the panel, gradient on the panel, {uomo} on the left, panel on the right, centred composition, full body, profile view, looking away, multiple people, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, sparkle icon, AI badge, watermark"""
+NEGATIVE PROMPT: text, letters, words, numbers, captions, titles, signature, logo, emblem, symbol, badge, ornament, decoration, gold rules, lines on the panel, frame, border, paper texture, grain, stains, shadow over the panel, gradient on the panel, {uomo} on the left, panel on the right, figure cut by the panel, face half hidden, person behind the panel, cropped face, subject turned outwards, subject looking away from the panel, subject pressed against the right edge, centred composition, full body, profile view, looking away, multiple people, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, sparkle icon, AI badge, watermark"""
 
 
 def prompt_card(c, com, valori=False):
@@ -108,6 +132,7 @@ def prompt_card(c, com, valori=False):
     uomo = "woman" if f else "man"
     carica = CARICA_CARD[c["ruolo"]].format(a="A" if f else "O")
     voto = VOTO_CARD[c["ruolo"]].format(cognome=c["cognome"])
+    POSA = posa_di(f)
 
     # ⛔ 4 agosto 2026: la riga della CARICA era sparita dal generato. Non e'
     #    un difetto del motore: l'elenco era troppo lungo (dodici blocchi) e
@@ -139,7 +164,7 @@ def prompt_card(c, com, valori=False):
 
     return f"""Vertical civic poster, 2:3, warm golden hour, split layout: photograph right, text left.
 
-Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']} {Lui} stands on the RIGHT HALF, waist up, turned slightly left, looking at the camera, shoulder bleeding off the right edge. Behind {'her' if f else 'him'}, Naples from above at sunset: pale rooftops, the bay, Mount Vesuvius, clouds lit orange and gold. Warm light on the face from the left, natural skin texture, visible pores and lines.
+Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']} {POSA} Behind {'her' if f else 'him'}, Naples from above at sunset: pale rooftops, the bay, Mount Vesuvius, clouds lit orange and gold. Warm light on the face from the left, natural skin texture, visible pores and lines.
 
 The LEFT HALF is a plain warm parchment panel, divided from the photo by a thin vertical gold rule, with all text left aligned in dark brown engraved serif. It carries EXACTLY {quanti} blocks, all of them, in this order from top to bottom, spread over the full height of the panel:
 
@@ -153,7 +178,7 @@ Palette: amber, terracotta, cream, gold, deep brown. High contrast between the d
 
 Before delivering, count the blocks on the finished panel: there must be {quanti}, in this order, none missing. Then read the whole text again: no repeated, misspelled or invented words, no missing accents, no line cut off or covered by the figure.
 
-NEGATIVE PROMPT: {uomo} on the left, text on the right, centred layout, quotation marks around the name, MUNICIPALITA without the accent, missing accents, altered or redrawn logo, illegible logo lettering, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, gibberish text, misspelled text, duplicated lines, sparkle icon, AI badge, watermark, signature, flags, other party symbols"""
+NEGATIVE PROMPT: {uomo} on the left, text on the right, centred layout, figure cut by the panel, face half hidden, person behind the panel, subject turned outwards, quotation marks around the name, MUNICIPALITA without the accent, missing accents, altered or redrawn logo, illegible logo lettering, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, gibberish text, misspelled text, duplicated lines, sparkle icon, AI badge, watermark, signature, flags, other party symbols"""
 
 
 def prompt(c, com, senza_simbolo=False):
