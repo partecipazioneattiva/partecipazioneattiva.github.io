@@ -17,14 +17,24 @@ lettere.
 La posizione di default e' l'angolo in basso a sinistra, dove la mettono i
 nostri manifesti. Si sposta con --x --y --lato, tutti in frazioni di
 larghezza/altezza della tela, cosi' valgono a qualunque misura.
+
+🟩 IL SEGNO E' ROSSO SU TUTTI I MANIFESTI — deciso da Fernando il 4 agosto 2026.
+Il confronto a tre (nera, nera con contorno, rossa) sul manifesto di Paolo aveva
+mostrato che sulla giacca scura il nero sparisce fuori dal simbolo, mentre su
+Antonio e Rosa — fondo pergamena — il nero si sarebbe visto benissimo ed e'
+piu' fedele alla matita copiativa. La scelta e' comunque il rosso per tutti:
+dieci manifesti devono sembrare una campagna sola, e un segno che cambia colore
+da candidato a candidato smette di essere un segno e diventa decorazione.
+⛔ Non "ottimizzare" il colore manifesto per manifesto: e' gia' stato valutato.
 """
 import argparse
 import os
 import sys
 
-from PIL import Image, ImageDraw, ImageFilter
+from PIL import Image, ImageChops, ImageDraw, ImageFilter
 
-ROSSO_PA = (218, 81, 52)
+ROSSO_PA    = (218, 81, 52)
+NERO_MATITA = (38, 34, 44)   # il nero-bluastro della matita copiativa
 
 
 def main():
@@ -42,6 +52,16 @@ def main():
                    help="spessore dei tratti della X, in frazioni del diametro")
     p.add_argument("--opacita", type=float, default=0.95,
                    help="opacita' della X, da 0 a 1")
+    p.add_argument("--colore", choices=("rosso", "nero"), default="rosso",
+                   help="rosso = la scelta di PA, uguale su tutti i manifesti "
+                        "(default); nero = il segno della matita copiativa, "
+                        "ma sparisce sui fondi scuri")
+    p.add_argument("--contorno", action="store_true",
+                   help="filo chiaro attorno ai tratti: serve col nero su fondo scuro")
+    p.add_argument("--sborda", type=float, default=0.10,
+                   help="quanto il segno esce dal simbolo, in frazioni del diametro")
+    p.add_argument("--velo", type=float, default=0.42,
+                   help="quanto si attenua il tratto sull'anello delle lettere (0-1)")
     p.add_argument("--senza-x", action="store_true", dest="senza_x",
                    help="incolla il logo pulito, senza tracciare la X")
     a = p.parse_args()
@@ -92,18 +112,40 @@ def main():
     # 3. la X: due tratti sottili, semitrasparenti, che restano DENTRO il
     #    disco centrale e non arrivano sull'anello dove stanno le lettere.
     if not a.senza_x:
-        segno = Image.new("RGBA", (lato, lato), (0, 0, 0, 0))
+        # Il segno esce dal simbolo, come lo traccia una mano sulla scheda. Ma
+        # dove attraversa l'ANELLO DELLE LETTERE il tratto si attenua: cosi'
+        # sborda e "PARTECIPAZIONE" resta leggibile. Tenere la X corta dentro
+        # il disco la rendeva timida; allungarla piena mangiava due lettere.
+        sb = int(lato * a.sborda)
+        L = lato + 2 * sb
+        segno = Image.new("RGBA", (L, L), (0, 0, 0, 0))
         d = ImageDraw.Draw(segno)
-        # ⚠️ Il 23,5% dal bordo NON si tocca: e' la misura che tiene i tratti
-        #    dentro il disco e lascia libero l'anello delle lettere. Se la X e'
-        #    poco evidente si aumentano SPESSORE e OPACITA', non la lunghezza:
-        #    allungandola si torna a mangiare "PA" e "NE" di PARTECIPAZIONE.
-        bordo = int(lato * 0.235)
         sp = max(2, int(lato * a.spessore))
+        colore = NERO_MATITA if a.colore == "nero" else ROSSO_PA
         alfa = int(255 * a.opacita)
-        d.line((bordo, bordo, lato - bordo, lato - bordo), fill=ROSSO_PA + (alfa,), width=sp)
-        d.line((lato - bordo, bordo, bordo, lato - bordo), fill=ROSSO_PA + (alfa,), width=sp)
-        m.paste(segno, (x, y), segno)
+        # ⚠️ Con il segno NERO, la parte che sborda finisce sul fondo scuro del
+        #    manifesto e sparisce — proprio il pezzo che doveva vedersi. Un filo
+        #    di contorno chiaro lo stacca dal fondo senza togliergli il
+        #    carattere di matita. Sul rosso non serve.
+        if a.contorno:
+            spc = sp + max(2, int(lato * 0.030))
+            for p0, p1 in (((0, 0), (L - 1, L - 1)), ((L - 1, 0), (0, L - 1))):
+                d.line(p0 + p1, fill=(250, 244, 226, 190), width=spc)
+        d.line((0, 0, L - 1, L - 1), fill=colore + (alfa,), width=sp)
+        d.line((L - 1, 0, 0, L - 1), fill=colore + (alfa,), width=sp)
+
+        # attenuazione sull'anello delle parole (dal 74% al 102% del raggio)
+        fatt = Image.new("L", (L, L), 255)
+        df = ImageDraw.Draw(fatt)
+        R = lato / 2.0
+        c = L / 2.0
+        df.ellipse((c - R * 1.02, c - R * 1.02, c + R * 1.02, c + R * 1.02),
+                   fill=int(255 * a.velo))
+        df.ellipse((c - R * 0.74, c - R * 0.74, c + R * 0.74, c + R * 0.74), fill=255)
+        fatt = fatt.filter(ImageFilter.GaussianBlur(max(1, int(lato * 0.02))))
+        segno.putalpha(ImageChops.multiply(segno.split()[3], fatt))
+
+        m.paste(segno, (x - sb, y - sb), segno)
 
     m.save(a.uscita, dpi=(120, 120))
     print("manifesto corretto:", a.uscita, m.size)
