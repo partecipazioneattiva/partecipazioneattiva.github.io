@@ -61,7 +61,12 @@ VOTO = {
 #    testo: e' la regola che fa sembrare le due meta' una cosa sola.
 #    Per questo qui non si dice piu' "shoulder bleeding off the right edge":
 #    era proprio l'istruzione che lo spingeva verso il bordo e sotto il taglio.
-POSA = ("{Lui} is photographed on the RIGHT side of the frame, waist up, "
+POSA = ("FRAMING, and this is exact: {suo} head, measured from the top of "
+        "the hair to the chin, is as tall as the parchment panel is wide, "
+        "and {suo} chin sits just above the middle line of the image. This "
+        "is a waist up photograph, not a close up: the face must never fill "
+        "the frame. "
+        "{Lui} is photographed on the RIGHT side of the frame, waist up, "
         "ENTIRELY inside the right portion: the whole head and both shoulders "
         "are visible, with a clear margin of background between the figure and "
         "the parchment panel. The panel never covers any part of the person and "
@@ -73,7 +78,7 @@ POSA = ("{Lui} is photographed on the RIGHT side of the frame, waist up, "
         "the head.")
 
 def posa_di(f):
-    return POSA.format(Lui="She" if f else "He")
+    return POSA.format(Lui="She" if f else "He", suo="her" if f else "his")
 
 
 CARICA_CARD = {
