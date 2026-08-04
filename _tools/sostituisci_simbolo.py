@@ -38,6 +38,10 @@ def main():
     p.add_argument("--lato", type=float, default=0.185, help="diametro, in frazioni di larghezza")
     p.add_argument("--copri", type=float, default=1.22,
                    help="quanto allargare la toppa che cancella il logo disegnato")
+    p.add_argument("--spessore", type=float, default=0.095,
+                   help="spessore dei tratti della X, in frazioni del diametro")
+    p.add_argument("--opacita", type=float, default=0.95,
+                   help="opacita' della X, da 0 a 1")
     p.add_argument("--senza-x", action="store_true", dest="senza_x",
                    help="incolla il logo pulito, senza tracciare la X")
     a = p.parse_args()
@@ -90,10 +94,15 @@ def main():
     if not a.senza_x:
         segno = Image.new("RGBA", (lato, lato), (0, 0, 0, 0))
         d = ImageDraw.Draw(segno)
-        bordo = int(lato * 0.235)          # 23,5% per lato = l'anello resta libero
-        sp = max(2, int(lato * 0.055))
-        d.line((bordo, bordo, lato - bordo, lato - bordo), fill=ROSSO_PA + (200,), width=sp)
-        d.line((lato - bordo, bordo, bordo, lato - bordo), fill=ROSSO_PA + (200,), width=sp)
+        # ⚠️ Il 23,5% dal bordo NON si tocca: e' la misura che tiene i tratti
+        #    dentro il disco e lascia libero l'anello delle lettere. Se la X e'
+        #    poco evidente si aumentano SPESSORE e OPACITA', non la lunghezza:
+        #    allungandola si torna a mangiare "PA" e "NE" di PARTECIPAZIONE.
+        bordo = int(lato * 0.235)
+        sp = max(2, int(lato * a.spessore))
+        alfa = int(255 * a.opacita)
+        d.line((bordo, bordo, lato - bordo, lato - bordo), fill=ROSSO_PA + (alfa,), width=sp)
+        d.line((lato - bordo, bordo, bordo, lato - bordo), fill=ROSSO_PA + (alfa,), width=sp)
         m.paste(segno, (x, y), segno)
 
     m.save(a.uscita, dpi=(120, 120))
