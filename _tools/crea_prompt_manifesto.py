@@ -63,43 +63,61 @@ VOTO_CARD = {
 }
 
 
-def prompt_card(c, com):
+def prompt_card(c, com, valori=False):
     if "card_en" not in c:
         sys.exit(f"⛔ manca il blocco 'card_en' per {c['nome'].title()}: la "
                  f"descrizione del volto in inglese si scrive guardando le sue "
                  f"foto vere, non si traduce a occhi chiusi.")
     e = c["card_en"]
     f = c["genere"] == "f"
-    lui = "she" if f else "he"
     Lui = "She" if f else "He"
     uomo = "woman" if f else "man"
     carica = CARICA_CARD[c["ruolo"]].format(a="A" if f else "O")
     voto = VOTO_CARD[c["ruolo"]].format(cognome=c["cognome"])
 
+    # ⛔ 4 agosto 2026: la riga della CARICA era sparita dal generato. Non e'
+    #    un difetto del motore: l'elenco era troppo lungo (dodici blocchi) e
+    #    quando la colonna non ci sta, il generatore non rimpicciolisce, TAGLIA
+    #    — e taglia in mezzo, dove stanno carica e istruzione di voto.
+    #    Rimedio: elenco NUMERATO e corto, e il conteggio chiesto esplicitamente
+    #    alla fine. Sono usciti "Libera associazione di cittadini" e i tre
+    #    valori (--valori li rimette, ma allora qualcosa d'altro va tolto).
+    blocchi = [
+        "the uploaded circular emblem, reproduced unchanged, with the words PARTECIPAZIONE and ATTIVA inside it fully legible",
+        "two lines of large letterspaced capitals: PARTECIPAZIONE and ATTIVA",
+        "a short gold rule",
+        f"the name, the largest lettering of the panel, on two lines, with no quotation marks and no punctuation of any kind around it: {c['nome'].title()} and {c['cognome'].title()}",
+        "a second gold rule",
+        f"two lines of capitals: {carica} and DELLA MUNICIPALITÀ 10, with the final A of MUNICIPALITÀ carrying its grave accent",
+        f"one line of gold capitals: {com['elezione']} 2027",
+        f"one italic line: {com['territorio_card']}",
+        f"two small lines, the first in bold capitals, BARRA IL SIMBOLO, the second in italic, {voto}",
+        f"the smallest lettering of the whole poster, on two lines: {com['sito']} and Committente responsabile: {com['committente']}",
+    ]
+    if valori:
+        blocchi.insert(7, "three short lines of capitals: DEMOCRAZIA DIRETTA, TRASPARENZA, BENI COMUNI")
+    elenco = "\n".join(f"{i}. {b};" for i, b in enumerate(blocchi, 1)).rstrip(";") + "."
+    quanti = len(blocchi)
+    # I due blocchi che spariscono per primi, e senza i quali la card non serve
+    # a niente: la carica e l'istruzione di voto.
+    n_carica = next(i for i, b in enumerate(blocchi, 1) if b.startswith("two lines of capitals"))
+    n_voto = next(i for i, b in enumerate(blocchi, 1) if "BARRA IL SIMBOLO" in b)
+
     return f"""Vertical civic poster, 2:3, warm golden hour, split layout: photograph right, text left.
 
 Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']} {Lui} stands on the RIGHT HALF, waist up, turned slightly left, looking at the camera, shoulder bleeding off the right edge. Behind {'her' if f else 'him'}, Naples from above at sunset: pale rooftops, the bay, Mount Vesuvius, clouds lit orange and gold. Warm light on the face from the left, natural skin texture, visible pores and lines.
 
-The LEFT HALF is a plain warm parchment panel, divided from the photo by a thin vertical gold rule, with all text left aligned in dark brown engraved serif, generously spaced, from top to bottom:
+The LEFT HALF is a plain warm parchment panel, divided from the photo by a thin vertical gold rule, with all text left aligned in dark brown engraved serif. It carries EXACTLY {quanti} blocks, all of them, in this order from top to bottom, spread over the full height of the panel:
 
-the uploaded circular emblem, reproduced unchanged, at the top, with the words PARTECIPAZIONE and ATTIVA inside it fully legible;
-then two lines of large letterspaced capitals, PARTECIPAZIONE and ATTIVA;
-then one italic line, Libera associazione di cittadini;
-a short gold rule;
-then very large, on two lines, with no quotation marks and no punctuation of any kind around them, the bare words {c['nome'].title()} and {c['cognome'].title()};
-a second gold rule;
-then capitals on two lines, {carica} and DELLA MUNICIPALITÀ 10, with the final A of MUNICIPALITÀ carrying its grave accent;
-below in gold capitals, {com['elezione']} 2027;
-below on three lines, DEMOCRAZIA DIRETTA, TRASPARENZA, BENI COMUNI;
-below in italic, {com['territorio_card']};
-below, two small lines, the first in bold capitals, BARRA IL SIMBOLO, the second in italic, {voto};
-at the bottom, in the smallest lettering of the whole poster, on two lines, {com['sito']} and Committente responsabile: {com['committente']}.
+{elenco}
+
+⛔ All {quanti} blocks must be present. If they do not fit, reduce the size of the lettering and tighten the spacing: never drop a block, never shorten or summarise a line, never merge two blocks into one. Blocks {n_carica} and {n_voto} are the ones that get lost, and a poster without them is useless.
 
 The text is Italian and every line must be reproduced exactly as written above, spelled correctly, with Italian accents and apostrophes intact: MUNICIPALITÀ carries the grave accent on the final A, d'Aosta carries the apostrophe. Each line appears once only. Do not add titles, labels, headings, addresses, phone numbers, extra slogans, or any word that is not in the list. Do not put quotation marks, brackets or dashes around the name.
 
 Palette: amber, terracotta, cream, gold, deep brown. High contrast between the dark brown lettering and the parchment panel. Photorealistic, sharp correctly spelled lettering, print quality, 4K.
 
-Before delivering, read the whole text again: no repeated, misspelled or invented words, no missing accents, no line cut off or covered by the figure.
+Before delivering, count the blocks on the finished panel: there must be {quanti}, in this order, none missing. Then read the whole text again: no repeated, misspelled or invented words, no missing accents, no line cut off or covered by the figure.
 
 NEGATIVE PROMPT: {uomo} on the left, text on the right, centred layout, quotation marks around the name, MUNICIPALITA without the accent, missing accents, altered or redrawn logo, illegible logo lettering, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, gibberish text, misspelled text, duplicated lines, sparkle icon, AI badge, watermark, signature, flags, other party symbols"""
 
@@ -209,6 +227,11 @@ def main():
                    help="affissione = manifesto 70x100 in italiano (default); "
                         "card = card social 2:3 in inglese, foto a destra e "
                         "pergamena a sinistra (Gemini e Lumina)")
+    p.add_argument("--valori", action="store_true",
+                   help="stile card: rimette le tre righe DEMOCRAZIA DIRETTA / "
+                        "TRASPARENZA / BENI COMUNI. Allunga l'elenco, e con la "
+                        "colonna piena il generatore taglia: si usa solo se si "
+                        "toglie qualcos'altro")
     p.add_argument("--uscita", help="scrive il prompt su file invece che a schermo")
     a = p.parse_args()
 
@@ -233,7 +256,8 @@ def main():
     if k not in cand:
         sys.exit(f"⛔ '{k}' non c'e'. Disponibili: {', '.join(cand)}")
     c = cand[k]
-    testo = prompt_card(c, com) if a.stile == "card" else prompt(c, com, a.senza_simbolo)
+    testo = (prompt_card(c, com, a.valori) if a.stile == "card"
+             else prompt(c, com, a.senza_simbolo))
 
     if a.uscita:
         open(os.path.expanduser(a.uscita), "w", encoding="utf-8").write(testo + "\n")
