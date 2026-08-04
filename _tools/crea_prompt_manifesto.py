@@ -39,6 +39,71 @@ VOTO = {
 }
 
 
+# ── STILE CARD SOCIAL ────────────────────────────────────────────────────────
+# Impaginato "spezzato": foto a destra su Napoli al tramonto, pannello di
+# pergamena a sinistra. E' l'unico prompt che regge con lo stesso testo su
+# Gemini e su Lumina (Fernando, 4 agosto 2026), ed e' scritto in inglese per
+# questo. NON sostituisce lo stile affissione: qui il testo lo scrive il
+# generatore, e in stampa 70x100 non si fa (cfr. manuale Gemini 11quinquies).
+#
+# ⛔ Le tre trappole gia' pagate, tutte dentro il testo qui sotto:
+#    1. le virgolette CURVE del prompt vengono STAMPATE sul manifesto: il nome
+#       si scrive nudo e le virgolette finiscono nel negativo;
+#    2. gli accenti italiani cadono: MUNICIPALITA' si chiede lettera per
+#       lettera ("the final A carrying its grave accent");
+#    3. il bollino: su Gemini si genera da AI Studio, su Lumina resta e va
+#       ritagliato prima di pubblicare.
+CARICA_CARD = {
+    "presidente": "CANDIDAT{a} ALLA PRESIDENZA",
+    "consigliere": "CANDIDAT{a} AL CONSIGLIO",
+}
+VOTO_CARD = {
+    "presidente": "sulla scheda della Municipalità",
+    "consigliere": "e scrivi {cognome} sulla scheda",
+}
+
+
+def prompt_card(c, com):
+    if "card_en" not in c:
+        sys.exit(f"⛔ manca il blocco 'card_en' per {c['nome'].title()}: la "
+                 f"descrizione del volto in inglese si scrive guardando le sue "
+                 f"foto vere, non si traduce a occhi chiusi.")
+    e = c["card_en"]
+    f = c["genere"] == "f"
+    lui = "she" if f else "he"
+    Lui = "She" if f else "He"
+    uomo = "woman" if f else "man"
+    carica = CARICA_CARD[c["ruolo"]].format(a="A" if f else "O")
+    voto = VOTO_CARD[c["ruolo"]].format(cognome=c["cognome"])
+
+    return f"""Vertical civic poster, 2:3, warm golden hour, split layout: photograph right, text left.
+
+Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']} {Lui} stands on the RIGHT HALF, waist up, turned slightly left, looking at the camera, shoulder bleeding off the right edge. Behind {'her' if f else 'him'}, Naples from above at sunset: pale rooftops, the bay, Mount Vesuvius, clouds lit orange and gold. Warm light on the face from the left, natural skin texture, visible pores and lines.
+
+The LEFT HALF is a plain warm parchment panel, divided from the photo by a thin vertical gold rule, with all text left aligned in dark brown engraved serif, generously spaced, from top to bottom:
+
+the uploaded circular emblem, reproduced unchanged, at the top, with the words PARTECIPAZIONE and ATTIVA inside it fully legible;
+then two lines of large letterspaced capitals, PARTECIPAZIONE and ATTIVA;
+then one italic line, Libera associazione di cittadini;
+a short gold rule;
+then very large, on two lines, with no quotation marks and no punctuation of any kind around them, the bare words {c['nome'].title()} and {c['cognome'].title()};
+a second gold rule;
+then capitals on two lines, {carica} and DELLA MUNICIPALITÀ 10, with the final A of MUNICIPALITÀ carrying its grave accent;
+below in gold capitals, {com['elezione']} 2027;
+below on three lines, DEMOCRAZIA DIRETTA, TRASPARENZA, BENI COMUNI;
+below in italic, {com['territorio_card']};
+below, two small lines, the first in bold capitals, BARRA IL SIMBOLO, the second in italic, {voto};
+at the bottom, in the smallest lettering of the whole poster, on two lines, {com['sito']} and Committente responsabile: {com['committente']}.
+
+The text is Italian and every line must be reproduced exactly as written above, spelled correctly, with Italian accents and apostrophes intact: MUNICIPALITÀ carries the grave accent on the final A, d'Aosta carries the apostrophe. Each line appears once only. Do not add titles, labels, headings, addresses, phone numbers, extra slogans, or any word that is not in the list. Do not put quotation marks, brackets or dashes around the name.
+
+Palette: amber, terracotta, cream, gold, deep brown. High contrast between the dark brown lettering and the parchment panel. Photorealistic, sharp correctly spelled lettering, print quality, 4K.
+
+Before delivering, read the whole text again: no repeated, misspelled or invented words, no missing accents, no line cut off or covered by the figure.
+
+NEGATIVE PROMPT: {uomo} on the left, text on the right, centred layout, quotation marks around the name, MUNICIPALITA without the accent, missing accents, altered or redrawn logo, illegible logo lettering, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, gibberish text, misspelled text, duplicated lines, sparkle icon, AI badge, watermark, signature, flags, other party symbols"""
+
+
 def prompt(c, com, senza_simbolo=False):
     f = c["genere"] == "f"
     art = "la persona di cui"
@@ -140,6 +205,10 @@ def main():
     p.add_argument("--senza-simbolo", action="store_true", dest="senza_simbolo",
                    help="l'angolo del simbolo resta VUOTO: il logo vero lo incolla "
                         "poi _tools/sostituisci_simbolo.py (consigliato)")
+    p.add_argument("--stile", choices=["affissione", "card"], default="affissione",
+                   help="affissione = manifesto 70x100 in italiano (default); "
+                        "card = card social 2:3 in inglese, foto a destra e "
+                        "pergamena a sinistra (Gemini e Lumina)")
     p.add_argument("--uscita", help="scrive il prompt su file invece che a schermo")
     a = p.parse_args()
 
@@ -164,7 +233,7 @@ def main():
     if k not in cand:
         sys.exit(f"⛔ '{k}' non c'e'. Disponibili: {', '.join(cand)}")
     c = cand[k]
-    testo = prompt(c, com, a.senza_simbolo)
+    testo = prompt_card(c, com) if a.stile == "card" else prompt(c, com, a.senza_simbolo)
 
     if a.uscita:
         open(os.path.expanduser(a.uscita), "w", encoding="utf-8").write(testo + "\n")
@@ -173,7 +242,18 @@ def main():
         print(testo)
 
     print(f"\n─── allegati, da {c['cartella_foto']}/ ───", file=sys.stderr)
-    if a.senza_simbolo:
+    if a.stile == "card":
+        # Lo schema muto qui non serve: la posizione di ogni riga sta scritta
+        # nel prompt, e un'immagine in piu' e' solo un'occasione per copiarne
+        # i rettangoli (Fernando, 4 agosto 2026).
+        print("  A1, A2, A3, A4 (le quattro foto) · B (logo) — NIENTE schema C",
+              file=sys.stderr)
+        print("  ⚠️  Gemini: generare da aistudio.google.com, mai dall'app "
+              "(stellina). Lumina: il bollino AI resta, va ritagliato.",
+              file=sys.stderr)
+        print("  ⚠️  Il committente va scritto per esteso PRIMA di pubblicare.",
+              file=sys.stderr)
+    elif a.senza_simbolo:
         print("  A1, A2, A3, A4 (le quattro foto) · c (schema muto) — NIENTE logo",
               file=sys.stderr)
         print("  poi: _tools/sostituisci_simbolo.py per incollare il simbolo vero",
