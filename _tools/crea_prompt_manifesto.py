@@ -63,6 +63,40 @@ VOTO_CARD = {
 }
 
 
+def prompt_card_vuota(c):
+    """La card SENZA testo: solo il ritratto e il pannello vuoto.
+
+    ⭐ 4 agosto 2026, idea di Fernando. Due vantaggi, e nessuno dei due e' un
+    trucco: al generatore si chiede una FOTOGRAFIA, quindi non c'e' nessun
+    contenuto elettorale da valutare (Meta rifiuta i manifesti per policy,
+    cfr. manuale Gemini 11ter); e il testo scritto in locale esce nitido,
+    identico su tutti i candidati e con gli accenti giusti, invece che
+    reinventato a ogni generazione.
+
+    ⛔ Il vuoto NON deve avere contorni, righe o segnaposto: se il nostro
+    testo non li copre al pixel, sull'immagine finita resta il segno. Stessa
+    lezione del disco del simbolo (manuale 11quater). L'unica misura che si
+    chiede e' la frazione di larghezza del pannello, e sul generato si
+    RIMISURA sempre: non esce mai identica due volte.
+    """
+    if "card_en" not in c:
+        sys.exit(f"⛔ manca il blocco 'card_en' per {c['nome'].title()}.")
+    e = c["card_en"]
+    f = c["genere"] == "f"
+    Lui = "She" if f else "He"
+    uomo = "woman" if f else "man"
+
+    return f"""Vertical editorial photograph, 2:3, warm golden hour, split composition: photograph on the right, plain empty panel on the left.
+
+Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']} {Lui} stands on the RIGHT HALF of the frame, waist up, turned slightly left, looking at the camera, shoulder bleeding off the right edge, the head with clear space above it. Behind {'her' if f else 'him'}, Naples from above at sunset: pale rooftops, the bay, Mount Vesuvius, clouds lit orange and gold. Warm light on the face from the left, natural skin texture, visible pores and lines, sharp focus on the eyes.
+
+The LEFT HALF is a plain warm parchment panel: one flat cream tone with a soft golden glow, smooth and COMPLETELY EMPTY. It covers the left 45 per cent of the width and runs from the top edge to the bottom edge, separated from the photograph by a single straight vertical division. Inside that panel there is absolutely nothing: no text, no letters, no numbers, no logo, no emblem, no symbol, no rules, no lines, no frame, no border, no ornament, no placeholder, no shadow and no texture. It is empty on purpose and it must stay empty.
+
+Photorealistic, natural colours, print quality, 4K.
+
+NEGATIVE PROMPT: text, letters, words, numbers, captions, titles, signature, logo, emblem, symbol, badge, ornament, decoration, gold rules, lines on the panel, frame, border, paper texture, grain, stains, shadow over the panel, gradient on the panel, {uomo} on the left, panel on the right, centred composition, full body, profile view, looking away, multiple people, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, sparkle icon, AI badge, watermark"""
+
+
 def prompt_card(c, com, valori=False):
     if "card_en" not in c:
         sys.exit(f"⛔ manca il blocco 'card_en' per {c['nome'].title()}: la "
@@ -223,10 +257,14 @@ def main():
     p.add_argument("--senza-simbolo", action="store_true", dest="senza_simbolo",
                    help="l'angolo del simbolo resta VUOTO: il logo vero lo incolla "
                         "poi _tools/sostituisci_simbolo.py (consigliato)")
-    p.add_argument("--stile", choices=["affissione", "card"], default="affissione",
+    p.add_argument("--stile", choices=["affissione", "card", "card-vuota"],
+                   default="affissione",
                    help="affissione = manifesto 70x100 in italiano (default); "
                         "card = card social 2:3 in inglese, foto a destra e "
-                        "pergamena a sinistra (Gemini e Lumina)")
+                        "pergamena a sinistra (Gemini e Lumina); "
+                        "card-vuota = la stessa card ma SENZA testo, solo il "
+                        "ritratto e il pannello vuoto: il testo si scrive dopo "
+                        "in locale, e al generatore si chiede una fotografia")
     p.add_argument("--valori", action="store_true",
                    help="stile card: rimette le tre righe DEMOCRAZIA DIRETTA / "
                         "TRASPARENZA / BENI COMUNI. Allunga l'elenco, e con la "
@@ -256,8 +294,12 @@ def main():
     if k not in cand:
         sys.exit(f"⛔ '{k}' non c'e'. Disponibili: {', '.join(cand)}")
     c = cand[k]
-    testo = (prompt_card(c, com, a.valori) if a.stile == "card"
-             else prompt(c, com, a.senza_simbolo))
+    if a.stile == "card":
+        testo = prompt_card(c, com, a.valori)
+    elif a.stile == "card-vuota":
+        testo = prompt_card_vuota(c)
+    else:
+        testo = prompt(c, com, a.senza_simbolo)
 
     if a.uscita:
         open(os.path.expanduser(a.uscita), "w", encoding="utf-8").write(testo + "\n")
@@ -266,7 +308,14 @@ def main():
         print(testo)
 
     print(f"\n─── allegati, da {c['cartella_foto']}/ ───", file=sys.stderr)
-    if a.stile == "card":
+    if a.stile == "card-vuota":
+        # Niente logo e niente schema: si chiede una fotografia, e tutto il
+        # resto lo scrive _tools/ dopo, sul file vero.
+        print("  SOLO A1, A2, A3, A4 (le quattro foto della persona) — niente "
+              "logo, niente schema", file=sys.stderr)
+        print("  poi: il testo e il simbolo si montano in locale sul pannello "
+              "vuoto, rimisurando il bordo sul file generato.", file=sys.stderr)
+    elif a.stile == "card":
         # Lo schema muto qui non serve: la posizione di ogni riga sta scritta
         # nel prompt, e un'immagine in piu' e' solo un'occasione per copiarne
         # i rettangoli (Fernando, 4 agosto 2026).
