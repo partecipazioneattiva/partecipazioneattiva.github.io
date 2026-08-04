@@ -27,7 +27,7 @@ import json
 import os
 import sys
 
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFilter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from manifesto_classico import (adatta, font, larghezza, prepara_font,  # noqa: E402
@@ -179,7 +179,17 @@ def costruisci_da_figura(immagine, larghezza=1024, frazione=0.45, zoom=1.0,
             print(f"⚠️  poco corpo nella foto: figura ingrandita del "
                   f"{(allunga - 1) * 100:.0f}% per arrivare al bordo di sotto",
                   file=sys.stderr)
+    # ⛔ 4 agosto 2026: la TESTA sta tutta dentro, anche a costo di perdere un
+    #    pezzo di spalla. Un orecchio o una ciocca tagliati dal bordo si notano
+    #    subito e sembrano un errore; una spalla che esce dal bordo e' normale
+    #    in qualunque manifesto.
+    alfa = fig.split()[-1].point(lambda v: 255 if v > 128 else 0)
+    fascia = alfa.crop((0, 0, fig.width, max(1, int(testa * k)))).getbbox()
     x = int(bordo + (W - bordo) * 0.52 - fig.width * 0.45)
+    if fascia:
+        margine_t = int(W * 0.02)
+        x = min(x, W - margine_t - fascia[2])          # niente testa tagliata a destra
+        x = max(x, bordo + margine_t - fascia[0])      # ne' sopra il pannello
     strato = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     strato.paste(fig, (x, y))
     strato = strato.crop((bordo, 0, W, H))     # mai dentro il pannello
@@ -255,6 +265,38 @@ def riesegui_con_cv2():
     sys.exit("⛔ serve OpenCV: manca anche l'ambiente iopaint.")
 
 
+ROSSO_X = (198, 42, 30)
+
+
+def croce_sul_simbolo(tela, x, y, lato):
+    """La X che l'elettore traccia sulla scheda, disegnata sul simbolo.
+
+    ⭐ E' l'elemento piu' classico del manifesto elettorale italiano, e il
+    manuale lo dice chiaro: a trenta metri un SEGNO si capisce, una frase no.
+
+    ⛔ La X non deve mangiare le lettere: "PARTECIPAZIONE" corre in alto dentro
+    il disco e "ATTIVA" in basso. I due tratti restano nella parte centrale —
+    il 62% del diametro — e passano sopra il disegno, non sopra le scritte.
+    """
+    strato = Image.new("RGBA", tela.size, (0, 0, 0, 0))
+    d = ImageDraw.Draw(strato)
+    # ⛔ Primo tentativo con braccio 0.31: la X arrivava sulla scritta e sul
+    #    manifesto si leggeva "PARTECIPAZIC NE". Le lettere corrono lungo il
+    #    bordo del disco, quindi i tratti restano ben dentro: 0.19 del lato,
+    #    centrati un filo sotto la meta', dove c'e' il disegno delle mani.
+    cx, cy = x + lato / 2, y + lato * 0.53
+    braccio = lato * 0.19
+    spessore = max(3, int(lato * 0.055))
+    # due tratti tirati a mano: non partono dallo stesso punto e non sono
+    # perfettamente simmetrici, se no sembra un segno stampato
+    d.line([(cx - braccio, cy - braccio * 0.96), (cx + braccio * 1.04, cy + braccio)],
+           fill=ROSSO_X + (205,), width=spessore)
+    d.line([(cx + braccio, cy - braccio), (cx - braccio * 1.02, cy + braccio * 0.98)],
+           fill=ROSSO_X + (205,), width=spessore)
+    strato = strato.filter(ImageFilter.GaussianBlur(max(0.6, lato * 0.004)))
+    tela.paste(strato, (0, 0), strato)
+
+
 def blocchi(c, com):
     """I dieci blocchi del prompt, nello stesso ordine.
 
@@ -300,6 +342,8 @@ def main():
     p.add_argument("--figura", help="la persona su FONDO VUOTO: si ritaglia, si "
                                     "porta alla scala di tutti e si monta "
                                     "(strada migliore)")
+    p.add_argument("--senza-croce", action="store_true", dest="senza_croce",
+                   help="non traccia la X rossa sul simbolo")
     p.add_argument("--sfondo", help="immagine di fondo per la meta' destra "
                                     "(default: pergamena piatta)")
     p.add_argument("--ritratto", help="la sola FOTOGRAFIA del candidato: pannello, "
@@ -430,6 +474,8 @@ def main():
         if tipo == "logo":
             sim = Image.open(logo).convert("RGBA").resize((h, h), Image.LANCZOS)
             im.paste(sim, (x0, y), sim)
+            if not a.senza_croce:
+                croce_sul_simbolo(im, x0, y, h)
         elif tipo == "filo":
             dr.rectangle([x0, y, x0 + int(largh * 0.34), y + h], fill=colore)
         else:
