@@ -36,9 +36,20 @@ from manifesto_classico import (adatta, font, larghezza, prepara_font,  # noqa: 
 DATI = "~/Desktop/GEMINI LAVORI/candidati_manifesto.json"
 LAVORI = "~/Desktop/GEMINI LAVORI"
 ITALICO = "merriweather-400-italic.ttf"
+# ⛔ 4 agosto 2026, appunto di Fernando sulla card di Luigi: «tolto il nome le
+#    altre sono quasi illeggibili». Cinzel e' un lapidario sottile e molto
+#    spaziato: bello grande, illeggibile piccolo. Le righe che servono a votare
+#    — carica, istruzione, committente — passano a un neretto (Montserrat 700,
+#    lo stesso del sito) e crescono di un quarto. Cinzel resta solo dove e'
+#    identita': PARTECIPAZIONE ATTIVA.
+NERETTO = "montserrat-700.ttf"
+NERETTO_MEDIO = "montserrat-600.ttf"
 
 BRUNO = (58, 36, 20)
 ORO = (166, 124, 47)
+# L'oro chiaro sulla pergamena non ha contrasto: per il testo si usa piu' scuro,
+# e l'oro chiaro resta ai fili, dove non deve leggersi ma decorare.
+ORO_SCURO = (139, 96, 26)
 
 CARICA = {"presidente": "CANDIDAT{a} ALLA PRESIDENZA",
           "consigliere": "CANDIDAT{a} AL CONSIGLIO"}
@@ -170,14 +181,18 @@ def blocchi(c, com):
         ("filo", [], None, 0.34, 0, ORO),
         ("testo", [c["nome"].title(), c["cognome"].title()], SERIF_TESTO, 0.20, 0.0, BRUNO),
         ("filo", [], None, 0.34, 0, ORO),
-        ("testo", [carica, "DELLA MUNICIPALITÀ 10"], LAPIDARIO, 0.058, 0.02, BRUNO),
-        ("testo", [f"{com['elezione']} 2027"], LAPIDARIO, 0.050, 0.02, ORO),
-        ("testo", [com["territorio_card"]], ITALICO, 0.046, 0.0, BRUNO),
-        ("testo", ["BARRA IL SIMBOLO"], LAPIDARIO, 0.066, 0.03, BRUNO),
-        ("testo", [voto], ITALICO, 0.046, 0.0, BRUNO),
-        ("testo", [com["sito"]], LAPIDARIO, 0.034, 0.05, BRUNO),
-        ("testo", [f"Committente responsabile: {com['committente']}"], ITALICO,
-         0.030, 0.0, BRUNO),
+        ("testo", [carica, "DELLA MUNICIPALITÀ 10"], NERETTO, 0.052, 0.01, BRUNO),
+        ("testo", [f"{com['elezione']} 2027"], NERETTO, 0.045, 0.01, ORO_SCURO),
+        # Su una riga sola i quattro quartieri costringono a un corpo minuscolo:
+        # spezzati in due, la stessa larghezza permette il doppio del corpo.
+        ("testo", [com["territorio_card"].split(" - Agnano")[0].strip(),
+          "Agnano" + com["territorio_card"].split(" - Agnano")[1]],
+         NERETTO_MEDIO, 0.040, 0.0, BRUNO),
+        ("testo", ["BARRA IL SIMBOLO"], NERETTO, 0.062, 0.02, BRUNO),
+        ("testo", [voto], NERETTO_MEDIO, 0.046, 0.0, BRUNO),
+        ("testo", [com["sito"]], NERETTO_MEDIO, 0.034, 0.02, BRUNO),
+        ("testo", [f"Committente responsabile: {com['committente']}"],
+         NERETTO_MEDIO, 0.028, 0.0, BRUNO),
     ]
 
 
