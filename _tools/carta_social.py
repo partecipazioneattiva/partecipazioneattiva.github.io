@@ -398,10 +398,14 @@ def componi_campagna(figura, c, com, logo, presidente=None):
     # ai bordi, quindi si allarga fino a coprirla e il corpo esce dal basso.
     fig = figura.crop(figura.getbbox())
     utile = L - alta - bassa
-    k = max(utile / fig.height, (L * 0.60) / fig.width)
-    testa_ora = altezza_testa(fig) * k
-    if testa_ora > utile * 0.42:
-        k *= (utile * 0.42) / testa_ora
+    # ⛔ 4 agosto 2026: con il tetto sulla testa la figura di Paolo restava
+    #    piu' corta dell'altezza utile, e spingerla in basso apriva una
+    #    striscia bianca SOPRA la testa. Fra le due, riempire vince: la figura
+    #    copre sempre tutta l'altezza fra le due fasce, e in larghezza si
+    #    allarga fin dove serve, ma non oltre una volta e mezza — se no un
+    #    ritratto stretto diventa un primo piano.
+    k_h = utile / fig.height
+    k = max(k_h, min((L * 0.60) / fig.width, k_h * 1.5))
     fig = fig.resize((max(1, int(fig.width * k)), max(1, int(fig.height * k))),
                      Image.LANCZOS)
     alfa = fig.split()[-1].point(lambda v: 255 if v > 128 else 0)
@@ -412,8 +416,6 @@ def componi_campagna(figura, c, com, logo, presidente=None):
     # se il corpo finisce prima della fascia in basso resta una lingua di
     # bianco sotto i piedi: si scende finche' non la tocca.
     y_fig = alta
-    if y_fig + fig.height < L - bassa:
-        y_fig = L - bassa - fig.height
     strato = Image.new("RGBA", (L, L), (0, 0, 0, 0))
     strato.paste(fig, (x, y_fig))
     strato = strato.crop((int(L * 0.40), 0, L, L))
