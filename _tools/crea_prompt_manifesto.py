@@ -39,7 +39,7 @@ VOTO = {
 }
 
 
-def prompt(c, com):
+def prompt(c, com, senza_simbolo=False):
     f = c["genere"] == "f"
     art = "la persona di cui"
     migliorare = "migliorarla" if f else "migliorarlo"
@@ -47,10 +47,39 @@ def prompt(c, com):
     riga7, modo7 = VOTO[c["ruolo"]]
     riga7 = riga7.format(cognome=c["cognome"])
 
-    return f"""Ti allego sei immagini, con tre ruoli diversi.
+    # ⛔ Il logo NON si fa disegnare al generatore quando si puo' evitare: lo
+    #    ridisegna e ci traccia sopra una X che mangia le lettere. Con
+    #    --senza-simbolo l'angolo resta vuoto e il simbolo VERO lo incolla
+    #    _tools/sostituisci_simbolo.py. Provato il 4 agosto 2026: rattoppare
+    #    un simbolo gia' disegnato su un fondo eterogeneo lascia un alone.
+    if senza_simbolo:
+        quante, ruoli = "cinque", "due"
+        riga_b = ""
+        blocco_simbolo = (
+            "In basso a sinistra, sopra la figura, lascia uno SPAZIO VUOTO "
+            "quadrato, largo circa un terzo della larghezza del manifesto e "
+            "alto altrettanto, alla stessa altezza delle due righe del punto 7: "
+            "il fondo prosegue liscio, senza niente sopra. Non disegnare nessun "
+            "logo, nessun simbolo, nessun cerchio, nessuna X: quello spazio lo "
+            "riempio io dopo, e qualunque cosa tu ci metta va cancellata.")
+    else:
+        quante, ruoli = "sei", "tre"
+        riga_b = ("IMMAGINE B - il logo dell'associazione: riproducilo "
+                  "fedelmente, senza ridisegnarlo e senza cambiarne i colori.\n")
+        blocco_simbolo = (
+            "In basso a sinistra, sopra la figura, il logo dell'immagine B "
+            "riprodotto intero e perfettamente leggibile. Sopra il logo, due soli "
+            "tratti sottili incrociati a formare una X, tracciati a mano con un "
+            "pennarello rosso semitrasparente, come il segno che l'elettore fa "
+            "sulla scheda.\nLa X non deve coprire nessuna lettera: le parole "
+            "\"PARTECIPAZIONE\" e \"ATTIVA\" devono restare leggibili per intero. "
+            "I tratti sono sottili, passano sopra la parte centrale del disegno e "
+            "non sopra le scritte.\nIl logo sta alla stessa altezza delle due "
+            "righe del punto 7.")
+
+    return f"""Ti allego {quante} immagini, con {ruoli} ruoli diversi.
 IMMAGINI A1, A2, A3, A4 - quattro fotografie della stessa persona, {c['nome'].title()}, {art} sto preparando il materiale e di cui ho il consenso: sono la fonte del suo ritratto. Usale tutte e quattro insieme per ricostruire il viso, non solo la prima.
-IMMAGINE B - il logo dell'associazione: riproducilo fedelmente, senza ridisegnarlo e senza cambiarne i colori.
-IMMAGINE C - uno schema di impaginazione muto: i rettangoli grigi indicano soltanto dove va ogni elemento e quanto e' grande, e corrispondono nell'ordine dall'alto in basso all'elenco che trovi sotto. Non riprodurre i rettangoli, non riprodurne i colori, non scrivere parole che non siano nell'elenco.
+{riga_b}IMMAGINE C - uno schema di impaginazione muto: i rettangoli grigi indicano soltanto dove va ogni elemento e quanto e' grande, e corrispondono nell'ordine dall'alto in basso all'elenco che trovi sotto. Non riprodurre i rettangoli, non riprodurne i colori, non scrivere parole che non siano nell'elenco.
 
 Canvas: {com['canvas']}, risoluzione massima disponibile.
 
@@ -75,9 +104,7 @@ Il testo e' in italiano, in caratteri lapidari senza grazie, molto marcati, colo
 6. piu' piccolo: "{c['carica']} · {c['territorio']}"
 7. in fondo, {modo7}: {riga7}
 
-In basso a sinistra, sopra la figura, il logo dell'immagine B riprodotto intero e perfettamente leggibile. Sopra il logo, due soli tratti sottili incrociati a formare una X, tracciati a mano con un pennarello rosso semitrasparente, come il segno che l'elettore fa sulla scheda.
-La X non deve coprire nessuna lettera: le parole "PARTECIPAZIONE" e "ATTIVA" devono restare leggibili per intero. I tratti sono sottili, passano sopra la parte centrale del disegno e non sopra le scritte. Il simbolo e' l'unica cosa che l'elettore deve riconoscere sulla scheda: se non si legge, il manifesto non serve a niente.
-Il logo sta alla stessa altezza delle due righe del punto 7.
+{blocco_simbolo}
 
 Sul bordo sinistro della tela, scritta in verticale e nel corpo piu' piccolo di tutto il manifesto: "Committente responsabile: {com['committente']}".
 
@@ -94,6 +121,9 @@ def main():
     p.add_argument("--candidato", help="chiave del candidato (es. rosa)")
     p.add_argument("--elenco", action="store_true", help="elenca i candidati salvati")
     p.add_argument("--dati", default=DATI, help=f"file delle impostazioni (default: {DATI})")
+    p.add_argument("--senza-simbolo", action="store_true", dest="senza_simbolo",
+                   help="l'angolo del simbolo resta VUOTO: il logo vero lo incolla "
+                        "poi _tools/sostituisci_simbolo.py (consigliato)")
     p.add_argument("--uscita", help="scrive il prompt su file invece che a schermo")
     a = p.parse_args()
 
@@ -118,7 +148,7 @@ def main():
     if k not in cand:
         sys.exit(f"⛔ '{k}' non c'e'. Disponibili: {', '.join(cand)}")
     c = cand[k]
-    testo = prompt(c, com)
+    testo = prompt(c, com, a.senza_simbolo)
 
     if a.uscita:
         open(os.path.expanduser(a.uscita), "w", encoding="utf-8").write(testo + "\n")
@@ -127,7 +157,14 @@ def main():
         print(testo)
 
     print(f"\n─── allegati, da {c['cartella_foto']}/ ───", file=sys.stderr)
-    print("  A1, A2, A3, A4 (le quattro foto) · B (logo) · c (schema muto)", file=sys.stderr)
+    if a.senza_simbolo:
+        print("  A1, A2, A3, A4 (le quattro foto) · c (schema muto) — NIENTE logo",
+              file=sys.stderr)
+        print("  poi: _tools/sostituisci_simbolo.py per incollare il simbolo vero",
+              file=sys.stderr)
+    else:
+        print("  A1, A2, A3, A4 (le quattro foto) · B (logo) · c (schema muto)",
+              file=sys.stderr)
     if c.get("note"):
         print(f"⚠️  {c['note']}", file=sys.stderr)
 
