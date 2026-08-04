@@ -51,7 +51,9 @@ ORO = (166, 124, 47)
 # e l'oro chiaro resta ai fili, dove non deve leggersi ma decorare.
 ORO_SCURO = (139, 96, 26)
 
-CARICA = {"presidente": "CANDIDAT{a} ALLA PRESIDENZA",
+# Antonio e' l'unico Presidente. Dicitura voluta da Fernando, 4 agosto 2026:
+# "CANDIDATO PRESIDENTE", non "candidato alla Presidenza".
+CARICA = {"presidente": "CANDIDAT{a} PRESIDENTE",
           "consigliere": "CANDIDAT{a} AL CONSIGLIO"}
 VOTO = {"presidente": "sulla scheda della Municipalità",
         "consigliere": "e scrivi {cognome} sulla scheda"}
@@ -176,13 +178,19 @@ def blocchi(c, com):
     carica = CARICA[c["ruolo"]].format(a="A" if f else "O")
     voto = VOTO[c["ruolo"]].format(cognome=c["cognome"])
     return [
-        ("logo", [], None, 0.52, 0, None),
-        ("testo", ["PARTECIPAZIONE", "ATTIVA"], LAPIDARIO, 0.088, 0.06, BRUNO),
+        ("logo", [], None, 0.50, 0, None),
+        ("testo", ["PARTECIPAZIONE", "ATTIVA"], LAPIDARIO, 0.082, 0.06, BRUNO),
+        ("testo", ["Libera associazione di cittadini"], ITALICO, 0.038, 0.0, BRUNO),
         ("filo", [], None, 0.34, 0, ORO),
         ("testo", [c["nome"].title(), c["cognome"].title()], SERIF_TESTO, 0.20, 0.0, BRUNO),
         ("filo", [], None, 0.34, 0, ORO),
         ("testo", [carica, "DELLA MUNICIPALITÀ 10"], NERETTO, 0.052, 0.01, BRUNO),
         ("testo", [f"{com['elezione']} 2027"], NERETTO, 0.045, 0.01, ORO_SCURO),
+        # I tre valori erano usciti quando il testo lo scriveva il generatore
+        # e la colonna piena lo faceva tagliare. Ora il testo e' nostro: ci
+        # stanno, e sono la parte politica della card.
+        ("testo", ["DEMOCRAZIA DIRETTA", "TRASPARENZA", "BENI COMUNI"],
+         NERETTO, 0.048, 0.01, BRUNO),
         # Su una riga sola i quattro quartieri costringono a un corpo minuscolo:
         # spezzati in due, la stessa larghezza permette il doppio del corpo.
         ("testo", [com["territorio_card"].split(" - Agnano")[0].strip(),
@@ -259,11 +267,18 @@ def main():
             sys.exit("⛔ pannello troppo stretto: o l'immagine non e' quella "
                      "vuota, o la misura ha sbagliato. Forzarla con --bordo 0.45")
 
-    logo = a.logo or os.path.join(os.path.expanduser(LAVORI),
-                                  c["cartella_foto"].split("/")[1], "logo_pa.png")
-    logo = os.path.expanduser(logo)
-    if not os.path.exists(logo):
-        sys.exit(f"⛔ simbolo non trovato: {logo}")
+    # Il simbolo e' lo stesso per tutti: se nella cartella del candidato non
+    # c'e', si prende quello di un altro invece di fermare il lavoro.
+    cartella = os.path.join(os.path.expanduser(LAVORI),
+                            c["cartella_foto"].split("/")[1])
+    candidati = [a.logo, os.path.join(cartella, "logo_pa.png"),
+                 os.path.join(cartella, "prescelte", "B.png"),
+                 os.path.join(cartella, "prescelte", "b.png"),
+                 os.path.join(os.path.expanduser(LAVORI), "Rosa", "logo_pa.png")]
+    logo = next((os.path.expanduser(x) for x in candidati
+                 if x and os.path.exists(os.path.expanduser(x))), None)
+    if not logo:
+        sys.exit(f"⛔ simbolo non trovato in {cartella}")
 
     margine = int(bordo * a.margine)
     largh = bordo - 2 * margine
