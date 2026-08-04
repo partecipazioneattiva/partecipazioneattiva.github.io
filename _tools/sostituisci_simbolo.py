@@ -62,6 +62,9 @@ def main():
                    help="quanto il segno esce dal simbolo, in frazioni del diametro")
     p.add_argument("--velo", type=float, default=0.42,
                    help="quanto si attenua il tratto sull'anello delle lettere (0-1)")
+    p.add_argument("--senza-toppa", action="store_true", dest="senza_toppa",
+                   help="lo spazio e' gia' vuoto (manifesto generato con "
+                        "--senza-simbolo): incolla e basta, senza rattoppare")
     p.add_argument("--senza-x", action="store_true", dest="senza_x",
                    help="incolla il logo pulito, senza tracciare la X")
     a = p.parse_args()
@@ -102,7 +105,8 @@ def main():
     ImageDraw.Draw(masc).ellipse((sfuma, sfuma, 2 * r - 1 - sfuma, 2 * r - 1 - sfuma),
                                  fill=255)
     masc = masc.filter(ImageFilter.GaussianBlur(sfuma * 0.55))
-    m.paste(toppa, (cx - r, cy - r), masc)
+    if not a.senza_toppa:      # con --senza-simbolo lo spazio e' gia' pulito
+        m.paste(toppa, (cx - r, cy - r), masc)
 
     # 2. il logo vero, alla misura chiesta
     logo = Image.open(a.logo).convert("RGBA").resize((lato, lato), Image.LANCZOS)
