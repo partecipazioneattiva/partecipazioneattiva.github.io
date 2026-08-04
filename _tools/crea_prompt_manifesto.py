@@ -55,12 +55,17 @@ def prompt(c, com, senza_simbolo=False):
     if senza_simbolo:
         quante, ruoli = "cinque", "due"
         riga_b = ""
+        # ⭐ Lo spazio si lascia CIRCOLARE, non quadrato (Fernando, 4 agosto
+        #    2026): il logo e' un disco, e un riquadro quadrato lascia sempre
+        #    quattro angoli da rifilare a mano dopo l'incollaggio.
         blocco_simbolo = (
-            "In basso a sinistra, sopra la figura, lascia uno SPAZIO VUOTO "
-            "quadrato, largo circa un terzo della larghezza del manifesto e "
-            "alto altrettanto, alla stessa altezza delle due righe del punto 7: "
-            "il fondo prosegue liscio, senza niente sopra. Non disegnare nessun "
-            "logo, nessun simbolo, nessun cerchio, nessuna X: quello spazio lo "
+            "In basso a sinistra, sopra la figura, lascia una ZONA VUOTA "
+            "CIRCOLARE, un disco largo circa un terzo della larghezza del "
+            "manifesto, alla stessa altezza delle due righe del punto 7. Dentro "
+            "quel cerchio non c'e' assolutamente nulla: solo il fondo pergamena, "
+            "liscio e uniforme, senza bordi, senza cornice, senza ombra e senza "
+            "contorno che ne segni il perimetro. Non disegnare nessun logo, "
+            "nessun simbolo, nessuna X, nessun segnaposto: quello spazio lo "
             "riempio io dopo, e qualunque cosa tu ci metta va cancellata.")
     else:
         quante, ruoli = "sei", "tre"
@@ -111,7 +116,7 @@ Sul bordo sinistro della tela, scritta in verticale e nel corpo piu' piccolo di 
 Ogni riga compare una sola volta ed esattamente com'e' scritta. Non aggiungere titoli, etichette, intestazioni, indirizzi, numeri di telefono, siti, slogan aggiuntivi, elenchi di valori o parole di alcun genere.
 
 Colori: {com['colori']}. Il contrasto fra testo e fondo deve essere alto: in strada i toni delicati spariscono.
-Prima di consegnare rileggi tutto il testo: nessuna parola ripetuta, storpiata, inventata o aggiunta come titolo, accenti e apostrofi corretti, nessuna riga tagliata o coperta dalla figura.
+Prima di consegnare rileggi tutto il testo lettera per lettera, confrontandolo con l'elenco qui sopra: ogni riga deve essere identica, senza parole ripetute, storpiate o inventate. ⛔ Attenzione ai nomi di luogo: si scrivono soltanto "Bagnoli" e "Fuorigrotta", e non devono comparire altre parole che gli somigliano. Accenti e apostrofi corretti, nessuna riga tagliata o coperta dalla figura.
 Escludi: titoli ed etichette non richiesti, fasce che dividono la tela in due, figura intera, ripresa di profilo, foto di gruppo, paesaggio nitido, aspetto da cartone animato, resa CGI, pelle di plastica, levigatura eccessiva del viso, bandiere, simboli di partiti diversi da quello allegato, firme, filigrane."""
 
 
