@@ -54,59 +54,84 @@ def etichetta(dr, x, y, w, h, testo, dim, muto):
 def elettorale(W, H, muto=True):
     """Lo schema del manifesto elettorale VERO, non della locandina.
 
-    Gerarchia imposta dalla pratica italiana (Venturini, Italgrafica, e i
-    manifesti che si vedono per strada): il volto domina, il nome e' secondo
-    solo alla faccia, lo slogan sta in 3-7 parole, poi simbolo di lista, data e
-    committente. Tutto il resto e' rumore: si legge a 30 metri, in un secondo.
+    🔴 RIFATTO IL 4 AGOSTO 2026 sui due manifesti veri portati da Fernando —
+    Salini (Forza Italia, europee 2024) e Bulbi (PD, politiche 2022). La prima
+    versione divideva la tela in due fasce, foto sopra e testo sotto: e' il
+    modo in cui si impagina una LOCANDINA. Nei manifesti veri non succede mai.
 
-    Quote (frazioni dell'altezza):
-      0.00-0.56  volto/mezzo busto a tutta larghezza
-      0.56-0.70  NOME e COGNOME
-      0.70-0.76  carica e territori
-      0.76-0.84  slogan
-      0.84-0.93  simbolo di lista + istruzione di voto
-      0.93-1.00  data e committente
+    Le quattro differenze, tutte misurate su quei due:
+
+    1. LA FIGURA E' A TUTTA ALTEZZA e il testo le sta SOPRA. Nessuna fascia
+       separata: il fondo e' uno solo.
+    2. LA DATA STA IN ALTO ED E' GRANDE, seconda solo al volto e al cognome.
+       Prima era penultima e minuscola. Su Salini "8-9 GIUGNO" e' in giallo,
+       alto come il titolo; su Bulbi la data e' nella fascia rossa di testa.
+    3. L'ISTRUZIONE DI VOTO E' DISEGNATA, non scritta: Salini mette la X
+       tracciata SOPRA il simbolo. A trenta metri un segno si capisce, una
+       frase no.
+    4. IL COMMITTENTE E' UNA STRISCIA VERTICALE SUL BORDO, in corpo minimo:
+       non occupa una riga dell'impaginato (Salini, bordo sinistro).
+
+    E si e' tolta una riga: carica e territorio stanno insieme, perche' "X
+    Municipalita'" da solo non lo capisce nessuno e due righe separate a
+    trenta metri non si leggono comunque.
+
+    Quote (frazioni dell'altezza), colonna di testo a destra:
+      0.055-0.20  ELEZIONI + DATA, grandi, in alto
+      0.60-0.665  slogan (3-7 parole)
+      0.685-0.825 NOME e COGNOME (il cognome e' il piu' grande)
+      0.834-0.864 carica e territorio, una riga sola
+      0.888-0.948 istruzione di voto, due righe piccole
+    Sul lato sinistro: simbolo di lista con la X, e committente in verticale.
+
+    ⚠️ L'istruzione di voto sta IN FONDO, allineata al simbolo, non prima del
+    cognome. Su Salini precede il cognome perche' li' il cognome si SCRIVE
+    sulla scheda; nelle Municipalita' di Napoli il voto disgiunto e' escluso e
+    si barra solo il simbolo, quindi l'istruzione punta al simbolo e gli sta
+    accanto.
     """
-    tela = Image.new("RGB", (W, H), PERGAMENA)
+    tela = Image.new("RGB", (W, H), PANORAMA)
     dr = ImageDraw.Draw(tela)
-    m = int(W * 0.06)
-    larg = W - 2 * m
 
-    # 1. il volto: fascia superiore piena, testa centrata e grande
-    dr.rectangle((0, 0, W, int(H * 0.56)), fill=PANORAMA)
-    cx = int(W * 0.50)
-    dr.ellipse((cx - int(W * 0.19), int(H * 0.06), cx + int(W * 0.19), int(H * 0.36)),
+    # 1. la figura occupa TUTTA l'altezza, spostata a sinistra: il testo le va sopra
+    cx = int(W * 0.31)
+    dr.ellipse((cx - int(W * 0.20), int(H * 0.05), cx + int(W * 0.20), int(H * 0.35)),
                fill=FIGURA)                                        # testa
-    dr.rounded_rectangle((cx - int(W * 0.34), int(H * 0.32), cx + int(W * 0.34),
-                          int(H * 0.56)), radius=int(W * 0.05), fill=FIGURA)
+    dr.rounded_rectangle((int(W * 0.01), int(H * 0.31), int(W * 0.64), H),
+                         radius=int(W * 0.06), fill=FIGURA)        # spalle e busto
     if not muto:
-        dr.text((cx, int(H * 0.45)), "VOLTO GRANDE", font=font(int(W * 0.032)),
-                fill=(240, 240, 240), anchor="mm")
+        dr.text((cx, int(H * 0.50)), "VOLTO A TUTTA ALTEZZA",
+                font=font(int(W * 0.026)), fill=(240, 240, 240), anchor="mm")
 
     d = int(W * 0.020)
+    xr = int(W * 0.50)                      # inizio della colonna di testo
+    larg = W - xr - int(W * 0.05)
+
     quote = [
-        (0.585, 0.055, "NOME", 0.92),
-        (0.645, 0.055, "COGNOME", 0.92),
-        (0.712, 0.026, "carica", 0.66),
-        (0.746, 0.020, "territori", 0.78),
-        (0.790, 0.048, "SLOGAN (3-7 parole)", 1.0),
-        (0.935, 0.018, "data", 0.34),
-        (0.962, 0.016, "committente", 0.62),
+        (0.055, 0.070, "ELEZIONI (riga 1)", 1.00),
+        (0.132, 0.070, "DATA — grande", 0.78),
+        (0.600, 0.065, "SLOGAN (3-7 parole)", 1.00),
+        (0.685, 0.048, "NOME", 0.55),
+        (0.738, 0.087, "COGNOME — il piu' grande", 1.00),
+        (0.834, 0.030, "carica · territorio", 1.00),
+        (0.888, 0.026, "come si vota (riga 1)", 0.88),
+        (0.922, 0.026, "come si vota (riga 2)", 0.94),
     ]
     for y_rel, h_rel, testo, w_rel in quote:
-        etichetta(dr, m, int(H * y_rel), int(larg * w_rel), int(H * h_rel),
+        etichetta(dr, xr, int(H * y_rel), int(larg * w_rel), int(H * h_rel),
                   testo, d, muto)
 
-    # 2. simbolo di lista a sinistra, istruzione di voto a destra
-    lato = int(H * 0.085)
-    dr.ellipse((m, int(H * 0.845), m + lato, int(H * 0.845) + lato), fill=BLOCCO)
-    etichetta(dr, m + lato + int(W * 0.03), int(H * 0.862),
-              larg - lato - int(W * 0.03), int(H * 0.050),
-              "COME SI VOTA", d, muto)
+    # 2. simbolo di lista in basso a sinistra, con la X dell'istruzione di voto
+    lato = int(H * 0.115)
+    sx, sy = int(W * 0.06), int(H * 0.855)
+    dr.ellipse((sx, sy, sx + lato, sy + lato), fill=BLOCCO)
+    spessore = max(3, int(W * 0.006))
+    dr.line((sx, sy, sx + lato, sy + lato), fill=TESTO, width=spessore)
+    dr.line((sx + lato, sy, sx, sy + lato), fill=TESTO, width=spessore)
 
-    # 3. filo dorato di chiusura sopra il piede
-    dr.rectangle((0, int(H * 0.925), W, int(H * 0.925) + max(3, int(W * 0.004))),
-                 fill=ORO)
+    # 3. committente: striscia verticale sul bordo sinistro, corpo minimo
+    dr.rectangle((int(W * 0.016), int(H * 0.10), int(W * 0.034), int(H * 0.42)),
+                 fill=BLOCCO)
     return tela
 
 
