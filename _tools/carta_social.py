@@ -96,6 +96,75 @@ def misura_pannello(im):
 #    CascadeClassifier. Quello completo sta in `comfyui`: verificato il 4
 #    agosto 2026, e non si scopre finche' non lo si chiama.
 PY_CV2 = "/opt/homebrew/Caskroom/miniforge/base/envs/comfyui/bin/python"
+PY_REMBG = "/opt/homebrew/Caskroom/miniforge/base/envs/iopaint/bin/python"
+FONDO = (247, 239, 220)
+
+
+def altezza_testa(sagoma):
+    """Quanto e' alta la testa, in pixel, misurata sulla SAGOMA ritagliata.
+
+    Senza riconoscimento del volto — nessuna build di cv2 sul Mac ha i file
+    haarcascade — ma non serve: su una figura scontornata la testa e' la
+    parte stretta in cima, e le spalle sono la riga dove la sagoma si allarga
+    di colpo. Si scende dall'alto finche' la larghezza non supera di una volta
+    e mezza quella della testa: quella riga sono le spalle, e il mento sta
+    poco sopra.
+    """
+    m = sagoma.split()[-1].point(lambda v: 255 if v > 128 else 0)
+    w, h = m.size
+    righe = []
+    for y in range(0, h, max(1, h // 400)):
+        fila = m.crop((0, y, w, y + 1)).getbbox()
+        righe.append((y, 0 if not fila else fila[2] - fila[0]))
+    cima = next((y for y, l in righe if l > w * 0.02), 0)
+    larghezze = [l for y, l in righe if cima <= y <= cima + (h - cima) * 0.22 and l]
+    if not larghezze:
+        return h * 0.25
+    testa_larga = sorted(larghezze)[len(larghezze) // 2]
+    for y, l in righe:
+        if y > cima + h * 0.05 and l > testa_larga * 1.6:
+            return (y - cima) * 1.02          # dalla cima dei capelli al mento
+    return h * 0.25
+
+
+def costruisci_da_figura(immagine, larghezza=1024, frazione=0.45, zoom=1.0,
+                         alza=0.0, sfondo=None):
+    """Ritaglia la persona dal fondo vuoto e la monta alla scala giusta.
+
+    La misura e' la stessa delle card gia' approvate: la testa e' alta quanto
+    il pannello e' largo, e il mento sta appena sopra la meta'.
+    """
+    from rembg import remove, new_session
+
+    W = larghezza
+    H = int(W * 3 / 2)
+    bordo = int(W * frazione)
+
+    fig = remove(Image.open(os.path.expanduser(immagine)).convert("RGBA"),
+                 session=new_session("birefnet-general"))
+    fig = fig.crop(fig.getbbox())
+    testa = altezza_testa(fig)
+    k = (bordo / testa) * zoom
+    fig = fig.resize((max(1, int(fig.width * k)), max(1, int(fig.height * k))),
+                     Image.LANCZOS)
+
+    tela = Image.new("RGB", (W, H), FONDO)
+    if sfondo:
+        s = Image.open(os.path.expanduser(sfondo)).convert("RGB")
+        larg = W - bordo
+        kk = max(larg / s.width, H / s.height)
+        s = s.resize((int(s.width * kk), int(s.height * kk)), Image.LANCZOS)
+        tela.paste(s.crop((0, 0, larg, H)), (bordo, 0))
+
+    # il mento appena sopra meta': la testa e' alta 'bordo', quindi la cima
+    # dei capelli sta a mezzo - bordo
+    y = int(H * (0.48 - alza) - bordo)
+    x = int(bordo + (W - bordo) * 0.52 - fig.width * 0.45)
+    strato = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    strato.paste(fig, (x, y))
+    strato = strato.crop((bordo, 0, W, H))     # mai dentro il pannello
+    tela.paste(strato, (bordo, 0), strato)
+    return tela, bordo
 
 
 def costruisci_base(ritratto, larghezza=1024, frazione=0.45, zoom=1.0, alza=0.0):
@@ -208,6 +277,11 @@ def main():
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--immagine", help="una card gia' generata CON il pannello vuoto")
+    p.add_argument("--figura", help="la persona su FONDO VUOTO: si ritaglia, si "
+                                    "porta alla scala di tutti e si monta "
+                                    "(strada migliore)")
+    p.add_argument("--sfondo", help="immagine di fondo per la meta' destra "
+                                    "(default: pergamena piatta)")
     p.add_argument("--ritratto", help="la sola FOTOGRAFIA del candidato: pannello, "
                                       "scala e posizione li calcola questo script "
                                       "(consigliato)")
@@ -226,9 +300,9 @@ def main():
                    help="file di uscita (default: ~/Desktop/<candidato>_card.jpg — "
                         "i risultati finiti si lasciano sempre in Scrivania)")
     a = p.parse_args()
-    if not a.immagine and not a.ritratto:
-        sys.exit("⛔ serve --ritratto (la fotografia) oppure --immagine (la card "
-                 "gia' impaginata col pannello vuoto)")
+    if not (a.immagine or a.ritratto or a.figura):
+        sys.exit("⛔ serve --figura (persona su fondo vuoto), --ritratto (la "
+                 "fotografia) oppure --immagine (la card gia' impaginata)")
 
     percorso = os.path.expanduser(a.dati)
     if not os.path.exists(percorso):
@@ -243,7 +317,19 @@ def main():
               "prima di pubblicare (L. 212/1956 art. 3).", file=sys.stderr)
 
     prepara_font()
-    if a.ritratto:
+    if a.figura:
+        try:
+            import rembg  # noqa: F401
+        except ModuleNotFoundError:
+            if os.path.exists(PY_REMBG):
+                os.execv(PY_REMBG, [PY_REMBG, os.path.abspath(__file__)] + sys.argv[1:])
+            sys.exit("⛔ serve rembg (ambiente iopaint).")
+        im, bordo = costruisci_da_figura(a.figura, frazione=a.bordo or 0.45,
+                                         zoom=a.zoom, alza=a.alza, sfondo=a.sfondo)
+        W, H = im.size
+        print(f"tela: {W}x{H}, pannello {bordo} px, figura ritagliata e portata "
+              f"alla scala comune", file=sys.stderr)
+    elif a.ritratto:
         try:
             import cv2
             cv2.CascadeClassifier  # la build ridotta non ce l'ha

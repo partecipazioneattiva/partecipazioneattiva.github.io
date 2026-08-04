@@ -91,6 +91,41 @@ VOTO_CARD = {
 }
 
 
+def prompt_figura(c):
+    """La persona SOLA su fondo vuoto: nemmeno il panorama.
+
+    ⭐ Idea di Fernando, 4 agosto 2026, e chiude il cerchio cominciato con
+    --stile ritratto. Meta fa i volti piu' veri, ma qualunque generatore
+    sbaglia l'impaginazione. Su fondo uniforme non c'e' piu' niente da
+    impaginare: si ritaglia la figura con rembg, la si porta alla scala
+    giusta e si monta su un fondo nostro. La testa esce uguale su tutti e
+    dieci perche' la misuriamo noi, non perche' l'abbiamo chiesta bene.
+
+    ⛔ Il fondo si chiede PIATTO e senza contorni: un fondo sfumato o con
+    un'ombra lascia un alone sul ritaglio, e l'alone si vede solo dopo, sul
+    manifesto stampato (stessa lezione del disco vuoto, manuale 11quater).
+    """
+    if "card_en" not in c:
+        sys.exit(f"⛔ manca il blocco 'card_en' per {c['nome'].title()}.")
+    e = c["card_en"]
+    f = c["genere"] == "f"
+    Lui = "She" if f else "He"
+    uomo = "woman" if f else "man"
+    suo = "her" if f else "his"
+
+    return f"""Vertical studio photograph of one person on a plain empty background, 2:3.
+
+Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']}
+
+{Lui} is photographed waist up, standing on the RIGHT side of the frame, turned slightly to {suo} right, looking straight into the camera. The whole head and both shoulders are inside the picture, with clear space above the head; {suo} arm may run out of the bottom right corner. This is a waist up photograph, not a close up: the head takes about one quarter of the height of the picture and the face never fills the frame.
+
+THE BACKGROUND IS COMPLETELY EMPTY: one single flat warm cream tone, the same from edge to edge, with no scenery, no city, no sky, no sea, no furniture, no window, no wall texture, no pattern, no gradient, no vignette, no cast shadow of the person and no shadow of any kind. The left half of the picture is nothing but that flat colour. The outline of the person against it must be clean and sharp, with no glow, no halo and no blur around the hair and the shoulders.
+
+Warm, even, frontal studio light on the face, natural skin texture, visible pores and lines, sharp focus on the eyes. Photorealistic, natural colours, print quality, 4K.
+
+NEGATIVE PROMPT: background scenery, landscape, city, sea, sky, mountain, Vesuvius, room, window, wall, texture, pattern, gradient background, vignette, cast shadow, drop shadow, halo around the figure, blurred outline, text, letters, words, numbers, logo, emblem, symbol, frame, border, panel, close up, face filling the frame, oversized head, full body, profile view, looking away, multiple people, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, sparkle icon, AI badge, watermark"""
+
+
 def prompt_ritratto(c):
     """SOLO la fotografia: niente pannello, niente testo, niente impaginazione.
 
@@ -319,7 +354,7 @@ def main():
     p.add_argument("--senza-simbolo", action="store_true", dest="senza_simbolo",
                    help="l'angolo del simbolo resta VUOTO: il logo vero lo incolla "
                         "poi _tools/sostituisci_simbolo.py (consigliato)")
-    p.add_argument("--stile", choices=["affissione", "card", "card-vuota", "ritratto"],
+    p.add_argument("--stile", choices=["affissione", "card", "card-vuota", "ritratto", "figura"],
                    default="affissione",
                    help="affissione = manifesto 70x100 in italiano (default); "
                         "card = card social 2:3 in inglese, foto a destra e "
@@ -362,6 +397,8 @@ def main():
         testo = prompt_card_vuota(c)
     elif a.stile == "ritratto":
         testo = prompt_ritratto(c)
+    elif a.stile == "figura":
+        testo = prompt_figura(c)
     else:
         testo = prompt(c, com, a.senza_simbolo)
 
@@ -372,7 +409,12 @@ def main():
         print(testo)
 
     print(f"\n─── allegati, da {c['cartella_foto']}/ ───", file=sys.stderr)
-    if a.stile == "ritratto":
+    if a.stile == "figura":
+        print("  SOLO le foto della persona. Il fondo esce vuoto: la figura si "
+              "ritaglia e si monta in locale.", file=sys.stderr)
+        print(f"  poi: _tools/carta_social.py --figura <immagine> --candidato {k}",
+              file=sys.stderr)
+    elif a.stile == "ritratto":
         print("  SOLO A1, A2, A3, A4 — niente logo, niente schema, niente "
               "pannello: qui si chiede una fotografia e basta.", file=sys.stderr)
         print("  poi: _tools/carta_social.py --ritratto <foto> --candidato "
