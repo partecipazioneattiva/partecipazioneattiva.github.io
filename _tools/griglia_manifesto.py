@@ -44,12 +44,17 @@ from PIL import Image, ImageDraw, ImageFont
 # sull'altezza), cosi' valgono a qualunque misura di stampa.
 # (x0, y0, x1, y1, nome, a cosa serve)
 ZONE = [
-    (0.030, 0.025, 0.970, 0.095, "FASCIA ALTA",  "elezione e data"),
-    (0.560, 0.120, 0.970, 0.560, "COLONNA TESTO", "nome, carica, slogan"),
-    (0.560, 0.600, 0.970, 0.780, "ISTRUZIONE",   "come si vota"),
-    # parte da 0,33 e non da sinistra: sotto c'e' il simbolo, che scende fino a
-    # 0,96 dell'altezza. Il committente gli passa accanto, non sopra.
-    (0.330, 0.900, 0.970, 0.965, "FASCIA BASSA", "committente e sito"),
+    (0.030, 0.025, 0.970, 0.095, "FASCIA ALTA",   "elezione e data"),
+    (0.620, 0.120, 0.970, 0.520, "COLONNA TESTO", "nome, carica, slogan"),
+    (0.620, 0.560, 0.970, 0.700, "ISTRUZIONE",    "come si vota"),
+    # ⭐ IL COMMITTENTE STA IN ALTO, NON IN FONDO (4 agosto 2026). In fondo non
+    #    ci sta: un ritratto a mezzo busto allarga le spalle scendendo, e sulla
+    #    prova di Luigi la giacca e' arrivata a 0,88 della larghezza — si
+    #    mangiava tutta la fascia bassa. Sopra il 78% dell'altezza, invece, la
+    #    figura non arriva mai oltre la meta'. Non e' un ripiego: la legge
+    #    (L. 212/1956 art. 3) chiede che il committente ci sia e si legga, non
+    #    che stia in basso.
+    (0.620, 0.720, 0.970, 0.780, "COMMITTENTE",   "committente e sito"),
 ]
 # Il disco del simbolo: bordo sinistro, bordo alto, diametro.
 # ⭐ NON e' piu' un vuoto da far disegnare (Fernando, 4 agosto 2026): il fondo e'
@@ -138,18 +143,28 @@ def verifica(percorso, uscita, cm_l, cm_h):
             tutto_bene = False
         print("  %s %-14s occupato per il %.1f%%" % (segno, nome, sporco * 100))
 
-    # la figura non deve sbordare oltre la colonna della persona
-    oltre = roba[:, int(FIGURA_FINO_A * W):]
+    # La figura deve stare nella sua meta' SOLO all'altezza in cui si scrive.
+    # Piu' in basso puo' allargarsi quanto vuole: un mezzo busto apre le spalle
+    # scendendo, e sotto l'ultima zona non da' fastidio a nessuno.
+    fin_qui = int(max(y1 for _, _, _, y1, _, _ in ZONE) * H)
+    oltre = roba[:fin_qui, int(FIGURA_FINO_A * W):]
     colonne = np.nonzero(oltre.any(axis=0))[0]
     if len(colonne):
         fin_dove = (int(FIGURA_FINO_A * W) + colonne.max()) / W
         segno = "✅" if fin_dove < 0.60 else "❌"
         if fin_dove >= 0.60:
             tutto_bene = False
-        print("  %s FIGURA         arriva fino a %.2f della larghezza (%.1f cm); "
-              "il limite e' %.2f" % (segno, fin_dove, fin_dove * cm_l, FIGURA_FINO_A))
+        print("  %s FIGURA         all'altezza delle scritte arriva a %.2f della "
+              "larghezza (%.1f cm); il limite e' %.2f"
+              % (segno, fin_dove, fin_dove * cm_l, FIGURA_FINO_A))
     else:
-        print("  ✅ FIGURA         resta nella sua meta'")
+        print("  ✅ FIGURA         resta nella sua meta' dove si scrive")
+    # sotto, solo per saperlo
+    sotto = roba[fin_qui:, int(FIGURA_FINO_A * W):]
+    giu = np.nonzero(sotto.any(axis=0))[0]
+    if len(giu):
+        print("     (piu' in basso le spalle arrivano a %.2f: non da' fastidio)"
+              % ((int(FIGURA_FINO_A * W) + giu.max()) / W))
 
     # anteprima con la griglia stampata sopra
     sopra = im.convert("RGBA")
