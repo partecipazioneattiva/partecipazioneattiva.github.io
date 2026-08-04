@@ -180,9 +180,51 @@ def verifica(percorso, uscita, cm_l, cm_h):
     return 0 if tutto_bene else 1
 
 
+def tela_guida(uscita, W, H):
+    """La TELA GUIDA da caricare su Gemini insieme alle foto.
+
+    ⛔ PERCHE' (4 agosto 2026). Chiedere a parole «la persona nella meta'
+    sinistra» non funziona: su Luigi ha obbedito, su Paolo ha piazzato il
+    ritratto in mezzo a tutta larghezza, stesso prompt. Le guide di Google non
+    hanno nessun comando di posizionamento — l'unica leva documentata sulla
+    struttura e' «usa l'immagine allegata come struttura».
+
+    Quindi la composizione si CARICA. Questa tela ha il foglio gia' nel formato
+    giusto, il fondo gia' del colore giusto, e una sagoma grigia di testa e
+    spalle esattamente dove e quanto grande deve venire la persona. Al modello
+    resta una richiesta sola, e facile: sostituisci il grigio con il ritratto.
+
+    Il grigio (128,128,128) e' scelto perche' non esiste da nessun'altra parte
+    nel manifesto: «sostituisci la sagoma grigia» non puo' voler dire altro.
+    """
+    im = Image.new("RGB", (W, H), (242, 224, 181))
+    d = ImageDraw.Draw(im)
+    grigio = (128, 128, 128)
+    cx = 0.27 * W                       # asse del volto
+    # testa: dal 10% al 40% dell'altezza
+    ty0, ty1 = 0.10 * H, 0.40 * H
+    tw = 0.115 * W                      # semilarghezza della testa
+    d.ellipse([cx - tw, ty0, cx + tw, ty1], fill=grigio)
+    # collo
+    d.rectangle([cx - tw * 0.42, ty1 - tw * 0.30, cx + tw * 0.42, ty1 + tw * 0.55],
+                fill=grigio)
+    # spalle e busto: si aprono scendendo, escono dal bordo sinistro e sono
+    # tagliate dal margine basso. A destra si fermano alla meta' del foglio.
+    d.polygon([(cx - tw * 1.15, ty1 + tw * 0.30), (cx + tw * 1.15, ty1 + tw * 0.30),
+               (0.540 * W, 0.62 * H), (0.540 * W, H), (-0.10 * W, H),
+               (-0.10 * W, 0.62 * H)], fill=grigio)
+    im.save(uscita)
+    print("tela guida: %s (%d × %d)" % (uscita, W, H))
+    print("  la sagoma grigia dice al generatore dove va la persona e quanto")
+    print("  grande: volto sull'asse a 0,27 della larghezza, testa dal 10%% al")
+    print("  40%% dell'altezza, spalle che non superano mai la meta' del foglio.")
+
+
 def main():
     p = argparse.ArgumentParser(description="La griglia del manifesto")
     p.add_argument("--schema", help="disegna la griglia vuota in questo file")
+    p.add_argument("--tela-guida", dest="tela_guida",
+                   help="la tela da caricare su Gemini insieme alle foto")
     p.add_argument("--verifica", help="controlla un manifesto generato")
     p.add_argument("--uscita", default="controllo_griglia.png",
                    help="dove salvare l'anteprima di --verifica")
@@ -193,6 +235,10 @@ def main():
     if a.schema:
         W, H = (int(v) for v in a.tela.lower().split("x"))
         schema(a.schema, W, H, cm_l, cm_h)
+        return 0
+    if a.tela_guida:
+        W, H = (int(v) for v in a.tela.lower().split("x"))
+        tela_guida(a.tela_guida, W, H)
         return 0
     if a.verifica:
         return verifica(a.verifica, a.uscita, cm_l, cm_h)
