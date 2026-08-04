@@ -51,16 +51,38 @@ def centro_volto(alfa, y0, y1):
     return (colonne.min() + colonne.max()) / 2
 
 
+def collo(alfa, y0, y1):
+    """La riga del collo: dove la sagoma e' piu' stretta fra la testa e le spalle.
+
+    Serve a scalare sulla TESTA e non sulla figura intera. Su un manifesto
+    l'unica misura che conta e' quanto e' grande il volto: le spalle escono dai
+    bordi e non fanno testo. Scalando sulla figura, un ritratto con le spalle
+    larghe fa venire la faccia piccola — l'errore che ha rovinato i primi
+    montaggi del 4 agosto 2026.
+    """
+    largh = alfa.sum(axis=1).astype(float)
+    a, b = y0 + int((y1 - y0) * 0.12), y0 + int((y1 - y0) * 0.55)
+    fascia = largh[a:b]
+    return a + int(np.argmin(fascia))
+
+
 def main():
     p = argparse.ArgumentParser(description="Monta il ritratto sul manifesto")
     p.add_argument("--ritratto", required=True, help="PNG scontornato, con alfa")
     p.add_argument("--uscita", required=True)
     p.add_argument("--tela", default="1400x2000", help="px del manifesto (7:10)")
     p.add_argument("--fondo", default=None, help="colore R,G,B; default pergamena")
-    p.add_argument("--testa", type=float, default=0.10,
+    p.add_argument("--testa", type=float, default=0.06,
                    help="a che altezza comincia la testa, in frazioni")
+    p.add_argument("--testa-alta", dest="testa_alta", type=float, default=0.30,
+                   help="quanto e' alta la TESTA rispetto al foglio")
     p.add_argument("--volto", type=float, default=0.27,
                    help="dove cade il centro del volto, in frazioni di larghezza")
+    p.add_argument("--prolunga", action="store_true",
+                   help="allunga il busto fino al bordo ripetendo l'ultima riga. "
+                        "⚠️ su una giacca a fantasia lascia una colonna di righe "
+                        "stirate: si usa solo su tessuti lisci e scuri, o si "
+                        "cambia foto con una a figura piu' intera")
     p.add_argument("--meta", type=float, default=0.54,
                    help="oltre questa colonna la figura non deve arrivare")
     a = p.parse_args()
@@ -77,8 +99,10 @@ def main():
     y0, y1, x0, x1 = ys.min(), ys.max(), xs.min(), xs.max()
     cv = centro_volto(alfa, y0, y1)
 
-    # 1) scala dall'altezza: dalla cima della testa al bordo basso del foglio
-    k = (1 - a.testa) * H / (y1 - y0 + 1)
+    # 1) la scala si prende dalla TESTA: e' l'unica misura che conta su un
+    #    manifesto. Le spalle escono dai bordi e non danno fastidio.
+    yc = collo(alfa, y0, y1)
+    k = a.testa_alta * H / max(yc - y0, 1)
     # 2) se la spalla destra scavalca la meta', si riduce quel tanto che basta
     destra = (x1 - cv) * k                     # quanto sporge a destra del volto
     massimo = a.meta * W - a.volto * W         # quanto spazio c'e'
@@ -96,6 +120,20 @@ def main():
     dy = int(round(a.testa * H))
 
     tela = Image.new("RGBA", (W, H), fondo + (255,))
+    # ⭐ IL BUSTO SI PROLUNGA FINO AL BORDO (4 agosto 2026). Le fotografie vere
+    #    sono quasi sempre tagliate al petto: scalate sulla testa, il busto
+    #    finisce a mezzo foglio e la persona sembra sospesa. L'ultima riga della
+    #    sagoma — giacca e camicia — si ripete fino al margine basso: il tessuto
+    #    e' verticale, e il prolungamento non si vede. E' la stessa cosa che fa
+    #    il margine quando taglia un ritratto scattato piu' lungo.
+    if a.prolunga and dy + alt < H:
+        coda = figura.crop((0, alt - 1, larg, alt)).resize(
+            (larg, H - dy - alt + 1), Image.NEAREST)
+        figura_lunga = Image.new("RGBA", (larg, H - dy), (0, 0, 0, 0))
+        figura_lunga.paste(figura, (0, 0))
+        figura_lunga.paste(coda, (0, alt - 1))
+        figura = figura_lunga
+        alt = H - dy
     tela.alpha_composite(figura, (dx, dy))
     tela.convert("RGB").save(a.uscita)
 
@@ -114,7 +152,7 @@ def main():
     #    busto che in mezza colonna non ci sta senza rimpicciolire la testa.
     #    Non e' un difetto del montaggio, e' la forma del ritratto: si rigenera
     #    stretto, e la forma la impone il RAPPORTO della tela, non le parole.
-    if dy + alt < H * 0.95:
+    if dy + alt < H * 0.98:
         print("\n⚠️  la figura si ferma al %.2f dell'altezza invece di arrivare in"
               " fondo." % ((dy + alt) / H))
         print("    Il ritratto e' troppo largo per una mezza colonna: cosi' il")
