@@ -266,6 +266,7 @@ def riesegui_con_cv2():
 
 
 ROSSO_X = (198, 42, 30)
+ROSSO_PA = (198, 56, 34)
 
 
 def croce_sul_simbolo(tela, x, y, lato):
@@ -335,6 +336,34 @@ def blocchi(c, com):
     ]
 
 
+def blocchi_classico(c, com):
+    """L'impaginato dei manifesti elettorali veri, quelli da affissione.
+
+    Ricavato dai due portati da Fernando il 4 agosto (Salini, europee 2024;
+    Bulbi, politiche 2022) e gia' scritto in PROMPT_MANIFESTO.txt:
+      - la DATA e' grande e sta in ALTO, non in fondo;
+      - "VOTA" e il cognome sono le righe che si leggono da lontano;
+      - l'istruzione di voto e' un SEGNO sul simbolo, non una frase;
+      - i valori e il sottotitolo qui non ci sono: a trenta metri non si
+        leggono e rubano spazio alle tre righe che contano.
+    """
+    f = c["genere"] == "f"
+    carica = CARICA[c["ruolo"]].format(a="A" if f else "O")
+    voto = VOTO[c["ruolo"]].format(cognome=c["cognome"])
+    return [
+        ("testo", [com["elezione"]], NERETTO, 0.040, 0.02, BRUNO),
+        ("testo", ["PRIMAVERA 2027"], NERETTO, 0.075, 0.01, ROSSO_PA),
+        ("testo", ["VOTA"], LAPIDARIO, 0.105, 0.06, BRUNO),
+        ("testo", [c["nome"].title(), c["cognome"].title()], SERIF_TESTO, 0.22, 0.0, BRUNO),
+        ("testo", [carica, "DELLA MUNICIPALITÀ 10"], NERETTO, 0.048, 0.01, BRUNO),
+        ("logo", [], None, 0.46, 0, None),
+        ("testo", ["BARRA IL SIMBOLO"], NERETTO, 0.068, 0.02, BRUNO),
+        ("testo", [voto], NERETTO_MEDIO, 0.046, 0.0, BRUNO),
+        ("testo", [f"Committente responsabile: {com['committente']}"],
+         NERETTO_MEDIO, 0.028, 0.0, BRUNO),
+    ]
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -342,6 +371,10 @@ def main():
     p.add_argument("--figura", help="la persona su FONDO VUOTO: si ritaglia, si "
                                     "porta alla scala di tutti e si monta "
                                     "(strada migliore)")
+    p.add_argument("--classico", action="store_true",
+                   help="l'impaginato dei manifesti da affissione: data grande in "
+                        "alto, VOTA, il segno sul simbolo. Senza sottotitolo e "
+                        "senza i tre valori, che a trenta metri non si leggono")
     p.add_argument("--senza-croce", action="store_true", dest="senza_croce",
                    help="non traccia la X rossa sul simbolo")
     p.add_argument("--sfondo", help="immagine di fondo per la meta' destra "
@@ -439,7 +472,8 @@ def main():
     # Prima passata: corpo e altezza di ogni gruppo. Le righe di un gruppo
     # condividono il corpo della piu' lunga.
     voci = []
-    for tipo, righe, f_font, rel, sp_rel, colore in blocchi(c, com):
+    schema = blocchi_classico(c, com) if a.classico else blocchi(c, com)
+    for tipo, righe, f_font, rel, sp_rel, colore in schema:
         if tipo == "logo":
             voci.append((tipo, [], None, 0, int(largh * rel), colore))
         elif tipo == "filo":
@@ -471,6 +505,7 @@ def main():
     dr = ImageDraw.Draw(im)
     y = int(H * 0.055)
     for i, (tipo, righe, dati_font, corpo, h, colore) in enumerate(voci):
+        y = int(y)          # lo spazio avanzato si distribuisce in frazioni
         if tipo == "logo":
             sim = Image.open(logo).convert("RGBA").resize((h, h), Image.LANCZOS)
             im.paste(sim, (x0, y), sim)
