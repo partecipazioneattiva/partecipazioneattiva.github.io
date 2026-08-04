@@ -162,8 +162,17 @@ def gradiente_verticale(dim, da_y, a_y, alfa_da, alfa_a):
 
 
 def grana(im, forza):
-    """In stampa grande le sfumature piatte del cielo si aprono a fasce."""
-    import numpy as np
+    """In stampa grande le sfumature piatte del cielo si aprono a fasce.
+
+    Senza numpy si salta: la grana e' una rifinitura da stampa, non deve far
+    fallire il montaggio. Capita davvero — l'aggiornamento di miniforge azzera
+    l'ambiente `base` e numpy sparisce (trappola del 4 agosto 2026)."""
+    try:
+        import numpy as np
+    except ModuleNotFoundError:
+        print("⚠️  numpy assente: manifesto senza grana (in stampa grande il "
+              "cielo puo' aprirsi a fasce)", file=sys.stderr)
+        return im
     rng = np.random.default_rng(7)
     dati = np.asarray(im, dtype=np.float32) + rng.normal(0.0, forza, im.size[::-1] + (1,))
     return Image.fromarray(np.clip(dati, 0, 255).astype(np.uint8))
@@ -528,6 +537,129 @@ def costruisci_laterale(a, W, H):
     return grana(tela, forza=3.0 * max(0.55, so))
 
 
+def costruisci_elettorale(a, W, H):
+    """L'impaginazione del MANIFESTO ELETTORALE vero, non della locandina.
+
+    Fissata il 4 agosto 2026 confrontando due manifesti reali portati da
+    Fernando — Salini (FI, europee 2024) e Bulbi (PD, politiche 2022):
+    figura a tutta altezza a sinistra, testo accanto sullo STESSO fondo (niente
+    fasce che dividono la tela), data grande in alto, istruzione di voto
+    DISEGNATA con la X sopra il simbolo, committente in verticale sul bordo.
+
+    Esiste perche' Gemini RIFIUTA di generare manifesti elettorali con il volto
+    di una persona reale (4 agosto 2026, su Paolo Neri): il filtro scatta a
+    intermittenza e non si aggira. Il montaggio locale non ha quel problema, e
+    per la stampa e' comunque migliore — il volto entra alla risoluzione della
+    fotografia e il simbolo e' il file vero, non una copia somigliante.
+    """
+    so, sv = W / 3308.0, H / 4724.0
+    o = lambda x: max(1, int(round(x * so)))
+    v = lambda x: max(1, int(round(x * sv)))
+
+    margine = o(150)
+    x_col = int(W * 0.50)                 # la colonna di testo comincia a meta'
+    larg_utile = W - x_col - margine
+
+    # ── 1. fondo unico: pergamena calda con una velatura dorata in alto ──────
+    tela = Image.new("RGB", (W, H), PERGAMENA)
+    velo = Image.new("RGB", (W, H), CREMA)
+    masc = Image.linear_gradient("L").resize((W, H)).point(lambda t: 255 - t)
+    tela = Image.composite(velo, tela, masc)
+    dr = ImageDraw.Draw(tela)
+
+    # ── 2. la figura: a tutta altezza, ancorata in basso a sinistra ──────────
+    if a.ritratto:
+        rit = Image.open(a.ritratto).convert("RGBA")
+        rit = rit.crop(rit.split()[3].point(lambda t: 255 if t > 12 else 0).getbbox())
+
+        # Foto non scontornata (nessuna trasparenza vera): invece del rettangolo
+        # netto si sfumano il bordo destro e quello basso, cosi' la fotografia
+        # si fonde nella pergamena. Serve perche' rembg non e' piu' installato —
+        # l'aggiornamento di miniforge azzera l'ambiente `base`.
+        if rit.split()[3].getextrema()[0] > 250:
+            w0, h0 = rit.size
+            m = Image.new("L", (w0, h0), 255)
+            dm = ImageDraw.Draw(m)
+            sfuma = int(w0 * 0.18)
+            for i in range(sfuma):                       # bordo destro
+                dm.line((w0 - sfuma + i, 0, w0 - sfuma + i, h0),
+                        fill=int(255 * (1 - i / sfuma)))
+            m = m.filter(ImageFilter.GaussianBlur(int(w0 * 0.02)))
+            rit.putalpha(m)
+
+        largh = int(W * 0.64)
+        k = largh / rit.width
+        if int(rit.height * k) > int(H * 0.94):        # non deve sfondare in alto
+            k = int(H * 0.94) / rit.height
+            largh = int(rit.width * k)
+        rit = rit.resize((largh, int(rit.height * k)), Image.LANCZOS)
+        tela.paste(rit, (-o(40), H - rit.height), rit)
+
+    # ── 3. il testo, misurato prima e distribuito poi sull'altezza ───────────
+    def testo(t, percorso, dim, colore, sp=0.0, interlinea=1.12, spessore=0):
+        fnt, d, righe = a_capo(t, percorso, larg_utile, dim, sp)
+        alt = int(d * interlinea) * len(righe)
+
+        def disegna(y0):
+            y1 = y0 + d
+            for r in righe:
+                scrivi(dr, (x_col, y1), r, fnt, colore, sp=d * sp, ancora="ls",
+                       spessore=spessore)
+                y1 += int(d * interlinea)
+        return alt, disegna
+
+    blocchi = [
+        testo(a.elezione.upper(), LAPIDARIO, o(196), BRUNO_SCURO, sp=0.02) + (0.9,),
+        testo(a.data.upper(), LAPIDARIO, o(236), ROSSO_PA, sp=0.02,
+              spessore=max(1, o(2))) + (2.2,),
+        testo(a.slogan.upper(), LAPIDARIO, o(180), BRUNO_SCURO, sp=0.03) + (1.6,),
+        testo(a.nome.upper(), SERIF_TESTO, o(210), BRUNO, sp=0.02) + (0.15,),
+        testo(a.cognome.upper(), SERIF_TESTO, o(390), BRUNO_SCURO, sp=0.01,
+              spessore=max(1, o(3))) + (0.5,),
+        testo(a.carica, "merriweather-400.ttf", o(94), BRUNO, interlinea=1.30) + (1.4,),
+        testo(a.voto1.upper(), LAPIDARIO, o(112), BRUNO_SCURO, sp=0.03) + (0.10,),
+        testo(a.voto2, "merriweather-400.ttf", o(88), BRUNO, interlinea=1.24) + (0.0,),
+    ]
+
+    y_alto, y_basso = v(210), H - v(260)
+    residuo = max(0, (y_basso - y_alto) - sum(b[0] for b in blocchi))
+    pesi = sum(b[2] for b in blocchi)
+    y = y_alto
+    for alt, disegna, peso in blocchi:
+        disegna(y)
+        y += alt + int(residuo * peso / pesi)
+
+    # ── 4. il simbolo con la X: e' l'istruzione di voto, disegnata ───────────
+    #      I tratti passano sopra il centro del disegno e si fermano prima
+    #      dell'anello delle lettere: su Gemini la X mangiava due lettere di
+    #      PARTECIPAZIONE, e il simbolo e' l'unica cosa che l'elettore deve
+    #      riconoscere sulla scheda.
+    if a.logo and os.path.exists(a.logo):
+        lato = int(W * 0.30)
+        logo = Image.open(a.logo).convert("RGBA").resize((lato, lato), Image.LANCZOS)
+        lx, ly = margine, H - lato - v(230)
+        tela.paste(logo, (lx, ly), logo)
+
+        segno = Image.new("RGBA", (lato, lato), (0, 0, 0, 0))
+        ds = ImageDraw.Draw(segno)
+        m, sp = int(lato * 0.20), max(2, o(16))
+        rosso = ROSSO_PA + (205,)
+        ds.line((m, m, lato - m, lato - m), fill=rosso, width=sp)
+        ds.line((lato - m, m, m, lato - m), fill=rosso, width=sp)
+        tela.paste(segno, (lx, ly), segno)
+
+    # ── 5. committente: verticale sul bordo sinistro, corpo minimo ───────────
+    if a.committente:
+        t = "Committente responsabile: " + a.committente
+        fnt = font("merriweather-400.ttf", o(34))
+        striscia = Image.new("RGBA", (larghezza(t, fnt) + o(20), o(50)), (0, 0, 0, 0))
+        ImageDraw.Draw(striscia).text((0, 0), t, font=fnt, fill=BRUNO_TENUE)
+        striscia = striscia.rotate(90, expand=True)
+        tela.paste(striscia, (o(40), v(300)), striscia)
+
+    return grana(tela, forza=3.0 * max(0.55, so))
+
+
 def adatta_social(master, larg, alt):
     """Formato orizzontale: il manifesto non si ricompone, si appoggia intero."""
     k = larg / master.width
@@ -542,10 +674,20 @@ def main():
     p.add_argument("--ritratto", default="")
     p.add_argument("--scena-unica", action="store_true", dest="scena_unica",
                    help="lo sfondo contiene gia' la persona: niente montaggio")
-    p.add_argument("--sfondo", required=True)
+    p.add_argument("--sfondo", default="")
     p.add_argument("--logo", default="LOGO-PA.webp")
     p.add_argument("--nome", required=True)
     p.add_argument("--carica", required=True)
+    # ── impaginazione elettorale (4 agosto 2026) ─────────────────────────────
+    p.add_argument("--elettorale", action="store_true",
+                   help="il manifesto elettorale vero: figura a tutta altezza, "
+                        "data grande in alto, X sul simbolo, committente verticale")
+    p.add_argument("--cognome", default="", help="solo con --elettorale")
+    p.add_argument("--elezione", default="Elezioni comunali di Napoli")
+    p.add_argument("--data", default="Primavera 2027")
+    p.add_argument("--slogan", default="Il quartiere decide")
+    p.add_argument("--voto1", default="Barra il simbolo")
+    p.add_argument("--voto2", default="sulla scheda della Municipalità")
     p.add_argument("--territori", default="")
     p.add_argument("--occasione", default="Elezioni comunali di Napoli · 2027")
     p.add_argument("--sottotitolo",
@@ -570,7 +712,16 @@ def main():
     a = p.parse_args()
 
     prepara_font()
-    impagina = costruisci_laterale if a.laterale else costruisci
+    if a.elettorale:
+        if not a.cognome:
+            sys.exit("⛔ con --elettorale serve anche --cognome")
+        impagina = costruisci_elettorale
+    elif a.laterale:
+        impagina = costruisci_laterale
+    else:
+        if not a.sfondo:
+            sys.exit("⛔ senza --elettorale serve --sfondo")
+        impagina = costruisci
     master = impagina(a, W, H)
     master.save(a.uscita, dpi=(120, 120))
     print("manifesto:", a.uscita, master.size)
