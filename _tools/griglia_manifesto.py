@@ -128,9 +128,15 @@ def verifica(percorso, uscita, cm_l, cm_h):
     im = Image.open(percorso).convert("RGB")
     a = np.array(im).astype(int)
     H, W, _ = a.shape
-    # il fondo pergamena: tinta calda e chiara. Tutto il resto e' "roba".
-    fondo = (a[:, :, 0] > 228) & (a[:, :, 2] < 215) & (a[:, :, 0] - a[:, :, 2] > 25)
-    roba = ~fondo
+    # ⭐ Il fondo si RILEVA, non si presume (4 agosto 2026). Tarato su un
+    #    intervallo fisso di pergamena, il controllo dava tutto occupato appena
+    #    il generatore virava la tinta sul rosato — e un falso allarme che
+    #    manda a rigenerare un manifesto buono costa piu' di uno mancato.
+    #    Il fondo e' semplicemente il colore piu' diffuso della meta' destra,
+    #    dove per costruzione non c'e' nessuno.
+    destra = a[:, int(0.75 * W):].reshape(-1, 3)
+    tinta = np.median(destra, axis=0)
+    roba = np.abs(a - tinta).sum(axis=2) > 30
 
     zone, disco = griglia(W, H)
     print("manifesto %s — %d × %d px" % (percorso, W, H))
