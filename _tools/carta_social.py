@@ -118,7 +118,9 @@ def main():
                    help="frazione di larghezza del pannello, se la misura sbaglia (es. 0.5)")
     p.add_argument("--margine", type=float, default=0.09,
                    help="margine interno del pannello, in frazione della sua larghezza")
-    p.add_argument("--uscita", help="file di uscita (default: <immagine>_card.jpg)")
+    p.add_argument("--uscita",
+                   help="file di uscita (default: ~/Desktop/<candidato>_card.jpg — "
+                        "i risultati finiti si lasciano sempre in Scrivania)")
     a = p.parse_args()
 
     percorso = os.path.expanduser(a.dati)
@@ -204,7 +206,9 @@ def main():
         if i < len(pesi):
             y += vuoto * pesi[i] / tot
 
-    uscita = a.uscita or os.path.splitext(os.path.expanduser(a.immagine))[0] + "_card.jpg"
+    # ⭐ Regola di Fernando: il finito si trova sempre in Scrivania, non
+    #    accanto al file di partenza e non in una cartella di lavoro.
+    uscita = os.path.expanduser(a.uscita or f"~/Desktop/{k}_card.jpg")
     im.save(uscita, quality=94, subsampling=0, optimize=True, progressive=True)
     print(f"scritto: {uscita}")
 
