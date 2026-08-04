@@ -269,7 +269,7 @@ ROSSO_X = (198, 42, 30)
 ROSSO_PA = (198, 56, 34)
 
 
-def croce_sul_simbolo(tela, x, y, lato):
+def croce_sul_simbolo(tela, x, y, lato, grande=False):
     """La X che l'elettore traccia sulla scheda, disegnata sul simbolo.
 
     ⭐ E' l'elemento piu' classico del manifesto elettorale italiano, e il
@@ -285,15 +285,16 @@ def croce_sul_simbolo(tela, x, y, lato):
     #    manifesto si leggeva "PARTECIPAZIC NE". Le lettere corrono lungo il
     #    bordo del disco, quindi i tratti restano ben dentro: 0.19 del lato,
     #    centrati un filo sotto la meta', dove c'e' il disegno delle mani.
-    cx, cy = x + lato / 2, y + lato * 0.53
-    braccio = lato * 0.19
-    spessore = max(3, int(lato * 0.055))
+    cx, cy = x + lato / 2, y + lato * (0.50 if grande else 0.53)
+    braccio = lato * (0.46 if grande else 0.19)
+    spessore = max(3, int(lato * (0.035 if grande else 0.055)))
     # due tratti tirati a mano: non partono dallo stesso punto e non sono
     # perfettamente simmetrici, se no sembra un segno stampato
+    tinta = ((20, 20, 20) if grande else ROSSO_X) + (235 if grande else 205,)
     d.line([(cx - braccio, cy - braccio * 0.96), (cx + braccio * 1.04, cy + braccio)],
-           fill=ROSSO_X + (205,), width=spessore)
+           fill=tinta, width=spessore)
     d.line([(cx + braccio, cy - braccio), (cx - braccio * 1.02, cy + braccio * 0.98)],
-           fill=ROSSO_X + (205,), width=spessore)
+           fill=tinta, width=spessore)
     strato = strato.filter(ImageFilter.GaussianBlur(max(0.6, lato * 0.004)))
     tela.paste(strato, (0, 0), strato)
 
@@ -336,6 +337,95 @@ def blocchi(c, com):
     ]
 
 
+BLU_PA = (23, 62, 122)
+BIANCO = (255, 255, 255)
+
+
+def componi_campagna(figura, c, com, logo, presidente=None):
+    """Il santino elettorale vero, quadrato: la grammatica che l'elettore
+    riconosce come ISTRUZIONE DI VOTO, non come manifesto d'autore.
+
+    ⭐ Ricavato il 4 agosto 2026 dal santino vero di Antonio (regionali
+    Campania 2025). Cinque elementi, in quest'ordine, e nessuno e' decorativo:
+      1. fascia colorata in alto: elezione e data, bianco su pieno;
+      2. VOTA;
+      3. il SIMBOLO con la X grande e nera sopra — il gesto, non la frase;
+      4. E SCRIVI + il cognome, che e' il gesto numero due (solo consiglieri:
+         per il Presidente la preferenza scritta non porta voti alla lista);
+      5. fascia in basso: il candidato Presidente della lista.
+    Niente valori, niente sottotitolo, niente grazie: qui si legge in tre
+    secondi o non si legge.
+    """
+    L = 1080
+    tela = Image.new("RGB", (L, L), BIANCO)
+    dr = ImageDraw.Draw(tela)
+    alta = int(L * 0.145)
+    bassa = int(L * 0.105)
+
+    # 1 — fascia in alto
+    dr.rectangle([0, 0, L, alta], fill=ROSSO_PA)
+    f1, c1 = adatta(com["elezione"], NERETTO, L * 0.92, alta * 0.44, 0.008)
+    scrivi(dr, (L / 2, alta * 0.50), com["elezione"], f1, BIANCO, c1 * 0.008, "ms")
+    data = com["data"] if "data" in com else "PRIMAVERA 2027"
+    f2, c2 = adatta(data, NERETTO, L * 0.8, alta * 0.34, 0.01)
+    scrivi(dr, (L / 2, alta * 0.90), data, f2, BIANCO, c2 * 0.01, "ms")
+
+    # la figura, a destra, dalla fascia alta a quella bassa
+    fig = figura.crop(figura.getbbox())
+    h = L - alta - bassa
+    k = h / fig.height
+    fig = fig.resize((max(1, int(fig.width * k)), h), Image.LANCZOS)
+    strato = Image.new("RGBA", (L, L), (0, 0, 0, 0))
+    strato.paste(fig, (int(L * 0.70 - fig.width * 0.5), alta))
+    strato = strato.crop((int(L * 0.42), 0, L, L - bassa))
+    tela.paste(strato, (int(L * 0.42), 0), strato)
+
+    # 2 — VOTA
+    x0 = int(L * 0.05)
+    largo = int(L * 0.36)
+    y = alta + int(L * 0.045)
+    fv, cv = adatta("VOTA", NERETTO, largo, L * 0.085, 0.02)
+    scrivi(dr, (x0, y + cv), "VOTA", fv, BLU_PA, cv * 0.02, "ls")
+    y += int(cv * 1.5)
+
+    # 3 — il simbolo con la X: qui la X e' GRANDE e nera, come sul santino
+    lato = int(largo * 0.92)
+    sim = Image.open(logo).convert("RGBA").resize((lato, lato), Image.LANCZOS)
+    tela.paste(sim, (x0, y), sim)
+    croce_sul_simbolo(tela, x0, y, lato, grande=True)
+    y += int(lato * 1.06)
+
+    # 4 — E SCRIVI + cognome (il secondo gesto), solo per i consiglieri
+    if c["ruolo"] == "consigliere":
+        fe, ce = adatta("E SCRIVI", NERETTO, largo, L * 0.062, 0.02)
+        scrivi(dr, (x0, y + ce), "E SCRIVI", fe, BLU_PA, ce * 0.02, "ls")
+        y += int(ce * 1.45)
+        fn, cn = adatta(c["nome"], NERETTO, largo, L * 0.058, 0.01)
+        scrivi(dr, (x0, y + cn), c["nome"], fn, BLU_PA, cn * 0.01, "ls")
+        y += int(cn * 1.25)
+        fc, cc = adatta(c["cognome"], NERETTO, largo, L * 0.085, 0.01)
+        scrivi(dr, (x0, y + cc), c["cognome"], fc, BLU_PA, cc * 0.01, "ls")
+    else:
+        for riga, dim in ((c["nome"], 0.058), (c["cognome"], 0.085)):
+            fr, cr = adatta(riga, NERETTO, largo, L * dim, 0.01)
+            scrivi(dr, (x0, y + cr), riga, fr, BLU_PA, cr * 0.01, "ls")
+            y += int(cr * 1.25)
+        fp, cp = adatta("CANDIDATO PRESIDENTE", NERETTO, largo, L * 0.040, 0.01)
+        scrivi(dr, (x0, y + cp), "CANDIDATO PRESIDENTE", fp, BLU_PA, cp * 0.01, "ls")
+
+    # 5 — fascia in basso: il Presidente della lista
+    dr.rectangle([0, L - bassa, L, L], fill=BLU_PA)
+    coda = (f"CON {presidente} PRESIDENTE" if presidente and c["ruolo"] == "consigliere"
+            else f"MUNICIPALITÀ 10 · {com['territorio_card']}")
+    ff, cf = adatta(coda, NERETTO, L * 0.90, bassa * 0.46, 0.01)
+    scrivi(dr, (L / 2, L - bassa * 0.42), coda, ff, BIANCO, cf * 0.01, "ms")
+    fq, cq = adatta(f"Committente responsabile: {com['committente']}",
+                    NERETTO_MEDIO, L * 0.9, bassa * 0.24)
+    scrivi(dr, (L / 2, L - bassa * 0.12), f"Committente responsabile: {com['committente']}",
+           fq, BIANCO, 0, "ms")
+    return tela
+
+
 def blocchi_classico(c, com):
     """L'impaginato dei manifesti elettorali veri, quelli da affissione.
 
@@ -371,6 +461,10 @@ def main():
     p.add_argument("--figura", help="la persona su FONDO VUOTO: si ritaglia, si "
                                     "porta alla scala di tutti e si monta "
                                     "(strada migliore)")
+    p.add_argument("--campagna", action="store_true",
+                   help="il santino elettorale quadrato: fascia rossa in alto, "
+                        "VOTA, simbolo barrato, E SCRIVI + cognome, fascia in "
+                        "basso col Presidente della lista")
     p.add_argument("--classico", action="store_true",
                    help="l'impaginato dei manifesti da affissione: data grande in "
                         "alto, VOTA, il segno sul simbolo. Senza sottotitolo e "
@@ -464,6 +558,18 @@ def main():
                  if x and os.path.exists(os.path.expanduser(x))), None)
     if not logo:
         sys.exit(f"⛔ simbolo non trovato in {cartella}")
+
+    if a.campagna:
+        from rembg import remove, new_session
+        fig = remove(Image.open(os.path.expanduser(a.figura or a.immagine)).convert("RGBA"),
+                     session=new_session("birefnet-general"))
+        pres = next((f"{v['nome']} {v['cognome']}" for v in d["candidati"].values()
+                     if v["ruolo"] == "presidente"), None)
+        tela = componi_campagna(fig, c, com, logo, pres)
+        uscita = os.path.expanduser(a.uscita or f"~/Desktop/{k}_santino.jpg")
+        tela.save(uscita, quality=94, subsampling=0, optimize=True, progressive=True)
+        print(f"scritto: {uscita}")
+        return
 
     margine = int(bordo * a.margine)
     largh = bordo - 2 * margine
