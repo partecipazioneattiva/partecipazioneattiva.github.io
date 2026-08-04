@@ -97,7 +97,12 @@ def misura_pannello(im):
 #    agosto 2026, e non si scopre finche' non lo si chiama.
 PY_CV2 = "/opt/homebrew/Caskroom/miniforge/base/envs/comfyui/bin/python"
 PY_REMBG = "/opt/homebrew/Caskroom/miniforge/base/envs/iopaint/bin/python"
-FONDO = (247, 239, 220)
+# ⭐ 4 agosto 2026: la pergamena non e' piu' un colore inventato da noi. E' la
+#    tinta del fondo vuoto che Fernando ha scelto come base — misurata sul suo
+#    file, perfettamente piatta (scarto zero su tutti e tre i canali).
+#    Cosi' la figura ritagliata si posa su ESATTAMENTE lo stesso colore su cui
+#    e' stata generata: nessuno stacco al bordo del ritaglio.
+FONDO = (249, 233, 205)
 
 
 def altezza_testa(sagoma):
@@ -217,13 +222,13 @@ def costruisci_base(ritratto, larghezza=1024, frazione=0.45, zoom=1.0, alza=0.0)
     cx = (fx + fw / 2) * k
     cy = mento * k
 
-    tela = Image.new("RGB", (W, H), (247, 239, 220))
+    tela = Image.new("RGB", (W, H), FONDO)
     # il volto: al 55% della zona foto in larghezza, il mento appena sopra meta'
     x = int(bordo + (W - bordo) * 0.55 - cx)
     y = int(H * (0.48 - alza) - cy)
     tela.paste(im, (x, y))
     # il pannello si stende DOPO: cosi' non c'e' verso che la figura lo invada
-    tela.paste(Image.new("RGB", (bordo, H), (247, 239, 220)), (0, 0))
+    tela.paste(Image.new("RGB", (bordo, H), FONDO), (0, 0))
     return tela, bordo
 
 
