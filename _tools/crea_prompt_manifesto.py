@@ -82,6 +82,13 @@ def prompt(c, com, senza_simbolo=False):
             "non sopra le scritte.\nIl logo sta alla stessa altezza delle due "
             "righe del punto 7.")
 
+    # ⛔ I nomi propri si compitano lettera per lettera: e' l'unico modo per cui
+    #    il generatore non li reinventa. Su Luigi aveva scritto "Bariianoraina
+    #    ungnoli" al posto di "Bagnoli"; sul logo "PA TECIPAZI NE".
+    propri = [c["cognome"]] + [w for w in c["territorio"].replace("e ", "").split()
+                               if len(w) > 3]
+    compitato = "; ".join(f"{w} si scrive {'-'.join(w.upper())}" for w in propri)
+
     return f"""Ti allego {quante} immagini, con {ruoli} ruoli diversi.
 IMMAGINI A1, A2, A3, A4 - quattro fotografie della stessa persona, {c['nome'].title()}, {art} sto preparando il materiale e di cui ho il consenso: sono la fonte del suo ritratto. Usale tutte e quattro insieme per ricostruire il viso, non solo la prima.
 {riga_b}IMMAGINE C - uno schema di impaginazione muto: i rettangoli grigi indicano soltanto dove va ogni elemento e quanto e' grande, e corrispondono nell'ordine dall'alto in basso all'elenco che trovi sotto. Non riprodurre i rettangoli, non riprodurne i colori, non scrivere parole che non siano nell'elenco.
@@ -99,7 +106,8 @@ E' un ritratto posato per un manifesto, quindi la persona e' curata: capelli pet
 {c['divieti']}
 Inquadratura a mezzo busto, frontale, sguardo dritto nell'obiettivo. {c['abbigliamento']} {c['da_togliere']} Luce calda e frontale sul volto, nessuna ombra dura sugli occhi.
 
-Il testo e' in italiano, in caratteri lapidari senza grazie, molto marcati, colore bruno scurissimo, con questa gerarchia di grandezza e in quest'ordine dall'alto in basso:
+⛔ IL TESTO DEL MANIFESTO — da riprodurre ALLA LETTERA
+Quelle che seguono sono le UNICHE parole che compaiono nel manifesto. Ogni riga va copiata carattere per carattere, esattamente come e' scritta qui, una volta sola. Il testo e' in italiano, in caratteri lapidari senza grazie, molto marcati, colore bruno scurissimo, e le righe stanno in quest'ordine dall'alto in basso:
 
 1. in alto, grande: "{com['elezione']}"
 2. subito sotto, piu' grande ancora e nel rosso caldo di accento: "{com['data']}"
@@ -113,7 +121,10 @@ Il testo e' in italiano, in caratteri lapidari senza grazie, molto marcati, colo
 
 Sul bordo sinistro della tela, scritta in verticale e nel corpo piu' piccolo di tutto il manifesto: "Committente responsabile: {com['committente']}".
 
-Ogni riga compare una sola volta ed esattamente com'e' scritta. Non aggiungere titoli, etichette, intestazioni, indirizzi, numeri di telefono, siti, slogan aggiuntivi, elenchi di valori o parole di alcun genere.
+⛔ COME SI COPIA IL TESTO — la parte in cui si sbaglia sempre
+Non tradurre, non abbreviare, non spezzare le parole con trattini, non ripeterle, non aggiungere articoli, preposizioni, titoli, etichette, intestazioni, indirizzi, numeri di telefono, siti, slogan o parole di alcun genere che non siano nell'elenco.
+⛔ SE UNA RIGA NON CI STA NELLO SPAZIO, RIDUCI IL CORPO DEI CARATTERI O MANDA A CAPO: non accorciare, non riassumere e non riscrivere le parole. Una riga piu' piccola e' corretta, una riga storpiata rende il manifesto inutilizzabile.
+I nomi propri sono la cosa che si sbaglia di piu': {compitato}. Rileggili sul manifesto finito e confrontali lettera per lettera con questa riga.
 
 Colori: {com['colori']}. Il contrasto fra testo e fondo deve essere alto: in strada i toni delicati spariscono.
 Prima di consegnare rileggi tutto il testo lettera per lettera, confrontandolo con l'elenco qui sopra: ogni riga deve essere identica, senza parole ripetute, storpiate o inventate. ⛔ Attenzione ai nomi di luogo: si scrivono soltanto "Bagnoli" e "Fuorigrotta", e non devono comparire altre parole che gli somigliano. Accenti e apostrofi corretti, nessuna riga tagliata o coperta dalla figura.
