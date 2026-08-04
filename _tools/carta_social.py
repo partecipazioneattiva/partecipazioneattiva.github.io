@@ -150,6 +150,9 @@ def costruisci_da_figura(immagine, larghezza=1024, frazione=0.45, zoom=1.0,
     fig = fig.crop(fig.getbbox())
     testa = altezza_testa(fig)
     k = (bordo / testa) * zoom
+    # Se alla misura di serie la figura non copre la sua meta', si allarga fino
+    # a coprirla — al massimo di un terzo, o la serie non e' piu' una serie.
+    k = min(k * 1.35, max(k, (W - bordo) * 1.02 / fig.width))
     fig = fig.resize((max(1, int(fig.width * k)), max(1, int(fig.height * k))),
                      Image.LANCZOS)
 
@@ -244,6 +247,9 @@ def costruisci_base(ritratto, larghezza=1024, frazione=0.45, zoom=1.0, alza=0.0)
     mento = fy + fh * 1.05
 
     k = (bordo / testa) * zoom
+    # Se alla misura di serie la figura non copre la sua meta', si allarga fino
+    # a coprirla — al massimo di un terzo, o la serie non e' piu' una serie.
+    k = min(k * 1.35, max(k, (W - bordo) * 1.02 / fig.width))
     im = im.resize((max(1, int(im.width * k)), max(1, int(im.height * k))),
                    Image.LANCZOS)
     cx = (fx + fw / 2) * k
@@ -339,126 +345,143 @@ def blocchi(c, com):
     ]
 
 
-BLU_PA = (23, 62, 122)
 BIANCO = (255, 255, 255)
+# I colori sono quelli del simbolo, non del partito che c'era prima.
+AMBRA_PA = (237, 153, 53)
+VERDE_PA = (62, 145, 67)
+VERDE_SCURO = (35, 96, 45)
+
+
+def fascia(tela, y0, y1, da, a):
+    """Fascia a gradiente orizzontale, coi colori del simbolo."""
+    h = y1 - y0
+    striscia = Image.new("RGB", (tela.width, 1))
+    px = striscia.load()
+    for x in range(tela.width):
+        t = x / max(1, tela.width - 1)
+        px[x, 0] = tuple(int(da[i] + (a[i] - da[i]) * t) for i in range(3))
+    tela.paste(striscia.resize((tela.width, h), Image.BILINEAR), (0, y0))
 
 
 def componi_campagna(figura, c, com, logo, presidente=None):
-    """Il santino elettorale vero, quadrato: la grammatica che l'elettore
-    riconosce come ISTRUZIONE DI VOTO, non come manifesto d'autore.
+    """Il santino elettorale quadrato, coi colori nostri.
 
-    ⭐ Ricavato il 4 agosto 2026 dal santino vero di Antonio (regionali
-    Campania 2025). Cinque elementi, in quest'ordine, e nessuno e' decorativo:
-      1. fascia colorata in alto: elezione e data, bianco su pieno;
+    ⭐ Ricavato dal santino vero di Antonio (regionali Campania 2025), ma
+    ripreso nella tavolozza del simbolo: rosso e ambra in alto, verde in
+    basso. Il blu del santino originale e' del partito che c'era prima, non
+    nostro.
+
+    L'ordine e' quello che l'elettore riconosce come istruzione di voto, e
+    nessuno dei pezzi e' decorativo:
+      1. fascia in alto: elezione e data;
       2. VOTA;
-      3. il SIMBOLO con la X grande e nera sopra — il gesto, non la frase;
-      4. E SCRIVI + il cognome, che e' il gesto numero due (solo consiglieri:
-         per il Presidente la preferenza scritta non porta voti alla lista);
-      5. fascia in basso: il candidato Presidente della lista.
-    Niente valori, niente sottotitolo, niente grazie: qui si legge in tre
-    secondi o non si legge.
+      3. il SIMBOLO con la X sopra — il gesto, non la frase;
+      4. E SCRIVI + cognome (solo consiglieri: sul Presidente la preferenza
+         scritta non porta voti alla lista);
+      5. lo slogan del movimento e il territorio, che riempiono la colonna;
+      6. fascia in basso: il candidato Presidente della lista.
     """
     L = 1080
     tela = Image.new("RGB", (L, L), BIANCO)
     dr = ImageDraw.Draw(tela)
     alta = int(L * 0.145)
-    bassa = int(L * 0.105)
+    bassa = int(L * 0.115)
 
-    # 1 — fascia in alto
-    dr.rectangle([0, 0, L, alta], fill=ROSSO_PA)
+    fascia(tela, 0, alta, ROSSO_PA, AMBRA_PA)
     f1, c1 = adatta(com["elezione"], NERETTO, L * 0.92, alta * 0.44, 0.008)
     scrivi(dr, (L / 2, alta * 0.50), com["elezione"], f1, BIANCO, c1 * 0.008, "ms")
-    data = com["data"] if "data" in com else "PRIMAVERA 2027"
+    data = com.get("data", "PRIMAVERA 2027")
     f2, c2 = adatta(data, NERETTO, L * 0.8, alta * 0.34, 0.01)
     scrivi(dr, (L / 2, alta * 0.90), data, f2, BIANCO, c2 * 0.01, "ms")
 
-    # la figura, a destra, dalla fascia alta a quella bassa
+    # la figura riempie la sua meta': il vuoto IN MEZZO si nota piu' di quello
+    # ai bordi, quindi si allarga fino a coprirla e il corpo esce dal basso.
     fig = figura.crop(figura.getbbox())
-    h = L - alta - bassa
-    k = h / fig.height
-    fig = fig.resize((max(1, int(fig.width * k)), h), Image.LANCZOS)
-    # ⛔ 4 agosto 2026: la figura si ACCOSTA al bordo destro e ci esce un poco.
-    #    Lasciare una striscia di fondo a destra la fa sembrare ritagliata
-    #    male — "mozzata" — mentre una spalla che esce dal bordo e' normale su
-    #    qualunque santino. La testa pero' resta tutta dentro: si arretra se il
-    #    bordo le arriva addosso.
+    utile = L - alta - bassa
+    k = max(utile / fig.height, (L * 0.60) / fig.width)
+    testa_ora = altezza_testa(fig) * k
+    if testa_ora > utile * 0.42:
+        k *= (utile * 0.42) / testa_ora
+    fig = fig.resize((max(1, int(fig.width * k)), max(1, int(fig.height * k))),
+                     Image.LANCZOS)
     alfa = fig.split()[-1].point(lambda v: 255 if v > 128 else 0)
     banda = alfa.crop((0, 0, fig.width, max(1, int(fig.height * 0.30)))).getbbox()
     x = L - fig.width + int(L * 0.015)
     if banda:
         x = min(x, L - int(L * 0.02) - banda[2])
+    # se il corpo finisce prima della fascia in basso resta una lingua di
+    # bianco sotto i piedi: si scende finche' non la tocca.
+    y_fig = alta
+    if y_fig + fig.height < L - bassa:
+        y_fig = L - bassa - fig.height
     strato = Image.new("RGBA", (L, L), (0, 0, 0, 0))
-    strato.paste(fig, (x, alta))
-    strato = strato.crop((int(L * 0.42), 0, L, L - bassa))
-    tela.paste(strato, (int(L * 0.42), 0), strato)
+    strato.paste(fig, (x, y_fig))
+    strato = strato.crop((int(L * 0.40), 0, L, L))
+    tela.paste(strato, (int(L * 0.40), 0), strato)
 
-    # 2 — VOTA
+    # la colonna: si misura prima e si stringe tutta insieme se non ci sta,
+    # invece di perdere l'ultima riga.
     x0 = int(L * 0.05)
-    largo = int(L * 0.36)
-    y0 = alta + int(L * 0.045)
-    y = y0
-    disponibile = (L - bassa - int(L * 0.025)) - y0
+    largo = int(L * 0.34)
+    y0 = alta + int(L * 0.035)
+    disponibile = (L - bassa - int(L * 0.02)) - y0
 
-    # ⛔ 4 agosto 2026: su Luigi il cognome finiva sotto la fascia blu. La
-    #    colonna non si impagina "a scendere e speriamo": si misura prima
-    #    quanto serve e, se non ci sta, si stringe tutto insieme — simbolo
-    #    compreso — invece di tagliare l'ultima riga, che e' il cognome.
-    def _alto(fatt):
-        h = adatta("VOTA", NERETTO, largo, L * 0.085 * fatt, 0.02)[1] * 1.5
-        h += int(largo * 0.92 * fatt) * 1.06
-        if c["ruolo"] == "consigliere":
-            h += adatta("E SCRIVI", NERETTO, largo, L * 0.062 * fatt, 0.02)[1] * 1.45
-            h += adatta(c["nome"], NERETTO, largo, L * 0.058 * fatt, 0.01)[1] * 1.25
-            h += adatta(c["cognome"], NERETTO, largo, L * 0.085 * fatt, 0.01)[1] * 1.25
-        else:
-            h += adatta(c["nome"], NERETTO, largo, L * 0.058 * fatt, 0.01)[1] * 1.25
-            h += adatta(c["cognome"], NERETTO, largo, L * 0.085 * fatt, 0.01)[1] * 1.25
-            h += adatta("CANDIDATO PRESIDENTE", NERETTO, largo, L * 0.040 * fatt, 0.01)[1] * 1.3
+    if c["ruolo"] == "consigliere":
+        righe = [("E SCRIVI", NERETTO, 0.058), (c["nome"], NERETTO, 0.052),
+                 (c["cognome"], NERETTO, 0.080)]
+    else:
+        righe = [(c["nome"], NERETTO, 0.052), (c["cognome"], NERETTO, 0.080),
+                 ("CANDIDATO PRESIDENTE", NERETTO, 0.034)]
+    coda = [(com.get("slogan", "IL QUARTIERE DECIDE"), NERETTO, 0.044, VERDE_PA),
+            ("MUNICIPALITÀ 10", NERETTO, 0.036, BRUNO),
+            (com["territorio_card"].split(" - Agnano")[0], NERETTO_MEDIO, 0.026, BRUNO),
+            ("Agnano" + com["territorio_card"].split(" - Agnano")[1],
+             NERETTO_MEDIO, 0.026, BRUNO)]
+
+    def _alto(f):
+        h = adatta("VOTA", NERETTO, largo, L * 0.082 * f, 0.02)[1] * 1.5
+        h += int(largo * 0.98 * f) * 1.04
+        for t, fo, d in righe:
+            h += adatta(t, fo, largo, L * d * f, 0.01)[1] * 1.28
+        h += L * 0.02 * f
+        for t, fo, d, _ in coda:
+            h += adatta(t, fo, largo, L * d * f, 0.01)[1] * 1.30
         return h
 
     fatt = 1.0
-    while fatt > 0.5 and _alto(fatt) > disponibile:
-        fatt -= 0.04
+    while fatt > 0.45 and _alto(fatt) > disponibile:
+        fatt -= 0.03
 
-    fv, cv = adatta("VOTA", NERETTO, largo, L * 0.085 * fatt, 0.02)
-    scrivi(dr, (x0, y + cv), "VOTA", fv, BLU_PA, cv * 0.02, "ls")
+    y = y0
+    fv, cv = adatta("VOTA", NERETTO, largo, L * 0.082 * fatt, 0.02)
+    scrivi(dr, (x0, y + cv), "VOTA", fv, BRUNO, cv * 0.02, "ls")
     y += int(cv * 1.5)
 
-    # 3 — il simbolo con la X: qui la X e' GRANDE e nera, come sul santino
-    lato = int(largo * 0.92 * fatt)
+    lato = int(largo * 0.98 * fatt)
     sim = Image.open(logo).convert("RGBA").resize((lato, lato), Image.LANCZOS)
     tela.paste(sim, (x0, y), sim)
     croce_sul_simbolo(tela, x0, y, lato, grande=True)
-    y += int(lato * 1.06)
+    y += int(lato * 1.04)
 
-    # 4 — E SCRIVI + cognome (il secondo gesto), solo per i consiglieri
-    if c["ruolo"] == "consigliere":
-        fe, ce = adatta("E SCRIVI", NERETTO, largo, L * 0.062 * fatt, 0.02)
-        scrivi(dr, (x0, y + ce), "E SCRIVI", fe, BLU_PA, ce * 0.02, "ls")
-        y += int(ce * 1.45)
-        fn, cn = adatta(c["nome"], NERETTO, largo, L * 0.058 * fatt, 0.01)
-        scrivi(dr, (x0, y + cn), c["nome"], fn, BLU_PA, cn * 0.01, "ls")
-        y += int(cn * 1.25)
-        fc, cc = adatta(c["cognome"], NERETTO, largo, L * 0.085 * fatt, 0.01)
-        scrivi(dr, (x0, y + cc), c["cognome"], fc, BLU_PA, cc * 0.01, "ls")
-    else:
-        for riga, dim in ((c["nome"], 0.058), (c["cognome"], 0.085)):
-            fr, cr = adatta(riga, NERETTO, largo, L * dim * fatt, 0.01)
-            scrivi(dr, (x0, y + cr), riga, fr, BLU_PA, cr * 0.01, "ls")
-            y += int(cr * 1.25)
-        fp, cp = adatta("CANDIDATO PRESIDENTE", NERETTO, largo, L * 0.040 * fatt, 0.01)
-        scrivi(dr, (x0, y + cp), "CANDIDATO PRESIDENTE", fp, BLU_PA, cp * 0.01, "ls")
+    for t, fo, d in righe:
+        ft, ct = adatta(t, fo, largo, L * d * fatt, 0.01)
+        scrivi(dr, (x0, y + ct), t, ft, BRUNO, ct * 0.01, "ls")
+        y += int(ct * 1.28)
+    y += int(L * 0.02 * fatt)
+    for t, fo, d, col in coda:
+        ft, ct = adatta(t, fo, largo, L * d * fatt, 0.01)
+        scrivi(dr, (x0, y + ct), t, ft, col, ct * 0.01, "ls")
+        y += int(ct * 1.30)
 
-    # 5 — fascia in basso: il Presidente della lista
-    dr.rectangle([0, L - bassa, L, L], fill=BLU_PA)
-    coda = (f"CON {presidente} PRESIDENTE" if presidente and c["ruolo"] == "consigliere"
-            else f"MUNICIPALITÀ 10 · {com['territorio_card']}")
-    ff, cf = adatta(coda, NERETTO, L * 0.90, bassa * 0.46, 0.01)
-    scrivi(dr, (L / 2, L - bassa * 0.42), coda, ff, BIANCO, cf * 0.01, "ms")
-    fq, cq = adatta(f"Committente responsabile: {com['committente']}",
-                    NERETTO_MEDIO, L * 0.9, bassa * 0.24)
-    scrivi(dr, (L / 2, L - bassa * 0.12), f"Committente responsabile: {com['committente']}",
-           fq, BIANCO, 0, "ms")
+    fascia(tela, L - bassa, L, VERDE_PA, VERDE_SCURO)
+    testo = (f"CON {presidente} PRESIDENTE"
+             if presidente and c["ruolo"] == "consigliere"
+             else f"{com['sito']}")
+    ff, cf = adatta(testo, NERETTO, L * 0.90, bassa * 0.42, 0.01)
+    scrivi(dr, (L / 2, L - bassa * 0.46), testo, ff, BIANCO, cf * 0.01, "ms")
+    comm = f"Committente responsabile: {com['committente']}"
+    fq, cq = adatta(comm, NERETTO_MEDIO, L * 0.9, bassa * 0.22)
+    scrivi(dr, (L / 2, L - bassa * 0.14), comm, fq, BIANCO, 0, "ms")
     return tela
 
 
