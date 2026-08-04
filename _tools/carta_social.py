@@ -79,6 +79,80 @@ def misura_pannello(im):
     return w // 2, soglia
 
 
+# ⚠️ Nell'ambiente `iopaint` cv2 c'e' ma e' una build ridotta, senza
+#    CascadeClassifier. Quello completo sta in `comfyui`: verificato il 4
+#    agosto 2026, e non si scopre finche' non lo si chiama.
+PY_CV2 = "/opt/homebrew/Caskroom/miniforge/base/envs/comfyui/bin/python"
+
+
+def costruisci_base(ritratto, larghezza=1024, frazione=0.45, zoom=1.0, alza=0.0):
+    """Dalla FOTOGRAFIA sola alla tela impaginata: pannello a sinistra, foto a
+    destra, testa alla misura giusta.
+
+    ⛔ 4 agosto 2026 — LA CAUSA A MONTE. Per due volte il generatore ha
+    tagliato la faccia col pannello e ha fatto la testa grande il doppio che
+    su Rosa. Non e' il prompt: a un modello di immagini si stava chiedendo
+    un'IMPAGINAZIONE, e lui non impagina, dipinge. Gli si chiede solo il
+    ritratto; il pannello, i margini e la scala li mettiamo noi, uguali per
+    tutti e dieci i candidati.
+
+    Le due misure, prese da Rosa che era venuta giusta:
+      - la testa (cima dei capelli -> mento) e' alta quanto il pannello e' largo;
+      - il mento sta appena sopra la meta' dell'immagine.
+    """
+    import cv2  # sta solo nell'ambiente iopaint: vedi riesegui_con_cv2()
+    import numpy as np
+
+    im = Image.open(os.path.expanduser(ritratto)).convert("RGB")
+    W = larghezza
+    H = int(W * 3 / 2)
+    bordo = int(W * frazione)
+
+    grigio = cv2.cvtColor(np.array(im), cv2.COLOR_RGB2GRAY)
+    # ⚠️ 4 agosto 2026: nessuna delle build di cv2 sul Mac porta i file
+    #    haarcascade (cv2.data esiste ma la cartella e' vuota). Se non ci sono,
+    #    non si scarica niente: si passa da --immagine sulla card gia'
+    #    composta, che e' la strada che funziona.
+    xml = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+    if not os.path.exists(xml):
+        sys.exit("⛔ OpenCV senza i file di riconoscimento volti: questa strada "
+                 "e' chiusa. Usare --immagine sulla card gia' impaginata "
+                 "(Meta AI la compone correttamente).")
+    facce = cv2.CascadeClassifier(xml).detectMultiScale(grigio, 1.1, 5,
+                                                        minSize=(60, 60))
+    if len(facce) == 0:
+        sys.exit("⛔ nessun volto trovato nella fotografia: si posiziona a mano "
+                 "con --zoom e --alza, oppure si rigenera il ritratto.")
+    fx, fy, fw, fh = max(facce, key=lambda f: f[2] * f[3])
+    # Il riquadro di Haar prende dalle sopracciglia al mento: la testa intera
+    # e' circa una volta e mezza tanto, e il mento sta al suo bordo basso.
+    testa = fh * 1.5
+    mento = fy + fh * 1.05
+
+    k = (bordo / testa) * zoom
+    im = im.resize((max(1, int(im.width * k)), max(1, int(im.height * k))),
+                   Image.LANCZOS)
+    cx = (fx + fw / 2) * k
+    cy = mento * k
+
+    tela = Image.new("RGB", (W, H), (247, 239, 220))
+    # il volto: al 55% della zona foto in larghezza, il mento appena sopra meta'
+    x = int(bordo + (W - bordo) * 0.55 - cx)
+    y = int(H * (0.48 - alza) - cy)
+    tela.paste(im, (x, y))
+    # il pannello si stende DOPO: cosi' non c'e' verso che la figura lo invada
+    tela.paste(Image.new("RGB", (bordo, H), (247, 239, 220)), (0, 0))
+    return tela, bordo
+
+
+def riesegui_con_cv2():
+    """cv2 non c'e' nell'interprete di sistema: si riparte con quello che ce
+    l'ha, invece di chiedere a Fernando di ricordarsi un percorso."""
+    if os.path.exists(PY_CV2):
+        os.execv(PY_CV2, [PY_CV2] + [os.path.abspath(__file__)] + sys.argv[1:])
+    sys.exit("⛔ serve OpenCV: manca anche l'ambiente iopaint.")
+
+
 def blocchi(c, com):
     """I dieci blocchi del prompt, nello stesso ordine.
 
@@ -110,7 +184,14 @@ def blocchi(c, com):
 def main():
     p = argparse.ArgumentParser(description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--immagine", required=True, help="la card generata col pannello VUOTO")
+    p.add_argument("--immagine", help="una card gia' generata CON il pannello vuoto")
+    p.add_argument("--ritratto", help="la sola FOTOGRAFIA del candidato: pannello, "
+                                      "scala e posizione li calcola questo script "
+                                      "(consigliato)")
+    p.add_argument("--zoom", type=float, default=1.0,
+                   help="ritocco della grandezza della testa (1.0 = misura di Rosa)")
+    p.add_argument("--alza", type=float, default=0.0,
+                   help="alza (+) o abbassa (-) la figura, in frazione di altezza")
     p.add_argument("--candidato", required=True, help="chiave nel JSON (es. rosa)")
     p.add_argument("--dati", default=DATI)
     p.add_argument("--logo", help="il simbolo vero (default: logo_pa.png della sua cartella)")
@@ -122,6 +203,9 @@ def main():
                    help="file di uscita (default: ~/Desktop/<candidato>_card.jpg — "
                         "i risultati finiti si lasciano sempre in Scrivania)")
     a = p.parse_args()
+    if not a.immagine and not a.ritratto:
+        sys.exit("⛔ serve --ritratto (la fotografia) oppure --immagine (la card "
+                 "gia' impaginata col pannello vuoto)")
 
     percorso = os.path.expanduser(a.dati)
     if not os.path.exists(percorso):
@@ -136,16 +220,29 @@ def main():
               "prima di pubblicare (L. 212/1956 art. 3).", file=sys.stderr)
 
     prepara_font()
-    im = Image.open(os.path.expanduser(a.immagine)).convert("RGB")
-    W, H = im.size
-    bordo, soglia = misura_pannello(im)
-    if a.bordo:
-        bordo = int(W * a.bordo)
-    print(f"pannello: {bordo} px su {W} ({bordo / W:.3f} della larghezza), "
-          f"soglia {soglia:.1f}", file=sys.stderr)
-    if bordo < W * 0.25:
-        sys.exit("⛔ pannello troppo stretto: o l'immagine non e' quella vuota, "
-                 "o la misura ha sbagliato. Forzarla con --bordo 0.45")
+    if a.ritratto:
+        try:
+            import cv2
+            cv2.CascadeClassifier  # la build ridotta non ce l'ha
+        except (ModuleNotFoundError, AttributeError):
+            riesegui_con_cv2()
+        im, bordo = costruisci_base(a.ritratto, frazione=a.bordo or 0.45,
+                                    zoom=a.zoom, alza=a.alza)
+        W, H = im.size
+        print(f"tela costruita: {W}x{H}, pannello {bordo} px "
+              f"({bordo / W:.3f}), testa alta quanto il pannello e' largo",
+              file=sys.stderr)
+    else:
+        im = Image.open(os.path.expanduser(a.immagine)).convert("RGB")
+        W, H = im.size
+        bordo, soglia = misura_pannello(im)
+        if a.bordo:
+            bordo = int(W * a.bordo)
+        print(f"pannello: {bordo} px su {W} ({bordo / W:.3f} della larghezza), "
+              f"soglia {soglia:.1f}", file=sys.stderr)
+        if bordo < W * 0.25:
+            sys.exit("⛔ pannello troppo stretto: o l'immagine non e' quella "
+                     "vuota, o la misura ha sbagliato. Forzarla con --bordo 0.45")
 
     logo = a.logo or os.path.join(os.path.expanduser(LAVORI),
                                   c["cartella_foto"].split("/")[1], "logo_pa.png")

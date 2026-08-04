@@ -86,6 +86,38 @@ VOTO_CARD = {
 }
 
 
+def prompt_ritratto(c):
+    """SOLO la fotografia: niente pannello, niente testo, niente impaginazione.
+
+    ⛔ 4 agosto 2026 — la lezione piu' cara di questa giornata. Per due volte
+    il generatore ha tagliato la faccia col pannello e ha fatto la testa
+    grande il doppio che sul candidato precedente. Non era il prompt: gli si
+    stava chiedendo di IMPAGINARE, e un modello di immagini non impagina,
+    dipinge. Qui si chiede quello che sa fare — un ritratto — e la tela la
+    monta _tools/carta_social.py --ritratto, che mette il pannello, i margini
+    e la scala uguali per tutti e dieci.
+    """
+    if "card_en" not in c:
+        sys.exit(f"⛔ manca il blocco 'card_en' per {c['nome'].title()}.")
+    e = c["card_en"]
+    f = c["genere"] == "f"
+    Lui = "She" if f else "He"
+    uomo = "woman" if f else "man"
+    suo = "her" if f else "his"
+
+    return f"""Vertical photographic portrait, 2:3, warm golden hour, a single photograph and nothing else.
+
+Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']}
+
+{Lui} is photographed waist up, centred in the frame, the whole head and both shoulders well inside the picture with clear space above the head and on both sides. {Lui} looks straight into the camera, the body turned slightly to {suo} right. This is a waist up portrait, not a close up: the head takes about one quarter of the height of the picture and the face never fills the frame.
+
+Behind {'her' if f else 'him'}, Naples from above at sunset, softly out of focus: pale rooftops, the bay, Mount Vesuvius, clouds lit orange and gold. Warm light on the face from the left, natural skin texture, visible pores and lines, sharp focus on the eyes.
+
+Photorealistic, natural colours, print quality, 4K.
+
+NEGATIVE PROMPT: text, letters, words, numbers, captions, logo, emblem, symbol, badge, frame, border, panel, coloured band, split composition, collage, close up, face filling the frame, oversized head, head cropped, full body, profile view, looking away, multiple people, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, sparkle icon, AI badge, watermark"""
+
+
 def prompt_card_vuota(c):
     """La card SENZA testo: solo il ritratto e il pannello vuoto.
 
@@ -282,7 +314,7 @@ def main():
     p.add_argument("--senza-simbolo", action="store_true", dest="senza_simbolo",
                    help="l'angolo del simbolo resta VUOTO: il logo vero lo incolla "
                         "poi _tools/sostituisci_simbolo.py (consigliato)")
-    p.add_argument("--stile", choices=["affissione", "card", "card-vuota"],
+    p.add_argument("--stile", choices=["affissione", "card", "card-vuota", "ritratto"],
                    default="affissione",
                    help="affissione = manifesto 70x100 in italiano (default); "
                         "card = card social 2:3 in inglese, foto a destra e "
@@ -323,6 +355,8 @@ def main():
         testo = prompt_card(c, com, a.valori)
     elif a.stile == "card-vuota":
         testo = prompt_card_vuota(c)
+    elif a.stile == "ritratto":
+        testo = prompt_ritratto(c)
     else:
         testo = prompt(c, com, a.senza_simbolo)
 
@@ -333,7 +367,12 @@ def main():
         print(testo)
 
     print(f"\n─── allegati, da {c['cartella_foto']}/ ───", file=sys.stderr)
-    if a.stile == "card-vuota":
+    if a.stile == "ritratto":
+        print("  SOLO A1, A2, A3, A4 — niente logo, niente schema, niente "
+              "pannello: qui si chiede una fotografia e basta.", file=sys.stderr)
+        print("  poi: _tools/carta_social.py --ritratto <foto> --candidato "
+              f"{k} monta pannello, scala e testo.", file=sys.stderr)
+    elif a.stile == "card-vuota":
         # Niente logo e niente schema: si chiede una fotografia, e tutto il
         # resto lo scrive _tools/ dopo, sul file vero.
         print("  SOLO A1, A2, A3, A4 (le quattro foto della persona) — niente "
