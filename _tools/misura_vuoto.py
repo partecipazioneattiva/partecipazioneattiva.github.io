@@ -143,12 +143,24 @@ def main():
         print("    scrive: guarda l'immagine e indica il punto giusto con --punto.")
         return 1
 
-    print("\nda incollare:\n")
+    # ⭐ IL SIMBOLO SI INCOLLA UN FILO PIU' GRANDE DEL VUOTO (Fernando, 4 agosto
+    #    2026). Il disco e' di una tinta appena diversa dal fondo: se il simbolo
+    #    lo copre al pixel esatto va bene, ma basta sbagliare di un capello e
+    #    resta un anello chiaro tutto intorno. Allargandolo dell'1,5% il vuoto
+    #    finisce sempre sotto, e il simbolo — che e' tondo e pieno — sborda sulla
+    #    giacca senza che si veda.
+    cresci = 1.015
+    lato = larg / W * cresci
+    cx, cy = (x0 + x1) / 2 / W, (y0 + y1) / 2 / H
+    nx = cx - lato / 2
+    ny = cy - lato * W / H / 2      # il diametro e' in frazioni di LARGHEZZA
+    print(f"\nda incollare (simbolo allargato dell'1,5%, cosi' il vuoto ci sta"
+          f" sempre sotto):\n")
     print(f"python3 _tools/sostituisci_simbolo.py \\\n"
           f"    --manifesto {a_.manifesto!r} \\\n"
           f"    --logo {a_.logo!r} \\\n"
           f"    --uscita {a_.uscita!r} \\\n"
-          f"    --senza-toppa --x {x0/W:.3f} --y {y0/H:.3f} --lato {larg/W:.3f}")
+          f"    --senza-toppa --x {nx:.3f} --y {ny:.3f} --lato {lato:.3f}")
     return 0
 
 

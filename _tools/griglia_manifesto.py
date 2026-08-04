@@ -5,16 +5,21 @@
     python3 _tools/griglia_manifesto.py --verifica manifesto_generato.png
 
 ⛔ PERCHE' ESISTE (4 agosto 2026, idea di Fernando)
-Il manifesto si fa generare con TUTTI gli spazi gia' vuoti: il posto del
-simbolo e il posto delle scritte. Il generatore mette solo la persona e il
-fondo — non sa nemmeno che li' andranno un simbolo e un testo, quindi non puo'
-sbagliarli. Simbolo e testo li mettiamo noi dopo, dal file vero.
+Al generatore si chiede UNA COSA SOLA: la persona nella meta' sinistra del
+foglio. Tutto il resto — meta' destra, fascia alta, fascia bassa — e' fondo
+liscio e basta. Simbolo e scritte li mettiamo noi dopo, dai file veri.
 
-Perche' serva a qualcosa, pero', i vuoti devono cadere sempre negli STESSI
-posti: dieci candidati devono sembrare una campagna sola, e il testo lo scrive
-uno script che le coordinate le ha fisse. Qui stanno quelle coordinate, in un
-posto solo, e da qui le legge chiunque: il prompt, lo script del testo,
-sostituisci_simbolo.py.
+⭐ E' la seconda versione dell'idea, ed e' molto meglio della prima. Prima si
+faceva disegnare un DISCO VUOTO dove sarebbe andato il simbolo, e quel disco
+aveva un contorno e una tinta sua: se il simbolo non lo copriva al pixel, sul
+manifesto stampato restava una linea nera o un alone chiaro. Fernando l'ha
+tagliata corta: se il fondo e' liscio dappertutto, non c'e' niente da coprire e
+niente da misurare. Il posto del simbolo lo decidiamo noi, ed e' sempre lo
+stesso.
+
+Le coordinate stanno qui, in un posto solo, e da qui le legge chiunque: il
+prompt, lo script del testo, sostituisci_simbolo.py. Dieci candidati devono
+sembrare una campagna sola.
 
 --schema disegna la griglia vuota, quotata in centimetri: e' il disegno da
          guardare per capire, e da tenere accanto quando si scrive il prompt.
@@ -42,12 +47,18 @@ ZONE = [
     (0.030, 0.025, 0.970, 0.095, "FASCIA ALTA",  "elezione e data"),
     (0.560, 0.120, 0.970, 0.560, "COLONNA TESTO", "nome, carica, slogan"),
     (0.560, 0.600, 0.970, 0.780, "ISTRUZIONE",   "come si vota"),
-    # parte da 0,47 e non da sinistra: sotto c'e' il disco, che scende fino a
-    # 0,97 dell'altezza. Il committente gli passa accanto, non sopra.
-    (0.470, 0.900, 0.970, 0.965, "FASCIA BASSA", "committente e sito"),
+    # parte da 0,33 e non da sinistra: sotto c'e' il simbolo, che scende fino a
+    # 0,96 dell'altezza. Il committente gli passa accanto, non sopra.
+    (0.330, 0.900, 0.970, 0.965, "FASCIA BASSA", "committente e sito"),
 ]
 # Il disco del simbolo: bordo sinistro, bordo alto, diametro.
-DISCO = (0.035, 0.683, 0.414)
+# ⭐ NON e' piu' un vuoto da far disegnare (Fernando, 4 agosto 2026): il fondo e'
+#    liscio dappertutto, quindi questo e' semplicemente il POSTO dove lo script
+#    incolla il simbolo. Nessun contorno da coprire, nessuna tinta da misurare,
+#    nessuna sorpresa: le stesse tre cifre su tutti e dieci i manifesti.
+#    ø 18 cm su 70×100: si legge da lontano senza mangiarsi il ritratto. Il
+#    bordo basso resta a 4 cm dal margine, come i margini di sicurezza.
+DISCO = (0.045, 0.778, 0.260)
 # La persona: la meta' sinistra del foglio. Oltre questa colonna non deve
 # arrivare nulla della figura, o il testo finisce addosso a una spalla.
 FIGURA_FINO_A = 0.540
@@ -92,12 +103,14 @@ def schema(uscita, W, H, cm_l, cm_h):
         d.text((x0 + 10, y1 - 24),
                quota(cm_l, cm_h, x0 / W, y0 / H, x1 / W, y1 / H), font=fp, fill=(150, 130, 100))
 
-    d.ellipse(disco, fill=(252, 246, 230), outline=(180, 60, 40), width=3)
+    # tratteggiato, non pieno: qui il generatore non deve lasciare nessun vuoto,
+    # e' solo il posto dove lo script incolla il simbolo vero
+    d.ellipse(disco, outline=(30, 90, 180), width=3)
     cx = (disco[0] + disco[2]) // 2
     cy = (disco[1] + disco[3]) // 2
-    d.text((cx - 60, cy - 20), "IL SIMBOLO", font=f, fill=(180, 60, 40))
-    d.text((cx - 60, cy + 4), "disco vuoto, ø %.0f cm" % (DISCO[2] * cm_l),
-           font=fp, fill=(140, 120, 90))
+    d.text((cx - 62, cy - 22), "IL SIMBOLO", font=f, fill=(30, 90, 180))
+    d.text((cx - 62, cy + 2), "lo incolliamo noi\nø %.0f cm" % (DISCO[2] * cm_l),
+           font=fp, fill=(30, 90, 180))
     im.save(uscita)
     print("schema: %s (%d × %d px, carta %g × %g cm)" % (uscita, W, H, cm_l, cm_h))
     for x0, y0, x1, y1, nome, uso in zone:
