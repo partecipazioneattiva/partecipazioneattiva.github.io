@@ -21,7 +21,7 @@ Vale per chiunque legga questo file: Claude, un'altra IA o una persona.
 Anche il TG passa da questo repository (le card e il ticker), ma **si produce
 altrove**, e la sua procedura e' **imperativa**:
 
-    ~/Desktop/LAVORI/_SCRIPT_TG_PENSATTIVO/PROCEDURA_BLINDATA.md
+    ~/Desktop/SCRIPT/tg/PROCEDURA_BLINDATA.md
 
 Si esegue **così ogni volta, senza la minima modifica** (ordine di Fernando,
 01/08/2026). Accanto, `MANUALE_PIPELINE_TG.md` spiega il **perche'**: misure,
@@ -35,6 +35,22 @@ del copione si copia dal `.txt` accanto all'audio**, mai a memoria.
 
 ⚠️ Quando si pubblica un TG, sul sito i posti da aggiornare sono **tre**:
 card in `webtv.html`, card nella home, voce del ticker.
+
+## Dove stanno gli script (dal 5 agosto 2026)
+
+Tutti in **`~/Desktop/SCRIPT/`**, con la mappa in `SCRIPT/LEGGIMI.md`:
+
+    SCRIPT/tg/        il TG PensAttivo (era LAVORI/_SCRIPT_TG_PENSATTIVO)
+    SCRIPT/sistema/   manutenzione del Mac (era LAVORI/_SCRIPT_SISTEMA)
+    SCRIPT/sito ->    collegamento a _tools/ di questo repository
+    SCRIPT/*.py       rassegna stampa, video, audio
+
+Unica eccezione, e non e' negoziabile: **gli strumenti del sito restano in
+`_tools/` dentro il repository**, perche' sono versionati con git e pubblicati
+insieme al sito. Da `SCRIPT/sito` si raggiungono lo stesso.
+
+Nei vecchi posti sono rimasti dei collegamenti perche' niente si rompa, ma
+**nei file nuovi si scrive il percorso nuovo**.
 
 ## Decidere, non domandare — vale SEMPRE
 
