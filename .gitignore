@@ -23,3 +23,6 @@ _modelli/
 # credenziali: non devono MAI finire nel repository pubblico
 ACCESSO_WIKIDATA.txt
 *_ACCESSO*.txt
+
+# permessi locali e loro copie: contengono la mappa del computer
+.claude/settings.local.json*

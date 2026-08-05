@@ -1,5 +1,24 @@
 # Regole operative — Partecipazione Attiva
 
+## SI COMINCIA DA QUI — due comandi, non trentaquattro file
+
+    ~/Desktop/LAVORI/_MANUALI_CLAUDE/INDICE.md
+
+**L'indice dice quale manuale apre cosa.** Si legge quello, si apre **solo** il
+manuale che serve, non tutti: la documentazione e' 1,1 MB e leggerla intera
+costa una sessione. (Fuori dal repository: e' pubblico e i manuali contengono
+la mappa del computer.)
+
+Se qualcosa sembra rotto, o prima di un lavoro lungo:
+
+```bash
+zsh ~/Desktop/SCRIPT/sistema/verifica_tutto.sh
+```
+
+In venti secondi dice se reggono l'interprete del TG, gli strumenti, i percorsi
+che tutto da' per scontati, i collegamenti, il repository e gli scarichi.
+**Prima si guarda questo, poi si diagnostica** — non il contrario.
+
 ## PRIMA DI TOCCARE IL SITO: leggere il manuale
 
 Il manuale completo di gestione del sito sta **fuori da questo repository**
