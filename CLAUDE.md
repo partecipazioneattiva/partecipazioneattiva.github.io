@@ -19,6 +19,25 @@ In venti secondi dice se reggono l'interprete del TG, gli strumenti, i percorsi
 che tutto da' per scontati, i collegamenti, il repository e gli scarichi.
 **Prima si guarda questo, poi si diagnostica** — non il contrario.
 
+## LA GUARDIA — tre regole che non dipendono più dalla memoria
+
+Dal 5 agosto 2026 tre errori sono **fermati dal computer**, non affidati alla
+buona volonta' di chi lavora (hook `PreToolUse`, script in
+`~/Desktop/SCRIPT/sistema/guardia_comandi.sh`):
+
+1. **`git add -A`** nel repository — e' pubblico. Si aggiunge **per nome**.
+2. **`python3` nudo** sugli script del TG che caricano il modello
+   (02 03 05 11 18 20 21 22). Il 07 e il 13 passano: quelli vanno bene cosi'.
+3. **Gli allineamenti audio sospesi** (10, 16, 19, `--allinea`): l'audio del
+   TG **si consegna grezzo**.
+
+Chi prova, riceve il motivo e cosa fare invece. Non e' un promemoria: e' un
+blocco. La guardia sta **fuori dal repository** perche' nomina i percorsi del
+computer, ed e' registrata in `settings.local.json`, che non finisce su GitHub.
+
+🟨 In caso di dubbio la guardia **lascia passare**: un blocco sbagliato ferma il
+lavoro, un blocco mancato lo rallenta e basta.
+
 ## PRIMA DI TOCCARE IL SITO: leggere il manuale
 
 Il manuale completo di gestione del sito sta **fuori da questo repository**
