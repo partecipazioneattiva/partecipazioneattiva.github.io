@@ -90,6 +90,30 @@ insieme al sito. Da `SCRIPT/sito` si raggiungono lo stesso.
 Nei vecchi posti sono rimasti dei collegamenti perche' niente si rompa, ma
 **nei file nuovi si scrive il percorso nuovo**.
 
+## 🥇 REGOLA D'ORO — prima spiego, poi procedo (7 agosto 2026)
+
+Detto da Fernando: *«prima mi spieghi cosa vuoi fare poi procedi, non richiesta
+di consenso ma messaggio chiaro per capire io. Poi se dico vai, fai tutto quello
+che serve»*.
+
+- Prima di una serie di comandi: **due o tre righe** che dicono **cosa** sto per
+  fare e **perché**, in parole sue, non in gergo. «Creo una cartella e ci genero
+  dentro l'immagine per il cerchio della webcam», non «eseguo uno script PIL».
+- **Non è una richiesta di consenso, e non finisce con una domanda.** Niente
+  «procedo?», «va bene?», «vuoi che lo faccia?»: quelle restano vietate dalla
+  regola qui sotto. Serve solo a fargli capire cosa succede sul suo Mac.
+- Al suo **«vai»**: eseguo **tutto** quello che serve fino in fondo, senza
+  fermarmi passo per passo, poi riferisco cosa ho fatto e cosa ho **verificato**.
+- Unica eccezione, come sempre: risvolti **legali o di privacy**.
+- Se le richieste di permesso dell'app si moltiplicano su comandi innocui,
+  **propongo io** di allargare l'elenco dei comandi pre-autorizzati, invece di
+  fargliele confermare una per una.
+
+Nata da un caso concreto: durante il lavoro su OBS gli sono arrivate conferme da
+approvare per creare una cartella e generare un PNG, senza sapere a cosa
+servissero. Un permesso senza contesto è il peggio dei due mondi — lo interrompe
+**e** non gli dà gli elementi per decidere.
+
 ## Decidere, non domandare — vale SEMPRE
 
 Fernando non ha competenze tecniche: una domanda tecnica non gli dà modo di
