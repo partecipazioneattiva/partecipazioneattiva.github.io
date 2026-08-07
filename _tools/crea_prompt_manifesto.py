@@ -134,8 +134,13 @@ VOTO_CARD = {
 }
 
 
-def prompt_figura(c):
+def prompt_figura(c, per_manifesto=False):
     """La persona SOLA su fondo vuoto: nemmeno il panorama.
+
+    Con per_manifesto=True la figura si chiede CENTRATA e in 7:10, per la
+    catena dell'affissione: scontorno, poi monta_manifesto.py che calcola scala
+    e posizione, poi il testo, poi sostituisci_simbolo.py. Senza, resta la
+    versione 2:3 con la figura a destra, per la card social.
 
     ⭐ Idea di Fernando, 4 agosto 2026, e chiude il cerchio cominciato con
     --stile ritratto. Meta fa i volti piu' veri, ma qualunque generatore
@@ -156,13 +161,49 @@ def prompt_figura(c):
     uomo = "woman" if f else "man"
     suo = "her" if f else "his"
 
-    return f"""Vertical studio photograph of one person on a plain empty background, 2:3.
+    # ⛔ La figura si chiede CENTRATA quando serve al manifesto: il ritaglio la
+    #    riposiziona comunque (monta_manifesto.py), e una figura spinta contro
+    #    un bordo perde meta' dei pixel utili e rischia la spalla tagliata.
+    if per_manifesto:
+        tela = "Vertical studio photograph of one person on a plain empty background, 7:10."
+        inquadratura = (
+            f"{Lui} is photographed waist up, CENTRED in the frame, turned "
+            f"slightly to {suo} right, looking straight into the camera. The "
+            "whole head and both shoulders are well inside the picture, with "
+            "clear space above the head and on both sides, and nothing of the "
+            "figure touching or crossing the edges. This is a waist up "
+            "photograph, not a close up: the head takes about one quarter of "
+            "the height of the picture and the face never fills the frame.")
+        fondo_meta = "Every part of the picture that is not the person is nothing but that flat colour."
+        # Meta lavora su una foto per volta: la descrizione parla della "prima
+        # fotografia", e quella caricata e' proprio quella. Senza questa riga
+        # il modello cerca fotografie che non gli ho dato.
+        riferimenti = ("Use every uploaded reference photograph together to "
+                       f"rebuild the {uomo}'s face. If only one photograph is "
+                       "uploaded, that one IS the first photograph the "
+                       "description below refers to, and it is the only face "
+                       "to work from.")
+    else:
+        tela = "Vertical studio photograph of one person on a plain empty background, 2:3."
+        inquadratura = (
+            f"{Lui} is photographed waist up, standing on the RIGHT side of the "
+            f"frame, turned slightly to {suo} right, looking straight into the "
+            "camera. The whole head and both shoulders are inside the picture, "
+            f"with clear space above the head; {suo} arm may run out of the "
+            "bottom right corner. This is a waist up photograph, not a close "
+            "up: the head takes about one quarter of the height of the picture "
+            "and the face never fills the frame.")
+        fondo_meta = "The left half of the picture is nothing but that flat colour."
+        riferimenti = ("Use every uploaded reference photograph together to "
+                       f"rebuild the {uomo}'s face, not just the first one.")
 
-Use ALL the uploaded reference photographs together to rebuild the {uomo}'s face, not just the first one. {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']}
+    return f"""{tela}
 
-{Lui} is photographed waist up, standing on the RIGHT side of the frame, turned slightly to {suo} right, looking straight into the camera. The whole head and both shoulders are inside the picture, with clear space above the head; {suo} arm may run out of the bottom right corner. This is a waist up photograph, not a close up: the head takes about one quarter of the height of the picture and the face never fills the frame.
+{riferimenti} {e['aspetto']} {e['espressione']} {e['abbigliamento']} {e['divieti']}
 
-THE BACKGROUND IS COMPLETELY EMPTY: one single flat warm cream tone, the same from edge to edge, with no scenery, no city, no sky, no sea, no furniture, no window, no wall texture, no pattern, no gradient, no vignette, no cast shadow of the person and no shadow of any kind. The left half of the picture is nothing but that flat colour. The outline of the person against it must be clean and sharp, with no glow, no halo and no blur around the hair and the shoulders.
+{inquadratura}
+
+THE BACKGROUND IS COMPLETELY EMPTY: one single flat warm cream tone, the same from edge to edge, with no scenery, no city, no sky, no sea, no furniture, no window, no wall texture, no pattern, no gradient, no vignette, no cast shadow of the person and no shadow of any kind. {fondo_meta} The outline of the person against it must be clean and sharp, with no glow, no halo and no blur around the hair and the shoulders.
 
 Warm, even, frontal studio light on the face, natural skin texture, visible pores and lines, sharp focus on the eyes. Photorealistic, natural colours, print quality, 4K.
 
@@ -425,6 +466,10 @@ def main():
                         "card-vuota = la stessa card ma SENZA testo, solo il "
                         "ritratto e il pannello vuoto: il testo si scrive dopo "
                         "in locale, e al generatore si chiede una fotografia")
+    p.add_argument("--per-manifesto", action="store_true", dest="per_manifesto",
+                   help="stile figura: figura CENTRATA in 7:10 per la catena "
+                        "dell'affissione (scontorno, monta_manifesto.py, testo, "
+                        "simbolo) invece del 2:3 con la figura a destra")
     p.add_argument("--valori", action="store_true",
                    help="stile card: rimette le tre righe DEMOCRAZIA DIRETTA / "
                         "TRASPARENZA / BENI COMUNI. Allunga l'elenco, e con la "
@@ -466,7 +511,7 @@ def main():
     elif a.stile == "ritratto":
         testo = prompt_ritratto(c)
     elif a.stile == "figura":
-        testo = prompt_figura(c)
+        testo = prompt_figura(c, a.per_manifesto)
     else:
         testo = prompt(c, com, a.senza_simbolo)
 
@@ -480,8 +525,14 @@ def main():
     if a.stile == "figura":
         print("  SOLO le foto della persona. Il fondo esce vuoto: la figura si "
               "ritaglia e si monta in locale.", file=sys.stderr)
-        print(f"  poi: _tools/carta_social.py --figura <immagine> --candidato {k}",
-              file=sys.stderr)
+        if a.per_manifesto:
+            print("  ⚠️  Meta AI lavora su UNA foto per volta: si carica la A1.",
+                  file=sys.stderr)
+            print(f"  poi: _tools/scontorna.py · _tools/monta_manifesto.py · "
+                  "il testo · _tools/sostituisci_simbolo.py", file=sys.stderr)
+        else:
+            print(f"  poi: _tools/carta_social.py --figura <immagine> --candidato {k}",
+                  file=sys.stderr)
     elif a.stile == "ritratto":
         print(f"  SOLO {foto} — niente logo, niente schema, niente "
               "pannello: qui si chiede una fotografia e basta.", file=sys.stderr)
