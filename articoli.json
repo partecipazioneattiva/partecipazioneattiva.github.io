@@ -1,6 +1,15 @@
 {
   "articoli": [
     {
+      "slug": "settembre-2026-appuntamenti.html",
+      "titolo": "Sei appuntamenti da settembre sulla WebTV",
+      "tema": "📺 WebTV",
+      "tema_key": "webtv",
+      "data": "2026-08-08",
+      "img": "settembre-anticipazioni-og.jpg",
+      "sommario": "Da settembre sei incontri su PA WebTV: APE, la Mappa, la legge elettorale, l’RC Auto, l’arte del dono, essere donna a Napoli."
+    },
+    {
       "slug": "ape.html",
       "titolo": "APE — Assemblea Popolare Ecumenica",
       "tema": "🐝 Proposta di Legge",
@@ -281,7 +290,7 @@
     },
     {
       "slug": "stabilicum.html",
-      "titolo": "Stabilicum: cos'è e cosa significa la nuova legge elettorale",
+      "titolo": "Stabilicum: cos'è, come funziona e cosa significa",
       "tema": "",
       "tema_key": "",
       "data": "2026-03-29",

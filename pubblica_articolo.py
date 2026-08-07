@@ -872,7 +872,8 @@ ART_STABILICUM_CREPE = {
 }
 # ===========================================================================
 
-ART = {
+# --- ART precedente, tenuto per storia ---
+ART_APE = {
   'slug'         : 'ape.html',
   'autore'       : 'nicotra',
   'data_iso'     : '2026-07-22',
@@ -891,6 +892,83 @@ ART = {
   'ticker_tema'  : 'APE',
   'ticker_testo' : 'Partecipazione Attiva lancia l’Assemblea Popolare Ecumenica: la proposta che dà ai cittadini una voce permanente',
   'body'         : BODY_APE,
+}
+
+BODY_SETTEMBRE = '''
+<article class="article-wrap">
+
+<p>Ci sono cose che in un telegiornale non entrano. Una proposta di legge non si spiega in novanta secondi, e una battaglia che dura da anni non sta in un servizio. Per questo da settembre la WebTV di Partecipazione Attiva apre una stagione di appuntamenti: <strong>sei incontri</strong>, ciascuno tenuto da chi quel tema lo segue davvero, con il tempo che serve a capirlo.</p>
+
+<p>Quattro escono sulla WebTV. Due sono <strong>incontri online in diretta</strong>, aperti a cittadini, associazioni e istituzioni: lì si può anche fare domande.</p>
+
+<div class="pa-fig">
+<video controls preload="metadata" playsinline poster="images/settembre-anticipazioni-poster.jpg">
+<source src="video/settembre-anticipazioni.mp4" type="video/mp4">
+Il tuo browser non supporta il video.
+</video>
+<!-- pa-trascrizione:settembre-anticipazioni -->
+<details class="pa-trascr">
+  <summary>Trascrizione del video</summary>
+  <div class="pa-trascr-testo">
+    <p>Partecipazione Attiva WebTV. La voce dei cittadini. E da settembre, sei appuntamenti da non perdere. L&rsquo;APE, l&rsquo;Assemblea Popolare Ecumenica, spiegata da Angelo Nicotra, presidente di Partecipazione Attiva. Non un partito in pi&ugrave;, non un candidato in pi&ugrave;. Uno strumento permanente per obbligare le istituzioni ad ascoltare, e a rispondere. La Mappa, la rete dei cittadini attivi, spiegata da Daniele Tandura. Non mancano i cittadini attivi. Manca che si vedano. Ogni comitato riparte da zero, ogni battaglia si combatte da soli. La legge elettorale. Come la stanno scrivendo, e come dovrebbe essere. Voti, ma non scegli. Zero preferenze. Incontro online in diretta con Luigi Spanu, portavoce nazionale. Sono invitati cittadini e associazioni. A Napoli si pagano 599 euro di RC Auto: &egrave; la provincia pi&ugrave; cara d&rsquo;Italia. La media italiana &egrave; 423. Mai un incidente, mai una multa. Paghi di pi&ugrave; perch&eacute; abiti l&igrave;. In diretta con Paolo Neri. Sono invitati cittadini e istituzioni. L&rsquo;arte del dono. Ne parla Stefano Piva, membro del Direttivo di Partecipazione Attiva. Qualcosa che non si compra e non si vende: pi&ugrave; lo regali, pi&ugrave; aumenta. Non cosa ci guadagno io: cosa ci guadagniamo tutti. Essere donna a Napoli. Ne parla Rosa Ugon, membro organizzativo di Partecipazione Attiva. In Campania lavora circa una donna su tre. In Italia, pi&ugrave; di una su due. Da settembre. Su Partecipazione Attiva WebTV. La voce dei cittadini.</p>
+  </div>
+</details>
+<figcaption>Gli appuntamenti di settembre sulla WebTV di Partecipazione Attiva, in un minuto e mezzo.</figcaption>
+</div>
+
+<h2>APE, l&rsquo;Assemblea Popolare Ecumenica &mdash; con Angelo Nicotra</h2>
+<p>&Egrave; la proposta pi&ugrave; importante del movimento, e la spiega chi l&rsquo;ha scritta: <strong>Angelo Nicotra</strong>, presidente di Partecipazione Attiva. <a href="ape.html">L&rsquo;APE</a> non aggiunge un partito n&eacute; un candidato: aggiunge uno strumento permanente attraverso cui ogni cittadino pu&ograve; obbligare le istituzioni ad ascoltare e a rispondere.</p>
+<p>&Egrave; anche la proposta su cui si fanno pi&ugrave; confusione e pi&ugrave; domande: chi decide, come si viene sorteggiati, cosa succede se il Parlamento dice di no. Le lezioni servono a questo.</p>
+
+<h2>La Mappa, la rete dei cittadini attivi &mdash; con Daniele Tandura</h2>
+<p>C&rsquo;&egrave; una frase che in ogni assemblea civica torna sempre uguale: &laquo;il problema &egrave; che siamo divisi&raquo;. Tutti annuiscono, e poi ognuno torna nel proprio gruppo. <a href="mappa-cittadini-attivi.html">La Mappa</a> &egrave; il tentativo di trasformare quella diagnosi in uno strumento: non mancano i cittadini attivi, manca che si vedano gli uni con gli altri.</p>
+<p>Ne parla <strong>Daniele Tandura</strong>, membro del Comitato Direttivo.</p>
+
+<h2>Legge elettorale: come la stanno scrivendo, e come dovrebbe essere &mdash; con Luigi Spanu</h2>
+<p>Voti, ma non scegli. Con le liste bloccate i nomi degli eletti li decide chi compila la lista, non chi vota: <strong>zero preferenze</strong>. Intanto in Parlamento si scrive una legge elettorale nuova, e <a href="ricorso-rosatellum-cassazione-ottobre2026.html">il 29 ottobre la Cassazione</a> si pronuncia su quella vecchia.</p>
+<p>Ne parla <strong>Luigi Spanu</strong>, portavoce nazionale, in un <strong>incontro online in diretta</strong>. Sono invitati cittadini e associazioni.</p>
+
+<h2>RC Auto uguale per tutti &mdash; con Paolo Neri</h2>
+<p>A Napoli si pagano in media <strong>599 euro</strong> di RC Auto: &egrave; la provincia pi&ugrave; cara d&rsquo;Italia, contro una media nazionale di <strong>423 euro</strong> (indagine IPER dell&rsquo;IVASS sui prezzi effettivamente pagati, primo trimestre 2026). Mai un incidente, mai una multa: paghi di pi&ugrave; lo stesso, perch&eacute; abiti l&igrave;.</p>
+<p>&Egrave; <a href="rcauto.html">una battaglia che PA porta avanti da tempo</a>, e a settembre diventa un <strong>incontro online in diretta</strong> con <strong>Paolo Neri</strong>, del Direttivo. Sono invitati cittadini e istituzioni.</p>
+
+<h2>L&rsquo;arte del dono &mdash; con Stefano Francesco Piva</h2>
+<p>Viviamo in un mondo dove quasi tutto ha un prezzo. Eppure esiste qualcosa che non si compra, non si vende e, pi&ugrave; lo regali, pi&ugrave; aumenta. Non l&rsquo;ennesimo pacchetto col fiocco: tempo, ascolto, competenze, un aiuto concreto.</p>
+<p>&Egrave; il ribaltamento di una domanda: non &laquo;cosa ci guadagno io&raquo;, ma &laquo;cosa ci guadagniamo tutti&raquo;. Ne parla <strong>Stefano Francesco Piva</strong>, membro del Direttivo.</p>
+
+<h2>Essere donna a Napoli &mdash; con Rosa Ugon</h2>
+<p>In Campania lavora <strong>circa una donna su tre</strong>. In Italia, pi&ugrave; di una su due. Dietro quella distanza non c&rsquo;&egrave; una scelta: ci sono i servizi che mancano, gli orari che non tornano, i lavori che si lasciano perch&eacute; non c&rsquo;&egrave; altro modo.</p>
+<p>Ne parla <strong>Rosa Ugon</strong>, Membro Organizzativo di Partecipazione Attiva per Napoli.</p>
+
+<h2>Come si partecipa</h2>
+<p><strong>Quattro appuntamenti escono sulla WebTV</strong> &mdash; APE, la Mappa, l&rsquo;arte del dono, essere donna a Napoli: si guardano da questo sito, quando si vuole, senza iscriversi a niente.</p>
+<p><strong>Due sono incontri online in diretta</strong> &mdash; la legge elettorale con Luigi Spanu e l&rsquo;RC Auto con Paolo Neri. Per ricevere il collegamento basta scrivere a <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>: risponderemo con il link e l&rsquo;orario.</p>
+<p>Le date esatte le pubblichiamo qui e sulla <a href="webtv.html">pagina della WebTV</a> appena sono fissate.</p>
+
+<p><em>Il video di presentazione &egrave; realizzato con una voce sintetica generata con intelligenza artificiale, come indicato nel video stesso. I manifesti degli incontri sono immagini generate con intelligenza artificiale, e lo dichiarano.</em></p>
+
+</article>
+'''
+
+ART = {
+  'slug'         : 'settembre-2026-appuntamenti.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-08-08',
+  'data_human'   : '8 agosto 2026',
+  'data_badge'   : '8 AGOSTO 2026',
+  'lettura_min'  : 4,
+  'categoria_hero': '\U0001F4FA WebTV',
+  'og_image'     : 'images/settembre-anticipazioni-og.jpg',
+  'h1'           : 'Da settembre, sei appuntamenti su Partecipazione Attiva WebTV',
+  'sottotitolo'  : 'APE, la Mappa dei cittadini attivi, la legge elettorale, l’RC Auto, l’arte del dono, essere donna a Napoli. Quattro sulla WebTV, due in diretta online con domande dal pubblico.',
+  'meta_desc'    : 'Da settembre sei incontri su PA WebTV: APE, la Mappa, la legge elettorale, l’RC Auto, l’arte del dono, essere donna a Napoli.',
+  'card_cat'     : 'WEBTV',
+  'card_title'   : 'Da settembre, sei appuntamenti sulla WebTV',
+  'card_desc'    : 'APE, la Mappa, la legge elettorale, l’RC Auto, l’arte del dono, essere donna a Napoli: quattro sulla WebTV e due in diretta online.',
+  'ticker_emoji' : '\U0001F4FA',
+  'ticker_tema'  : 'DA SETTEMBRE',
+  'ticker_testo' : 'sei appuntamenti sulla WebTV di Partecipazione Attiva: APE, la Mappa, la legge elettorale, l’RC Auto, l’arte del dono, essere donna a Napoli',
+  'body'         : BODY_SETTEMBRE,
 }
 # ===========================================================================
 
