@@ -896,6 +896,7 @@ ART_APE = {
 
 BODY_SETTEMBRE = '''
 <article class="article-wrap">
+<style>.pa-fig{margin:32px 0}.pa-fig video{width:100%;max-width:760px;height:auto;display:block;margin:0 auto;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.85em;color:#9c5b00;margin-top:14px;text-align:center;font-weight:700;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5}</style>
 
 <p>Ci sono cose che in un telegiornale non entrano. Una proposta di legge non si spiega in novanta secondi, e una battaglia che dura da anni non sta in un servizio. Per questo da settembre la WebTV di Partecipazione Attiva apre una stagione di appuntamenti: <strong>sei incontri</strong>, ciascuno tenuto da chi quel tema lo segue davvero, con il tempo che serve a capirlo.</p>
 
