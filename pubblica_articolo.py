@@ -900,7 +900,7 @@ BODY_SETTEMBRE = '''
 
 <p>Ci sono cose che in un telegiornale non entrano. Una proposta di legge non si spiega in novanta secondi, e una battaglia che dura da anni non sta in un servizio. Per questo da settembre la WebTV di Partecipazione Attiva apre una stagione di appuntamenti: <strong>sei incontri</strong>, ciascuno tenuto da chi quel tema lo segue davvero, con il tempo che serve a capirlo.</p>
 
-<p>Quattro escono sulla WebTV. Due sono <strong>incontri online in diretta</strong>, aperti a cittadini, associazioni e istituzioni: lì si può anche fare domande.</p>
+<p>Quattro escono sulla WebTV. Due sono <strong>incontri online in diretta</strong>, aperti a cittadini, associazioni e istituzioni: lì si possono anche fare domande.</p>
 
 <div class="pa-fig">
 <video controls preload="metadata" playsinline poster="images/settembre-anticipazioni-poster.jpg">
