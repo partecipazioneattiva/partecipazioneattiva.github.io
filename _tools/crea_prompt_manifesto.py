@@ -81,6 +81,49 @@ def posa_di(f):
     return POSA.format(Lui="She" if f else "He", suo="her" if f else "his")
 
 
+# ── QUANTE FOTO CI SONO DAVVERO ──────────────────────────────────────────────
+# ⛔ 7 agosto 2026. Qui dentro era scritto "quattro" a mano, in cinque punti.
+# Su Rosa le fotografie buone sono TRE: una era di un'altra donna e una era il
+# doppione della stessa posa con la filigrana TikTok sopra (motivi per esteso
+# in GEMINI LAVORI/Rosa/scartate/PERCHE_SCARTATE.txt). Un prompt che ne annuncia
+# quattro fa cercare al generatore un'immagine che non gli ho allegato, e lui
+# la inventa: e' esattamente il modo in cui il ritratto smette di somigliare.
+# Adesso il numero si conta sul disco, cartella per cartella.
+NUMERI = {1: "una", 2: "due", 3: "tre", 4: "quattro", 5: "cinque",
+          6: "sei", 7: "sette", 8: "otto"}
+INSIEME = {1: "", 2: "tutte e due", 3: "tutte e tre", 4: "tutte e quattro",
+           5: "tutte e cinque", 6: "tutte e sei"}
+
+
+MAX_FOTO = 4   # oltre le quattro la somiglianza non migliora piu' (LEGGIMI di
+               # GEMINI LAVORI), e Gemini non ne accetta di piu' in una volta.
+
+
+def elenco_foto(c, radice):
+    """Le foto della persona da allegare: (etichette, nomi dei file).
+
+    Le ETICHETTE sono sempre A1, A2, ... in fila, perche' e' l'ordine in cui si
+    caricano e i nomi dei file sul generatore non arrivano: quelle di Luigi si
+    chiamano A1_migliorata.jpg, ma nel prompt restano A1.
+    """
+    cartella = os.path.join(radice, c["cartella_foto"])
+    if not os.path.isdir(cartella):
+        print(f"⚠️  cartella foto non trovata: {cartella} — assumo quattro foto",
+              file=sys.stderr)
+        return ["A1", "A2", "A3", "A4"], ["A1", "A2", "A3", "A4"]
+    nomi = sorted(os.path.splitext(f)[0] for f in os.listdir(cartella)
+                  if f[:1] == "A" and f[1:2].isdigit()
+                  and os.path.splitext(f)[1].lower() in (".jpg", ".jpeg", ".png"))
+    if not nomi:
+        sys.exit(f"⛔ nessuna foto A1, A2, ... in {cartella}")
+    if len(nomi) > MAX_FOTO:
+        print(f"⚠️  in {cartella} ci sono {len(nomi)} foto: se ne caricano "
+              f"{MAX_FOTO} ({', '.join(nomi[:MAX_FOTO])}), le altre restano fuori.",
+              file=sys.stderr)
+        nomi = nomi[:MAX_FOTO]
+    return [f"A{i}" for i in range(1, len(nomi) + 1)], nomi
+
+
 CARICA_CARD = {
     "presidente": "CANDIDAT{a} ALLA PRESIDENZA",
     "consigliere": "CANDIDAT{a} AL CONSIGLIO",
@@ -266,9 +309,28 @@ def prompt(c, com, senza_simbolo=False):
     #    --senza-simbolo l'angolo resta vuoto e il simbolo VERO lo incolla
     #    _tools/sostituisci_simbolo.py. Provato il 4 agosto 2026: rattoppare
     #    un simbolo gia' disegnato su un fondo eterogeneo lascia un alone.
+    # Le foto si contano, non si danno per quattro: vedi elenco_foto().
+    foto = c.get("_foto") or ["A1", "A2", "A3", "A4"]
+    n = len(foto)
+    elenco = ", ".join(foto)
+    intervallo = foto[0] if n == 1 else f"{foto[0]}-{foto[-1]}"
+    if n == 1:
+        riga_a = (f"IMMAGINE {foto[0]} - una fotografia di {c['nome'].title()}, "
+                  f"{art} sto preparando il materiale e di cui ho il consenso: "
+                  "e' la fonte del suo ritratto.")
+    else:
+        riga_a = (f"IMMAGINI {elenco} - {NUMERI[n]} fotografie della stessa "
+                  f"persona, {c['nome'].title()}, {art} sto preparando il "
+                  "materiale e di cui ho il consenso: sono la fonte del suo "
+                  f"ritratto. Usale {INSIEME[n]} insieme per ricostruire il "
+                  "viso, non solo la prima.")
+
     if senza_simbolo:
-        quante, ruoli = "cinque", "due"
+        quante, ruoli = NUMERI[n + 1], "due"
         riga_b = ""
+        # Qui il logo non e' allegato: dire "simboli di partiti diversi da
+        # quello allegato" contraddice la richiesta del disco vuoto.
+        escludi_simboli = "simboli e loghi di qualunque genere"
         # ⭐ Lo spazio si lascia CIRCOLARE, non quadrato (Fernando, 4 agosto
         #    2026): il logo e' un disco, e un riquadro quadrato lascia sempre
         #    quattro angoli da rifilare a mano dopo l'incollaggio.
@@ -282,7 +344,8 @@ def prompt(c, com, senza_simbolo=False):
             "nessun simbolo, nessuna X, nessun segnaposto: quello spazio lo "
             "riempio io dopo, e qualunque cosa tu ci metta va cancellata.")
     else:
-        quante, ruoli = "sei", "tre"
+        quante, ruoli = NUMERI[n + 2], "tre"
+        escludi_simboli = "simboli di partiti diversi da quello allegato"
         riga_b = ("IMMAGINE B - il logo dell'associazione: riproducilo "
                   "fedelmente, senza ridisegnarlo e senza cambiarne i colori.\n")
         blocco_simbolo = (
@@ -304,7 +367,7 @@ def prompt(c, com, senza_simbolo=False):
     compitato = "; ".join(f"{w} si scrive {'-'.join(w.upper())}" for w in propri)
 
     return f"""Ti allego {quante} immagini, con {ruoli} ruoli diversi.
-IMMAGINI A1, A2, A3, A4 - quattro fotografie della stessa persona, {c['nome'].title()}, {art} sto preparando il materiale e di cui ho il consenso: sono la fonte del suo ritratto. Usale tutte e quattro insieme per ricostruire il viso, non solo la prima.
+{riga_a}
 {riga_b}IMMAGINE C - uno schema di impaginazione muto: i rettangoli grigi indicano soltanto dove va ogni elemento e quanto e' grande, e corrispondono nell'ordine dall'alto in basso all'elenco che trovi sotto. Non riprodurre i rettangoli, non riprodurne i colori, non scrivere parole che non siano nell'elenco.
 
 Canvas: {com['canvas']}, risoluzione massima disponibile.
@@ -313,7 +376,7 @@ Crea un manifesto elettorale italiano da affissione, di quelli che si leggono a 
 
 IMPAGINAZIONE D'INSIEME: un fondo solo, chiaro e caldo, colore pergamena con una velatura dorata. {c['nome'].title()} e' ritagliat{'a' if f else 'o'} sul fondo, occupa la meta' sinistra e va da sopra fino al bordo inferiore, senza cornici e senza fasce che dividano la tela. Tutto il testo sta nella meta' destra, allineato a sinistra, e non copre mai il viso.
 
-IL VOLTO E' L'ELEMENTO DOMINANTE. Ritrai {c['nome'].title()} esattamente come appare nelle fotografie A1-A4, senza {migliorare} in nessun modo. Il criterio non e' che sia un bel ritratto: e' che chi {pr} conosce {pr} riconosca per strada.
+IL VOLTO E' L'ELEMENTO DOMINANTE. Ritrai {c['nome'].title()} esattamente come appare nelle fotografie {intervallo}, senza {migliorare} in nessun modo. Il criterio non e' che sia un bel ritratto: e' che chi {pr} conosce {pr} riconosca per strada.
 Riporta fedelmente questi tratti, che nelle fotografie ci sono e che i ritratti generati tendono a cancellare: {c['tratti']}
 {c['espressione']}
 E' un ritratto posato per un manifesto, quindi la persona e' curata: capelli pettinati e in ordine, ma con il loro volume e il loro movimento naturale, non appiattiti e non ridisegnati.
@@ -342,7 +405,7 @@ I nomi propri sono la cosa che si sbaglia di piu': {compitato}. Rileggili sul ma
 
 Colori: {com['colori']}. Il contrasto fra testo e fondo deve essere alto: in strada i toni delicati spariscono.
 Prima di consegnare rileggi tutto il testo lettera per lettera, confrontandolo con l'elenco qui sopra: ogni riga deve essere identica, senza parole ripetute, storpiate o inventate. ⛔ Attenzione ai nomi di luogo: si scrivono soltanto "Bagnoli" e "Fuorigrotta", e non devono comparire altre parole che gli somigliano. Accenti e apostrofi corretti, nessuna riga tagliata o coperta dalla figura.
-Escludi: titoli ed etichette non richiesti, fasce che dividono la tela in due, figura intera, ripresa di profilo, foto di gruppo, paesaggio nitido, aspetto da cartone animato, resa CGI, pelle di plastica, levigatura eccessiva del viso, bandiere, simboli di partiti diversi da quello allegato, firme, filigrane."""
+Escludi: titoli ed etichette non richiesti, fasce che dividono la tela in due, figura intera, ripresa di profilo, foto di gruppo, paesaggio nitido, aspetto da cartone animato, resa CGI, pelle di plastica, levigatura eccessiva del viso, bandiere, {escludi_simboli}, firme, filigrane, scritte di social network, nomi utente."""
 
 
 def main():
@@ -391,6 +454,11 @@ def main():
     if k not in cand:
         sys.exit(f"⛔ '{k}' non c'e'. Disponibili: {', '.join(cand)}")
     c = cand[k]
+    # Le foto si contano sul disco: il prompt non deve mai annunciare
+    # un'immagine che non gli allego (vedi elenco_foto).
+    c["_foto"], file_foto = elenco_foto(c, os.path.dirname(os.path.dirname(percorso)))
+    foto, nf = ", ".join(file_foto), len(file_foto)
+    quante_foto = f"{foto} ({NUMERI[nf]} foto)" if nf != 1 else f"{foto} (una foto)"
     if a.stile == "card":
         testo = prompt_card(c, com, a.valori)
     elif a.stile == "card-vuota":
@@ -415,36 +483,33 @@ def main():
         print(f"  poi: _tools/carta_social.py --figura <immagine> --candidato {k}",
               file=sys.stderr)
     elif a.stile == "ritratto":
-        print("  SOLO A1, A2, A3, A4 — niente logo, niente schema, niente "
+        print(f"  SOLO {foto} — niente logo, niente schema, niente "
               "pannello: qui si chiede una fotografia e basta.", file=sys.stderr)
         print("  poi: _tools/carta_social.py --ritratto <foto> --candidato "
               f"{k} monta pannello, scala e testo.", file=sys.stderr)
     elif a.stile == "card-vuota":
         # Niente logo e niente schema: si chiede una fotografia, e tutto il
         # resto lo scrive _tools/ dopo, sul file vero.
-        print("  SOLO A1, A2, A3, A4 (le quattro foto della persona) — niente "
-              "logo, niente schema", file=sys.stderr)
+        print(f"  SOLO {quante_foto} della persona — niente logo, niente schema",
+              file=sys.stderr)
         print("  poi: il testo e il simbolo si montano in locale sul pannello "
               "vuoto, rimisurando il bordo sul file generato.", file=sys.stderr)
     elif a.stile == "card":
         # Lo schema muto qui non serve: la posizione di ogni riga sta scritta
         # nel prompt, e un'immagine in piu' e' solo un'occasione per copiarne
         # i rettangoli (Fernando, 4 agosto 2026).
-        print("  A1, A2, A3, A4 (le quattro foto) · B (logo) — NIENTE schema C",
-              file=sys.stderr)
+        print(f"  {quante_foto} · B (logo) — NIENTE schema C", file=sys.stderr)
         print("  ⚠️  Gemini: generare da aistudio.google.com, mai dall'app "
               "(stellina). Lumina: il bollino AI resta, va ritagliato.",
               file=sys.stderr)
         print("  ⚠️  Il committente va scritto per esteso PRIMA di pubblicare.",
               file=sys.stderr)
     elif a.senza_simbolo:
-        print("  A1, A2, A3, A4 (le quattro foto) · c (schema muto) — NIENTE logo",
-              file=sys.stderr)
+        print(f"  {quante_foto} · c (schema muto) — NIENTE logo", file=sys.stderr)
         print("  poi: _tools/sostituisci_simbolo.py per incollare il simbolo vero",
               file=sys.stderr)
     else:
-        print("  A1, A2, A3, A4 (le quattro foto) · B (logo) · c (schema muto)",
-              file=sys.stderr)
+        print(f"  {quante_foto} · B (logo) · c (schema muto)", file=sys.stderr)
     if c.get("note"):
         print(f"⚠️  {c['note']}", file=sys.stderr)
 
