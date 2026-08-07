@@ -943,7 +943,7 @@ Il tuo browser non supporta il video.
 
 <h2>Come si partecipa</h2>
 <p><strong>Quattro appuntamenti escono sulla WebTV</strong> &mdash; APE, la Mappa, l&rsquo;arte del dono, essere donna a Napoli: si guardano da questo sito, quando si vuole, senza iscriversi a niente.</p>
-<p><strong>Due sono incontri online in diretta</strong> &mdash; la legge elettorale con Luigi Spanu e l&rsquo;RC Auto con Paolo Neri. Per partecipare alla diretta basta scrivere a <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>: risponderemo con l&rsquo;orario e il collegamento, che pu&ograve; essere anche una diretta sul <a href="https://www.youtube.com/@partecipazioneattiva" target="_blank" rel="noopener">nostro canale YouTube</a>.</p>
+<p><strong>Due sono incontri online in diretta</strong> &mdash; la legge elettorale con Luigi Spanu e l&rsquo;RC Auto con Paolo Neri. Per ricevere l’invito a partecipare in diretta Zoom basta scrivere a <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>: risponderemo con l’orario e il collegamento. Le dirette possono essere trasmesse anche sul <a href="https://www.youtube.com/@partecipazioneattiva" target="_blank" rel="noopener">nostro canale YouTube</a>, dove si seguono senza scrivere a nessuno — ma le domande si fanno su Zoom.</p>
 <p>Le date esatte le pubblichiamo qui e sulla <a href="webtv.html">pagina della WebTV</a> appena sono fissate.</p>
 
 <p><em>Il video di presentazione &egrave; realizzato con una voce sintetica generata con intelligenza artificiale, come indicato nel video stesso. I manifesti degli incontri sono immagini generate con intelligenza artificiale, e lo dichiarano.</em></p>
