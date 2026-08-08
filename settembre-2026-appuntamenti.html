@@ -148,6 +148,150 @@
 <p>In Campania lavora <strong>circa una donna su tre</strong>. In Italia, pi&ugrave; di una su due. Dietro quella distanza non c&rsquo;&egrave; una scelta: ci sono i servizi che mancano, gli orari che non tornano, i lavori che si lasciano perch&eacute; non c&rsquo;&egrave; altro modo.</p>
 <p>Ne parla <strong>Rosa Ugon</strong>, Membro Organizzativo di Partecipazione Attiva per Napoli.</p>
 
+
+<section id="sondaggio" class="sq" aria-labelledby="sq-tit">
+<h2 id="sq-tit">Quale vuoi vedere per primo?</h2>
+<p class=sq-intro>Sono sei, e l’ordine con cui escono lo decidiamo con te.
+<strong>Scegli tutti quelli che ti interessano.</strong></p>
+
+<form id=sq-form novalidate>
+  <fieldset class=sq-lista>
+    <legend class=sq-nascosto>I sei appuntamenti di settembre</legend>
+    <label class=sq-scelta><input type=checkbox name=tema value="ape"><span><b>APE — l’Assemblea Popolare Ecumenica</b><small>Angelo Nicotra · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="mappa"><span><b>La Mappa dei cittadini attivi</b><small>Daniele Tandura · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="legge-elettorale"><span><b>La legge elettorale</b><small>Luigi Spanu · in diretta</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="rc-auto"><span><b>RC Auto uguale per tutti</b><small>Paolo Neri · in diretta</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="arte-del-dono"><span><b>L’arte del dono</b><small>Stefano Piva · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="donna-a-napoli"><span><b>Essere donna a Napoli</b><small>Rosa Ugon · WebTV</small></span></label>
+  </fieldset>
+
+  <div class=sq-mail>
+    <label for=sq-email><b>La tua email</b></label>
+    <p class=sq-nota>Serve solo a contare una volta sola.
+      <strong>Appena confermi, il tuo indirizzo viene cancellato</strong> e al suo
+      posto resta un codice illeggibile che non si può ricondurre a nessuno.
+      Niente nome, niente iscrizione, nessun messaggio pubblicitario.</p>
+    <input type=email id=sq-email name=email autocomplete=email
+           placeholder="nome@esempio.it" required>
+    <label class=sq-consenso><input type=checkbox id=sq-ok>
+      <span>Ho letto l’<a href="privacy.html" target="_blank" rel="noopener">informativa sulla privacy</a>.</span></label>
+    <button type=submit id=sq-invia>Invia il voto</button>
+    <p id=sq-msg class=sq-msg role=status aria-live=polite></p>
+  </div>
+</form>
+
+<details class=sq-ris>
+  <summary>Vedi come sta andando</summary>
+  <div id=sq-ris-corpo><p class=sq-nota>Carico i numeri…</p></div>
+</details>
+</section>
+
+<style>
+.sq{background:#fff8ee;border-left:4px solid #e8900a;border-radius:14px;padding:28px 26px;margin:36px 0}
+.sq h2{margin:0 0 8px}
+.sq-intro{margin:0 0 20px}
+.sq-lista{border:0;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:10px}
+.sq-nascosto{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sq-scelta{display:flex;align-items:flex-start;gap:12px;background:#fff;border:2px solid #f0dcc0;
+  border-radius:12px;padding:14px 16px;cursor:pointer;min-height:44px}
+.sq-scelta:hover{border-color:#e8900a}
+.sq-scelta input{width:24px;height:24px;margin:2px 0 0;flex-shrink:0;accent-color:#9c5b00}
+.sq-scelta span{display:block;line-height:1.4}
+.sq-scelta small{display:block;color:#6b5a45;font-size:.85em;margin-top:3px}
+.sq-scelta.sq-piena{opacity:.5}
+.sq-mail{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px}
+.sq-nota{color:#5a5a5a;font-size:.9em;line-height:1.6;margin:6px 0 14px}
+.sq-mail input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;
+  border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222}
+.sq-consenso{display:flex;align-items:flex-start;gap:10px;margin:14px 0 18px;cursor:pointer;
+  font-size:.92em;line-height:1.5;min-height:44px}
+.sq-consenso input{width:24px;height:24px;margin:1px 0 0;flex-shrink:0;accent-color:#9c5b00}
+#sq-invia{background:#e8900a;color:#2b1a00;border:0;border-radius:50px;padding:14px 32px;
+  font-weight:700;font-size:1em;cursor:pointer;min-height:48px}
+#sq-invia[disabled]{opacity:.55;cursor:default}
+.sq-msg{margin:14px 0 0;line-height:1.6;font-size:.95em}
+.sq-msg.ok{color:#1d6b2f;font-weight:700}
+.sq-msg.ko{color:#a32626;font-weight:700}
+.sq-ris{margin-top:20px}
+.sq-consenso a{color:#9c5b00;text-decoration:underline}.sq-ris summary{cursor:pointer;font-weight:700;color:#9c5b00;padding:10px 0;min-height:44px;display:flex;align-items:center;gap:8px;list-style:none}.sq-ris summary::-webkit-details-marker{display:none}.sq-ris summary::before{content:"▸";font-size:1.1em}.sq-ris[open] summary::before{content:"▾"}
+.sq-barra{margin:12px 0}
+.sq-barra i{display:block;font-style:normal;font-size:.92em;margin-bottom:5px}
+.sq-barra u{display:block;height:12px;border-radius:8px;background:#eee;text-decoration:none;overflow:hidden}
+.sq-barra u b{display:block;height:100%;background:#e8900a}
+</style>
+
+<script>
+(function(){
+var SB_URL='https://hfraarlzltoiuvplushi.supabase.co';
+var SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
+var NOMI={'ape':'APE','mappa':'La Mappa','legge-elettorale':'Legge elettorale',
+ 'rc-auto':'RC Auto','arte-del-dono':'L\u2019arte del dono','donna-a-napoli':'Essere donna a Napoli'};
+var MAX=6;
+var form=document.getElementById('sq-form'), msg=document.getElementById('sq-msg'),
+    btn=document.getElementById('sq-invia');
+function caselle(){ return [].slice.call(form.querySelectorAll('input[name=tema]')); }
+function scelti(){ return caselle().filter(function(c){return c.checked;}).map(function(c){return c.value;}); }
+function aggiorna(){
+  var n=scelti().length;
+  caselle().forEach(function(c){
+    c.disabled = (!c.checked && n>=MAX);
+    c.closest('.sq-scelta').classList.toggle('sq-piena', c.disabled);
+  });
+}
+form.addEventListener('change', aggiorna);
+function dì(t,cl){ msg.textContent=t; msg.className='sq-msg '+(cl||''); }
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  var temi=scelti();
+  if(!temi.length) return dì('Scegli almeno un tema.','ko');
+  var email=(document.getElementById('sq-email').value||'').trim();
+  if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(email)) return dì('Controlla l\u2019indirizzo email.','ko');
+  if(!document.getElementById('sq-ok').checked) return dì('Serve la spunta sull\u2019informativa.','ko');
+  btn.disabled=true; dì('Invio\u2026');
+  fetch(SB_URL+'/functions/v1/sondaggio',{
+    method:'POST',
+    headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},
+    body:JSON.stringify({temi:temi,email:email})
+  }).then(function(r){ return r.json().then(function(j){ return j; }); })
+    .then(function(j){
+      if(j&&j.ok){
+        form.style.display='none';
+        dì('Ti abbiamo mandato una mail: apri il messaggio e clicca il pulsante. Il voto conta solo dopo quel clic.','ok');
+        msg.style.display='block';
+      } else {
+        btn.disabled=false;
+        var m={'gia_votato':'Da questo indirizzo hai gi\u00e0 votato. Grazie lo stesso!',
+                'gia_inviata':'La mail di conferma \u00e8 gi\u00e0 partita da poco: controlla la posta, anche nello spam.',
+                'email_non_valida':'Controlla l\u2019indirizzo email.',
+                'temi_non_validi':'Scegli almeno un tema.',
+                'posta_non_configurata':'Il sondaggio non \u00e8 ancora attivo. Riprova pi\u00f9 tardi.',
+                'posta_non_partita':'Non siamo riusciti a mandare la mail. Riprova fra poco.'};
+        dì(m[j&&j.motivo]||'Qualcosa non ha funzionato. Riprova fra poco.','ko');
+      }
+    }).catch(function(){ btn.disabled=false; dì('Connessione non riuscita. Riprova.','ko'); });
+});
+
+var det=document.querySelector('.sq-ris'), caricati=false;
+det.addEventListener('toggle', function(){
+  if(!det.open||caricati) return; caricati=true;
+  fetch(SB_URL+'/rest/v1/sondaggio_risultati?select=tema,voti,totale&order=ordine',
+    {headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
+   .then(function(r){return r.json();})
+   .then(function(d){
+     var box=document.getElementById('sq-ris-corpo');
+     if(!d||!d.length){ box.innerHTML='<p class=sq-nota>Ancora nessun voto.</p>'; return; }
+     var tot=d[0].totale||0;
+     if(!tot){ box.innerHTML='<p class=sq-nota>Ancora nessun voto: puoi essere il primo.</p>'; return; }
+     d.sort(function(a,b){return b.voti-a.voti;});
+     box.innerHTML=d.map(function(x){
+       var p=Math.round(x.voti*100/tot);
+       return '<div class=sq-barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
+              '<u><b style="width:'+p+'%"></b></u></div>';
+     }).join('')+'<p class=sq-nota>'+tot+' voti confermati. Ogni persona ne vale uno, e pu\u00f2 indicare piu\u0300 temi.</p>';
+   })
+   .catch(function(){ document.getElementById('sq-ris-corpo').innerHTML=
+     '<p class=sq-nota>Non riesco a leggere i numeri adesso.</p>'; });
+});
+aggiorna();
+})();
+</script>
+
 <h2>Come si partecipa</h2>
 <p><strong>Quattro appuntamenti escono sulla WebTV</strong> &mdash; APE, la Mappa, l&rsquo;arte del dono, essere donna a Napoli: si guardano da questo sito, quando si vuole, senza iscriversi a niente.</p>
 <p><strong>Due sono incontri online in diretta</strong> &mdash; la legge elettorale con Luigi Spanu e l&rsquo;RC Auto con Paolo Neri. Per ricevere l&rsquo;invito a partecipare in diretta Zoom basta scrivere a <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>: risponderemo con l&rsquo;orario e il collegamento. Le dirette sono trasmesse anche sul <a href="https://www.youtube.com/@partecipazioneattiva" target="_blank" rel="noopener">nostro canale YouTube</a> e sulla <a href="https://www.facebook.com/PartecipazioneAttiva21" target="_blank" rel="noopener">pagina Facebook</a>, dove si seguono senza scrivere a nessuno.</p>

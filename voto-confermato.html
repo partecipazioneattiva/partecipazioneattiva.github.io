@@ -1,0 +1,66 @@
+<!doctype html><html lang=it><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Voto confermato — Partecipazione Attiva</title>
+<meta name=robots content="noindex,follow">
+<link rel=stylesheet href="fonts/caratteri.css">
+<link rel=stylesheet href="css/pa-leggibilita.css">
+<link rel=stylesheet href="css/pa-base.css">
+<style>
+body{background:#fff8ee}
+.vc{max-width:640px;margin:0 auto;padding:48px 24px 64px;text-align:center}
+.vc img{width:88px;height:auto;margin-bottom:22px}
+.vc h1{font-family:merriweather,Georgia,serif;color:#8a4e00;font-size:1.7em;line-height:1.25;margin:0 0 14px}
+.vc p{color:#444;line-height:1.75;margin:0 0 16px}
+.vc .nota{font-size:.9em;color:#5a5a5a}
+.vc a.torna{display:inline-block;margin-top:26px;background:#e8900a;color:#2b1a00;
+  padding:14px 32px;border-radius:50px;text-decoration:none;font-weight:700;min-height:48px}
+.barra{margin:14px 0;text-align:left}
+.barra i{display:block;font-style:normal;font-size:.94em;margin-bottom:5px;color:#333}
+.barra u{display:block;height:13px;border-radius:8px;background:#efe4d4;text-decoration:none;overflow:hidden}
+.barra u b{display:block;height:100%;background:#e8900a}
+#ris{margin-top:30px;text-align:left;background:#fff;border:1.5px solid #f0dcc0;
+  border-radius:14px;padding:22px 20px}
+#ris h2{font-family:merriweather,Georgia,serif;color:#8a4e00;font-size:1.12em;margin:0 0 14px}
+</style></head><body>
+<main class=vc id=contenuto>
+  <img src="LOGO-PA.webp" alt="Partecipazione Attiva" width="88" height="88">
+  <h1 id=tit>Un momento…</h1>
+  <p id=txt>Sto registrando il tuo voto.</p>
+  <div id=ris hidden><h2>Come sta andando</h2><div id=barre></div>
+    <p class=nota id=tot></p></div>
+  <a class=torna href="index.html">Torna al sito &rarr;</a>
+</main>
+<script>
+(function(){
+var SB_URL='https://hfraarlzltoiuvplushi.supabase.co', SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
+var NOMI={'ape':'APE','mappa':'La Mappa','legge-elettorale':'Legge elettorale',
+ 'rc-auto':'RC Auto','arte-del-dono':'L\u2019arte del dono','donna-a-napoli':'Essere donna a Napoli'};
+var tit=document.getElementById('tit'), txt=document.getElementById('txt');
+function dì(t,p){ tit.textContent=t; txt.innerHTML=p; }
+var t=new URLSearchParams(location.search).get('t');
+if(!t) return dì('Collegamento incompleto','Apri il link esattamente come ti \u00e8 arrivato per posta.');
+fetch(SB_URL+'/rest/v1/rpc/sondaggio_conferma',{
+  method:'POST',
+  headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},
+  body:JSON.stringify({p_token:t})
+}).then(function(r){return r.json();}).then(function(j){
+  if(!j||!j.esito) return dì('Non ha funzionato','Riprova fra poco, oppure riparti dalla pagina degli appuntamenti.');
+  if(j.esito==='scaduto') return dì('Questo collegamento non vale pi\u00f9',
+     'I collegamenti scadono dopo 48 ore. Puoi <a href="settembre-2026-appuntamenti.html#sondaggio">votare di nuovo</a>.');
+  if(j.esito==='gia_votato') return dì('Avevi gi\u00e0 votato',
+     'Da questo indirizzo il voto era gi\u00e0 stato contato. Grazie lo stesso!');
+  if(j.esito!=='contato') return dì('Non ha funzionato','Riprova fra poco.');
+  dì('Voto contato. Grazie.',
+     'Il tuo indirizzo \u00e8 stato <strong>cancellato adesso</strong>: al suo posto resta un codice illeggibile, che serve solo a evitare i doppioni e non si pu\u00f2 ricondurre a nessuno.');
+  var tot=j.totale||0, d=(j.risultati||[]).slice().sort(function(a,b){return b.voti-a.voti;});
+  document.getElementById('barre').innerHTML=d.map(function(x){
+    var p=tot?Math.round(x.voti*100/tot):0;
+    return '<div class=barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
+           '<u><b style="width:'+p+'%"></b></u></div>';
+  }).join('');
+  document.getElementById('tot').textContent=tot+' voti confermati finora.';
+  document.getElementById('ris').hidden=false;
+}).catch(function(){ dì('Connessione non riuscita','Riprova ad aprire il collegamento fra poco.'); });
+})();
+</script>
+</body></html>
