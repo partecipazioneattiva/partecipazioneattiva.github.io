@@ -162,3 +162,40 @@ Il blocco anti-doppione tiene fermo lo stesso indirizzo per dieci minuti. Per
 fare prove in fila si usa il segno più:
 `webmaster.partecipazione.attiva+p1@gmail.com` arriva nella stessa casella ma
 per l'archivio è un indirizzo diverso.
+
+---
+
+## ⚙️ Come si controlla la funzione PRIMA di installarla
+
+Sul Mac c'è **Deno**, lo stesso motore che esegue le funzioni su Supabase.
+Quindi non serve installare al buio e vedere che succede:
+
+```bash
+deno check ~/Desktop/LAVORI/partecipazioneattiva/_tools/sondaggio/02_funzione_sondaggio.ts
+```
+
+Se dice solo `Check ...` senza altro, il codice è valido. Si può anche
+avviarla davvero e interrogarla in locale:
+
+```bash
+deno run --allow-net --allow-env _tools/sondaggio/02_funzione_sondaggio.ts
+curl -s -X POST http://localhost:8000 -H 'Content-Type: application/json' \
+  -d '{"temi":["ape"],"email":"prova@esempio.it"}'
+```
+
+Senza i segreti risponde `nessuna chiave server disponibile`: è la risposta
+giusta, e dimostra che parte e ragiona.
+
+**Stesso discorso per gli <script> dentro le pagine:** si estrae il contenuto
+e gli si passa `node --check`. L'8 agosto 2026 una parentesi di troppo in
+`voto-confermato.html` ha lasciato la pagina ferma su «Un momento...» — e
+sarebbe bastato questo controllo, che dura un secondo.
+
+## ⚠️ Niente lettere accentate nel codice della funzione
+
+L'editor di Supabase rovina i caratteri accentati incollati: nelle mail si
+leggeva `√® tuo` invece di `è tuo`, `gi√†` invece di `già`. Il file ora è
+**tutto ASCII** e usa le forme HTML (`&egrave;`, `&rsquo;`, `&mdash;`), che
+non si possono rompere. **Se un domani si riscrive qualcosa, si continua
+così.** Il testo scritto dalle persone non ha questo problema: arriva dal
+browser e non passa mai dall'editor.
