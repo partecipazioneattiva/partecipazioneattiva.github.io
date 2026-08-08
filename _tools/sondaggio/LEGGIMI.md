@@ -113,3 +113,52 @@ drop table sondaggio_impronte;
 ```
 
 Da quel momento del sondaggio non resta traccia di nessuno — solo i conteggi.
+
+---
+
+## Le quattro trappole pagate l'8 agosto 2026
+
+Messe qui perché non si ripaghino, e perché tre su quattro **non erano nel
+codice ma nell'ambiente**.
+
+**1 · Chrome traduce il codice.** Il pannello di Supabase in italiano fa
+tradurre anche il contenuto dell'editor: `begin` diventava `inizio`, `end`
+diventava `FINE`, `sondaggio_impronte` diventava `sondaggi o_impronte`.
+Prima di incollare qualunque cosa: **disattivare la traduzione per
+supabase.com** (icona 文A nella barra dell'indirizzo → «Non tradurre mai»).
+
+**2 · Le liste come argomento.** Passare un elenco come `text[]` faceva
+rispondere `42883 — No function matches the given name and argument types`.
+Il ponte fra funzioni e archivio (PostgREST) non sempre abbina una lista JSON
+a quel tipo. **Si passa `jsonb`** e si converte dentro. Corretto in
+`03_correzione_temi.sql`.
+
+**3 · `digest()` non sta in `public`.** Su Supabase pgcrypto vive nel reparto
+`extensions`. Una funzione con `set search_path = public` non lo trova e dà
+lo stesso `42883`. **Serve `set search_path = public, extensions`.**
+Corretto in `04_digest.sql`.
+
+  ⚠️ Nota di metodo: lo stesso guasto dava **due errori diversi** secondo chi
+  chiamava. Il sito riceveva «permission denied» (il controllo dei permessi
+  viene prima di entrare nella funzione), il server riceveva `42883`. Per due
+  volte ho diagnosticato dalla porta sbagliata. **Si legge il registro della
+  funzione, non si deduce dal sintomo esterno.**
+
+**4 · Le chiavi di Supabase sono cambiate nel 2026.** `SUPABASE_SERVICE_ROLE_KEY`
+è dichiarata obsoleta (nel pannello compare come DEPRECATED). Le nuove —
+`SUPABASE_SECRET_KEYS` e `SUPABASE_PUBLISHABLE_KEYS` — **non sono stringhe ma
+elenchi JSON**, da cui si prende la voce `default`. La funzione ora prova
+prima la nuova e poi ripiega sulla vecchia, così regge anche quando le vecchie
+verranno spente a fine 2026.
+
+**E una quinta, che è un consiglio.** Una chiave Brevo generata nuova rispose
+`401 Key not found`. Invece di indagare, si è usata `BREVO_KEY`, quella che
+manda le mail della Mappa dall'11 luglio: **quando esiste già un pezzo che
+funziona, si usa quello.**
+
+### Per provare senza aspettare
+
+Il blocco anti-doppione tiene fermo lo stesso indirizzo per dieci minuti. Per
+fare prove in fila si usa il segno più:
+`webmaster.partecipazione.attiva+p1@gmail.com` arriva nella stessa casella ma
+per l'archivio è un indirizzo diverso.

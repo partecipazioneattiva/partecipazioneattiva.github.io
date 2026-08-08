@@ -50,6 +50,34 @@ const TEMI: Record<string, string> = {
   "donna-a-napoli": "Essere donna a Napoli",
 };
 
+/**
+ * LA CHIAVE CON CUI IL SERVER PARLA AL PROPRIO ARCHIVIO.
+ *
+ * Dal 2026 Supabase ha cambiato sistema di chiavi. Quella vecchia
+ * (SUPABASE_SERVICE_ROLE_KEY) e' dichiarata OBSOLETA — nel pannello compare
+ * proprio con l'etichetta DEPRECATED — e al suo posto c'e' SUPABASE_SECRET_KEYS,
+ * che NON e' una stringa ma un elenco in JSON da cui si prende la voce 'default'.
+ *
+ * Chiedere solo quella vecchia significa presentarsi all'archivio senza
+ * credenziali valide: e' il motivo per cui l'8 agosto 2026 nessuna mail partiva.
+ *
+ * Qui si prova prima la nuova e poi la vecchia, cosi' funziona sia sui progetti
+ * gia' migrati sia su quelli ancora indietro.
+ */
+function chiaveDelServer(): string | null {
+  try {
+    const nuove = Deno.env.get("SUPABASE_SECRET_KEYS");
+    if (nuove) {
+      const d = JSON.parse(nuove);
+      const k = d["default"] ?? Object.values(d)[0];
+      if (typeof k === "string" && k) return k;
+    }
+  } catch (e) {
+    console.error("SUPABASE_SECRET_KEYS illeggibile:", String(e).slice(0, 120));
+  }
+  return Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ?? null;
+}
+
 function risposta(corpo: unknown, stato = 200): Response {
   return new Response(JSON.stringify(corpo), {
     status: stato,
@@ -107,7 +135,11 @@ Deno.serve(async (req: Request) => {
   }
 
   const URL_DB = Deno.env.get("SUPABASE_URL")!;
-  const CHIAVE_SERVER = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+  const CHIAVE_SERVER = chiaveDelServer();
+  if (!CHIAVE_SERVER) {
+    console.error("nessuna chiave server disponibile");
+    return risposta({ ok: false, motivo: "archivio", stato: 0 }, 500);
+  }
 
   // 1. registro il voto in attesa: e' il database a rimescolare l'indirizzo
   const r = await fetch(`${URL_DB}/rest/v1/rpc/sondaggio_registra`, {
@@ -120,8 +152,12 @@ Deno.serve(async (req: Request) => {
     body: JSON.stringify({ p_email: email, p_temi: temi }),
   });
   if (!r.ok) {
-    console.error("registra:", r.status, await r.text());
-    return risposta({ ok: false, motivo: "archivio" }, 500);
+    // Il dettaglio torna anche al chiamante: sono messaggi dell'archivio, non
+    // contengono chiavi ne' dati di persone, e permettono di capire un guasto
+    // dall'esterno senza dover aprire i registri. Si puo' togliere a regime.
+    const dettaglio = (await r.text()).slice(0, 160);
+    console.error("registra:", r.status, dettaglio);
+    return risposta({ ok: false, motivo: "archivio", stato: r.status, dettaglio }, 500);
   }
   const esito = await r.json();
 

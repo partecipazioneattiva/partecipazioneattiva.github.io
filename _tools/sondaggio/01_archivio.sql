@@ -150,6 +150,9 @@ begin
 end
 $$;
 revoke all on function sondaggio_registra(text, text[]) from public, anon, authenticated;
+-- ...ma il server SI': e' lui l'unico che deve poterla usare. Senza questa riga
+-- la funzione del sondaggio riceve «permission denied» e non parte nessuna mail.
+grant execute on function sondaggio_registra(text, text[]) to service_role;
 
 -- ---------------------------------------------------------------------
 -- 7. CONFERMA IL VOTO.
