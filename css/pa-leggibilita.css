@@ -87,6 +87,24 @@ body { overflow-wrap: break-word; }
    Mappa una LABEL sfondava di 4 px su uno schermo da 320. */
 label { max-width: 100%; }
 
+/* ── «SALTA AL CONTENUTO» ──────────────────────────────────────────────────
+   Non si vede a nessuno, tranne a chi arriva col tasto TAB: allora salta
+   fuori in alto a sinistra e permette di scavalcare le dodici voci del menu.
+
+   MISURATO l'8 agosto 2026: NESSUNA pagina del sito ce l'aveva. Chi non usa il
+   mouse — per una disabilita', per abitudine, o con un lettore vocale — a ogni
+   pagina doveva ripassare tutto il menu prima di arrivare al testo. */
+.salta-contenuto{
+  position:absolute; left:-9999px; top:0; z-index:100000;
+  background:#8a4e00; color:#fff; padding:12px 22px;
+  font-family:montserrat,sans-serif; font-weight:700; font-size:.95rem;
+  border-radius:0 0 10px 0; text-decoration:none;
+}
+.salta-contenuto:focus{
+  left:0;                       /* col TAB compare */
+  outline:3px solid #ffd580; outline-offset:2px;
+}
+
 /* Titoli delle colonne del pie' di pagina: erano <h4> dopo un <h2>,
    cioe' un livello saltato. Portati a h2, questa regola tiene l'aspetto
    di prima sulle pagine che non hanno una regola propria. */
