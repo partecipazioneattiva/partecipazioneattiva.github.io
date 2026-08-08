@@ -150,9 +150,8 @@
 
 
 <section id="sondaggio" class="sq" aria-labelledby="sq-tit">
-<h2 id="sq-tit">Quale vuoi vedere per primo?</h2>
-<p class=sq-intro>Sono sei, e l’ordine con cui escono lo decidiamo con te.
-<strong>Scegli tutti quelli che ti interessano.</strong></p>
+<h2 id="sq-tit">Quali senti pi&ugrave; urgenti?</h2>
+<p class=sq-intro><strong>La scelta &egrave; multipla:</strong> segnane quanti vuoi, anche tutti e sei. Gli incontri si faranno comunque tutti: questo non serve a stabilire l&rsquo;ordine di uscita, ma a capire <strong>quali temi sentite pi&ugrave; urgenti</strong> &mdash; cos&igrave;, a pelle.</p>
 
 <form id=sq-form novalidate>
   <fieldset class=sq-lista>
@@ -283,7 +282,7 @@ det.addEventListener('toggle', function(){
        var p=Math.round(x.voti*100/tot);
        return '<div class=sq-barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
               '<u><b style="width:'+p+'%"></b></u></div>';
-     }).join('')+'<p class=sq-nota>'+tot+' voti confermati. Ogni persona ne vale uno, e pu\u00f2 indicare piu\u0300 temi.</p>';
+     }).join('')+'<p class=sq-nota>'+tot+' voti confermati. Ogni persona vale un voto, e pu\u00f2 segnare pi\u00f9 temi.</p>';
    })
    .catch(function(){ document.getElementById('sq-ris-corpo').innerHTML=
      '<p class=sq-nota>Non riesco a leggere i numeri adesso.</p>'; });
