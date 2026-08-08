@@ -39,8 +39,7 @@ var tit=document.getElementById('tit'), txt=document.getElementById('txt');
 function dì(t,p){ tit.textContent=t; txt.innerHTML=p; }
 var t=new URLSearchParams(location.search).get('t');
 if(!t) return dì('Collegamento incompleto','Apri il link esattamente come ti \u00e8 arrivato per posta.');
-fetch(SB_URL+'/functions/v1/sondaggio',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},body:JSON.stringify({azione:'conferma',t:t})})
-}).then(function(r){return r.json();}).then(function(j){
+fetch(SB_URL+'/functions/v1/sondaggio',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},body:JSON.stringify({azione:'conferma',t:t})}).then(function(r){return r.json();}).then(function(j){
   if(!j||!j.esito) return dì('Non ha funzionato','Riprova fra poco, oppure riparti dalla pagina degli appuntamenti.');
   if(j.esito==='scaduto') return dì('Questo collegamento non vale pi\u00f9',
      'I collegamenti scadono dopo 48 ore. Puoi <a href="settembre-2026-appuntamenti.html#sondaggio">votare di nuovo</a>.');
