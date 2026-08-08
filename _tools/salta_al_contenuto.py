@@ -24,6 +24,25 @@ pagina sia finito DENTRO il <main>. Se non lo e', la pagina non viene scritta.
 
     python3 _tools/salta_al_contenuto.py            # prova a vuoto
     python3 _tools/salta_al_contenuto.py --applica
+
+STATO AL 8 AGOSTO 2026, VERIFICATO SU TUTTE E 64 LE PAGINE (non su un campione):
+    <main> e salta-al-contenuto: 60 su 64.
+
+LE QUATTRO ESCLUSE, e perche':
+    404.html, cancella.html, conferma.html, contatto.html
+    Non hanno il menu. Il collegamento «salta al contenuto» serve a scavalcare
+    la navigazione: dove non c'e' navigazione non ha niente da scavalcare, e
+    aggiungerlo darebbe a chi usa un lettore vocale una promessa vuota.
+    Sono pagine di passaggio (errore 404, conferma e cancellazione iscrizione,
+    esito di un contatto). Tutte e quattro hanno pero' un collegamento di
+    uscita verso la home — verificato, due erano vicoli ciechi e sono state
+    sistemate lo stesso giorno.
+
+⚠️ PERCHE' QUESTA NOTA ESISTE: la prima verifica era stata fatta su 6 pagine
+campione, e diceva «tutto a posto». Rifacendola su tutte e 64 e' saltata fuori
+costruire-comunita-roma-2026.html senza <main> — la pagina con la resa migliore
+di tutto il sito (35 clic su 221 comparse). Il campione va bene per le misure
+vive (pixel, tempi); per dire che il sito e' CONFORME servono tutte le pagine.
 """
 import os, re, sys
 
@@ -61,7 +80,17 @@ def aggiungi_main(d):
     i += len("</nav>")
     j = d.find("<footer")
     if j == -1:
-        return d, None
+        # pagine senza pie' di pagina: si chiude prima degli script di coda.
+        # La prima versione le saltava in silenzio, e cosi' e' rimasta fuori
+        # costruire-comunita-roma-2026.html, che e' la pagina con la resa
+        # migliore di tutto il sito. Trovato l'8 agosto 2026 verificando
+        # TUTTE le pagine invece di un campione.
+        for ancora in ("<!--PA-CERCA-->", "<script src=\"assistente/", "</body>"):
+            j = d.find(ancora)
+            if j != -1:
+                break
+        if j == -1:
+            return d, None
     if j <= i:
         return d, None
     nuovo = d[:i] + '\n<main id="contenuto">' + d[i:j] + "</main>\n" + d[j:]
