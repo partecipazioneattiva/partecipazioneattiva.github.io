@@ -250,3 +250,27 @@ body .cta-section .cta-btn{color:#7a3d10}
   font-family:montserrat,sans-serif; font-size:.8rem; color:#6f675c;
   margin:0 0 14px; padding-top:4px; border-top:1px solid #eee;
 }
+
+
+/* ══ LA GRAMMATICA DELLE ETICHETTE (fase 3.2) ═════════════════════════════
+   Nell'audit dell'8 agosto 2026 avevo scritto che le etichette delle card
+   «mescolano tre alfabeti nella stessa casella». Misurandole, NON E' VERO:
+   i tre alfabeti hanno gia' forme diverse. Il sistema regge. Quello che
+   mancava e' che non fosse scritto da nessuna parte — cosi' la prossima card
+   rischia di inventarsi una quarta forma.
+
+   Eccolo, e da qui in avanti si rispetta:
+
+     PILLOLA ROSSA  (#c0392b)   una novita': «Ultimo aggiornamento»,
+                                «Nuovo TG nazionale · 5 agosto 2026»
+     PILLOLA BLU    (#1a6aa8)   edizione regionale: «Nuovo TG Campania»
+     PILLOLA VERDE  (#188739)   la voce degli iscritti
+     MAIUSCOLO senza sfondo     il TEMA: riforma elettorale, proposta di
+                                legge, mobilitazione, riqualificazione urbana
+     🆕 + DATA                  quando e' uscito
+
+   Una card puo' avere una pillola, un tema e una data — sono cose diverse e
+   si vedono diverse. Non puo' avere due pillole.
+
+   ⚠️ Se serve una categoria nuova, si aggiunge QUI un colore con un
+   significato, non si inventa una forma nuova sulla singola card. */
