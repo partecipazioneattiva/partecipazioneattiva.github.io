@@ -1,0 +1,1248 @@
+{
+ "quando": "2026-08-08T10:13:35",
+ "sorgente": "web",
+ "pagine": {
+  "home": {
+   "320": {
+    "larghezza_finestra": 320,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 383,
+    "sfondamento_px": 63,
+    "identita_px": 2196,
+    "identita_testo": "Cambiare il sistema Italiaper il bene di tutti",
+    "intestazione_px": 186,
+    "voci_menu": 2,
+    "righe_menu": 1,
+    "bersagli_sotto_24": 26,
+    "bersagli_sotto_44": 41,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 23,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 33,
+    "file_carattere": 7,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com",
+     "img.youtube.com"
+    ],
+    "dom_pronto_ms": 249,
+    "contrasti_esaminati": 105,
+    "contrasti_non_determinabili": 50,
+    "contrasti_bassi": 12,
+    "contrasti_dettaglio": [
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "Cambiare il sistema Italiaper il bene di",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Una libera associazione per una politica",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Chi siamo",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Iscriviti a Partecipazione Attiva",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Il primo anno l'iscrizione è completamen",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "✉ Scrivi una segnalazione",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Compila e invia la richiesta di iscrizio",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "375": {
+    "larghezza_finestra": 375,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 383,
+    "sfondamento_px": 8,
+    "identita_px": 2147,
+    "identita_testo": "Cambiare il sistema Italiaper il bene di tutti",
+    "intestazione_px": 137,
+    "voci_menu": 2,
+    "righe_menu": 1,
+    "bersagli_sotto_24": 26,
+    "bersagli_sotto_44": 44,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 23,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 33,
+    "file_carattere": 7,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com",
+     "img.youtube.com"
+    ],
+    "dom_pronto_ms": 184,
+    "contrasti_esaminati": 105,
+    "contrasti_non_determinabili": 50,
+    "contrasti_bassi": 12,
+    "contrasti_dettaglio": [
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "Cambiare il sistema Italiaper il bene di",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Una libera associazione per una politica",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Chi siamo",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Iscriviti a Partecipazione Attiva",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Il primo anno l'iscrizione è completamen",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "✉ Scrivi una segnalazione",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Compila e invia la richiesta di iscrizio",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "390": {
+    "larghezza_finestra": 390,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 390,
+    "sfondamento_px": 0,
+    "identita_px": 2142,
+    "identita_testo": "Cambiare il sistema Italiaper il bene di tutti",
+    "intestazione_px": 132,
+    "voci_menu": 2,
+    "righe_menu": 1,
+    "bersagli_sotto_24": 26,
+    "bersagli_sotto_44": 44,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 23,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 33,
+    "file_carattere": 7,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com",
+     "img.youtube.com"
+    ],
+    "dom_pronto_ms": 182,
+    "contrasti_esaminati": 105,
+    "contrasti_non_determinabili": 50,
+    "contrasti_bassi": 12,
+    "contrasti_dettaglio": [
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "Cambiare il sistema Italiaper il bene di",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Una libera associazione per una politica",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Chi siamo",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Iscriviti a Partecipazione Attiva",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Il primo anno l'iscrizione è completamen",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "✉ Scrivi una segnalazione",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Compila e invia la richiesta di iscrizio",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "414": {
+    "larghezza_finestra": 414,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 414,
+    "sfondamento_px": 0,
+    "identita_px": 2123,
+    "identita_testo": "Cambiare il sistema Italiaper il bene di tutti",
+    "intestazione_px": 132,
+    "voci_menu": 2,
+    "righe_menu": 1,
+    "bersagli_sotto_24": 26,
+    "bersagli_sotto_44": 44,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 23,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 33,
+    "file_carattere": 7,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com",
+     "img.youtube.com"
+    ],
+    "dom_pronto_ms": 161,
+    "contrasti_esaminati": 105,
+    "contrasti_non_determinabili": 50,
+    "contrasti_bassi": 12,
+    "contrasti_dettaglio": [
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "Cambiare il sistema Italiaper il bene di",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Una libera associazione per una politica",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Chi siamo",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Iscriviti a Partecipazione Attiva",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Il primo anno l'iscrizione è completamen",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "✉ Scrivi una segnalazione",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Compila e invia la richiesta di iscrizio",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "768": {
+    "larghezza_finestra": 768,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 768,
+    "sfondamento_px": 0,
+    "identita_px": 1482,
+    "identita_testo": "Cambiare il sistema Italiaper il bene di tutti",
+    "intestazione_px": 233,
+    "voci_menu": 14,
+    "righe_menu": 3,
+    "bersagli_sotto_24": 27,
+    "bersagli_sotto_44": 42,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 23,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 33,
+    "file_carattere": 7,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com",
+     "img.youtube.com"
+    ],
+    "dom_pronto_ms": 256,
+    "contrasti_esaminati": 117,
+    "contrasti_non_determinabili": 50,
+    "contrasti_bassi": 12,
+    "contrasti_dettaglio": [
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "Cambiare il sistema Italiaper il bene di",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Una libera associazione per una politica",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Chi siamo",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Iscriviti a Partecipazione Attiva",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Il primo anno l'iscrizione è completamen",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "✉ Scrivi una segnalazione",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Compila e invia la richiesta di iscrizio",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "1280": {
+    "larghezza_finestra": 1280,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 1280,
+    "sfondamento_px": 0,
+    "identita_px": 1542,
+    "identita_testo": "Cambiare il sistema Italiaper il bene di tutti",
+    "intestazione_px": 190,
+    "voci_menu": 14,
+    "righe_menu": 4,
+    "bersagli_sotto_24": 29,
+    "bersagli_sotto_44": 41,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 23,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 33,
+    "file_carattere": 7,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com",
+     "img.youtube.com"
+    ],
+    "dom_pronto_ms": 237,
+    "contrasti_esaminati": 117,
+    "contrasti_non_determinabili": 50,
+    "contrasti_bassi": 12,
+    "contrasti_dettaglio": [
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "PensAttivo News — edizione nazionale, 28",
+      "rapporto": 3.91,
+      "soglia": 4.5,
+      "colore": "rgb(255, 213, 128)",
+      "sfondo": "rgb(192, 57, 43)"
+     },
+     {
+      "testo": "Cambiare il sistema Italiaper il bene di",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Una libera associazione per una politica",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Chi siamo",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Iscriviti a Partecipazione Attiva",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Il primo anno l'iscrizione è completamen",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "✉ Scrivi una segnalazione",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Compila e invia la richiesta di iscrizio",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     }
+    ]
+   }
+  },
+  "articolo": {
+   "375": {
+    "larghezza_finestra": 375,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 375,
+    "sfondamento_px": 0,
+    "identita_px": 324,
+    "identita_testo": "Cavalleggeri a cielo aperto: un museo di murales per Fuorigr",
+    "intestazione_px": 129,
+    "voci_menu": 3,
+    "righe_menu": 2,
+    "bersagli_sotto_24": 8,
+    "bersagli_sotto_44": 16,
+    "ha_main": true,
+    "ha_salta_al_contenuto": false,
+    "immagini": 10,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 28,
+    "file_carattere": 6,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com"
+    ],
+    "dom_pronto_ms": 346,
+    "contrasti_esaminati": 44,
+    "contrasti_non_determinabili": 0,
+    "contrasti_bassi": 6,
+    "contrasti_dettaglio": [
+     {
+      "testo": "Cavalleggeri a cielo aperto: un museo di",
+      "rapporto": 1.04,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "La proposta di Partecipazione Attiva per",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.85)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "📅 22 luglio 2026",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.75)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "⏱ 3 minuti di lettura",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.75)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "Unisciti a Partecipazione Attiva",
+      "rapporto": 1.04,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "Crediamo nella partecipazione dei cittad",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.85)",
+      "sfondo": "rgb(250, 250, 250)"
+     }
+    ]
+   },
+   "1280": {
+    "larghezza_finestra": 1280,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 1280,
+    "sfondamento_px": 0,
+    "identita_px": 277,
+    "identita_testo": "Cavalleggeri a cielo aperto: un museo di murales per Fuorigr",
+    "intestazione_px": 108,
+    "voci_menu": 15,
+    "righe_menu": 4,
+    "bersagli_sotto_24": 12,
+    "bersagli_sotto_44": 15,
+    "ha_main": true,
+    "ha_salta_al_contenuto": false,
+    "immagini": 10,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 31,
+    "file_carattere": 6,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com"
+    ],
+    "dom_pronto_ms": 167,
+    "contrasti_esaminati": 56,
+    "contrasti_non_determinabili": 0,
+    "contrasti_bassi": 6,
+    "contrasti_dettaglio": [
+     {
+      "testo": "Cavalleggeri a cielo aperto: un museo di",
+      "rapporto": 1.04,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "La proposta di Partecipazione Attiva per",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.85)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "📅 22 luglio 2026",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.75)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "⏱ 3 minuti di lettura",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.75)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "Unisciti a Partecipazione Attiva",
+      "rapporto": 1.04,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "Crediamo nella partecipazione dei cittad",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.85)",
+      "sfondo": "rgb(250, 250, 250)"
+     }
+    ]
+   }
+  },
+  "mappa": {
+   "375": {
+    "larghezza_finestra": 375,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 375,
+    "sfondamento_px": 0,
+    "identita_px": 245,
+    "identita_testo": "La Mappa",
+    "intestazione_px": 91,
+    "voci_menu": 1,
+    "righe_menu": 1,
+    "bersagli_sotto_24": 13,
+    "bersagli_sotto_44": 25,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 8,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 4,
+    "richieste": 22,
+    "file_carattere": 8,
+    "domini_esterni": [
+     "a.tile.openstreetmap.org",
+     "b.tile.openstreetmap.org",
+     "c.tile.openstreetmap.org",
+     "hfraarlzltoiuvplushi.supabase.co",
+     "unpkg.com"
+    ],
+    "dom_pronto_ms": 266,
+    "contrasti_esaminati": 148,
+    "contrasti_non_determinabili": 1,
+    "contrasti_bassi": 12,
+    "contrasti_dettaglio": [
+     {
+      "testo": "La Mappa",
+      "rapporto": 1.02,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 253, 248)"
+     },
+     {
+      "testo": "Chi siamo, dove siamo, cosa ci sta a cuo",
+      "rapporto": 1.02,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 253, 248)"
+     },
+     {
+      "testo": "Proponi un’idea",
+      "rapporto": 1.02,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 253, 248)"
+     },
+     {
+      "testo": "Perché una mappa",
+      "rapporto": 1.02,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 253, 248)"
+     },
+     {
+      "testo": "Entra nella Mappa",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(232, 144, 10)"
+     },
+     {
+      "testo": "Napoli, Campania",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(232, 144, 10)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Ferrara, Emilia-Romagna",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(232, 144, 10)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Montescudo - Monte Colombo, Emilia-Romag",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(232, 144, 10)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "www.auragruppoconsumatori.it.    www.omn",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(232, 144, 10)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Invia richiesta",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(232, 144, 10)"
+     }
+    ]
+   },
+   "1280": {
+    "larghezza_finestra": 1280,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 1280,
+    "sfondamento_px": 0,
+    "identita_px": 334,
+    "identita_testo": "La Mappa",
+    "intestazione_px": 207,
+    "voci_menu": 15,
+    "righe_menu": 5,
+    "bersagli_sotto_24": 14,
+    "bersagli_sotto_44": 24,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 19,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 15,
+    "richieste": 33,
+    "file_carattere": 8,
+    "domini_esterni": [
+     "a.tile.openstreetmap.org",
+     "b.tile.openstreetmap.org",
+     "c.tile.openstreetmap.org",
+     "hfraarlzltoiuvplushi.supabase.co",
+     "unpkg.com"
+    ],
+    "dom_pronto_ms": 258,
+    "contrasti_esaminati": 162,
+    "contrasti_non_determinabili": 1,
+    "contrasti_bassi": 12,
+    "contrasti_dettaglio": [
+     {
+      "testo": "La Mappa",
+      "rapporto": 1.02,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 253, 248)"
+     },
+     {
+      "testo": "Chi siamo, dove siamo, cosa ci sta a cuo",
+      "rapporto": 1.02,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 253, 248)"
+     },
+     {
+      "testo": "Proponi un’idea",
+      "rapporto": 1.02,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 253, 248)"
+     },
+     {
+      "testo": "Perché una mappa",
+      "rapporto": 1.02,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 253, 248)"
+     },
+     {
+      "testo": "Entra nella Mappa",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(232, 144, 10)"
+     },
+     {
+      "testo": "Napoli, Campania",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(232, 144, 10)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Ferrara, Emilia-Romagna",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(232, 144, 10)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Montescudo - Monte Colombo, Emilia-Romag",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(232, 144, 10)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "www.auragruppoconsumatori.it.    www.omn",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(232, 144, 10)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Invia richiesta",
+      "rapporto": 2.49,
+      "soglia": 4.5,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(232, 144, 10)"
+     }
+    ]
+   }
+  },
+  "battaglie": {
+   "375": {
+    "larghezza_finestra": 375,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 375,
+    "sfondamento_px": 0,
+    "identita_px": 298,
+    "identita_testo": "Le Nostre Battaglie",
+    "intestazione_px": 121,
+    "voci_menu": 3,
+    "righe_menu": 2,
+    "bersagli_sotto_24": 18,
+    "bersagli_sotto_44": 25,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 7,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 21,
+    "file_carattere": 5,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com"
+    ],
+    "dom_pronto_ms": 146,
+    "contrasti_esaminati": 38,
+    "contrasti_non_determinabili": 0,
+    "contrasti_bassi": 2,
+    "contrasti_dettaglio": [
+     {
+      "testo": "Le Nostre Battaglie",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Ogni battaglia nasce dalla voce dei citt",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     }
+    ]
+   },
+   "1280": {
+    "larghezza_finestra": 1280,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 1280,
+    "sfondamento_px": 0,
+    "identita_px": 329,
+    "identita_testo": "Le Nostre Battaglie",
+    "intestazione_px": 190,
+    "voci_menu": 15,
+    "righe_menu": 5,
+    "bersagli_sotto_24": 18,
+    "bersagli_sotto_44": 24,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 7,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 21,
+    "file_carattere": 5,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com"
+    ],
+    "dom_pronto_ms": 146,
+    "contrasti_esaminati": 50,
+    "contrasti_non_determinabili": 0,
+    "contrasti_bassi": 2,
+    "contrasti_dettaglio": [
+     {
+      "testo": "Le Nostre Battaglie",
+      "rapporto": 1,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(255, 255, 255)"
+     },
+     {
+      "testo": "Ogni battaglia nasce dalla voce dei citt",
+      "rapporto": 1,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.88)",
+      "sfondo": "rgb(255, 255, 255)"
+     }
+    ]
+   }
+  },
+  "territori": {
+   "375": {
+    "larghezza_finestra": 375,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 375,
+    "sfondamento_px": 0,
+    "identita_px": 245,
+    "identita_testo": "Partecipazione Attiva in Italia",
+    "intestazione_px": 132,
+    "voci_menu": 3,
+    "righe_menu": 2,
+    "bersagli_sotto_24": 6,
+    "bersagli_sotto_44": 11,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 4,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 18,
+    "file_carattere": 5,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com"
+    ],
+    "dom_pronto_ms": 324,
+    "contrasti_esaminati": 40,
+    "contrasti_non_determinabili": 0,
+    "contrasti_bassi": 2,
+    "contrasti_dettaglio": [
+     {
+      "testo": "Partecipazione Attiva in Italia",
+      "rapporto": 1.09,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(245, 245, 245)"
+     },
+     {
+      "testo": "Seleziona la tua regione per trovare i g",
+      "rapporto": 1.09,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.85)",
+      "sfondo": "rgb(245, 245, 245)"
+     }
+    ]
+   },
+   "1280": {
+    "larghezza_finestra": 1280,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 1280,
+    "sfondamento_px": 0,
+    "identita_px": 200,
+    "identita_testo": "Partecipazione Attiva in Italia",
+    "intestazione_px": 111,
+    "voci_menu": 15,
+    "righe_menu": 4,
+    "bersagli_sotto_24": 6,
+    "bersagli_sotto_44": 10,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 4,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 1,
+    "richieste": 18,
+    "file_carattere": 5,
+    "domini_esterni": [
+     "analytics.webpushr.com",
+     "bot.webpushr.com",
+     "cdn.webpushr.com"
+    ],
+    "dom_pronto_ms": 136,
+    "contrasti_esaminati": 52,
+    "contrasti_non_determinabili": 0,
+    "contrasti_bassi": 2,
+    "contrasti_dettaglio": [
+     {
+      "testo": "Partecipazione Attiva in Italia",
+      "rapporto": 1.09,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(245, 245, 245)"
+     },
+     {
+      "testo": "Seleziona la tua regione per trovare i g",
+      "rapporto": 1.09,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.85)",
+      "sfondo": "rgb(245, 245, 245)"
+     }
+    ]
+   }
+  },
+  "webtv": {
+   "375": {
+    "larghezza_finestra": 375,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 375,
+    "sfondamento_px": 0,
+    "identita_px": 509,
+    "identita_testo": "Partecipazione Attiva WebTV",
+    "intestazione_px": 161,
+    "voci_menu": 1,
+    "righe_menu": 1,
+    "bersagli_sotto_24": 8,
+    "bersagli_sotto_44": 10,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 41,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 39,
+    "richieste": 16,
+    "file_carattere": 5,
+    "domini_esterni": [
+     "img.youtube.com"
+    ],
+    "dom_pronto_ms": 112,
+    "contrasti_esaminati": 107,
+    "contrasti_non_determinabili": 0,
+    "contrasti_bassi": 2,
+    "contrasti_dettaglio": [
+     {
+      "testo": "Partecipazione Attiva WebTV",
+      "rapporto": 1.04,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "Informazione & Comunicazione — live e on",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.9)",
+      "sfondo": "rgb(250, 250, 250)"
+     }
+    ]
+   },
+   "1280": {
+    "larghezza_finestra": 1280,
+    "altezza_finestra": 900,
+    "larghezza_contenuto": 1280,
+    "sfondamento_px": 0,
+    "identita_px": 547,
+    "identita_testo": "Partecipazione Attiva WebTV",
+    "intestazione_px": 190,
+    "voci_menu": 15,
+    "righe_menu": 5,
+    "bersagli_sotto_24": 8,
+    "bersagli_sotto_44": 11,
+    "ha_main": false,
+    "ha_salta_al_contenuto": false,
+    "immagini": 41,
+    "immagini_senza_alt": 0,
+    "immagini_senza_dimensioni": 39,
+    "richieste": 22,
+    "file_carattere": 5,
+    "domini_esterni": [
+     "img.youtube.com"
+    ],
+    "dom_pronto_ms": 104,
+    "contrasti_esaminati": 121,
+    "contrasti_non_determinabili": 0,
+    "contrasti_bassi": 2,
+    "contrasti_dettaglio": [
+     {
+      "testo": "Partecipazione Attiva WebTV",
+      "rapporto": 1.04,
+      "soglia": 3,
+      "colore": "rgb(255, 255, 255)",
+      "sfondo": "rgb(250, 250, 250)"
+     },
+     {
+      "testo": "Informazione & Comunicazione — live e on",
+      "rapporto": 1.04,
+      "soglia": 4.5,
+      "colore": "rgba(255, 255, 255, 0.9)",
+      "sfondo": "rgb(250, 250, 250)"
+     }
+    ]
+   }
+  }
+ }
+}
