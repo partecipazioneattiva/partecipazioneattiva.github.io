@@ -208,7 +208,7 @@ function disegna(A){
   if(!A.length){
     document.getElementById('conta').textContent = 'Nessuna azione aperta in questo momento.';
     document.getElementById('lista').innerHTML =
-      '<p style="color:#8a8175">Torna presto: le azioni vengono aperte man mano che le battaglie entrano nel vivo.</p>';
+      '<p style="color:#6f675c">Torna presto: le azioni vengono aperte man mano che le battaglie entrano nel vivo.</p>';
     return;
   }
   var aperte = A.filter(function(a){ return a.stato === 'aperta' || a.stato === 'soglia_raggiunta'; }).length;

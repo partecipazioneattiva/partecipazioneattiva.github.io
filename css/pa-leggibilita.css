@@ -109,3 +109,61 @@ label { max-width: 100%; }
    cioe' un livello saltato. Portati a h2, questa regola tiene l'aspetto
    di prima sulle pagine che non hanno una regola propria. */
 footer h2{font-size:1em;font-weight:700;color:inherit;margin:1.33em 0}
+
+
+/* ══ CONTRASTI — solo i sette casi CERTI, misurati nel browser ═════════════
+   Il conteggio automatico dei contrasti da' molti falsi allarmi: quando sotto
+   il testo c'e' una sfumatura o una foto, il colore di sfondo non si puo'
+   leggere e sembra sempre "bianco su bianco". Questi sette invece hanno uno
+   sfondo pieno e sono veri (misurati l'8 agosto 2026).
+
+   La radice e' una sola: l'arancione del movimento #E8900A e' troppo chiaro
+   sia per portare testo bianco sia per essere testo su bianco. Non lo tocco
+   dove fa da sfondo decorativo: cambio solo il testo che ci sta sopra o
+   accanto, usando colori che il sito gia' usa. */
+
+/* 1. il ticker in cima alla home: giallo su rosso, 3,91 invece di 4,5.
+      Schiarisco il testo, il rosso resta quello. */
+body #tk, body #tk a, body #tk strong, body #tk a strong { color: #ffeacb !important; }
+
+/* 2. bottone arancione con scritta bianca (2,49): la scritta diventa scura,
+      come sul bottone "Sostienici" che era gia' fatto bene. */
+body .sottomappa .btn { color: #2b1a00; }
+
+/* 3. l'arancione usato come TESTO su fondo chiaro (2,49): diventa il bruno
+      che il sito usa gia' per i collegamenti attivi (4,6 su bianco). */
+body .dove, body summary .dove, body .voce .dove { color: #9c5b00; }
+
+/* I collegamenti scritti nell'arancione del movimento su fondo chiaro:
+   2,49 invece di 4,5. Passano al bruno che il sito usa gia' per la voce
+   di menu attiva (4,6 su bianco). L'arancione resta dov'e' uno sfondo. */
+body .voce a, body .det a, body details a:not(.btn):not([class*="btn-"]),
+body .elenco-box a:not(.btn) { color: #9c5b00; }
+/* il bottone arancione del modulo: scritta scura invece che bianca */
+body .form .btn, body button.btn, body #invia { color: #2b1a00; }
+
+/* 4. oro scuro su blu notte (3,11): oro piu' chiaro. */
+body [style*="0d1b4b"] strong, body [style*="#0D1B4B"] strong { color: #e8b84b; }
+
+/* 5. la riga del copyright nel pie' di pagina: grigio #666 su quasi-nero,
+      3,03. Sono i dati dell'associazione: devono potersi leggere. */
+body .footer-bottom, body .foot-bottom, body .footer-bottom span, body .foot-bottom span { color: #b3b3b3; }
+
+
+/* La riga «Parlerò · Salotto Culturale · News FB · YouTube» di
+   sanitapubblica.html: stava dentro la barra scura del menu ed era scritta in
+   chiaro. Spostandola fuori (per rendere il menu uguale a tutte le altre
+   pagine) e' finita su fondo chiaro e non si leggeva piu': 1,36 invece di 4,5.
+   L'ho causato io l'8 agosto 2026, e qui lo rimedio. */
+body .nav-row{background:#5f3500;padding:6px 18px}
+body .nav-row a, body .nav-row span{color:#ffe9cb}
+body .nav-row .parlero-link{color:#ffd580;font-weight:700}
+body .nav-row .parlero-sub{color:#f0dfc6}
+body .nav-row .separator{color:#c9a97a}
+
+/* Il riquadro «Vuoi contribuire a questa battaglia?» di sanitapubblica.html:
+   arancione #E07B2A con scritte bianche = 2,98 invece di 4,5. Scurisco il
+   fondo (l'arancione resta arancione) e il bottone bianco prende testo scuro.
+   Difetto preesistente, non causato dai lavori dell'8 agosto. */
+body .cta-section{background:#a8551a}
+body .cta-section .cta-btn{color:#7a3d10}
