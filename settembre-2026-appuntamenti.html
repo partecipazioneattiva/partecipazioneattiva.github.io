@@ -159,6 +159,8 @@
     <label class=sq-scelta><input type=checkbox name=tema value="ape"><span><b>APE — l’Assemblea Popolare Ecumenica</b><small>Angelo Nicotra · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="mappa"><span><b>La Mappa dei cittadini attivi</b><small>Daniele Tandura · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="legge-elettorale"><span><b>La legge elettorale</b><small>Luigi Spanu · in diretta</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="rc-auto"><span><b>RC Auto uguale per tutti</b><small>Paolo Neri · in diretta</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="arte-del-dono"><span><b>L’arte del dono</b><small>Stefano Piva · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="donna-a-napoli"><span><b>Essere donna a Napoli</b><small>Rosa Ugon · WebTV</small></span></label>
   </fieldset>
 
+  <div class=sq-altro><label for=sq-altro-t><b>C&rsquo;&egrave; altro che ti sta a cuore?</b></label><p class=sq-nota>Scrivilo qui, con parole tue. Lo leggiamo noi, uno per uno. Non serve che sia uno dei sei temi: se quello che ti preme non c&rsquo;&egrave;, dillo lo stesso.<br><strong>Non scrivere nomi di persone n&eacute; dati riservati</strong> (tuoi o di altri): non ci servono, e non vogliamo conservarli.</p><textarea id=sq-altro-t name=altro rows=3 maxlength=400 placeholder="Per me la cosa pi&ugrave; urgente &egrave;&hellip;"></textarea><p class=sq-conta><span id=sq-resta>400</span> caratteri rimasti</p></div>
+
   <div class=sq-mail>
     <label for=sq-email><b>La tua email</b></label>
     <p class=sq-nota>Serve solo a contare una volta sola.
@@ -193,7 +195,7 @@
 .sq-scelta span{display:block;line-height:1.4}
 .sq-scelta small{display:block;color:#6b5a45;font-size:.85em;margin-top:3px}
 .sq-scelta.sq-piena{opacity:.5}
-.sq-mail{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px}
+.sq-altro{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px;margin-bottom:16px}.sq-altro textarea{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;font-family:inherit;line-height:1.6;border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222;resize:vertical;min-height:88px}.sq-conta{color:#8a7a66;font-size:.82em;margin:6px 0 0;text-align:right}.sq-mail{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px}
 .sq-nota{color:#5a5a5a;font-size:.9em;line-height:1.6;margin:6px 0 14px}
 .sq-mail input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;
   border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222}
@@ -238,7 +240,8 @@ function dì(t,cl){ msg.textContent=t; msg.className='sq-msg '+(cl||''); }
 form.addEventListener('submit', function(e){
   e.preventDefault();
   var temi=scelti();
-  if(!temi.length) return dì('Scegli almeno un tema.','ko');
+  var altro=(document.getElementById('sq-altro-t').value||'').trim();
+  if(!temi.length && !altro) return dì('Segna almeno un tema, oppure scrivi cosa hai a cuore.','ko');
   var email=(document.getElementById('sq-email').value||'').trim();
   if(!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(email)) return dì('Controlla l\u2019indirizzo email.','ko');
   if(!document.getElementById('sq-ok').checked) return dì('Serve la spunta sull\u2019informativa.','ko');
@@ -246,7 +249,7 @@ form.addEventListener('submit', function(e){
   fetch(SB_URL+'/functions/v1/sondaggio',{
     method:'POST',
     headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},
-    body:JSON.stringify({temi:temi,email:email})
+    body:JSON.stringify({temi:temi,email:email,altro:altro})
   }).then(function(r){ return r.json().then(function(j){ return j; }); })
     .then(function(j){
       if(j&&j.ok){
@@ -288,6 +291,8 @@ det.addEventListener('toggle', function(){
      '<p class=sq-nota>Non riesco a leggere i numeri adesso.</p>'; });
 });
 aggiorna();
+var ta=document.getElementById('sq-altro-t'), resta=document.getElementById('sq-resta');
+ta.addEventListener('input',function(){ resta.textContent=400-ta.value.length; });
 })();
 </script>
 
