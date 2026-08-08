@@ -21,10 +21,15 @@
 
 const SITO = "https://partecipazione-attiva.it";
 
-// Il mittente e' quello che il sito usa gia' (visto sulle mail della Mappa).
+// IL MITTENTE. Attenzione alla trappola: sulle mail gia' spedite Gmail mostra
+// come mittente un indirizzo @NUMERO.brevosend.com, ma quello NON e' il mittente
+// da dichiarare — e' quello che Brevo ci mette al posto suo, perche' Gmail non
+// permette di spedire "a nome di" un indirizzo @gmail.com. Dichiarando quello
+// Brevo risponde «Sending has been rejected because the sender you used...».
+// Va dichiarato l'indirizzo VERO, quello validato nell'account Brevo.
 const MITTENTE_EMAIL =
   Deno.env.get("BREVO_MITTENTE") ??
-  "webmaster.partecipazione.attiva@10909356.brevosend.com";
+  "webmaster.partecipazione.attiva@gmail.com";
 const MITTENTE_NOME = "Partecipazione Attiva";
 const RISPONDI_A = "webmaster.partecipazione.attiva@gmail.com";
 
