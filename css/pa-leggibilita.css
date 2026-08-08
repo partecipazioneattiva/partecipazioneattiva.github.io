@@ -241,3 +241,12 @@ body .cta-section .cta-btn{color:#7a3d10}
   .pa-e-adesso-link{flex-direction:column}
   .pa-e-adesso-link a{justify-content:center}
 }
+
+
+/* «Ultimo aggiornamento» sulle schede delle battaglie (fase 3.3).
+   Non promette uno stato che nessuno poi mantiene: dice quando e' uscito
+   l'ultimo articolo su quella battaglia, e il lettore ne trae le conclusioni. */
+.bat-aggiornata{
+  font-family:montserrat,sans-serif; font-size:.8rem; color:#6f675c;
+  margin:0 0 14px; padding-top:4px; border-top:1px solid #eee;
+}
