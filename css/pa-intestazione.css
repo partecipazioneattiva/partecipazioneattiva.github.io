@@ -1,0 +1,121 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   L'INTESTAZIONE DI PARTECIPAZIONE ATTIVA — UNA SOLA, PER TUTTE LE PAGINE
+   ══════════════════════════════════════════════════════════════════════════
+
+   Ordine di Fernando, 8 agosto 2026:
+     «devi creare il menu/navbar uguale per tutte le pagine, le cose cambiano
+      da dopo il menu in poi. Il campione e' quello che ti ho condiviso.»
+   Campione: l'intestazione di mappa.html — logo tondo, accanto il nome e sotto
+   "MOVIMENTO POPOLARE DEI CITTADINI ITALIANI", le voci al centro, i due
+   bottoni e la lente a destra. Piu' bassa di prima: gli spazi vuoti erano
+   troppi.
+
+   PERCHE' UN FILE A PARTE, E PERCHE' LE PAGINE NON DEVONO PIU' AVERE IL LORO
+   Il sito e' HTML statico senza template condiviso: ogni pagina si portava
+   dentro la propria copia del menu. MISURATO l'8 agosto 2026:
+     - 61 pagine su 64 con regole proprie del menu, 67 selettori diversi;
+     - quattro versioni della regola delle voci (18px di spazio sopra e sotto
+       su 12 pagine, 14px su 10; testo .92em contro .76em);
+     - meta' delle pagine senza la regola del sottotitolo, che il browser
+       disegnava a 16,7 px invece di 11,6;
+     - 56 pagine dichiaravano il logo 400x400 e lo caricavano in ritardo;
+     - risultato: intestazioni da 108 a 247 px a seconda della pagina.
+   Non era una scelta di nessuno: era il sito cresciuto a pezzi in due anni.
+
+   ⚠️ REGOLA D'ORO: le regole del menu stanno SOLO qui.
+   Se una pagina se le riporta dentro, torna il disordine. Per cambiare
+   l'intestazione si tocca questo file, e cambia su tutte e 64 le pagine.
+   Lo strumento che toglie le copie dalle pagine e'
+   _tools/intestazione_unica.py.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── la barra scura in alto ─────────────────────────────────────────────── */
+.topbar{background:#5f3500;color:#fff;padding:6px 18px;display:flex;
+        justify-content:space-between;align-items:center;font-size:.78em;
+        flex-wrap:wrap;gap:4px 12px}
+.topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600}
+.topbar a:hover{color:#fff}
+
+/* ── la barra bianca del menu ───────────────────────────────────────────── */
+.navbar{position:sticky;top:0;z-index:999;background:#fff;
+        border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,.08);
+        display:flex;align-items:center;gap:12px;padding:6px 18px;
+        min-height:0;position:relative}
+
+/* il logo col nome accanto — la parte che Fernando voleva su tutte le pagine */
+.nav-logo{display:flex;align-items:center;gap:12px;padding:4px 0;
+          text-decoration:none;flex-shrink:0}
+.nav-logo img{width:60px;height:60px;border-radius:50%}
+.nav-nome{font-weight:900;font-size:1.2em;color:#8a4e00;line-height:1.1}
+.nav-nome small{display:block;font-weight:400;font-size:.58em;color:#666;
+                letter-spacing:2px;text-transform:uppercase;line-height:1.15}
+
+/* le voci: spazio verticale ridotto, era il vuoto da recuperare */
+.nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;
+           flex:1 1 auto;justify-content:center}
+.nav-links a{padding:9px 11px;color:#444;text-decoration:none;font-size:.9em;
+             font-weight:700;text-transform:uppercase;letter-spacing:.4px;
+             line-height:1.45;                     /* fissa: altrimenti ogni pagina
+                                                      impone la sua e l'intestazione
+                                                      cambia altezza (39 px su una
+                                                      pagina, 45 su un'altra) */
+             border-bottom:3px solid transparent;
+             transition:color .2s,border-color .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:#9c5b00;border-bottom-color:#9c5b00}
+
+/* i due bottoni e la lente, a destra */
+.nav-cta{display:flex;gap:10px;margin-left:auto;flex-shrink:0;align-self:center}
+.btn-iscr,.btn-sost{padding:10px 18px;border-radius:50px;text-decoration:none;
+                    font-size:.85em;font-weight:900;white-space:nowrap;
+                    line-height:1.45;              /* come sopra: fissa */
+                    transition:background .2s}
+.btn-iscr{background:#188739;color:#fff;box-shadow:0 4px 14px rgba(26,143,60,.35)}
+.btn-iscr:hover{background:#146e2e}
+.btn-sost{background:#e8900a;color:#2b1a00;border:2px solid #e8900a;
+          box-shadow:0 4px 14px rgba(232,144,10,.35)}
+.btn-sost:hover{background:#c77607}
+
+/* il pulsante a tre righe, solo da telefono */
+.burger{display:none;background:transparent;border:none;cursor:pointer;
+        flex-direction:column;gap:5px;padding:8px}
+.burger span{display:block;width:24px;height:2px;background:#5f3500;
+             border-radius:2px;transition:all .3s}
+.mob-menu{display:none;flex-direction:column;background:#fff;
+          border-top:2px solid #f0f0f0;position:absolute;top:100%;left:0;right:0;
+          box-shadow:0 8px 20px rgba(0,0,0,.12)}
+.mob-menu.on{display:flex}
+.mob-menu a{padding:14px 24px;color:#333;text-decoration:none;font-weight:700;
+            font-size:.9em;border-bottom:1px solid #f5f5f5}
+.mob-menu a:hover{background:#fff8ee;color:#9c5b00}
+
+/* ── da tablet in giu': le voci si chiudono nel pulsante a tre righe ────── */
+/* ── da tablet in giu' ──────────────────────────────────────────────────────
+   MISURATO l'8 agosto 2026 su uno schermo da 375 px: logo+nome (225) piu' i
+   due bottoni (174) piu' la lente (42) piu' il pulsante a tre righe (40)
+   fanno 543 px. Non ci stanno su una riga, e nessuna riga sola li contiene.
+
+   Il campione (mappa.html) risolveva nascondendo i due bottoni. Ma il menu a
+   tendina contiene "Iscriviti" e NON "Sostienici": nasconderli toglierebbe le
+   donazioni dal telefono, che e' il posto da cui la gente guarda il sito.
+
+   Quindi su telefono l'intestazione va su DUE righe — logo e nome sopra,
+   lente, bottoni e menu sotto — e resta tutto raggiungibile. Il sottotitolo
+   invece sparisce: da solo e' largo 370 px e non entra in nessun caso. */
+@media(max-width:900px){
+  .topbar{padding:6px 14px}
+  .navbar{padding:4px 14px;flex-wrap:wrap;gap:6px 10px;row-gap:0}
+  .nav-links{display:none}
+  .burger{display:flex;order:3}
+  .nav-cta{order:2;margin-left:auto;gap:8px}
+  .nav-cta a{padding:9px 16px;font-size:.86em}
+  .nav-nome{font-size:1.02em}
+  .nav-nome small{display:none}
+  .nav-logo{padding:2px 0}
+  .nav-logo img{width:46px;height:46px}
+}
+
+@media(max-width:420px){
+  .nav-nome{font-size:.94em}
+  .nav-logo img{width:40px;height:40px}
+  .nav-cta a{padding:8px 12px;font-size:.8em}
+}
