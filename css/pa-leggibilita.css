@@ -74,6 +74,10 @@ img, svg, video, iframe { max-width: 100%; }
    nessuno perche' nessuno aveva mai misurato le pagine interne. */
 body { overflow-wrap: break-word; }
 
+/* Le etichette dei moduli non devono uscire dal loro spazio: sui filtri della
+   Mappa una LABEL sfondava di 4 px su uno schermo da 320. */
+label { max-width: 100%; }
+
 /* Titoli delle colonne del pie' di pagina: erano <h4> dopo un <h2>,
    cioe' un livello saltato. Portati a h2, questa regola tiene l'aspetto
    di prima sulle pagine che non hanno una regola propria. */

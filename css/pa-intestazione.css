@@ -46,9 +46,15 @@
 .nav-logo{display:flex;align-items:center;gap:12px;padding:4px 0;
           text-decoration:none;flex-shrink:0}
 .nav-logo img{width:60px;height:60px;border-radius:50%}
-.nav-nome{font-weight:900;font-size:1.2em;color:#8a4e00;line-height:1.1}
+/* Il nome va a capo su due righe e il sottotitolo su tre: cosi' il blocco e'
+   STRETTO invece che largo, e lascia spazio alle voci del menu.
+   Scelta di Fernando, 8 agosto 2026: «il logo deve essere cosi', ruba anche
+   meno spazio». Su una riga sola il blocco misurava 428 px. */
+.nav-nome{font-weight:900;font-size:1.2em;color:#8a4e00;line-height:1.08;
+          max-width:190px}
 .nav-nome small{display:block;font-weight:400;font-size:.58em;color:#666;
-                letter-spacing:2px;text-transform:uppercase;line-height:1.15}
+                letter-spacing:1.6px;text-transform:uppercase;line-height:1.2;
+                margin-top:2px}
 
 /* le voci: spazio verticale ridotto, era il vuoto da recuperare */
 .nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;
@@ -88,8 +94,11 @@
             font-size:.9em;border-bottom:1px solid #f5f5f5}
 .mob-menu a:hover{background:#fff8ee;color:#9c5b00}
 
-/* ── da tablet in giu': le voci si chiudono nel pulsante a tre righe ────── */
-/* ── da tablet in giu' ──────────────────────────────────────────────────────
+/* ── DA TABLET IN GIU': le voci si chiudono nel pulsante a tre righe ───────
+   La soglia e' 1200 px, non 900: con 12 voci, sotto quella misura il menu
+   andava su tre o quattro righe (183 px di intestazione a 1024, 141 a 1152).
+   Meglio il menu a tendina che un'intestazione che mangia un quinto di schermo.
+
    MISURATO l'8 agosto 2026 su uno schermo da 375 px: logo+nome (225) piu' i
    due bottoni (174) piu' la lente (42) piu' il pulsante a tre righe (40)
    fanno 543 px. Non ci stanno su una riga, e nessuna riga sola li contiene.
@@ -101,7 +110,7 @@
    Quindi su telefono l'intestazione va su DUE righe — logo e nome sopra,
    lente, bottoni e menu sotto — e resta tutto raggiungibile. Il sottotitolo
    invece sparisce: da solo e' largo 370 px e non entra in nessun caso. */
-@media(max-width:900px){
+@media(max-width:1260px){
   .topbar{padding:6px 14px}
   .navbar{padding:4px 14px;flex-wrap:wrap;gap:6px 10px;row-gap:0}
   .nav-links{display:none}
@@ -118,4 +127,12 @@
   .nav-nome{font-size:.94em}
   .nav-logo img{width:40px;height:40px}
   .nav-cta a{padding:8px 12px;font-size:.8em}
+}
+
+/* Telefoni piccoli e vecchi (iPhone SE e simili): a 320 px sfondava di 4 px. */
+@media(max-width:360px){
+  .navbar{padding:4px 10px;gap:4px 8px}
+  .nav-logo{gap:8px}
+  .nav-nome{font-size:.86em;max-width:150px}
+  .nav-cta a{padding:7px 10px;font-size:.76em}
 }
