@@ -17,7 +17,13 @@
 -- nessuno dei sei l'abbia convinta e' essa stessa un'informazione.
 -- =====================================================================
 
-create or replace view sondaggio_risultati as
+-- ⚠️ Serve buttarla e rifarla, non basta «create or replace»: Postgres non
+-- permette di RINOMINARE una colonna di una vista esistente (42P16), e la
+-- quarta colonna prima si chiamava «totale». Su una vista non e' un rischio:
+-- non contiene dati, e' solo una finestra sui numeri della tabella.
+drop view if exists sondaggio_risultati;
+
+create view sondaggio_risultati as
   select tema,
          ordine,
          voti,
