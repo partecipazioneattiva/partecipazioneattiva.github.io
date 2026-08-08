@@ -48,14 +48,22 @@ fetch(SB_URL+'/functions/v1/sondaggio',{method:'POST',headers:{apikey:SB_KEY,Aut
   if(j.esito!=='contato') return dì('Non ha funzionato','Riprova fra poco.');
   dì('Voto contato. Grazie.',
      'Il tuo indirizzo \u00e8 stato <strong>cancellato adesso</strong>: al suo posto resta un codice illeggibile, che serve solo a evitare i doppioni e non si pu\u00f2 ricondurre a nessuno.');
-  var tot=j.totale||0, d=(j.risultati||[]).slice().sort(function(a,b){return b.voti-a.voti;});
-  document.getElementById('barre').innerHTML=d.map(function(x){
-    var p=tot?Math.round(x.voti*100/tot):0;
-    return '<div class=barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
-           '<u><b style="width:'+p+'%"></b></u></div>';
-  }).join('');
-  document.getElementById('tot').textContent=tot+' voti confermati finora.';
-  document.getElementById('ris').hidden=false;
+  fetch(SB_URL+'/rest/v1/sondaggio_risultati?select=tema,voti,persone&order=ordine',
+    {headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
+   .then(function(r){return r.json();})
+   .then(function(d){
+     var tot=(d[0]&&d[0].persone)||0;
+     d=d.slice().sort(function(a,b){return b.voti-a.voti;});
+     document.getElementById('barre').innerHTML=d.map(function(x){
+       var p=tot?Math.round(x.voti*100/tot):0;
+       return '<div class=barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
+              '<u><b style="width:'+p+'%"></b></u></div>';
+     }).join('');
+     document.getElementById('tot').textContent=
+       tot+(tot===1?' persona ha risposto':' persone hanno risposto')+
+       '. Le percentuali dicono quanti, fra loro, hanno indicato quel tema.';
+     document.getElementById('ris').hidden=false;
+   });
 }).catch(function(){ dì('Connessione non riuscita','Riprova ad aprire il collegamento fra poco.'); });
 })();
 </script>

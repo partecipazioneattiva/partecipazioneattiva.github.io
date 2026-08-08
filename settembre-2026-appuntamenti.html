@@ -272,20 +272,20 @@ form.addEventListener('submit', function(e){
 var det=document.querySelector('.sq-ris'), caricati=false;
 det.addEventListener('toggle', function(){
   if(!det.open||caricati) return; caricati=true;
-  fetch(SB_URL+'/rest/v1/sondaggio_risultati?select=tema,voti,totale&order=ordine',
+  fetch(SB_URL+'/rest/v1/sondaggio_risultati?select=tema,voti,persone&order=ordine',
     {headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
    .then(function(r){return r.json();})
    .then(function(d){
      var box=document.getElementById('sq-ris-corpo');
      if(!d||!d.length){ box.innerHTML='<p class=sq-nota>Ancora nessun voto.</p>'; return; }
-     var tot=d[0].totale||0;
-     if(!tot){ box.innerHTML='<p class=sq-nota>Ancora nessun voto: puoi essere il primo.</p>'; return; }
+     var tot=d[0].persone||0;
+     if(!tot){ box.innerHTML='<p class=sq-nota>Ancora nessuna risposta: puoi essere il primo.</p>'; return; }
      d.sort(function(a,b){return b.voti-a.voti;});
      box.innerHTML=d.map(function(x){
        var p=Math.round(x.voti*100/tot);
        return '<div class=sq-barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
               '<u><b style="width:'+p+'%"></b></u></div>';
-     }).join('')+'<p class=sq-nota>'+tot+' voti confermati. Ogni persona vale un voto, e pu\u00f2 segnare pi\u00f9 temi.</p>';
+     }).join('')+'<p class=sq-nota>'+tot+(tot===1?' persona ha risposto':' persone hanno risposto')+'. Le percentuali dicono quanti, fra loro, hanno indicato quel tema: la somma pu\u00f2 superare il 100%, perch\u00e9 si possono segnare pi\u00f9 temi.</p>';
    })
    .catch(function(){ document.getElementById('sq-ris-corpo').innerHTML=
      '<p class=sq-nota>Non riesco a leggere i numeri adesso.</p>'; });
