@@ -32,11 +32,20 @@ Seguici su Facebook</a></div></div></div></section><section class=documenti id=s
   if(localStorage.getItem('pa-notif-dismissed')) return;
   if(typeof Notification !== 'undefined' && Notification.permission === 'granted') return;
   var b = document.getElementById('pa-notif-banner'); if(!b) return;
+  /* Non si chiede un permesso a chi non ha ancora capito chi siamo.
+     Prima visita: niente. Dalla seconda, e solo dopo che ha letto il 40%
+     della pagina. Tolto il timer degli 8 secondi: il tempo che passa non
+     e' interesse, e mostrava il banner a chi era ancora fermo in cima. */
+  var visite = parseInt(localStorage.getItem('pa-visite') || '0', 10) + 1;
+  localStorage.setItem('pa-visite', String(visite));
+  if (visite < 2) return;
   var shown=false;
   function show(){ if(shown) return; shown=true; b.style.display='flex'; window.removeEventListener('scroll',onScroll); }
-  function onScroll(){ if((window.scrollY||window.pageYOffset) > 500) show(); }
+  function onScroll(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    if (h > 0 && (window.scrollY||window.pageYOffset) / h > 0.4) show();
+  }
   window.addEventListener('scroll',onScroll,{passive:true});
-  setTimeout(show, 8000);
 })();
 </script><footer data-pagefind-ignore data-pa-section="footer" id=contatti><div class=foot-grid><div class=foot-brand><img src=LOGO-PA.webp alt="Partecipazione Attiva — Movimento Popolare dei Cittadini Italiani" width=48 height=48><div class=nav-nome style=color:#f5a623;font-size:1em>Partecipazione Attiva</div><p>Una libera associazione di cittadini per una politica trasparente e partecipata, ispirata alla Costituzione italiana.</div><div class=foot-col><h2>Navigazione</h2><a href=index.html>Home</a><a href=/feed.xml style="display:flex;align-items:center;gap:6px">&#128229; Feed RSS</a><a href=napoli.html style=color:#ffb020;font-weight:900>&#9679; Napoli</a><a href=#blog>News FB</a>
 <a href=territori.html>Territori</a><a href=mappa.html>Mappa</a><a href=webtv.html>WebTV</a><a href=azioni.html>Azioni</a><a href=rete-ape.html>Rete APE</a><a href=organigramma.html>Organigramma</a><a href=chi-siamo.html>Chi Siamo</a>
