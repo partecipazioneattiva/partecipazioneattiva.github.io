@@ -33,6 +33,47 @@ body .article-wrap .sommario {
    dopo. */
 img { height: auto; }
 
+/* ...e questa e' l'altra meta', che mancava.
+
+   MISURATO l'8 agosto 2026: la home sfondava lo schermo di 63 px a 320 px e di
+   8 px a 375. Non era il ticker (quello e' gia' tagliato dal suo contenitore):
+   era che NESSUNA immagine del sito aveva un max-width. Un'immagine senza
+   max-width si disegna alla sua larghezza naturale, e dentro una griglia
+   costringe la colonna ad allargarsi oltre il contenitore che la contiene —
+   la colonna misurava 366,594 px dentro una griglia da 343.
+
+   Insieme a "height: auto" qui sopra, questa riga fa la cosa giusta: l'immagine
+   non supera mai il suo contenitore e mantiene le proporzioni. */
+img, svg, video, iframe { max-width: 100%; }
+
+/* --- E questa e' la causa vera dello sfondamento -------------------------
+
+   Dentro una griglia, un elemento nasce con "min-width: auto", che vuol dire
+   "non scendere MAI sotto la larghezza del tuo contenuto". Su uno schermo
+   stretto il contenuto non ci sta, l'elemento si rifiuta di rimpicciolire, e
+   la colonna diventa piu' larga della griglia che la contiene: misurava
+   366,594 px dentro una griglia da 343.
+
+   "min-width: 0" toglie quel divieto: la colonna torna a seguire lo schermo e
+   il testo va a capo, che e' quello che deve fare.
+
+   MISURATO l'8 agosto 2026: 63 px di sfondamento a 320, 8 px a 375. */
+.mob-1col > *, .mob-2col > *,
+.notizia-card-grid > *, .doc-grid > *,
+.iscr-box > *, .iscr-due > *, .foot-grid > *,
+.pa-dl > *, .doc-card > *, .topbar > * { min-width: 0; }
+
+/* --- Le parole lunghissime devono andare a capo --------------------------
+
+   Una parola senza spazi (il nome di un file, un indirizzo web) non va a capo
+   da sola: esce dal suo riquadro e si porta dietro tutta la pagina.
+
+   MISURATO l'8 agosto 2026: documenti.html sfondava di 190 px su OGNI telefono
+   per colpa di un estratto che riportava il nome del file
+   "29/09/2022_DEF PARTECIPAZIONE ATTIVA MANIFESTO...". Non se n'era accorto
+   nessuno perche' nessuno aveva mai misurato le pagine interne. */
+body { overflow-wrap: break-word; }
+
 /* Titoli delle colonne del pie' di pagina: erano <h4> dopo un <h2>,
    cioe' un livello saltato. Portati a h2, questa regola tiene l'aspetto
    di prima sulle pagine che non hanno una regola propria. */
