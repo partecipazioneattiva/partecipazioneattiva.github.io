@@ -1,22 +1,31 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-ALLINEA IL LOGO E IL SOTTOTITOLO DELL'INTESTAZIONE SU TUTTE LE PAGINE
-=====================================================================
-Scelta di Fernando, 8 agosto 2026: gli piace l'intestazione di mappa.html —
-logo con accanto il nome e sotto "Movimento Popolare dei Cittadini Italiani" —
-e la vuole identica su tutto il sito.
+IL LOGO CON LE SCRITTE — IDENTICO SU TUTTI I MENU, NESSUNO ESCLUSO
+==================================================================
+Ordine di Fernando, 8 agosto 2026:
+  «questo e' il logo con le scritte da applicare a tutte le pagine, puoi
+   adattare la grandezza ma deve essere ESATTAMENTE uguale, e deve essere in
+   tutti i menu nessuno escluso. Nessuna iniziativa di modificarlo, tolta la
+   dimensione se serve.»
 
-MISURATO prima di intervenire: 14 pagine su 64 non avevano il sottotitolo, e su
-quelle il logo era scritto cosi':
+IL BLOCCO, esattamente come nel disegno che ha mandato:
 
-    <img loading=lazy src="LOGO-PA.webp" width="400" height="400">
+    (logo tondo)   Partecipazione
+                   Attiva
+                   MOVIMENTO
+                   POPOLARE DEI
+                   CITTADINI ITALIANI
 
-cioe' con due difetti veri, non solo estetici:
-  - dichiarava 400x400 mentre si vede a 68x68: il browser riservava un buco
-    enorme e poi lo rimpiccioliva, e la pagina si assestava sotto gli occhi;
-  - "loading=lazy" su un'immagine che sta in cima: il browser la rimandava,
-    proprio quella che si vede per prima.
+⚠️ LE INTERRUZIONI DI RIGA SONO FISSE (<br>), NON AFFIDATE AL BROWSER.
+Motivo misurato: "MOVIMENTO POPOLARE" e' lungo quanto "CITTADINI ITALIANI",
+quindi lasciando andare a capo il browser il testo si spezzerebbe come
+"MOVIMENTO POPOLARE / DEI CITTADINI / ITALIANI" — non come nel disegno.
+Con le interruzioni fisse il blocco e' identico su ogni pagina e a ogni
+larghezza di schermo.
+
+L'aspetto (carattere, corpo, colori, spaziatura) sta in css/pa-intestazione.css.
+Qui c'e' solo il testo e la struttura.
 
     python3 _tools/allinea_logo.py            # prova a vuoto
     python3 _tools/allinea_logo.py --applica
@@ -26,49 +35,43 @@ import os, re, sys
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 APPLICA = "--applica" in sys.argv
 
-SOTTOTITOLO = "Movimento Popolare dei Cittadini Italiani"
+NOME = "Partecipazione<br>Attiva"
+SOTTO = "MOVIMENTO<br>POPOLARE DEI<br>CITTADINI ITALIANI"
 
-# il blocco buono, quello di mappa.html
-BUONO = ('<img src="LOGO-PA.webp" alt="Logo Partecipazione Attiva" width="68" height="68">'
-         '<div class="nav-nome">Partecipazione Attiva'
-         f'<small>{SOTTOTITOLO}</small></div>')
+BUONO = ('<img src="LOGO-PA.webp" alt="Partecipazione Attiva — Movimento Popolare '
+         'dei Cittadini Italiani" width="68" height="68">'
+         f'<div class="nav-nome">{NOME}<small>{SOTTO}</small></div>')
 
-# prende il blocco logo qualunque forma abbia
+# prende il blocco logo qualunque forma abbia oggi
 RE_BLOCCO = re.compile(
-    r'(<a[^>]*class="?nav-logo"?[^>]*>)\s*'      # apertura <a class=nav-logo>
-    r'<img[^>]*>\s*'                              # l'immagine, comunque scritta
-    r'<div class="?nav-nome"?>(.*?)</div>\s*'     # il nome (con o senza <small>)
-    r'(</a>)',
+    r'(<a[^>]*class="?nav-logo"?[^>]*>|<div[^>]*class="?nav-logo"?[^>]*>)\s*'
+    r'<img[^>]*>\s*'
+    r'<div class="?nav-nome"?>(.*?)</div>\s*'
+    r'(</a>|</div>)',
     re.S)
 
 
 def main():
-    print("MODO:", "SCRIVO" if APPLICA else "prova a vuoto")
+    print("MODO:", "SCRIVO" if APPLICA else "prova a vuoto (non scrivo niente)")
     cambiate = gia = senza = 0
     for f in sorted(x for x in os.listdir(REPO) if x.endswith(".html")):
         p = os.path.join(REPO, f)
         d = open(p, encoding="utf-8").read()
         m = RE_BLOCCO.search(d)
         if not m:
-            senza += 1
+            if "<nav" in d:
+                senza += 1
+                print(f"  ⚠️  {f}: ha un menu ma non riconosco il blocco del logo")
             continue
-        vecchio = m.group(0)
         nuovo = m.group(1) + BUONO + m.group(3)
-        if vecchio == nuovo:
+        if m.group(0) == nuovo:
             gia += 1
             continue
-        note = []
-        if SOTTOTITOLO not in vecchio:
-            note.append("mancava il sottotitolo")
-        if 'width="400"' in vecchio or "width=400" in vecchio:
-            note.append("logo dichiarato 400x400")
-        if "loading=lazy" in vecchio or 'loading="lazy"' in vecchio:
-            note.append("logo in ritardo (lazy)")
         cambiate += 1
-        print(f"  ✏️  {f:44} {' · '.join(note) if note else 'allineo'}")
+        print(f"  ✏️  {f}")
         if APPLICA:
             open(p, "w", encoding="utf-8").write(d[:m.start()] + nuovo + d[m.end():])
-    print(f"\n  {cambiate} pagine allineate · {gia} gia' a posto · {senza} senza intestazione")
+    print(f"\n  {cambiate} pagine aggiornate · {gia} gia' identiche · {senza} da guardare a mano")
     if not APPLICA:
         print("  (rilancia con --applica per scrivere)")
 

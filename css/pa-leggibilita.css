@@ -61,7 +61,16 @@ img, svg, video, iframe { max-width: 100%; }
 .mob-1col > *, .mob-2col > *,
 .notizia-card-grid > *, .doc-grid > *,
 .iscr-box > *, .iscr-due > *, .foot-grid > *,
-.pa-dl > *, .doc-card > *, .topbar > * { min-width: 0; }
+.pa-dl > *, .doc-card > *, .topbar > *, .tipo > * { min-width: 0; }
+
+/* La scelta "Cittadino / Associazione" del modulo della Mappa e' una griglia a
+   due colonne fisse. Su uno schermo da 320 px non ci stanno: la sola parola
+   "Associazione" e' larga 150, due colonne piu' i margini fanno 364.
+   Sotto i 420 px vanno una sotto l'altra — ed e' anche piu' comodo da toccare.
+   MISURATO l'8 agosto 2026: erano i 4 px di sfondamento di mappa.html. */
+@media (max-width: 420px) {
+  body .tipo { grid-template-columns: 1fr; }
+}
 
 /* --- Le parole lunghissime devono andare a capo --------------------------
 

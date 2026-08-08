@@ -36,6 +36,11 @@
 .topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600}
 .topbar a:hover{color:#fff}
 
+/* Una pagina (sanitapubblica.html) avvolge il contenuto del menu in un
+   .nav-inner: con display:contents i figli entrano direttamente nella barra e
+   il menu viene identico a tutti gli altri. */
+.navbar .nav-inner{display:contents}
+
 /* ── la barra bianca del menu ───────────────────────────────────────────── */
 .navbar{position:sticky;top:0;z-index:999;background:#fff;
         border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,.08);
@@ -46,15 +51,33 @@
 .nav-logo{display:flex;align-items:center;gap:12px;padding:4px 0;
           text-decoration:none;flex-shrink:0}
 .nav-logo img{width:60px;height:60px;border-radius:50%}
-/* Il nome va a capo su due righe e il sottotitolo su tre: cosi' il blocco e'
-   STRETTO invece che largo, e lascia spazio alle voci del menu.
-   Scelta di Fernando, 8 agosto 2026: «il logo deve essere cosi', ruba anche
-   meno spazio». Su una riga sola il blocco misurava 428 px. */
-.nav-nome{font-weight:900;font-size:1.2em;color:#8a4e00;line-height:1.08;
-          max-width:190px}
-.nav-nome small{display:block;font-weight:400;font-size:.58em;color:#666;
-                letter-spacing:1.6px;text-transform:uppercase;line-height:1.2;
-                margin-top:2px}
+/* ── IL LOGO CON LE SCRITTE ────────────────────────────────────────────────
+   Ordine di Fernando, 8 agosto 2026: il blocco deve essere ESATTAMENTE quello
+   del disegno che ha mandato, su tutti i menu nessuno escluso. Solo la
+   dimensione si puo' adattare.
+
+       (logo tondo)   Partecipazione
+                      Attiva
+                      MOVIMENTO
+                      POPOLARE DEI
+                      CITTADINI ITALIANI
+
+   Le interruzioni di riga sono fisse nel testo (_tools/allinea_logo.py), non
+   affidate al browser: "MOVIMENTO POPOLARE" e' lungo quanto "CITTADINI
+   ITALIANI", quindi lasciando fare al browser il testo si spezzerebbe in un
+   altro punto. Cosi' e' identico ovunque.
+
+   Carattere con le grazie (Merriweather) come nel disegno, non il senza
+   grazie che c'era prima. */
+.nav-nome{font-family:merriweather,Georgia,serif;
+          font-weight:700;font-size:1.18em;color:#8a4e00;line-height:1.08;
+          text-decoration:underline;text-decoration-thickness:1px;
+          text-underline-offset:2px}
+.nav-nome small{display:block;font-family:merriweather,Georgia,serif;
+                font-weight:400;font-size:.56em;color:#7b736a;
+                letter-spacing:2.2px;text-transform:uppercase;line-height:1.38;
+                margin-top:4px;text-decoration:underline;
+                text-decoration-thickness:.5px;text-underline-offset:2px}
 
 /* le voci: spazio verticale ridotto, era il vuoto da recuperare */
 .nav-links{display:flex;align-items:center;gap:0;flex-wrap:wrap;
@@ -118,7 +141,8 @@
   .nav-cta{order:2;margin-left:auto;gap:8px}
   .nav-cta a{padding:9px 16px;font-size:.86em}
   .nav-nome{font-size:1.02em}
-  .nav-nome small{display:none}
+  /* il sottotitolo resta anche su telefono: Fernando lo vuole su TUTTI i menu,
+     nessuno escluso, e con le righe fisse il blocco e' abbastanza stretto */
   .nav-logo{padding:2px 0}
   .nav-logo img{width:46px;height:46px}
 }
