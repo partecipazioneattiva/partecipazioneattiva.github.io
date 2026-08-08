@@ -167,3 +167,44 @@ body .nav-row .separator{color:#c9a97a}
    Difetto preesistente, non causato dai lavori dell'8 agosto. */
 body .cta-section{background:#a8551a}
 body .cta-section .cta-btn{color:#7a3d10}
+
+
+/* ══ BERSAGLI DA TOCCARE COL DITO ═════════════════════════════════════════
+   MISURATO l'8 agosto 2026 su schermo da 375 px: 45 elementi cliccabili piu'
+   bassi di 44 px sulla home, 26 dei quali sotto i 24 px. I link del pie' di
+   pagina stavano a 15 px: per chi ha mani grandi, ottant'anni o il tremore
+   e' un bersaglio che si sbaglia.
+
+   DUE MISURE DIVERSE, apposta:
+     44 px dove il dito deve arrivare davvero — bottoni, scarichi, menu del
+           telefono, colonne del pie' di pagina;
+     24 px (il minimo che la norma chiede) nella barra fitta in alto, che a
+           44 si gonfierebbe di 17 px proprio dopo averla stretta.
+
+   I collegamenti DENTRO al testo non si toccano: la norma li esenta apposta,
+   e ingrandirli rovinerebbe la lettura. */
+
+@media (pointer: coarse), (max-width: 900px) {
+  body footer a, body .foot-col a,
+  body .doc-scarica, body .btn-leggi,
+  body .iscr-dl a, body .mob-btns a,
+  body .nav-cta a, body .pa-cerca-btn, body .burger,
+  body .mob-menu a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  body .mob-menu a { display: flex; }
+
+  /* la barra in alto: 24 px, il minimo di norma, senza gonfiarla */
+  body .topbar a { display: inline-flex; align-items: center; min-height: 24px; }
+  /* i link del ticker che scorre: 15 px, alzati al minimo di norma */
+  body #tk a { display: inline-flex; align-items: center; min-height: 24px; }
+  /* la briciola di pane in cima agli articoli (Home › Proposta di legge) */
+  body .breadcrumb a { display: inline-flex; align-items: center; min-height: 24px; }
+
+  /* moduli: le caselle da spuntare e i campi da riempire */
+  body input[type=checkbox], body input[type=radio] { min-width: 24px; min-height: 24px; }
+  body .form input:not([type=checkbox]):not([type=radio]),
+  body .form select, body .form textarea { min-height: 44px; }
+}
