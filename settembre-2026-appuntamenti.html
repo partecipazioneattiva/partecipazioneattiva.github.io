@@ -163,10 +163,7 @@
 
   <div class=sq-mail>
     <label for=sq-email><b>La tua email</b></label>
-    <p class=sq-nota>Serve solo a contare una volta sola.
-      <strong>Appena confermi, il tuo indirizzo viene cancellato</strong> e al suo
-      posto resta un codice illeggibile che non si può ricondurre a nessuno.
-      Niente nome, niente iscrizione, nessun messaggio pubblicitario.</p>
+    <p class=sq-nota>Serve solo a riconoscere chi ha gi&agrave; risposto. <strong>Non lo conserviamo</strong>: viene rimescolato subito in un codice illeggibile, e dell&rsquo;indirizzo non resta niente. Niente nome, niente iscrizione, <strong>nessuna mail da parte nostra</strong>.</p>
     <input type=email id=sq-email name=email autocomplete=email
            placeholder="nome@esempio.it" required>
     <label class=sq-consenso><input type=checkbox id=sq-ok>
@@ -254,12 +251,14 @@ form.addEventListener('submit', function(e){
     .then(function(j){
       if(j&&j.ok){
         form.style.display='none';
-        dì('Ti abbiamo mandato una mail: apri il messaggio e clicca il pulsante. Il voto conta solo dopo quel clic.','ok');
+        dì('Grazie: la tua risposta \u00e8 stata contata.','ok');
         msg.style.display='block';
+        caricati=true;
+        disegna(j.risultati||[], j.persone||0);
+        det.open=true;
       } else {
         btn.disabled=false;
-        var m={'gia_votato':'Da questo indirizzo hai gi\u00e0 votato. Grazie lo stesso!',
-                'gia_inviata':'La mail di conferma \u00e8 gi\u00e0 partita da poco: controlla la posta, anche nello spam.',
+        var m={'gia_votato':'Da questo indirizzo hai gi\u00e0 risposto. Grazie lo stesso!',
                 'email_non_valida':'Controlla l\u2019indirizzo email.',
                 'temi_non_validi':'Scegli almeno un tema.',
                 'posta_non_configurata':'Il sondaggio non \u00e8 ancora attivo. Riprova pi\u00f9 tardi.',
@@ -269,6 +268,17 @@ form.addEventListener('submit', function(e){
     }).catch(function(){ btn.disabled=false; dì('Connessione non riuscita. Riprova.','ko'); });
 });
 
+function disegna(d,tot){
+  var box=document.getElementById('sq-ris-corpo');
+  if(!d||!d.length||!tot){ box.innerHTML='<p class=sq-nota>Ancora nessuna risposta: puoi essere il primo.</p>'; return; }
+  d=d.slice().sort(function(a,b){return b.voti-a.voti;});
+  box.innerHTML=d.map(function(x){
+    var p=Math.round(x.voti*100/tot);
+    return '<div class=sq-barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
+           '<u><b style="width:'+p+'%"></b></u></div>';
+  }).join('')+'<p class=sq-nota>'+tot+(tot===1?' persona ha risposto':' persone hanno risposto')+'. Le percentuali dicono quanti, fra loro, hanno indicato quel tema: la somma pu\u00f2 superare il 100%, perch\u00e9 si possono segnare pi\u00f9 temi.</p>';
+}
+
 var det=document.querySelector('.sq-ris'), caricati=false;
 det.addEventListener('toggle', function(){
   if(!det.open||caricati) return; caricati=true;
@@ -276,16 +286,7 @@ det.addEventListener('toggle', function(){
     {headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
    .then(function(r){return r.json();})
    .then(function(d){
-     var box=document.getElementById('sq-ris-corpo');
-     if(!d||!d.length){ box.innerHTML='<p class=sq-nota>Ancora nessun voto.</p>'; return; }
-     var tot=d[0].persone||0;
-     if(!tot){ box.innerHTML='<p class=sq-nota>Ancora nessuna risposta: puoi essere il primo.</p>'; return; }
-     d.sort(function(a,b){return b.voti-a.voti;});
-     box.innerHTML=d.map(function(x){
-       var p=Math.round(x.voti*100/tot);
-       return '<div class=sq-barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
-              '<u><b style="width:'+p+'%"></b></u></div>';
-     }).join('')+'<p class=sq-nota>'+tot+(tot===1?' persona ha risposto':' persone hanno risposto')+'. Le percentuali dicono quanti, fra loro, hanno indicato quel tema: la somma pu\u00f2 superare il 100%, perch\u00e9 si possono segnare pi\u00f9 temi.</p>';
+     disegna(d,(d&&d[0]&&d[0].persone)||0);
    })
    .catch(function(){ document.getElementById('sq-ris-corpo').innerHTML=
      '<p class=sq-nota>Non riesco a leggere i numeri adesso.</p>'; });

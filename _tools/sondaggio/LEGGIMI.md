@@ -1,6 +1,31 @@
 # Il sondaggio dei sei appuntamenti di settembre
 
-**8 agosto 2026.** Come funziona, e i due gesti che restano a Fernando.
+**Aggiornato il 9 agosto 2026.**
+
+> ## ⚠️ LEGGERE QUESTO PRIMA DEL RESTO
+>
+> **Dal 9 agosto la conferma via mail NON C'È PIÙ.** Chi vota, vota: il voto si
+> conta subito.
+>
+> **Perché.** Nelle prime ore due persone hanno votato davvero, le mail di
+> conferma sono state *consegnate* (verificato sul registro di Brevo), e
+> **nessuna delle due ha cliccato**. Due su due. Quel passaggio non proteggeva:
+> perdeva voti.
+>
+> **Effetto sulla riservatezza: migliora.** Prima l'indirizzo restava in chiaro
+> fino al clic, o comunque 48 ore. Ora viene rimescolato all'istante e
+> dell'originale non resta niente, mai, da nessuna parte.
+>
+> **Effetto sull'attendibilità: cala, e va detto.** Non si verifica più che
+> l'indirizzo sia di chi lo scrive: chi insiste può inventarne altri. Il
+> sondaggio è **indicativo** — dice dove va l'interesse, non proclama un
+> vincitore. Per decidere l'ordine di sei incontri è il livello giusto.
+>
+> Le parti di questo foglio che parlano di «conferma», `sondaggio_pendenti` o
+> `voto-confermato.html` descrivono **com'era**: restano perché le trappole che
+> raccontano valgono ancora.
+
+Come funziona, e i gesti che restano a Fernando.
 
 ---
 

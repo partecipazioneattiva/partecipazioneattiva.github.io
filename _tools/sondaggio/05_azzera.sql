@@ -11,5 +11,6 @@
 update sondaggio_conteggio set voti = 0;
 delete from sondaggio_impronte;
 delete from sondaggio_pendenti;
+delete from sondaggio_proposte;   -- anche le frasi scritte nelle prove
 
-select tema, voti from sondaggio_conteggio order by ordine;
+select tema, voti, persone from sondaggio_risultati order by ordine;

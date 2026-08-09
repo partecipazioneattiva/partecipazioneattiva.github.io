@@ -35,36 +35,26 @@ body{background:#fff8ee}
 var SB_URL='https://hfraarlzltoiuvplushi.supabase.co', SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhmcmFhcmx6bHRvaXV2cGx1c2hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODM3Njk1NjEsImV4cCI6MjA5OTM0NTU2MX0.7hM-Tthgd8QQry3XCXmcfDeIRB-QAmLzFYwkEbbL7FI';
 var NOMI={'ape':'APE','mappa':'La Mappa','legge-elettorale':'Legge elettorale',
  'rc-auto':'RC Auto','arte-del-dono':'L\u2019arte del dono','donna-a-napoli':'Essere donna a Napoli'};
-var tit=document.getElementById('tit'), txt=document.getElementById('txt');
-function dì(t,p){ tit.textContent=t; txt.innerHTML=p; }
-var t=new URLSearchParams(location.search).get('t');
-if(!t) return dì('Collegamento incompleto','Apri il link esattamente come ti \u00e8 arrivato per posta.');
-fetch(SB_URL+'/functions/v1/sondaggio',{method:'POST',headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},body:JSON.stringify({azione:'conferma',t:t})}).then(function(r){return r.json();}).then(function(j){
-  if(!j||!j.esito) return dì('Non ha funzionato','Riprova fra poco, oppure riparti dalla pagina degli appuntamenti.');
-  if(j.esito==='scaduto') return dì('Questo collegamento non vale pi\u00f9',
-     'I collegamenti scadono dopo 48 ore. Puoi <a href="settembre-2026-appuntamenti.html#sondaggio">votare di nuovo</a>.');
-  if(j.esito==='gia_votato') return dì('Avevi gi\u00e0 votato',
-     'Da questo indirizzo il voto era gi\u00e0 stato contato. Grazie lo stesso!');
-  if(j.esito!=='contato') return dì('Non ha funzionato','Riprova fra poco.');
-  dì('Voto contato. Grazie.',
-     'Il tuo indirizzo \u00e8 stato <strong>cancellato adesso</strong>: al suo posto resta un codice illeggibile, che serve solo a evitare i doppioni e non si pu\u00f2 ricondurre a nessuno.');
-  fetch(SB_URL+'/rest/v1/sondaggio_risultati?select=tema,voti,persone&order=ordine',
-    {headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
-   .then(function(r){return r.json();})
-   .then(function(d){
-     var tot=(d[0]&&d[0].persone)||0;
-     d=d.slice().sort(function(a,b){return b.voti-a.voti;});
-     document.getElementById('barre').innerHTML=d.map(function(x){
-       var p=tot?Math.round(x.voti*100/tot):0;
-       return '<div class=barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
-              '<u><b style="width:'+p+'%"></b></u></div>';
-     }).join('');
-     document.getElementById('tot').textContent=
-       tot+(tot===1?' persona ha risposto':' persone hanno risposto')+
-       '. Le percentuali dicono quanti, fra loro, hanno indicato quel tema.';
-     document.getElementById('ris').hidden=false;
-   });
-}).catch(function(){ dì('Connessione non riuscita','Riprova ad aprire il collegamento fra poco.'); });
+document.getElementById('tit').textContent='Il tuo voto \u00e8 gi\u00e0 contato.';
+document.getElementById('txt').innerHTML='Non serve pi\u00f9 confermare niente: adesso le risposte '+
+ 'si contano subito. Il tuo indirizzo non \u00e8 stato conservato.';
+fetch(SB_URL+'/rest/v1/sondaggio_risultati?select=tema,voti,persone&order=ordine',
+  {headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
+ .then(function(r){return r.json();})
+ .then(function(d){
+   var tot=(d[0]&&d[0].persone)||0;
+   if(!tot) return;
+   d=d.slice().sort(function(a,b){return b.voti-a.voti;});
+   document.getElementById('barre').innerHTML=d.map(function(x){
+     var p=Math.round(x.voti*100/tot);
+     return '<div class=barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
+            '<u><b style="width:'+p+'%"></b></u></div>';
+   }).join('');
+   document.getElementById('tot').textContent=
+     tot+(tot===1?' persona ha risposto':' persone hanno risposto')+
+     '. Le percentuali dicono quanti, fra loro, hanno indicato quel tema.';
+   document.getElementById('ris').hidden=false;
+ }).catch(function(){});
 })();
 </script>
 </body></html>
