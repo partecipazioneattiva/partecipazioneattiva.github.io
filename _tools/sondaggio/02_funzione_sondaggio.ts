@@ -19,9 +19,9 @@
 // NIENTE MAIL DI CONFERMA A CHI VOTA. Nelle prime ore due persone hanno
 // votato davvero, le mail sono state consegnate, e nessuna delle due ha
 // cliccato: quel passaggio non proteggeva, perdeva voti. Il sondaggio e'
-// INDICATIVO — dice dove va l'interesse, non proclama un vincitore.
+// INDICATIVO - dice dove va l'interesse, non proclama un vincitore.
 //
-// ⚠️ NIENTE LETTERE ACCENTATE IN QUESTO FILE. L'editor di Supabase le
+// !! NIENTE LETTERE ACCENTATE IN QUESTO FILE. L'editor di Supabase le
 // rovina quando si incolla: si usano le forme HTML (&egrave; &rsquo;).
 //
 // NON contiene chiavi. Le legge dai segreti del progetto.
