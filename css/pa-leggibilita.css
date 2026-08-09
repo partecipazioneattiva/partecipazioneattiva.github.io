@@ -240,6 +240,22 @@ img, svg, video, iframe { max-width: 100%; }
 .iscr-box > *, .iscr-due > *, .foot-grid > *,
 .pa-dl > *, .doc-card > *, .topbar > *, .tipo > * { min-width: 0; }
 
+/* ...ma "min-width: 0" da solo non basta, e il 9 agosto 2026 e' costato una
+   segnalazione del presidente: sulla pagina dell'APE, a 375 px esatti — la
+   larghezza di mezzo parco iPhone — il testo dentro .pa-dl si schiacciava a
+   41 px e usciva UNA LETTERA PER RIGA, in colonna.
+
+   Il motivo: .pa-dl mette in fila icona, testo e pulsante. Il pulsante non si
+   restringe, e senza il pavimento sotto i piedi il testo si strozza fino a
+   sparire. Prima sbordava di lato (il difetto che avevo corretto), dopo
+   collassava in verticale: due facce dello stesso errore.
+
+   Il rimedio giusto non e' rimettere il pavimento — tornerebbe lo sbordo — ma
+   dire al riquadro di ANDARE A CAPO quando non ci sta. */
+.pa-dl { flex-wrap: wrap; }
+.pa-dl .t { flex: 1 1 200px; }
+.doc-card { flex-wrap: wrap; }
+
 /* La scelta "Cittadino / Associazione" del modulo della Mappa e' una griglia a
    due colonne fisse. Su uno schermo da 320 px non ci stanno: la sola parola
    "Associazione" e' larga 150, due colonne piu' i margini fanno 364.
@@ -451,3 +467,20 @@ body .cta-section .cta-btn{color:#7a3d10}
 
    ⚠️ Se serve una categoria nuova, si aggiunge QUI un colore con un
    significato, non si inventa una forma nuova sulla singola card. */
+
+/* ---------------------------------------------------------------------
+   LE TABELLE STANNO DENTRO LO SCHERMO STRETTO
+   Trovato il 9 agosto 2026 passando tutte le 66 pagine a 375 px: era
+   l'ultimo sbordo rimasto. Una tabella non si restringe sotto la sua
+   misura minima, e con 12 px di spazio per lato in ogni cella su tre
+   colonne usciva di 13 px.
+   Si recupera dai margini interni, non dal corpo del testo: su queste
+   pagine i numeri si leggono gia' in punta di occhi.
+   ⚠️ Il primo sospetto era il riquadro delle notifiche di webpushr, che
+   risultava largo 388 px. Era una conseguenza, non la causa: essendo
+   ancorato allo schermo si adeguava alla pagina gia' sbordata. Guardare
+   l'elemento PIU' PROFONDO che esce, non il piu' grande.
+   --------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .pa-tbl th, .pa-tbl td { padding: 8px 6px; }
+}
