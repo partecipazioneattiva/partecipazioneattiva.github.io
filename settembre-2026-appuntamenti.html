@@ -150,8 +150,8 @@
 
 
 <section id="sondaggio" class="sq" aria-labelledby="sq-tit">
-<h2 id="sq-tit">Quali senti pi&ugrave; urgenti?</h2>
-<p class=sq-intro><strong>La scelta &egrave; multipla:</strong> segnane quanti vuoi, anche tutti e sei. Gli incontri si faranno comunque tutti: questo non serve a stabilire l&rsquo;ordine di uscita, ma a capire <strong>quali temi sentite pi&ugrave; urgenti</strong>.</p>
+<h2 id="sq-tit">Di cosa vorresti che parlassimo?</h2>
+<p class=sq-intro>Segna i temi di cui ti interessa che si discuta: quanti vuoi, anche tutti e sei.<br>Gli incontri si faranno comunque tutti. Le risposte <strong>non cambiano l&rsquo;ordine di uscita</strong>: ci dicono su quali temi vale la pena <strong>tornare sopra con un approfondimento</strong>.</p>
 
 <form id=sq-form novalidate>
   <fieldset class=sq-lista>
@@ -159,7 +159,7 @@
     <label class=sq-scelta><input type=checkbox name=tema value="ape"><span><b>APE — l’Assemblea Popolare Ecumenica</b><small>Angelo Nicotra · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="mappa"><span><b>La Mappa dei cittadini attivi</b><small>Daniele Tandura · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="legge-elettorale"><span><b>La legge elettorale</b><small>Luigi Spanu · in diretta</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="rc-auto"><span><b>RC Auto uguale per tutti</b><small>Paolo Neri · in diretta</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="arte-del-dono"><span><b>L’arte del dono</b><small>Stefano Piva · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="donna-a-napoli"><span><b>Essere donna a Napoli</b><small>Rosa Ugon · WebTV</small></span></label>
   </fieldset>
 
-  <div class=sq-altro><label for=sq-altro-t><b>C&rsquo;&egrave; altro che ti sta a cuore?</b></label><p class=sq-nota>Scrivilo qui, con parole tue. Non serve che sia uno dei sei temi: se quello che ti preme non c&rsquo;&egrave;, dillo lo stesso.<br>Le leggiamo una per una, ma <strong>non potremo risponderti</strong>: con la conferma il tuo indirizzo sparisce, e non sappiamo pi&ugrave; chi sei.<br><strong>Non scrivere nomi di persone n&eacute; dati riservati</strong> (tuoi o di altri): non ci servono, e non vogliamo conservarli.</p><textarea id=sq-altro-t name=altro rows=3 maxlength=400 placeholder="Per me la cosa pi&ugrave; urgente &egrave;&hellip;"></textarea><p class=sq-conta><span id=sq-resta>400</span> caratteri rimasti</p></div>
+  <div class=sq-altro><label for=sq-altro-t><b>C&rsquo;&egrave; un tema che manca? Scrivilo tu.</b></label><p class=sq-nota>Non serve che sia uno dei sei: se quello che ti preme non c&rsquo;&egrave; nell&rsquo;elenco, dillo lo stesso. Le leggiamo una per una.</p><textarea id=sq-altro-t name=altro rows=3 maxlength=400 placeholder="Per me un argomento da trattare &egrave; anche&hellip;"></textarea><p class=sq-conta><span id=sq-resta>400</span> caratteri rimasti</p><p class="sq-nota sq-minuta"><strong>Non potremo risponderti</strong>: con la conferma il tuo indirizzo sparisce, e non sappiamo pi&ugrave; chi sei. <strong>Non scrivere nomi di persone n&eacute; dati riservati</strong> (tuoi o di altri): non ci servono, e non vogliamo conservarli.</p></div>
 
   <div class=sq-mail>
     <label for=sq-email><b>La tua email</b></label>
@@ -192,7 +192,13 @@
 .sq-scelta span{display:block;line-height:1.4}
 .sq-scelta small{display:block;color:#6b5a45;font-size:.85em;margin-top:3px}
 .sq-scelta.sq-piena{opacity:.5}
-.sq-altro{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px;margin-bottom:16px}.sq-altro textarea{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;font-family:inherit;line-height:1.6;border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222;resize:vertical;min-height:88px}.sq-conta{color:#8a7a66;font-size:.82em;margin:6px 0 0;text-align:right}.sq-mail{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px}
+.sq-altro{background:#fff;border:2px solid #f0dcc0;border-radius:12px;padding:20px;margin-bottom:16px}
+.sq-altro>label{display:block;font-size:1.05em;margin-bottom:6px}
+/* .sq .sq-minuta e non .sq-minuta: una regola generale del sito
+   (body .article-wrap p) e' piu' forte e annullerebbe queste.
+   Nota di servizio: resta LEGGIBILE (il nostro pubblico e' anziano),
+   il peso minore glielo danno la posizione sotto al campo e il grigio. */
+.sq .sq-minuta{font-size:.95em;color:#5f5f5f;margin:14px 0 0;line-height:1.55}.sq-altro textarea{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;font-family:inherit;line-height:1.6;border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222;resize:vertical;min-height:88px}.sq-conta{color:#8a7a66;font-size:.82em;margin:6px 0 0;text-align:right}.sq-mail{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px}
 .sq-nota{color:#5a5a5a;font-size:.9em;line-height:1.6;margin:6px 0 14px}
 .sq-mail input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;
   border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222}
