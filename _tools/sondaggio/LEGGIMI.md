@@ -54,8 +54,22 @@
 > parziale: non lascia niente. La domanda singola dà la stessa graduatoria al
 > prezzo di un tocco.
 >
-> Pezzo nuovo: **`10_prima_scelta.sql`** (colonna `voti_primo`, vista e
-> funzione a quattro argomenti). La funzione `02` passa `p_primo`.
+> Pezzi nuovi: **`10_prima_scelta.sql`** (colonna `voti_primo`, vista e
+> funzione a quattro argomenti) e **`11_togli_la_prova_del_primo.sql`**.
+> La funzione `02` passa `p_primo`.
+>
+> **Installato e verificato il 9 agosto 2026, 13:45-13:55.** La verifica è
+> stata fatta in tre tempi, e vale come metodo:
+> 1. una richiesta volutamente incoerente (tema `ape`, prima scelta `mappa`)
+>    → risponde `primo_non_valido`: prova che il codice nuovo è quello in
+>    funzione, **senza lasciare voti**;
+> 2. un voto vero con un indirizzo finto → `mappa` segna `voti_primo 1`:
+>    prova che la catena sito → funzione → archivio regge fino in fondo;
+> 3. `11_togli_la_prova_del_primo.sql` → i conteggi tornano ai valori di
+>    partenza (5 persone, 3-3-3-3-2-2, `voti_primo` a zero).
+>
+> ⚠️ Il passo 1 da solo **non basta**: rifiuta prima di arrivare all'archivio,
+> quindi non direbbe niente su una funzione con la firma sbagliata.
 
 Come funziona, e i gesti che restano a Fernando.
 
