@@ -251,5 +251,24 @@ document.addEventListener('click',function(e){if(e.target&&e.target.id==='pa-cer
 </script>
 <!--/PA-CERCA-->
 <script src="assistente/pensattivo.js" defer data-pagefind-ignore></script>
+<script data-pagefind-ignore id="pa-menu-che-resta">
+/* La barra del menu si stringe appena si scorre. Vedi _tools/menu_che_resta.py */
+(function(){
+  var b = document.querySelector('.navbar');
+  if (!b) return;
+  var giu = false, soglia = 60, fermo = false;
+  function guarda(){
+    fermo = false;
+    var ora = (window.scrollY || document.documentElement.scrollTop) > soglia;
+    if (ora !== giu) { giu = ora; b.classList.toggle('pa-compatta', ora); }
+  }
+  window.addEventListener('scroll', function(){
+    if (fermo) return;                 /* non ricalcolo a ogni pixel: */
+    fermo = true;                      /* una volta per fotogramma basta */
+    window.requestAnimationFrame(guarda);
+  }, { passive: true });
+  guarda();
+})();
+</script>
 </body>
 </html>

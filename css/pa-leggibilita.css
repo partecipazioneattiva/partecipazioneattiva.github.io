@@ -58,7 +58,14 @@
 .navbar{position:sticky;top:0;z-index:999;background:#fff;
         border-bottom:3px solid #e8900a;box-shadow:0 2px 12px rgba(0,0,0,.08);
         display:flex;align-items:center;gap:12px;padding:6px 18px;
-        min-height:0;position:relative}
+        min-height:0}
+/* ⚠️ QUI C'ERA UN «position:relative» IN CODA, che annullava lo «sticky»
+   scritto tre righe sopra: in CSS vince l'ultima dichiarazione. Il menu
+   quindi scorreva via con la pagina, e per cambiare sezione bisognava
+   risalire in cima. Segnalato da Fernando il 9 agosto 2026.
+   Il «relative» serviva ad ancorare il menu a tendina del telefono
+   (.mob-menu, che e' position:absolute): ma «sticky» fa gia' da ancora
+   esattamente come «relative», quindi era superfluo oltre che dannoso. */
 
 /* il logo col nome accanto — la parte che Fernando voleva su tutte le pagine */
 .nav-logo{display:flex;align-items:center;gap:12px;padding:4px 0;
@@ -511,4 +518,68 @@ body .cta-section .cta-btn{color:#7a3d10}
       linear-gradient(to right, #fff 30%, rgba(255,255,255,0)) left / 24px 100% no-repeat,
       linear-gradient(to left,  #fff 30%, rgba(255,255,255,0)) right / 24px 100% no-repeat;
   }
+}
+
+/* =====================================================================
+   LA BARRA CHE RESTA, MA SI FA PICCOLA — 9 agosto 2026
+   =====================================================================
+   Chiesto da Fernando: «scorrendo il menu sparisce e sono costretto a
+   risalire». Aveva ragione, e il guadagno e' misurato: Nielsen Norman
+   Group rileva circa il 22% di tempo di navigazione risparmiato con una
+   barra sempre visibile.
+
+   MA la stessa ricerca dice di tenerla sotto il 10% dello schermo, e sul
+   telefono ridurla all'essenziale. La nostra e' 130 px su 812 = 16%:
+   troppo, per un sito dove il 68% legge dal telefono.
+
+   Quindi resta sempre, ma appena si scorre si stringe: il logo si
+   rimpicciolisce, il nome sparisce, i margini si riducono. Non e' un
+   vezzo — e' la differenza fra rubare un sesto dello schermo a ogni riga
+   letta e rubarne un decimo.
+
+   Il nome del movimento non si perde: ricompare appena si torna in cima.
+   ===================================================================== */
+.navbar { transition: padding .18s ease; }
+.navbar .nav-logo img,
+.navbar .nav-nome { transition: width .18s ease, height .18s ease, font-size .18s ease; }
+
+.navbar.pa-compatta { padding-top: 2px; padding-bottom: 2px; }
+.navbar.pa-compatta .nav-logo img { width: 40px; height: 40px; }
+.navbar.pa-compatta .nav-nome { font-size: .95em; }
+.navbar.pa-compatta .nav-nome small { display: none; }
+
+/* Chi ha chiesto meno movimento non vede nessuna transizione. */
+@media (prefers-reduced-motion: reduce) {
+  .navbar, .navbar .nav-logo img, .navbar .nav-nome { transition: none; }
+}
+
+/* I collegamenti interni (#iscriviti, #blog, #statuto...) atterravano
+   NASCOSTI SOTTO la barra: e' il difetto piu' comune dei menu che
+   restano, e si cura con una riga. La misura e' quella della barra
+   stretta, perche' quando si salta a un'ancora si sta gia' scorrendo. */
+html { scroll-padding-top: 84px; }
+@media (max-width: 1260px) { html { scroll-padding-top: 96px; } }
+
+/* Sul telefono la barra stretta si riduce all'essenziale — logo, i due
+   pulsanti e il menu — come raccomanda Nielsen Norman Group. Il nome del
+   movimento non sparisce dal sito: torna appena si risale in cima, ed e'
+   comunque scritto nel titolo della pagina e nel pie'.
+   Sotto i 1260 px, cioe' dove il menu e' gia' a tendina. */
+@media (max-width: 1260px) {
+  .navbar.pa-compatta .nav-nome { display: none; }
+  .navbar.pa-compatta .nav-logo img { width: 36px; height: 36px; }
+  .navbar.pa-compatta .nav-cta a { padding-top: 8px; padding-bottom: 8px; }
+}
+
+/* Sui telefoni piccolissimi (iPhone SE e simili, 320 px) logo + due
+   pulsanti + menu non stanno in una riga sola e la barra ne occupa due.
+   Si stringono i pulsanti invece di toglierne uno: «Iscriviti» e
+   «Sostienici» sono le due azioni del sito, e chi ha lo schermo piccolo
+   non deve avere meno strade degli altri.
+   L'altezza da toccare col dito resta di 44 px: si toglie larghezza, non
+   bersaglio. */
+@media (max-width: 400px) {
+  .navbar.pa-compatta .nav-cta { gap: 5px; }
+  .navbar.pa-compatta .nav-cta a { font-size: .72em; padding: 13px 9px; }
+  .navbar.pa-compatta { gap: 6px; padding-left: 8px; padding-right: 8px; }
 }
