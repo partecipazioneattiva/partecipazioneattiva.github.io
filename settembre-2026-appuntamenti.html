@@ -151,13 +151,19 @@
 
 <section id="sondaggio" class="sq" aria-labelledby="sq-tit">
 <h2 id="sq-tit">Di cosa vorresti che parlassimo?</h2>
-<p class=sq-intro>Segna i temi di cui ti interessa che si discuta: quanti vuoi, anche tutti e sei.<br>Gli incontri si faranno comunque tutti. Le risposte <strong>non cambiano l&rsquo;ordine di uscita</strong>: ci dicono su quali temi vale la pena <strong>tornare sopra con un approfondimento</strong>.</p>
+<p class=sq-intro>Segna i temi di cui ti interessa che si discuta: quanti vuoi, anche tutti e sei.<br>Gli incontri si faranno comunque tutti. Le risposte <strong>non stabiliscono l&rsquo;ordine di uscita</strong>, e non potrebbero: quello dipende dal tempo che serve a preparare ciascun incontro, e a oggi <strong>non lo sappiamo nemmeno noi</strong>. Servono a capire su quali temi vale la pena <strong>tornare sopra con un approfondimento</strong>.</p>
 
 <form id=sq-form novalidate>
   <fieldset class=sq-lista>
     <legend class=sq-nascosto>I sei appuntamenti di settembre</legend>
     <label class=sq-scelta><input type=checkbox name=tema value="ape"><span><b>APE — l’Assemblea Popolare Ecumenica</b><small>Angelo Nicotra · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="mappa"><span><b>La Mappa dei cittadini attivi</b><small>Daniele Tandura · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="legge-elettorale"><span><b>La legge elettorale</b><small>Luigi Spanu · in diretta</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="rc-auto"><span><b>RC Auto uguale per tutti</b><small>Paolo Neri · in diretta</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="arte-del-dono"><span><b>L’arte del dono</b><small>Stefano Piva · WebTV</small></span></label><label class=sq-scelta><input type=checkbox name=tema value="donna-a-napoli"><span><b>Essere donna a Napoli</b><small>Rosa Ugon · WebTV</small></span></label>
   </fieldset>
+
+  <div id=sq-primo hidden><fieldset class=sq-primo-box>
+    <legend><b>E se dovessi sceglierne uno solo, quale?</b></legend>
+    <p class=sq-nota>Fra quelli che hai segnato. Una sola risposta &mdash; e puoi anche saltarla. Non decide quale esce prima: serve a capire quale pesa di pi&ugrave;.</p>
+    <div id=sq-primo-voci class=sq-lista></div>
+  </fieldset></div>
 
   <div class=sq-altro><label for=sq-altro-t><b>C&rsquo;&egrave; un tema che manca? Scrivilo tu.</b></label><p class=sq-nota>Non serve che sia uno dei sei: se quello che ti preme non c&rsquo;&egrave; nell&rsquo;elenco, dillo lo stesso. Le leggiamo una per una.</p><textarea id=sq-altro-t name=altro rows=3 maxlength=400 placeholder="Per me un argomento da trattare &egrave; anche&hellip;"></textarea><p class=sq-conta><span id=sq-resta>400</span> caratteri rimasti</p><p class="sq-nota sq-minuta"><strong>Non potremo risponderti</strong>: con la conferma il tuo indirizzo sparisce, e non sappiamo pi&ugrave; chi sei. <strong>Non scrivere nomi di persone n&eacute; dati riservati</strong> (tuoi o di altri): non ci servono, e non vogliamo conservarli.</p></div>
 
@@ -198,7 +204,13 @@
    (body .article-wrap p) e' piu' forte e annullerebbe queste.
    Nota di servizio: resta LEGGIBILE (il nostro pubblico e' anziano),
    il peso minore glielo danno la posizione sotto al campo e il grigio. */
-.sq .sq-minuta{font-size:.95em;color:#5f5f5f;margin:14px 0 0;line-height:1.55}.sq-altro textarea{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;font-family:inherit;line-height:1.6;border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222;resize:vertical;min-height:88px}.sq-conta{color:#8a7a66;font-size:.82em;margin:6px 0 0;text-align:right}.sq-mail{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px}
+.sq .sq-minuta{font-size:.95em;color:#5f5f5f;margin:14px 0 0;line-height:1.55}
+.sq-primo-box{border:2px solid #f0dcc0;border-radius:12px;padding:16px;margin:0 0 22px;background:#fff}
+/* legend con float:left si comporta da titolo normale dentro il riquadro.
+   Senza, andando a capo si siede SOPRA il bordo e lo spezza in due. */
+.sq-primo-box legend{float:left;width:100%;padding:0;margin:0 0 6px;font-size:1.05em}
+.sq .sq-primo-box .sq-nota{clear:both;margin:0 0 12px}
+.sq-primo-box .sq-lista{margin:0}.sq-altro textarea{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;font-family:inherit;line-height:1.6;border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222;resize:vertical;min-height:88px}.sq-conta{color:#8a7a66;font-size:.82em;margin:6px 0 0;text-align:right}.sq-mail{background:#fff;border:1.5px solid #eee;border-radius:12px;padding:20px}
 .sq-nota{color:#5a5a5a;font-size:.9em;line-height:1.6;margin:6px 0 14px}
 .sq-mail input[type=email]{width:100%;box-sizing:border-box;padding:13px 14px;font-size:1em;
   border:2px solid #e0d3c0;border-radius:10px;background:#fff;color:#222}
@@ -236,6 +248,27 @@ function aggiorna(){
     c.disabled = (!c.checked && n>=MAX);
     c.closest('.sq-scelta').classList.toggle('sq-piena', c.disabled);
   });
+  aggiornaPrimo();
+}
+// La domanda sulla prima scelta compare SOLO da due temi in su: con uno solo
+// la risposta e' gia' quella, e una domanda ovvia e' una domanda che stanca.
+function aggiornaPrimo(){
+  var s=scelti(),
+      box=document.getElementById('sq-primo'),
+      voci=document.getElementById('sq-primo-voci'),
+      prima=(voci.querySelector('input[name=primo]:checked')||{}).value;
+  if(s.length<2){ box.hidden=true; voci.innerHTML=''; return; }
+  voci.innerHTML=s.map(function(t){
+    return '<label class=sq-scelta><input type=radio name=primo value="'+t+'"'+
+           (t===prima?' checked':'')+'><span><b>'+(NOMI[t]||t)+'</b></span></label>';
+  }).join('');
+  box.hidden=false;
+}
+function primoScelto(){
+  var s=scelti();
+  if(s.length===1) return s[0];   // ne ha segnato uno: quello e' il primo
+  var r=form.querySelector('input[name=primo]:checked');
+  return r ? r.value : '';
 }
 form.addEventListener('change', aggiorna);
 function dì(t,cl){ msg.textContent=t; msg.className='sq-msg '+(cl||''); }
@@ -252,7 +285,7 @@ form.addEventListener('submit', function(e){
   fetch(SB_URL+'/functions/v1/sondaggio',{
     method:'POST',
     headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY,'Content-Type':'application/json'},
-    body:JSON.stringify({temi:temi,email:email,altro:altro})
+    body:JSON.stringify({temi:temi,email:email,altro:altro,primo:primoScelto()})
   }).then(function(r){ return r.json().then(function(j){ return j; }); })
     .then(function(j){
       if(j&&j.ok){
@@ -267,6 +300,7 @@ form.addEventListener('submit', function(e){
         var m={'gia_votato':'Da questo indirizzo hai gi\u00e0 risposto. Grazie lo stesso!',
                 'email_non_valida':'Controlla l\u2019indirizzo email.',
                 'temi_non_validi':'Scegli almeno un tema.',
+                'primo_non_valido':'Il tema che pesa di più va scelto fra quelli che hai segnato.',
                 'posta_non_configurata':'Il sondaggio non \u00e8 ancora attivo. Riprova pi\u00f9 tardi.',
                 'posta_non_partita':'Non siamo riusciti a mandare la mail. Riprova fra poco.'};
         dì(m[j&&j.motivo]||'Qualcosa non ha funzionato. Riprova fra poco.','ko');
@@ -282,15 +316,35 @@ function disegna(d,tot){
     var p=Math.round(x.voti*100/tot);
     return '<div class=sq-barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+p+'%</b> ('+x.voti+')</i>'+
            '<u><b style="width:'+p+'%"></b></u></div>';
-  }).join('')+'<p class=sq-nota>'+tot+(tot===1?' persona ha risposto':' persone hanno risposto')+'. Le percentuali dicono quanti, fra loro, hanno indicato quel tema: la somma pu\u00f2 superare il 100%, perch\u00e9 si possono segnare pi\u00f9 temi.</p>';
+  }).join('')+'<p class=sq-nota>'+tot+(tot===1?' persona ha risposto':' persone hanno risposto')+'. Le percentuali dicono quanti, fra loro, hanno indicato quel tema: la somma pu\u00f2 superare il 100%, perch\u00e9 si possono segnare pi\u00f9 temi.</p>'+codaPrime(d);
+}
+// Qui ogni persona conta una volta sola, quindi la somma fa 100%. Dice quale
+// tema pesa di piu', NON in che ordine usciranno gli incontri: quello dipende
+// dal tempo che serve a prepararli, e non lo sappiamo ancora.
+function codaPrime(d){
+  var prime=d.reduce(function(a,x){return a+(x.voti_primo||0);},0);
+  if(!prime) return '';
+  var p=d.filter(function(x){return x.voti_primo;})
+         .sort(function(a,b){return b.voti_primo-a.voti_primo;});
+  return '<p class=sq-nota style="margin-top:22px"><b>Se dovessero sceglierne uno solo</b>, chi ha risposto sceglierebbe cos&igrave;:</p>'+
+    p.map(function(x){
+      var q=Math.round(x.voti_primo*100/prime);
+      return '<div class=sq-barra><i>'+(NOMI[x.tema]||x.tema)+' &mdash; <b>'+q+'%</b> ('+x.voti_primo+')</i>'+
+             '<u><b style="width:'+q+'%"></b></u></div>';
+    }).join('');
 }
 
 var det=document.querySelector('.sq-ris'), caricati=false;
 det.addEventListener('toggle', function(){
   if(!det.open||caricati) return; caricati=true;
-  fetch(SB_URL+'/rest/v1/sondaggio_risultati?select=tema,voti,persone&order=ordine',
-    {headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}})
-   .then(function(r){return r.json();})
+  // Si chiede anche voti_primo, ma se la colonna non c'e' ancora (il comando
+  // sull'archivio si lancia a mano) si ripiega sulla versione senza: meglio i
+  // numeri vecchi che un messaggio di errore.
+  var opz={headers:{apikey:SB_KEY,Authorization:'Bearer '+SB_KEY}},
+      via=SB_URL+'/rest/v1/sondaggio_risultati?order=ordine&select=';
+  fetch(via+'tema,voti,persone,voti_primo',opz)
+   .then(function(r){ return r.ok ? r.json() : fetch(via+'tema,voti,persone',opz)
+                                                .then(function(r2){return r2.json();}); })
    .then(function(d){
      disegna(d,(d&&d[0]&&d[0].persone)||0);
    })

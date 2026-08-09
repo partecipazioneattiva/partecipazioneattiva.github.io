@@ -155,9 +155,15 @@ Deno.serve(async (req: Request) => {
   const email = String(dati.email ?? "").trim().toLowerCase();
   const temi = Array.isArray(dati.temi) ? dati.temi.map(String) : [];
   const altro = String(dati.altro ?? "").trim().slice(0, 400);
+  // la prima scelta e' FACOLTATIVA: chi la salta non deve perdere il voto
+  // sui temi. Se c'e', dev'essere uno dei sei e uno di quelli segnati.
+  const primo = String(dati.primo ?? "").trim();
 
   if (temi.length > 6 || !temi.every((t) => t in TEMI)) {
     return risposta({ ok: false, motivo: "temi_non_validi" }, 400);
+  }
+  if (primo && (!(primo in TEMI) || !temi.includes(primo))) {
+    return risposta({ ok: false, motivo: "primo_non_valido" }, 400);
   }
   if (temi.length === 0 && !altro) {
     return risposta({ ok: false, motivo: "temi_non_validi" }, 400);
@@ -179,7 +185,8 @@ Deno.serve(async (req: Request) => {
       Authorization: `Bearer ${CHIAVE_SERVER}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ p_email: email, p_temi: temi, p_altro: altro || null }),
+    body: JSON.stringify({ p_email: email, p_temi: temi, p_altro: altro || null,
+                           p_primo: primo || null }),
   });
   if (!r.ok) {
     const dettaglio = (await r.text()).slice(0, 160);

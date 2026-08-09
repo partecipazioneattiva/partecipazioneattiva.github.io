@@ -25,6 +25,38 @@
 > `voto-confermato.html` descrivono **com'era**: restano perché le trappole che
 > raccontano valgono ancora.
 
+> ## 🆕 9 agosto, pomeriggio — LA PRIMA SCELTA
+>
+> Le sei caselle libere dicono **a quali temi la gente è interessata**, ma non
+> li mettono in ordine: nei primi giorni davano **3-3-3-3-2-2**, cioè niente.
+> Lo ha segnalato **Paolo Walter**, e i dati gli davano ragione.
+>
+> Da oggi, a chi segna **almeno due** temi compare una domanda in più:
+> *«E se dovessi sceglierne uno solo, quale?»* — scelta singola, fra quelli
+> che ha già segnato, e si può saltare. Chi ne segna **uno solo** non la vede:
+> quel tema vale come prima scelta da sé.
+>
+> ### 🟥 NON è un ordine di uscita, e non va mai presentata così
+>
+> Ordine di Fernando, 9 agosto 2026: *«è categorico, non è una classifica
+> d'uscita perché non lo sappiamo neanche noi i tempi che servono ad ogni tema
+> per essere realizzato»*.
+>
+> Per questo la domanda dice **«se dovessi sceglierne uno solo»** e non «da
+> quale cominciamo», e la pagina scrive per esteso che l'ordine dipende dal
+> tempo di preparazione, che oggi non è noto. Se un domani si riscrive questa
+> parte: **niente formule che promettano un calendario.**
+>
+> **Perché non la numerazione da 1 a 6**, che era la proposta di Paolo: le
+> linee guida per i sondaggi di partecipazione civica raccomandano
+> l'ordinamento **solo sotto le quattro-cinque voci**, e il **68%** del nostro
+> pubblico arriva da telefono. Chi abbandona a metà non lascia una risposta
+> parziale: non lascia niente. La domanda singola dà la stessa graduatoria al
+> prezzo di un tocco.
+>
+> Pezzo nuovo: **`10_prima_scelta.sql`** (colonna `voti_primo`, vista e
+> funzione a quattro argomenti). La funzione `02` passa `p_primo`.
+
 Come funziona, e i gesti che restano a Fernando.
 
 ---
