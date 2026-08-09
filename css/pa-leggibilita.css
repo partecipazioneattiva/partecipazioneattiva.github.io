@@ -348,7 +348,12 @@ body .footer-bottom, body .foot-bottom, body .footer-bottom span, body .foot-bot
    chiaro. Spostandola fuori (per rendere il menu uguale a tutte le altre
    pagine) e' finita su fondo chiaro e non si leggeva piu': 1,36 invece di 4,5.
    L'ho causato io l'8 agosto 2026, e qui lo rimedio. */
-body .nav-row{background:#5f3500;padding:6px 18px}
+body .nav-row{background:#5f3500;padding:6px 18px;flex-wrap:wrap}
+/* «flex-wrap: wrap» e' il rimedio numero 3 dell'elenco di Ahmad Shadeed
+   (Smashing Magazine, «Overflow Issues In CSS»): una riga flessibile che non
+   va a capo non si restringe — spinge i figli fuori dallo schermo e basta.
+   Qui erano i link PARLERO' / Salotto Culturale / News FB / YouTube, che a
+   320 px uscivano di 39 px. Trovato il 9 agosto 2026. */
 body .nav-row a, body .nav-row span{color:#ffe9cb}
 body .nav-row .parlero-link{color:#ffd580;font-weight:700}
 body .nav-row .parlero-sub{color:#f0dfc6}
@@ -483,4 +488,27 @@ body .cta-section .cta-btn{color:#7a3d10}
    --------------------------------------------------------------------- */
 @media (max-width: 480px) {
   .pa-tbl th, .pa-tbl td { padding: 8px 6px; }
+}
+
+/* ---------------------------------------------------------------------
+   UNA TABELLA CHE SCORRE INVECE DI SFONDARE LA PAGINA
+   Una tabella di dati non si restringe sotto la larghezza minima del suo
+   contenuto: e' fatta cosi', e nessuna regola la convince. Metterla in un
+   riquadro che scorre di lato e' l'unico modo onesto: la pagina resta
+   ferma, la tabella si sfoglia con il dito.
+   Il bordo sfumato a destra serve a far capire che c'e' altro oltre.
+   --------------------------------------------------------------------- */
+.pa-tab-scorre {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 22px 0;
+  max-width: 100%;
+}
+.pa-tab-scorre > table { margin: 0; min-width: 460px; }
+@media (max-width: 600px) {
+  .pa-tab-scorre {
+    background:
+      linear-gradient(to right, #fff 30%, rgba(255,255,255,0)) left / 24px 100% no-repeat,
+      linear-gradient(to left,  #fff 30%, rgba(255,255,255,0)) right / 24px 100% no-repeat;
+  }
 }
