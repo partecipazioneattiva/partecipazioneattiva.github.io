@@ -975,13 +975,13 @@ ART_SETTEMBRE = {
 BODY_TRUCCO = '''
 <article class="article-wrap">
 
-<p>Il <strong>31 luglio 2026</strong> la rivista scientifica <em>Dirittifondamentali.it</em> ha pubblicato un contributo di <strong>Lara Trucco</strong>, professoressa ordinaria di Diritto costituzionale all'Università di Genova, dedicato a un aspetto della legge elettorale di cui si discute poco: se chi vota sia messo nelle condizioni di <strong>conoscere chi elegge</strong> e di <strong>capire come il suo voto diventa seggi</strong>.</p>
+<p><strong>Luigi Spanu</strong>, portavoce nazionale di Partecipazione Attiva, porta all'attenzione un contributo scientifico uscito il <strong>31 luglio 2026</strong> sulla rivista <em>Dirittifondamentali.it</em>. Lo firma <strong>Lara Trucco</strong>, professoressa ordinaria di Diritto costituzionale all'Università di Genova, ed è dedicato a un aspetto della legge elettorale di cui si discute poco: se chi vota sia messo nelle condizioni di <strong>conoscere chi elegge</strong> e di <strong>capire come il suo voto diventa seggi</strong>.</p>
 
 <p>Il titolo è <em>«Alcune riflessioni sulla discrezionalità del legislatore alla luce della "intelligibilità" del sistema elettorale»</em> (fascicolo 2/2026, pp. 341-364, contributo sottoposto a referaggio). È la rielaborazione, aggiornata al 31 luglio 2026, della relazione tenuta dall'autrice al convegno internazionale <em>«La crisi della democrazia costituzionale negli ordinamenti nazionali ed europeo: cause e correttivi»</em>, svoltosi a Cassino il 29 e 30 aprile 2026.</p>
 
 <div class="box-info" style="border-left-color:#8a4e00">
 <strong>&#x1F4C4; Come leggere questa pagina</strong>
-Le riflessioni della prof.ssa Trucco sono riportate qui sotto seguendo i passaggi del suo testo, con le sue parole e i suoi numeri. <strong>Sono considerazioni dell'autrice, non commenti di Partecipazione Attiva.</strong> Il testo integrale è liberamente consultabile: <a href="https://dirittifondamentali.it/2026/07/31/alcune-riflessioni-sulla-discrezionalita-del-legislatore-alla-luce-della-intelligibilita-del-sistema-elettorale/" target="_blank" rel="noopener nofollow" style="color:#9c5b00;font-weight:700">la scheda sulla rivista &rarr;</a>
+Le riflessioni della prof.ssa Trucco sono riportate qui sotto seguendo i passaggi del suo testo, con le sue parole e i suoi numeri. <strong>Sono considerazioni dell'autrice: Partecipazione Attiva le segnala e le riporta, senza aggiungere commenti propri.</strong> Il testo integrale è liberamente consultabile: <a href="https://dirittifondamentali.it/2026/07/31/alcune-riflessioni-sulla-discrezionalita-del-legislatore-alla-luce-della-intelligibilita-del-sistema-elettorale/" target="_blank" rel="noopener nofollow" style="color:#9c5b00;font-weight:700">la scheda sulla rivista &rarr;</a>
 </div>
 
 <h2>Due modi di non capire il sistema di voto</h2>
@@ -1057,14 +1057,14 @@ Le riflessioni della prof.ssa Trucco sono riportate qui sotto seguendo i passagg
 <h2>Dove si legge il testo integrale</h2>
 <p>Lara Trucco, <em>Alcune riflessioni sulla discrezionalità del legislatore alla luce della "intelligibilità" del sistema elettorale</em>, in <em>Dirittifondamentali.it</em>, fascicolo 2/2026, pp. 341-364, pubblicato il 31 luglio 2026 (contributo sottoposto a referaggio). <a href="https://dirittifondamentali.it/2026/07/31/alcune-riflessioni-sulla-discrezionalita-del-legislatore-alla-luce-della-intelligibilita-del-sistema-elettorale/" target="_blank" rel="noopener nofollow">Scheda e testo integrale sulla rivista</a>.</p>
 
-<p><em>Le considerazioni riportate in questa pagina sono della prof.ssa Lara Trucco. Partecipazione Attiva le riporta a scopo informativo, seguendo il testo pubblicato, senza aggiunte né interpretazioni.</em></p>
+<p><em>Le considerazioni riportate in questa pagina sono della prof.ssa Lara Trucco. Il portavoce nazionale Luigi Spanu le porta all'attenzione; Partecipazione Attiva le riporta a scopo informativo, seguendo il testo pubblicato, senza aggiunte né interpretazioni.</em></p>
 
 </article>
 '''
 
 ART = {
   'slug'         : 'stabilicum-intelligibilita-trucco-agosto2026.html',
-  'autore'       : 'pa',
+  'autore'       : 'spanu',
   'data_iso'     : '2026-08-10',
   'data_human'   : '10 agosto 2026',
   'data_badge'   : '10 AGOSTO 2026',
@@ -1072,11 +1072,11 @@ ART = {
   'categoria_hero': '⚖️ Riforma elettorale',
   'og_image'     : 'images/pensattivo-stabilicum.webp',
   'h1'           : 'Stabilicum: si può votare una legge che non si riesce a capire?',
-  'sottotitolo'  : 'Le riflessioni della prof.ssa Lara Trucco, ordinaria di Diritto costituzionale a Genova, sull’«intelligibilità» del sistema elettorale: chi si elegge davvero, come il voto diventa seggi e quanto tempo resta prima del 2027.',
+  'sottotitolo'  : 'Il portavoce nazionale porta all’attenzione le riflessioni della prof.ssa Lara Trucco, ordinaria di Diritto costituzionale a Genova, sull’«intelligibilità» del sistema elettorale: chi si elegge davvero, come il voto diventa seggi e quanto tempo resta prima del 2027.',
   'meta_desc'    : 'Le riflessioni della costituzionalista Lara Trucco sullo Stabilicum: liste premiali da 70 e 35 nomi, preferenze e i tempi verso l’autunno 2027.',
   'card_cat'     : 'STABILICUM — AGGIORNAMENTO',
-  'card_title'   : 'Stabilicum: le riflessioni della prof.ssa Lara Trucco',
-  'card_desc'    : 'La costituzionalista dell’Università di Genova esamina l’«intelligibilità» dello Stabilicum: le liste premiali da 70 e 35 nomi, il peso reale delle preferenze e i tempi verso il 2027.',
+  'card_title'   : 'Spanu: leggete le riflessioni della prof.ssa Lara Trucco',
+  'card_desc'    : 'Il portavoce nazionale porta all’attenzione il contributo della costituzionalista dell’Università di Genova sull’«intelligibilità» dello Stabilicum: liste premiali da 70 e 35 nomi, il peso reale delle preferenze, i tempi verso il 2027.',
   'ticker_emoji' : '⚖️',
   'ticker_tema'  : 'STABILICUM',
   'ticker_testo' : 'le riflessioni della costituzionalista Lara Trucco sull’intelligibilità dello Stabilicum: liste premiali da 70 e 35 nomi e tempi stretti verso il 2027',
