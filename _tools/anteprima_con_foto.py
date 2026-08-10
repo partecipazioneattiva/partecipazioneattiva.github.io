@@ -144,10 +144,16 @@ def disegna(foto, ritaglio, occhiello, titolo, sottotitolo, dove):
         for r in textwrap.wrap(titolo, width=max(8, int(largh / (dim * 0.50))))[:4]:
             b.append(("tit", r, f_t, int(dim * 1.26)))
         if sottotitolo:
-            f_s = font("montserrat-400-latin", MINIMO + 2)
+            # ⛔ 10 agosto 2026, Fernando: «questa parte va evidenziata al
+            #    massimo». Il sottotitolo dice DI CHI sono le riflessioni: e' la
+            #    riga che qualifica il contenuto, non una didascalia. Bianco
+            #    pieno e neretto, come il titolo. (Il verde brillante sarebbe
+            #    stato l'altra strada: scartato, sull'arancione stona e con la
+            #    velatura scende sotto il bianco come contrasto.)
+            f_s = font("montserrat-700-latin", MINIMO + 4)
             for i, r in enumerate(textwrap.wrap(
-                    sottotitolo, width=max(8, int(largh / ((MINIMO + 2) * 0.55))))[:3]):
-                b.append(("sub" + ("1" if i == 0 else ""), r, f_s, MINIMO + 12))
+                    sottotitolo, width=max(8, int(largh / ((MINIMO + 4) * 0.60))))[:3]):
+                b.append(("sub" + ("1" if i == 0 else ""), r, f_s, MINIMO + 16))
         return b
 
     for dim in (52, 48, 44, 40, 36, 32):
@@ -157,8 +163,7 @@ def disegna(foto, ritaglio, occhiello, titolo, sottotitolo, dove):
             break
     y = ALTO + max(0, ((BASSO - ALTO) - alto) // 2)
 
-    COLORE = {"occ": (255, 214, 140), "tit": "white", "sub": (255, 236, 212),
-              "sub1": (255, 236, 212)}
+    COLORE = {"occ": (255, 214, 140), "tit": "white", "sub": "white", "sub1": "white"}
     for tipo, testo, f, passo in blocco:
         if tipo == "sub1":
             y += 18                             # aria fra titolo e sottotitolo
