@@ -951,7 +951,7 @@ Il tuo browser non supporta il video.
 </article>
 '''
 
-ART = {
+ART_SETTEMBRE = {
   'slug'         : 'settembre-2026-appuntamenti.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-08-08',
@@ -971,6 +971,118 @@ ART = {
   'ticker_testo' : 'sei appuntamenti sulla WebTV di Partecipazione Attiva: APE, la Mappa, la legge elettorale, l’RC Auto, l’arte del dono, essere donna a Napoli',
   'body'         : BODY_SETTEMBRE,
 }
+
+BODY_TRUCCO = '''
+<article class="article-wrap">
+
+<p>Il <strong>31 luglio 2026</strong> la rivista scientifica <em>Dirittifondamentali.it</em> ha pubblicato un contributo di <strong>Lara Trucco</strong>, professoressa ordinaria di Diritto costituzionale all'Università di Genova, dedicato a un aspetto della legge elettorale di cui si discute poco: se chi vota sia messo nelle condizioni di <strong>conoscere chi elegge</strong> e di <strong>capire come il suo voto diventa seggi</strong>.</p>
+
+<p>Il titolo è <em>«Alcune riflessioni sulla discrezionalità del legislatore alla luce della "intelligibilità" del sistema elettorale»</em> (fascicolo 2/2026, pp. 341-364, contributo sottoposto a referaggio). È la rielaborazione, aggiornata al 31 luglio 2026, della relazione tenuta dall'autrice al convegno internazionale <em>«La crisi della democrazia costituzionale negli ordinamenti nazionali ed europeo: cause e correttivi»</em>, svoltosi a Cassino il 29 e 30 aprile 2026.</p>
+
+<div class="box-info" style="border-left-color:#8a4e00">
+<strong>&#x1F4C4; Come leggere questa pagina</strong>
+Le riflessioni della prof.ssa Trucco sono riportate qui sotto seguendo i passaggi del suo testo, con le sue parole e i suoi numeri. <strong>Sono considerazioni dell'autrice, non commenti di Partecipazione Attiva.</strong> Il testo integrale è liberamente consultabile: <a href="https://dirittifondamentali.it/2026/07/31/alcune-riflessioni-sulla-discrezionalita-del-legislatore-alla-luce-della-intelligibilita-del-sistema-elettorale/" target="_blank" rel="noopener nofollow" style="color:#9c5b00;font-weight:700">la scheda sulla rivista &rarr;</a>
+</div>
+
+<h2>Due modi di non capire il sistema di voto</h2>
+<p>Il contributo distingue due versanti dell'intelligibilità, interconnessi fra loro.</p>
+<p>Il primo, di carattere <strong>soggettivo</strong>, riguarda la possibilità per gli elettori di riconoscere le persone che, per effetto del proprio voto, potrebbero essere chiamate a comporre la rappresentanza parlamentare. Il secondo, di tipo <strong>oggettivo</strong>, riguarda la comprensibilità delle modalità attraverso le quali il voto espresso concorre alla distribuzione dei seggi e, per questa via, alla composizione politica delle Camere.</p>
+<p>La domanda che attraversa tutto il contributo è se l'intelligibilità così intesa possa assumere <strong>un autonomo rilievo sul piano costituzionale</strong>, concorrendo a definire i limiti della discrezionalità del legislatore in materia elettorale.</p>
+
+<h2>Conoscere i candidati: cosa ha già detto la Corte</h2>
+<p>Sul versante soggettivo l'autrice richiama due pronunce. La <strong>sentenza n. 1 del 2014</strong>, che dichiarò l'illegittimità costituzionale della cosiddetta legge Calderoli, trovò uno dei suoi principali fondamenti proprio nella constatata impossibilità per gli elettori di conoscere effettivamente le persone alle quali il proprio voto avrebbe potuto consentire di accedere alla rappresentanza parlamentare: le liste bloccate, per l'ampiezza raggiunta (le cosiddette «liste lenzuola»), ostacolavano la conoscenza dei candidati al punto da alterare, per l'intero complesso dei parlamentari, il rapporto di rappresentanza fra elettori ed eletti.</p>
+<p>La <strong>sentenza n. 35 del 2017</strong> consolidò il principio in senso opposto: l'Italicum superò, sotto questo specifico profilo, il vaglio di costituzionalità in quanto caratterizzato da meccanismi idonei ad assicurare la «preventiva conoscibilità da parte degli elettori» dei singoli candidati.</p>
+<p>Ne risulta, scrive l'autrice, una linea giurisprudenziale nella quale la conoscibilità personale dei candidati è <strong>condizione funzionale all'effettività della scelta dell'elettore</strong>: al di là della possibilità di esprimere una preferenza, rileva la possibilità di individuare preventivamente, entro una cerchia ragionevolmente circoscritta, le persone sulle quali il proprio voto è suscettibile di produrre effetti.</p>
+
+<h2>Cosa cambia passando dal Rosatellum allo Stabilicum</h2>
+<p>Nel <strong>Rosatellum-bis</strong> è la componente uninominale a rendere immediatamente identificabile almeno uno dei candidati. La sua eliminazione nella proposta di riforma approvata in prima lettura dalla Camera riporta perciò in primo piano il problema della conoscibilità soggettiva, tanto più in ragione del permanere del meccanismo delle pluricandidature e del voto bloccato.</p>
+<p>Nel testo dello <strong>Stabilicum</strong> il sistema conserva una struttura interamente imperniata su liste bloccate. Nei collegi plurinominali la criticità risulta però almeno in parte attenuata dalla ridotta estensione delle liste, composte da un numero di candidati <strong>variabile da due a sei</strong>, i cui nominativi possono ritenersi agevolmente conoscibili dall'elettore.</p>
+<p>Diversa &mdash; «ed è questo il punto», scrive l'autrice &mdash; si presenta la situazione delle candidature inserite nelle liste destinate all'eventuale attribuzione dei <strong>seggi premiali</strong>: elenchi di <strong>settanta candidati per la Camera</strong> e <strong>trentacinque per il Senato</strong>, la cui elezione può avvenire «in blocco». Ciò ripropone, anche al di là delle difficoltà di rappresentarli graficamente sulla scheda, il già richiamato modello delle «liste lenzuola» censurato dal giudice costituzionale.</p>
+
+<h2>L'emendamento che attenua, ma solo in parte</h2>
+<p>Nel corso dell'esame in Assemblea è stata approvata una proposta emendativa, a prima firma Bignami, per cui ciascun candidato inserito nella lista destinata all'eventuale attribuzione del premio deve essere candidato anche in almeno un collegio plurinominale: un meccanismo, riconosce l'autrice, idoneo ad accrescere in qualche misura la preventiva visibilità sul territorio delle candidature.</p>
+<p>Il fatto è, però, che esso incide solo parzialmente sul nucleo della criticità. Adottando una prospettiva realistica, l'elettore viene sì posto nelle condizioni di identificare direttamente i candidati presenti nel proprio collegio, ma <strong>continua a non poter conoscere i potenziali eletti per effetto dell'attribuzione del premio</strong>, tanto più che la contestuale candidatura territoriale non si accompagna alla possibilità di incidere sulla loro selezione attraverso un voto di preferenza.</p>
+<p>La difficoltà si vede anche sulla <strong>scheda</strong>. Il modello riprodotto negli atti parlamentari &mdash; il resoconto della seduta della Commissione Affari costituzionali della Camera del 4 giugno 2026 e il Dossier dell'Ufficio Studi del 21 luglio 2026 (p. 133) &mdash; mostra, nel riquadro relativo alla lista premiale, sei nominativi indistinti: una rappresentazione che, pur avendo carattere dichiaratamente esemplificativo, non appare idonea a restituire con immediatezza e chiarezza il concreto funzionamento del meccanismo.</p>
+
+<h2>Il voto di preferenza: dov'è finito</h2>
+<p>Va tenuto presente il passaggio parlamentare che l'autrice richiama in nota. Il <strong>14 luglio 2026</strong>, nella seduta n. 689, la Camera ha respinto <strong>a scrutinio segreto, con 187 voti favorevoli e 188 contrari</strong>, la proposta emendativa a firma Bignami, Romano e Cesa &mdash; sulla quale relatori e Governo avevano espresso parere favorevole &mdash; volta a introdurre, accanto al capolista bloccato, la possibilità per l'elettore di esprimere fino a <strong>tre voti di preferenza</strong>.</p>
+<p>Nel testo approvato dalla Camera il <strong>16 luglio 2026</strong> e trasmesso al Senato (A.S. 1971) la preferenza dunque <strong>non figura</strong>. Le pagine che seguono riguardano perciò la possibile «versione III» dello Stabilicum, cioè l'ipotesi che il voto di preferenza venga introdotto nel corso dell'esame al Senato.</p>
+
+<h2>Anche con le preferenze, il primo seggio resta al capolista</h2>
+<p>Il punto di partenza del ragionamento è la riserva del <strong>primo seggio</strong> conseguito da ciascuna lista nel singolo collegio plurinominale al relativo <strong>capolista</strong>. Ne consegue che il voto di preferenza sarebbe destinato a divenire immediatamente decisivo soltanto per il secondo seggio (se il capolista non risultasse parimenti eletto nella lista premiale) e, eventualmente, per i successivi ottenuti dalla stessa lista nel collegio.</p>
+<p>Molto dipenderebbe poi dalle strategie di candidatura delle forze politiche. Candidando ciascun nome della lista premiale in un solo collegio, la posizione del candidato preselezionato dal partito ne uscirebbe rafforzata e la scelta dell'elettore diverrebbe efficace soltanto dopo quella preventiva del partito: si avrebbe, in tal senso, un <strong>«voto preferenziale blindato»</strong>. Ricorrendo invece alle candidature plurime (fino a cinque collegi), la prevalenza della proclamazione nella lista premiale renderebbe disponibili i seggi conseguiti nei collegi, ampliando lo spazio entro il quale le preferenze possono produrre effetti selettivi: si avrebbe allora un <strong>«voto blindato preferenziale»</strong>.</p>
+<p>Si tratta, scrive l'autrice, di un <strong>paradosso solo apparente</strong>: tanto il ricorso alle candidature plurime quanto la scelta di non farvi ricorso confermerebbero comunque il sostanziale monopolio delle forze politiche nella formazione della rappresentanza politica. E l'effettiva capacità selettiva della preferenza rimarrebbe condizionata dal numero dei seggi concretamente conseguiti dalla lista nel singolo collegio: ove questi fossero limitati ai soli posti occupati dai capilista, o esauriti dalle candidature collocate nelle prime posizioni, lo spazio riservato alla scelta dell'elettore finirebbe per risultare <strong>compresso, se non del tutto neutralizzato</strong>.</p>
+
+<h2>Le tre simulazioni</h2>
+<p>L'autrice avverte espressamente che si tratta di <strong>simulazioni convenzionali ed estremamente approssimative</strong>, e non di previsioni. Il parametro di partenza &mdash; una quota di parlamentari individuati mediante preferenza nell'ordine del <strong>15-20%</strong>, pari a circa 90-120 eletti &mdash; è assunto in via meramente orientativa sulla base di una proiezione dei risultati delle elezioni del 2022. I tre scenari servono soltanto a verificare come il progressivo aumento delle contestuali proclamazioni incida sulla componente scelta con la preferenza.</p>
+<p>I riferimenti numerici sono questi: i <strong>105 seggi del circuito premiale</strong> corrispondono ai 70 previsti per la Camera più i 35 per il Senato; i restanti <strong>495 seggi</strong> sono considerati, ai soli fini della simulazione, estranei al circuito premiale; il Parlamento è composto da <strong>600 membri</strong>.</p>
+
+<div class="pa-tab-scorre">
+<table class="tabella">
+<thead><tr><th>Scenario (scorrimenti)<th>Eletti con la preferenza<th>Capilista bloccati<th>Eletti nella lista premiale</thead>
+<tbody>
+<tr><td><strong>Ricorso limitato</strong><br>circa 10-20<td>100-140<br><span style="color:#6b6b6b">16,7-23,3% del Parlamento</span><td>395-355<br><span style="color:#6b6b6b">65,8-59,2%</span><td>105<br><span style="color:#6b6b6b">17,5%</span>
+<tr><td><strong>Ricorso medio</strong><br>circa 53<td>143-173<br><span style="color:#6b6b6b">23,8-28,8%</span><td>352-322<br><span style="color:#6b6b6b">58,7-53,7%</span><td>105<br><span style="color:#6b6b6b">17,5%</span>
+<tr><td><strong>Ricorso elevato</strong><br>circa 80-100<td>170-220<br><span style="color:#6b6b6b">28,3-36,7%</span><td>325-275<br><span style="color:#6b6b6b">54,2-45,8%</span><td>105<br><span style="color:#6b6b6b">17,5%</span>
+</tbody>
+</table>
+</div>
+
+<p>Guardando ai soli 495 seggi estranei al circuito premiale, la quota degli eletti mediante preferenza andrebbe dal 20,2-28,3% del primo scenario al 28,9-34,9% del secondo, fino al 34,3-44,4% del terzo; correlativamente, quella dei capilista bloccati scenderebbe dal 79,8-71,7% al 65,7-55,6%.</p>
+<p>La conclusione dell'autrice: dalle simulazioni rileva come, <strong>anche nello scenario convenzionalmente più favorevole agli elettori</strong>, il voto di preferenza sia destinato a incidere <strong>soltanto su una parte</strong> della complessiva selezione della rappresentanza parlamentare; circostanza della quale gli elettori stessi dovrebbero poter essere adeguatamente consapevoli al momento del voto.</p>
+
+<h2>L'altro versante: prevedere gli effetti, o almeno capire il meccanismo</h2>
+<p>Passando alla conoscibilità oggettiva, il contributo distingue due livelli di intensità. Il primo, più esigente, è la <strong>«conoscibilità previsionale»</strong>: la possibilità per l'elettore di prevedere gli effetti essenziali che il proprio voto è destinato a produrre sulla composizione dell'assemblea rappresentativa. Il secondo, meno intenso, è la <strong>«conoscibilità funzionale»</strong>: la comprensione del funzionamento del sistema elettorale e della logica attraverso la quale i voti si traducono in seggi.</p>
+<p>Sulla prima l'autrice è netta. La tentazione di estendere alla materia elettorale l'impostazione elaborata in materia referendaria &mdash; dalla sentenza n. 16 del 1978, che pone in stretta correlazione la libertà del voto con la consapevolezza della decisione, e da cui discendono i requisiti di chiarezza, univocità e omogeneità del quesito &mdash; è forte, ma un simile approccio <strong>non trova, almeno per il momento, fondamento nel vigente quadro costituzionale</strong>: nel referendum il corpo elettorale si pronuncia direttamente su un quesito determinato secondo una logica binaria, mentre nelle elezioni politiche la scelta concorre, secondo una logica complessa, alla formazione della rappresentanza.</p>
+<p>Concorre nello stesso senso la giurisprudenza costituzionale che ha costantemente distinto le condizioni di esercizio del voto dagli effetti che ne discendono una volta espressa la scelta, ricondotti a un'ampia discrezionalità del legislatore (sentenze n. 43 del 1961 e n. 1 del 2014), anche nella prospettiva di preservare quella componente di aleatorietà dell'esito connaturata alla democraticità della consultazione elettorale (sentenza n. 4 del 2010).</p>
+<p>Non priva di rilievo, aggiunge l'autrice, è la <strong>sentenza n. 61 del 2022</strong>, nella quale la Corte, pronunciandosi sulla retroattività di una disciplina regionale incidente sulle elezioni comunali, ha valorizzato la tutela dell'affidamento in materia elettorale, censurando un intervento che, sotto l'apparente veste dell'interpretazione autentica, aveva in realtà modificato retroattivamente un aspetto decisivo del sistema: la consistenza del premio di maggioranza.</p>
+
+<h2>La «radicale oscurità» di una legge</h2>
+<p>Il punto di avvio dell'analisi è la <strong>sentenza n. 110 del 2023</strong> della Corte costituzionale, resa in materia diversa da quella elettorale ma rilevante là dove riconduce al principio di ragionevolezza dell'art. 3 della Costituzione l'esigenza del rispetto di «standard minimi di intelligibilità» della normazione, sino a ricomprendere l'intelligibilità della legge tra i «requisiti minimi di razionalità dell'azione legislativa» e a censurare disposizioni affette da una «radicale oscurità», tale da determinare «intollerabile incertezza nella loro applicazione concreta».</p>
+<p>Due profili della decisione contano qui. Il primo: la pronuncia collega l'intelligibilità della disciplina alla possibilità per i suoi destinatari di orientare consapevolmente le proprie «libere scelte d'azione», facendo affidamento su un quadro normativo sufficientemente riconoscibile in anticipo. Il secondo: la Corte distingue la «radicale oscurità» dalla <strong>«fisiologica complessità»</strong> della normazione, riconoscendo che la complessità delle materie può esigere discipline a loro volta complesse; il limite si attinge quando, «nonostante ogni sforzo interpretativo», non è possibile individuare con sufficiente certezza neppure il nucleo della regola destinata a trovare applicazione.</p>
+<p>In materia elettorale, osserva l'autrice, quelle «libere scelte d'azione» vengono a coincidere con l'esercizio di un diritto politico fondamentale: al principio di ragionevolezza vengono perciò ad affiancarsi i principi di sovranità popolare e di libertà del voto (artt. 1, secondo comma, e 48, secondo comma, della Costituzione). Non si tratterebbe di pretendere che ogni passaggio tecnico della formula elettorale risulti immediatamente comprensibile al comune elettore, ma che <strong>il modo in cui il voto si trasforma in rappresentanza rimanga, almeno nei suoi snodi essenziali, ragionevolmente ricostruibile in via interpretativa</strong>.</p>
+
+<h2>Quando le singole norme sono chiare, ma l'insieme no</h2>
+<p>Qui il contributo introduce la sua tesi più originale. Altro è l'oscurità del contenuto normativo, altro è l'oscurità quale <strong>schermo</strong> attraverso il quale possono operare meccanismi non ragionevolmente riconoscibili. In questo secondo caso, pur in presenza di disposizioni singolarmente intelligibili, è la loro <strong>interazione</strong> a dar luogo a un meccanismo i cui effetti non emergono in termini ragionevolmente riconoscibili dalla configurazione normativa del sistema: l'oscurità non risiede necessariamente nel testo, ma nella <strong>divaricazione tra il sistema come è scritto</strong> (<em>ex ante</em>) <strong>e come funziona concretamente</strong> (<em>ex post</em>).</p>
+<p>Da qui l'individuazione di una <strong>«soglia minima di tollerabilità»</strong>, oltre la quale quella divaricazione diventa tale da spezzare il minimo nesso di corrispondenza, ragionevolmente ricostruibile in via interpretativa, tra la scelta espressa dall'elettore e il meccanismo attraverso il quale essa concorre alla formazione della rappresentanza politica.</p>
+<p>A sostegno l'autrice richiama: la lettura congiunta della sentenza n. 110 del 2023 e della sentenza n. 1 del 2014, che guardava non alle singole disposizioni ma agli effetti complessivamente prodotti dalle «condizioni stabilite dalle norme» sul rapporto di rappresentanza; l'<strong>ordinanza interlocutoria n. 28511 del 2025 della Corte di cassazione</strong> sul Rosatellum-bis, nella quale si sottolinea che si ha a che fare non con i profili di incostituzionalità di una singola norma, ma «del complessivo meccanismo che emerge dalla legge elettorale»; e, sul versante europeo, il <em>Codice di buona condotta in materia elettorale</em> della Commissione di Venezia, là dove dispone che «<em>voting procedures must be simple</em>» (§ 3.2, i).</p>
+<p>Un riscontro concreto è citato in nota: all'indomani delle elezioni politiche del 2022 è risultata confermata la capacità del Rosatellum-bis di generare un effetto di sovrarappresentazione &mdash; stimato in almeno il <strong>15% dei seggi</strong> &mdash; sulla base di un meccanismo non configurato dal legislatore in termini premiali, ma risultante dal combinato operare della componente uninominale e di quella plurinominale, e pienamente apprezzabile sul piano empirico soltanto all'indomani del voto.</p>
+
+<h2>I tempi: la regola dell'anno e la scadenza dell'autunno 2027</h2>
+<p>Nell'ambito del Consiglio d'Europa, osserva l'autrice, non si riscontra un autonomo «principio di conoscibilità», né un divieto esplicito di oscurità della legislazione elettorale; una simile esigenza non risulta però estranea al <strong>principio di stabilità del diritto elettorale</strong>, che il contributo propone di declinare in due dimensioni: una <strong>quantitativo-temporale</strong>, relativa a quando possono intervenire le modifiche, e una <strong>qualitativo-cognitiva</strong>, relativa a come deve presentarsi il quadro normativo perché possa dirsi conoscibile dai suoi destinatari.</p>
+<p>I riferimenti sono il <em>Codice di buona condotta in materia elettorale</em> e il relativo <em>Rapporto esplicativo</em> della Commissione di Venezia (2002), che pone il principio di stabilità in rapporto con la credibilità stessa del processo elettorale; la <em>Dichiarazione interpretativa rivista sulla stabilità del diritto elettorale</em> del 2024, che collega la certezza del diritto alla necessità che ogni riforma intervenga <strong>con anticipo sufficiente affinché candidati ed elettori siano posti nelle condizioni di comprenderne i cambiamenti</strong>; l'<em>Amicus curiae brief</em> reso dalla Commissione di Venezia nel caso <strong>Staderini e altri c. Italia</strong> (ricorso n. 6235/23), pendente davanti alla Corte europea dei diritti dell'uomo; e, nella giurisprudenza di Strasburgo, il caso <strong>Ekoglasnost c. Bulgaria</strong> (2012), in cui è stata censurata l'introduzione, a ridosso della consultazione, di nuovi requisiti per la partecipazione alla competizione, senza che gli interessati disponessero di tempo sufficiente per adeguarvisi.</p>
+<p>La cosiddetta «regola dell'anno elettorale» non ha carattere assoluto: già il Rapporto esplicativo ammetteva modifiche <em>for the better</em>, e la Dichiarazione del 2024 ha precisato le ipotesi in cui il principio di stabilità può cedere dinanzi a esigenze di adeguamento del sistema. Ma il carattere migliorativo va dimostrato: occorre dimostrare che la riforma sia effettivamente diretta a rimuovere specifiche criticità della disciplina attuale alla luce degli standard richiamati e che, considerata nel suo complesso, realizzi <strong>un avanzamento apprezzabile sul terreno della libertà, della consapevolezza e della trasparenza del voto</strong>.</p>
+<p>La conclusione del contributo è questa: anche a prescindere dall'eventualità di uno scioglimento anticipato delle Camere, la XIX legislatura si avvia verso la propria <strong>scadenza naturale, prevista per l'autunno 2027</strong>, sicché si va progressivamente restringendo l'arco temporale entro il quale l'approvazione e la prima applicazione della nuova legge elettorale potrebbero ancora collocarsi nel rispetto dell'intervallo annuale raccomandato dalla Commissione di Venezia. In questo scenario, <strong>in difetto di una puntuale dimostrazione della portata effettivamente migliorativa della riforma</strong>, la ridotta distanza temporale tra la sua approvazione e la prima applicazione finirebbe per configurare «un profilo di criticità difficilmente superabile», tanto più ove alla contrazione del tempo disponibile per conoscere e assimilare le nuove regole dovessero sommarsi proprio quelle difficoltà di intelligibilità del loro funzionamento esaminate nelle pagine precedenti.</p>
+
+<h2>Dove si legge il testo integrale</h2>
+<p>Lara Trucco, <em>Alcune riflessioni sulla discrezionalità del legislatore alla luce della "intelligibilità" del sistema elettorale</em>, in <em>Dirittifondamentali.it</em>, fascicolo 2/2026, pp. 341-364, pubblicato il 31 luglio 2026 (contributo sottoposto a referaggio). <a href="https://dirittifondamentali.it/2026/07/31/alcune-riflessioni-sulla-discrezionalita-del-legislatore-alla-luce-della-intelligibilita-del-sistema-elettorale/" target="_blank" rel="noopener nofollow">Scheda e testo integrale sulla rivista</a>.</p>
+
+<p><em>Le considerazioni riportate in questa pagina sono della prof.ssa Lara Trucco. Partecipazione Attiva le riporta a scopo informativo, seguendo il testo pubblicato, senza aggiunte né interpretazioni.</em></p>
+
+</article>
+'''
+
+ART = {
+  'slug'         : 'stabilicum-intelligibilita-trucco-agosto2026.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-08-10',
+  'data_human'   : '10 agosto 2026',
+  'data_badge'   : '10 AGOSTO 2026',
+  'lettura_min'  : 9,
+  'categoria_hero': '⚖️ Riforma elettorale',
+  'og_image'     : 'images/pensattivo-stabilicum.webp',
+  'h1'           : 'Stabilicum: si può votare una legge che non si riesce a capire?',
+  'sottotitolo'  : 'Le riflessioni della prof.ssa Lara Trucco, ordinaria di Diritto costituzionale a Genova, sull’«intelligibilità» del sistema elettorale: chi si elegge davvero, come il voto diventa seggi e quanto tempo resta prima del 2027.',
+  'meta_desc'    : 'Le riflessioni della costituzionalista Lara Trucco sullo Stabilicum: liste premiali da 70 e 35 nomi, preferenze e i tempi verso l’autunno 2027.',
+  'card_cat'     : 'STABILICUM — AGGIORNAMENTO',
+  'card_title'   : 'Stabilicum: le riflessioni della prof.ssa Lara Trucco',
+  'card_desc'    : 'La costituzionalista dell’Università di Genova esamina l’«intelligibilità» dello Stabilicum: le liste premiali da 70 e 35 nomi, il peso reale delle preferenze e i tempi verso il 2027.',
+  'ticker_emoji' : '⚖️',
+  'ticker_tema'  : 'STABILICUM',
+  'ticker_testo' : 'le riflessioni della costituzionalista Lara Trucco sull’intelligibilità dello Stabilicum: liste premiali da 70 e 35 nomi e tempi stretti verso il 2027',
+  'body'         : BODY_TRUCCO,
+}
+
 # ===========================================================================
 
 GOLD = BASE + 'template.html'
@@ -1034,7 +1146,11 @@ def build_articolo(a):
     # link di condivisione corretti dentro il corpo (se l'autore non li mette)
     start = html.index('<div class="article-hero">')
     end   = html.index('</article>') + len('</article>')
-    html  = html[:start] + '<main id="contenuto">' + hero + '\n\n' + body + '</main>' + html[end:]
+    # il GOLD apre gia' il suo <main id="contenuto"> prima dell'hero: se lo
+    # riaprissimo qui ne uscirebbero due annidati (id duplicato, HTML rotto).
+    apre = '' if '<main id="contenuto">' in html[:start] else '<main id="contenuto">'
+    chiude = '</main>' if apre else ''
+    html  = html[:start] + apre + hero + '\n\n' + body + chiude + html[end:]
     # bonifica residui share GOLD
     for bad in ['u=https://partecipazione-attiva.it/spanu-sire.html', '%20https://partecipazione-attiva.it/spanu-sire.html']:
         html = html.replace(bad, bad.replace('spanu-sire.html', a['slug']))

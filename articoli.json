@@ -1,6 +1,15 @@
 {
   "articoli": [
     {
+      "slug": "stabilicum-intelligibilita-trucco-agosto2026.html",
+      "titolo": "Stabilicum: si può votare una legge che non si riesce a capire?",
+      "tema": "⚖️ Riforma elettorale",
+      "tema_key": "riforma elettorale",
+      "data": "2026-08-10",
+      "img": "pensattivo-stabilicum.webp",
+      "sommario": "Le riflessioni della costituzionalista Lara Trucco sullo Stabilicum: liste premiali da 70 e 35 nomi, preferenze e i tempi verso l’autunno 2027."
+    },
+    {
       "slug": "settembre-2026-appuntamenti.html",
       "titolo": "Sei appuntamenti da settembre sulla WebTV",
       "tema": "📺 WebTV",
@@ -96,7 +105,7 @@
       "tema": "⚖️ Riforma elettorale",
       "tema_key": "riforma elettorale",
       "data": "2026-07-03",
-      "img": "LOGO-PA.webp",
+      "img": "legge-elettorale-giusta-anteprima.jpg",
       "sommario": "La proposta di Partecipazione Attiva per una legge elettorale giusta: scelta dei cittadini, tetto ai 3/5 a tutela delle garanzie, simulazione sui dati"
     },
     {
@@ -132,7 +141,7 @@
       "tema": "⚖️ Riforma elettorale",
       "tema_key": "riforma elettorale",
       "data": "2026-06-20",
-      "img": "LOGO-PA.webp",
+      "img": "ricorso-rosatellum-cassazione-ottobre2026-anteprima.jpg",
       "sommario": "PA sostiene l'istanza di anticipazione: la Cassazione decida prima che il Parlamento approvi la nuova legge elettorale C.2822."
     },
     {
@@ -141,7 +150,7 @@
       "tema": "AUTONOMIA DIFFERENZIATA",
       "tema_key": "autonomia differenziata",
       "data": "2026-06-09",
-      "img": "locandina-noad-6giugno.webp",
+      "img": "resoconto-assemblea-noad-napoli-6giugno2026-anteprima.jpg",
       "sommario": "Resoconto ufficiale dell'assemblea nazionale NO AD del 6 giugno 2026 a Napoli. Oltre 100 partecipanti da 20 province. Tre membri di PA presenti."
     },
     {
@@ -150,7 +159,7 @@
       "tema": "📋 Resoconto — 6 Giugno 2026",
       "tema_key": "resoconto — 6 giugno 2026",
       "data": "2026-06-06",
-      "img": "locandina-noad-6giugno.webp",
+      "img": "assemblea-noad-napoli-giugno2026-anteprima.jpg",
       "sommario": "Resoconto dell'assemblea pubblica nazionale NO AD al Maschio Angioino: Paolo Neri, Antonio Cristiano e Luigi Spanu per Partecipazione Attiva."
     },
     {
@@ -168,7 +177,7 @@
       "tema": "🗓️ Due eventi nazionali",
       "tema_key": "due eventi nazionali",
       "data": "2026-05-28",
-      "img": "luigi-spanu.webp",
+      "img": "spanu-no-ad-autonomie-maggio2026-anteprima.jpg",
       "sommario": "Luigi Spanu porta la voce di PA in due assemblee nazionali: online il 30 maggio con Autonomie e Ambiente, a Napoli il 6 giugno col Tavolo NO AD."
     },
     {
@@ -177,7 +186,7 @@
       "tema": "🗳️ Analisi Elettorale",
       "tema_key": "analisi elettorale",
       "data": "2026-05-27",
-      "img": "angelo-nicotra-finale.webp",
+      "img": "astensionismo-comunali2026-anteprima.jpg",
       "sommario": "Comunali 2026: affluenza al 60,06%, quasi 5 punti in meno. I dati regione per regione e cosa significano per la democrazia."
     },
     {
@@ -195,7 +204,7 @@
       "tema": "🏛️ Evento alla Camera dei Deputati",
       "tema_key": "evento alla camera dei deputati",
       "data": "2026-05-16",
-      "img": "luigi-spanu.webp",
+      "img": "stabilicum-aggiornamento-maggio2026-anteprima.jpg",
       "sommario": "Aggiornamento 16 maggio 2026: premio di maggioranza al 42%, Aula alla Camera il 26 giugno, 120 costituzionalisti: è un premierato di fatto."
     },
     {
@@ -204,7 +213,7 @@
       "tema": "🏙️ Evento a Roma",
       "tema_key": "evento a roma",
       "data": "2026-05-14",
-      "img": "luigi-spanu.webp",
+      "img": "costruire-comunita-roma-2026-anteprima.jpg",
       "sommario": "Luigi Spanu partecipa a Costruire Comunità, incontro a Roma il 16 maggio 2026 all'Auditorium Antonianum su democrazia, partecipazione e pratiche terri"
     },
     {
@@ -213,7 +222,7 @@
       "tema": "",
       "tema_key": "",
       "data": "2026-05-11",
-      "img": "luigi-spanu.webp",
+      "img": "rcauto-aggiornamento-maggio2026-anteprima.jpg",
       "sommario": "Premio medio 492 euro, +21% dal 2023, Molise a +22%. I dati IVASS 2026 confermano la discriminazione territoriale che PA denuncia da anni."
     },
     {
@@ -222,7 +231,7 @@
       "tema": "",
       "tema_key": "",
       "data": "2026-05-11",
-      "img": "luigi-spanu.webp",
+      "img": "sanita-ocse-maggio2026-anteprima.jpg",
       "sommario": "Il rapporto OCSE del 6 maggio 2026 sulle liste d'attesa: 2,7 milioni di rinunce nel 2023, 5,8 milioni nel 2024. Chi è povero si cura di meno."
     },
     {
@@ -249,7 +258,7 @@
       "tema": "⚡ Crisi energetica",
       "tema_key": "crisi energetica",
       "data": "2026-04-10",
-      "img": "luigi-spanu.webp",
+      "img": "crisi-energetica-sire-anteprima.jpg",
       "sommario": "Mentre l'Italia rischia il razionamento energetico, alla Camera è stata presentata la proposta SIRE di Moneta Positiva. PA la sostiene."
     },
     {
@@ -258,7 +267,7 @@
       "tema": "🏛️ Convegno alla Camera dei Deputati",
       "tema_key": "convegno alla camera dei deputati",
       "data": "2026-04-09",
-      "img": "luigi-spanu.webp",
+      "img": "diretta-sire-anteprima.jpg",
       "sommario": "Il resoconto del convegno alla Camera dei Deputati sulla proposta di legge SIRE (9 aprile 2026): video integrale, relatori e sintesi degli interventi."
     },
     {
@@ -276,7 +285,7 @@
       "tema": "📋 Resoconto — 11 aprile 2026i",
       "tema_key": "resoconto — 11 aprile 2026i",
       "data": "2026-04-03",
-      "img": "luigi-spanu.webp",
+      "img": "spanu-congresso-base-popolare-anteprima.jpg",
       "sommario": "Luigi Spanu al 1° Congresso Nazionale di Base Popolare, Roma 11 aprile 2026: il centro, il proporzionale e la proposta di Michele Boldrin."
     },
     {
@@ -303,7 +312,7 @@
       "tema": "",
       "tema_key": "",
       "data": "2026-03-26",
-      "img": "LOGO-PA.webp",
+      "img": "rcauto-anteprima.jpg",
       "sommario": ""
     },
     {
@@ -312,7 +321,7 @@
       "tema": "",
       "tema_key": "",
       "data": "",
-      "img": "luigi-spanu.webp",
+      "img": "cristiano-sanita-anteprima.jpg",
       "sommario": "Antonio Cristiano denuncia la crisi della sanità pubblica italiana: 4,5 milioni di rinunce alle cure e liste d\\'attesa infinite."
     },
     {
@@ -321,7 +330,7 @@
       "tema": "📢 Mozione approvata il 27 maggio 2026",
       "tema_key": "mozione approvata il 27 maggio 2026",
       "data": "",
-      "img": "luigi-spanu.webp",
+      "img": "rcauto-campania-mozione-maggio2026-anteprima.jpg",
       "sommario": "La Regione Campania chiede al Governo di eliminare le differenze tariffarie RC Auto tra Nord e Sud. La battaglia di Partecipazione Attiva."
     },
     {
@@ -330,7 +339,7 @@
       "tema": "🏛️ Evento alla Camera dei Deputati",
       "tema_key": "evento alla camera dei deputati",
       "data": "",
-      "img": "luigi-spanu.webp",
+      "img": "spanu-sire-anteprima.jpg",
       "sommario": "9 aprile 2026, Camera dei Deputati: proposta di legge SIRE per finanziare le emergenze senza debito. Luigi Spanu per PA."
     },
     {
@@ -339,7 +348,7 @@
       "tema": "🔄 Aggiornamento 28 maggio 2026",
       "tema_key": "aggiornamento 28 maggio 2026",
       "data": "",
-      "img": "luigi-spanu.webp",
+      "img": "stabilicum-aggiornamento-28maggio2026-anteprima.jpg",
       "sommario": "Il centrodestra accelera sullo Stabilicum: Aula entro il 26 giugno 2026, premio al 42% e spaccatura interna sulle preferenze."
     }
   ]

@@ -44,7 +44,8 @@ APPLICA = "--applica" in sys.argv
 
 # 1. le tabelle da mettere in un riquadro che scorre
 TABELLE = ["diritto-alla-casa.html", "sanitapubblica.html", "stabilicum.html",
-           "ape.html", "astensionismo-comunali2026.html"]
+           "ape.html", "astensionismo-comunali2026.html",
+           "stabilicum-intelligibilita-trucco-agosto2026.html"]
 # legge-elettorale-giusta.html NON c'e': le sue tabelle hanno gia' un
 # trattamento per telefono (l'intestazione nascosta) e passano la prova.
 # Non si aggiusta cio' che funziona.

@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "⚖️",
+      "tema": "STABILICUM",
+      "testo": "le riflessioni della costituzionalista Lara Trucco sull’intelligibilità dello Stabilicum: liste premiali da 70 e 35 nomi e tempi stretti verso il 2027"
+    },
+    {
       "emoji": "📺",
       "tema": "DA SETTEMBRE",
       "testo": "sei appuntamenti sulla WebTV di Partecipazione Attiva: APE, la Mappa, la legge elettorale, l’RC Auto, l’arte del dono, essere donna a Napoli"
@@ -14,11 +19,6 @@
       "emoji": "🎨",
       "tema": "CAVALLEGGERI",
       "testo": "un museo di murales a cielo aperto per Fuorigrotta: la proposta di PA al Comune di Napoli"
-    },
-    {
-      "emoji": "⚖️",
-      "tema": "STABILICUM",
-      "testo": "un’analisi giuridica individua sette profili di incostituzionalità nello Stabilicum prima del passaggio al Senato"
     },
     {
       "emoji": "✊",
