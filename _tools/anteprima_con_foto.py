@@ -219,6 +219,8 @@ def main():
     ap.add_argument("--titolo", default="")
     ap.add_argument("--sottotitolo", default="")
     ap.add_argument("--alt", default="", help="descrizione della scheda per i lettori di schermo")
+    ap.add_argument("--versione", default="", help="suffisso nel nome del file: OBBLIGATORIO se la"
+                                                   " scheda cambia dopo essere stata condivisa")
     ap.add_argument("--applica", action="store_true")
     a = ap.parse_args()
 
@@ -226,7 +228,14 @@ def main():
     titolo = a.titolo or titolo_della_pagina(html)
     ritaglio = tuple(int(x) for x in a.ritaglio.split(",")) if a.ritaglio else None
 
-    nome = a.pagina.replace(".html", "") + "-anteprima.jpg"
+    # ⛔ FACEBOOK TIENE IN CACHE L'IMMAGINE PER INDIRIZZO, non per contenuto.
+    #    Il 10 agosto 2026 Fernando ha premuto «Esegui lo scraping di nuovo»
+    #    dieci volte: i tag si aggiornavano (si vedeva og:image:alt comparire),
+    #    l'immagine no, perche' il nome del file non era mai cambiato. Se la
+    #    scheda cambia DOPO che il link e' gia' passato dal debugger, si cambia
+    #    il nome: --versione 2 → ...-anteprima-v2.jpg. E' l'unico modo.
+    nome = (a.pagina.replace(".html", "") + "-anteprima"
+            + (f"-v{a.versione}" if a.versione else "") + ".jpg")
     dove = os.path.join(DEST if a.applica else os.environ.get("TMPDIR", "/tmp"), nome)
     kb = disegna(a.foto, ritaglio, a.occhiello, titolo, a.sottotitolo, dove)
 
