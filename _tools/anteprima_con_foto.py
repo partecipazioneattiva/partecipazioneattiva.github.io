@@ -146,18 +146,30 @@ def disegna(foto, ritaglio, occhiello, titolo, sottotitolo, dove):
     return os.path.getsize(dove) // 1024
 
 
-def aggancia(pagina, url):
+def aggancia(pagina, url, alt=""):
     """og:image, twitter:image e il campo image del JSON-LD: tutti e tre.
     Facebook legge og:image, ma il JSON-LD lasciato indietro rimette in giro
-    l'immagine vecchia attraverso Google e l'anteprima della ricerca."""
+    l'immagine vecchia attraverso Google e l'anteprima della ricerca.
+
+    Aggiunge anche og:image:alt, che descrive la scheda a chi naviga con un
+    lettore di schermo: senza, la casella resta vuota (verificato il 10 agosto
+    2026 nel debugger di Facebook, che la mostrava in bianco)."""
     p = os.path.join(REPO, pagina)
     d = open(p, encoding="utf-8").read()
     prima = d
-    d = re.sub(r'(property=["\']?og:image["\']?[^>]*content=["\'])[^"\']*',
+    # ⛔ IL NOME DELLA PROPRIETA' VA CHIUSO. Senza il (?=["\'\s]) finale,
+    #    "og:image" acchiappa anche og:image:width e og:image:height e ci
+    #    scrive dentro l'indirizzo dell'immagine al posto di 1200 e 630.
+    #    Sbagliato cosi' la prima volta, il 10 agosto 2026.
+    d = re.sub(r'(property=["\']?og:image(?=["\'\s])["\']?[^>]*content=["\'])[^"\']*',
                lambda m: m.group(1) + url, d)
-    d = re.sub(r'(name=["\']?twitter:image["\']?[^>]*content=["\'])[^"\']*',
+    d = re.sub(r'(name=["\']?twitter:image(?=["\'\s])["\']?[^>]*content=["\'])[^"\']*',
                lambda m: m.group(1) + url, d)
     d = re.sub(r'("image"\s*:\s*")[^"]*', lambda m: m.group(1) + url, d)
+    if alt and "og:image:alt" not in d:
+        d = re.sub(r'(<meta[^>]*property=["\']?og:image["\']?[^>]*>)',
+                   lambda m: m.group(1) + f'<meta property=og:image:alt content="{alt}">',
+                   d, count=1)
     if d != prima:
         open(p, "w", encoding="utf-8").write(d)
     return d != prima
@@ -171,6 +183,7 @@ def main():
     ap.add_argument("--occhiello", default="")
     ap.add_argument("--titolo", default="")
     ap.add_argument("--sottotitolo", default="")
+    ap.add_argument("--alt", default="", help="descrizione della scheda per i lettori di schermo")
     ap.add_argument("--applica", action="store_true")
     a = ap.parse_args()
 
@@ -185,7 +198,8 @@ def main():
     print(f"  🖼  {dove}  ({kb} KB)")
     if a.applica:
         url = "https://partecipazione-attiva.it/images/anteprime/" + nome
-        print("  🔗 agganciata alla pagina" if aggancia(a.pagina, url)
+        alt = a.alt or " — ".join(x for x in (a.occhiello.capitalize(), titolo) if x)
+        print("  🔗 agganciata alla pagina" if aggancia(a.pagina, url, alt)
               else "  ⚠️  nessun campo immagine trovato nella pagina")
     else:
         print("  (prova a vuoto: guarda il file, poi rilancia con --applica)")
