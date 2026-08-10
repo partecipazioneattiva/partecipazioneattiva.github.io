@@ -45,8 +45,15 @@ CARATTERI = os.path.join(os.path.dirname(os.path.abspath(__file__)), "caratteri"
 DEST = os.path.join(REPO, "images", "anteprime")
 
 L, H = 1200, 630
-FOTO_L = 470                 # la colonna della fotografia, a destra
+FOTO_L = 440                 # la colonna della fotografia, a destra
 SFUMA = 150                  # quanto la foto sfuma dentro il fondo, a sinistra
+
+# ⛔ LA SCHEDA NON SI GUARDA A 1200 PIXEL. Nel diario di Facebook esce larga
+#    circa 500 px sul computer e 360 sul telefono: tutto quello che scriviamo
+#    qui va diviso per due o per tre. Una riga da 20 px diventa 7 px e sparisce.
+#    Regola presa il 10 agosto 2026, dopo che Fernando ha visto la prima prova:
+#    niente sotto i 26 px, e si controlla sempre sulla prova rimpicciolita.
+MINIMO = 26
 
 
 def font(nome, dim):
@@ -96,49 +103,72 @@ def disegna(foto, ritaglio, occhiello, titolo, sottotitolo, dove):
         dm.line([(x, 0), (x, H)], fill=int(255 * (x / SFUMA) ** 1.5))
     im.paste(ph, (L - FOTO_L, 0), maschera)
 
+    # ⛔ LA VELATURA NON E' DECORAZIONE, E' LEGGIBILITA'. Il bianco
+    #    sull'arancione del movimento sta intorno a 2:1 di contrasto: il titolo
+    #    grande regge, l'occhiello e il sottotitolo no. Fernando li ha visti e
+    #    ha detto «e' quasi illeggibile» (10 agosto 2026). Sotto la colonna del
+    #    testo passa un velo bruno che porta il bianco oltre 7:1.
+    velo = Image.new("RGBA", (L, H), (0, 0, 0, 0))
+    dv = ImageDraw.Draw(velo)
+    for x in range(L - FOTO_L + SFUMA):
+        k = 1 - x / (L - FOTO_L + SFUMA)
+        dv.line([(x, 0), (x, H)], fill=(46, 22, 2, int(215 * k ** 0.85)))
+    im = Image.alpha_composite(im.convert("RGBA"), velo).convert("RGB")
+    dr = ImageDraw.Draw(im)
+
     # ---- logo tondo in alto a sinistra
     logo_p = os.path.join(REPO, "LOGO-PA.webp")
     if os.path.exists(logo_p):
-        lg = Image.open(logo_p).convert("RGBA").resize((120, 120), Image.LANCZOS)
-        mk = Image.new("L", (120, 120), 0)
-        ImageDraw.Draw(mk).ellipse((0, 0, 119, 119), fill=255)
-        im.paste(lg, (66, 54), mk)
-    dr.text((202, 76), "PARTECIPAZIONE ATTIVA", font=font("montserrat-900-latin", 27), fill="white")
-    dr.text((202, 112), "MOVIMENTO POPOLARE DEI CITTADINI ITALIANI",
-            font=font("montserrat-400-latin", 17), fill=(255, 228, 190))
+        lg = Image.open(logo_p).convert("RGBA").resize((104, 104), Image.LANCZOS)
+        mk = Image.new("L", (104, 104), 0)
+        ImageDraw.Draw(mk).ellipse((0, 0, 103, 103), fill=255)
+        im.paste(lg, (66, 50), mk)
+    # la riga «MOVIMENTO POPOLARE DEI CITTADINI ITALIANI» stava a 17 px: nel
+    # diario diventava una sbavatura grigia. Tolta: il nome grande basta.
+    dr.text((186, 78), "PARTECIPAZIONE ATTIVA",
+            font=font("montserrat-900-latin", 34), fill="white")
 
-    testo_l = L - FOTO_L - 20                   # la colonna del testo, a sinistra
-    y = 228
+    # ---- IL BLOCCO DI TESTO SI MISURA PRIMA DI SCRIVERLO, poi si centra.
+    # Scrivendo riga per riga dall'alto, il 10 agosto 2026 il sottotitolo e'
+    # finito sopra l'indirizzo del sito: due scritte una dentro l'altra. Qui si
+    # calcola l'ingombro, si rimpicciolisce il titolo finche' ci sta dentro, e
+    # solo allora si disegna.
+    largh = L - FOTO_L - 20 - 72                # la colonna del testo, a sinistra
+    ALTO, BASSO = 190, H - 120                  # fra l'intestazione e l'indirizzo
 
-    if occhiello:
-        # ⛔ l'oro chiaro sull'arancione non ha contrasto: l'occhiello e il
-        #    sottotitolo si scrivono bianchi, con un'ombra sotto. Misurato il
-        #    10/08/2026 sulla prima prova, dove sparivano nel fondo.
-        f_occ = font("montserrat-700-latin", 20)
-        dr.text((73, y + 2), occhiello, font=f_occ, fill=(96, 46, 0))
-        dr.text((72, y), occhiello, font=f_occ, fill="white")
-        dr.line([(72, y + 32), (72 + 90, y + 32)], fill=(255, 214, 140), width=3)
-        y += 56
+    def impagina(dim):
+        b = []
+        if occhiello:
+            b.append(("occ", occhiello, font("montserrat-700-latin", MINIMO + 2), 76))
+        f_t = font("merriweather-700-latin", dim)
+        for r in textwrap.wrap(titolo, width=max(8, int(largh / (dim * 0.50))))[:4]:
+            b.append(("tit", r, f_t, int(dim * 1.26)))
+        if sottotitolo:
+            f_s = font("montserrat-400-latin", MINIMO + 2)
+            for i, r in enumerate(textwrap.wrap(
+                    sottotitolo, width=max(8, int(largh / ((MINIMO + 2) * 0.55))))[:3]):
+                b.append(("sub" + ("1" if i == 0 else ""), r, f_s, MINIMO + 12))
+        return b
 
-    dim = 44 if len(titolo) < 70 else (38 if len(titolo) < 100 else 33)
-    f_tit = font("merriweather-700-latin", dim)
-    righe = textwrap.wrap(titolo, width=int((testo_l - 72) / (dim * 0.50)))[:5]
-    passo = int(dim * 1.30)
-    for r in righe:
-        dr.text((74, y + 2), r, font=f_tit, fill=(88, 42, 0))
-        dr.text((72, y), r, font=f_tit, fill="white")
+    for dim in (52, 48, 44, 40, 36, 32):
+        blocco = impagina(dim)
+        alto = sum(h for _, _, _, h in blocco) + (18 if sottotitolo else 0)
+        if alto <= BASSO - ALTO:
+            break
+    y = ALTO + max(0, ((BASSO - ALTO) - alto) // 2)
+
+    COLORE = {"occ": (255, 214, 140), "tit": "white", "sub": (255, 236, 212),
+              "sub1": (255, 236, 212)}
+    for tipo, testo, f, passo in blocco:
+        if tipo == "sub1":
+            y += 18                             # aria fra titolo e sottotitolo
+        dr.text((72, y), testo, font=f, fill=COLORE[tipo])
+        if tipo == "occ":
+            dr.line([(72, y + 44), (72 + 110, y + 44)], fill=(255, 214, 140), width=4)
         y += passo
 
-    if sottotitolo:
-        y += 12
-        f_sub = font("montserrat-400-latin", 21)
-        for r in textwrap.wrap(sottotitolo, width=int((testo_l - 72) / (21 * 0.55)))[:3]:
-            dr.text((73, y + 2), r, font=f_sub, fill=(96, 46, 0))
-            dr.text((72, y), r, font=f_sub, fill="white")
-            y += 29
-
-    dr.text((72, H - 78), "partecipazione-attiva.it",
-            font=font("montserrat-900-latin", 27), fill="white")
+    dr.text((72, H - 86), "partecipazione-attiva.it",
+            font=font("montserrat-900-latin", 32), fill="white")
     dr.rectangle([(0, H - 14), (L, H)], fill="#ffd580")
 
     os.makedirs(os.path.dirname(dove), exist_ok=True)
@@ -199,8 +229,13 @@ def main():
     if a.applica:
         url = "https://partecipazione-attiva.it/images/anteprime/" + nome
         alt = a.alt or " — ".join(x for x in (a.occhiello.capitalize(), titolo) if x)
-        print("  🔗 agganciata alla pagina" if aggancia(a.pagina, url, alt)
-              else "  ⚠️  nessun campo immagine trovato nella pagina")
+        if aggancia(a.pagina, url, alt):
+            print("  🔗 agganciata alla pagina")
+        elif url in open(os.path.join(REPO, a.pagina), encoding="utf-8").read():
+            # rigenerare la stessa scheda non cambia i tag: non e' un errore.
+            print("  ✅ la pagina puntava gia' a questa scheda")
+        else:
+            print("  ⚠️  nessun campo immagine trovato nella pagina")
     else:
         print("  (prova a vuoto: guarda il file, poi rilancia con --applica)")
 
