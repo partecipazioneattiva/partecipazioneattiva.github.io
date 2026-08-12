@@ -91,6 +91,8 @@ def posa_di(f):
 # Adesso il numero si conta sul disco, cartella per cartella.
 NUMERI = {1: "una", 2: "due", 3: "tre", 4: "quattro", 5: "cinque",
           6: "sei", 7: "sette", 8: "otto"}
+NUMERI_EN = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five",
+             6: "six", 7: "seven", 8: "eight"}
 INSIEME = {1: "", 2: "tutte e due", 3: "tutte e tre", 4: "tutte e quattro",
            5: "tutte e cinque", 6: "tutte e sei"}
 
@@ -123,6 +125,14 @@ def elenco_foto(c, radice):
         nomi = nomi[:MAX_FOTO]
     return [f"A{i}" for i in range(1, len(nomi) + 1)], nomi
 
+
+# ⛔ 12 agosto 2026: l'elenco scriveva "scrivi il cognome" a CHIUNQUE non fosse
+#    presidente, compreso chi non e' candidato affatto. Sull'istruzione di voto
+#    non si deduce: o e' scritta nel ruolo, o si dice che non c'e'.
+VOTO_ELENCO = {
+    "presidente": "barra il simbolo",
+    "consigliere": "scrivi il cognome",
+}
 
 CARICA_CARD = {
     "presidente": "CANDIDAT{a} ALLA PRESIDENZA",
@@ -240,6 +250,159 @@ Behind {'her' if f else 'him'}, Naples from above at sunset, softly out of focus
 Photorealistic, natural colours, print quality, 4K.
 
 NEGATIVE PROMPT: text, letters, words, numbers, captions, logo, emblem, symbol, badge, frame, border, panel, coloured band, split composition, collage, close up, face filling the frame, oversized head, head cropped, full body, profile view, looking away, multiple people, distorted face, slimmed face, smoothed skin, beautified, younger face, {e.get('negativo', '').rstrip(', ')}, extra fingers, cartoon, 3D render, cold blue tones, night, sparkle icon, AI badge, watermark"""
+
+
+def prompt_madre(c, nf):
+    """⭐ IL RITRATTO MADRE — il volto di base, si fa UNA VOLTA per persona.
+
+    Non e' un manifesto e non e' una card: e' la fotografia di studio da cui
+    partiranno tutti i materiali di quella persona. Dal momento in cui esiste,
+    le foto di Facebook non si toccano piu' (MANUALE_RITRATTI_IDENTITA §1).
+
+    ⭐ 12 agosto 2026. Questo e' il testo che ha prodotto
+    `05_MASTER_APPROVATO/antonio_master_v1_gemini.png`, l'unico master
+    approvato finora, dopo che PuLID aveva fallito tre volte e Qwen due.
+    Era stato scritto per Meta, che poi ha rifiutato per policy le facce di
+    persone private; Fernando l'ha dato a Gemini e ha vinto al primo colpo.
+    Fino a ieri esisteva solo nella conversazione: ora sta qui.
+
+    ⛔ Le quattro regole che lo fanno funzionare, tutte gia' pagate:
+      1. si elenca cosa NON deve toccare, tratto per tratto, PRIMA di
+         chiedere qualunque cosa: "Keep his face exactly as it is";
+      2. la riga che vale piu' di tutte le altre messe insieme —
+         "If the result looks better looking than the person in the
+         photographs, it is wrong";
+      3. si chiedono le IMPERFEZIONI (pori, irregolarita', asimmetria):
+         il modello di suo le toglie, ed e' li' che nasce il "parente
+         stretto" invece della persona;
+      4. nessun aggettivo di bellezza, mai: spinge verso il volto medio.
+
+    ⛔ L'abito qui e' NEUTRO di proposito (camicia scura liscia). Il master
+    serve a tutto: giacca, cravatta e sfondo si mettono dopo, partendo da
+    lui. Un abito di scena cotto dentro il master lo rende usabile una volta
+    sola.
+
+    ⚠️ Gemini si usa da aistudio.google.com: l'app stampa la stellina.
+    """
+    if "card_en" not in c:
+        sys.exit(f"⛔ manca il blocco 'card_en' per {c['nome'].title()}: la "
+                 f"descrizione del volto in inglese si scrive guardando le sue "
+                 f"foto vere, una per una, non si traduce a occhi chiusi.")
+    e = c["card_en"]
+    f = c["genere"] == "f"
+    Lui, suo, uomo = ("She", "her", "woman") if f else ("He", "his", "man")
+
+    # Il numero si conta sul disco: un'immagine annunciata e non allegata il
+    # generatore se la inventa (7 agosto 2026, vedi elenco_foto).
+    # ⛔ E si scrive IN INGLESE: NUMERI e' italiano e serve alle righe che
+    #    legge Fernando, non al prompt.
+    quante = (f"{NUMERI_EN[nf]} real photographs" if nf > 1
+              else "one real photograph")
+    # ⛔ 12 agosto 2026: la riga «non aggiungere occhiali» va scritta SOLO a chi
+    #    non li porta. A chi li porta, nominarli in un divieto e' il modo piu'
+    #    rapido per farglieli togliere.
+    occhiali = ("" if "glasses" in e['aspetto'].lower()
+                else f", and do not add eyeglasses if {Lui.lower()} is not "
+                     "wearing them in the photographs")
+    esse = "them" if nf > 1 else "it"
+
+    return f"""I am attaching {quante} of the same {uomo}. Use {esse} as the reference for {suo} face.
+
+Create a new photorealistic studio portrait photograph of this {uomo}.
+
+IDENTITY — this is the most important part:
+Keep {suo} face exactly as it is in the photographs. {e['aspetto']}
+
+{e['divieti']}
+
+THE NEW PHOTOGRAPH:
+Head and chest visible, framed from just below the chest up, centred.
+{Lui} faces the camera directly and looks straight into the lens.
+{e['espressione']}
+{Lui} wears a plain dark shirt, nothing flashy.
+Plain, uniform, neutral background, evenly lit, no objects and no scenery.
+Soft frontal lighting, slightly warm.
+Natural skin texture with visible pores and normal skin irregularities. Keep the face asymmetrical, as a real face is. Sharp focus. Shot on an 85mm lens.
+
+DO NOT include any text, letters, numbers, logos, symbols, badges, lanyards, microphones, picture frames, borders or graphic elements of any kind{occhiali}. Just the photograph of the {uomo}."""
+
+
+def prompt_madre_minimo(c, nf):
+    """Il ritratto madre chiesto SENZA descrivere il volto. ⭐ 12 agosto 2026.
+
+    ⛔ Nasce da un ritratto bocciato due volte. La descrizione la scrive chi
+    genera, guardando fotografie di videochiamata sgranate, e ogni aggettivo
+    sbagliato diventa un ordine: due tratti descritti male hanno prodotto due
+    volte un volto che non era il suo. Il modello ha obbedito alla descrizione
+    invece che alle foto. Fernando, due volte: **«e' esattamente come nelle
+    fotografie»**.
+
+    🟩 La cura non e' descrivere meglio: e' NON descrivere. Qui si NOMINANO i
+    tratti da conservare — attaccatura, occhiali, palpebre, naso, barba, mento —
+    senza dire come sono fatti, cosi' il modello e' costretto ad andarli a
+    guardare nelle fotografie. Una descrizione sbagliata batte le foto; una
+    descrizione assente no.
+
+    🟨 Quando usarlo: quando le fotografie sono POCHE E COERENTI fra loro (stessa
+    persona, stesso periodo, stesso aspetto). Se invece i riferimenti sono
+    disomogenei — uno con la barba e uno senza, uno di dieci anni prima — serve
+    la versione descrittiva, che dice quale aspetto tenere.
+    """
+    f = c["genere"] == "f"
+    Lui, suo, uomo = ("She", "her", "woman") if f else ("He", "his", "man")
+    quante = (f"{NUMERI_EN[nf]} photographs" if nf > 1 else "one photograph")
+    esse = "They are" if nf > 1 else "It is"
+
+    # ⛔ 12 agosto 2026. L'elenco diceva «i suoi occhiali» a
+    #    chiunque, e il modello glieli ha messi a chi non li porta: nominare
+    #    un oggetto e' un modo di chiederlo. Adesso o si dice di tenerli, o si
+    #    dice che NON ci sono. Il campo 'porta' sta nel file delle persone.
+    porta = c.get("porta", {})
+    manca = []
+    if porta.get("occhiali") is False:
+        occhiali_tieni, _ = "", manca.append(f"{Lui} wears NO eyeglasses")
+    else:
+        occhiali_tieni = f" {suo} eyeglasses,"
+    if porta.get("barba") is False:
+        barba_tieni, _ = "", manca.append(f"{Lui.lower()} has no beard and no moustache")
+    else:
+        barba_tieni = f" {suo} beard and moustache,"
+    non_ha = (" " + ". ".join(manca) + ": do not add them.") if manca else ""
+
+    return f"""I am attaching {quante} of the same {uomo}. Whatever their quality, the {uomo} in {'them' if nf > 1 else 'it'} is exactly right.
+
+Photograph THAT {uomo.upper()}, in a clean studio portrait. Do not design a face: copy {suo} face from the photographs, feature by feature.
+
+KEEP EXACTLY AS THEY ARE IN THE PHOTOGRAPHS, without changing them in any way:
+the shape and width of {suo} head and face, {suo} hairline and how much hair {Lui.lower()} has, the colour and texture of {suo} hair,{occhiali_tieni} {suo} eyes and eyelids and how open they are, {suo} eyebrows, {suo} nose, {suo} lips,{barba_tieni} {suo} cheeks, {suo} chin and jaw, {suo} neck, {suo} build, {suo} age, and the texture and colour of {suo} skin.{non_ha}
+
+CHANGE ONLY THESE:
+the background becomes a plain, evenly lit, neutral grey studio backdrop, with nothing else in the picture;
+{Lui.lower()} wears a plain dark shirt;
+{suo} mouth is closed, with a faint natural expression;
+{Lui.lower()} faces the camera and looks straight into the lens;
+the picture is sharp and well lit, like a real photograph taken on an 85mm lens, with natural skin texture and visible pores.
+
+Do not improve {suo} looks in any way. Do not make {'her' if f else 'him'} younger, thinner, or better looking, do not smooth {suo} skin, do not give {'her' if f else 'him'} more hair than {Lui.lower()} has. If the person in the result is not immediately recognisable as the person in the photographs, it is wrong.
+
+No text, no letters, no logos, no symbols, no frames, no graphic elements. Just the photograph."""
+
+
+def correzione_madre(c):
+    """La riga da rimandare se il primo giro ringiovanisce o assottiglia.
+
+    ⛔ Non si ricomincia da capo: si tiene ferma l'immagine e si corregge il
+    solo difetto. Ricominciare cambia posa, luce e inquadratura insieme, e
+    non si sa piu' cosa ha spostato cosa (MANUALE_PIPELINE_MANIFESTI §4).
+    """
+    f = c["genere"] == "f"
+    suo, Lui = ("her", "She") if f else ("his", "He")
+    persona = "woman" if f else "man"
+    return (f"The face is too slim and too young. Go back to the reference "
+            f"photographs: {suo} face is wider, {suo} jaw softer, {suo} skin "
+            f"has more age and texture. Keep the same framing and pose, only "
+            f"fix the face. If the result looks better looking than the "
+            f"{persona} in the photographs, it is wrong.")
 
 
 def prompt_card_vuota(c):
@@ -458,9 +621,12 @@ def main():
     p.add_argument("--senza-simbolo", action="store_true", dest="senza_simbolo",
                    help="l'angolo del simbolo resta VUOTO: il logo vero lo incolla "
                         "poi _tools/sostituisci_simbolo.py (consigliato)")
-    p.add_argument("--stile", choices=["affissione", "card", "card-vuota", "ritratto", "figura"],
+    p.add_argument("--stile", choices=["affissione", "card", "card-vuota", "ritratto",
+                                       "figura", "madre"],
                    default="affissione",
-                   help="affissione = manifesto 70x100 in italiano (default); "
+                   help="madre = IL VOLTO DI BASE, si fa una volta per persona "
+                        "e da li' parte tutto il resto (Gemini da AI Studio); "
+                        "affissione = manifesto 70x100 in italiano (default); "
                         "card = card social 2:3 in inglese, foto a destra e "
                         "pergamena a sinistra (Gemini e Lumina); "
                         "card-vuota = la stessa card ma SENZA testo, solo il "
@@ -475,6 +641,11 @@ def main():
                         "TRASPARENZA / BENI COMUNI. Allunga l'elenco, e con la "
                         "colonna piena il generatore taglia: si usa solo se si "
                         "toglie qualcos'altro")
+    p.add_argument("--minimo", action="store_true",
+                   help="stile madre: NON descrive il volto, lo fa guardare nelle "
+                        "fotografie. Si usa quando i riferimenti sono pochi e "
+                        "coerenti fra loro e la descrizione scritta rischia di "
+                        "contraddirli (12 agosto 2026)")
     p.add_argument("--uscita", help="scrive il prompt su file invece che a schermo")
     a = p.parse_args()
 
@@ -488,7 +659,7 @@ def main():
         print(f"Candidati salvati in {a.dati}:\n")
         for k, c in cand.items():
             print(f"  {k:<12} {c['nome']} {c['cognome']:<12} {c['ruolo']:<12} "
-                  f"→ {'barra il simbolo' if c['ruolo'] == 'presidente' else 'scrivi il cognome'}")
+                  f"→ {VOTO_ELENCO.get(c['ruolo'], 'non candidato: niente istruzione di voto')}")
             if c.get("note"):
                 print(f"               {c['nome'].title()}: {c['note']}")
         if not a.candidato:
@@ -504,7 +675,9 @@ def main():
     c["_foto"], file_foto = elenco_foto(c, os.path.dirname(os.path.dirname(percorso)))
     foto, nf = ", ".join(file_foto), len(file_foto)
     quante_foto = f"{foto} ({NUMERI[nf]} foto)" if nf != 1 else f"{foto} (una foto)"
-    if a.stile == "card":
+    if a.stile == "madre":
+        testo = prompt_madre_minimo(c, nf) if a.minimo else prompt_madre(c, nf)
+    elif a.stile == "card":
         testo = prompt_card(c, com, a.valori)
     elif a.stile == "card-vuota":
         testo = prompt_card_vuota(c)
@@ -522,7 +695,17 @@ def main():
         print(testo)
 
     print(f"\n─── allegati, da {c['cartella_foto']}/ ───", file=sys.stderr)
-    if a.stile == "figura":
+    if a.stile == "madre":
+        print(f"  SOLO {quante_foto} — niente logo, niente schema, niente testo.",
+              file=sys.stderr)
+        print("  ⚠️  Gemini da aistudio.google.com: l'app mette la stellina.",
+              file=sys.stderr)
+        print("  ⚠️  Le foto si GUARDANO una per una prima di allegarle: stessa "
+              "persona? filigrane? filtri di bellezza?", file=sys.stderr)
+        print("\n  Se il primo giro ringiovanisce o assottiglia, NON si "
+              "ricomincia: si manda questa riga sola ───", file=sys.stderr)
+        print(f"  {correzione_madre(c)}", file=sys.stderr)
+    elif a.stile == "figura":
         print("  SOLO le foto della persona. Il fondo esce vuoto: la figura si "
               "ritaglia e si monta in locale.", file=sys.stderr)
         if a.per_manifesto:
