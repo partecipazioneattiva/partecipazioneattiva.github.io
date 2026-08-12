@@ -1,12 +1,21 @@
 {
   "articoli": [
     {
+      "slug": "sanita-calabria-petizione-comunita-competente.html",
+      "titolo": "Sanità in Calabria: la petizione da firmare",
+      "tema": "🏥 Sanità pubblica",
+      "tema_key": "sanità pubblica",
+      "data": "2026-08-12",
+      "img": "pensattivo-sanita.webp",
+      "sommario": "Comunità Competente chiede aziende ospedaliere e territoriali distinte in Calabria. Partecipazione Attiva sostiene la petizione e invita a firmarla."
+    },
+    {
       "slug": "stabilicum-intelligibilita-trucco-agosto2026.html",
       "titolo": "Stabilicum: le riflessioni di Lara Trucco",
       "tema": "⚖️ Riforma elettorale",
       "tema_key": "riforma elettorale",
       "data": "2026-08-10",
-      "img": "pensattivo-stabilicum.webp",
+      "img": "stabilicum-intelligibilita-trucco-agosto2026-anteprima-v2.jpg",
       "sommario": "Le riflessioni della costituzionalista Lara Trucco sullo Stabilicum: liste premiali da 70 e 35 nomi, preferenze e i tempi verso l’autunno 2027."
     },
     {

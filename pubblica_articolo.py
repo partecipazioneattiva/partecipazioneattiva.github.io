@@ -1062,25 +1062,87 @@ Le riflessioni della prof.ssa Trucco sono riportate qui sotto seguendo i passagg
 </article>
 '''
 
+FIRMA_URL = 'https://www.change.org/p/per-una-compiuta-riforma-della-sanit%C3%A0-in-calabria?recruited_by_id=223b20e0-9587-11f1-a2e3-3dc9add25b5b'
+
+BOTTONE_FIRMA = f'''
+<p style="text-align:center;margin:34px 0">
+<a href="{FIRMA_URL}" target="_blank" rel="noopener" style="display:inline-block;background:#8a4e00;color:#fff;padding:18px 40px;border-radius:50px;text-decoration:none;font-family:montserrat,sans-serif;font-weight:800;font-size:1.05em;line-height:1.3;box-shadow:0 4px 14px rgba(0,0,0,.2)">&#x270D;&#xFE0F; Firma la petizione su Change.org &rarr;</a>
+</p>
+'''
+
+BODY_SANITA_CALABRIA = '''
+<article class="article-wrap">
+
+<div class="box-info">
+<strong>&#x1F4CC; Di chi è questa petizione, e perché sta sul nostro sito</strong>
+La petizione <strong style="display:inline">non è di Partecipazione Attiva</strong>. La promuove <strong style="display:inline">Comunità Competente</strong>, la rete calabrese di associazioni, operatori e cittadini che si occupa di sanità pubblica, e si è aperta su Change.org il <strong style="display:inline">9 agosto 2026</strong>. A portarla alla nostra attenzione è stato <strong style="display:inline">Amilcare Mollica</strong>, esperto legale del movimento. <strong style="display:inline">Il nostro ruolo è diffonderla e invitare a firmare.</strong>
+</div>
+
+''' + BOTTONE_FIRMA + '''
+
+<h2>Il problema, in due parole</h2>
+
+<p>In Calabria gli ospedali pubblici stanno dentro le <strong>Aziende Sanitarie Provinciali</strong>, che nello stesso tempo devono mandare avanti i reparti e occuparsi di tutto il resto: i medici di famiglia, i consultori, la salute mentale, la riabilitazione, la prevenzione. Due mestieri diversi con una direzione sola. La petizione dice che così non funziona nessuno dei due, e chiede di <strong>separarli</strong>.</p>
+
+<h2>Cosa chiede la petizione</h2>
+
+<p>Le richieste sono due, e sono riportate qui sotto con le parole del testo originale.</p>
+
+<h3>1. Le Aziende Sanitarie Ospedaliere (ASO)</h3>
+
+<blockquote style="border-left:4px solid #e8900a;margin:22px 0;padding:4px 0 4px 20px;color:#444;font-style:italic">
+<p>«È tempo d'istituire le <strong>Aziende Sanitarie Ospedaliere (ASO)</strong> che prenderanno in carico tutti i Presidi Ospedalieri Pubblici delle Aziende Sanitarie Provinciali e potranno stipulare, secondo i bisogni di salute, i contratti con il Privato Ospedaliero accreditato.»</p>
+</blockquote>
+
+<p>Il modello, si legge nel testo, era «già proposto nel novembre 2018». Servirebbe a <strong>tenere aperti e a far pesare tutti i presidi ospedalieri</strong> oggi attivi: istituendo i <strong>Dipartimenti Ospedalieri di branca</strong>, gli ospedali lavorerebbero in rete con «equipe itineranti», con i medici che si spostano e si scambiano esperienza sotto la responsabilità dei Direttori di Dipartimento, tenuti a garantire la qualità delle prestazioni usando al meglio le risorse umane, tecnologiche ed economiche. L'obiettivo dichiarato è una formazione continua per obiettivi che <strong>riduca la mobilità passiva</strong>, cioè i calabresi che devono curarsi fuori regione.</p>
+
+<p>C'è poi un passaggio che in Calabria pesa più di ogni altro: la nuova organizzazione per Dipartimenti «consentirà una <strong>rivisitazione dei "Punti nascita"</strong> chiusi perché al di sotto dei 500 parti annui».</p>
+
+<h3>2. Le Aziende Sanitarie Territoriali (AST)</h3>
+
+<blockquote style="border-left:4px solid #e8900a;margin:22px 0;padding:4px 0 4px 20px;color:#444;font-style:italic">
+<p>«L'istituzione delle <strong>AST</strong> consentirà ai management aziendali di dedicarsi, finalmente, alla programmazione e allo sviluppo delle attività inerenti la "Medicina Distrettuale" con particolare attenzione alle Case e agli Ospedali della Comunità e alle Centrali Operative Territoriali (COT), alla "Salute Mentale", al "Materno Infantile", alla "Riabilitazione", alla Prevenzione, alla Sanità Pubblica Veterinaria, alla Medicina Legale.»</p>
+</blockquote>
+
+<p>È la parte che riguarda la vita di tutti i giorni: la sanità <strong>vicino a casa</strong>, quella che dovrebbe evitare di finire al pronto soccorso per una cosa che si poteva curare prima. La petizione si chiude chiedendo di firmare «per costruire una sanità inclusiva, di prossimità, di iniziativa e efficiente in Calabria».</p>
+
+<h2>Chi l'ha sottoscritta</h2>
+
+<p>Oltre alla prima firma di <strong>Rubens Curia</strong>, portavoce regionale di Comunità Competente, il testo porta in calce <strong>51 sottoscrittori</strong>: presidenti di associazioni di malati e di disabili, di cooperative sociali, di comitati per le Case della Comunità, rappresentanti dei sindacati dei medici di famiglia e dei pediatri, e primari ed ex direttori di reparti ospedalieri calabresi. L'elenco completo, nome per nome, si legge nella pagina della petizione.</p>
+
+<h2>A che punto è</h2>
+
+<div class="box-info">
+<strong>&#x1F4CA; I numeri al 12 agosto 2026</strong>
+Petizione aperta il <strong style="display:inline">9 agosto 2026</strong>. Firme raccolte: <strong style="display:inline">239</strong>. Obiettivo dichiarato: <strong style="display:inline">500</strong>. Mancano poco più di duecento firme: è un traguardo alla portata, e ogni firma conta.
+</div>
+
+''' + BOTTONE_FIRMA + '''
+
+<p><em>La petizione «Per una compiuta riforma della Sanità in Calabria» è promossa da <strong>Comunità Competente</strong>; i contenuti e le richieste sono suoi e sono riportati qui seguendo il testo pubblicato su Change.org, senza aggiunte. <strong>Amilcare Mollica</strong> l'ha portata all'attenzione di Partecipazione Attiva, che la <strong>sostiene</strong>: il nostro ruolo è diffonderla e invitare a firmare.</em></p>
+
+</article>
+'''
+
 ART = {
-  'slug'         : 'stabilicum-intelligibilita-trucco-agosto2026.html',
-  'autore'       : 'spanu',
-  'data_iso'     : '2026-08-10',
-  'data_human'   : '10 agosto 2026',
-  'data_badge'   : '10 AGOSTO 2026',
-  'lettura_min'  : 9,
-  'categoria_hero': '⚖️ Riforma elettorale',
-  'og_image'     : 'images/pensattivo-stabilicum.webp',
-  'h1'           : 'Stabilicum: si può votare una legge che non si riesce a capire?',
-  'sottotitolo'  : 'Il portavoce nazionale porta all’attenzione le riflessioni della prof.ssa Lara Trucco, ordinaria di Diritto costituzionale a Genova, sull’«intelligibilità» del sistema elettorale: chi si elegge davvero, come il voto diventa seggi e quanto tempo resta prima del 2027.',
-  'meta_desc'    : 'Le riflessioni della costituzionalista Lara Trucco sullo Stabilicum: liste premiali da 70 e 35 nomi, preferenze e i tempi verso l’autunno 2027.',
-  'card_cat'     : 'STABILICUM — AGGIORNAMENTO',
-  'card_title'   : 'Spanu: leggete le riflessioni della prof.ssa Lara Trucco',
-  'card_desc'    : 'Il portavoce nazionale porta all’attenzione il contributo della costituzionalista dell’Università di Genova sull’«intelligibilità» dello Stabilicum: liste premiali da 70 e 35 nomi, il peso reale delle preferenze, i tempi verso il 2027.',
-  'ticker_emoji' : '⚖️',
-  'ticker_tema'  : 'STABILICUM',
-  'ticker_testo' : 'le riflessioni della costituzionalista Lara Trucco sull’intelligibilità dello Stabilicum: liste premiali da 70 e 35 nomi e tempi stretti verso il 2027',
-  'body'         : BODY_TRUCCO,
+  'slug'         : 'sanita-calabria-petizione-comunita-competente.html',
+  'autore'       : 'mollica',
+  'data_iso'     : '2026-08-12',
+  'data_human'   : '12 agosto 2026',
+  'data_badge'   : '12 AGOSTO 2026',
+  'lettura_min'  : 4,
+  'categoria_hero': '🏥 Sanità pubblica',
+  'og_image'     : 'images/pensattivo-sanita.webp',
+  'h1'           : 'Sanità in Calabria: la petizione da firmare',
+  'sottotitolo'  : 'Comunità Competente chiede di separare gli ospedali dal territorio: Aziende Sanitarie Ospedaliere da una parte, Aziende Sanitarie Territoriali dall’altra, e una rivisitazione dei punti nascita chiusi. Amilcare Mollica l’ha portata alla nostra attenzione e Partecipazione Attiva la sostiene.',
+  'meta_desc'    : 'Comunità Competente chiede aziende ospedaliere e territoriali distinte in Calabria. Partecipazione Attiva sostiene la petizione e invita a firmarla.',
+  'card_cat'     : '🏥 FIRMA LA PETIZIONE',
+  'card_title'   : 'Sanità in Calabria: firmiamo la petizione di Comunità Competente',
+  'card_desc'    : 'Amilcare Mollica l’ha portata alla nostra attenzione e il movimento la sostiene: ospedali e territorio con due aziende distinte, e i punti nascita chiusi da rivedere. Servono 500 firme, siamo a 239.',
+  'ticker_emoji' : '🏥',
+  'ticker_tema'  : 'SANITÀ IN CALABRIA',
+  'ticker_testo' : 'firmiamo la petizione di Comunità Competente: aziende ospedaliere e territoriali distinte, e i punti nascita chiusi da rivedere',
+  'body'         : BODY_SANITA_CALABRIA,
 }
 
 # ===========================================================================
