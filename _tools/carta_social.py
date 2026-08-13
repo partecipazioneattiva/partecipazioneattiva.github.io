@@ -33,8 +33,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from manifesto_classico import (adatta, font, larghezza, prepara_font,  # noqa: E402
                                 scrivi, LAPIDARIO, SERIF_TESTO)
 
-DATI = "~/Desktop/GEMINI LAVORI/candidati_manifesto.json"
-LAVORI = "~/Desktop/GEMINI LAVORI"
+DATI = "~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI/candidati_manifesto.json"
+LAVORI = "~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI"
 ITALICO = "merriweather-400-italic.ttf"
 # ⛔ 4 agosto 2026, appunto di Fernando sulla card di Luigi: «tolto il nome le
 #    altre sono quasi illeggibili». Cinzel e' un lapidario sottile e molto

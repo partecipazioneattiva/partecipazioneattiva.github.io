@@ -26,7 +26,7 @@ import os
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 
 CAR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "caratteri")
-LOGO = os.path.expanduser("~/Desktop/GEMINI LAVORI/Amilcare/prescelte/logo_pa.png")
+LOGO = os.path.expanduser("~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI/Amilcare/prescelte/logo_pa.png")
 
 LARGO, ALTO = 500, 750
 ORO = (214, 168, 92)

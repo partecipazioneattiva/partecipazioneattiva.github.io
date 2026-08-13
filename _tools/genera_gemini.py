@@ -30,8 +30,8 @@ import urllib.request
 
 API = "https://generativelanguage.googleapis.com/v1beta"
 CHIAVE = "~/.config/pa/gemini.key"
-DATI = "~/Desktop/GEMINI LAVORI/candidati_manifesto.json"
-LAVORI = "~/Desktop/GEMINI LAVORI"
+DATI = "~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI/candidati_manifesto.json"
+LAVORI = "~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI"
 QUI = os.path.dirname(os.path.abspath(__file__))
 
 

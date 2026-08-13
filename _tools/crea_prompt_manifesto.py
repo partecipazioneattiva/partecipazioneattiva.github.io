@@ -7,7 +7,7 @@ incollare su Gemini / Nano Banana (aistudio.google.com).
 
 Le impostazioni delle persone NON stanno qui dentro: questo repository e'
 pubblico e quelle sono descrizioni fisiche di persone reali. Stanno in
-    ~/Desktop/GEMINI LAVORI/candidati_manifesto.json
+    ~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI/candidati_manifesto.json
 accanto alle foto, e si sovrascrive il percorso con --dati.
 
 ⛔ LA REGOLA CHE QUESTO SCRIPT ESISTE PER PROTEGGERE
@@ -27,7 +27,7 @@ import json
 import os
 import sys
 
-DATI = "~/Desktop/GEMINI LAVORI/candidati_manifesto.json"
+DATI = "~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI/candidati_manifesto.json"
 
 # L'istruzione di voto, derivata dal ruolo. Non si tocca senza rileggere
 # l'art. 3 del Regolamento delle Municipalita' di Napoli.
