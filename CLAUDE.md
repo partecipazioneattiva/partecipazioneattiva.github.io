@@ -74,6 +74,37 @@ del copione si copia dal `.txt` accanto all'audio**, mai a memoria.
 ⚠️ Quando si pubblica un TG, sul sito i posti da aggiornare sono **tre**:
 card in `webtv.html`, card nella home, voce del ticker.
 
+## ⛔ Le cartelle nuove nascono in `Claude IA`, non sulla Scrivania (13 agosto 2026)
+
+Ordine di Fernando: *«se in futuro devi fare nuove cartelle per i nostri lavori
+vanno automaticamente dentro Claude, non ad intasare la scrivania»*.
+
+**Quando serve una cartella per un lavoro nuovo** — un manifesto, un dossier,
+una prova di voce, una campagna — si crea **dentro il reparto giusto** di:
+
+    ~/Desktop/Claude IA/
+
+    01_TG_E_STAMPA         notiziario, podcast Parlero', materiali per la stampa
+    02_VOCI_E_MUSICA       voci, basi, prove microfono
+    03_VIDEO_E_DIRETTE     dirette Zoom/OBS, clip verticali
+    04_MANIFESTI_E_CARD    le immagini che escono col nome del movimento
+    05_ELEZIONI_E_DOSSIER  candidature, leggi, dossier
+
+Si sceglie il reparto **per scopo**, cioe' per cosa si sta cercando di fare. Se
+nessuno dei cinque calza si aggiunge un reparto nella tabella dentro
+`~/Desktop/SCRIPT/sistema/stanza_claude.py`, e si aggiorna `Claude IA/MAPPA.md`
+rilanciandolo — non si apre un'eccezione sulla Scrivania.
+
+Sulla Scrivania ci sono **quattro cartelle e basta**, e ognuna per un motivo:
+`SCRIPT` (gli strumenti), `LAVORI` (sito, manuali, lavorazioni del TG),
+`AI_TOOLS` (ComfyUI: ha i percorsi scritti dentro, spostarlo lo rompe),
+`_ARCHIVIO` (il chiuso, con la via del ritorno). **Non se ne aggiungono altre.**
+
+⚠️ Spostare una cartella gia' esistente non e' un `mv`: e' nominata dentro
+script, manuali e memoria, e vanno riscritti tutti. Lo fa `stanza_claude.py`.
+Dopo qualunque spostamento si rilancia `verifica_tutto.sh`, che trova i
+collegamenti rimasti rotti.
+
 ## Dove stanno gli script (dal 5 agosto 2026)
 
 Tutti in **`~/Desktop/SCRIPT/`**, con la mappa in `SCRIPT/LEGGIMI.md`:
