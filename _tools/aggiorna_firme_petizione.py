@@ -7,7 +7,7 @@ Legge il numero vero da Change.org e lo riscrive in tre posti:
   · la card della home: la scritta «N firme su 500» e la larghezza della barra.
 
 Poi committa e pubblica **solo se qualcosa e' cambiato davvero**. Pensato per
-girare da solo ogni dodici ore (launchd, vedi in fondo), senza consumare crediti.
+girare da solo ogni due ore (launchd, vedi in fondo), senza consumare crediti.
 
     python3 _tools/aggiorna_firme_petizione.py            # aggiorna e pubblica
     python3 _tools/aggiorna_firme_petizione.py --prova     # dice e basta
@@ -23,10 +23,11 @@ repository e' pubblico (regola in CLAUDE.md, e c'e' la guardia che blocca).
 
 🟨 Non rigenera l'indice della ricerca: chi cerca «firme» dentro il sito vede il
 numero dell'ultima ricostruzione, non l'ultimo. E' una differenza di poche
-unita' e non vale il costo di ricostruire Pagefind ogni dodici ore.
+unita' e non vale il costo di ricostruire Pagefind a ogni giro.
 
 Nato il 12 agosto 2026, su richiesta di Fernando: «riesci a darti tipo un timer
-ogni 12 ore per aggiornare il numero».
+ogni 12 ore per aggiornare il numero». Dal 14 agosto 2026 l'intervallo e' di
+**due ore**, sempre su sua richiesta.
 
 --------------------------------------------------------------------------
 COME SI FA PARTIRE DA SOLO (una volta sola, poi si scorda)
@@ -148,7 +149,7 @@ def installa():
     <string>{sys.executable}</string>
     <string>{os.path.abspath(__file__)}</string>
   </array>
-  <key>StartInterval</key><integer>43200</integer>
+  <key>StartInterval</key><integer>7200</integer>
   <key>RunAtLoad</key><false/>
   <key>StandardOutPath</key><string>{log}</string>
   <key>StandardErrorPath</key><string>{log}</string>
