@@ -6,8 +6,9 @@ Legge il numero vero da Change.org e lo riscrive in tre posti:
   · quante firme mancano, nella stessa frase;
   · la card della home: la scritta «N firme su 500» e la larghezza della barra.
 
-Poi committa e pubblica **solo se qualcosa e' cambiato davvero**. Pensato per
-girare da solo ogni due ore (launchd, vedi in fondo), senza consumare crediti.
+Poi committa e pubblica **solo se qualcosa e' cambiato davvero**. Gira da solo
+**ogni 10 minuti sui server di GitHub**, quindi anche a Mac spento, e non consuma
+crediti: lo chiama `.github/workflows/firme-petizione.yml`.
 
     python3 _tools/aggiorna_firme_petizione.py            # aggiorna e pubblica
     python3 _tools/aggiorna_firme_petizione.py --prova     # dice e basta
@@ -26,15 +27,23 @@ numero dell'ultima ricostruzione, non l'ultimo. E' una differenza di poche
 unita' e non vale il costo di ricostruire Pagefind a ogni giro.
 
 Nato il 12 agosto 2026, su richiesta di Fernando: «riesci a darti tipo un timer
-ogni 12 ore per aggiornare il numero». Dal 14 agosto 2026 l'intervallo e' di
-**due ore**, sempre su sua richiesta.
+ogni 12 ore per aggiornare il numero». Il 14 agosto 2026, alla domanda «si puo'
+fare in tempo reale?», il lavoro e' passato **dal Mac a GitHub**: prima ogni due
+ore col Mac acceso, ora ogni 10 minuti sempre. Piu' vicino di cosi' non si va:
+Change.org non ha ne' un riquadro da incorporare ne' un indirizzo leggibile dal
+browser, quindi il numero va per forza riscritto dentro l'HTML.
 
 --------------------------------------------------------------------------
-COME SI FA PARTIRE DA SOLO (una volta sola, poi si scorda)
+CHI LO FA PARTIRE
 
-  launchctl bootstrap gui/$UID ~/Library/LaunchAgents/it.pa.firme-petizione.plist
+  .github/workflows/firme-petizione.yml   ogni 10 minuti + a mano da Actions
 
-Il file .plist lo scrive `--installa`. Per fermarlo:
+Il cron di GitHub puo' ritardare di qualche minuto nelle ore di punta: il numero
+al massimo invecchia, non sbaglia.
+
+`--installa` scrive ancora il .plist per launchd (`it.pa.firme-petizione`), ma
+serve solo come ripiego se GitHub Actions venisse spento. ⚠️ Non tenere accesi
+tutti e due: si accavallano sullo stesso push. Il .plist si toglie con
 
   launchctl bootout gui/$UID/it.pa.firme-petizione
 """
@@ -149,7 +158,7 @@ def installa():
     <string>{sys.executable}</string>
     <string>{os.path.abspath(__file__)}</string>
   </array>
-  <key>StartInterval</key><integer>7200</integer>
+  <key>StartInterval</key><integer>3600</integer>
   <key>RunAtLoad</key><false/>
   <key>StandardOutPath</key><string>{log}</string>
   <key>StandardErrorPath</key><string>{log}</string>
