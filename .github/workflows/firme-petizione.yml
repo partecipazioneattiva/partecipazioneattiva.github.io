@@ -1,0 +1,35 @@
+---
+# Riallinea il contatore delle firme della petizione sulla sanita' in Calabria.
+#
+# Gira sui server di GitHub ogni 10 minuti, quindi **anche a Mac spento**: e' il
+# sostituto del timer launchd `it.pa.firme-petizione`, che funzionava solo con il
+# Mac acceso. Chiama lo stesso strumento del repository, che pubblica soltanto se
+# il numero e' davvero cambiato e si ferma invece di indovinare.
+#
+# ⚠️ Il cron di GitHub non e' un orologio: nelle ore di punta puo' ritardare di
+# qualche minuto o saltare un giro. Va bene: il numero al massimo invecchia.
+#
+# 14 agosto 2026 — chiesto da Fernando: «si puo' fare in tempo reale?».
+name: Firme petizione Calabria
+
+on:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: firme-petizione
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Leggi Change.org e riallinea il sito
+        run: |
+          git config user.email "webmaster.partecipazione.attiva@gmail.com"
+          git config user.name "Partecipazione Attiva"
+          python3 _tools/aggiorna_firme_petizione.py
