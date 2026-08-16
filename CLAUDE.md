@@ -19,24 +19,49 @@ In venti secondi dice se reggono l'interprete del TG, gli strumenti, i percorsi
 che tutto da' per scontati, i collegamenti, il repository e gli scarichi.
 **Prima si guarda questo, poi si diagnostica** — non il contrario.
 
-## LA GUARDIA — tre regole che non dipendono più dalla memoria
+## LA GUARDIA — otto regole che non dipendono più dalla memoria
 
-Dal 5 agosto 2026 tre errori sono **fermati dal computer**, non affidati alla
-buona volonta' di chi lavora (hook `PreToolUse`, script in
-`~/Desktop/SCRIPT/sistema/guardia_comandi.sh`):
+Sono errori **fermati dal computer**, non affidati alla buona volonta' di chi
+lavora (hook `PreToolUse`, script in
+`~/Desktop/SCRIPT/sistema/guardia_comandi.sh`).
+
+Le tre trappole di casa (dal 5 agosto 2026):
 
 1. **`git add -A`** nel repository — e' pubblico. Si aggiunge **per nome**.
 2. **`python3` nudo** sugli script del TG che caricano il modello
-   (02 03 05 11 18 20 21 22). Il 07 e il 13 passano: quelli vanno bene cosi'.
+   (02 03 05 06 08 11 15 17 18 20 21 22 23 24). Il 07 e il 13 passano.
 3. **Gli allineamenti audio sospesi** (10, 16, 19, `--allinea`): l'audio del
    TG **si consegna grezzo**.
 
+I cinque divieti permanenti (dal 16 agosto 2026, quando la **modalita'
+automatica** e' diventata il default di Claude Code):
+
+4. **`sudo`** — chiede la password di Fernando: quella non la digita l'IA.
+5. **Push forzato o riscrittura della storia** (`--force`, `-f`, `--mirror`,
+   `--delete`, `filter-branch`): il repository e' pubblico, un errore si ripara
+   **in avanti**, con un commit nuovo che si vede.
+6. **Cancellazioni fuori dal perimetro**: `/`, la cartella personale, i quattro
+   pilastri della Scrivania, e le formattazioni di disco.
+7. **Lettura dei file di credenziali** (chiavi SSH, token, portachiavi): quello
+   che non entra nella conversazione non puo' finire per sbaglio in un commit.
+8. **`curl ... | sh`** — codice scaricato ed eseguito senza averlo letto.
+
 Chi prova, riceve il motivo e cosa fare invece. Non e' un promemoria: e' un
 blocco. La guardia sta **fuori dal repository** perche' nomina i percorsi del
-computer, ed e' registrata in `settings.local.json`, che non finisce su GitHub.
+computer, ed e' registrata in `~/.claude/settings.json`, che non finisce su
+GitHub — a livello di **utente**, cosi' vale in ogni cartella del Mac e non
+solo qui. Accanto, in `permissions.deny`, ci sono le stesse regole in forma di
+permesso: coprono anche la **lettura** dei file di credenziali, che non passa
+da un comando e quindi l'hook non la vedrebbe.
 
 🟨 In caso di dubbio la guardia **lascia passare**: un blocco sbagliato ferma il
 lavoro, un blocco mancato lo rallenta e basta.
+
+⚠️ Una regola nuova che deve valere **sempre** va scritta li', non qui: un
+divieto detto in chat, in modalita' automatica, viene riletto dal filo della
+conversazione — e la compattazione del contesto puo' cancellarlo. Si scrive come
+ricerca sull'**intero** comando, e si prova con una batteria «deve bloccare /
+deve passare» prima di considerarla fatta.
 
 ## PRIMA DI TOCCARE IL SITO: leggere il manuale
 
