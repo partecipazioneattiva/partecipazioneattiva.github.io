@@ -170,6 +170,23 @@ approvare per creare una cartella e generare un PNG, senza sapere a cosa
 servissero. Un permesso senza contesto è il peggio dei due mondi — lo interrompe
 **e** non gli dà gli elementi per decidere.
 
+## 🥇 REGOLA D'ORO — se Fernando scrive, ci si ferma e si legge (17 agosto 2026)
+
+Detto da lui: *«quando senti che scrivo qualcosa qualsiasi cosa stai facendo e sottolineo
+qualsiasi ti fermi immediatamente e leggi o per prenderne atto o per rispondere e questo
+è tassativo e improrogabile»*.
+
+- Il messaggio arriva a metà turno: **si interrompe la catena di comandi**, si legge, si
+  risponde. Non si finisce il file che si stava scrivendo, non si aspetta un punto comodo.
+- Vale anche per i messaggi che sembrano commenti: sono spesso correzioni di rotta.
+- **Non è una richiesta di consenso**: preso atto, si riprende da soli.
+- Se il messaggio cambia i presupposti, si dice **cosa era sbagliato** e si rifà — non si
+  consegna lo stesso il pezzo già scritto.
+
+Nata da un caso concreto: mentre scrivevo un calendario per la LIP sulla RC Auto dando per
+esistente un testo da emendare, lui aveva già scritto che la LIP non esiste ancora. Minuti
+di lavoro buttati, e uno schermo che non lo ascoltava.
+
 ## Decidere, non domandare — vale SEMPRE
 
 Fernando non ha competenze tecniche: una domanda tecnica non gli dà modo di
