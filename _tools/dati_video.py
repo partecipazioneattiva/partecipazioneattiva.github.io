@@ -68,7 +68,25 @@ def da_youtube(vid):
         'description': desc or titolo,
         'uploadDate': primo(r'"uploadDate":"([^"]*)"'),
         'duration': durata_iso(primo(r'"lengthSeconds":"(\d+)"') or 0),
+        'thumbnailUrl': miniatura(vid),
     }
+
+
+def miniatura(vid):
+    """La miniatura piu' grande che esiste davvero.
+
+    maxresdefault non c'e' per tutti i video: sul filmato lungo
+    dell'assemblea del 6 giugno 2026 risponde 404, e una miniatura che non
+    si apre fa scartare l'intero dato strutturato. Si prova a scendere.
+    """
+    for taglia in ('maxresdefault', 'sddefault', 'hqdefault', 'mqdefault'):
+        url = 'https://i.ytimg.com/vi/%s/%s.jpg' % (vid, taglia)
+        codice = subprocess.run(
+            ['curl', '-s', '-o', os.devnull, '-w', '%{http_code}', '--max-time', '15', url],
+            capture_output=True, text=True).stdout.strip()
+        if codice == '200':
+            return url
+    return 'https://i.ytimg.com/vi/%s/hqdefault.jpg' % vid
 
 
 def cache():
@@ -87,7 +105,7 @@ def blocco(pagina, video, dati):
             '@type': 'VideoObject',
             'name': d['name'],
             'description': d['description'],
-            'thumbnailUrl': 'https://i.ytimg.com/vi/%s/maxresdefault.jpg' % vid,
+            'thumbnailUrl': d.get('thumbnailUrl') or 'https://i.ytimg.com/vi/%s/hqdefault.jpg' % vid,
             'uploadDate': d['uploadDate'],
             'duration': d['duration'],
             'embedUrl': 'https://www.youtube.com/embed/' + vid,
