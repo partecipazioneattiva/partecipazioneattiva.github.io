@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🏛️",
+      "tema": "DAGLI ARCHIVI",
+      "testo": "nel 2023 alla Camera Spanu propose un progetto pilota del SIRE gestito dal MEF: il testo integrale dell’intervento"
+    },
+    {
       "emoji": "🏥",
       "tema": "SANITÀ IN CALABRIA",
       "testo": "firmiamo la petizione di Comunità Competente: aziende ospedaliere e territoriali distinte, e i punti nascita chiusi da rivedere"
@@ -34,11 +39,6 @@
       "emoji": "🗺️",
       "tema": "CITTADINI ATTIVI",
       "testo": "non mancano i cittadini attivi, manca che si vedano — ecco perché abbiamo costruito una mappa"
-    },
-    {
-      "emoji": "🗺️",
-      "tema": "LA MAPPA",
-      "testo": "cittadini e associazioni in Italia e nel mondo — cerca per tema o competenza e trova chi si batte per le stesse cose vicino a te"
     }
   ]
 }

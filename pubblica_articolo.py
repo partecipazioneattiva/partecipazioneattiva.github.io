@@ -1124,25 +1124,116 @@ Petizione aperta il <strong style="display:inline">9 agosto 2026</strong>. Firme
 </article>
 '''
 
+BODY_SPANU_2023 = '''
+<article class="article-wrap">
+
+<div class="box-info">
+<strong>&#x1F4CC; Che cos&#8217;&egrave; questa pagina</strong>
+Il 20 novembre 2023, nella Sala dei Gruppi Parlamentari della Camera dei Deputati, si &egrave; tenuto il convegno <strong style="display:inline">&laquo;Una Italia Positiva&raquo;</strong>, organizzato dall&#8217;associazione <strong style="display:inline">Moneta Positiva</strong>. Per Partecipazione Attiva intervenne <strong style="display:inline">Luigi Spanu</strong>. Qui sotto c&#8217;&egrave; <strong style="display:inline">quello che disse, parola per parola</strong>: la trascrizione dell&#8217;audio, verificata sulla registrazione. Il commento su cosa &egrave; successo dopo &egrave; della redazione ed &egrave; tenuto separato.
+</div>
+
+<h2>Il convegno</h2>
+
+<p>&laquo;Una Italia Positiva &mdash; il convegno per far risorgere il Belpaese&raquo; si tenne <strong>luned&igrave; 20 novembre 2023</strong>, dalle 12:30 alle 16:30, nella Sala dei Gruppi Parlamentari della Camera. Lo organizz&ograve; l&#8217;associazione <strong>Moneta Positiva</strong>, presieduta dall&#8217;ingegnere <strong>Fabio Conditi</strong>: nella prima parte si presentavano proposte concrete per l&#8217;economia italiana, nella seconda politici, giornalisti e portatori di interesse erano invitati a dire cosa ne pensassero.</p>
+
+<p>Partecipazione Attiva era in quella seconda parte. L&#8217;intervento di Luigi Spanu dura <strong>quattro minuti e quarantatr&eacute;</strong>, e affronta due cose: che tipo di soggetto politico &egrave; Partecipazione Attiva, e una proposta operativa per far partire subito lo strumento di cui si stava discutendo.</p>
+
+<h2>1. &laquo;Non abbiamo capi, non abbiamo segretari&raquo;</h2>
+
+<p>Spanu apre presentandosi, e la prima cosa che spiega &egrave; perch&eacute; il movimento non somiglia agli altri:</p>
+
+<blockquote style="border-left:4px solid #e8900a;margin:22px 0;padding:4px 0 4px 20px;color:#444;font-style:italic">
+<p>&laquo;Non siamo un partito tradizionale perch&eacute; noi abbiamo uno statuto in cui non abbiamo capi, non abbiamo segretari, non abbiamo leader: noi abbiamo leader solo le nostre idee.&raquo;</p>
+</blockquote>
+
+<p>&Egrave; la stessa impostazione che regge oggi lo Statuto del movimento. Nel 2023 Spanu parlava in qualit&agrave; di <strong>membro del comitato di garanzia</strong> &mdash; &egrave; diventato portavoce in seguito: chi legge tenga presente che le cariche citate sono quelle di allora.</p>
+
+<h2>2. Da dove nasce il rapporto con Moneta Positiva</h2>
+
+<blockquote style="border-left:4px solid #e8900a;margin:22px 0;padding:4px 0 4px 20px;color:#444;font-style:italic">
+<p>&laquo;Questa idea di Moneta Positiva, coltivata due anni fa quando ci siamo conosciuti, &egrave; stata presa ed elaborata, e attualmente ne abbiamo fatto oggetto del nostro manifesto, perch&eacute; riteniamo che le idee devono essere quelle che devono essere portate all&#8217;attenzione dei cittadini.&raquo;</p>
+</blockquote>
+
+<p>Due anni prima del novembre 2023 significa <strong>2021</strong>: &egrave; il conto che torna con quanto il movimento dichiara oggi, cio&egrave; di sostenere le iniziative di Moneta Positiva da oltre quattro anni. Non &egrave; un&#8217;adesione recente n&eacute; un&#8217;alleanza elettorale: &egrave; una convergenza su un contenuto, entrata nel manifesto.</p>
+
+<h2>3. Dare peso a chi fa attivit&agrave; civica</h2>
+
+<p>La parte pi&ugrave; ampia dell&#8217;intervento riguarda un problema di rappresentanza. Spanu ragiona su un territorio comunale in cui esistono cento associazioni &mdash; sanit&agrave;, trasporti, qualsiasi materia &mdash; ognuna esperta del proprio campo, e nessuna riconosciuta:</p>
+
+<blockquote style="border-left:4px solid #e8900a;margin:22px 0;padding:4px 0 4px 20px;color:#444;font-style:italic">
+<p>&laquo;La soluzione, un progetto che abbiamo chiamato <strong>dall&#8217;astensione alla partecipazione</strong>, consente di dare dignit&agrave; di rappresentanza a tutti coloro che fanno attivit&agrave; civica nelle associazioni, e non certo nei partiti tradizionali, dove per entrare devi bussare: chi sei, chi ti manda e quanti voti hai.&raquo;</p>
+</blockquote>
+
+<div class="box-info">
+<strong>&#x1F41D; Il seguito di quell&#8217;idea, per quanto risulta</strong>
+Un progetto con quel nome <strong style="display:inline">non compare oggi nei materiali del movimento</strong>. L&#8217;obiettivo per&ograve; &egrave; quello su cui lavora la <a href="rete-ape.html">Rete APE</a>, l&#8217;Assemblea Popolare Ecumenica elaborata da <strong style="display:inline">Angelo Nicotra</strong>: dare peso paritario ai soggetti civici invece di lasciarli frammentati. Se sia lo stesso progetto con un altro nome, o una strada diversa arrivata allo stesso punto, dai documenti pubblici non si ricava.
+</div>
+
+<h2>4. La proposta operativa: un progetto pilota</h2>
+
+<p>Nel finale Spanu smette di descrivere e avanza una proposta. Il ragionamento &egrave; questo: la piattaforma tecnica esiste ed &egrave; pronta per essere provata; una legge richiede tempo; allora si trovi un <strong>percorso ponte</strong>.</p>
+
+<blockquote style="border-left:4px solid #e8900a;margin:22px 0;padding:4px 0 4px 20px;color:#444;font-style:italic">
+<p>&laquo;Perch&eacute; non fare, in attesa che ci sia una legge, un percorso ponte che dia la possibilit&agrave; allo Stato di mettere in atto un <strong>progetto pilota, gestito dal MEF</strong>, con la piattaforma funzionante, in maniera tale che tutti possano vedere le reali funzionalit&agrave; dello strumento? E farlo su una realt&agrave; che io proporrei possa essere quella regionale dell&#8217;<strong>Emilia-Romagna</strong>. [&hellip;] Vedere e toccare: la piattaforma funziona? S&igrave;. Mettiamola in prova. E vediamo i politici dei partiti tradizionali che cosa dicono.&raquo;</p>
+</blockquote>
+
+<h2>Cosa &egrave; successo dopo</h2>
+
+<div class="box-info">
+<strong>&#x2696;&#xFE0F; I due lati, senza sconti</strong>
+<strong style="display:inline">Quello che non &egrave; accaduto:</strong> a quasi tre anni di distanza, un progetto pilota gestito dal MEF <strong style="display:inline">non risulta avviato</strong>, n&eacute; in Emilia-Romagna n&eacute; altrove. La proposta fatta quel giorno, come proposta, non ha avuto seguito.<br><br>
+<strong style="display:inline">Quello che &egrave; accaduto:</strong> lo strumento ha continuato la sua strada. Nel <strong style="display:inline">marzo 2024</strong> il SIRE &egrave; stato presentato alla Regione Emilia-Romagna per l&#8217;emergenza alluvione; il <strong style="display:inline">3 giugno 2025</strong> &egrave; stato illustrato alla Camera; il <strong style="display:inline">9 aprile 2026</strong>, sempre alla Camera, &egrave; diventato una <a href="spanu-sire.html">proposta di legge vera e propria</a>, con Partecipazione Attiva presente in sala.
+</div>
+
+<p>Che la regione indicata da Spanu nel novembre 2023 sia poi la stessa a cui il SIRE &egrave; stato presentato nel marzo 2024 &egrave; un fatto. <strong>Non &egrave; un rapporto di causa</strong>: l&#8217;alluvione del maggio 2023 aveva reso l&#8217;Emilia-Romagna il caso pi&ugrave; evidente per chiunque ragionasse di emergenze da finanziare in fretta, e non serve il nostro intervento per spiegare quella scelta. Registriamo la coincidenza, non ci costruiamo sopra un merito.</p>
+
+<h2>Il testo integrale</h2>
+
+<p>Trascrizione dell&#8217;audio dell&#8217;intervento, dall&#8217;inizio alla fine. La punteggiatura &egrave; stata sistemata per la lettura; le parole no. &Egrave; parlato, e come tutto il parlato ha riprese e correzioni a voce.</p>
+
+<blockquote style="border-left:4px solid #8a4e00;background:#fff8ee;margin:22px 0;padding:18px 22px;color:#333;border-radius:0 12px 12px 0">
+<p>&laquo;Fabio, grazie di nuovo. Due parole per presentarmi, innanzitutto, perch&eacute; sono qui grazie al tuo invito, ma noi ci conosciamo da due anni perch&eacute; abbiamo fatto gi&agrave; due eventi, e quindi conosciamo molto bene Moneta Positiva.</p>
+<p>Sono qui in rappresentanza perch&eacute; sono membro del comitato di garanzia di un nuovo soggetto politico, su cui &mdash; virgolette &mdash; non sono d&#8217;accordo sui contenitori, perch&eacute; noi non siamo un partito politico tradizionale, ma siamo un partito politico diverso. La Costituzione vuole i partiti; parlerei invece del come ritrovare quella dignit&agrave; di rappresentanza delle associazioni, a cui si riferiva l&#8217;intervento precedente.</p>
+<p>Non siamo un partito tradizionale perch&eacute; noi abbiamo uno statuto in cui non abbiamo capi, non abbiamo segretari, non abbiamo leader: noi abbiamo leader solo le nostre idee. Quindi questa idea di Moneta Positiva, coltivata due anni fa quando ci siamo conosciuti, &egrave; stata presa ed elaborata, e attualmente ne abbiamo fatto oggetto del nostro manifesto, perch&eacute; riteniamo che le idee devono essere quelle che devono essere portate all&#8217;attenzione dei cittadini.</p>
+<p>Quindi chi si avvicina a Partecipazione Attiva avr&agrave; modo di conoscere un partito &mdash; chiamiamolo partito &mdash; partito di impegno civico e non di politica, che porta avanti giustamente un percorso politico innovativo, soprattutto per aiutare questi analfabeti, l&#8217;analfabetismo politico che porta all&#8217;astensionismo ormai evidente.</p>
+<p>E su questo voglio dire, perch&eacute; avete toccato l&#8217;argomento: nelle idee che stiamo valutando esiste anche un progetto che d&agrave; dignit&agrave; di rappresentanza a tutti i cittadini attivi nel territorio, che non devono essere chiaramente soltanto coloro che partecipano in maniera attiva ai partiti.</p>
+<p>Allora, diciamo: se &egrave; vero che nel territorio &mdash; ragiono su un territorio comunale, ma vale per il regionale e vale anche per il nazionale &mdash; se &egrave; vero che nel territorio comunale dove ognuno di noi vive esistono cento associazioni (faccio un numero, ma fatelo vostro il concetto), queste associazioni, esperte ognuna &mdash; mondo sanitario, trasporti, qualsiasi argomento &mdash; sono associazioni che hanno dignit&agrave; di essere riconosciute in quanto tali dal punto di vista della rappresentanza istituzionale.</p>
+<p>Come fare? La domanda &egrave;: noi stiamo cercando una soluzione. La soluzione, un progetto che abbiamo chiamato &laquo;dall&#8217;astensione alla partecipazione&raquo;, consente di dare dignit&agrave; di rappresentanza a tutti coloro che fanno attivit&agrave; civica nelle associazioni, e non certo nei partiti tradizionali, dove per entrare devi bussare: chi sei, chi ti manda e quanti voti hai.</p>
+<p>Allora, noi non abbiamo fatto l&#8217;esperienza di partecipazione passiva nei partiti tradizionali; oggi l&#8217;abbiamo chiamata Partecipazione Attiva perch&eacute; &egrave; innovativa proprio nell&#8217;approccio.</p>
+<p>Quindi mi fermo qui, per dirvi che noi abbiamo fatto la nostra idea e vogliamo fare una proposta, perch&eacute; siamo anche quelli che fanno le proposte. Visto che la piattaforma &egrave; arrivata a una situazione tale da essere testata &mdash; perch&eacute; nei progetti informatici si parla di progetto pilota &mdash; perch&eacute; non fare, in attesa che ci sia una legge, un percorso ponte che dia la possibilit&agrave; allo Stato di mettere in atto un progetto pilota, gestito dal MEF, con la piattaforma funzionante, in maniera tale che tutti possano vedere le reali funzionalit&agrave; del pacchetto, quindi dello strumento? E farlo su una realt&agrave; che io proporrei possa essere quella regionale dell&#8217;Emilia-Romagna.</p>
+<p>Perch&eacute;, visto che avete scritto questa benedetta lettera, che si pu&ograve; fare un intervento con la piattaforma, facciamo questa richiesta diretta: vedere e toccare. La piattaforma funziona? S&igrave;. Mettiamola in prova: progetto pilota, regione di riferimento, Emilia-Romagna. E vediamo i politici dei partiti tradizionali &mdash; perch&eacute; io mi voglio differenziare &mdash; che cosa dicono.</p>
+<p>Questo &egrave; il messaggio che porta Partecipazione Attiva. Grazie per l&#8217;ascolto.&raquo;</p>
+</blockquote>
+
+<h2>A settembre ne parliamo</h2>
+
+<p>Il SIRE &egrave; uno di quei temi che in novanta secondi non entrano. Per questo <strong>a settembre</strong> torna sulla WebTV del movimento, insieme agli <a href="settembre-2026-appuntamenti.html">altri appuntamenti gi&agrave; annunciati</a>: cosa sono i crediti d&#8217;imposta cedibili, perch&eacute; non sono una moneta alternativa, e a che punto &egrave; arrivata la proposta di legge dopo il 9 aprile. Data e relatore verranno annunciati su queste pagine.</p>
+
+<p><em>Il convegno &laquo;Una Italia Positiva&raquo; del 20 novembre 2023 &egrave; stato organizzato dall&#8217;associazione <strong>Moneta Positiva</strong> e ripreso da <strong>Byoblu</strong> nell&#8217;ambito della trasmissione &laquo;Democrazia in corso&raquo;: la registrazione video &egrave; loro. Su questa pagina riportiamo il <strong>testo</strong> dell&#8217;intervento del nostro portavoce, trascritto dall&#8217;audio e verificato. Le considerazioni della sezione &laquo;Cosa &egrave; successo dopo&raquo; sono della redazione di Partecipazione Attiva e non sono attribuibili a Luigi Spanu, che nel novembre 2023 non poteva farle.</em></p>
+
+</article>
+'''
+
 ART = {
-  'slug'         : 'sanita-calabria-petizione-comunita-competente.html',
-  'autore'       : 'mollica',
-  'data_iso'     : '2026-08-12',
-  'data_human'   : '12 agosto 2026',
-  'data_badge'   : '12 AGOSTO 2026',
-  'lettura_min'  : 4,
-  'categoria_hero': '🏥 Sanità pubblica',
-  'og_image'     : 'images/pensattivo-sanita.webp',
-  'h1'           : 'Sanità in Calabria: la petizione da firmare',
-  'sottotitolo'  : 'Comunità Competente chiede di separare gli ospedali dal territorio: Aziende Sanitarie Ospedaliere da una parte, Aziende Sanitarie Territoriali dall’altra, e una rivisitazione dei punti nascita chiusi. Amilcare Mollica l’ha portata alla nostra attenzione e Partecipazione Attiva la sostiene.',
-  'meta_desc'    : 'Comunità Competente chiede aziende ospedaliere e territoriali distinte in Calabria. Partecipazione Attiva sostiene la petizione e invita a firmarla.',
-  'card_cat'     : '🏥 FIRMA LA PETIZIONE',
-  'card_title'   : 'Sanità in Calabria: firmiamo la petizione di Comunità Competente',
-  'card_desc'    : 'Amilcare Mollica l’ha portata alla nostra attenzione e il movimento la sostiene: ospedali e territorio con due aziende distinte, e i punti nascita chiusi da rivedere. Servono 500 firme, siamo a 239.',
-  'ticker_emoji' : '🏥',
-  'ticker_tema'  : 'SANITÀ IN CALABRIA',
-  'ticker_testo' : 'firmiamo la petizione di Comunità Competente: aziende ospedaliere e territoriali distinte, e i punti nascita chiusi da rivedere',
-  'body'         : BODY_SANITA_CALABRIA,
+  'slug'         : 'spanu-una-italia-positiva-2023.html',
+  'autore'       : 'spanu',
+  'data_iso'     : '2026-08-19',
+  'data_human'   : '19 agosto 2026',
+  'data_badge'   : '19 AGOSTO 2026',
+  'lettura_min'  : 5,
+  'categoria_hero': '\U0001F3DB️ Dagli archivi',
+  'og_image'     : 'images/spanu-audizione-stabilicum.webp',
+  'h1'           : 'SIRE: l’intervento di Spanu alla Camera nel 2023',
+  'sottotitolo'  : 'Al convegno «Una Italia Positiva» del 20 novembre 2023, Partecipazione Attiva propose un progetto pilota gestito dal MEF, da provare in Emilia-Romagna. Il testo integrale dell’intervento, e cosa è successo nei tre anni successivi.',
+  'meta_desc'    : 'Il 20 novembre 2023 alla Camera, al convegno «Una Italia Positiva», Luigi Spanu propose un progetto pilota del SIRE gestito dal MEF. Testo integrale.',
+  'card_cat'     : '\U0001F3DB️ DAGLI ARCHIVI',
+  'card_title'   : 'Il SIRE alla Camera: cosa disse Spanu nel 2023',
+  'card_desc'    : 'Al convegno «Una Italia Positiva» propose di far partire subito un progetto pilota gestito dal MEF, da provare in Emilia-Romagna, senza aspettare la legge. Il testo integrale dell’intervento. A settembre il tema torna sulla WebTV.',
+  'ticker_emoji' : '\U0001F3DB️',
+  'ticker_tema'  : 'DAGLI ARCHIVI',
+  'ticker_testo' : 'nel 2023 alla Camera Spanu propose un progetto pilota del SIRE gestito dal MEF: il testo integrale dell’intervento',
+  'body'         : BODY_SPANU_2023,
+  'vietate_ok'   : ['SIRE', 'Camera dei Deputati', 'spanu-sire'],
 }
 
 # ===========================================================================
@@ -1224,13 +1315,17 @@ def build_articolo(a):
         html = html.replace(_t,_v)
     return html
 
-def check_articolo(path):
+def check_articolo(path, vietate_ok=()):
+    # vietate_ok: termini di VIETATE che in QUESTO articolo sono legittimi.
+    # Serve quando l'articolo parla davvero del SIRE o della Camera: senza la
+    # deroga il controllo anti-residui-GOLD boccia il testo giusto (19/08/2026).
     h = open(path, encoding='utf-8').read()
     errs = []
     if not h.rstrip().endswith('</html>'): errs.append('file troncato')
     if 'github.io' in h: errs.append('github.io presente')
     if 'type=application/ld+json' in h: errs.append('schema fantasma')
     for v in VIETATE:
+        if v in vietate_ok: continue
         if v in h: errs.append(f'residuo GOLD: {v}')
     if h.count('<script type="application/ld+json">') != 2: errs.append('schema: attesi 2 blocchi (NewsArticle + BreadcrumbList)')
     return errs
@@ -1337,7 +1432,7 @@ def main():
     assert not os.path.exists(out), f'STOP: {a["slug"]} esiste gia'
     html = build_articolo(a)
     open(out, 'w', encoding='utf-8').write(html)
-    errs = check_articolo(out)
+    errs = check_articolo(out, a.get('vietate_ok', ()))
     assert not errs, 'CHECK FALLITI: ' + '; '.join(errs)
     print(f'OK articolo: {a["slug"]} ({len(html)} char) - 8 check superati')
     aggiorna_index(a)

@@ -1,12 +1,21 @@
 {
   "articoli": [
     {
+      "slug": "spanu-una-italia-positiva-2023.html",
+      "titolo": "SIRE: l’intervento di Spanu alla Camera nel 2023",
+      "tema": "🏛️ Dagli archivi",
+      "tema_key": "dagli archivi",
+      "data": "2026-08-19",
+      "img": "spanu-audizione-stabilicum.webp",
+      "sommario": "Il 20 novembre 2023 alla Camera, al convegno «Una Italia Positiva», Luigi Spanu propose un progetto pilota del SIRE gestito dal MEF. Testo integrale."
+    },
+    {
       "slug": "sanita-calabria-petizione-comunita-competente.html",
       "titolo": "Sanità in Calabria: la petizione da firmare",
       "tema": "🏥 Sanità pubblica",
       "tema_key": "sanità pubblica",
       "data": "2026-08-12",
-      "img": "pensattivo-sanita.webp",
+      "img": "sanita-calabria-petizione-comunita-competente-anteprima.jpg",
       "sommario": "Comunità Competente chiede aziende ospedaliere e territoriali distinte in Calabria. Partecipazione Attiva sostiene la petizione e invita a firmarla."
     },
     {
