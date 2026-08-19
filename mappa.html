@@ -236,7 +236,7 @@ footer a{color:var(--ar)}
   <h2>Cerca</h2>
   <p class="sub">Scrivi anche una sola parola: <em>legge elettorale</em>, <em>sanit&agrave;</em>, <em>ambiente</em>, <em>legale</em>, <em>Napoli</em>, <em>Germania</em>&hellip;</p>
   <div class="qbox">
-    <input id="q" type="text" placeholder="Cerca un tema, una competenza, un luogo..." autocomplete="off">
+    <input aria-label="Cerca nella mappa: tema, competenza o luogo" id="q" type="text" placeholder="Cerca un tema, una competenza, un luogo..." autocomplete="off">
     <button id="qx" type="button" title="Azzera la ricerca" aria-label="Azzera la ricerca">&#10005;</button>
   </div>
   <div class="chips" id="chips"></div>
@@ -604,17 +604,17 @@ footer a{color:var(--ar)}
       <div style="flex:1 1 220px;max-width:300px">
         <img src="images/qr-iscriviti-pa-600.webp" alt="Codice QR che apre il modulo di iscrizione a Partecipazione Attiva" width="600" height="600" loading="lazy" style="width:100%;height:auto;border-radius:12px;background:#fff">
         <p style="margin:.6rem 0 .2rem"><strong>Iscriviti a Partecipazione Attiva</strong></p>
-        <p style="margin:0 0 .4rem;font-size:.92rem">Porta al modulo di iscrizione. Riconoscibile dal logo al centro.</p>
+        <p style="margin:0 0 .4rem;">Porta al modulo di iscrizione. Riconoscibile dal logo al centro.</p>
         <p style="margin:0"><a href="images/qr-iscriviti-pa.png" download>Scarica per la stampa (PNG)</a></p>
       </div>
       <div style="flex:1 1 220px;max-width:300px">
         <img src="images/qr-mappa-pa-600.webp" alt="Codice QR che apre la Mappa dei cittadini attivi" width="600" height="600" loading="lazy" style="width:100%;height:auto;border-radius:12px;background:#fff">
         <p style="margin:.6rem 0 .2rem"><strong>La Mappa dei cittadini attivi</strong></p>
-        <p style="margin:0 0 .4rem;font-size:.92rem">Porta a questa pagina. Riconoscibile dal segnaposto al centro.</p>
+        <p style="margin:0 0 .4rem;">Porta a questa pagina. Riconoscibile dal segnaposto al centro.</p>
         <p style="margin:0"><a href="images/qr-mappa-pa.png" download>Scarica per la stampa (PNG)</a></p>
       </div>
     </div>
-    <p style="margin-top:1.2rem;font-size:.92rem">Stampati grandi almeno 3 cm di lato si leggono da mezzo metro; su un manifesto affisso servono almeno 8 cm.</p>
+    <p style="margin-top:1.2rem;">Stampati grandi almeno 3 cm di lato si leggono da mezzo metro; su un manifesto affisso servono almeno 8 cm.</p>
   </div>
 </section>
 
@@ -1054,7 +1054,7 @@ document.addEventListener('click',function(e){if(e.target&&e.target.id==='pa-cer
     <button onclick='document.getElementById("modal-sostienici").style.display="none"' style="position:absolute;top:14px;right:18px;background:transparent;border:none;font-size:1.4em;cursor:pointer;color:#888">&#10005;</button>
     <div style="text-align:center;margin-bottom:20px"><img src="LOGO-PA.webp" alt="Logo PA" style="height:60px" width="400" height="400"></div>
     <h2 style="font-family:Merriweather,serif;color:#8a4e00;font-size:1.2em;margin-bottom:6px;text-align:center">Sostieni Partecipazione Attiva</h2>
-    <p style="color:#333;font-size:.85em;text-align:center;margin-bottom:24px">Ogni contributo ci aiuta a portare avanti le nostre battaglie.</p>
+    <p style="color:#333;text-align:center;margin-bottom:24px">Ogni contributo ci aiuta a portare avanti le nostre battaglie.</p>
     <div style="background:#fff8ee;border-radius:12px;padding:18px;margin-bottom:16px;border:1.5px solid #e8900a">
       <div style="font-weight:700;color:#8a4e00;font-size:.85em;margin-bottom:10px">&#127974; Bonifico Bancario</div>
       <div style="font-size:.76em;color:#222;line-height:1.9;font-weight:500"><strong>Intestato a:</strong> Daniele Tandura (Tesoriere P.A.)<br><strong>IBAN:</strong> IT70A0366901600557449712670<br><strong>SWIFT:</strong> REVOITM2<br><strong>Causale:</strong> Iscrizione/Rinnovo/Donazione progetto politico</div>

@@ -43,7 +43,7 @@
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUJHaPB9o6gA7TXHNLNgsKcftZjwCsjepZ3r_C9TH2ODsr3A/viewform" target="_blank" class="btn-iscr">Iscriviti</a>
     <a href="#" onclick="document.getElementById('modal-sost').style.display='flex';return false;" class="btn-sost" onclick="apriSostienici(event)">Sostienici</a>
   </div>
-  <button class="pa-cerca-btn" data-pa-cerca="1" data-pagefind-ignore type="button" onclick="paApriCerca()" aria-label="Cerca nel sito" title="Cerca nel sito"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><button class="burger" onclick="this.classList.toggle('open');document.querySelector('.mob-menu').classList.toggle('on')">
+  <button class="pa-cerca-btn" data-pa-cerca="1" data-pagefind-ignore type="button" onclick="paApriCerca()" aria-label="Cerca nel sito" title="Cerca nel sito"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><button aria-label="Apri menu" class="burger" onclick="this.classList.toggle('open');document.querySelector('.mob-menu').classList.toggle('on')">
     <span></span><span></span><span></span>
   </button>
   <div data-pagefind-ignore class="mob-menu"><a href="index.html" onclick="chiudi()">Home</a><a href="napoli.html" onclick="chiudi()">&#9679; Napoli</a><a href="territori.html" onclick="chiudi()">Territori</a><a href="mappa.html" onclick="chiudi()">Mappa</a><a href="proposte.html" onclick="chiudi()">Proposte</a><a href="azioni.html" onclick="chiudi()">Azioni</a><a href="battaglie.html" onclick="chiudi()">Battaglie</a><a href="webtv.html" onclick="chiudi()">WebTV</a><a href="rete-ape.html" onclick="chiudi()">Rete APE</a><a href="chi-siamo.html" onclick="chiudi()">Chi Siamo</a><a href="organigramma.html" onclick="chiudi()">Organigramma</a><a href="parlero.html" onclick="chiudi()">Parler&ograve;</a></div>
@@ -150,15 +150,15 @@ La casa &egrave; un bisogno primario, ma non &egrave; ancora un diritto fondamen
 
 <div class="pa-tab-scorre"><table class="pa-tbl">
 <caption>&ast; Stima nazionale basata su dati ATER Roma proiettati sul patrimonio ERP totale.</caption>
-<thead><tr><th>Misura</th><th>Stima</th><th>Effetto</th></tr></thead>
+<thead><tr><th scope="col">Misura</th><th scope="col">Stima</th><th scope="col">Effetto</th></tr></thead>
 <tbody>
-<tr><th>Morosit&agrave; ERP</th><td data-l="Stima">300&ndash;400 mln/anno&ast;</td><td data-l="Effetto">Riduzione dal 19% al 10%: libera risorse senza nuovi fondi</td></tr>
-<tr><th>Alloggi abusivi recuperati</th><td data-l="Stima">24.000+ unit&agrave;</td><td data-l="Effetto">Ritorno al circuito legale: riduce la lista d&rsquo;attesa</td></tr>
-<tr><th>Censimento digitale ERP</th><td data-l="Stima">Costo amm.vo</td><td data-l="Effetto">Finanziabile con fondi PNRR gi&agrave; stanziati per la PA digitale</td></tr>
-<tr><th>Patto di responsabilit&agrave;</th><td data-l="Stima">Zero</td><td data-l="Effetto">Riduce i costi di manutenzione straordinaria</td></tr>
-<tr><th>Tassazione case sfitte</th><td data-l="Stima">Gettito aggiuntivo</td><td data-l="Effetto">Reinvestito nel fondo edilizia residenziale pubblica</td></tr>
-<tr><th>Regolamentazione affitti brevi</th><td data-l="Stima">Licenze comunali</td><td data-l="Effetto">Risorse ai Comuni per politiche abitative locali</td></tr>
-<tr><th>Fondo morosit&agrave; incolpevole</th><td data-l="Stima">Da definire</td><td data-l="Effetto">Copertura: riordino fondi nazionali + riduzione esenzioni su seconde/terze case sfitte</td></tr>
+<tr><th scope="row">Morosit&agrave; ERP</th><td data-l="Stima">300&ndash;400 mln/anno&ast;</td><td data-l="Effetto">Riduzione dal 19% al 10%: libera risorse senza nuovi fondi</td></tr>
+<tr><th scope="row">Alloggi abusivi recuperati</th><td data-l="Stima">24.000+ unit&agrave;</td><td data-l="Effetto">Ritorno al circuito legale: riduce la lista d&rsquo;attesa</td></tr>
+<tr><th scope="row">Censimento digitale ERP</th><td data-l="Stima">Costo amm.vo</td><td data-l="Effetto">Finanziabile con fondi PNRR gi&agrave; stanziati per la PA digitale</td></tr>
+<tr><th scope="row">Patto di responsabilit&agrave;</th><td data-l="Stima">Zero</td><td data-l="Effetto">Riduce i costi di manutenzione straordinaria</td></tr>
+<tr><th scope="row">Tassazione case sfitte</th><td data-l="Stima">Gettito aggiuntivo</td><td data-l="Effetto">Reinvestito nel fondo edilizia residenziale pubblica</td></tr>
+<tr><th scope="row">Regolamentazione affitti brevi</th><td data-l="Stima">Licenze comunali</td><td data-l="Effetto">Risorse ai Comuni per politiche abitative locali</td></tr>
+<tr><th scope="row">Fondo morosit&agrave; incolpevole</th><td data-l="Stima">Da definire</td><td data-l="Effetto">Copertura: riordino fondi nazionali + riduzione esenzioni su seconde/terze case sfitte</td></tr>
 </tbody>
 </table></div>
 

@@ -43,11 +43,23 @@
    ══════════════════════════════════════════════════════════════════════════ */
 
 /* ── la barra scura in alto ─────────────────────────────────────────────── */
+/* SPENTA il 19/08/2026. Misurata: costava 57 px in cima a ogni pagina, cioe'
+   il 7% dello schermo di un telefono, per ripetere tre cose che stanno gia'
+   nel pie' di pagina — l'indirizzo email, Facebook e YouTube — piu' un link
+   "Contatti" che e' anche nel menu. Gli studi sulla prima impressione (Tuch e
+   altri, 2012) misurano l'affollamento come l'unica variabile che peggiora il
+   giudizio nei primi millisecondi, e il Nielsen Norman Group mette le
+   ripetizioni fra le cose da togliere dalla home.
+   Il markup resta nelle pagine apposta: allinea_barra_strumento.py copia
+   l'intestazione partendo proprio da <div class="topbar">, e cancellarlo lo
+   romperebbe. Per riaccenderla: togliere la riga .topbar{display:none}. */
 .topbar{background:#5f3500;color:#fff;padding:6px 18px;display:flex;
         justify-content:space-between;align-items:center;font-size:.78em;
         flex-wrap:wrap;gap:4px 12px}
 .topbar a{color:#ffd580;text-decoration:none;margin-left:16px;font-weight:600}
 .topbar a:hover{color:#fff}
+/* deve stare DOPO la regola qui sopra, altrimenti display:flex la vince */
+.topbar{display:none}
 
 /* Una pagina (sanitapubblica.html) avvolge il contenuto del menu in un
    .nav-inner: con display:contents i figli entrano direttamente nella barra e
@@ -582,4 +594,15 @@ html { scroll-padding-top: 84px; }
   .navbar.pa-compatta .nav-cta { gap: 5px; }
   .navbar.pa-compatta .nav-cta a { font-size: .72em; padding: 13px 9px; }
   .navbar.pa-compatta { gap: 6px; padding-left: 8px; padding-right: 8px; }
+}
+
+/* ── spazio sotto il piè di pagina per i pulsanti che galleggiano ─────────
+   MISURATO il 19/08/2026 su telefono a 375 px: arrivati in fondo alla pagina
+   il link «Privacy Policy» finisce sotto il pulsante dell'assistente, e li'
+   non si puo' piu' scorrere via — un collegamento cliccabile ostruito per
+   sempre. I due pulsanti fissi (assistente 58 px + 18 di margine; campanella
+   Webpushr 34 + 15) stanno entro 76 px dal bordo: 88 px liberano entrambi.
+   Vale solo dove i pulsanti stanno davvero addosso al contenuto. */
+@media (max-width: 768px) {
+  body .foot-bottom, body .footer-bottom { padding-bottom: 88px; }
 }

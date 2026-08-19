@@ -106,7 +106,7 @@ footer a{color:#ffd580;text-decoration:none}
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSdUJHaPB9o6gA7TXHNLNgsKcftZjwCsjepZ3r_C9TH2ODsr3A/viewform" target="_blank" class="btn-iscr">Iscriviti</a>
     <a href="#" onclick="document.getElementById('modal-sost').style.display='flex';return false;" class="btn-sost" onclick="apriSostienici(event)">Sostienici</a>
   </div>
-  <button class="pa-cerca-btn" data-pa-cerca="1" data-pagefind-ignore type="button" onclick="paApriCerca()" aria-label="Cerca nel sito" title="Cerca nel sito"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><button class="burger" onclick="this.classList.toggle('open');document.querySelector('.mob-menu').classList.toggle('on')">
+  <button class="pa-cerca-btn" data-pa-cerca="1" data-pagefind-ignore type="button" onclick="paApriCerca()" aria-label="Cerca nel sito" title="Cerca nel sito"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><line x1="16.5" y1="16.5" x2="21" y2="21"></line></svg></button><button aria-label="Apri menu" class="burger" onclick="this.classList.toggle('open');document.querySelector('.mob-menu').classList.toggle('on')">
     <span></span><span></span><span></span>
   </button>
   <div data-pagefind-ignore class="mob-menu"><a href="index.html" onclick="chiudi()">Home</a><a href="napoli.html" onclick="chiudi()">&#9679; Napoli</a><a href="territori.html" onclick="chiudi()">Territori</a><a href="mappa.html" onclick="chiudi()">Mappa</a><a href="proposte.html" onclick="chiudi()">Proposte</a><a href="azioni.html" onclick="chiudi()">Azioni</a><a href="battaglie.html" onclick="chiudi()">Battaglie</a><a href="webtv.html" onclick="chiudi()">WebTV</a><a href="rete-ape.html" onclick="chiudi()">Rete APE</a><a href="chi-siamo.html" onclick="chiudi()">Chi Siamo</a><a href="organigramma.html" onclick="chiudi()">Organigramma</a><a href="parlero.html" onclick="chiudi()">Parler&ograve;</a></div>
@@ -177,13 +177,13 @@ Una legge elettorale &egrave; giusta solo se la accetteresti senza sapere in ant
 
 <table class="pa-tbl">
 <caption>Formula, forma di governo, durata dei governi e proporzionalit&agrave; (indice di Gallagher, valori indicativi). Fonti: EPRS/Consiglio europeo e Pew Research/ParlGov per la durata; dataset di M. Gallagher (Trinity College Dublin) e Casal B&eacute;rtoa per l&rsquo;indice.</caption>
-<thead><tr><th>Paese</th><th>Formula</th><th>Forma di governo</th><th>Durata governi</th><th>Gallagher</th></tr></thead>
+<thead><tr><th scope="col">Paese</th><th scope="col">Formula</th><th scope="col">Forma di governo</th><th scope="col">Durata governi</th><th scope="col">Gallagher</th></tr></thead>
 <tbody>
-<tr><th>Germania</th><td data-l="Formula">Proporz. personalizzato (MMP)</td><td data-l="Forma di governo">Sfiducia costruttiva</td><td data-l="Durata">Alta (~10 anni)</td><td data-l="Gallagher">~3&ndash;5</td></tr>
-<tr><th>Spagna</th><td data-l="Formula">Proporzionale (D&rsquo;Hondt)</td><td data-l="Forma di governo">Sfiducia costruttiva</td><td data-l="Durata">Medio-alta</td><td data-l="Gallagher">~5&ndash;6</td></tr>
-<tr><th>Svezia</th><td data-l="Formula">Proporzionale (Sainte-Lagu&euml;)</td><td data-l="Forma di governo">Parlamentarismo negativo</td><td data-l="Durata">Medio-alta</td><td data-l="Gallagher">~1&ndash;3</td></tr>
-<tr><th>Portogallo</th><td data-l="Formula">Proporzionale (D&rsquo;Hondt)</td><td data-l="Forma di governo">Governo respinto solo a magg. assoluta</td><td data-l="Durata">Medio-alta</td><td data-l="Gallagher">~4&ndash;6</td></tr>
-<tr><th>Italia</th><td data-l="Formula">Misto (attuale)</td><td data-l="Forma di governo">Sfiducia semplice</td><td data-l="Durata">Bassa (premier &lt; 2 anni)</td><td data-l="Gallagher">~4</td></tr>
+<tr><th scope="row">Germania</th><td data-l="Formula">Proporz. personalizzato (MMP)</td><td data-l="Forma di governo">Sfiducia costruttiva</td><td data-l="Durata">Alta (~10 anni)</td><td data-l="Gallagher">~3&ndash;5</td></tr>
+<tr><th scope="row">Spagna</th><td data-l="Formula">Proporzionale (D&rsquo;Hondt)</td><td data-l="Forma di governo">Sfiducia costruttiva</td><td data-l="Durata">Medio-alta</td><td data-l="Gallagher">~5&ndash;6</td></tr>
+<tr><th scope="row">Svezia</th><td data-l="Formula">Proporzionale (Sainte-Lagu&euml;)</td><td data-l="Forma di governo">Parlamentarismo negativo</td><td data-l="Durata">Medio-alta</td><td data-l="Gallagher">~1&ndash;3</td></tr>
+<tr><th scope="row">Portogallo</th><td data-l="Formula">Proporzionale (D&rsquo;Hondt)</td><td data-l="Forma di governo">Governo respinto solo a magg. assoluta</td><td data-l="Durata">Medio-alta</td><td data-l="Gallagher">~4&ndash;6</td></tr>
+<tr><th scope="row">Italia</th><td data-l="Formula">Misto (attuale)</td><td data-l="Forma di governo">Sfiducia semplice</td><td data-l="Durata">Bassa (premier &lt; 2 anni)</td><td data-l="Gallagher">~4</td></tr>
 </tbody>
 </table>
 <p>Dove esiste un meccanismo forte di forma di governo, i governi durano pur restando i sistemi proporzionali. La stabilit&agrave; dipende dalla forma di governo, non dalla distorsione della rappresentanza.</p>
@@ -191,13 +191,13 @@ Una legge elettorale &egrave; giusta solo se la accetteresti senza sapere in ant
 <h2>Cosa vogliamo, cosa chiediamo subito</h2>
 <p>Distinguiamo la visione piena (che in parte richiede revisione costituzionale) da ci&ograve; che &egrave; possibile ottenere subito con legge ordinaria. Il &laquo;subito&raquo; non tradisce il &laquo;vogliamo&raquo;: &egrave; la prima tappa dello stesso percorso.</p>
 <table class="pa-tbl">
-<thead><tr><th>Requisito</th><th>Cosa vorremmo</th><th>Cosa chiediamo subito</th></tr></thead>
+<thead><tr><th scope="col">Requisito</th><th scope="col">Cosa vorremmo</th><th scope="col">Cosa chiediamo subito</th></tr></thead>
 <tbody>
-<tr><th>Scelta della persona</th><td data-l="Vorremmo">Preferenze piene o sistema misto</td><td data-l="Subito">Collegi piccoli e liste corte</td></tr>
-<tr><th>Governabilit&agrave;</th><td data-l="Vorremmo">Stabilit&agrave; dalla forma di governo</td><td data-l="Subito">Premio eventuale con tetto sotto i 3/5</td></tr>
-<tr><th>Nessun abuso</th><td data-l="Vorremmo">Garanzie + quorum presidenziale protetto</td><td data-l="Subito">Tetto sotto i 3/5: nessuno tocca da solo Consulta e CSM</td></tr>
-<tr><th>Nessun ricatto</th><td data-l="Vorremmo">Sfiducia costruttiva (art. 94)</td><td data-l="Subito">Premio ripartito in proporzione ai voti</td></tr>
-<tr><th>Diritti di chi perde</th><td data-l="Vorremmo">Statuto opposizioni in Costituzione</td><td data-l="Subito">Statuto opposizioni per legge</td></tr>
+<tr><th scope="row">Scelta della persona</th><td data-l="Vorremmo">Preferenze piene o sistema misto</td><td data-l="Subito">Collegi piccoli e liste corte</td></tr>
+<tr><th scope="row">Governabilit&agrave;</th><td data-l="Vorremmo">Stabilit&agrave; dalla forma di governo</td><td data-l="Subito">Premio eventuale con tetto sotto i 3/5</td></tr>
+<tr><th scope="row">Nessun abuso</th><td data-l="Vorremmo">Garanzie + quorum presidenziale protetto</td><td data-l="Subito">Tetto sotto i 3/5: nessuno tocca da solo Consulta e CSM</td></tr>
+<tr><th scope="row">Nessun ricatto</th><td data-l="Vorremmo">Sfiducia costruttiva (art. 94)</td><td data-l="Subito">Premio ripartito in proporzione ai voti</td></tr>
+<tr><th scope="row">Diritti di chi perde</th><td data-l="Vorremmo">Statuto opposizioni in Costituzione</td><td data-l="Subito">Statuto opposizioni per legge</td></tr>
 </tbody>
 </table>
 
