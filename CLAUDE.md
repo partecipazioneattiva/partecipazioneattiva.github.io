@@ -272,8 +272,14 @@ cresce col **quadrato** della sua lunghezza. 50 messaggi non costano 50, costano
 
 Da applicare di default, non su richiesta:
 
-1. **Proporre `/clear` quando cambia il lavoro.** Finito il TG → `/clear` prima del
-   sito. Finito il sito → `/clear` prima dei social. Dirlo io, non aspettare.
+1. ⛔ **Il `/clear` non si propone più** (20/08/2026, ordine di Fernando: *«non
+   farò più il clear»*). Risparmiava crediti e gli faceva perdere il filo: una
+   frase di ripartenza non porta con sé il contesto appena buttato. Quando
+   riprendo un lavoro e non ho il filo, **lo recupero io** dalle trascrizioni in
+   `~/.claude/projects/-Users-osxssd-Desktop-LAVORI-partecipazioneattiva/`,
+   ordinate per **epoch** (`stat -f '%m %Sm'`: `31/07` come testo finisce sopra
+   `19/08`). E un lavoro che si interrompe lascia un **punto di ripresa scritto
+   in un file**, con la frase che **nomina il file** da aprire.
 2. **Piano prima, esecuzione dopo** su qualsiasi lavoro non banale. Rifare costa
    sempre più che pianificare. Prima di scrivere descrizioni/testi su una pagina,
    **leggere la pagina di destinazione**.
