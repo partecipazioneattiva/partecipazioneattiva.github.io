@@ -7,8 +7,12 @@ Perche' non `rembg`: sul Mac di Fernando rembg non parte piu' (importa numba,
 che rifiuta NumPy 2.5). Il modello pero' e' gia' scaricato in ~/.u2net, quindi
 qui si chiama direttamente con onnxruntime — nessuna dipendenza fragile.
 
-    conda activate base
-    python3 _tools/scontorna.py ritratto.png ritratto_scontornato.png
+    /opt/homebrew/Caskroom/miniforge/base/envs/comfyui/bin/python3 \
+        _tools/scontorna.py ritratto.png ritratto_scontornato.png
+
+⛔ NON con l'ambiente `base`: onnxruntime li' non c'e' (verificato il
+20/08/2026, "ModuleNotFoundError: No module named 'onnxruntime'"). Ce l'hanno
+`comfyui`, `iopaint`, `whisperx` e altri: si usa **comfyui**.
 
 Modelli disponibili in ~/.u2net (--modello):
     birefnet-general   il migliore sui capelli, ~30 s        (predefinito)
