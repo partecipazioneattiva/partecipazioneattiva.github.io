@@ -209,6 +209,42 @@ Nata da un caso concreto (LIP RC Auto): avevo scritto «IVASS scrive nero su bia
 sostieni tu», appoggiandomi a un margine per polizza che era **al lordo delle spese**.
 L'inquadramento compiacente è venuto prima dell'errore tecnico e l'ha reso invisibile.
 
+## 🥇 REGOLA D'ORO — il prompt non lascia spazio a invenzioni (21 agosto 2026)
+
+Detta da Fernando: *«quello che dobbiamo imparare è scrivere prompt che non
+lasciano spazio a invenzioni/aggiunte o altro a Meta»*, insieme a *«i prompt
+devono essere minuziosi, non tralasciare nulla neanche la meno significativa;
+con il sistema di copiarlo negli appunti non c'è bisogno di risparmiare
+parole»*. È una regola d'ora di **attuazione**: vale ogni volta che si scrive
+per far fare qualcosa a una macchina.
+
+**La regola sotto tutte le altre: si descrive il DISEGNO, mai l'INTENZIONE.**
+Ogni frase dev'essere verificabile guardando l'immagine finita.
+
+- ⛔ «come chi chiude un rubinetto» è un'intenzione: il modello la interpreta, e
+  interpretando **inventa**. 🟩 «il palmo guarda in basso; le quattro dita
+  piegate a uncino, allineate; il pollice sotto, a fare da morsa; fra le dita e
+  il palmo si vede un buco tondo; il polso ruotato in avanti» è un disegno.
+- ⛔ Nominare un gesto culturale («il gesto dei soldi») lascia scegliere fra
+  tre gesti diversi. 🟩 Si dice **quali dita si toccano e dove stanno le altre**.
+- ⛔ «della stessa misura del riferimento» **non è una misura**. 🟩 Un rapporto
+  fra due cose che si vedono nel disegno: «la figura è alta poco più di tre
+  volte la larghezza degli occhiali».
+- **Due cose che rischiano di somigliarsi si distinguono dentro il prompt**:
+  «questa NON è la 134: là le dita si toccano per la punta, qui la mano avvolge
+  e gira».
+- **Se è già venuta sbagliata, si descrive l'errore**: dire alla macchina **come
+  si riconosce lo sbaglio** funziona meglio di due richieste educate.
+- **Non si salta un paragrafo perché sembra ovvio.** Il 21/08 ne avevo saltati
+  quattro e sono tornate sbagliate **tre pose su quattro**, con esattamente i
+  difetti che quei paragrafi vietano.
+
+⚠️ E il controllo non è mai a occhio: *«va tutto verificato sempre»*, *«i numeri
+non mentono»*. Lo stesso giorno l'occhio ha **approvato** una posa disegnata con
+la testa il 19% più grande — invisibile ferma, evidentissima in movimento — e
+**bocciato** un difetto che misurato non esisteva. Ogni consegna porta un numero
+preso su qualcosa che sta nel file.
+
 ## Decidere, non domandare — vale SEMPRE
 
 Fernando non ha competenze tecniche: una domanda tecnica non gli dà modo di
