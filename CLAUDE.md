@@ -280,6 +280,17 @@ Da applicare di default, non su richiesta:
    ordinate per **epoch** (`stat -f '%m %Sm'`: `31/07` come testo finisce sopra
    `19/08`). E un lavoro che si interrompe lascia un **punto di ripresa scritto
    in un file**, con la frase che **nomina il file** da aprire.
+
+   **La regola del dopo clear** (21/08/2026, *«lo useremo come regola del dopo
+   clear»*): quando una conversazione va chiusa non gli si consegna un messaggio
+   lungo da incollare, ma **due cose**. Un file `RIPRESA_<data>.md` nella
+   cartella del lavoro, con otto sezioni — di che lavoro si tratta, le cose che
+   non si toccano, dove stanno i file, a che punto siamo, **il lavoro da fare
+   adesso**, quello che si è capito, le trappole già pagate, come si consegna a
+   Fernando — citando le sue decisioni **con le sue parole**. E una **frase
+   corta** che non spiega niente: nomina il file e dice di leggerlo prima di
+   rispondere, caricata negli appunti con `pbcopy`. Un messaggio lungo è fermo,
+   un file si aggiorna e sopravvive alla conversazione.
 2. **Piano prima, esecuzione dopo** su qualsiasi lavoro non banale. Rifare costa
    sempre più che pianificare. Prima di scrivere descrizioni/testi su una pagina,
    **leggere la pagina di destinazione**.
