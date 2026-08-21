@@ -272,25 +272,43 @@ cresce col **quadrato** della sua lunghezza. 50 messaggi non costano 50, costano
 
 Da applicare di default, non su richiesta:
 
-1. ⛔ **Il `/clear` non si propone più** (20/08/2026, ordine di Fernando: *«non
-   farò più il clear»*). Risparmiava crediti e gli faceva perdere il filo: una
-   frase di ripartenza non porta con sé il contesto appena buttato. Quando
+1. ⛔ **Il `/clear` non si propone mai.** Lo decide lui e basta. Il 20/08/2026
+   aveva detto *«non farò più il clear»* dopo che una ripartenza era finita sul
+   lavoro sbagliato; dal 21/08/2026 lo rifà, ma **solo perché adesso c'è il file
+   di ripresa** che regge il filo al posto della conversazione (la procedura è
+   qui sotto). Il divieto quindi resta su di me: non lo propongo, non lo
+   suggerisco, non lo metto come opzione. Quando
    riprendo un lavoro e non ho il filo, **lo recupero io** dalle trascrizioni in
    `~/.claude/projects/-Users-osxssd-Desktop-LAVORI-partecipazioneattiva/`,
    ordinate per **epoch** (`stat -f '%m %Sm'`: `31/07` come testo finisce sopra
    `19/08`). E un lavoro che si interrompe lascia un **punto di ripresa scritto
    in un file**, con la frase che **nomina il file** da aprire.
 
-   **La regola del dopo clear** (21/08/2026, *«lo useremo come regola del dopo
-   clear»*): quando una conversazione va chiusa non gli si consegna un messaggio
-   lungo da incollare, ma **due cose**. Un file `RIPRESA_<data>.md` nella
-   cartella del lavoro, con otto sezioni — di che lavoro si tratta, le cose che
-   non si toccano, dove stanno i file, a che punto siamo, **il lavoro da fare
-   adesso**, quello che si è capito, le trappole già pagate, come si consegna a
-   Fernando — citando le sue decisioni **con le sue parole**. E una **frase
-   corta** che non spiega niente: nomina il file e dice di leggerlo prima di
-   rispondere, caricata negli appunti con `pbcopy`. Un messaggio lungo è fermo,
-   un file si aggiorna e sopravvive alla conversazione.
+   **La regola del dopo clear** (21/08/2026, *«lo useremo come regola del
+   dopo clear»*), diventata **procedura fissa il 21/08/2026**: *«quando ti dico
+   faccio il clear tu sovrascrivi o aggiorni il file che andrai a rileggere dopo
+   il clear»*. Funziona con **due parole d'ordine e un file solo**:
+
+   - **`aggiorna file`** → sovrascrivo **`~/Desktop/Claude IA/RIPRESA.md`** con
+     lo stato del lavoro in corso. E' **un file unico, sempre allo stesso
+     percorso**: non se ne fanno copie con la data, perche' la frase di
+     ripartenza deve poter essere sempre identica. Dentro, le **otto sezioni**:
+     di che lavoro si tratta · le cose che non si toccano · dove stanno i file ·
+     a che punto siamo · **il lavoro da fare adesso** · quello che si e' capito ·
+     le trappole gia' pagate · come si consegna a Fernando. Le sue decisioni si
+     citano **con le sue parole**. Poi carico negli appunti la frase fissa.
+   - **La frase fissa**, sempre questa, mai un'altra:
+
+         Leggi ~/Desktop/Claude IA/RIPRESA.md e riprendi da li'.
+
+     E' la prima cosa che scrive quando riparte: la leggo **per intera** prima
+     di rispondere, e da li' so cosa abbiamo fatto e a che punto siamo.
+
+   ⚠️ Il file **si aggiorna anche senza che lui lo chieda**, quando un lavoro
+   lungo cambia stato: se lui fa il clear e il file e' vecchio, la ripresa
+   riparte dal punto sbagliato. E un messaggio lungo da incollare non si
+   consegna piu': un messaggio e' fermo, un file si aggiorna.
+
 2. **Piano prima, esecuzione dopo** su qualsiasi lavoro non banale. Rifare costa
    sempre più che pianificare. Prima di scrivere descrizioni/testi su una pagina,
    **leggere la pagina di destinazione**.
