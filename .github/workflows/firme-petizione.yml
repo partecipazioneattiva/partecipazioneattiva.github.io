@@ -27,7 +27,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Leggi Change.org e riallinea il sito
         run: |
           git config user.email "webmaster.partecipazione.attiva@gmail.com"
