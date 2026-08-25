@@ -1,10 +1,16 @@
 #!/usr/bin/env python3
 """Riallinea il contatore delle firme della petizione sulla sanita' in Calabria.
 
-Legge il numero vero da Change.org e lo riscrive in tre posti:
-  · il riquadro «I numeri al ...» dentro la pagina dell'articolo (numero e data);
-  · quante firme mancano, nella stessa frase;
-  · la card della home: la scritta «N firme su 500» e la larghezza della barra.
+Legge il numero vero da Change.org e lo riscrive in sei posti:
+  · nell'articolo: «Firme raccolte», «Obiettivo dichiarato», «Mancano N firme»
+    e la data del riquadro «I numeri al ...»;
+  · nella home: la scritta «N firme su N», il titolo della card («arrivare a N
+    firme») e la larghezza della barra.
+
+⚠️ Il traguardo **si muove da solo**: quando la petizione supera l'obiettivo,
+Change.org lo raddoppia senza avvisare (il 25 agosto 2026: da 500 a 1000). Per
+questo nessuno dei sei punti e' scritto a mano nel programma — si cerca il
+numero che c'e' e si sostituisce quello, qualunque sia.
 
 Poi committa e pubblica **solo se qualcosa e' cambiato davvero**. Gira da solo
 **ogni 10 minuti sui server di GitHub**, quindi anche a Mac spento, e non consuma
@@ -72,6 +78,20 @@ def stop(motivo):
     sys.exit(1)
 
 
+def sostituisci(testo, schema, nuovo, dove):
+    """Sostituisce una volta sola, e si ferma se non ha trovato niente.
+
+    Un `.replace()` andato a vuoto non protesta: lascia il numero vecchio e il
+    programma dice lo stesso «fatto». E' cosi' che il 25 agosto 2026 la frase
+    «Mancano 35 firme» sarebbe rimasta sbagliata in silenzio. Qui un buco vale
+    uno stop, come tutto il resto del programma.
+    """
+    nuovo_testo, quante = re.subn(schema, nuovo, testo, count=1)
+    if quante != 1:
+        stop(f'{dove}: non trovo piu\' la scritta da cambiare')
+    return nuovo_testo
+
+
 def leggi_contatore():
     richiesta = urllib.request.Request(INDIRIZZO, headers={'User-Agent': FINTO_BROWSER})
     try:
@@ -114,23 +134,44 @@ def main():
     if not m:
         stop('nella pagina non trovo piu\' «Firme raccolte»')
     prima = int(m.group(1))
-    if prima == firme:
-        print(f'  = fermo a {firme}: niente da cambiare')
-        return
+    m = re.search(r'Obiettivo dichiarato: <strong style="display:inline">(\d+)</strong>', pag)
+    if not m:
+        stop('nella pagina non trovo piu\' «Obiettivo dichiarato»')
+    traguardo_prima = int(m.group(1))
 
-    mancano_prima = obiettivo - prima
-    testo = pag.replace(f'Firme raccolte: <strong style="display:inline">{prima}</strong>',
-                        f'Firme raccolte: <strong style="display:inline">{firme}</strong>', 1)
-    testo = testo.replace(f'Mancano {mancano_prima} firme',
-                          f'Mancano {obiettivo - firme} firme', 1)
-    testo = re.sub(r'(&#x1F4CA; I numeri al )[^<]*', r'\g<1>' + oggi_a_parole(), testo, count=1)
+    if prima == firme and traguardo_prima == obiettivo:
+        print(f'  = fermo a {firme} su {obiettivo}: niente da cambiare')
+        return
+    if traguardo_prima != obiettivo:
+        print(f'  ⚠️  Change.org ha spostato il traguardo: {traguardo_prima} → {obiettivo}')
+
+    testo = sostituisci(pag,
+                        r'Firme raccolte: <strong style="display:inline">\d+</strong>',
+                        f'Firme raccolte: <strong style="display:inline">{firme}</strong>',
+                        'articolo, «Firme raccolte»')
+    testo = sostituisci(testo,
+                        r'Obiettivo dichiarato: <strong style="display:inline">\d+</strong>',
+                        f'Obiettivo dichiarato: <strong style="display:inline">{obiettivo}</strong>',
+                        'articolo, «Obiettivo dichiarato»')
+    testo = sostituisci(testo, r'Mancano \d+ firme',
+                        f'Mancano {obiettivo - firme} firme',
+                        'articolo, «Mancano N firme»')
+    testo = sostituisci(testo, r'(&#x1F4CA; I numeri al )[^<]*',
+                        r'\g<1>' + oggi_a_parole(),
+                        'articolo, data del riquadro')
 
     casa = open(HOME, encoding='utf-8').read()
-    if f'{prima} firme su {obiettivo}' not in casa:
-        stop('nella home non trovo piu\' la scritta delle firme')
-    casa = casa.replace(f'{prima} firme su {obiettivo}', f'{firme} firme su {obiettivo}', 1)
-    casa = re.sub(r'(background:rgba\(255,255,255,\.22\)[^"]*"><span style="display:block;'
-                  r'height:100%;width:)[\d.]+%', r'\g<1>' + f'{quota}%', casa, count=1)
+    casa = sostituisci(casa, r'\d+ firme su \d+',
+                       f'{firme} firme su {obiettivo}',
+                       'home, la scritta delle firme')
+    casa = sostituisci(casa, r'(arrivare a )\d+( firme)',
+                       r'\g<1>' + str(obiettivo) + r'\g<2>',
+                       'home, il titolo della card')
+    casa = sostituisci(casa,
+                       r'(background:rgba\(255,255,255,\.22\)[^"]*"><span style="display:block;'
+                       r'height:100%;width:)[\d.]+%',
+                       r'\g<1>' + f'{quota}%',
+                       'home, la barra di avanzamento')
 
     if a.prova:
         print(f'  (prova) {prima} → {firme}, barra al {quota}%: non ho scritto niente')
@@ -141,8 +182,10 @@ def main():
     print(f'  ✅ scritto: {prima} → {firme}')
 
     subprocess.run(['git', 'add', PAGINA, HOME], check=True)
-    subprocess.run(['git', 'commit', '-q', '-m',
-                    f'La petizione sulla sanita\' in Calabria e\' a {firme} firme'], check=True)
+    messaggio = f'La petizione sulla sanita\' in Calabria e\' a {firme} firme'
+    if traguardo_prima != obiettivo:
+        messaggio += f' (traguardo spostato da {traguardo_prima} a {obiettivo})'
+    subprocess.run(['git', 'commit', '-q', '-m', messaggio], check=True)
     subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
     print('  ✅ pubblicato')
 
