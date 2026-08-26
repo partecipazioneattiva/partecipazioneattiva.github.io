@@ -65,6 +65,15 @@ def main():
             html = f.read()
 
         for url in set(ATTR.findall(html)) | set(META.findall(html)):
+            # Falso allarme gia' pagato (26/08/2026): dentro una stringa
+            # JavaScript le virgolette sono protette da una barra rovesciata
+            # (d.innerHTML='<iframe src=\'...\'>'), e l'espressione qui sopra
+            # ne ricava un "file" chiamato \ . Su
+            # settembre-2026-appuntamenti.html segnalava un allegato mancante
+            # che non e' mai esistito. Uno strumento che grida al lupo insegna
+            # a ignorarlo: meglio saltarli.
+            if url.startswith('\\'):
+                continue
             rel = locale(url)
             if rel is None or rel.endswith('.html'):
                 continue
