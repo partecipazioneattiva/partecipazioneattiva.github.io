@@ -144,6 +144,15 @@ lascia vuota: quello che ci arriva si sposta in `ARCHIVIO GENERALE/SCARICATI`.
 La cartella del TG **non e' piu'** `~/Downloads/TG`: e'
 `~/Desktop/ARCHIVIO GENERALE/SCARICATI/!/TG`.
 
+✋ **`~/Desktop/PRIME PAGINE` e' l'unica eccezione, e non si sposta.** Non e'
+roba accumulata: e' il piano di lavoro di `SCRIPT/prime_pagine.py`, che **la
+svuota a ogni lancio** e ci rifa' dentro le prime pagine dai PDF appena
+scaricati in `~/Downloads` — che infatti si riempie e si svuota tutti i giorni,
+ed e' proprio per questo che lo script guarda li'. La nominano
+`prime_pagine.py`, `scarica_rassegna_completa_v16.py` e `SCRIPT/LEGGIMI.md`:
+spostarla vuol dire riscrivere tre script per rendere piu' scomoda la cosa che
+si guarda ogni mattina. Chi riordina la Scrivania la **salta**.
+
 🗺️ Dov'era ogni cosa prima: `ARCHIVIO GENERALE/MAPPA_SPOSTAMENTI.md`.
 
 ⚠️ Spostare una cartella gia' esistente non e' un `mv`: e' nominata dentro
