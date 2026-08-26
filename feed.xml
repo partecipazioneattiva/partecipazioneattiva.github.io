@@ -6,7 +6,7 @@
     <description>Notizie, battaglie e proposte di Partecipazione Attiva</description>
     <language>it</language>
     <atom:link href="https://partecipazione-attiva.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Wed, 19 Aug 2026 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2026 12:00:00 +0200</lastBuildDate>
   <item>
     <title>SIRE: l’intervento di Spanu alla Camera nel 2023 | Luigi Spanu</title>
     <link>https://partecipazione-attiva.it/spanu-una-italia-positiva-2023.html</link>
@@ -41,6 +41,20 @@
     <guid isPermaLink="true">https://partecipazione-attiva.it/stabilicum.html</guid>
     <description>Stabilicum spiegato ai cittadini: cos'è, come funziona, cosa cambia per chi vota. L'analisi di Partecipazione Attiva.</description>
     <pubDate>Tue, 28 Jul 2026 12:00:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Sopralluogo a Cavalleggeri d'Aosta | Antonio Cristiano</title>
+    <link>https://partecipazione-attiva.it/video-cavalleggeri-sopralluogo.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/video-cavalleggeri-sopralluogo.html</guid>
+    <description>Il sopralluogo a Cavalleggeri d'Aosta lungo via Marco Polo: le facciate per i murales, il mercatino, l'edificio abbandonato. Video con trascrizione.</description>
+    <pubDate>Wed, 22 Jul 2026 12:00:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>&amp;laquo;Tocca a noi&amp;raquo;: lo spot di APE | Angelo Nicotra</title>
+    <link>https://partecipazione-attiva.it/video-ape-tocca-a-noi.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/video-ape-tocca-a-noi.html</guid>
+    <description>Lo spot di APE, l'Assemblea Popolare Ecumenica proposta da Partecipazione Attiva: per cambiare le cose non serve un salvatore, tocca a noi.</description>
+    <pubDate>Wed, 22 Jul 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
     <title>Cavalleggeri a cielo aperto: un museo di murales a Fuorigrotta</title>
@@ -237,6 +251,13 @@
     <guid isPermaLink="true">https://partecipazione-attiva.it/crosetto-diagnosi-precoce-3dcbs.html</guid>
     <description>Paolo Neri e Stefano Francesco Piva sostengono il progetto 3D-CBS di Dario Crosetto per la diagnosi precoce del cancro e ne chiedono la valutazione pubblica.</description>
     <pubDate>Sun, 10 May 2026 12:00:00 +0200</pubDate>
+  </item>
+  <item>
+    <title>Spanu al 1&amp;deg; Congresso di Base Popolare | Luigi Spanu</title>
+    <link>https://partecipazione-attiva.it/video-spanu-congresso-base-popolare.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/video-spanu-congresso-base-popolare.html</guid>
+    <description>L'intervento di Luigi Spanu al 1&amp;deg; Congresso Nazionale di Base Popolare, Roma, Sala Umberto, 11 aprile 2026. Video integrale con trascrizione.</description>
+    <pubDate>Sat, 11 Apr 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
     <title>Crisi energetica: esiste una soluzione, si chiama SIRE</title>

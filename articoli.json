@@ -55,6 +55,24 @@
       "sommario": "La proposta di Partecipazione Attiva al Comune di Napoli: un museo diffuso di street art a Cavalleggeri d'Aosta, Fuorigrotta."
     },
     {
+      "slug": "video-ape-tocca-a-noi.html",
+      "titolo": "«Tocca a noi»: lo spot di APE",
+      "tema": "🎥 Video",
+      "tema_key": "video",
+      "data": "2026-07-22",
+      "img": "ape-og.jpg",
+      "sommario": "Lo spot di APE, l'Assemblea Popolare Ecumenica proposta da Partecipazione Attiva: per cambiare le cose non serve un salvatore, tocca a noi."
+    },
+    {
+      "slug": "video-cavalleggeri-sopralluogo.html",
+      "titolo": "Sopralluogo a Cavalleggeri d'Aosta",
+      "tema": "🎥 Video",
+      "tema_key": "video",
+      "data": "2026-07-22",
+      "img": "cavalleggeri-museo.webp",
+      "sommario": "Il sopralluogo a Cavalleggeri d'Aosta lungo via Marco Polo: le facciate per i murales, il mercatino, l'edificio abbandonato. Video con trascrizione."
+    },
+    {
       "slug": "stabilicum-crepe-costituzionali-17lug2026.html",
       "titolo": "Stabilicum: le crepe costituzionali secondo Beppe Sarno",
       "tema": "⚖️ Riforma elettorale",
@@ -271,6 +289,24 @@
       "sommario": "Luigi Spanu ha partecipato all'audizione della I Commissione Affari Costituzionali della Camera sulla nuova legge elettorale Stabilicum."
     },
     {
+      "slug": "cristiano-sanita.html",
+      "titolo": "Antonio Cristiano: il problema della sanità pubblica",
+      "tema": "",
+      "tema_key": "",
+      "data": "2026-04-16",
+      "img": "cristiano-sanita-anteprima.jpg",
+      "sommario": "Antonio Cristiano denuncia la crisi della sanità pubblica italiana: 4,5 milioni di rinunce alle cure e liste d\\'attesa infinite."
+    },
+    {
+      "slug": "video-spanu-congresso-base-popolare.html",
+      "titolo": "Spanu al 1° Congresso di Base Popolare",
+      "tema": "🎥 Video",
+      "tema_key": "video",
+      "data": "2026-04-11",
+      "img": "spanu-congresso-base-popolare-anteprima.jpg",
+      "sommario": "L'intervento di Luigi Spanu al 1° Congresso Nazionale di Base Popolare, Roma, Sala Umberto, 11 aprile 2026. Video integrale con trascrizione."
+    },
+    {
       "slug": "crisi-energetica-sire.html",
       "titolo": "Crisi energetica: esiste una soluzione, si chiama SIRE",
       "tema": "⚡ Crisi energetica",
@@ -332,15 +368,6 @@
       "data": "2026-03-26",
       "img": "rcauto-anteprima.jpg",
       "sommario": ""
-    },
-    {
-      "slug": "cristiano-sanita.html",
-      "titolo": "Antonio Cristiano: il problema della sanità pubblica",
-      "tema": "",
-      "tema_key": "",
-      "data": "",
-      "img": "cristiano-sanita-anteprima.jpg",
-      "sommario": "Antonio Cristiano denuncia la crisi della sanità pubblica italiana: 4,5 milioni di rinunce alle cure e liste d\\'attesa infinite."
     },
     {
       "slug": "rcauto-campania-mozione-maggio2026.html",
