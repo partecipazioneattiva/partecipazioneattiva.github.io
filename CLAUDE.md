@@ -336,7 +336,7 @@ Da applicare di default, non su richiesta:
    qui sotto). Il divieto quindi resta su di me: non lo propongo, non lo
    suggerisco, non lo metto come opzione. Quando
    riprendo un lavoro e non ho il filo, **lo recupero io** dalle trascrizioni in
-   `~/.claude/projects/-Users-osxssd-Desktop-LAVORI-partecipazioneattiva/`,
+   `~/.claude/projects/-Users-osxssd-Desktop-ARCHIVIO-GENERALE-LAVORI-partecipazioneattiva/`,
    ordinate per **epoch** (`stat -f '%m %Sm'`: `31/07` come testo finisce sopra
    `19/08`). E un lavoro che si interrompe lascia un **punto di ripresa scritto
    in un file**, con la frase che **nomina il file** da aprire.
