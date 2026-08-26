@@ -17,7 +17,7 @@ import json
 import shutil
 import sys
 
-sys.path.insert(0, '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/_tools/valuta')
+sys.path.insert(0, '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/_tools/valuta')
 from prova_motore import BASE, Indice, costruisci, parole, K1, B  # noqa: E402
 
 AUTO = BASE + '_dati/varianti_auto.json'

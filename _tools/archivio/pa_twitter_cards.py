@@ -7,7 +7,7 @@ inventato. Salta le pagine gia' complete e 404.html (esclusa di proposito).
 """
 import re, glob, os
 
-BASE = os.path.expanduser('~/Desktop/LAVORI/partecipazioneattiva/')
+BASE = os.path.expanduser('~/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/')
 os.chdir(BASE)
 
 def get_og(h, prop):

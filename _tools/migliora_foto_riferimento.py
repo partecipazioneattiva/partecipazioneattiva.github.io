@@ -7,7 +7,7 @@ Gemini, Lumina): le ingrandisce e le pulisce senza toccare il volto.
     conda activate iopaint
     iopaint start --model lama --device mps --port 8080 \
         --enable-realesrgan --realesrgan-device mps
-    python3 _tools/migliora_foto_riferimento.py "~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI"
+    python3 _tools/migliora_foto_riferimento.py "~/Desktop/ARCHIVIO GENERALE/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI"
 
 Gli originali non si toccano mai: le migliorate finiscono in `migliorate/`
 dentro ogni cartella.

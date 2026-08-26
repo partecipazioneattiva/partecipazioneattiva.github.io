@@ -35,7 +35,7 @@ import sys
 import time
 import unicodedata
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 MODELLO = 'mlx-community/gemma-3-12b-it-4bit'
 USCITA = BASE + '_dati/varianti_auto.json'
 QUANTE = 16

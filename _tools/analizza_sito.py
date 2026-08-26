@@ -15,7 +15,7 @@ import os
 import re
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 SALTA = {'template.html'}
 DETT = '--dettagli' in sys.argv
 

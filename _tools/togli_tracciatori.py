@@ -28,7 +28,7 @@ import os
 import re
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 
 TRACCIATORI = [
     # Fra i due <script> ci puo' essere dell'a capo o dell'indentazione: le

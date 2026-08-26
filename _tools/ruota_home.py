@@ -7,7 +7,7 @@ Le card FISSATE (data-pa-pin="1", oggi proposte.html, ape.html e webtv.html)
 non si toccano mai e non contano nel limite.
 
 USO:
-    cd ~/Desktop/LAVORI/partecipazioneattiva
+    cd ~/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva
     python3 _tools/ruota_home.py            # anteprima, non scrive niente
     python3 _tools/ruota_home.py --applica  # esegue lo spostamento
 

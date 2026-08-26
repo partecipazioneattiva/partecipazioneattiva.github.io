@@ -15,7 +15,7 @@ import shutil
 import sys
 from datetime import datetime
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 
 SALTA = {'template.html', 'conferma.html', 'cancella.html', 'contatto.html'}
 

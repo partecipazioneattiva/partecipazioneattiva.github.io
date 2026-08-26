@@ -19,7 +19,7 @@ import re
 import sys
 import unicodedata
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 K1, B = 1.5, 0.75
 
 

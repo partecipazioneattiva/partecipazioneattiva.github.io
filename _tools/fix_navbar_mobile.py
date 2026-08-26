@@ -21,7 +21,7 @@ import shutil
 import sys
 from datetime import datetime
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 
 BLOCCO = ('<!--PA-NAVFIX--><style>@media(max-width:900px){'
           '.navbar{flex-wrap:wrap}.nav-cta{margin-left:0}}'

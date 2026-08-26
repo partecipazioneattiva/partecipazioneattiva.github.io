@@ -19,7 +19,7 @@ import subprocess
 import sys
 import tempfile
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 
 # Pagine che NON sono contenuto: fuori dall'indice.
 FUORI = {

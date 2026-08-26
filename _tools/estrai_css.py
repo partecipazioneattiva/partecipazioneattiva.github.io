@@ -27,7 +27,7 @@ import os
 import re
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 CARTELLA = BASE + 'css/'
 SOGLIA_PAGINE = 10      # sotto questa diffusione non vale la pena estrarre
 # Un blocco piccolo NON va estratto: una richiesta in piu' al server costa piu'

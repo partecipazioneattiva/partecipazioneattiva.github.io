@@ -15,7 +15,7 @@ import re
 import subprocess
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 
 # (percorso, titolo, categoria, a cosa serve)
 DOCUMENTI = [

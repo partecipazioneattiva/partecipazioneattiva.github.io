@@ -9,7 +9,7 @@ quelli, e poi te li rimette dentro a ogni generazione. Per questo qui non si
 contano le foto: si contano quelle **diverse fra loro** e abbastanza nitide.
 
     conda activate base
-    python3 _tools/verifica_foto_lora.py ~/Desktop/Claude IA/04_MANIFESTI_E_CARD/FOTO_ANTONIO
+    python3 _tools/verifica_foto_lora.py ~/Desktop/ARCHIVIO GENERALE/Claude IA/04_MANIFESTI_E_CARD/FOTO_ANTONIO
 
 Bocciature:
   PICCOLA   lato corto sotto 800 px — la LoRA impara una faccia sfocata
@@ -43,7 +43,7 @@ def impronta(im):
 
 def main():
     cartella = os.path.expanduser(sys.argv[1] if len(sys.argv) > 1
-                                  else "~/Desktop/Claude IA/04_MANIFESTI_E_CARD/FOTO_ANTONIO")
+                                  else "~/Desktop/ARCHIVIO GENERALE/Claude IA/04_MANIFESTI_E_CARD/FOTO_ANTONIO")
     file = sorted(f for f in os.listdir(cartella)
                   if f.lower().endswith((".jpg", ".jpeg", ".png", ".webp", ".heic")))
     if not file:

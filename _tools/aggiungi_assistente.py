@@ -16,7 +16,7 @@ import os
 import re
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 
 # Fuori: il GOLD e i file di verifica Google (non sono pagine del sito).
 # Dentro invece le pagine di servizio della Mappa: chi ci arriva per un

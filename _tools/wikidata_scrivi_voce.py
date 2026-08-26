@@ -13,7 +13,7 @@ da sola, che non e' la password dell'account.
 LE CREDENZIALI NON STANNO QUI DENTRO. Questo repository e' pubblico. Stanno in un
 file fuori dal repository, che scrive Fernando e che nessun altro legge:
 
-    ~/Desktop/LAVORI/_MANUALI_CLAUDE/ACCESSO_WIKIDATA.txt
+    ~/Desktop/ARCHIVIO GENERALE/LAVORI/_MANUALI_CLAUDE/ACCESSO_WIKIDATA.txt
 
 Uso:
     python3 _tools/wikidata_scrivi_voce.py --prova   # mostra cosa scriverebbe
@@ -32,7 +32,7 @@ except ImportError:
 VOCE = 'Q140733310'
 API = 'https://www.wikidata.org/w/api.php'
 UA = 'PartecipazioneAttiva-script/1.0 (https://partecipazione-attiva.it/; webmaster.partecipazione.attiva@gmail.com)'
-CONFIG = os.path.expanduser('~/Desktop/LAVORI/_MANUALI_CLAUDE/ACCESSO_WIKIDATA.txt')
+CONFIG = os.path.expanduser('~/Desktop/ARCHIVIO GENERALE/LAVORI/_MANUALI_CLAUDE/ACCESSO_WIKIDATA.txt')
 OGGI = '+2026-07-28T00:00:00Z'
 PROVA = '--prova' in sys.argv
 

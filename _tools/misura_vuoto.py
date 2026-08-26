@@ -101,7 +101,7 @@ def main():
     p = argparse.ArgumentParser(description="Misura il vuoto del manifesto")
     p.add_argument("--manifesto", required=True)
     p.add_argument("--punto", help="x,y dentro il vuoto, se non lo trova da solo")
-    p.add_argument("--logo", default="~/Desktop/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI/<Nome>/logo_pa.png")
+    p.add_argument("--logo", default="~/Desktop/ARCHIVIO GENERALE/Claude IA/04_MANIFESTI_E_CARD/GEMINI LAVORI/<Nome>/logo_pa.png")
     p.add_argument("--uscita", default="manifesto_finale.png")
     p.add_argument("--carta", default="70x100",
                    help="misura del foglio in cm, per la conversione")

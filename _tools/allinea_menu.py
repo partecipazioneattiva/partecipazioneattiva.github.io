@@ -9,7 +9,7 @@ la propria copia del menu. Risultato misurato il 26/07/2026 su 54 pagine:
 modo di raggiungere meta' del sito.
 
 USO:
-    cd ~/Desktop/LAVORI/partecipazioneattiva
+    cd ~/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva
     python3 _tools/allinea_menu.py            # anteprima
     python3 _tools/allinea_menu.py --applica  # scrive
 

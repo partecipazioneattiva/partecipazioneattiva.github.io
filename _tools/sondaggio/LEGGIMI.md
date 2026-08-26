@@ -242,7 +242,7 @@ Sul Mac c'è **Deno**, lo stesso motore che esegue le funzioni su Supabase.
 Quindi non serve installare al buio e vedere che succede:
 
 ```bash
-deno check ~/Desktop/LAVORI/partecipazioneattiva/_tools/sondaggio/02_funzione_sondaggio.ts
+deno check ~/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/_tools/sondaggio/02_funzione_sondaggio.ts
 ```
 
 Se dice solo `Check ...` senza altro, il codice è valido. Si può anche

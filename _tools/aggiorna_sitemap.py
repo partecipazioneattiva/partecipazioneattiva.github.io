@@ -19,7 +19,7 @@ import os
 import re
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 SITO = 'https://partecipazione-attiva.it/'
 SITEMAP = BASE + 'sitemap.xml'
 ESCLUSE = re.compile(r'^(404\.html|google[0-9a-f]+\.html|template\.html)$')

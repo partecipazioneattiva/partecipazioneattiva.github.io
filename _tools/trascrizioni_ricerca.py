@@ -33,7 +33,7 @@ import os
 import re
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 SALTA = {'template.html'}
 
 # <source src="video/x.mp4"> oppure <video ... src="video/x.mp4">

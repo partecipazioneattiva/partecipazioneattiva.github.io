@@ -16,7 +16,7 @@ import shutil
 import sys
 from datetime import datetime
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 SALTA = {'template.html'}
 
 # (etichetta, regex sul tag di apertura). Il gruppo 1 e' il tag da marcare.

@@ -2,7 +2,7 @@
 
 ## SI COMINCIA DA QUI — due comandi, non trentaquattro file
 
-    ~/Desktop/LAVORI/_MANUALI_CLAUDE/INDICE.md
+    ~/Desktop/ARCHIVIO GENERALE/LAVORI/_MANUALI_CLAUDE/INDICE.md
 
 **L'indice dice quale manuale apre cosa.** Si legge quello, si apre **solo** il
 manuale che serve, non tutti: la documentazione e' 1,1 MB e leggerla intera
@@ -69,7 +69,7 @@ Il manuale completo di gestione del sito sta **fuori da questo repository**
 (qui dentro no: il repository e' pubblico e il manuale contiene la mappa del
 computer):
 
-    ~/Desktop/LAVORI/_MANUALI_CLAUDE/MANUALE_SITO_PA_UNIVERSALE.md
+    ~/Desktop/ARCHIVIO GENERALE/LAVORI/_MANUALI_CLAUDE/MANUALE_SITO_PA_UNIVERSALE.md
 
 Dentro c'e' tutto: architettura, mappa del Mac e del repository, come si
 pubblica un articolo, ricerca, assistente, mappa iscritti, accessibilita',
@@ -107,7 +107,7 @@ vanno automaticamente dentro Claude, non ad intasare la scrivania»*.
 **Quando serve una cartella per un lavoro nuovo** — un manifesto, un dossier,
 una prova di voce, una campagna — si crea **dentro il reparto giusto** di:
 
-    ~/Desktop/Claude IA/
+    ~/Desktop/ARCHIVIO GENERALE/Claude IA/
 
     01_TG_E_STAMPA         notiziario, podcast Parlero', materiali per la stampa
     02_VOCI_E_MUSICA       voci, basi, prove microfono
@@ -120,10 +120,31 @@ nessuno dei cinque calza si aggiunge un reparto nella tabella dentro
 `~/Desktop/SCRIPT/sistema/stanza_claude.py`, e si aggiorna `Claude IA/MAPPA.md`
 rilanciandolo — non si apre un'eccezione sulla Scrivania.
 
-Sulla Scrivania ci sono **quattro cartelle e basta**, e ognuna per un motivo:
-`SCRIPT` (gli strumenti), `LAVORI` (sito, manuali, lavorazioni del TG),
-`AI_TOOLS` (ComfyUI: ha i percorsi scritti dentro, spostarlo lo rompe),
-`_ARCHIVIO` (il chiuso, con la via del ritorno). **Non se ne aggiungono altre.**
+## ⛔ Sulla Scrivania ci sono DUE cartelle (26 agosto 2026)
+
+Ordine di Fernando: *«voglio che sulla scrivania ci siano solo 2 cartelle SCRIPT
+e ARCHIVIO GENERALE quindi tutte le altre vanno li dentro comprese quelle in
+download»*.
+
+    ~/Desktop/SCRIPT/                 gli strumenti — resta fuori, si usa ogni giorno
+    ~/Desktop/ARCHIVIO GENERALE/      tutto il resto
+
+Dentro `ARCHIVIO GENERALE`, ai vecchi nomi:
+
+    LAVORI/               sito, manuali, lavorazioni del TG
+    Claude IA/            i lavori nuovi, nei cinque reparti
+    AI_TOOLS/             Applio, LivePortrait, RVC, chatterbox…
+    PENSATTIVO IMMAGINI/
+    _ARCHIVIO/            il chiuso, con la via del ritorno
+    SCARICATI/            quello che stava in ~/Downloads (`!`, VIDEO_YOUTUBE, BACKUP_KODI)
+    MANUALI CLAUDE ->     collegamento a LAVORI/_MANUALI_CLAUDE
+
+⛔ **Non si aggiungono altre cartelle sulla Scrivania**, e `~/Downloads` si
+lascia vuota: quello che ci arriva si sposta in `ARCHIVIO GENERALE/SCARICATI`.
+La cartella del TG **non e' piu'** `~/Downloads/TG`: e'
+`~/Desktop/ARCHIVIO GENERALE/SCARICATI/!/TG`.
+
+🗺️ Dov'era ogni cosa prima: `ARCHIVIO GENERALE/MAPPA_SPOSTAMENTI.md`.
 
 ⚠️ Spostare una cartella gia' esistente non e' un `mv`: e' nominata dentro
 script, manuali e memoria, e vanno riscritti tutti. Lo fa `stanza_claude.py`.
@@ -325,7 +346,7 @@ Da applicare di default, non su richiesta:
    faccio il clear tu sovrascrivi o aggiorni il file che andrai a rileggere dopo
    il clear»*. Funziona con **due parole d'ordine e un file solo**:
 
-   - **`aggiorna file`** → sovrascrivo **`~/Desktop/Claude IA/RIPRESA.md`** con
+   - **`aggiorna file`** → sovrascrivo **`~/Desktop/ARCHIVIO GENERALE/Claude IA/RIPRESA.md`** con
      lo stato del lavoro in corso. E' **un file unico, sempre allo stesso
      percorso**: non se ne fanno copie con la data, perche' la frase di
      ripartenza deve poter essere sempre identica. Dentro, le **otto sezioni**:
@@ -335,7 +356,7 @@ Da applicare di default, non su richiesta:
      citano **con le sue parole**. Poi carico negli appunti la frase fissa.
    - **La frase fissa**, sempre questa, mai un'altra:
 
-         Leggi ~/Desktop/Claude IA/RIPRESA.md e riprendi da li'.
+         Leggi ~/Desktop/ARCHIVIO GENERALE/Claude IA/RIPRESA.md e riprendi da li'.
 
      E' la prima cosa che scrive quando riparte: la leggo **per intera** prima
      di rispondere, e da li' so cosa abbiamo fatto e a che punto siamo.
@@ -356,10 +377,10 @@ Da applicare di default, non su richiesta:
 5. **Filtrare l'output verboso** prima di leggerlo (`| grep -i error | head -20`),
    non versare log interi nel contesto.
 6. **Lavori pesanti in sequenza**, mai in parallelo.
-7. **Le scoperte vanno negli script e nei manuali** (`~/Desktop/LAVORI/_MANUALI_CLAUDE`),
+7. **Le scoperte vanno negli script e nei manuali** (`~/Desktop/ARCHIVIO GENERALE/LAVORI/_MANUALI_CLAUDE`),
    non riderivate in conversazione.
 
-Manuale completo: `~/Desktop/LAVORI/_MANUALI_CLAUDE/MANUALE_CREDITI_CLAUDE_v1.md`
+Manuale completo: `~/Desktop/ARCHIVIO GENERALE/LAVORI/_MANUALI_CLAUDE/MANUALE_CREDITI_CLAUDE_v1.md`
 
 ### Quale modello — abbiamo anche Fable 5 (29 luglio 2026)
 

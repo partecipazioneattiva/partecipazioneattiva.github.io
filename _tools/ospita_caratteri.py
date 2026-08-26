@@ -24,7 +24,7 @@ import re
 import sys
 import urllib.request
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 CARTELLA = BASE + 'fonts/'
 CSS_LOCALE = CARTELLA + 'caratteri.css'
 RICHIESTA = ('https://fonts.googleapis.com/css2?'

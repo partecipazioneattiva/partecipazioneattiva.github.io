@@ -22,7 +22,7 @@ import sys
 
 from PIL import Image
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 TAG = re.compile(r'<img\b([^>]*)>', re.I)
 SRC = re.compile(r'\bsrc=["\']?([^"\'\s>]+)', re.I)
 

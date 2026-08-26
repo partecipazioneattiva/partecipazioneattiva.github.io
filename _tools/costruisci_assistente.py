@@ -25,7 +25,7 @@ import json
 import os
 import sys
 
-BASE = '/Users/osxssd/Desktop/LAVORI/partecipazioneattiva/'
+BASE = '/Users/osxssd/Desktop/ARCHIVIO GENERALE/LAVORI/partecipazioneattiva/'
 USCITA = BASE + 'assistente/faq.json'
 
 
