@@ -194,7 +194,7 @@
       "titolo": "Assemblea NO AD a Napoli, 6 giugno 2026: PA in prima linea",
       "tema": "📋 Resoconto — 6 Giugno 2026",
       "tema_key": "resoconto — 6 giugno 2026",
-      "data": "2026-06-06",
+      "data": "2026-06-07",
       "img": "assemblea-noad-napoli-giugno2026-anteprima.jpg",
       "sommario": "Resoconto dell'assemblea pubblica nazionale NO AD al Maschio Angioino: Paolo Neri, Antonio Cristiano e Luigi Spanu per Partecipazione Attiva."
     },
@@ -298,6 +298,15 @@
       "sommario": "Antonio Cristiano denuncia la crisi della sanità pubblica italiana: 4,5 milioni di rinunce alle cure e liste d\\'attesa infinite."
     },
     {
+      "slug": "spanu-congresso-base-popolare.html",
+      "titolo": "PA al 1° Congresso di Base Popolare: centro e proporzionale",
+      "tema": "📋 Resoconto — 11 aprile 2026",
+      "tema_key": "resoconto — 11 aprile 2026",
+      "data": "2026-04-11",
+      "img": "spanu-congresso-base-popolare-anteprima.jpg",
+      "sommario": "Luigi Spanu al 1° Congresso Nazionale di Base Popolare, Roma 11 aprile 2026: il centro, il proporzionale e la proposta di Michele Boldrin."
+    },
+    {
       "slug": "video-spanu-congresso-base-popolare.html",
       "titolo": "Spanu al 1° Congresso di Base Popolare",
       "tema": "🎥 Video",
@@ -332,15 +341,6 @@
       "data": "2026-04-05",
       "img": "pensattivo-astensionismo.webp",
       "sommario": "L'astensionismo in Italia non è apatia: è sfiducia accumulata. A Napoli ha votato il 36% degli elettori. Ecco cosa succede quando la maggioranza tace."
-    },
-    {
-      "slug": "spanu-congresso-base-popolare.html",
-      "titolo": "PA al 1° Congresso di Base Popolare: centro e proporzionale",
-      "tema": "📋 Resoconto — 11 aprile 2026i",
-      "tema_key": "resoconto — 11 aprile 2026i",
-      "data": "2026-04-03",
-      "img": "spanu-congresso-base-popolare-anteprima.jpg",
-      "sommario": "Luigi Spanu al 1° Congresso Nazionale di Base Popolare, Roma 11 aprile 2026: il centro, il proporzionale e la proposta di Michele Boldrin."
     },
     {
       "slug": "sanitapubblica.html",
