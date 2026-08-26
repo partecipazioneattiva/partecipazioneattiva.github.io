@@ -135,6 +135,14 @@ def controlla(nome: str):
         if rel and not os.path.exists(os.path.join(RADICE, rel)):
             guai.append(f"immagine dichiarata ma assente sul disco: {rel}")
 
+    # 2-bis — entita' HTML dentro il JSON-LD: Google le legge alla lettera, e
+    #         «1&deg; Congresso» arriva cosi' com'e' scritto
+    for m in re.finditer(r'<script type=["\']?application/ld\+json["\']?>(.*?)</script>',
+                         sorgente, re.S):
+        ent = sorted(set(re.findall(r"&[a-zA-Z]{2,8};|&#\d+;", m.group(1))))
+        if ent:
+            guai.append("entita' HTML dentro il JSON-LD: " + ", ".join(ent[:6]))
+
     # 3 — FAQ contro il testo visibile
     for tipo, obj in blocchi_jsonld(sorgente):
         if tipo == "__ROTTO__":
