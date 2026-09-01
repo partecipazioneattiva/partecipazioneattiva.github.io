@@ -225,7 +225,7 @@ const burger=document.getElementById('burger'),mob=document.getElementById('mobm
 burger.addEventListener('click',()=>{const on=mob.classList.toggle('on');burger.classList.toggle('open',on)});
 
 function apriVideo(id){
-  document.getElementById('modal-video-frame').innerHTML = '<iframe src="https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0" title="Video Partecipazione Attiva" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+  document.getElementById('modal-video-frame').innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0" title="Video Partecipazione Attiva" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
   document.getElementById('modal-video').classList.add('on');
 }
 function chiudiVideo(){
