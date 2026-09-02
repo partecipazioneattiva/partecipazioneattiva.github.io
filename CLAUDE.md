@@ -120,11 +120,39 @@ nessuno dei cinque calza si aggiunge un reparto nella tabella dentro
 `~/Desktop/SCRIPT/sistema/stanza_claude.py`, e si aggiorna `Claude IA/MAPPA.md`
 rilanciandolo — non si apre un'eccezione sulla Scrivania.
 
-## ⛔ Sulla Scrivania ci sono DUE cartelle (26 agosto 2026)
+## ⛔ Le cartelle della Scrivania le AUTORIZZA Fernando (27 agosto 2026)
 
-Ordine di Fernando: *«voglio che sulla scrivania ci siano solo 2 cartelle SCRIPT
-e ARCHIVIO GENERALE quindi tutte le altre vanno li dentro comprese quelle in
-download»*.
+Ordine di Fernando, che **cambia la regola** del 26 agosto: *«cambia la regola,
+prime pagine resta e le cartelle in scrivania possono aumentare se autorizzate
+da me»*.
+
+**Non sono piu' due cartelle sole.** La Scrivania ha un elenco di cartelle
+autorizzate, e l'autorizzazione la da' **lui**.
+
+⛔ **Una cartella o un collegamento che non conosco NON e' un difetto**: e' una
+cosa che puo' aver autorizzato senza dirmelo. Si **segnala e si chiede**, non si
+propone di toglierlo e non si conta come violazione.
+⛔ **Io non ne creo e non ne tolgo**: le cartelle della Scrivania le decide lui.
+
+Autorizzate a oggi:
+
+    ~/Desktop/SCRIPT/                 gli strumenti
+    ~/Desktop/ARCHIVIO GENERALE/      tutto il resto del lavoro
+    ~/Desktop/PRIME PAGINE/           autorizzata il 27/08/2026 — resta
+    ~/Desktop/LAVORI ->               collegamento ad ARCHIVIO GENERALE/LAVORI,
+                                      rimesso il 30/08/2026: *«messo per
+                                      recuperare concatenazioni, lascialo
+                                      stare»*. Serve a far ritrovare a Claude le
+                                      conversazioni che si portano dentro il
+                                      vecchio indirizzo. NON si tocca.
+
+🟥 **Trappola pagata il 02/09/2026**: questa sezione diceva ancora «DUE
+cartelle», perche' la regola nuova del 27/08 era finita **solo in memoria**.
+Fidandomi di qui ho segnalato `LAVORI` come anomalia e ho proposto di toglierlo
+— esattamente cio' che la regola vieta. 👉 **Una regola che cambia si riscrive
+QUI, non solo in memoria**: questo file e' quello che si legge a ogni avvio.
+
+Il riordino del 26 agosto resta valido per tutto il resto:
 
     ~/Desktop/SCRIPT/                 gli strumenti — resta fuori, si usa ogni giorno
     ~/Desktop/ARCHIVIO GENERALE/      tutto il resto
@@ -139,12 +167,11 @@ Dentro `ARCHIVIO GENERALE`, ai vecchi nomi:
     SCARICATI/            quello che stava in ~/Downloads (`!`, VIDEO_YOUTUBE, BACKUP_KODI)
     MANUALI CLAUDE ->     collegamento a LAVORI/_MANUALI_CLAUDE
 
-⛔ **Non si aggiungono altre cartelle sulla Scrivania**, e `~/Downloads` si
-lascia vuota: quello che ci arriva si sposta in `ARCHIVIO GENERALE/SCARICATI`.
-La cartella del TG **non e' piu'** `~/Downloads/TG`: e'
-`~/Desktop/ARCHIVIO GENERALE/SCARICATI/!/TG`.
+⛔ `~/Downloads` si lascia **vuota**: quello che ci arriva si sposta in
+`ARCHIVIO GENERALE/SCARICATI`. La cartella del TG **non e' piu'**
+`~/Downloads/TG`: e' `~/Desktop/ARCHIVIO GENERALE/SCARICATI/!/TG`.
 
-✋ **`~/Desktop/PRIME PAGINE` e' l'unica eccezione, e non si sposta.** Non e'
+✋ **`~/Desktop/PRIME PAGINE` non si sposta.** Non e'
 roba accumulata: e' il piano di lavoro di `SCRIPT/prime_pagine.py`, che **la
 svuota a ogni lancio** e ci rifa' dentro le prime pagine dai PDF appena
 scaricati in `~/Downloads` — che infatti si riempie e si svuota tutti i giorni,
