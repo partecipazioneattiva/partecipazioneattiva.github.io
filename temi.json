@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🏘️",
+      "tema": "TERRITORIO",
+      "testo": "Antonio Cristiano gira i quartieri della Municipalità 10: segnalagli il problema del tuo quartiere, va a vederlo e lo pubblica"
+    },
+    {
       "emoji": "🏛️",
       "tema": "DAGLI ARCHIVI",
       "testo": "nel 2023 alla Camera Spanu propose un progetto pilota del SIRE gestito dal MEF: il testo integrale dell’intervento"
@@ -34,11 +39,6 @@
       "emoji": "✊",
       "tema": "NOTTE DELLA DEMOCRAZIA",
       "testo": "PA in piazza Montecitorio stasera dalle 18 contro lo Stabilicum — con il portavoce Luigi Spanu"
-    },
-    {
-      "emoji": "🗺️",
-      "tema": "CITTADINI ATTIVI",
-      "testo": "non mancano i cittadini attivi, manca che si vedano — ecco perché abbiamo costruito una mappa"
     }
   ]
 }

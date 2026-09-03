@@ -1232,26 +1232,69 @@ Un progetto con quel nome <strong style="display:inline">non compare oggi nei ma
 </article>
 '''
 
+BODY_ANTONIO_QUARTIERI = '''
+<article class="article-wrap">
+
+<div class="box-info">
+<strong>&#x1F4CC; Che cos&#8217;&egrave; questa pagina</strong>
+Antonio Cristiano, del Direttivo di Partecipazione Attiva e conduttore di <strong style="display:inline">&laquo;Parler&ograve;&raquo;</strong> su Partecipazione Attiva WebTV e su TV Flegrea, comincia a girare i quartieri della <strong style="display:inline">Municipalit&agrave; 10</strong> con la telecamera accesa. Qui trovi <strong style="display:inline">che cosa far&agrave;</strong>, <strong style="display:inline">quello che ha gi&agrave; pubblicato</strong> e <strong style="display:inline">come segnalargli un problema</strong> del tuo quartiere.
+</div>
+
+<p><img src="images/antonio-quartieri-manifesto.webp" alt="Manifesto: Antonio Cristiano, conduttore di Parler&ograve; su Partecipazione Attiva WebTV e TV Flegrea. Vengo a vedere, poi lo racconto." style="width:100%;max-width:520px;display:block;margin:0 auto 26px;border-radius:12px;box-shadow:0 8px 26px rgba(0,0,0,.18)"></p>
+
+<h2>&#x1F3D8;&#xFE0F; Vengo a vedere, poi lo racconto</h2>
+
+<p>Il metodo &egrave; semplice e si vede tutto: <strong>si va sul posto</strong>, si guarda, si filma, e poi <strong>si pubblica</strong>. Sopralluoghi, video, foto e articoli sui problemi veri di <strong>Bagnoli, Fuorigrotta, Agnano e Cavalleggeri d&#8217;Aosta</strong>: strade, mercati, scuole, trasporti, spazi pubblici chiusi da anni.</p>
+
+<p>Non &egrave; una raccolta di lamentele. Ogni sopralluogo prova a rispondere a tre domande: <strong>che cosa non funziona</strong>, <strong>di chi &egrave; la competenza</strong> per metterci mano, e <strong>che cosa si potrebbe farci</strong>. Il materiale esce su <strong>Partecipazione Attiva WebTV</strong>, su <strong>TV Flegrea</strong> e su questo sito, e resta consultabile a chiunque: ai cittadini per sapere come stanno le cose, agli uffici per non poter dire che non lo sapevano.</p>
+
+<h2>&#x1F4E3; Hai un problema nel tuo quartiere?</h2>
+
+<div class="box-info">
+Una strada che nessuno sistema, un mercato lasciato andare, una scuola senza manutenzione, un&#8217;area verde diventata deposito, una fermata senza pensilina.<br><br>
+<strong style="display:inline">Raccontamelo: vengo a vederlo, lo filmo e lo pubblico.</strong><br>
+&#x1F4E7; <a href="mailto:partecipazioneattiva21@gmail.com">partecipazioneattiva21@gmail.com</a>
+</div>
+
+<p>Scrivere &egrave; utile anche quando il problema sembra piccolo: sono le cose piccole e ripetute &mdash; un marciapiede rotto, un cassonetto sempre pieno, un lampione spento da mesi &mdash; che raccontano come viene trattato un quartiere.</p>
+
+<h2>&#x2705; Il lavoro &egrave; gi&agrave; cominciato</h2>
+
+<p>Questo annuncio non parte da zero. Sul sito ci sono gi&agrave; due lavori firmati da Antonio Cristiano, ed &egrave; il modo pi&ugrave; onesto di far vedere che cosa aspettarsi.</p>
+
+<p><strong>&#x1F3AC; Il sopralluogo a Cavalleggeri d&#8217;Aosta &mdash; 22 luglio 2026.</strong> Video girato lungo <strong>via Marco Polo</strong>: le facciate che potrebbero diventare un museo di murales a cielo aperto, l&#8217;area del mercatino e degli ambulanti da riqualificare, e l&#8217;edificio abbandonato dove ci starebbe <strong>un parco giochi con parcheggio e fermata dell&#8217;autobus</strong> a servizio di via Marco Polo e via Campigna. La proposta &egrave; rivolta al Comune di Napoli e alla Municipalit&agrave; 10.<br>
+&rarr; <a href="video-cavalleggeri-sopralluogo.html">Guarda il sopralluogo</a> &nbsp;&middot;&nbsp; <a href="cavalleggeri-cielo-aperto.html">leggi la proposta per intero</a></p>
+
+<p><strong>&#x1F3E5; La sanit&agrave; pubblica &mdash; 16 aprile 2026.</strong> Il video sulla crisi del servizio sanitario: <strong>4,5 milioni di italiani hanno rinunciato a curarsi nel 2025</strong> secondo i dati ISTAT, con liste d&#8217;attesa che arrivano a due anni.<br>
+&rarr; <a href="cristiano-sanita.html">Guarda il video</a></p>
+
+<h2>&#x1F4FA; Dove esce</h2>
+
+<p><strong>&laquo;Parler&ograve;&raquo;</strong>, il Salotto Culturale Napoletano ideato e condotto da Antonio Cristiano, va in onda su <strong>TV Flegrea</strong> ed &egrave; raccolto su <strong>Partecipazione Attiva WebTV</strong>. I sopralluoghi e gli articoli escono su questo sito, nella <a href="webtv.html">WebTV</a> e nella sezione dedicata a <a href="napoli.html">Napoli</a>.<br>
+&rarr; <a href="parlero.html">La pagina di Parler&ograve;</a></p>
+
+</article>
+'''
+
 ART = {
-  'slug'         : 'spanu-una-italia-positiva-2023.html',
-  'autore'       : 'spanu',
-  'data_iso'     : '2026-08-19',
-  'data_human'   : '19 agosto 2026',
-  'data_badge'   : '19 AGOSTO 2026',
-  'lettura_min'  : 5,
-  'categoria_hero': '\U0001F3DB️ Dagli archivi',
-  'og_image'     : 'images/spanu-audizione-stabilicum.webp',
-  'h1'           : 'SIRE: l’intervento di Spanu alla Camera nel 2023',
-  'sottotitolo'  : 'Al convegno «Una Italia Positiva» del 20 novembre 2023, Partecipazione Attiva propose un progetto pilota gestito dal MEF, da provare in Emilia-Romagna. Il testo integrale dell’intervento, e cosa è successo nei tre anni successivi.',
-  'meta_desc'    : 'Il 20 novembre 2023 alla Camera, al convegno «Una Italia Positiva», Luigi Spanu propose un progetto pilota del SIRE gestito dal MEF. Testo integrale.',
-  'card_cat'     : '\U0001F3DB️ DAGLI ARCHIVI',
-  'card_title'   : 'Il SIRE alla Camera: cosa disse Spanu nel 2023',
-  'card_desc'    : 'Al convegno «Una Italia Positiva» propose di far partire subito un progetto pilota gestito dal MEF, da provare in Emilia-Romagna, senza aspettare la legge. Il testo integrale dell’intervento. A settembre il tema torna sulla WebTV.',
-  'ticker_emoji' : '\U0001F3DB️',
-  'ticker_tema'  : 'DAGLI ARCHIVI',
-  'ticker_testo' : 'nel 2023 alla Camera Spanu propose un progetto pilota del SIRE gestito dal MEF: il testo integrale dell’intervento',
-  'body'         : BODY_SPANU_2023,
-  'vietate_ok'   : ['SIRE', 'Camera dei Deputati', 'spanu-sire'],
+  'slug'         : 'antonio-cristiano-quartieri.html',
+  'autore'       : 'cristiano',
+  'data_iso'     : '2026-09-02',
+  'data_human'   : '2 settembre 2026',
+  'data_badge'   : '2 SETTEMBRE 2026',
+  'lettura_min'  : 3,
+  'categoria_hero': '\U0001F3D8\uFE0F Territorio',
+  'og_image'     : 'images/antonio-quartieri.webp',
+  'h1'           : 'Vengo a vedere, poi lo racconto',
+  'sottotitolo'  : 'Antonio Cristiano gira i quartieri della Municipalit\u00e0 10 con la telecamera accesa: sopralluoghi, video, foto e articoli sui problemi veri di Bagnoli, Fuorigrotta, Agnano e Cavalleggeri d\u2019Aosta. E chiede ai cittadini di segnalare.',
+  'meta_desc'    : 'Antonio Cristiano nei quartieri della Municipalit\u00e0 10: sopralluoghi, video e articoli sui problemi veri. Segnala il problema del tuo quartiere.',
+  'card_cat'     : 'TERRITORIO \u2014 AGGIORNAMENTO',
+  'card_title'   : 'Vengo a vedere, poi lo racconto',
+  'card_desc'    : 'Antonio Cristiano comincia a girare Bagnoli, Fuorigrotta, Agnano e Cavalleggeri d\u2019Aosta con la telecamera accesa: sopralluoghi, video e articoli sui problemi veri. Hai un problema nel tuo quartiere? Raccontaglielo.',
+  'ticker_emoji' : '\U0001F3D8\uFE0F',
+  'ticker_tema'  : 'TERRITORIO',
+  'ticker_testo' : 'Antonio Cristiano gira i quartieri della Municipalit\u00e0 10: segnalagli il problema del tuo quartiere, va a vederlo e lo pubblica',
+  'body'         : BODY_ANTONIO_QUARTIERI,
 }
 
 # ===========================================================================
