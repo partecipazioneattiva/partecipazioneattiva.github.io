@@ -1276,25 +1276,99 @@ Una strada che nessuno sistema, un mercato lasciato andare, una scuola senza man
 </article>
 '''
 
+BODY_STABILICUM_SENATO = '''
+<article class="article-wrap">
+<style>
+.fonte{font-size:.78em;color:#6c6c6c;margin-top:-6px;margin-bottom:22px;font-style:italic;line-height:1.5}
+.pa-tbl{width:100%;border-collapse:collapse;margin:22px 0;font-family:montserrat,sans-serif;font-size:.86em}
+.pa-tbl th,.pa-tbl td{border:1px solid #f0e6d3;padding:9px 12px;text-align:left}
+.pa-tbl th{background:#fff8ee;font-weight:700}
+.pa-tbl td:first-child{font-weight:600}
+</style>
+
+
+<div class="box-info">
+<strong>&#x1F4CC; Che cos&#8217;&egrave; questa pagina</strong>
+Lo <strong style="display:inline">Stabilicum</strong> &mdash; la nuova legge elettorale approvata dalla Camera il 16 luglio 2026 &mdash; &egrave; ora in commissione Affari costituzionali al Senato, dove sono stati depositati <strong style="display:inline">quasi settecento emendamenti</strong>. Qui trovi <strong style="display:inline">che cosa si vota e quando</strong>, <strong style="display:inline">che cosa cambierebbe per chi vota</strong> e <strong style="display:inline">chi sostiene che cosa</strong>. Ogni informazione porta la sua fonte.
+</div>
+
+<h2>&#x1F5D3;&#xFE0F; Il calendario</h2>
+
+<p>La commissione Affari costituzionali del Senato ha impegnato un&#8217;intera giornata nell&#8217;illustrazione dei <strong>quasi 700 emendamenti</strong>. Il voto sugli emendamenti &egrave; cominciato il 3 settembre; luned&igrave; 7 e marted&igrave; 8 la commissione riprende, e <strong>mercoled&igrave; 9 settembre il testo va in Aula</strong> &mdash; <strong>senza mandato al relatore</strong>, il che vuol dire che la commissione non ha chiuso il lavoro e la partita si sposta interamente in Aula. Il <strong>voto finale &egrave; atteso per il 15 settembre</strong>.</p>
+<p class="fonte"><em>Fonte: Adriana Logroscino, «Legge elettorale, il Senato ora sceglie», Corriere della Sera, 3 settembre 2026, p. 8.</em></p>
+
+<h2>&#x2696;&#xFE0F; Il nodo: il ballottaggio</h2>
+
+<p>L&#8217;emendamento del senatore <strong>Marcello Pera</strong> (Fratelli d&#8217;Italia, ex presidente del Senato) introdurrebbe un <strong>secondo turno</strong> fra le due coalizioni che superano il <strong>38%</strong> ma non raggiungono il <strong>48%</strong>. &Egrave; la modifica pi&ugrave; discussa, e divide la maggioranza.</p>
+
+<p><strong>La Lega &egrave; contraria.</strong> Matteo Salvini: <em>&laquo;Siamo contrari al ballottaggio. Abbiamo firmato un accordo che prevede le liste e le preferenze. Basta&raquo;</em>, e annuncia che chieder&agrave; agli alleati di non votare l&#8217;emendamento. <strong>Fratelli d&#8217;Italia prende tempo</strong>: il partito della premier fa sapere che si va avanti <em>&laquo;solo con l&#8217;ok degli alleati&raquo;</em>. Lo stesso Pera: <em>&laquo;Decider&ograve; avendo sentito la maggioranza. Ma non metter&ograve; in testa lo scolapasta per fare l&#8217;eroe&raquo;</em>.</p>
+<p class="fonte"><em>Fonti: «Ballottaggio, il no di Salvini. Fratelli d&#8217;Italia prende tempo», Il Sole 24 Ore, 3 settembre 2026, pp. 1 e 10; Carmelo Caruso, «Pera: non faccio l&#8217;eroe sul ballottaggio», Il Foglio, 3 settembre 2026, pp. 1 e 5; Serena Riformato, «Melonellum, maggioranza in tilt», la Repubblica, 3 settembre 2026, p. 10.</em></p>
+
+<div class="box-info">
+<strong>&#x2696;&#xFE0F; Le due tesi, per intero</strong><br><br>
+<strong>Chi &egrave; a favore</strong> sostiene che il ballottaggio eviti la palude parlamentare quando nessuno vince, tolga alle forze estreme il potere di ricatto e obblighi le coalizioni a essere coerenti prima del voto. Il costituzionalista <strong>Stefano Ceccanti</strong> ricorda che la Corte costituzionale, con la sentenza sull&#8217;Italicum, <strong>non ha bocciato il ballottaggio in s&eacute;</strong>, ma quel particolare modo di costruirlo, e che un secondo turno fra coalizioni gi&agrave; rappresentative al primo turno &egrave; legittimo.<br><br>
+<strong>Chi &egrave; contrario</strong> osserva che con il ballottaggio la minoranza che ottiene il premio diventa ancora pi&ugrave; piccola &mdash; sotto il 20% degli italiani &mdash; rispetto al potere che le viene assegnato, e che la discussione non sta avvenendo nel merito ma <strong>in funzione di un singolo avversario</strong>.<br>
+<em>Fonti: Stefano Ceccanti, «No al doppio turno? Rischio ingovernabilit&agrave;», Quotidiano Nazionale, 3 settembre 2026, p. 8; Agostino Giovagnoli, «La democrazia non &egrave; di parte», Avvenire, 3 settembre 2026, pp. 1 e 14.</em>
+</div>
+
+<h2>&#x1F50D; Le altre modifiche in discussione</h2>
+
+<p><strong>La soglia del premio potrebbe scendere.</strong> Un emendamento della senatrice di Fratelli d&#8217;Italia <strong>Paola Ambrogio</strong> chiede di assegnare il premio a chi raggiunge il <strong>41%</strong> dei voti anzich&eacute; il 42% previsto oggi.</p>
+
+<p><strong>La norma &laquo;anti-cespugli&raquo; &egrave; in bilico.</strong> &Egrave; lo sbarramento al <strong>3%</strong> che annulla i voti dei partiti sotto quella soglia dentro una coalizione. Fratelli d&#8217;Italia ha depositato un testo per <strong>eliminarla del tutto</strong> e un altro per riportarla all&#8217;<strong>1%</strong>; Forza Italia la vorrebbe al <strong>2%</strong>.</p>
+
+<p><strong>Le preferenze tornano, ma con i capilista bloccati.</strong> &Egrave; la formula gi&agrave; bocciata alla Camera per un solo voto, con in pi&ugrave; l&#8217;<strong>alternanza di genere a partire dal secondo eletto</strong>. L&#8217;opposizione la definisce <em>&laquo;una clava contro le donne&raquo;</em>: i capilista sono <strong>196 per il centrodestra</strong> e, sui 70 seggi legati al premio, <strong>solo 28 sono candidate</strong>. La senatrice del Pd <strong>Sandra Zampa</strong> la chiama <em>&laquo;una falsa proposta di preferenze&raquo;</em>, perch&eacute; i capilista restano scelti dalle segreterie.</p>
+
+<p><strong>Voto fuori sede.</strong> Alla Camera la norma &egrave; stata votata all&#8217;unanimit&agrave;. Al Senato un emendamento della senatrice di Fratelli d&#8217;Italia <strong>Domenica Spinelli</strong> estende il diritto al voto a distanza anche ai <strong>caregiver</strong>.</p>
+<p class="fonte"><em>Fonti: Il Sole 24 Ore, 3 settembre 2026, pp. 1 e 10; la Repubblica, 3 settembre 2026, p. 10; Alessandra Arachi, intervista a Sandra Zampa, Corriere della Sera, 3 settembre 2026, p. 8.</em></p>
+
+<h2>&#x1F4CA; Il sondaggio, e come va letto</h2>
+
+<p>YouTrend ha simulato l&#8217;effetto del ballottaggio per l&#8217;Istituto Cattaneo su un campione di <strong>1.200 maggiorenni</strong>, intervistati fra il <strong>1&deg; e il 2 settembre 2026</strong>, con un margine di errore dichiarato del <strong>&plusmn;2,8%</strong>.</p>
+
+<table class="pa-tbl">
+<tr><th></th><th>Primo turno</th><th>Ballottaggio</th></tr>
+<tr><td>Campo largo</td><td>44,4%</td><td>49,8%</td></tr>
+<tr><td>Centrodestra</td><td>38,1%</td><td>51,1%</td></tr>
+<tr><td>Futuro Nazionale</td><td>8,2%</td><td>&mdash;</td></tr>
+<tr><td>Polo centrista</td><td>5,4%</td><td>&mdash;</td></tr>
+<tr><td>Indecisi e astenuti</td><td>36,6%</td><td>36,6%</td></tr>
+</table>
+
+<p>&#x26A0;&#xFE0F; <strong>&Egrave; una simulazione, non un risultato.</strong> Il vantaggio di oltre sei punti al primo turno si rovescia al secondo perch&eacute; oltre l&#8217;<strong>82%</strong> degli elettori di Futuro Nazionale tornerebbe a votare al ballottaggio, quasi tutti per il centrodestra. Il presidente di YouTrend <strong>Giovanni Diamanti</strong> avverte che <em>&laquo;non significa che il campo largo sia fuori dai giochi&raquo;</em>, visto che lo scarto sarebbe di due punti, dentro il margine d&#8217;errore. E gli indecisi sono oltre un terzo.</p>
+<p class="fonte"><em>Fonte: Gabriella Cerami, «Ribaltone al secondo turno», la Repubblica, 3 settembre 2026, pp. 1 e 11; elaborazione YouTrend.</em></p>
+
+<h2>&#x1F5E3;&#xFE0F; Che cosa ne pensa Partecipazione Attiva</h2>
+
+<p>La nostra posizione non cambia con il ballottaggio, perch&eacute; riguarda un punto che nessuno degli emendamenti in discussione tocca: <strong>chi sceglie gli eletti</strong>.</p>
+
+<p>Le preferenze reintrodotte <strong>con i capilista bloccati</strong> lasciano in piedi esattamente il problema che avevamo indicato a luglio: i primi nomi &mdash; quelli che entrano quasi sempre &mdash; continuano a essere scelti dalle segreterie, non dagli elettori. Cambiare la soglia del premio dal 42 al 41%, o spostare lo sbarramento dal 3 all&#8217;1%, sono aggiustamenti fra partiti: non restituiscono al cittadino la scelta del proprio rappresentante.</p>
+
+<p>Resta valido quanto scritto dal portavoce nazionale <strong>Luigi Spanu</strong> il 17 luglio: non siamo contrari alla stabilit&agrave; di governo, che &egrave; un obiettivo legittimo; siamo contrari al fatto che <strong>le regole del voto le scriva una parte sola</strong>, e che si tolga ai cittadini la possibilit&agrave; di scegliere chi li rappresenta.<br>
+&rarr; <a href="stabilicum-nota-spanu-17lug2026.html">La nota completa del portavoce</a> &nbsp;&middot;&nbsp; <a href="stabilicum.html">Lo Stabilicum spiegato ai cittadini</a></p>
+
+</article>
+'''
+
 ART = {
-  'slug'         : 'antonio-cristiano-quartieri.html',
-  'autore'       : 'cristiano',
-  'data_iso'     : '2026-09-02',
-  'data_human'   : '2 settembre 2026',
-  'data_badge'   : '2 SETTEMBRE 2026',
-  'lettura_min'  : 3,
-  'categoria_hero': '\U0001F3D8\uFE0F Territorio',
-  'og_image'     : 'images/antonio-quartieri.webp',
-  'h1'           : 'Vengo a vedere, poi lo racconto',
-  'sottotitolo'  : 'Antonio Cristiano gira i quartieri della Municipalit\u00e0 10 con la telecamera accesa: sopralluoghi, video, foto e articoli sui problemi veri di Bagnoli, Fuorigrotta, Agnano e Cavalleggeri d\u2019Aosta. E chiede ai cittadini di segnalare.',
-  'meta_desc'    : 'Antonio Cristiano nei quartieri della Municipalit\u00e0 10: sopralluoghi, video e articoli sui problemi veri. Segnala il problema del tuo quartiere.',
-  'card_cat'     : 'TERRITORIO \u2014 AGGIORNAMENTO',
-  'card_title'   : 'Vengo a vedere, poi lo racconto',
-  'card_desc'    : 'Antonio Cristiano comincia a girare Bagnoli, Fuorigrotta, Agnano e Cavalleggeri d\u2019Aosta con la telecamera accesa: sopralluoghi, video e articoli sui problemi veri. Hai un problema nel tuo quartiere? Raccontaglielo.',
-  'ticker_emoji' : '\U0001F3D8\uFE0F',
-  'ticker_tema'  : 'TERRITORIO',
-  'ticker_testo' : 'Antonio Cristiano gira i quartieri della Municipalit\u00e0 10: segnalagli il problema del tuo quartiere, va a vederlo e lo pubblica',
-  'body'         : BODY_ANTONIO_QUARTIERI,
+  'slug'         : 'stabilicum-senato-settembre2026.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-09-03',
+  'data_human'   : '3 settembre 2026',
+  'data_badge'   : '3 SETTEMBRE 2026',
+  'lettura_min'  : 5,
+  'categoria_hero': '\u2696\uFE0F Riforma elettorale',
+  'og_image'     : 'images/stabilicum-preferenze-bocciate-14lug2026.jpg',
+  'h1'           : 'Stabilicum al Senato: 700 emendamenti e il nodo ballottaggio',
+  'sottotitolo'  : 'Il voto in commissione &egrave; cominciato, l\u2019Aula &egrave; attesa il 9 settembre e il voto finale il 15. La Lega dice no al secondo turno, Fratelli d\u2019Italia prende tempo. Che cosa si vota, chi sostiene che cosa, e che cosa cambierebbe per chi vota.',
+  'meta_desc'    : 'Stabilicum al Senato: quasi 700 emendamenti, Aula il 9 settembre, voto finale il 15. Il nodo ballottaggio, le preferenze coi capilista bloccati.',
+  'card_cat'     : 'RIFORMA ELETTORALE',
+  'card_title'   : 'Stabilicum al Senato: il nodo ballottaggio',
+  'card_desc'    : 'Quasi 700 emendamenti in commissione, Aula il 9 settembre e voto finale atteso il 15. La Lega dice no al secondo turno, FdI prende tempo. Le preferenze tornano ma con i capilista bloccati: a scegliere restano le segreterie.',
+  'ticker_emoji' : '\u2696\uFE0F',
+  'ticker_tema'  : 'RIFORMA ELETTORALE',
+  'ticker_testo' : 'Stabilicum al Senato: 700 emendamenti, Aula il 9 settembre e voto finale atteso il 15 &mdash; il nodo &egrave; il ballottaggio',
+  'body'         : BODY_STABILICUM_SENATO,
 }
 
 # ===========================================================================

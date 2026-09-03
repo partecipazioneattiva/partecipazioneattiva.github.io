@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "⚖️",
+      "tema": "RIFORMA ELETTORALE",
+      "testo": "Stabilicum al Senato: 700 emendamenti, Aula il 9 settembre e voto finale atteso il 15 &mdash; il nodo &egrave; il ballottaggio"
+    },
+    {
       "emoji": "🏘️",
       "tema": "TERRITORIO",
       "testo": "Antonio Cristiano gira i quartieri della Municipalità 10: segnalagli il problema del tuo quartiere, va a vederlo e lo pubblica"
@@ -34,11 +39,6 @@
       "emoji": "🎨",
       "tema": "CAVALLEGGERI",
       "testo": "un museo di murales a cielo aperto per Fuorigrotta: la proposta di PA al Comune di Napoli"
-    },
-    {
-      "emoji": "✊",
-      "tema": "NOTTE DELLA DEMOCRAZIA",
-      "testo": "PA in piazza Montecitorio stasera dalle 18 contro lo Stabilicum — con il portavoce Luigi Spanu"
     }
   ]
 }
