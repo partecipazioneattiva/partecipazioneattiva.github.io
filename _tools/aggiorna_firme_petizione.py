@@ -78,16 +78,26 @@ def stop(motivo):
     sys.exit(1)
 
 
-def sostituisci(testo, schema, nuovo, dove):
+def sostituisci(testo, schema, nuovo, dove, facoltativo=False):
     """Sostituisce una volta sola, e si ferma se non ha trovato niente.
 
     Un `.replace()` andato a vuoto non protesta: lascia il numero vecchio e il
     programma dice lo stesso «fatto». E' cosi' che il 25 agosto 2026 la frase
     «Mancano 35 firme» sarebbe rimasta sbagliata in silenzio. Qui un buco vale
     uno stop, come tutto il resto del programma.
+
+    `facoltativo=True` serve al caso opposto: un punto dove il numero **puo'
+    legittimamente non esserci piu'**, perche' il testo intorno e' stato
+    riscritto. Li' un buco non e' un numero vecchio rimasto in giro, e fermarsi
+    bloccherebbe anche gli aggiornamenti che invece si possono fare.
+    Si usa solo dove si e' verificato che quel numero non compare piu' da nessuna
+    parte: se compare, la sostituzione resta obbligatoria.
     """
     nuovo_testo, quante = re.subn(schema, nuovo, testo, count=1)
     if quante != 1:
+        if facoltativo:
+            print(f'  · {dove}: la scritta non c\'e\' piu\', tiro dritto')
+            return testo
         stop(f'{dove}: non trovo piu\' la scritta da cambiare')
     return nuovo_testo
 
@@ -164,9 +174,14 @@ def main():
     casa = sostituisci(casa, r'\d+ firme su \d+',
                        f'{firme} firme su {obiettivo}',
                        'home, la scritta delle firme')
+    # Il 03/09/2026 il titolo della card e' passato da «aiutiamo Comunita'
+    # Competente ad arrivare a 1000 firme» a «Sanita' in Calabria: firmiamo»:
+    # l'obiettivo li' non c'e' piu', e nella home resta solo dentro «N firme su
+    # N», che si aggiorna qui sopra. Percio' facoltativa — se il titolo tornera'
+    # a nominarlo, riprende da sola.
     casa = sostituisci(casa, r'(arrivare a )\d+( firme)',
                        r'\g<1>' + str(obiettivo) + r'\g<2>',
-                       'home, il titolo della card')
+                       'home, il titolo della card', facoltativo=True)
     casa = sostituisci(casa,
                        r'(background:rgba\(255,255,255,\.22\)[^"]*"><span style="display:block;'
                        r'height:100%;width:)[\d.]+%',
