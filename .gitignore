@@ -26,3 +26,8 @@ ACCESSO_WIKIDATA.txt
 
 # permessi locali e loro copie: contengono la mappa del computer
 .claude/settings.local.json*
+
+# Pesi di GFPGAN scaricati da soli da _tools/migliora_foto_riferimento.py:
+# la libreria li mette qui (186 MB) ogni volta che lo strumento gira.
+# Non sono nostri e si riscaricano: fuori dal repository, che e PUBBLICO.
+gfpgan/
