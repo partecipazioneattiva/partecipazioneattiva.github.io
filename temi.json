@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🗺️",
+      "tema": "WEBTV",
+      "testo": "Perch&eacute; serve una mappa dei cittadini attivi &mdash; Daniele Tandura apre i sei appuntamenti di settembre sulla WebTV"
+    },
+    {
       "emoji": "⚖️",
       "tema": "RIFORMA ELETTORALE",
       "testo": "Stabilicum al Senato: 700 emendamenti, Aula il 9 settembre e voto finale atteso il 15 &mdash; il nodo &egrave; il ballottaggio"
@@ -34,11 +39,6 @@
       "emoji": "🐝",
       "tema": "APE",
       "testo": "Partecipazione Attiva lancia l’Assemblea Popolare Ecumenica: la proposta che dà ai cittadini una voce permanente"
-    },
-    {
-      "emoji": "🎨",
-      "tema": "CAVALLEGGERI",
-      "testo": "un museo di murales a cielo aperto per Fuorigrotta: la proposta di PA al Comune di Napoli"
     }
   ]
 }

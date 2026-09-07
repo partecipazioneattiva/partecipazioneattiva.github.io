@@ -9,6 +9,7 @@
 #  NON tocca aggiorna_feed/pagefind/git: quelli restano nel comando di push.
 # ============================================================================
 import re, json, sys, os
+import html as html_mod
 
 BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
 
@@ -19,6 +20,7 @@ AUTORI = {
     'nicotra':  ('Angelo Nicotra','Presidente','images/organigramma/angelo-nicotra-finale.webp'),
     'cristiano':('Antonio Cristiano','Direttivo','images/organigramma/antonio-cristiano.webp'),
     'mollica':  ('Amilcare Mollica','Consulente legale','images/organigramma/amilcare-mollica.webp'),
+    'tandura':  ('Daniele Tandura','Direttivo','images/organigramma/daniele-tandura.webp'),
     'pa':       ('Partecipazione Attiva','Documento di posizione','LOGO-PA.webp'),
 }
 
@@ -1350,25 +1352,118 @@ Lo <strong style="display:inline">Stabilicum</strong> &mdash; la nuova legge ele
 </article>
 '''
 
+BODY_MAPPA_DANIELE = r"""<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-width:760px;margin:0 auto}.pa-yt button{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;position:relative;line-height:0}.pa-yt img,.pa-yt iframe{width:100%;aspect-ratio:16/9;height:auto;display:block;border:0;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}.pa-yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}.pa-yt-play svg{width:78px;height:78px}.pa-yt button:hover .pa-yt-play svg,.pa-yt button:focus .pa-yt-play svg{width:88px;height:88px}.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.85em;color:#9c5b00;margin-top:14px;text-align:center;font-weight:700;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5}.pa-trascr{margin:26px auto 0;max-width:760px;border:1px solid #f0e6d3;border-radius:12px;padding:12px 16px;background:#fffdf8}.pa-trascr summary{font-family:montserrat,sans-serif;font-weight:700;color:#8a4e00;cursor:pointer}.pa-trascr-testo{margin-top:12px;font-size:.95em;line-height:1.75}.pa-cta{display:block;max-width:420px;margin:30px auto;text-align:center;background:#e07b00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;padding:16px 22px;border-radius:12px;text-decoration:none}.pa-cta:hover{background:#c26a00}</style>
+
+<h2>Non mancano i cittadini attivi. Manca che si vedano.</h2>
+
+<p>C&rsquo;&egrave; una frase che in ogni assemblea civica torna sempre uguale: <em>&laquo;il problema &egrave; che siamo divisi&raquo;</em>. Tutti annuiscono, e poi ognuno torna nel proprio gruppo.</p>
+
+<p><strong>Daniele Tandura</strong>, membro del Direttivo di Partecipazione Attiva, prende quella frase e prova a trasformarla in uno strumento. &Egrave; il primo dei sei appuntamenti di settembre sulla WebTV, e dura un quarto d&rsquo;ora: il tempo che serve a spiegare una cosa senza tagliarla.</p>
+
+<h2>Il punto da cui parte</h2>
+
+<p>Non parte dalla mappa. Parte da quanti siamo.</p>
+
+<blockquote><p>&laquo;Chi non va a votare non &egrave; una minoranza. Non &egrave; una piccola minoranza.&raquo;</p></blockquote>
+
+<p>Il dato gli d&agrave; ragione. Alle politiche del 25 settembre 2022, fra Italia ed estero, <strong>20.101.798 elettori non sono andati a votare</strong>: il 39,6% degli aventi diritto, quaranta su cento. Sono i numeri del Ministero dell&rsquo;Interno &mdash; in Italia 46.021.956 elettori e 29.413.657 votanti, all&rsquo;estero 4.743.980 e 1.250.481.</p>
+
+<p>Quaranta persone su cento che hanno deciso che il proprio voto non serve. Non per pigrizia, dice Daniele: per rifiuto.</p>
+
+<h2>Perch&eacute; stare da soli non basta</h2>
+
+<p>Le associazioni ci sono. Sono decine, centinaia. Ognuna lavora su qualcosa: una proposta di legge, un referendum, un inceneritore, una scuola. E quasi nessuna ottiene un risultato.</p>
+
+<p>La Costituzione dice quanto pesa una firma:</p>
+
+<ul>
+<li><strong>50.000 firme</strong> per una legge di iniziativa popolare &mdash; articolo 71</li>
+<li><strong>500.000 firme</strong> per un referendum abrogativo &mdash; articolo 75</li>
+</ul>
+
+<p>Sono numeri che un gruppo isolato non raggiunge. Li raggiunge una rete che sa dove sono i suoi.</p>
+
+<blockquote><p>&laquo;Noi siamo sparpagliati, e questo fa molto comodo a chi ci comanda. Non voglio dire <em>ci governa</em>, perch&eacute; sarebbe un complimento per certa gente.&raquo;</p></blockquote>
+
+<h2>Cos&rsquo;&egrave; la Mappa</h2>
+
+<p>Una carta d&rsquo;Italia su un sito, dove ciascuno mette il proprio nome &mdash; o anche solo la mail, o un nome di fantasia se non vuole dare i propri dati. Accanto, di cosa si occupa e dove sta.</p>
+
+<p>Da l&igrave; in poi chiunque pu&ograve; cercare per tema o per competenza &mdash; legge elettorale, sanit&agrave;, disabilit&agrave;, ambiente, animali, lavoro, legale, medico-sanitaria, italiani all&rsquo;estero &mdash; e trovare chi si batte per la stessa cosa, vicino a casa.</p>
+
+<blockquote><p>&laquo;Chiunque va a guardare la mappa pu&ograve; trovare tutte le persone, almeno le mail, delle persone che si sentono fuori sistema.&raquo;</p></blockquote>
+
+<p>E il punto, per lui, non &egrave; il sito: &egrave; quello che succede dopo.</p>
+
+<blockquote><p>&laquo;L&rsquo;energia che nasce da un contatto diretto, dal fatto di trovarsi.&raquo;</p></blockquote>
+
+<h2>Cosa costa</h2>
+
+<blockquote><p>&laquo;Questo piccolo passo dell&rsquo;iscrizione, che non comporta niente. Non comporta nessuna spesa. Un tempo minimo.&raquo;</p></blockquote>
+
+<p>Tre cose e si &egrave; dentro: si apre la pagina della Mappa, si scrive dove si &egrave; e di cosa ci si occupa, e basta la mail. Non serve iscriversi a un partito, e non serve iscriversi a Partecipazione Attiva.</p>
+
+<a class="pa-cta" href="mappa.html">Entra nella Mappa &rarr;</a>
+
+<h2>E la prossima volta</h2>
+
+<p>Questo video &egrave; il <em>perch&eacute;</em>. Il <em>cosa</em> arriva dopo: alla fine Daniele lo dice lui stesso.</p>
+
+<blockquote><p>&laquo;La prossima volta magari possiamo andare a vedere un pochettino cosa consiste questa mappa, come si rappresenta, come si pu&ograve; usare.&raquo;</p></blockquote>
+
+<h2>Il video</h2>
+
+<div class="pa-fig">
+<div class="pa-yt" id="ytmappa">
+<button type="button" onclick="var d=document.getElementById('ytmappa');d.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/ld598nxZJVw?autoplay=1&amp;rel=0\' title=\'La Mappa: perch\u00e9 i cittadini attivi devono vedersi\' frameborder=\'0\' allow=\'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture\' allowfullscreen></iframe>';return false;" aria-label="Guarda il video: La Mappa, la rete dei cittadini attivi, con Daniele Tandura">
+<img src="images/mappa-daniele-poster.jpg" alt="La Mappa &mdash; la rete dei cittadini attivi, con Daniele Tandura" width="1280" height="720" loading="lazy">
+<span class="pa-yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.55)"/><path d="M9.5 7.5v9l7-4.5z" fill="#fff"/></svg></span>
+</button>
+</div>
+<figcaption>La Mappa &mdash; la rete dei cittadini attivi, con Daniele Tandura. Video integrale, 15 minuti e 27 secondi. Il filmato parte solo se lo apri tu.</figcaption>
+<details class="pa-trascr">
+  <summary>Trascrizione del video</summary>
+  <div class="pa-trascr-testo">
+    <p>Sono Daniele Tandura, faccio parte dell&rsquo;associazione partecipazione attiva. Il tema di questo breve video si chiama Mappa, questo è il titolo. Però voglio partire un po&rsquo; da lontano, diciamo non pensiamo alla mappa del tesoro, non tanto per cominciare perché se no il tesoro me ne sarei già cercato e magari anche me ne sarei appropriato se ce l&rsquo;avessi. Però parto da lontano in questo senso, parto dalla considerazione che siamo veramente tanti, noi che in questa politica, in questa partitocrazia, in questo sistema sociopolitico che parte dalle lobby, che parte da tutta questa manipolazione, che parte purtroppo dalla collaborazione che viene data dai nostri politici alle varie interessi di altri, non a quelli del cittadino. Diciamo che il minimo vero grande interesse può essere quello della sedia, cioè di</p>
+    <p>trovare i modi per essere eletti, rieletti, riconfermati. Quindi siamo lontani dalla democrazia, siamo appunto casomai un&rsquo;oligarchia e questo è molto chiaro. È molto chiaro ed è anche dimostrato che moltissimi hanno questa convinzione, perché chi non va a votare non è una minoranza, non è una piccola minoranza, si tratta di oltre il 40% delle persone. Se uno non vota, cerca di dimostrare in questo modo che chiaramente in questo sistema non ci crede per nulla, anzi, cerca di portare la propria disapprovazione per tutto quello che sta succedendo, su come si muovono le cose in politica italiana. E stiamo in Italia, anche se fuori non è certo meglio, non ci sono segnali molto diversi. Comunque, in questa situazione, oltre il 40% poi dobbiamo considerare quelli che votano per</p>
+    <p>la filosofia del male minore, cioè vanno a votare per disperazione perché dicono, vabbè, fra tutti se proprio devo ingoiare la pillola vediamo di prendere il meno male, il meno male, quindi anche lì ci sarà una certa percentuale non piccola di quelli che sanno, chiaramente, come anche capita a me, cioè che se non voti ci sono tutti quelli che ne hanno interesse che lo fanno, tutti quelli che sono lì a prendere appunto il bocconcino, grande o piccolo, la bricciola, la bricciola grossa dai vari politici che loro sostengono e quindi con il loro voto. Ecco che alcuni magari ingenuamente ci credono, può darsi, penso che sia una minoranza e quindi ecco la dimostrazione, dimostrazione che i fuori sistema di quelli che non si sentono in questo sistema</p>
+    <p>sociopolitico rappresentati sono veramente tantissimi, più della metà degli italiani, direi, senza tante dubbio. Allora, cosa succede però? Che tutte queste persone non riescono a incidere sul sistema, anche se si associano in vari gruppi più o meno grossi, abbiamo visto che associazioni ce ne sono decine, centinaia, non so se sono migliaia, comunque sono tantissime, che si adoperano in vario modo per fare cose che sono, diciamo, a modifica dell&rsquo;attuale sistema. Può essere una cosa piccola, una cosa grossa, una cosa locale, una cosa nazionale, temi di vario genere, che possono sfociare una LIP che viene mandata al Ministero dall&rsquo;interno, o una richiesta di referendum, possono sfociare in iniziative locali per salvarsi magari da un ceneritore che non è neanche magari a norma, pericoloso o da qualsiasi altra malefatta</p>
+    <p>dei nostri politicanti, ospedali fatti nei parchi cittadini come a Torino. Vabbè, se ci penso non mi fermo più, quindi mi fermo subito. Ecco, però le probabilità di riuscita purtroppo abbiamo visto che le cose che arrivano a ottenere, le sensazioni, i gruppi che arrivano ad ottenere un risultato tangibile sono abbastanza poche, sono casi abbastanza rari. Quindi qual è alla fine il messaggio? Il messaggio è che dobbiamo unirci. Il messaggio è sinergia, collaborazione, unione, non so come altro dire. Cioè noi siamo sparpagliati, questo fa molto comodo chiaramente a chi ci comanda, non voglio dire neanche ci governa perché sarebbe un aggettivo, sarebbe un termine troppo un complimento per certa gente. Quindi diciamo che purtroppo dobbiamo unirci, che l&rsquo;unione fa la forza e se ci fosse l&rsquo;unione dei</p>
+    <p>risultati ci sarebbero. Allora, in parte questa cosa può essere fatta appunto con associazioni, ma perché parlo di mappa? Parlo di mappa perché con una visione di una carta d&rsquo;Italia, diciamo, una visione chiaramente fatta su digitale, quindi su un sito, dove ciascuno può mettere il proprio nome, o comunque anche solo la propria mail, usare un nome di fantasia, se non vuole mettere i propri dati anagrafici, e dire io appunto in questo modo sono interessato a dare un contributo con una piccola collaborazione, una collaborazione piccola o grande, una mezz&rsquo;ora o fare un volantino perché sono bravo con la grafica, o che so io. Ecco, in questo modo ci si potrebbe conoscere, ci si potrebbe conoscere soprattutto a livello territorio, noi con la mappa cosa facciamo? Sappiamo che</p>
+    <p>chiunque va a guardare la mappa può trovare tutte le persone, almeno le mail, delle persone che si sentono appunto fuori sistema, che vorrebbero in qualche maniera cambiare questo stato di cose, ma non sono ancora riuscite a farlo. ecco che trovandosi in appunto in certi territori potendo trovarci, potenti trovarsi di persona, l&rsquo;energia che si crea e la possibilità di operare si moltiplica. Anche le cose fatte a video sono utili, le riunioni con Zoom o simili, sono utili per scambio di idee, anche per scambio di documenti sicuramente, ma la sinergia, la forza, l&rsquo;energia che nasce da un contatto diretto, dal fatto di trovarsi, di scambiare. Nessuno vieta poi di mantenere i propri rapporti, chiaramente ognuno ha le proprie tematiche in cui crede di più, ma poi potrà</p>
+    <p>scambiare, potrà collaborare, magari fare un gazebo o fare un volantino o collaborare per andare per qualsiasi cosa, anche tecnica o legale, che ci si possa presentare, qualche dubbio. Ecco che in questo modo la forza aumenta, aumenta di molto, anche solo il fatto di conoscersi. Poi sicuramente se arriviamo ad avere un punto di riferimento che vale per tanti, non per solo un&rsquo;associazione, ma per tante associazioni, per tante gruppe, per tante persone, anche singole, che magari stanno facendo dei percorsi diversi, ecco che tutto questo, tutto questo sicuramente ci dà la possibilità di agire con forza, ci dà la possibilità di raggiungere quel minimo di massa critica. non è sicuramente diciamo, questo è un mezzo e poi bisogna che le persone chiaramente inizino a crederci e effettivamente facciano</p>
+    <p>questo piccolo passo dell&rsquo;iscrizione che non comporta niente, non comporta nessuna spesa, un tempo minimo e solo un po&rsquo; una volontà che uno manifesta per dire provo a far qualcosa, non mi lamento solamente perché sappiamo che ci lamentiamo non una, ma forse tante volte durante il giorno, magari non lo diciamo, magari lo pensiamo, magari mandiamo solo un&rsquo;imprecazione, però ecco che a questo punto ci può essere secondo me la base per poter dire facciamo veramente un cambiamento, ecco, per arrivare a un cambiamento, poi sarà lento, sarà difficile, è una proposta, questa è una proposta, mi sembra un mezzo, chiaramente poi ognuno di voi ci penserà, mi sembra un mezzo semplice e un mezzo anche che possa essere convincente, poi appunto io ho passato nel movimento dove ci</p>
+    <p>si trovava e siamo andati avanti tanto tempo a incontrarci eccetera eccetera, voi sapete il Movimento 5 Stelle come è andata, però possiamo invece di pensare un partito in questo caso pensiamo ad altri modi per carità non è che parliamo di di voler fare un partito ma parliamo di moltiplicare la forza di tutte le azioni possibili anche magari localizzate possiamo dire va bene c&rsquo;è un problema a Torino ci muoviamo anche da altre province andiamo andiamo andiamo a manforte in qualche momento se c&rsquo;è la chiamata diciamo se vogliamo fare una riunione dove dove dove c&rsquo;è bisogno però soprattutto localmente possiamo veramente fare tantissime cose importanti e questo per adesso mi fermo qui e prossima volta magari possiamo andare a vedere un pochettino cosa consiste questa mappa come</p>
+    <p>si rappresenta come si può usare tutto appunto quello che uno può ottenere anche le associazioni anche le associazioni stesse potranno portare un loro messaggio che per i casi più importanti come per eventi per esempio organizzati possono arrivare non solo i loro soci ma anche ad altri quindi momenti particolari possono essere resi noti a tutti a tutti gli iscritti e avere l&rsquo;appoggio perché io sono convinto che molte ma molte iniziative possono avere il contributo di tutti perché chi cerca di cambiare questo sistema si focalizza o in una direzione o nell&rsquo;altra ma dentro di sé non vedo perché possa come dire non condividere azioni che vanno comunque con lo stesso obiettivo cioè quello di migliorare di portare di dare da poco o tanto una direzione un po&rsquo;</p>
+    <p>più democratica più giusta a questo nostro sistema attuale grazie</p>
+  </div>
+</details>
+</div>
+
+<p><em>Il video dura 15 minuti e 27 secondi ed &egrave; integrale: nessun taglio. I sottotitoli sono la trascrizione di quello che dice, parola per parola.</em></p>
+
+<p><em>I dati mostrati sullo schermo vengono dall&rsquo;archivio Eligendo del Ministero dell&rsquo;Interno e dal testo ufficiale della Costituzione pubblicato dalla Corte costituzionale.</em></p>
+"""
+
 ART = {
-  'slug'         : 'stabilicum-senato-settembre2026.html',
-  'autore'       : 'pa',
-  'data_iso'     : '2026-09-03',
-  'data_human'   : '3 settembre 2026',
-  'data_badge'   : '3 SETTEMBRE 2026',
+  'slug'         : 'mappa-cittadini-attivi-tandura.html',
+  'autore'       : 'tandura',
+  'data_iso'     : '2026-09-07',
+  'data_human'   : '7 settembre 2026',
+  'data_badge'   : '7 SETTEMBRE 2026',
   'lettura_min'  : 5,
-  'categoria_hero': '\u2696\uFE0F Riforma elettorale',
-  'og_image'     : 'images/stabilicum-preferenze-bocciate-14lug2026.jpg',
-  'h1'           : 'Stabilicum al Senato: 700 emendamenti e il nodo ballottaggio',
-  'sottotitolo'  : 'Il voto in commissione &egrave; cominciato, l\u2019Aula &egrave; attesa il 9 settembre e il voto finale il 15. La Lega dice no al secondo turno, Fratelli d\u2019Italia prende tempo. Che cosa si vota, chi sostiene che cosa, e che cosa cambierebbe per chi vota.',
-  'meta_desc'    : 'Stabilicum al Senato: quasi 700 emendamenti, Aula il 9 settembre, voto finale il 15. Il nodo ballottaggio, le preferenze coi capilista bloccati.',
-  'card_cat'     : 'RIFORMA ELETTORALE',
-  'card_title'   : 'Stabilicum al Senato: il nodo ballottaggio',
-  'card_desc'    : 'Quasi 700 emendamenti in commissione, Aula il 9 settembre e voto finale atteso il 15. La Lega dice no al secondo turno, FdI prende tempo. Le preferenze tornano ma con i capilista bloccati: a scegliere restano le segreterie.',
-  'ticker_emoji' : '\u2696\uFE0F',
-  'ticker_tema'  : 'RIFORMA ELETTORALE',
-  'ticker_testo' : 'Stabilicum al Senato: 700 emendamenti, Aula il 9 settembre e voto finale atteso il 15 &mdash; il nodo &egrave; il ballottaggio',
-  'body'         : BODY_STABILICUM_SENATO,
+  'categoria_hero': '\U0001F5FA\uFE0F Democrazia partecipativa',
+  'og_image'     : 'images/organigramma/daniele-tandura.webp',
+  'h1'           : 'Perch&eacute; serve una mappa dei cittadini attivi',
+  'sottotitolo'  : 'Non mancano i cittadini attivi: manca che si vedano. Daniele Tandura, membro del Direttivo, apre i sei appuntamenti di settembre sulla WebTV con un video di un quarto d\u2019ora.',
+  'meta_desc'    : 'Daniele Tandura spiega perch&eacute; serve una mappa dei cittadini attivi: 20 milioni di elettori non votano, e 50.000 firme da soli non si raggiungono.',
+  'card_cat'     : 'DEMOCRAZIA PARTECIPATIVA',
+  'card_title'   : 'Perch&eacute; serve una mappa dei cittadini attivi',
+  'card_desc'    : 'Le associazioni ci sono, ma non si vedono fra loro: cos\u00ec le 50.000 firme di una legge di iniziativa popolare restano irraggiungibili. Daniele Tandura apre i sei appuntamenti di settembre sulla WebTV.',
+  'ticker_emoji' : '\U0001F5FA\uFE0F',
+  'ticker_tema'  : 'WEBTV',
+  'ticker_testo' : 'Perch&eacute; serve una mappa dei cittadini attivi &mdash; Daniele Tandura apre i sei appuntamenti di settembre sulla WebTV',
+  'body'         : BODY_MAPPA_DANIELE,
 }
 
 # ===========================================================================
@@ -1395,8 +1490,10 @@ def build_articolo(a):
     html = re.sub(r'<link rel="canonical" href="[^"]*">', f"<link rel=\"canonical\" href=\"{U}{a['slug']}\">", html, 1)
     html = re.sub(r'<meta property="og:image" content="[^"]*">', f"<meta property=\"og:image\" content=\"{U}{a['og_image']}\">", html, 1)
     html = html.replace('</title>', '</title>' + f'<meta property="og:article:published_time" content="{a["data_iso"]}T00:00:00+02:00">', 1) if 'og:article:published_time' not in html else html
-    schema = {"@context":"https://schema.org","@type":"NewsArticle","headline":a['h1'],
-              "description":a['meta_desc'],"image":U+a['og_image'],"datePublished":a['data_iso'],
+    # 🟥 Nel JSON-LD ci vanno i caratteri veri: Google legge &eacute; alla lettera
+    #    (trappola pagata il 26/08/2026 su sette pagine, ripresa il 07/09/2026).
+    schema = {"@context":"https://schema.org","@type":"NewsArticle","headline":html_mod.unescape(a['h1']),
+              "description":html_mod.unescape(a['meta_desc']),"image":U+a['og_image'],"datePublished":a['data_iso'],
               "dateModified":a['data_iso'],
               "author":{"@type":"Person","@id":U+"organigramma.html#"+a['autore'],"name":nome,"jobTitle":ruolo,"url":U+"organigramma.html"},
               "publisher":{"@type":"Organization","name":"Partecipazione Attiva",
@@ -1409,8 +1506,8 @@ def build_articolo(a):
     brc_mid = a.get('card_cat') or 'Battaglie'
     breadcrumb = {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
         {"@type":"ListItem","position":1,"name":"Home","item":U},
-        {"@type":"ListItem","position":2,"name":brc_mid,"item":U+"battaglie.html"},
-        {"@type":"ListItem","position":3,"name":a['h1'],"item":U+a['slug']}]}
+        {"@type":"ListItem","position":2,"name":html_mod.unescape(brc_mid),"item":U+"battaglie.html"},
+        {"@type":"ListItem","position":3,"name":html_mod.unescape(a['h1']),"item":U+a['slug']}]}
     html = html.replace('</head>',
         '<script type="application/ld+json">'+json.dumps(breadcrumb, ensure_ascii=False)+'</script></head>', 1)
     brc_mid = a.get('card_cat') or 'Battaglie'
@@ -1576,8 +1673,10 @@ def main():
     print('OK ' + aggiorna_sitemap(a))
     print('OK ' + aggiorna_trascrizioni(a))
     print('OK ' + aggiorna_ricerca(a))
-    print('--- FATTO. Esegui il PUSH: include aggiorna_ticker.py che rigenera la barra da temi.json ---')
-    print('--- Nel push aggiungi anche: pagefind/ (indice di ricerca appena rigenerato) ---')
+    print('--- FATTO in locale. NON e\' ancora online. ---')
+    print('--- ORA: git status, poi MOSTRA a Fernando cosa andrebbe online e aspetta il suo "ok, pubblica". ---')
+    print('--- Il push si lancia SOLO dopo il suo ok (CLAUDE.md regola A). ---')
+    print('--- Quando lo lanci, aggiungi anche: pagefind/ (indice di ricerca appena rigenerato) ---')
 
 if __name__ == '__main__':
     main()

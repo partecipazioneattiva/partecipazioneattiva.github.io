@@ -1,6 +1,15 @@
 {
   "articoli": [
     {
+      "slug": "mappa-cittadini-attivi-tandura.html",
+      "titolo": "Perché serve una mappa dei cittadini attivi",
+      "tema": "🗺️ Democrazia partecipativa",
+      "tema_key": "democrazia partecipativa",
+      "data": "2026-09-07",
+      "img": "anteprima-mappa-tandura.jpg",
+      "sommario": "Daniele Tandura spiega perché serve una mappa dei cittadini attivi: 20 milioni di elettori non votano, e 50.000 firme da soli non si raggiungono."
+    },
+    {
       "slug": "stabilicum-senato-settembre2026.html",
       "titolo": "Stabilicum al Senato: 700 emendamenti e il nodo ballottaggio",
       "tema": "⚖️ Riforma elettorale",
