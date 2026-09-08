@@ -308,10 +308,21 @@ Fernando non ha competenze tecniche: una domanda tecnica non gli dà modo di
 rispondere, gli sposta addosso una decisione che è mia. Il calcolo costi/benefici
 lo faccio io.
 
-- **Le scelte tecniche le decido ed eseguo io**: commit, push, quale approccio,
+- **Le scelte tecniche le decido ed eseguo io**: commit, quale approccio,
   se fare una pulizia, come strutturare uno script. Mai "lo sistemo?", mai
-  "vuoi che committi?". Finito il lavoro: committo, pusho, e riferisco cosa ho
+  "vuoi che committi?". Finito il lavoro: committo e riferisco cosa ho
   fatto e cosa ho **verificato** (con la prova, non con un'impressione).
+
+  🟥 **ECCEZIONE `git push` — segnalata il 06/09/2026, DA SCIOGLIERE CON FERNANDO.**
+  Questa riga diceva anche «push» e «pusho». Ma `_MANUALI_CLAUDE/CLAUDE.md`
+  (26/08/2026) ordina l'opposto: *«git push — MAI in autonomia. Preparare tutto,
+  poi FERMARSI, mostrare a Fernando cosa sta per andare online e ATTENDERE il suo
+  "ok, pubblica"»*. **Due istruzioni di Fernando che si contraddicono.**
+  Finché non decide lui, vale **la più prudente**: si prepara tutto, si mostra,
+  si aspetta l'«ok, pubblica». Il push manda live un sito pubblico: fra due regole
+  in conflitto si sceglie quella che non può fare un danno irreversibile.
+  ⛔ Ricordare anche le **pagine congelate** (regola B dell'altro file):
+  `cavalleggeri-cielo-aperto.html`, `diritto-alla-casa.html`.
 - **Si chiede solo su risvolti legali o privacy**: dati personali degli iscritti,
   pubblicazione di nomi, contenuti che espongono il movimento.
 - Se una modifica è rischiosa, la rendo **reversibile** (branch, backup) invece di
