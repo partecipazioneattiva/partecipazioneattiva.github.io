@@ -1,12 +1,21 @@
 {
   "articoli": [
     {
+      "slug": "arte-del-dono-piva.html",
+      "titolo": "L’arte del dono: più lo regali, più aumenta",
+      "tema": "🎁 Economia del dono",
+      "tema_key": "economia del dono",
+      "data": "2026-09-08",
+      "img": "arte-del-dono-piva-anteprima.jpg",
+      "sommario": "Stefano Francesco Piva racconta l’economia del dono: il prezzo non misura il valore, e il tempo è l’unica moneta che nessuno può accumulare."
+    },
+    {
       "slug": "mappa-cittadini-attivi-tandura.html",
       "titolo": "Perché serve una mappa dei cittadini attivi",
       "tema": "🗺️ Democrazia partecipativa",
       "tema_key": "democrazia partecipativa",
       "data": "2026-09-07",
-      "img": "anteprima-mappa-tandura.jpg",
+      "img": "mappa-cittadini-attivi-tandura-anteprima.jpg",
       "sommario": "Daniele Tandura spiega perché serve una mappa dei cittadini attivi: 20 milioni di elettori non votano, e 50.000 firme da soli non si raggiungono."
     },
     {

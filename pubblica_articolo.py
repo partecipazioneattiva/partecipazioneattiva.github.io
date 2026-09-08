@@ -21,6 +21,7 @@ AUTORI = {
     'cristiano':('Antonio Cristiano','Direttivo','images/organigramma/antonio-cristiano.webp'),
     'mollica':  ('Amilcare Mollica','Consulente legale','images/organigramma/amilcare-mollica.webp'),
     'tandura':  ('Daniele Tandura','Direttivo','images/organigramma/daniele-tandura.webp'),
+    'piva':     ('Stefano Francesco Piva','Direttivo','images/organigramma/stefano-piva.webp'),
     'pa':       ('Partecipazione Attiva','Documento di posizione','LOGO-PA.webp'),
 }
 
@@ -1445,25 +1446,135 @@ BODY_MAPPA_DANIELE = r"""<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-widt
 <p><em>I dati mostrati sullo schermo vengono dall&rsquo;archivio Eligendo del Ministero dell&rsquo;Interno e dal testo ufficiale della Costituzione pubblicato dalla Corte costituzionale.</em></p>
 """
 
+BODY_ARTE_DEL_DONO = r"""<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-width:760px;margin:0 auto}.pa-yt button{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;position:relative;line-height:0}.pa-yt img,.pa-yt iframe{width:100%;aspect-ratio:16/9;height:auto;display:block;border:0;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}.pa-yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}.pa-yt-play svg{width:78px;height:78px}.pa-yt button:hover .pa-yt-play svg,.pa-yt button:focus .pa-yt-play svg{width:88px;height:88px}.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.85em;color:#9c5b00;margin-top:14px;text-align:center;font-weight:700;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5}.pa-trascr{margin:26px auto 0;max-width:760px;border:1px solid #f0e6d3;border-radius:12px;padding:12px 16px;background:#fffdf8}.pa-trascr summary{font-family:montserrat,sans-serif;font-weight:700;color:#8a4e00;cursor:pointer}.pa-trascr-testo{margin-top:12px;font-size:.95em;line-height:1.75}.pa-cta{display:block;max-width:420px;margin:30px auto;text-align:center;background:#e07b00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;padding:16px 22px;border-radius:12px;text-decoration:none}.pa-cta:hover{background:#c26a00}</style>
+<h2>Un&rsquo;economia che non parla di soldi</h2>
+
+<p>C&rsquo;&egrave; una parola che, appena la si sente, fa venire voglia di cambiare canale: <em>economia</em>. Bollette, mutui, tasse, inflazione. E ce n&rsquo;&egrave; un&rsquo;altra che invece rimanda dritti al regalo di Natale: <em>dono</em>. Metterle insieme sembra una provocazione.</p>
+
+<p><strong>Stefano Francesco Piva</strong>, membro del Direttivo di Partecipazione Attiva, parte proprio da l&igrave;, e mette in conto la reazione: &laquo;qualcuno penser&agrave;: ma questo &egrave; impazzito, ci vuole parlare di economia senza parlare di soldi&raquo;. &Egrave; il secondo dei sei appuntamenti di settembre sulla WebTV, dopo la Mappa di Daniele Tandura, e dura venticinque minuti.</p>
+
+<div class="pa-fig">
+<div class="pa-yt" id="ytdono">
+<button type="button" onclick="var d=document.getElementById('ytdono');d.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/ZjrY_KET5PA?autoplay=1&amp;rel=0\' title=\'L’arte del dono, con Stefano Francesco Piva\' frameborder=\'0\' allow=\'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture\' allowfullscreen></iframe>';return false;" aria-label="Guarda il video: L&rsquo;arte del dono, con Stefano Francesco Piva">
+<img src="images/dono-piva-poster.jpg" alt="L&rsquo;arte del dono &mdash; pi&ugrave; lo regali, pi&ugrave; aumenta, con Stefano Francesco Piva" width="1280" height="720" loading="lazy">
+<span class="pa-yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.55)"/><path d="M9.5 7.5v9l7-4.5z" fill="#fff"/></svg></span>
+</button>
+</div>
+<figcaption>L&rsquo;arte del dono &mdash; pi&ugrave; lo regali, pi&ugrave; aumenta, con Stefano Francesco Piva. Video integrale, 25 minuti e 35 secondi. Il filmato parte solo se lo apri tu.</figcaption>
+<details class="pa-trascr">
+  <summary>Trascrizione del video</summary>
+  <div class="pa-trascr-testo">
+    <p>Oggi voglio parlarvi dell'economia del dono, ovvero come cambiare il mondo senza aspettare che lo facciano altri. Voglio farlo in modo semplice, talmente semplice che probabilmente qualcuno penserà, ma questo è impazzito, ci vuole parlare di economia senza parlare di soldi. Ebbene sì. Oggi parliamo di economia del dono e già qui abbiamo un problema, perché quando sentiamo la parola economia, normalmente pensiamo ai soldi, banche, bollette, mutui, tasse, stipendi, inflazione e via discorrendo, insomma tutto quello che ci fa venire voglia di spegnere la televisione. Quando invece sentiamo la parola dono, pensiamo al regalo di Natale, il problema è che il regalo di Natale spesso funziona così, ti ho fatto un regalo, grazie, quanto hai speso e abbiamo già distrutto il concetto di dono, perché? Perché il vero dono non dovrebbe essere, io ti do qualcosa e tu mi devi qualcosa. Quello non è un dono, quello è un investimento e infatti il commercialista del dono potrebbe dire, bene ho dato 50 euro, quando prevediamo il ritorno? In definitiva cos'è l'economia del dono? Partiamo dalla domanda più semplice, è un modo diverso di guardare alle relazioni tra le persone, l'economia tradizionale ci insegna soprattutto una cosa, io ti do qualcosa, se tu mi dai qualcosa in cambio, io lavoro, tu mi paghi, io compro, tu vendi, io ti faccio un servizio, tu mi dai del denaro e lo scambio. Ed è una cosa fondamentale, il problema nasce quando pensiamo che tutto debba funzionare attraverso lo scambio.</p>
+    <p>Perché nella vita reale non funziona così? Pensiamo alla famiglia. Una mamma prepara la cena. Quanto deve ricevere? Un bonifico? Un buono pasto? La tredicesima? E quando un padre accompagna il figlio a scuola? Fattura elettronica? E quando un amico ti aiuta a traslocare?</p>
+    <p>Ti mando regolare ricevuta? No! Esistono tantissime cose che facciamo semplicemente perché riconosciamo un bisogno e decidiamo di contribuire. Questa è una delle basi dell'economia del dono. Donare non significa essere fessi. E qui arriva una precisazione importante. Perché qualcuno potrebbe pensare Ah, quindi l'economia del dono significa dare tutto a tutti. No, assolutamente no. Perché il dono non significa essere ingenuo. Non significa venite tutti.</p>
+    <p>Prendetevi casa, macchina, pensione e anche frigorifero. Quello non è un dono. Quello è diventare un bancomat dell'umanità. Il dono significa mettere a disposizione qualcosa che possiedo. Tempo, conoscenza, esperienza, attenzione, capacità, oggetti, risorse, relazioni. E soprattutto significa farlo senza pretendere automaticamente un ritorno equivalente. Il dono è già intorno a noi. La cosa interessante è che l'economia del dono non dobbiamo inventarla. Esiste già. Pensate al volontariato.</p>
+    <p>Una persona dedica due ore del proprio tempo a qualcun altro. Non riceve uno stipendio. ma riceve qualcosa di diverso, relazione, riconoscimento, soddisfazione, senso di utilità. Pensiamo alle associazioni, pensiamo alle persone che insegnano gratuitamente qualcosa. Pensiamo al vicino che si presta un attrezzo ad ipotesi. Pensiamo a quello che ci aiuta con il computer e soprattutto pensiamo a una cosa che oggi sembra quasi rivoluzionaria. Condividere una conoscenza senza chiedere soldi, perché abbiamo sviluppato una strana mentalità e se so qualcosa che tu non sai, posso vendertela. L'economia del dono dice, se so qualcosa che può aiutarti, posso anche insegnartela. E attenzione, non significa che tutto debba essere gratuito. Significa che non tutto deve essere necessariamente avere un prezzo.</p>
+    <p>Il prezzo non misura il valore. Questo è un punto fondamentale. Abbiamo confuso due parole. Prezzo e valore. Il prezzo è quanto paghi. Il valore è quanto quella cosa significa per te. Una telefonata fatta da una persona sola può costare zero euro, ma per quella persona può valere tantissimo. Un consiglio dato al momento giusto può non avere prezzo. Una parola di incoraggiamento può cambiare una giornata. Un'ora passata ad ascoltare qualcuno può valere più di un regalo.</p>
+    <p>Quindi dobbiamo ricordarci, non tutto ciò che ha valore ha necessariamente un prezzo e forse non tutto ciò che ha un prezzo ha necessariamente valore. Questa è una cosa che dovremmo scrivere sul frigorifero, possibilmente accanto alla lista della spesa. Il dono crea relazioni. C'è poi un altro aspetto molto importante. Lo scambio economico normalmente chiude una relazione. Io ti vendo qualcosa, tu mi paghi. Fine. Nel dono succede qualcosa di diverso. Il dono può creare una relazione. Io faccio qualcosa per te, domani magari tu farai qualcosa per qualcun altro, non necessariamente per me.</p>
+    <p>Ed ecco la differenza. No, no, io do a te, tu dai a me. Ma io do a te un giorno, tu potrai dare a qualcun altro. È una specie di catena, ma una catena particolare. Non serve a tenere prigioniero qualcuno. Serve a collegare le persone. Il paradosso del dono. Ed eccoci al paradosso. Se io dono qualcosa senza pretendere nulla, come faccio a non essere sfruttato? La risposta è il dono ha bisogno di reciprocità, ma non necessariamente di restituzione.</p>
+    <p>Sono due cose completamente diverse. La restituzione dice tu dai, hai dato 10, quindi io voglio indietro 20. Tu hai dato 30, io non voglio. niente indietro perché tu hai solo l'obbligo di aiutare qualcun altro questo crea fiducia. La fiducia, signori, oggi è una delle risorse economiche più importanti il tempo è una moneta prova a fare un esperimento immaginiamo che domani venga una nuova moneta non si chiama euro si chiama ora una ora vale una ora tutti ne riceviamo 24 al giorno ricchi e poveri presidente e pensionato manager e studente nessuno può comprarne 48 nessuno può accumularne 500 e soprattutto quello che non usiamo oggi domani non ce la restituisce nessuno quindi il tempo è probabilmente la nostra risorsa più democratica eppure spesso lo trattiamo come se non valesse nulla ti aiuto 5 minuti non importa ti spiego una cosa non importa ti ascolto non importa invece importa perché stiamo regalando una parte della nostra vita e forse il dono più grande che possiamo fare non è il denaro è proprio il nostro tempo l'economia del dono non è contro il denaro qui voglio essere molto chiaro l'economia del dono non significa che il denaro è cattivo no assolutamente il denaro è uno strumento come un martello con un martello puoi costruire una casa oppure puoi rompere una finestra dipende da come lo usi il problema non è il denaro il problema è quando il denaro diventa l'unico criterio con cui misuriamo tutto quanto vale una persona quanto guadagna quanto produce quanto possiede quanti follower E magari ci dimentichiamo di chiederci quanto bene produce, quante persone ha aiutato, quante relazioni ha costruito, quanto ha contribuito alla comunità. La società del mio. Viviamo in una società che ci ha insegnato molto bene una parola. Mio. La mia casa, la mia macchina, il mio lavoro, il mio telefono, il mio successo, il mio gruppo, la mia idea, il mio partito e perfino, questo l'ho detto prima io, Siamo diventati proprietari persino delle idee. L'economia del dono propone una parola diversa.</p>
+    <p>Nostro. Non significa eliminare il mio. Significa ricordarsi che viviamo dentro qualcosa di più grande, una comunità, un territorio, una società, un ambiente, una rete di persone e che moltissime cose che abbiamo non le abbiamo costruite da soli. Nessuno si è fatto da solo. Questa frase, secondo me, merita attenzione. Nessuno si è fatto da solo. Anche chi ha raggiunto grandi risultati ha ricevuto qualcosa dagli altri. Qualcuno gli ha insegnato. Qualcuno gli ha dato fiducia. Qualcuno gli ha dato una opportunità.</p>
+    <p>Qualcuno lo ha aiutato quando era in difficoltà. Qualcuno gli ha trasmesso conoscenze. Quindi quando diciamo ho fatto tutto da solo, forse da meno con un piccolo aiuto da parte dell'umanità, per esempio, Perché siamo tutti debitori di qualcuno. La differenza è che alcuni lo riconoscono, altri no. Adesso analizziamo un altro discorso, cioè dal consumatore al contributore. E qui arriviamo a un cambiamento interessante. Siamo stati educati a essere soprattutto consumatori. Compro, utilizzo, consumo, butto, ricompro e ricominciamo. L'economia del dono ci propone di diventare anche contributori. Non solo.</p>
+    <p>Che cosa posso ottenere? Ma che cosa posso mettere a disposizione? Questa è una domanda rivoluzionaria. Perché cambia completamente il nostro ruolo. Da consumatore a partecipante, da spettatore a protagonista, da cliente a cittadino. Il dono delle competenze. Ognuno di noi possiede qualcosa che qualcun altro non possiede. C'è chi sa cucinare, chi sa aggiustare una bicicletta, chi sa usare il computer, chi sa ascoltare, chi sa organizzare, chi sa parlare, chi sa insegnare. Chi sa fare ridere. E anche quest'ultima competenza è importante.</p>
+    <p>Perché in una società che produce ansia, una persona è capace di far ridere gli altri. È quasi un servizio pubblico. Il problema è che spesso pensiamo, ma io non ho niente da dare. Non è vero. Abbiamo tutti qualcosa. Bisogna solo smettere di pensare che per essere utili devi essere un esperto mondiale, olimpionico. A volte basta sapere una cosa in più della persona che hai davanti. L'economia del dono è la comunità. Immaginiamo un quartiere, c'è una persona anziana che vive da sola, c'è un ragazzo che cerca lavoro, c'è una signora che sa cucinare, c'è un pensionato che sa riparare elettrodomestici, c'è un giovane che sa usare internet, c'è una persona che ha un orto, c'è qualcuno che ha tempo. Se tutte queste persone si mettono in relazione abbiamo creato una piccola economia, non necessariamente fatta di denaro, fatta di scambio, di capacità, di tempo e fiducia.</p>
+    <p>Ed ecco che la comunità diventa una specie di grande famiglia, non una famiglia perfetta, perché nelle famiglie come sappiamo ogni tanto volano anche piatti, ma una comunità nella quale le persone non sono soltanto utenti, sono risorse reciproche. Il dono non è solo dare. Attenzione però, c'è un altro errore, pensare che donare significhi sempre dare. Non è così. A volte il dono più grande è ricevere. Sì, perché alcune persone non riescono a chiedere aiuto, pensano, devo farsela da solo e quindi rifiutano il dono. Ma quando permettiamo a qualcuno di aiutarsi, gli stiamo dando una possibilità, gli permettiamo di sentirsi utili. Quindi anche dire, ho bisogno di te, può essere un dono. E questa è una delle cose più difficili da imparare. L'economia del dono comincia da noi.</p>
+    <p>A questo punto qualcuno mi potrebbe dire, bellissimo tutto questo, ma come facciamo concretamente? Sì. La risposta per me è semplice. Cominciamo da noi. Non aspettiamo il governo, il comune, l'Europa, la banca, il vicino, il partito, il sindacato, oppure l'associazione, il gruppo WhatsApp. Perché abbiamo già abbastanza gruppi WhatsApp che aspettano che qualcuno faccia qualcosa. Il cambiamento comincia quando una persona decide, io oggi posso fare qualcosa. Faccio un esempio, cinque piccoli doni. Vi propongo cinque cose molto semplici. Primo, donate tempo.</p>
+    <p>Un'ora alla settimana a qualcuno, a una persona, a un'associazione, a un progetto, non importa. Un'ora. Secondo, donate conoscenza. Sapete fare qualcosa? Non tenete tutto dentro, la testa, come se fosse un conto corrente svizzero. Terzo, donate ascolto. Ogni tanto, spegnete il telefono. Guardate una persona negli occhi e ascoltatela. Sembra facile. È diventata un'arte.</p>
+    <p>Quarto, non donate opportunità. Conoscete qualcuno che cerca lavoro? Qualcuno che ha una competenza? Qualcuno che ha bisogno di essere presentato? Fate una telefonata. A volte, una telefonata vale più di cento curriculum. Quinto, donate fiducia. È forse il dono più difficile. Dire a qualcuno, credo che tu possa farcela. può cambiare la vita di una persona e adesso arriva la parte ironica perché a me piace perché qualcuno potrebbe dire va bene Stefano bellissimo ma io ho già i miei problemi devo pagare le bollette devo fare la spesa o il mutuo o il dentista o il meccanico e tu mi vieni a parlare del dono e io rispondo proprio per questo perché l'economia del dono non nasce quando abbiamo tutto nasce quando capiamo che possiamo contribuire anche con poco non serve essere non se avere un conto corrente enorme non serve avere tre case a volte basta avere un'ora un'idea una competenza un sorriso una telefonata questa è la vera ricchezza forse dobbiamo quindi cambiare anche il concetto di ricchezza essere ricchi non significa soltanto avere molto può significare avere qualcuno da chiamare avere qualcuno che ti chiama avere una competenza da condividere avere tempo per qualcuno avere una comunità alla quale appartenere perché possiamo avere un conto corrente pieno e un'erbucca telefonica vuoto e quella si che è povertà l'economia del dono per me è il futuro e allora arriviamo alla domanda finale perché oggi dobbiamo parlare di economia del dono perché viviamo in una società sempre più tecnologica l'intelligenza artificiale cresce i robot lavorano le macchine fanno sempre più cose la produttività aumenta ma c'è una cosa che nessuna macchina può sostituire completamente.</p>
+    <p>La relazione umana. Un algoritmo mi può suggerire una canzone, ma non può sapere davvero perché quella canzone ti ricorda tuo padre. Un'intelligenza artificiale può scrivere una frase, ma una persona può guardarti negli occhi mentre ti dice non sei solo ed è tutta un'altra cosa dall'io al noi. Per me quindi l'economia del dono è soprattutto un passaggio dal io cosa ci guadagno al cosa possiamo costruire insieme, dal è un problema tuo, al vediamo se possiamo lavorare insieme. Quanto vale? Quanto può essere utile? Questa è la mia risposta. Dal cosa mi dai? Al cosa posso dare? E attenzione!</p>
+    <p>Non dobbiamo diventare santi. Non dobbiamo trasformarci tutti in madre Teresa di Calcutta. Possiamo continuare a lamentarci. È un diritto costituzionale e non scritto dell'italiano. Non possiamo continuare. Possiamo continuare ad arrabbiarsi. Possiamo continuare a discutere. Possiamo anche essere egoisti qualche volta. L'importante è non trasformare l'egoismo nell'unica regola della nostra vita. Il dono come scelta personale.</p>
+    <p>E arriviamo a questo punto centrale per me. L'economia del dono non è soltanto un modello economico. È, prima di tutto, una scelta personale. Non posso obbligare qualcuno a donare, perché se lo obbligo non è più un dono. Posso però decidere io, posso cominciare io, posso dare il buon esempio e magari qualcun altro vedendomi farà lo stesso e qualcun altro ancora e piano piano si crea una rete, non perché qualcuno l'ha ordinato, ma perché qualcuno ha cominciato la domanda che dobbiamo farci, io per primo. Allora vi propongo una piccola sfida. Questa sera invece di chiedervi che cosa mi manca, provate a chiedervi che cosa ho che posso donare. Non necessariamente soldi, magari avete tempo, avete esperienza, avete una stanza che non usate, magari avete un libro, magari avete una competenza, magari avete una rete di contatti, magari avete semplicemente la capacità di ascoltare e se non avete niente, avete sicuramente una cosa, la possibilità di iniziare. Vorrei concludere con un'immagine. Immaginate una società nella quale una persona, almeno una volta, faccia qualcosa per qualcun altro, senza chiedere. Io cosa ci guadagno? Immaginate migliaia di persone che mettono a disposizione un'ora, un'idea, una competenza, una relazione, un aiuto, un sorriso. Non risolveremo tutti i problemi del mondo, però probabilmente avremo un mondo un po' meno freddo e forse è proprio questo il punto. L'economia del dono non vuole eliminare il mercato, non vuole eliminare il denaro, non vuole eliminare il profitto, vuole ricordarsi che la società è qualcosa di più grande del mercato, che una persona vale più del suo conto corrente. che una relazione vale più di una transazione che una comunità vale più della somma dei suoi singoli interessi e soprattutto che nessuno di noi vive veramente da solo perché alla fine tutti riceviamo qualcosa e tutti abbiamo qualcosa da dare quindi forse la domanda non è quanto posso guadagnare la domanda potrebbe essere quanto posso contribuire e magari il proprio momento lo facciamo scopriamo una cosa curiosa che donare non ci rende più poveri spesso ci rende più ricchi di relazioni di fiducia di senso e di umanità e allora possiamo chiudere con una frase molto semplice. Non dobbiamo aspettare che cambi il mondo: possiamo cominciare cambiando il modo in cui noi ci comportiamo una persona alla volta un gesto alla volta un dono alla volta perché il dono alla fine non è quello che esce dalle nostre mani e quello che rimane tra le persone grazie a te che mi hai ascoltato e spero di averti dato qualcosa di importante</p>
+  </div>
+</details>
+</div>
+
+<h2>Il dono non &egrave; un investimento</h2>
+
+<p>Il primo equivoco, dice Piva, sta nel regalo che si fa aspettandosi qualcosa in cambio.</p>
+
+<blockquote><p>&laquo;Il vero dono non dovrebbe essere: io ti do qualcosa e tu mi devi qualcosa. Quello non &egrave; un dono, quello &egrave; un investimento.&raquo;</p></blockquote>
+
+<p>Per far vedere dove porta l&rsquo;equivoco inventa una figura: il <em>commercialista del dono</em>, quello che tiene i conti e a un certo punto chiede &laquo;bene, ho dato 50 euro: quando prevediamo il ritorno?&raquo;.</p>
+
+<p>La prova che il conto non torna, per&ograve;, ce l&rsquo;abbiamo tutti in casa. Una mamma prepara la cena: quanto deve ricevere? Un bonifico, un buono pasto, la tredicesima? Un padre accompagna il figlio a scuola: fattura elettronica? Un amico ti aiuta a traslocare: regolare ricevuta?</p>
+
+<h2>Donare non significa essere fessi</h2>
+
+<p>Qui arriva la precisazione che tiene in piedi il resto, e Piva la mette per primo, prima che la faccia qualcun altro.</p>
+
+<blockquote><p>&laquo;Non significa: venite tutti, prendetevi casa, macchina, pensione e anche frigorifero. Quello non &egrave; un dono, quello &egrave; diventare un bancomat dell&rsquo;umanit&agrave;.&raquo;</p></blockquote>
+
+<p>La distinzione che regge tutto sta in due parole che sembrano sinonimi e non lo sono: <strong>reciprocit&agrave;</strong> e <strong>restituzione</strong>. La restituzione tiene il conto &mdash; hai dato dieci, rivoglio venti. La reciprocit&agrave; no: chi riceve non deve niente a chi ha dato, ha solo l&rsquo;obbligo di aiutare qualcun altro. Non &egrave; una catena che tiene prigionieri: &egrave; una catena che collega.</p>
+
+<h2>Il prezzo non misura il valore</h2>
+
+<p>Il passaggio centrale sono due parole che abbiamo confuso.</p>
+
+<blockquote><p>&laquo;Il prezzo &egrave; quanto paghi. Il valore &egrave; quanto quella cosa significa per te.&raquo;</p></blockquote>
+
+<p>Una telefonata a una persona sola pu&ograve; costare zero euro e valere tantissimo. Un consiglio dato al momento giusto pu&ograve; non avere prezzo. Da cui la frase che, dice lui, andrebbe scritta sul frigorifero accanto alla lista della spesa: <strong>non tutto ci&ograve; che ha valore ha necessariamente un prezzo, e forse non tutto ci&ograve; che ha un prezzo ha necessariamente valore</strong>.</p>
+
+<h2>Una moneta che non si chiama euro</h2>
+
+<p>C&rsquo;&egrave; un esperimento, nel video, che vale da solo il quarto d&rsquo;ora. Immaginate che domani arrivi una moneta nuova. Non si chiama euro: si chiama <em>ora</em>. Un&rsquo;ora vale un&rsquo;ora. Ne riceviamo ventiquattro al giorno tutti quanti: ricchi e poveri, presidente e pensionato, manager e studente.</p>
+
+<blockquote><p>&laquo;Nessuno pu&ograve; comprarne 48. Nessuno pu&ograve; accumularne 500. E quello che non usiamo oggi, domani non ce lo restituisce nessuno.&raquo;</p></blockquote>
+
+<p>&Egrave; la nostra risorsa pi&ugrave; democratica, dice, e la trattiamo come se non valesse nulla: <em>ti aiuto cinque minuti, non importa</em>. Invece importa, perch&eacute; quello che stiamo regalando &egrave; un pezzo della nostra vita.</p>
+
+<h2>E il denaro?</h2>
+
+<p>Su questo Piva &egrave; netto: l&rsquo;economia del dono non &egrave; contro il denaro. Il denaro &egrave; uno strumento, come un martello &mdash; con un martello puoi costruire una casa o rompere una finestra. Il problema comincia quando diventa <strong>l&rsquo;unico criterio con cui misuriamo tutto</strong>: quanto guadagna, quanto produce, quanto possiede, quanti follower. E ci dimentichiamo di chiedere quante persone ha aiutato, quante relazioni ha costruito.</p>
+
+<h2>Cinque cose da donare</h2>
+
+<p>La parte pratica sta in cinque proposte, tutte alla portata di chiunque:</p>
+
+<ul>
+<li><strong>tempo</strong> &mdash; un&rsquo;ora alla settimana, a una persona, a un&rsquo;associazione, a un progetto</li>
+<li><strong>conoscenza</strong> &mdash; se sapete fare qualcosa, insegnatela, invece di tenerla dentro come un conto corrente svizzero</li>
+<li><strong>ascolto</strong> &mdash; spegnere il telefono e guardare una persona negli occhi: sembra facile, &egrave; diventata un&rsquo;arte</li>
+<li><strong>opportunit&agrave;</strong> &mdash; una telefonata per chi cerca lavoro vale a volte pi&ugrave; di cento curriculum</li>
+<li><strong>fiducia</strong> &mdash; dire a qualcuno &laquo;credo che tu possa farcela&raquo; pu&ograve; cambiargli la vita</li>
+</ul>
+
+<h2>Perch&eacute; proprio adesso</h2>
+
+<p>La domanda finale &egrave; perch&eacute; parlarne oggi, mentre l&rsquo;intelligenza artificiale cresce, i robot lavorano e la produttivit&agrave; aumenta.</p>
+
+<blockquote><p>&laquo;C&rsquo;&egrave; una cosa che nessuna macchina pu&ograve; sostituire: la relazione umana. Un algoritmo mi pu&ograve; suggerire una canzone, ma non pu&ograve; sapere davvero perch&eacute; quella canzone ti ricorda tuo padre.&raquo;</p></blockquote>
+
+<p>E la povert&agrave; che gli sta pi&ugrave; a cuore non si misura in euro: <strong>si pu&ograve; avere un conto corrente pieno e una rubrica telefonica vuota</strong>.</p>
+
+<p>Non &egrave; un programma politico e non pretende di esserlo. &Egrave; una scelta personale, e Piva lo dice apertamente: nessuno pu&ograve; essere obbligato a donare, perch&eacute; un dono obbligato non &egrave; pi&ugrave; un dono. Si pu&ograve; solo cominciare, e vedere se qualcun altro fa lo stesso.</p>
+
+<blockquote><p>&laquo;Il dono, alla fine, non &egrave; quello che esce dalle nostre mani: &egrave; quello che rimane tra le persone.&raquo;</p></blockquote>
+
+<p><em>Il video dura 25 minuti e 35 secondi ed &egrave; integrale: nessun taglio. I sottotitoli sono la trascrizione di quello che dice, parola per parola.</em></p>
+
+<p><em>Le considerazioni riportate in questa pagina sono di Stefano Francesco Piva, membro del Direttivo. Partecipazione Attiva le pubblica come contributo al dibattito, non come documento di posizione del movimento.</em></p>
+"""
+
+
 ART = {
-  'slug'         : 'mappa-cittadini-attivi-tandura.html',
-  'autore'       : 'tandura',
-  'data_iso'     : '2026-09-07',
-  'data_human'   : '7 settembre 2026',
-  'data_badge'   : '7 SETTEMBRE 2026',
+  'slug'         : 'arte-del-dono-piva.html',
+  'autore'       : 'piva',
+  'data_iso'     : '2026-09-08',
+  'data_human'   : '8 settembre 2026',
+  'data_badge'   : '8 SETTEMBRE 2026',
   'lettura_min'  : 5,
-  'categoria_hero': '\U0001F5FA\uFE0F Democrazia partecipativa',
-  'og_image'     : 'images/organigramma/daniele-tandura.webp',
-  'h1'           : 'Perch&eacute; serve una mappa dei cittadini attivi',
-  'sottotitolo'  : 'Non mancano i cittadini attivi: manca che si vedano. Daniele Tandura, membro del Direttivo, apre i sei appuntamenti di settembre sulla WebTV con un video di un quarto d\u2019ora.',
-  'meta_desc'    : 'Daniele Tandura spiega perch&eacute; serve una mappa dei cittadini attivi: 20 milioni di elettori non votano, e 50.000 firme da soli non si raggiungono.',
-  'card_cat'     : 'DEMOCRAZIA PARTECIPATIVA',
-  'card_title'   : 'Perch&eacute; serve una mappa dei cittadini attivi',
-  'card_desc'    : 'Le associazioni ci sono, ma non si vedono fra loro: cos\u00ec le 50.000 firme di una legge di iniziativa popolare restano irraggiungibili. Daniele Tandura apre i sei appuntamenti di settembre sulla WebTV.',
-  'ticker_emoji' : '\U0001F5FA\uFE0F',
+  'categoria_hero': '\U0001F381 Economia del dono',
+  'og_image'     : 'images/organigramma/stefano-piva.webp',
+  'h1'           : 'L\u2019arte del dono: pi&ugrave; lo regali, pi&ugrave; aumenta',
+  'sottotitolo'  : 'Stefano Francesco Piva, membro del Direttivo, prova a parlare di economia senza parlare di soldi. Venticinque minuti sulla WebTV, il secondo dei sei appuntamenti di settembre.',
+  'meta_desc'    : 'Stefano Francesco Piva racconta l\u2019economia del dono: il prezzo non misura il valore, e il tempo &egrave; l\u2019unica moneta che nessuno pu&ograve; accumulare.',
+  'card_cat'     : 'ECONOMIA DEL DONO',
+  'card_title'   : 'L\u2019arte del dono: pi&ugrave; lo regali, pi&ugrave; aumenta',
+  'card_desc'    : 'Il prezzo &egrave; quanto paghi, il valore &egrave; quanto quella cosa significa per te. Stefano Francesco Piva parla di economia senza parlare di soldi, nel secondo dei sei appuntamenti di settembre sulla WebTV.',
+  'ticker_emoji' : '\U0001F381',
   'ticker_tema'  : 'WEBTV',
-  'ticker_testo' : 'Perch&eacute; serve una mappa dei cittadini attivi &mdash; Daniele Tandura apre i sei appuntamenti di settembre sulla WebTV',
-  'body'         : BODY_MAPPA_DANIELE,
+  'ticker_testo' : 'L\u2019arte del dono &mdash; Stefano Francesco Piva sulla WebTV: il prezzo non misura il valore',
+  'body'         : BODY_ARTE_DEL_DONO,
 }
 
 # ===========================================================================
