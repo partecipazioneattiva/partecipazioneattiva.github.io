@@ -1455,7 +1455,7 @@ BODY_ARTE_DEL_DONO = r"""<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-widt
 
 <div class="pa-fig">
 <div class="pa-yt" id="ytdono">
-<button type="button" onclick="var d=document.getElementById('ytdono');d.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/ZjrY_KET5PA?autoplay=1&amp;rel=0\' title=\'L’arte del dono, con Stefano Francesco Piva\' frameborder=\'0\' allow=\'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture\' allowfullscreen></iframe>';return false;" aria-label="Guarda il video: L&rsquo;arte del dono, con Stefano Francesco Piva">
+<button type="button" onclick="var d=document.getElementById('ytdono');d.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/1o0GrBV_OZE?autoplay=1&amp;rel=0\' title=\'L’arte del dono, con Stefano Francesco Piva\' frameborder=\'0\' allow=\'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture\' allowfullscreen></iframe>';return false;" aria-label="Guarda il video: L&rsquo;arte del dono, con Stefano Francesco Piva">
 <img src="images/dono-piva-poster.jpg" alt="L&rsquo;arte del dono &mdash; pi&ugrave; lo regali, pi&ugrave; aumenta, con Stefano Francesco Piva" width="1280" height="720" loading="lazy">
 <span class="pa-yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.55)"/><path d="M9.5 7.5v9l7-4.5z" fill="#fff"/></svg></span>
 </button>
