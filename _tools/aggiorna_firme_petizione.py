@@ -201,7 +201,21 @@ def main():
     if traguardo_prima != obiettivo:
         messaggio += f' (traguardo spostato da {traguardo_prima} a {obiettivo})'
     subprocess.run(['git', 'commit', '-q', '-m', messaggio], check=True)
-    subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
+
+    # Dal 9/09/2026 anche l'appello "Fuori l'Italia dalla guerra" ha un cron
+    # gemello (ogni 5 minuti) che tocca la stessa index.html: un push respinto
+    # per corsa non e' piu' un caso raro. index.html e' minificata su una riga
+    # sola, quindi un rebase puo' non risolversi da solo se la corsa ha toccato
+    # la stessa riga: in quel caso si abbandona e si lascia perdere questo
+    # giro, il prossimo (fra dieci minuti) riparte da capo.
+    esito = subprocess.run(['git', 'push', '-q', 'origin', 'main'])
+    if esito.returncode != 0:
+        print('  · push respinto (probabile corsa con un altro aggiornamento), riprovo con rebase')
+        rb = subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'])
+        if rb.returncode != 0:
+            subprocess.run(['git', 'rebase', '--abort'])
+            stop('corsa con un altro aggiornamento: conflitto sulla home, riprovo al prossimo giro')
+        subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
     print('  ✅ pubblicato')
 
 

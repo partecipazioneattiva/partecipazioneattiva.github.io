@@ -6,16 +6,14 @@
 # repository che pubblica solo se il numero e' davvero cambiato e si ferma
 # invece di indovinare.
 #
-# Qui il traguardo non si sposta (non c'e' un obiettivo dichiarato come su
-# Change.org): e' solo un contatore che cresce. Ogni 30 minuti basta.
-#
 # 9 settembre 2026 — chiesto da Fernando: lo stesso aggiornamento costante
-# gia' attivo per la petizione Calabria, anche per questo appello.
+# gia' attivo per la petizione Calabria, anche per questo appello. Prima ogni
+# 30 minuti, poi Fernando ha chiesto ogni 5 (stesso giorno).
 name: Firme fuori l'Italia dalla guerra
 
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
 
 concurrency:

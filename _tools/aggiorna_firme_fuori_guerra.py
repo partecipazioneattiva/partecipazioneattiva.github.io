@@ -2,9 +2,11 @@
 """Riallinea il numero di adesioni all'appello "Fuori l'Italia dalla guerra".
 
 Legge il numero vero dall'API del sito (fuorilitaliadallaguerra.org) e lo
-riscrive nell'articolo, in due posti:
-  · nel paragrafo «Di cosa si tratta»: «N adesioni»;
-  · nel riquadro «I numeri al ...»: «Adesioni indicate sul sito: N» e la data.
+riscrive in tre posti:
+  · nell'articolo, paragrafo «Di cosa si tratta»: «N adesioni»;
+  · nell'articolo, riquadro «I numeri al ...»: «Adesioni indicate sul sito: N»
+    e la data;
+  · nella home, la card dell'appello: «Oltre N adesioni finora».
 
 COME SI CALCOLA IL NUMERO. Il sito non mostra un contatore ottenuto da
 un'unica fonte: la home somma due cose, come si legge nel suo stesso codice
@@ -36,13 +38,12 @@ dell'ultimo valore scritto nell'articolo), il programma non tocca niente.
     python3 _tools/aggiorna_firme_fuori_guerra.py            # aggiorna e pubblica
     python3 _tools/aggiorna_firme_fuori_guerra.py --prova     # dice e basta
 
-⛔ Aggiunge al commit **solo il file che tocca**, mai `git add -A`.
+⛔ Aggiunge al commit **solo i due file che tocca**, mai `git add -A`.
 
 Nato il 9 settembre 2026 su richiesta di Fernando: lo stesso aggiornamento
 costante gia' attivo per la petizione sanita' Calabria, anche per questo
-appello. Gira ogni 30 minuti sui server di GitHub (piu' diradato della
-Calabria: qui il traguardo non si sposta, e' solo un contatore che cresce),
-vedi `.github/workflows/firme-fuori-guerra.yml`.
+appello. Gira ogni 5 minuti sui server di GitHub (a richiesta di Fernando,
+9/09/2026), vedi `.github/workflows/firme-fuori-guerra.yml`.
 """
 import argparse
 import json
@@ -55,6 +56,7 @@ from datetime import datetime
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGINA = 'fuori-italia-guerra-mobilitazione-nazionale.html'
+HOME = 'index.html'
 API = 'https://fuorilitaliadallaguerra.org/api/index.php?limit=1&page=1'
 FINTO_BROWSER = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
                  '(KHTML, like Gecko) Chrome/126 Safari/537.36')
@@ -132,26 +134,41 @@ def main():
                         r'\g<1>' + oggi_a_parole(),
                         'articolo, data del riquadro')
 
+    casa = open(HOME, encoding='utf-8').read()
+    casa = sostituisci(casa, r'Oltre [\d.]+ adesioni finora',
+                       f'Oltre {formato_it(adesioni)} adesioni finora',
+                       'home, la card dell\'appello')
+
     if a.prova:
         print(f'  (prova) {formato_it(prima)} → {formato_it(adesioni)}: non ho scritto niente')
         return
 
     open(PAGINA, 'w', encoding='utf-8').write(testo)
+    open(HOME, 'w', encoding='utf-8').write(casa)
     print(f'  ✅ scritto: {formato_it(prima)} → {formato_it(adesioni)}')
 
-    subprocess.run(['git', 'add', PAGINA], check=True)
+    subprocess.run(['git', 'add', PAGINA, HOME], check=True)
     subprocess.run(['git', 'commit', '-q', '-m',
                     f'Appello "Fuori l\'Italia dalla guerra": {formato_it(adesioni)} adesioni'], check=True)
 
-    # Il cron della petizione Calabria gira ogni 10 minuti, questo ogni 30: ai
-    # minuti :00 e :30 possono scattare insieme e litigarsi il push (il remoto
-    # nel frattempo ha un commit che qui non c'e' ancora). Un solo ritentativo
-    # con rebase basta: i due script toccano file diversi, non c'e' un vero
-    # conflitto di contenuto da risolvere a mano.
+    # Il cron della petizione Calabria gira ogni 10 minuti, questo ogni 5: ogni
+    # due giri su tre cadono nello stesso minuto e possono litigarsi il push
+    # (il remoto nel frattempo ha un commit che qui non c'e' ancora). Un solo
+    # ritentativo con rebase basta: i due script toccano file diversi (tranne
+    # index.html, dove pero' scrivono in punti distinti della card), non c'e'
+    # un vero conflitto di contenuto da risolvere a mano.
     esito = subprocess.run(['git', 'push', '-q', 'origin', 'main'])
     if esito.returncode != 0:
         print('  · push respinto (probabile corsa con un altro aggiornamento), riprovo con rebase')
-        subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'], check=True)
+        rb = subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'])
+        if rb.returncode != 0:
+            # index.html e' minificato su una riga sola: se la corsa ha toccato
+            # quella stessa riga (anche in un punto diverso), il rebase puo'
+            # non risolversi da solo. Non si tenta una fusione a mano qui: si
+            # abbandona e si lascia perdere questo giro, il prossimo (fra
+            # pochi minuti) riparte da capo con i dati freschi.
+            subprocess.run(['git', 'rebase', '--abort'])
+            stop('corsa con un altro aggiornamento: conflitto sulla home, riprovo al prossimo giro')
         subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
     print('  ✅ pubblicato')
 

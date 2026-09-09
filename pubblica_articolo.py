@@ -1625,7 +1625,7 @@ ART = {
   'meta_desc'    : 'Mobilitazione nazionale non violenta per una manifestazione a Roma in ottobre 2026: Partecipazione Attiva sostiene l\u2019appello alla pace e invita a firmare.',
   'card_cat'     : 'MOBILITAZIONE PER LA PACE',
   'card_title'   : 'Fuori l\u2019Italia dalla guerra: firmiamo l\u2019appello',
-  'card_desc'    : 'Una mobilitazione nazionale non violenta verso una manifestazione a Roma in ottobre. Partecipazione Attiva sostiene l\u2019appello alla pace e invita a firmare.',
+  'card_desc'    : 'Oltre 3.811 adesioni finora: mobilitazione nazionale non violenta verso una manifestazione a Roma in ottobre. Partecipazione Attiva sostiene l\u2019appello e invita a firmare.',
   'ticker_emoji' : '\U0001F54A\ufe0f',
   'ticker_tema'  : 'PACE',
   'ticker_testo' : 'Fuori l\u2019Italia dalla guerra &mdash; sosteniamo l\u2019appello alla mobilitazione nazionale di ottobre',
