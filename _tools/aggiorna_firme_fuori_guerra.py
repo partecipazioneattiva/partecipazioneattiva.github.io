@@ -2,13 +2,13 @@
 """Riallinea il numero di adesioni all'appello "Fuori l'Italia dalla guerra".
 
 Legge il numero vero dall'API del sito (fuorilitaliadallaguerra.org) e lo
-riscrive in cinque posti:
+riscrive in quattro posti (Fernando, 9/09/2026: una sola card dedicata in
+home, non anche una card doppia nella lista che ruota):
   · nell'articolo, paragrafo «Di cosa si tratta»: «N adesioni»;
   · nell'articolo, riquadro «I numeri al ...»: «Adesioni indicate sul sito: N»
     e la data;
-  · nella home, il banner in apertura: «Oltre N adesioni»;
-  · nella home, la card che ruota fra le pubblicazioni: «Oltre N adesioni
-    finora»;
+  · nella home, il banner in apertura (al posto di quello sulla mappa dei
+    cittadini attivi): «Oltre N adesioni»;
   · nella home, la card fissa con la barra: il numero e la barra stessa, in
     percentuale verso il prossimo traguardo tondo (vedi sotto).
 
@@ -174,9 +174,6 @@ def main():
     quota = round(adesioni / traguardo * 100, 1)
 
     casa = open(HOME, encoding='utf-8').read()
-    casa = sostituisci(casa, r'Oltre [\d.]+ adesioni finora',
-                       f'Oltre {formato_it(adesioni)} adesioni finora',
-                       'home, la card che ruota')
     casa = sostituisci(casa, r'Oltre [\d.]+ adesioni per una mobilitazione',
                        f'Oltre {formato_it(adesioni)} adesioni per una mobilitazione',
                        'home, il banner in apertura')
