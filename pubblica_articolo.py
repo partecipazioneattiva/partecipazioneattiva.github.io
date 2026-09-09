@@ -1073,6 +1073,61 @@ BOTTONE_FIRMA = f'''
 </p>
 '''
 
+FIRMA_URL_GUERRA = 'https://fuorilitaliadallaguerra.org/#aderire'
+
+BOTTONE_FIRMA_GUERRA = f'''
+<p style="text-align:center;margin:34px 0">
+<a href="{FIRMA_URL_GUERRA}" target="_blank" rel="noopener" style="display:inline-block;background:#8a4e00;color:#fff;padding:18px 40px;border-radius:50px;text-decoration:none;font-family:montserrat,sans-serif;font-weight:800;font-size:1.05em;line-height:1.3;box-shadow:0 4px 14px rgba(0,0,0,.2)">&#x270D;&#xFE0F; Firma l&rsquo;appello &rarr;</a>
+</p>
+'''
+
+BODY_FUORI_ITALIA_GUERRA = '''
+<article class="article-wrap">
+
+<div class="box-info">
+<strong>&#x1F4CC; Di chi &egrave; questo appello, e perch&eacute; sta sul nostro sito</strong>
+L&rsquo;appello <strong style="display:inline">non &egrave; di Partecipazione Attiva</strong>. A promuoverlo &egrave; un comitato di <strong style="display:inline">cittadini e associazioni antimperialiste e per la pace</strong>, come si legge sulla pagina stessa; fra i primi firmatari compaiono, tra gli altri, Moni Ovadia, Carlo Rovelli, Angelo D&rsquo;Orsi, Francesco Toscano e Moreno Pasquinelli. <strong style="display:inline">Il nostro ruolo &egrave; diffondere l&rsquo;appello e invitare a firmarlo</strong>: n&eacute; il movimento n&eacute; alcun suo dirigente ne sono promotori, e le posizioni politiche del testo restano quelle di chi lo ha scritto.
+</div>
+
+''' + BOTTONE_FIRMA_GUERRA + '''
+
+<img loading=lazy src="images/fuori-italia-guerra-cover.webp" alt="Fuori l&rsquo;Italia dalla guerra &mdash; fuorilitaliadallaguerra.org" width="1400" height="737" style="width:100%;height:auto;border-radius:14px;margin:8px 0 28px">
+
+<h2>Di cosa si tratta</h2>
+
+<p>&laquo;Fuori l&rsquo;Italia dalla guerra&raquo; &egrave; una raccolta di adesioni, aperta sul sito <a href="https://fuorilitaliadallaguerra.org/#testo" target="_blank" rel="noopener">fuorilitaliadallaguerra.org</a>, che chiede una <strong>mobilitazione generale non violenta</strong>: partendo &laquo;dai tanti luoghi della Repubblica&raquo;, l&rsquo;obiettivo dichiarato &egrave; arrivare a una <strong>manifestazione nazionale a Roma nell&rsquo;ottobre 2026</strong> (data e percorso, si legge sul sito, vengono comunicati a chi lascia un contatto). Al momento in cui scriviamo (9 settembre 2026) la pagina indica <strong>3.801 adesioni</strong> fra primi firmatari, singoli cittadini e organizzazioni: un numero rilevato in quel momento, non un contatore che aggiorniamo noi.</p>
+
+<h2>Le richieste, con le parole del testo originale</h2>
+
+<p>Il sito riassume l&rsquo;appello in sei punti. Li riportiamo qui integralmente, come sono scritti dai promotori: sono le loro posizioni, non le facciamo nostre punto per punto. Il nostro sostegno riguarda la richiesta di fondo &mdash; una mobilitazione pacifica per la pace &mdash; non ogni singola formulazione politica del testo.</p>
+
+<blockquote style="border-left:4px solid #e8900a;margin:22px 0;padding:4px 0 4px 20px;color:#444;font-style:italic">
+<p>&laquo;No al riarmo e all&rsquo;esercito europeo!<br>
+Per un&rsquo;Italia indipendente, neutrale in pace con la Russia e con tutti i popoli ribelli!<br>
+Non combatteremo sotto le bandiere della NATO e della UE!<br>
+Diserzione di massa come fecero i giovani italiani davanti alla chiamata alle armi dei fascisti!<br>
+Per la solidariet&agrave; con la Palestina e la rottura di ogni rapporto con l&rsquo;entit&agrave; sionista!<br>
+Pace e lavoro, fuori l&rsquo;Italia dalla guerra!&raquo;</p>
+</blockquote>
+
+<p>Il testo integrale dell&rsquo;appello, pi&ugrave; lungo e articolato, spiega queste posizioni collocandole in un&rsquo;analisi esplicitamente <strong>antimperialista</strong> del conflitto in Ucraina, del riarmo europeo e della situazione a Gaza. &Egrave; una lettura di parte, dichiarata come tale dagli stessi promotori (&laquo;cittadini e associazioni antimperialiste&raquo;): chi vuole leggerla per intero la trova sulla pagina originale, che linkiamo qui sopra e qui sotto.</p>
+
+<h2>Perch&eacute; lo sosteniamo</h2>
+
+<p>Partecipazione Attiva condivide l&rsquo;appello a una <strong>mobilitazione non violenta per la pace</strong> e la richiesta di una manifestazione nazionale che dia voce a chi si oppone all&rsquo;escalation militare. Le singole formulazioni politiche del testo, il movimento n&eacute; le fa proprie n&eacute; le respinge: <strong>ogni formulazione &mdash; su NATO, riarmo, Russia, Ucraina, Medio Oriente &mdash; resta responsabilit&agrave; di chi l&rsquo;ha scritta</strong>. Chi firma, firma l&rsquo;appello dei promotori, non un documento di Partecipazione Attiva.</p>
+
+<div class="box-info">
+<strong>&#x1F4CA; I numeri al 9 settembre 2026</strong>
+Adesioni indicate sul sito: <strong style="display:inline">3.801</strong>, fra primi firmatari e adesioni raccolte anche &laquo;ai banchetti e porta a porta&raquo;, come precisa la pagina. Manifestazione nazionale annunciata per <strong style="display:inline">ottobre 2026 a Roma</strong>, data e percorso non ancora resi pubblici.
+</div>
+
+''' + BOTTONE_FIRMA_GUERRA + '''
+
+<p><em>L&rsquo;appello &laquo;Fuori l&rsquo;Italia dalla guerra&raquo; &egrave; promosso da cittadini e associazioni antimperialiste e per la pace; i contenuti e le richieste sono loro e sono riportati qui seguendo il testo pubblicato su fuorilitaliadallaguerra.org, senza aggiunte n&eacute; riscritture. Partecipazione Attiva lo <strong>sostiene</strong> nella sua richiesta di una mobilitazione pacifica: il nostro ruolo &egrave; diffonderlo e invitare a firmare. Questo non fa di noi, n&eacute; di alcun suo dirigente, i promotori dell&rsquo;appello, e non implica l&rsquo;adesione del movimento a ogni sua singola posizione politica.</em></p>
+
+</article>
+'''
+
 BODY_SANITA_CALABRIA = '''
 <article class="article-wrap">
 
@@ -1557,24 +1612,24 @@ BODY_ARTE_DEL_DONO = r"""<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-widt
 
 
 ART = {
-  'slug'         : 'arte-del-dono-piva.html',
-  'autore'       : 'piva',
-  'data_iso'     : '2026-09-08',
-  'data_human'   : '8 settembre 2026',
-  'data_badge'   : '8 SETTEMBRE 2026',
-  'lettura_min'  : 5,
-  'categoria_hero': '\U0001F381 Economia del dono',
-  'og_image'     : 'images/organigramma/stefano-piva.webp',
-  'h1'           : 'L\u2019arte del dono: pi&ugrave; lo regali, pi&ugrave; aumenta',
-  'sottotitolo'  : 'Stefano Francesco Piva, membro del Direttivo, prova a parlare di economia senza parlare di soldi. Venticinque minuti sulla WebTV, il secondo dei sei appuntamenti di settembre.',
-  'meta_desc'    : 'Stefano Francesco Piva racconta l\u2019economia del dono: il prezzo non misura il valore, e il tempo &egrave; l\u2019unica moneta che nessuno pu&ograve; accumulare.',
-  'card_cat'     : 'ECONOMIA DEL DONO',
-  'card_title'   : 'L\u2019arte del dono: pi&ugrave; lo regali, pi&ugrave; aumenta',
-  'card_desc'    : 'Il prezzo &egrave; quanto paghi, il valore &egrave; quanto quella cosa significa per te. Stefano Francesco Piva parla di economia senza parlare di soldi, nel secondo dei sei appuntamenti di settembre sulla WebTV.',
-  'ticker_emoji' : '\U0001F381',
-  'ticker_tema'  : 'WEBTV',
-  'ticker_testo' : 'L\u2019arte del dono &mdash; Stefano Francesco Piva sulla WebTV: il prezzo non misura il valore',
-  'body'         : BODY_ARTE_DEL_DONO,
+  'slug'         : 'fuori-italia-guerra-mobilitazione-nazionale.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-09-09',
+  'data_human'   : '9 settembre 2026',
+  'data_badge'   : '9 SETTEMBRE 2026',
+  'lettura_min'  : 4,
+  'categoria_hero': '\U0001F54A\ufe0f Pace',
+  'og_image'     : 'images/anteprime/fuori-italia-guerra-mobilitazione-nazionale-anteprima.jpg',
+  'h1'           : 'Fuori l\u2019Italia dalla guerra: firmiamo',
+  'sottotitolo'  : 'Un comitato di cittadini e associazioni antimperialiste e per la pace chiede una mobilitazione nazionale non violenta, con l\u2019obiettivo di una manifestazione a Roma in ottobre 2026. Partecipazione Attiva sostiene l\u2019appello alla pace e invita a firmare.',
+  'meta_desc'    : 'Mobilitazione nazionale non violenta per una manifestazione a Roma in ottobre 2026: Partecipazione Attiva sostiene l\u2019appello alla pace e invita a firmare.',
+  'card_cat'     : 'MOBILITAZIONE PER LA PACE',
+  'card_title'   : 'Fuori l\u2019Italia dalla guerra: firmiamo l\u2019appello',
+  'card_desc'    : 'Una mobilitazione nazionale non violenta verso una manifestazione a Roma in ottobre. Partecipazione Attiva sostiene l\u2019appello alla pace e invita a firmare.',
+  'ticker_emoji' : '\U0001F54A\ufe0f',
+  'ticker_tema'  : 'PACE',
+  'ticker_testo' : 'Fuori l\u2019Italia dalla guerra &mdash; sosteniamo l\u2019appello alla mobilitazione nazionale di ottobre',
+  'body'         : BODY_FUORI_ITALIA_GUERRA,
 }
 
 # ===========================================================================
