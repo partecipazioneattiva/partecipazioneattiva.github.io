@@ -142,7 +142,17 @@ def main():
     subprocess.run(['git', 'add', PAGINA], check=True)
     subprocess.run(['git', 'commit', '-q', '-m',
                     f'Appello "Fuori l\'Italia dalla guerra": {formato_it(adesioni)} adesioni'], check=True)
-    subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
+
+    # Il cron della petizione Calabria gira ogni 10 minuti, questo ogni 30: ai
+    # minuti :00 e :30 possono scattare insieme e litigarsi il push (il remoto
+    # nel frattempo ha un commit che qui non c'e' ancora). Un solo ritentativo
+    # con rebase basta: i due script toccano file diversi, non c'e' un vero
+    # conflitto di contenuto da risolvere a mano.
+    esito = subprocess.run(['git', 'push', '-q', 'origin', 'main'])
+    if esito.returncode != 0:
+        print('  · push respinto (probabile corsa con un altro aggiornamento), riprovo con rebase')
+        subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'], check=True)
+        subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
     print('  ✅ pubblicato')
 
 

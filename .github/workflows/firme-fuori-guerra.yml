@@ -1,0 +1,36 @@
+---
+# Riallinea il numero di adesioni all'appello "Fuori l'Italia dalla guerra".
+#
+# Gemello di firme-petizione.yml (petizione sanita' Calabria), stesso principio:
+# gira sui server di GitHub, quindi anche a Mac spento, chiama lo strumento del
+# repository che pubblica solo se il numero e' davvero cambiato e si ferma
+# invece di indovinare.
+#
+# Qui il traguardo non si sposta (non c'e' un obiettivo dichiarato come su
+# Change.org): e' solo un contatore che cresce. Ogni 30 minuti basta.
+#
+# 9 settembre 2026 — chiesto da Fernando: lo stesso aggiornamento costante
+# gia' attivo per la petizione Calabria, anche per questo appello.
+name: Firme fuori l'Italia dalla guerra
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: firme-fuori-guerra
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - name: Leggi l'API del sito e riallinea l'articolo
+        run: |
+          git config user.email "webmaster.partecipazione.attiva@gmail.com"
+          git config user.name "Partecipazione Attiva"
+          python3 _tools/aggiorna_firme_fuori_guerra.py
