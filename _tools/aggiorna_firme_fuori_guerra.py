@@ -2,11 +2,22 @@
 """Riallinea il numero di adesioni all'appello "Fuori l'Italia dalla guerra".
 
 Legge il numero vero dall'API del sito (fuorilitaliadallaguerra.org) e lo
-riscrive in tre posti:
+riscrive in cinque posti:
   · nell'articolo, paragrafo «Di cosa si tratta»: «N adesioni»;
   · nell'articolo, riquadro «I numeri al ...»: «Adesioni indicate sul sito: N»
     e la data;
-  · nella home, la card dell'appello: «Oltre N adesioni finora».
+  · nella home, il banner in apertura: «Oltre N adesioni»;
+  · nella home, la card che ruota fra le pubblicazioni: «Oltre N adesioni
+    finora»;
+  · nella home, la card fissa con la barra: il numero e la barra stessa, in
+    percentuale verso il prossimo traguardo tondo (vedi sotto).
+
+🟨 IL TRAGUARDO NON E' DICHIARATO DAI PROMOTORI (a differenza della Calabria,
+dove Change.org pubblica un obiettivo vero). Qui la barra mostra il progresso
+verso il prossimo migliaio tondo sopra il numero attuale (3.814 → verso
+4.000): una scelta editoriale nostra per dare un senso di avanzamento a un
+numero che altrimenti cresce senza un traguardo, ricalcolata a ogni giro e
+mai presentata come l'obiettivo dei promotori.
 
 COME SI CALCOLA IL NUMERO. Il sito non mostra un contatore ottenuto da
 un'unica fonte: la home somma due cose, come si legge nel suo stesso codice
@@ -77,6 +88,26 @@ def sostituisci(testo, schema, nuovo, dove):
     return nuovo_testo
 
 
+def sostituisci_dentro_il_link(testo, ancora, schema, nuovo, dove):
+    """Come sostituisci(), ma solo dentro il blocco <a ...ancora...>...</a>.
+
+    La home ha PIU' di una card o link che punta a questo stesso articolo (il
+    banner in apertura, la card che ruota, la card fissa con la barra) e la
+    barra della Calabria finisce nella stessa identica frase `%;background:
+    #ffd580` di questa: `ancora` deve essere abbastanza specifico (il tag di
+    apertura per intero, non solo l'indirizzo) da isolare il blocco giusto.
+    """
+    inizio = testo.find(ancora)
+    if inizio == -1:
+        stop(f'{dove}: non trovo piu\' la card ("{ancora[:60]}...")')
+    fine = testo.index('</a>', inizio) + 4
+    blocco = testo[inizio:fine]
+    nuovo_blocco, quante = re.subn(schema, nuovo, blocco, count=1)
+    if quante != 1:
+        stop(f'{dove}: non trovo piu\' la scritta da cambiare dentro la card')
+    return testo[:inizio] + nuovo_blocco + testo[fine:]
+
+
 def formato_it(n):
     return f'{n:,}'.replace(',', '.')
 
@@ -134,10 +165,31 @@ def main():
                         r'\g<1>' + oggi_a_parole(),
                         'articolo, data del riquadro')
 
+    # Il traguardo che si vede nella barra e' una scelta nostra (il prossimo
+    # migliaio tondo), non un obiettivo dichiarato dai promotori: fuorilitalia
+    # dallaguerra.org non ne pubblica uno, a differenza di Change.org per la
+    # petizione Calabria. Ricalcolato a ogni giro: se lo si supera, la barra
+    # riparte da capo verso il migliaio successivo.
+    traguardo = ((adesioni // 1000) + 1) * 1000
+    quota = round(adesioni / traguardo * 100, 1)
+
     casa = open(HOME, encoding='utf-8').read()
     casa = sostituisci(casa, r'Oltre [\d.]+ adesioni finora',
                        f'Oltre {formato_it(adesioni)} adesioni finora',
-                       'home, la card dell\'appello')
+                       'home, la card che ruota')
+    casa = sostituisci(casa, r'Oltre [\d.]+ adesioni per una mobilitazione',
+                       f'Oltre {formato_it(adesioni)} adesioni per una mobilitazione',
+                       'home, il banner in apertura')
+    ANCORA_CARD_FISSA = ('href="fuori-italia-guerra-mobilitazione-nazionale.html" '
+                        'data-pa-section="homepage-card" data-pa-pin="1"')
+    casa = sostituisci_dentro_il_link(casa, ANCORA_CARD_FISSA,
+                       r'width:[\d.]+%;background:#ffd580',
+                       f'width:{quota}%;background:#ffd580',
+                       'home, card fissa: la barra')
+    casa = sostituisci_dentro_il_link(casa, ANCORA_CARD_FISSA,
+                       r'[\d.]+ adesioni &mdash; prossimo traguardo: [\d.]+',
+                       f'{formato_it(adesioni)} adesioni &mdash; prossimo traguardo: {formato_it(traguardo)}',
+                       'home, card fissa: il numero')
 
     if a.prova:
         print(f'  (prova) {formato_it(prima)} → {formato_it(adesioni)}: non ho scritto niente')
