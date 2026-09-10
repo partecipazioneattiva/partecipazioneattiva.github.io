@@ -1,0 +1,25 @@
+# Legge il contatore del comitato promotore e riallinea la scheda in home.
+# ⚠️ La piattaforma del Ministero non e' leggibile da fuori (tutta JavaScript,
+# API 403): il numero e' quello dichiarato dal comitato, e la pagina lo dice.
+# Tre lavori automatici toccano la stessa index.html (questo, le firme calabresi
+# e le adesioni sulla guerra): lo script riprova il push dopo un pull.
+name: Firme referendum educazione affettiva
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Leggi il contatore del comitato e riallinea la home
+        run: |
+          git config user.email "webmaster.partecipazione.attiva@gmail.com"
+          git config user.name "Partecipazione Attiva"
+          python3 _tools/aggiorna_firme_referendum.py
