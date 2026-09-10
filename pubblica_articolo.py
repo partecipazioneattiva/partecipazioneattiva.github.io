@@ -1345,6 +1345,12 @@ BODY_STABILICUM_SENATO = '''
 </style>
 
 
+<div class="box-info" style="background:#fff4e0;border-color:#ffb84d">
+<strong>&#x1F534; Aggiornamento del 10 settembre &mdash; il Senato ha bocciato le preferenze pure</strong><br><br>
+L&#8217;Aula del Senato ha respinto, con <strong>68 s&igrave; e 99 no</strong>, il subemendamento a prima firma del senatore dem <strong>Dario Parrini</strong> che voleva sopprimere i capilista bloccati e introdurre il voto di preferenza puro per tutti i candidati. Sulla proposta il governo si era rimesso all&#8217;Aula; il centrodestra ha votato compatto contro. Dai banchi delle opposizioni sono partiti cori di &laquo;Vergogna!&raquo;. Restano quindi in piedi, salvo nuovi emendamenti prima del voto finale del 15 settembre, i <strong>capilista bloccati</strong> con preferenza limitata a partire dal secondo nome &mdash; la formula descritta pi&ugrave; sotto.
+<p class="fonte" style="margin-top:10px"><em>Fonte: diretta parlamentare, Il Messaggero, 10 settembre 2026.</em></p>
+</div>
+
 <div class="box-info">
 <strong>&#x1F4CC; Che cos&#8217;&egrave; questa pagina</strong>
 Lo <strong style="display:inline">Stabilicum</strong> &mdash; la nuova legge elettorale approvata dalla Camera il 16 luglio 2026 &mdash; &egrave; ora in commissione Affari costituzionali al Senato, dove sono stati depositati <strong style="display:inline">quasi settecento emendamenti</strong>. Qui trovi <strong style="display:inline">che cosa si vota e quando</strong>, <strong style="display:inline">che cosa cambierebbe per chi vota</strong> e <strong style="display:inline">chi sostiene che cosa</strong>. Ogni informazione porta la sua fonte.
