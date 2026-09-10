@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "⚖️",
+      "tema": "RIFORMA ELETTORALE",
+      "testo": "Tre leggi elettorali di iniziativa popolare &mdash; sosteniamo la richiesta di voto di preferenza e voto disgiunto"
+    },
+    {
       "emoji": "✍️",
       "tema": "SCUOLA",
       "testo": "Educazione affettiva a scuola &mdash; sosteniamo il referendum: si firma online con SPID entro fine settembre"
@@ -14,11 +19,6 @@
       "emoji": "🎁",
       "tema": "WEBTV",
       "testo": "L’arte del dono &mdash; Stefano Francesco Piva sulla WebTV: il prezzo non misura il valore"
-    },
-    {
-      "emoji": "⚖️",
-      "tema": "RIFORMA ELETTORALE",
-      "testo": "Stabilicum al Senato: 700 emendamenti, Aula il 9 settembre e voto finale atteso il 15 &mdash; il nodo &egrave; il ballottaggio"
     },
     {
       "emoji": "🏘️",

@@ -1670,7 +1670,68 @@ Poich&eacute; il quesito &egrave; abrogativo e riguarda <strong style="display:i
 </article>
 '''
 
+BODY_VOTO_LIBEGUALE = '''
+<article class="article-wrap">
+
+<div class="box-info">
+<strong>&#x1F4CC; Di chi sono queste leggi, e perch&eacute; stanno sul nostro sito</strong>
+Le tre proposte <strong style="display:inline">non sono di Partecipazione Attiva</strong>. Le promuove l&rsquo;<strong style="display:inline">Associazione per la Rappresentanza &laquo;Voto LibEguale&raquo;</strong> (votolibeguale.it), che le ha depositate come leggi di iniziativa popolare sulla piattaforma del Ministero della Giustizia; la raccolta firme online &egrave; aperta dal <strong style="display:inline">15 novembre 2025</strong>. <strong style="display:inline">Il nostro ruolo &egrave; diffonderle e invitare a firmare</strong>: n&eacute; il movimento n&eacute; alcun suo dirigente ne sono promotori. Segnaliamo per chiarezza che <strong style="display:inline">Stefano Francesco Piva</strong>, del Direttivo, &egrave; iscritto a Voto LibEguale, e che il portavoce <strong style="display:inline">Luigi Spanu</strong> ha moderato un loro incontro pubblico nel dicembre 2025: entrambe le cose a titolo personale, non come posizione del movimento.
+</div>
+
+<h2>Di cosa si tratta</h2>
+
+<p>Sono <strong style="display:inline">tre distinte leggi di iniziativa popolare</strong> per modificare la legge elettorale di Camera e Senato (il Rosatellum). Ciascuna chiede <strong style="display:inline">50.000 firme</strong> per essere depositata in Parlamento, e si firma online sulla piattaforma <em>firmereferendum.giustizia.it</em> con SPID, CIE o CNS.</p>
+
+<h3>1. Voto di preferenza, primarie e meno firme per le liste</h3>
+<p>Chiede di reintrodurre la <strong style="display:inline">preferenza per i candidati</strong> nei listini plurinominali (fino a due nomi, di genere diverso), di ridurre da 1.500-2.000 a <strong style="display:inline">250-500</strong> le firme necessarie per presentare una lista alle elezioni politiche, di abolire l&rsquo;esenzione da questo obbligo per i partiti gi&agrave; in Parlamento, e di richiedere <strong style="display:inline">primarie</strong> per selezionare i candidati come condizione per accedere ai fondi del due per mille.</p>
+<p style="text-align:center;margin:20px 0"><a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/5200003" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;text-decoration:none;padding:14px 24px;border-radius:12px;font-size:1em">&#x270D;&#xFE0F; Firma questa proposta &rarr;</a></p>
+
+<h3>2. Abolizione delle pluricandidature e delle soglie di sbarramento</h3>
+<p>Chiede che <strong style="display:inline">ogni candidato si presenti in un solo collegio</strong>, uninominale o plurinominale (oggi un candidato pu&ograve; presentarsi in fino a 5 collegi plurinominali pi&ugrave; uno uninominale), e l&rsquo;<strong style="display:inline">abolizione delle soglie di sbarramento</strong> (oggi 3% per le liste singole, 10% per le coalizioni).</p>
+<p style="text-align:center;margin:20px 0"><a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/5200001" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;text-decoration:none;padding:14px 24px;border-radius:12px;font-size:1em">&#x270D;&#xFE0F; Firma questa proposta &rarr;</a></p>
+
+<h3>3. Abrogazione del voto congiunto obbligatorio</h3>
+<p>Oggi il voto dato al candidato uninominale vale automaticamente anche per la lista collegata, e viceversa. La proposta chiede di <strong style="display:inline">separare i due voti</strong> (voto disgiunto), abolendo anche il meccanismo per cui il voto al solo candidato uninominale viene ripartito tra le liste della coalizione.</p>
+<p style="text-align:center;margin:20px 0"><a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/5200000" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;text-decoration:none;padding:14px 24px;border-radius:12px;font-size:1em">&#x270D;&#xFE0F; Firma questa proposta &rarr;</a></p>
+
+<div class="box-info">
+<strong>&#x1F4CA; I numeri al 10 settembre 2026</strong>
+Voto di preferenza e primarie: <strong style="display:inline">2.867 / 50.000</strong> (6%). Pluricandidature e soglie: <strong style="display:inline">4.831 / 50.000</strong> (10%). Voto congiunto: <strong style="display:inline">4.456 / 50.000</strong> (9%). Numeri letti direttamente sulla piattaforma del Ministero: non li aggiorniamo in automatico, il numero vero &egrave; sempre quello sulla pagina di firma.
+</div>
+
+<h2>Perch&eacute; lo sosteniamo</h2>
+
+<p>Partecipazione Attiva segue da tempo il tema della legge elettorale, anche nel dibattito sullo Stabilicum. Due leggi elettorali precedenti, il <strong style="display:inline">Porcellum</strong> e l&rsquo;<strong style="display:inline">Italicum</strong>, sono state dichiarate incostituzionali dalla Corte Costituzionale (sentenze <strong style="display:inline">1/2014</strong> e <strong style="display:inline">35/2017</strong>), e sull&rsquo;attuale Rosatellum pendono ricorsi in Cassazione. Condividiamo la richiesta di fondo &mdash; <strong style="display:inline">restituire agli elettori la possibilit&agrave; di scegliere chi li rappresenta</strong>, invece di liste bloccate decise dalle segreterie &mdash; e per questo sosteniamo la raccolta firme. Non ci esprimiamo punto per punto su ogni singola soluzione tecnica proposta (per esempio l&rsquo;ampiezza esatta della riduzione delle firme, o il dettaglio del meccanismo di voto disgiunto): quelle restano scelte di chi ha scritto il testo.</p>
+
+<p style="font-size:.92em;color:#555">Fonti: piattaforma <em>firmereferendum.giustizia.it</em> del Ministero della Giustizia (ID iniziativa 5200000, 5200001, 5200003); sito del promotore <em>votolibeguale.it</em>.</p>
+
+<p><em>Le tre leggi sono promosse dall&rsquo;Associazione per la Rappresentanza &laquo;Voto LibEguale&raquo;; i contenuti e le richieste sono suoi. Partecipazione Attiva le <strong>sostiene</strong> nella loro richiesta di fondo e invita a firmare: il nostro ruolo &egrave; diffonderle. Questo non fa di noi, n&eacute; di alcun suo dirigente, i promotori delle proposte, e non implica l&rsquo;adesione del movimento a ogni singola soluzione tecnica scelta dai proponenti.</em></p>
+
+</article>
+'''
+
 ART = {
+  'slug'         : 'voto-libeguale-tre-leggi-elettorale.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-09-10',
+  'data_human'   : '10 settembre 2026',
+  'data_badge'   : '10 SETTEMBRE 2026',
+  'lettura_min'  : 5,
+  'categoria_hero': '⚖️ Riforma elettorale',
+  'og_image'     : 'LOGO-PA.webp',
+  'h1'           : 'Tre leggi elettorali da firmare',
+  'sottotitolo'  : 'L’Associazione Voto LibEguale ha depositato tre leggi di iniziativa popolare per il voto di preferenza, contro le pluricandidature e le soglie di sbarramento, e per il voto disgiunto. Partecipazione Attiva sostiene la richiesta di fondo e invita a firmare.',
+  'meta_desc'    : 'Tre leggi di iniziativa popolare per voto di preferenza, niente pluricandidature e stop al voto congiunto. Non sono nostre: le sosteniamo e invitiamo a firmare.',
+  'card_cat'     : 'RIFORMA ELETTORALE',
+  'card_title'   : 'Tre leggi elettorali da firmare',
+  'card_desc'    : 'Voto di preferenza, niente pluricandidature, stop al voto congiunto. Non sono nostre: le promuove Voto LibEguale, le sosteniamo e invitiamo a firmare.',
+  'ticker_emoji' : '⚖️',
+  'ticker_tema'  : 'RIFORMA ELETTORALE',
+  'ticker_testo' : 'Tre leggi elettorali di iniziativa popolare &mdash; sosteniamo la richiesta di voto di preferenza e voto disgiunto',
+  'body'         : BODY_VOTO_LIBEGUALE,
+}
+
+ART_REFERENDUM_EDUCAZIONE_AFFETTIVA_OLD = {
   'slug'         : 'referendum-educazione-affettiva-scuole.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-09-10',
