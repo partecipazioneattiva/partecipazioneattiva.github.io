@@ -162,14 +162,22 @@ def main():
                                    r'(width:)[\d.]+%', r'\g<1>' + f'{quota}%',
                                    'home, la barra del referendum')
 
+    # anche il numero grande dentro l'articolo, con la sua ancora
+    art = open(PAGINA, encoding='utf-8').read()
+    art = sostituisci_nel_marcato(art, 'articolo-firme',
+                                  r'[\d.]+ firme',
+                                  f'{formato_it(firme)} firme',
+                                  'articolo, il numero grande')
+
     if a.prova:
         print(f'  (prova) {prima} -> {formato_it(firme)}: non ho scritto niente')
         return
 
+    open(PAGINA, 'w', encoding='utf-8').write(art)
     open(HOME, 'w', encoding='utf-8').write(casa)
     print(f'  OK scritto: {prima} -> {formato_it(firme)}')
 
-    subprocess.run(['git', 'add', HOME], check=True)
+    subprocess.run(['git', 'add', HOME, PAGINA], check=True)
     subprocess.run(['git', 'commit', '-q', '-m',
                     f'Referendum educazione affettiva: {formato_it(firme)} firme'], check=True)
     # gli altri due contatori toccano la stessa index.html: un push respinto
