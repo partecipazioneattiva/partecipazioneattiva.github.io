@@ -35,6 +35,7 @@ MENU = [
     ("proposte.html",     "Proposte"),
     ("azioni.html",       "Azioni"),
     ("battaglie.html",    "Battaglie"),
+    ("index.html#iniziative-popolari", "Iniziative"),
     ("webtv.html",        "WebTV"),
     ("rete-ape.html",     "Rete APE"),
     ("chi-siamo.html",    "Chi Siamo"),
