@@ -127,10 +127,10 @@ def main():
     a = p.parse_args()
 
     os.chdir(BASE)
-    pag = open(PAGINA, encoding='utf-8').read()
-    casa = open(HOME, encoding='utf-8').read()
+    pag_originale = open(PAGINA, encoding='utf-8').read()
+    casa_originale = open(HOME, encoding='utf-8').read()
+    pag, casa = pag_originale, casa_originale
 
-    qualcosa_e_cambiato = False
     almeno_un_ok = False
 
     for legge in LEGGI:
@@ -158,16 +158,23 @@ def main():
                             f'width:{pct}%',
                             f'home, legge {legge["id"]}: barra card')
 
-        if ok1 or ok2 or ok3 or ok4:
-            qualcosa_e_cambiato = True
         if ok1 and ok2 and ok3 and ok4:
             almeno_un_ok = True
 
-    if not qualcosa_e_cambiato:
-        print('  = nessuna modifica da fare')
+    # Il confronto vero e' sul CONTENUTO, non sul "la sostituzione e' riuscita":
+    # una sostituzione riesce anche quando scrive lo stesso numero di prima
+    # (nessuna firma nuova da un giro all'altro), e li' non c'e' niente da
+    # salvare. Committare comunque fa fallire `git commit` (niente di
+    # cambiato) e lo script si e' fermato in errore anche quando aveva gia'
+    # scritto tutto giusto — misurato il 10/09/2026, primo giro vero online.
+    pag_cambiata = pag != pag_originale
+    casa_cambiata = casa != casa_originale
+
+    if not pag_cambiata and not casa_cambiata:
+        print('  = fermo: nessuna firma nuova da scrivere')
         return
 
-    if almeno_un_ok:
+    if almeno_un_ok and pag_cambiata:
         pag, _ = sostituisci(pag, r'(&#x1F4CA; I numeri al )[^<]*',
                              r'\g<1>' + oggi_a_parole(),
                              'articolo, data del riquadro')
@@ -176,11 +183,14 @@ def main():
         print('  (prova) non ho scritto niente')
         return
 
-    open(PAGINA, 'w', encoding='utf-8').write(pag)
-    open(HOME, 'w', encoding='utf-8').write(casa)
+    if pag_cambiata:
+        open(PAGINA, 'w', encoding='utf-8').write(pag)
+    if casa_cambiata:
+        open(HOME, 'w', encoding='utf-8').write(casa)
     print('  ✅ scritto')
 
-    subprocess.run(['git', 'add', PAGINA, HOME], check=True)
+    file_da_committare = [f for f, cambiato in [(PAGINA, pag_cambiata), (HOME, casa_cambiata)] if cambiato]
+    subprocess.run(['git', 'add'] + file_da_committare, check=True)
     subprocess.run(['git', 'commit', '-q', '-m', 'Voto LibEguale: aggiornate le firme delle tre leggi'], check=True)
 
     esito = subprocess.run(['git', 'push', '-q', 'origin', 'main'])
