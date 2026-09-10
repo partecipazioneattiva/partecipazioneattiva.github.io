@@ -102,6 +102,48 @@ def sostituisci(testo, schema, nuovo, dove, facoltativo=False):
     return nuovo_testo
 
 
+def sostituisci_nel_marcato(testo, ancora, schema, nuovo, dove):
+    """Sostituisce SOLO dentro l'elemento marcato con data-pa-cont="ancora".
+
+    Perche' esiste (10/09/2026). Prima si cercava la scritta da cambiare in
+    tutta la pagina, con count=1: si prendeva la PRIMA che capitava. Ma la
+    barra della Calabria e quella dell'appello sulla guerra sono scritte in
+    modo identico, e la prima in pagina era quella sbagliata: il contatore
+    della Calabria stava aggiornando la barra dell'appello. Nessun errore,
+    nessun avviso — solo un numero fermo (barra al 65,2% con 653 firme).
+
+    E' la trappola che gli esperti chiamano *fragile pattern matching*:
+    agganciare uno script a una frase, che chi scrive gli articoli puo'
+    riscrivere in qualunque momento senza sapere che qualcosa ci si appoggia.
+    E' gia' successo il 03/09/2026 col titolo della card.
+
+    La cura raccomandata e' un identificatore messo apposta nell'HTML —
+    `data-pa-cont="..."` — che e' **univoco per costruzione** e non dipende dal
+    testo intorno. Qui l'unicita' non si presume: si verifica a ogni giro, e se
+    l'ancora manca o e' doppia il programma si ferma invece di indovinare.
+
+    ⛔ Se sposti o riscrivi una card, l'attributo data-pa-cont va con lei.
+    """
+    marca = 'data-pa-cont="%s"' % ancora
+    quante_ancore = testo.count(marca)
+    if quante_ancore != 1:
+        stop('%s: l\'ancora %s compare %d volte nella pagina, ne serve esattamente 1'
+             % (dove, ancora, quante_ancore))
+    i = testo.index(marca)
+    apertura = testo.rfind('<', 0, i)
+    nome_tag = re.match(r'<([a-zA-Z0-9]+)', testo[apertura:]).group(1)
+    fine_tag = testo.index('>', i) + 1
+    chiusura = testo.find('</%s>' % nome_tag, fine_tag)
+    fine = chiusura + len(nome_tag) + 3 if chiusura != -1 else fine_tag
+    blocco = testo[apertura:fine]
+    nuovo_blocco, quante = re.subn(schema, nuovo, blocco, count=1)
+    if quante != 1:
+        stop('%s: dentro l\'elemento marcato "%s" non trovo la scritta da cambiare'
+             % (dove, ancora))
+    return testo[:apertura] + nuovo_blocco + testo[fine:]
+
+
+
 def leggi_contatore():
     richiesta = urllib.request.Request(INDIRIZZO, headers={'User-Agent': FINTO_BROWSER})
     try:
@@ -171,7 +213,7 @@ def main():
                         'articolo, data del riquadro')
 
     casa = open(HOME, encoding='utf-8').read()
-    casa = sostituisci(casa, r'\d+ firme su \d+',
+    casa = sostituisci_nel_marcato(casa, 'calabria-firme', r'\d+ firme su \d+',
                        f'{firme} firme su {obiettivo}',
                        'home, la scritta delle firme')
     # Il 03/09/2026 il titolo della card e' passato da «aiutiamo Comunita'
@@ -182,9 +224,8 @@ def main():
     casa = sostituisci(casa, r'(arrivare a )\d+( firme)',
                        r'\g<1>' + str(obiettivo) + r'\g<2>',
                        'home, il titolo della card', facoltativo=True)
-    casa = sostituisci(casa,
-                       r'(background:rgba\(255,255,255,\.22\)[^"]*"><span style="display:block;'
-                       r'height:100%;width:)[\d.]+%',
+    casa = sostituisci_nel_marcato(casa, 'calabria-barra',
+                       r'(width:)[\d.]+%',
                        r'\g<1>' + f'{quota}%',
                        'home, la barra di avanzamento')
 
