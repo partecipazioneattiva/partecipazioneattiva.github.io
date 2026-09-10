@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "✍️",
+      "tema": "SCUOLA",
+      "testo": "Educazione affettiva a scuola &mdash; sosteniamo il referendum: si firma online con SPID entro fine settembre"
+    },
+    {
       "emoji": "🕊️",
       "tema": "PACE",
       "testo": "Fuori l’Italia dalla guerra &mdash; sosteniamo l’appello alla mobilitazione nazionale di ottobre"
@@ -34,11 +39,6 @@
       "emoji": "⚖️",
       "tema": "STABILICUM",
       "testo": "le riflessioni della costituzionalista Lara Trucco sull’intelligibilità dello Stabilicum: liste premiali da 70 e 35 nomi e tempi stretti verso il 2027"
-    },
-    {
-      "emoji": "📺",
-      "tema": "DA SETTEMBRE",
-      "testo": "sei appuntamenti sulla WebTV di Partecipazione Attiva: APE, la Mappa, la legge elettorale, l’RC Auto, l’arte del dono, essere donna a Napoli"
     }
   ]
 }

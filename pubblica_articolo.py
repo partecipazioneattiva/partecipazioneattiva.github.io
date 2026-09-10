@@ -1611,25 +1611,84 @@ BODY_ARTE_DEL_DONO = r"""<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-widt
 """
 
 
+BODY_REFERENDUM_EDUCAZIONE_AFFETTIVA = '''
+<article class="article-wrap">
+
+<div class="box-info">
+<strong>&#x1F4CC; Di chi &egrave; questo referendum, e perch&eacute; sta sul nostro sito</strong>
+Il referendum <strong style="display:inline">non &egrave; di Partecipazione Attiva</strong>. Lo promuove il <strong style="display:inline">Comitato &laquo;S&igrave; Educazione Affettiva nelle scuole&raquo;</strong>, e l&rsquo;iniziativa &egrave; stata annunciata nella <strong style="display:inline">Gazzetta Ufficiale n.&nbsp;174 del 29 luglio 2026</strong>. La raccolta delle firme &egrave; aperta dal <strong style="display:inline">6 agosto 2026</strong>. <strong style="display:inline">Il nostro ruolo &egrave; diffonderlo e invitare a firmare</strong>: n&eacute; il movimento n&eacute; alcun suo dirigente ne sono promotori, e le posizioni del comitato restano quelle di chi le ha scritte.
+</div>
+
+<p style="text-align:center;margin:26px 0">
+<a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/7500000" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;text-decoration:none;padding:16px 26px;border-radius:12px;font-size:1.05em">&#x270D;&#xFE0F; Firma sulla piattaforma del Ministero della Giustizia &rarr;</a>
+</p>
+
+<h2>Che cos&rsquo;&egrave; la legge che si vuole cancellare</h2>
+
+<p>Si chiama <strong style="display:inline">legge 9 giugno 2026, n.&nbsp;104</strong>, &laquo;Disposizioni in materia di consenso informato in ambito scolastico&raquo;. &Egrave; stata pubblicata nella Gazzetta Ufficiale n.&nbsp;142 del 22 giugno 2026 ed &egrave; <strong style="display:inline">in vigore dal 7 luglio 2026</strong>. Nel dibattito pubblico viene spesso chiamata &laquo;legge Valditara&raquo;, dal nome del ministro dell&rsquo;Istruzione e del merito.</p>
+
+<p>Questo &egrave; ci&ograve; che prevede, punto per punto:</p>
+
+<ul>
+<li><strong style="display:inline">Scuola dell&rsquo;infanzia e scuola primaria:</strong> sono escluse <em>in ogni caso</em> le attivit&agrave; che trattano temi attinenti alla sessualit&agrave;.</li>
+<li><strong style="display:inline">Scuole secondarie:</strong> per le attivit&agrave; che toccano affettivit&agrave; e sessualit&agrave; la scuola deve raccogliere il <strong style="display:inline">consenso scritto</strong> delle famiglie, o dello studente se maggiorenne.</li>
+<li><strong style="display:inline">Preavviso di almeno 7 giorni</strong>, con l&rsquo;indicazione di finalit&agrave;, obiettivi, argomenti e modalit&agrave; di svolgimento.</li>
+<li>I genitori possono <strong style="display:inline">visionare in anticipo i materiali didattici</strong>.</li>
+<li>Chi non aderisce ha diritto ad <strong style="display:inline">attivit&agrave; formative alternative</strong>.</li>
+<li>Gli <strong style="display:inline">esperti esterni</strong> entrano in classe solo con delibera del collegio dei docenti e approvazione del consiglio d&rsquo;istituto.</li>
+</ul>
+
+<h2>Che cosa chiede il referendum</h2>
+
+<p>Il quesito chiede l&rsquo;<strong style="display:inline">abrogazione totale</strong> della legge: non la modifica di un articolo, ma la cancellazione dell&rsquo;intero testo. I promotori sostengono che il meccanismo del consenso preventivo, sommato al divieto assoluto nelle scuole per i pi&ugrave; piccoli, renda di fatto impraticabile l&rsquo;educazione affettiva, e chiedono che siano <strong style="display:inline">i singoli istituti</strong> a programmare queste attivit&agrave;.</p>
+
+<div class="box-info">
+<strong>&#x2696;&#xFE0F; Una cosa da sapere prima di firmare</strong>
+Poich&eacute; il quesito &egrave; abrogativo e riguarda <strong style="display:inline">l&rsquo;intera legge</strong>, verrebbero meno anche le parti che qualcuno considera un guadagno: la trasparenza obbligatoria dei contenuti, il diritto dei genitori di vedere i materiali in anticipo e le attivit&agrave; alternative garantite a chi non partecipa. Chi firma chiede che quella materia torni a essere regolata come prima della legge 104. &Egrave; giusto saperlo, e ognuno decide di conseguenza.
+</div>
+
+<h2>Come si firma</h2>
+
+<p>La raccolta &egrave; <strong style="display:inline">soltanto online</strong>: non ci sono banchetti n&eacute; moduli di carta. Si firma sulla piattaforma pubblica del Ministero della Giustizia, entrando con <strong style="display:inline">SPID, CIE (la carta d&rsquo;identit&agrave; elettronica) o CNS</strong>. Serve un&rsquo;identit&agrave; digitale funzionante e bastano pochi minuti; la firma vale solo per chi &egrave; iscritto nelle liste elettorali.</p>
+
+<p>Un consiglio pratico: se apri il collegamento dentro Facebook, Instagram o WhatsApp l&rsquo;accesso con SPID pu&ograve; non funzionare. Conviene <strong style="display:inline">aprire il link nel browser del telefono</strong> (Safari o Chrome), oppure da computer.</p>
+
+<h2>A che punto siamo</h2>
+
+<p>Per arrivare al voto servono <strong style="display:inline">500.000 firme</strong>, e la raccolta si chiude <strong style="display:inline">a fine settembre 2026</strong>. All&rsquo;inizio di settembre il comitato promotore dichiarava di aver superato le 400.000 sottoscrizioni, e nei giorni successivi la corsa &egrave; proseguita: mancherebbe ormai poco.</p>
+
+<p><strong style="display:inline">Il numero esatto, aggiornato al momento in cui leggi, sta sulla pagina ufficiale</strong> — quella dove si firma. Non lo riportiamo qui perch&eacute; cambia di ora in ora, e un numero vecchio su una pagina come questa non aiuta nessuno.</p>
+
+<p>Se decidi di firmare, conviene farlo <strong style="display:inline">adesso</strong>: quando la raccolta si chiude, si chiude.</p>
+
+<p style="text-align:center;margin:26px 0">
+<a href="https://firmereferendum.giustizia.it/referendum/open/dettaglio-open/7500000" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;text-decoration:none;padding:16px 26px;border-radius:12px;font-size:1.05em">&#x270D;&#xFE0F; Vai alla pagina ufficiale per firmare &rarr;</a>
+</p>
+
+<p style="font-size:.92em;color:#555">Fonti: Gazzetta Ufficiale n.&nbsp;142 del 22 giugno 2026 (testo della legge) e n.&nbsp;174 del 29 luglio 2026 (annuncio dell&rsquo;iniziativa referendaria); piattaforma <em>firmereferendum.giustizia.it</em> del Ministero della Giustizia; sito del Comitato promotore &laquo;S&igrave; Educazione Affettiva nelle scuole&raquo;.</p>
+
+</article>
+'''
+
 ART = {
-  'slug'         : 'fuori-italia-guerra-mobilitazione-nazionale.html',
+  'slug'         : 'referendum-educazione-affettiva-scuole.html',
   'autore'       : 'pa',
-  'data_iso'     : '2026-09-09',
-  'data_human'   : '9 settembre 2026',
-  'data_badge'   : '9 SETTEMBRE 2026',
+  'data_iso'     : '2026-09-10',
+  'data_human'   : '10 settembre 2026',
+  'data_badge'   : '10 SETTEMBRE 2026',
   'lettura_min'  : 4,
-  'categoria_hero': '\U0001F54A\ufe0f Pace',
-  'og_image'     : 'images/anteprime/fuori-italia-guerra-mobilitazione-nazionale-anteprima.jpg',
-  'h1'           : 'Fuori l\u2019Italia dalla guerra: firmiamo',
-  'sottotitolo'  : 'Un comitato di cittadini e associazioni antimperialiste e per la pace chiede una mobilitazione nazionale non violenta, con l\u2019obiettivo di una manifestazione a Roma in ottobre 2026. Partecipazione Attiva sostiene l\u2019appello alla pace e invita a firmare.',
-  'meta_desc'    : 'Mobilitazione nazionale non violenta per una manifestazione a Roma in ottobre 2026: Partecipazione Attiva sostiene l\u2019appello alla pace e invita a firmare.',
-  'card_cat'     : 'MOBILITAZIONE PER LA PACE',
-  'card_title'   : 'Fuori l\u2019Italia dalla guerra: firmiamo l\u2019appello',
-  'card_desc'    : 'Oltre 3.811 adesioni finora: mobilitazione nazionale non violenta verso una manifestazione a Roma in ottobre. Partecipazione Attiva sostiene l\u2019appello e invita a firmare.',
-  'ticker_emoji' : '\U0001F54A\ufe0f',
-  'ticker_tema'  : 'PACE',
-  'ticker_testo' : 'Fuori l\u2019Italia dalla guerra &mdash; sosteniamo l\u2019appello alla mobilitazione nazionale di ottobre',
-  'body'         : BODY_FUORI_ITALIA_GUERRA,
+  'categoria_hero': '\U0001F4DA Scuola',
+  'og_image'     : 'images/anteprime/referendum-educazione-affettiva-scuole-anteprima.jpg',
+  'h1'           : 'Educazione affettiva a scuola: il referendum da firmare',
+  'sottotitolo'  : 'Il Comitato \u00abS\u00ec Educazione Affettiva nelle scuole\u00bb chiede di abrogare la legge 104/2026 sul consenso informato. Non \u00e8 un\u2019iniziativa di Partecipazione Attiva: la sosteniamo e invitiamo a firmare. Si firma solo online, con SPID o CIE, entro fine settembre.',
+  'meta_desc'    : 'Referendum per abrogare la legge 104/2026 sul consenso informato a scuola: come si firma, entro quando, e perch\u00e9 lo sosteniamo.',
+  'card_cat'     : 'REFERENDUM \u2014 SCUOLA',
+  'card_title'   : 'Educazione affettiva a scuola: firmiamo il referendum',
+  'card_desc'    : 'Il Comitato \u00abS\u00ec Educazione Affettiva nelle scuole\u00bb chiede di cancellare la legge 104/2026. Non \u00e8 nostro: lo sosteniamo e invitiamo a firmare. Solo online con SPID o CIE, entro fine settembre.',
+  'ticker_emoji' : '\u270D\uFE0F',
+  'ticker_tema'  : 'SCUOLA',
+  'ticker_testo' : 'Educazione affettiva a scuola &mdash; sosteniamo il referendum: si firma online con SPID entro fine settembre',
+  'body'         : BODY_REFERENDUM_EDUCAZIONE_AFFETTIVA,
 }
 
 # ===========================================================================
