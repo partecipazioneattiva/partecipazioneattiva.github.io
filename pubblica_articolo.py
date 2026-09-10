@@ -1349,6 +1349,7 @@ BODY_STABILICUM_SENATO = '''
 <strong>&#x1F534; Aggiornamento del 10 settembre &mdash; il Senato ha bocciato le preferenze pure</strong><br><br>
 L&#8217;Aula del Senato ha respinto, con <strong>68 s&igrave; e 99 no</strong>, il subemendamento a prima firma del senatore dem <strong>Dario Parrini</strong> che voleva sopprimere i capilista bloccati e introdurre il voto di preferenza puro per tutti i candidati. Sulla proposta il governo si era rimesso all&#8217;Aula; il centrodestra ha votato compatto contro. Dai banchi delle opposizioni sono partiti cori di &laquo;Vergogna!&raquo;. Restano quindi in piedi, salvo nuovi emendamenti prima del voto finale del 15 settembre, i <strong>capilista bloccati</strong> con preferenza limitata a partire dal secondo nome &mdash; la formula descritta pi&ugrave; sotto.
 <p class="fonte" style="margin-top:10px"><em>Fonte: diretta parlamentare, Il Messaggero, 10 settembre 2026.</em></p>
+<p style="margin-top:6px">&rarr; <a href="voto-libeguale-tre-leggi-elettorale.html">La preferenza vera resta chiesta dalle tre leggi di iniziativa popolare di Voto LibEguale</a></p>
 </div>
 
 <div class="box-info">
@@ -1705,6 +1706,12 @@ Le tre proposte <strong style="display:inline">non sono di Partecipazione Attiva
 <div class="box-info">
 <strong>&#x1F4CA; I numeri al 10 settembre 2026</strong>
 <p style="margin:14px 0 4px;font-weight:700;font-family:montserrat,sans-serif;font-size:.92em">Voto di preferenza e primarie &mdash; <span data-pa-cont="vle-num-preferenza">2.873 / 50.000 (5.7%)</span></p><span style="display:block;height:10px;border-radius:5px;background:#f0e6d3;overflow:hidden"><span style="display:block;height:100%;width:5.7%;background:#e8900a" data-pa-cont="vle-barra-preferenza"></span></span><p style="margin:14px 0 4px;font-weight:700;font-family:montserrat,sans-serif;font-size:.92em">Pluricandidature e soglie di sbarramento &mdash; <span data-pa-cont="vle-num-pluricandidature">4.837 / 50.000 (9.7%)</span></p><span style="display:block;height:10px;border-radius:5px;background:#f0e6d3;overflow:hidden"><span style="display:block;height:100%;width:9.7%;background:#e8900a" data-pa-cont="vle-barra-pluricandidature"></span></span><p style="margin:14px 0 4px;font-weight:700;font-family:montserrat,sans-serif;font-size:.92em">Voto congiunto obbligatorio &mdash; <span data-pa-cont="vle-num-congiunto">4.466 / 50.000 (8.9%)</span></p><span style="display:block;height:10px;border-radius:5px;background:#f0e6d3;overflow:hidden"><span style="display:block;height:100%;width:8.9%;background:#e8900a" data-pa-cont="vle-barra-congiunto"></span></span><p style="margin-top:14px;color:#666;font-size:.88em">Numeri letti direttamente sulla piattaforma del Ministero: non li aggiorniamo in automatico, il numero vero &egrave; sempre quello sulla pagina di firma.</p>
+</div>
+
+<div class="box-info" style="background:#fff4e0;border-color:#ffb84d">
+<strong>&#x1F534; Il 10 settembre il Senato ha respinto la preferenza pura</strong><br><br>
+Nella stessa seduta in cui discuteva lo Stabilicum, il Senato ha bocciato (68 s&igrave; contro 99 no) il subemendamento che avrebbe abolito i capilista bloccati introducendo il voto di preferenza per tutti i candidati: il governo si era rimesso all&rsquo;Aula, e il centrodestra ha votato compatto contro. &Egrave; lo stesso punto al centro della <strong style="display:inline">prima delle tre leggi qui sopra</strong> (voto di preferenza e primarie): per via parlamentare la proposta non &egrave; passata, e la via delle leggi di iniziativa popolare resta l&rsquo;unica in cui a deciderlo sono direttamente <strong style="display:inline">50.000 firme di cittadini</strong>, non i gruppi in Aula.
+<p class="fonte" style="margin-top:10px"><em>Dettagli del voto: <a href="stabilicum-senato-settembre2026.html">Stabilicum al Senato: il nodo ballottaggio</a>.</em></p>
 </div>
 
 <h2>Perch&eacute; lo sosteniamo</h2>
