@@ -194,6 +194,9 @@ footer a{color:var(--ar)}
 
 
 </style>
+<!-- Modalità app: si attiva solo con ?app=1 nell'indirizzo (la usa l'app Android nella scheda Mappa). Senza il parametro la pagina resta com'è. -->
+<script>if(/[?&]app=1(&|$)/.test(location.search))document.documentElement.classList.add('pa-app');</script>
+<style>html.pa-app .salta-contenuto,html.pa-app .topbar,html.pa-app .navbar,html.pa-app .hero,html.pa-app .sottomappa,html.pa-app #iscriviti,html.pa-app #stampa-qr,html.pa-app footer,html.pa-app .pa-pa-btn,html.pa-app #cerca>h2,html.pa-app #cerca>p.sub{display:none!important}html.pa-app #cerca{padding-top:14px}</style>
 </head>
 <body>
 <a class="salta-contenuto" href="#contenuto">Salta al contenuto</a>
@@ -232,7 +235,7 @@ footer a{color:var(--ar)}
   </div>
 </div>
 
-<section class="wrap">
+<section class="wrap" id="cerca">
   <h2>Cerca</h2>
   <p class="sub">Scrivi anche una sola parola: <em>legge elettorale</em>, <em>sanit&agrave;</em>, <em>ambiente</em>, <em>legale</em>, <em>Napoli</em>, <em>Germania</em>&hellip;</p>
   <div class="qbox">
@@ -635,7 +638,7 @@ footer a{color:var(--ar)}
   </div>
 </section>
 
-<section class="wrap">
+<section class="wrap" id="stampa-qr">
   <div class="propbox">
     <h2>Porta la Mappa fuori dal telefono</h2>
     <p>Al banchetto, in assemblea, sotto un post o su un volantino: questi due codici portano chi li inquadra dritto dove serve. Scaricali, stampali, usali. Sono liberi.</p>
@@ -1128,5 +1131,6 @@ document.addEventListener("click",function(e){if(e.target===document.getElementB
   guarda();
 })();
 </script>
+<script>if(document.documentElement.classList.contains('pa-app')&&window.P_ERR){P_ERR.non_iscritto='Per proporre devi prima essere sulla mappa: tocca «Entra nella Mappa» in cima a questa schermata dell’app, poi torna qui.';}</script>
 </body>
 </html>
