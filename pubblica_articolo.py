@@ -1725,25 +1725,97 @@ Nella stessa seduta in cui discuteva lo Stabilicum, il Senato ha bocciato (68 s&
 </article>
 '''
 
+BODY_RCAUTO_PAOLO = r"""<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-width:760px;margin:0 auto}.pa-yt button{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;position:relative;line-height:0}.pa-yt img,.pa-yt iframe{width:100%;aspect-ratio:16/9;height:auto;display:block;border:0;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}.pa-yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}.pa-yt-play svg{width:78px;height:78px}.pa-yt button:hover .pa-yt-play svg,.pa-yt button:focus .pa-yt-play svg{width:88px;height:88px}.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.85em;color:#9c5b00;margin-top:14px;text-align:center;font-weight:700;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5}.pa-trascr{margin:26px auto 0;max-width:760px;border:1px solid #f0e6d3;border-radius:12px;padding:12px 16px;background:#fffdf8}.pa-trascr summary{font-family:montserrat,sans-serif;font-weight:700;color:#8a4e00;cursor:pointer}.pa-trascr-testo{margin-top:12px;font-size:.95em;line-height:1.75}.pa-cta{display:block;max-width:420px;margin:30px auto;text-align:center;background:#e07b00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;padding:16px 22px;border-radius:12px;text-decoration:none}.pa-cta:hover{background:#c26a00}</style>
+<h2>Stessa auto, stessa guida, prezzo diverso</h2>
+
+<p>Chi guida un&rsquo;auto a Napoli paga l&rsquo;RC Auto molto pi&ugrave; di chi la guida ad Aosta. Secondo l&rsquo;IVASS, nel primo trimestre 2026 il prezzo medio effettivamente pagato per un&rsquo;autovettura &egrave; stato di <strong>599,1 euro a Napoli</strong> e di <strong>342,0 euro ad Aosta</strong>: 257 euro di differenza, circa una volta e tre quarti. E la distanza non cambia fra chi non ha mai causato un incidente: in prima classe di merito si pagano 573,7 euro a Napoli e 315,2 ad Aosta.</p>
+
+<p><strong>Paolo Neri</strong>, del Comitato Direttivo di Partecipazione Attiva, spiega in un quarto d&rsquo;ora la proposta di legge del movimento per superare questa disparit&agrave;. &Egrave; il terzo dei sei appuntamenti di settembre sulla WebTV.</p>
+
+<div class="pa-fig">
+<div class="pa-yt" id="ytrcauto">
+<button type="button" onclick="var d=document.getElementById('ytrcauto');d.innerHTML='<iframe src=\'https://www.youtube-nocookie.com/embed/Hr41AfHuCLg?autoplay=1&amp;rel=0\' title=\'RC Auto: perché a Napoli si paga di più, con Paolo Neri\' frameborder=\'0\' allow=\'accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture\' allowfullscreen></iframe>';return false;" aria-label="Guarda il video: RC Auto, perch&eacute; a Napoli si paga di pi&ugrave;, con Paolo Neri">
+<img src="images/rcauto-paolo-poster.jpg" alt="RC Auto &mdash; la proposta di legge di Partecipazione Attiva, con Paolo Neri" width="1280" height="720" loading="lazy">
+<span class="pa-yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,.55)"/><path d="M9.5 7.5v9l7-4.5z" fill="#fff"/></svg></span>
+</button>
+</div>
+<figcaption>RC Auto: perch&eacute; a Napoli si paga di pi&ugrave;, con Paolo Neri. Video integrale, 15 minuti e 44 secondi. Il filmato parte solo se lo apri tu.</figcaption>
+<details class="pa-trascr">
+  <summary>Trascrizione del video</summary>
+  <div class="pa-trascr-testo">
+    <p>Buongiorno a tutti coloro che dimostrano di avere la curiosità di sapere come Partecipazione Attiva voglia risolvere il discorso delle disparità territoriali tra le tariffe della responsabilità civile auto dove la gente paga il triplo rispetto a quella di un'altra provincia comunque andrò a dilungarmi un po', evitando soprattutto i particolari tecnici il più possibile, mi presento, mi chiamo Paolo Neri e sono membro del direttivo di Partecipazione Attiva. Voglio appunto illustrarvi, evitando il più possibile dettagli tecnici, un'iniziativa intrapresa da Partecipazione Attiva per eliminare le disparità territoriali delle tariffe della responsabilità civile auto tra le province italiane.</p>
+    <p>Non si può infatti ritenere giusto che i premi delle polizze siano fissati dalle compagnie con il criterio dell'effetto del rischio che ha una provincia rispetto a un'altra provincia italiana. questo modo sono penalizzati tutti gli abitanti della provincia in modo indiscriminato e tutti gli abitanti ovviamente assicurati, ce l'hanno tutti la macchina, anche quelli però che sono onesti e non rubano le assicurazioni. Poi viene trascurato un principio fondamentale dove non si ritiene più che la responsabilità penale, ma anche civile, sia soprattutto e necessariamente individuale.</p>
+    <p>Quindi se io sbaglio vado a pagare quello mio sbaglio, ma se non sbaglio non vedo perché devo subire il cosiddetto effetto rischio calcolato dalle assicurazioni su quella, su tutta la provincia dove abito io. L'assicurazione non deve essere legata al codice d'avviamento postale.</p>
+    <p>Sul tema della responsabilità civile auto è stata già presentata in Parlamento dall'onorevole Borrelli di Alleanza Verdi e Sinistra una proposta di legge che per noi condivisibile, ma che invece è stata respinta. Quindi dobbiamo evitare che l'apposita Commissione parlamentare respinga anche la nostra.</p>
+    <p>In effetti ci dovremmo essere riusciti a delineare i presupposti affinché si è accolta se essa andare soprattutto in contrasto con la lobby delle assicurazioni, prevedendo tra l'altro se è possibile un confronto preventivo con l'ANIA, che è l'associazione nazionale tra le imprese assicuratrici. Una cosa da sottolineare è che la nostra proposta non prevede nessun costo aggiuntivo per gli assicurati non intacca i ricavi delle compagnie perché usa come massa di manovra le risorse economiche già utilizzate dal sistema ed è a costo zero per il bilancio dello Stato e poi soprattutto non lede il concetto di libertà di impresa Tutta l'architettura della nostra proposta parte dall'analisi dell'indipendenza ed autonomia finanziaria dell'Istituto di Vigilanza delle Assicurazioni, conosciuto con l'acronimo di IVASS, il cui funzionamento e mantenimento è assicurato per legge dai contributi di obbligatori che le stesse compagnie vigilate versano all'istituto stesso in una percentuale sui ricavi fissata dal MEF con decreto annuale su indicazioni dello stesso IVASS.</p>
+    <p>In effetti la procedura è la stessa per le altre autorità indipendenti, come ad esempio l'ARERA, autorità di regolazione per energia, reti e ambiente, che riceve contributi per il suo funzionamento dalle aziende dalle stesse vigilate che operano nei settori di energia, gas, acqua, rifiuti e teleriscaldamento. L'IVASS è un'autorità di diritto pubblico, indipendente come va abbiamo detto dal punto di vista amministrativo, e non effettua però una vera e propria programmazione finanziaria, ma presenta al MEF solo una stima delle proprie esigenze per l'anno successivo da coprire con i contributi imposti con decreto alle compagnie dal MEF.</p>
+    <p>Il risultato è che il sistema genera ogni anno un'eccedenza di fondi dopo che siano state sostenute tutte le spese di funzionamento, compreso gli stipendi dei 367 dipendenti. E che succede?</p>
+    <p>Che nel 2025 abbiamo raggiunto il record. L'Ivas ha ricevuto circa 112 milioni di euro attraverso i contributi e altre entrate minori la rimanenza dopo aver sostenuto le spese è stata di 58 milioni di euro che però non sono tutti destinati poi ad andare al tesoro visto che non sono state spese perché una grossa fetta rimane all'IVASS vincolata per soddisfare contratti pluriennali ed altre esigenze non facilmente tra l'altro verificabili in quanto, in virtù della sua autonomia amministrativa, tra l'altro secondo noi pure mal interpretata, va in deroga alla normativa in vigore sulla trasparenza.</p>
+    <p>Dei 58 milioni quindi avanzate passati dalla gestione del 2025, l'IVASS ha vincolato per le sue esigenze 44 milioni e mezzo di Euro e solo 15 milioni di Euro sono resti disponibili per il MEF. Queste considerazioni già potrebbero abbassare per cercare di modificare il sistema.</p>
+    <p>C'è poi da sottolineare che fino al 2014 il MEF, nei decreti annuali, specificava che la parte responsabilità civile auto dei ricavi delle compagnie non era da utilizzare per calcolare i contributi di vigilanza, quelli che servono per mantenere l'IVASS. Nei successivi decreti, infatti, ministeriali, questa precedenza non compare e per tale scopo vengono citati i ricavi solo in modo generico ovviamente poi le compagnie questi contributi li gestiscono come spese di gestione scaricabili fiscalmente sorvolo su un fatto importante che le compagnie di assicurazione così come tutte le altre attività imprenditoriali private e privatistiche, soprattutto quella a partecipazione statale, dovrebbero osservare l'articolo 41 della Costituzione che vincola al bene collettivo il diritto comunque sempre garantito alla libertà di iniziativa economica privata che non deve però tendere semplicemente all'aumento dei profitti dell'azienda.</p>
+    <p>Nel caso delle tariffe RC Auto, così come per le bollette per le utenze, fino ad arrivare al prezzo dei carburanti, il principio fissato dall'articolo 41, che diceva che le aziende devono pensare al bene collettivo, non sembra affatto rispettato, né garantito in modo sensibile dalle autorità di garanzia di settore. Tra l'altro, questo principio, affermato dall'articolo 41, è stato più volte ribattito dalla Corte Costituzionale con delle sentenze che, sostanzialmente, non sono state eseguite dai governi di turno.</p>
+    <p>In effetti, le tariffe R.C. auto aumentano senza sosta e si cade, addirittura nello sconforto, si prende atto che nel 2025 le Generali ed Unipol, due compagnie così prese a caso, abbiano realizzato rispetto all'anno precedente, nel 2024, le Generali un utile di più 14,5% con dividendi per gli azionisti di un più 400,7%. Unipol addirittura ha raggiunto un più 36,8% di utile con dividendi arrivati ad un più 31,8%.</p>
+    <p>Alla fine comunque il sistema della RC Auto ha raggiunto i massimi livelli di sfiducia nel sentimento dei cittadini. i quali subiscono anche l'ingiustizia della differenza territoriale delle tariffe RC Auto. Ed ecco appunto che i cittadini per autodifesa secondo noi ricorrono a via di fuga come le targhe estere per limitare i danni al portafoglio quando si vede addirittura che un premio di mercato del mezzo assicurato.</p>
+    <p>Per Partecipazione Attiva è giunta l'ora di dare il segnale ai cittadini che lo Stato, le istituzioni, le amministrazioni pubbliche facciano qualcosa di concreto per gli interessi degli stessi cittadini. Una delle proposte prevede che tutte le eccedenze di amministrazione dell'IVASS siano versate integralmente ogni anno al MEF per realizzare il fondo perequativo RC Auto, il quale gradualmente andrà a ridurre i premi fino alla parità nazionale, annullando per il cittadino l'effetto rischio territoriale. Poi viene sottolineato che il decreto dovrà specificare chiaramente che i contributi obbligatori dovranno essere calcolati solo sui ricavi provenienti dai rami diversi. della RC auto. Per evitare poi che il fondo resti senza alimentazione, perché il MEF potrebbe sempre calibrare le aliquote, le percentuali, solo per coprire i costi dell'IVASS, è fissata una quota minima del 40% dei ricavi da destinare al fondo. Indipendentemente dal eccedenze di amministrazione qualora ci fossero. In pratica il fondo garantisce alle compagnie la copertura immediata del rischio territoriale senza ridurre i loro ricavi e questo per non incorrere nell'edere la libertà di impresa. L'assicurato gode di una riduzione immediata del premio senza penalizzazioni, perché sono coperte le differenze dal fondo perequativo. Con il tempo, sotto la sorveglianza e la responsabilità dell'IVASS, la quota parte della tariffa RC auto legata al rischio territoriale si ridurrà fino a raggiungere la parità tariffaria. Il fondo gestito dal MEF cesserà la sua funzione e verrà soppresso. La transizione verso il riordino del settore prevede fino a 18 mesi per chiudere i sospesi dell'IVASS che dovrà poi rendere i conti annualmente e relazionare il Parlamento dopo la certificazione. della Corte dei Conti. Nella nostra proposta di legge sono previste misure poi complementari a costo zero, come un sistema antifrode centralizzato, una tabella unica per i risarcimento e una rete di riparazione certificata. Misure, tra l'altro, sempre ipotizzate, ma mai messe in atto la proposta rc auto di Partecipazione Attiva vuole essere un atto di giustizia e trasparenza con i presupposti messi a criterio della nostra proposta di legge che sono difficilmente confutabili si spera nel parere favorevole della commissione parlamentare preposta al suo esame Partecipazione Attiva crede che questa sua proposta di legge sia da considerarsi un passo importante per avvicinare l'istituzione ai cittadini e infondere con atti concreti un po' di quella fiducia persa in tutti questi anni grazie alle continue vessazioni subite solo per consentire ai soliti noti di ottenere il maggiori profitti. La nostra proposta di legge che è stata redatta vuole raggiungere per adesso l'uniformità territoriale delle tariffe RC auto, ma come avrete intuito ci sono ben altri aspetti che riguardano anche altri settori che sono sempre regolamentati da leggi specifiche e particolari che dovrebbero essere tutte riviste. Lo sforzo sarà appunto di portare tutti i settori nell'ambito del rispetto dell'articolo 41 della Costituzione, cioè sia all'imprenditoria privata e privatistica, sia al profitto, ma tutto nel rispetto prioritario del bene collettivo che può essere il posto di lavoro assicurato, tariffe eque, ecc. ringrazio tutti voi per l'attenzione un saluto</p>
+  </div>
+</details>
+</div>
+
+<h2>Il principio: paga chi sbaglia</h2>
+
+<blockquote><p>&laquo;Se io sbaglio vado a pagare quello mio sbaglio, ma se non sbaglio non vedo perch&eacute; devo subire il cosiddetto effetto rischio calcolato dalle assicurazioni su quella, su tutta la provincia dove abito io.&raquo;</p></blockquote>
+
+<p>Per Paolo il premio dovrebbe dipendere dalla responsabilit&agrave; di chi guida, non dal luogo in cui abita. Il criterio del rischio provinciale colpisce tutti i residenti allo stesso modo, compresi quelli che non hanno mai fatto un incidente. La sua sintesi sta in una riga: &laquo;L&rsquo;assicurazione non deve essere legata al codice d&rsquo;avviamento postale.&raquo;</p>
+
+<h2>La proposta: un fondo perequativo</h2>
+
+<p>La proposta di legge di Partecipazione Attiva prevede un <strong>fondo perequativo RC Auto</strong>, gestito dal Ministero dell&rsquo;Economia, che compensi le differenze territoriali e riduca gradualmente i premi fino alla parit&agrave; nazionale. Secondo Paolo non comporta costi aggiuntivi per gli assicurati, non intacca i ricavi delle compagnie ed &egrave; a costo zero per il bilancio dello Stato, perch&eacute; usa &laquo;come massa di manovra le risorse economiche gi&agrave; utilizzate dal sistema&raquo;.</p>
+
+<p>Da dove verrebbero quelle risorse lo dice nel video: la proposta vuole che &laquo;tutte le eccedenze di amministrazione dell&rsquo;IVASS siano versate integralmente ogni anno al MEF per realizzare il fondo perequativo&raquo;.</p>
+
+<h2>Dove vanno oggi le eccedenze dell&rsquo;IVASS</h2>
+
+<p>L&rsquo;IVASS, l&rsquo;autorit&agrave; che vigila sulle assicurazioni, si finanzia con i <strong>contributi di vigilanza</strong> versati da compagnie e intermediari. La misura la fissa ogni anno il Ministro dell&rsquo;Economia con decreto, su proposta dell&rsquo;Istituto.</p>
+
+<p>Al 31 dicembre 2025 l&rsquo;avanzo di amministrazione dell&rsquo;IVASS era di <strong>59,5 milioni di euro</strong>: 44,5 vincolati &mdash; trattamento di fine rapporto, oneri futuri del personale, fondi per rischi e oneri &mdash; e 15,0 disponibili. Oggi l&rsquo;avanzo disponibile resta all&rsquo;Istituto e finanzia il bilancio dell&rsquo;anno dopo: nel bilancio di previsione 2026 l&rsquo;avanzo che concorre al pareggio &egrave; di 15,1 milioni. La proposta chiede di cambiare questa destinazione e portare le eccedenze nel fondo.</p>
+
+<p>In fondo al video Paolo aggiunge una precisazione scritta sulla programmazione finanziaria dell&rsquo;IVASS.</p>
+
+<h2>L&rsquo;articolo 41</h2>
+
+<blockquote><p>&laquo;L&rsquo;iniziativa economica privata &egrave; libera. Non pu&ograve; svolgersi in contrasto con l&rsquo;utilit&agrave; sociale [&hellip;]&raquo;</p><p><em>Costituzione, articolo 41</em></p></blockquote>
+
+<p>Paolo lo richiama per ricordare che la libert&agrave; d&rsquo;impresa delle compagnie resta garantita, ma dentro un limite: il bene collettivo. Nel caso delle tariffe RC Auto, come per le bollette e per il prezzo dei carburanti, secondo lui quel limite dovrebbe pesare di pi&ugrave;.</p>
+
+<blockquote><p>&laquo;La proposta RC auto di Partecipazione Attiva vuole essere un atto di giustizia e trasparenza.&raquo;</p></blockquote>
+
+<p>La campagna del movimento sull&rsquo;RC Auto &egrave; raccolta nella pagina <a href="rcauto.html">RC Auto uguale per tutti</a>.</p>
+
+<p><em>Il video dura 15 minuti e 44 secondi ed &egrave; integrale: nessun taglio. In fondo, una precisazione scritta di Paolo Neri.</em></p>
+
+<p><em>Fonti delle cifre in questa pagina: IVASS, indagine IPER sui prezzi effettivi della garanzia r.c. auto, primo trimestre 2026 (tavole 12 e 16); IVASS, Bilancio di esercizio 2025 e Bilancio di previsione 2026. Le considerazioni del video sono di Paolo Neri, membro del Comitato Direttivo di Partecipazione Attiva.</em></p>
+"""
+
+
 ART = {
-  'slug'         : 'voto-libeguale-tre-leggi-elettorale.html',
-  'autore'       : 'pa',
+  'slug'         : 'rcauto-paolo-neri.html',
+  'autore'       : 'neri',
   'data_iso'     : '2026-09-10',
   'data_human'   : '10 settembre 2026',
   'data_badge'   : '10 SETTEMBRE 2026',
   'lettura_min'  : 5,
-  'categoria_hero': '⚖️ Riforma elettorale',
-  'og_image'     : 'images/anteprime/voto-libeguale-tre-leggi-elettorale-anteprima.jpg',
-  'h1'           : 'Tre leggi di iniziativa popolare da firmare',
-  'sottotitolo'  : 'L’Associazione Voto LibEguale ha depositato tre leggi di iniziativa popolare per il voto di preferenza, contro le pluricandidature e le soglie di sbarramento, e per il voto disgiunto. Partecipazione Attiva sostiene la richiesta di fondo e invita a firmare.',
-  'meta_desc'    : 'Tre leggi di iniziativa popolare per voto di preferenza, niente pluricandidature e stop al voto congiunto. Non sono nostre: le sosteniamo e invitiamo a firmare.',
-  'card_cat'     : 'RIFORMA ELETTORALE',
-  'card_title'   : 'Tre leggi di iniziativa popolare da firmare',
-  'card_desc'    : 'Voto di preferenza, niente pluricandidature, stop al voto congiunto. Non sono nostre: le promuove Voto LibEguale, le sosteniamo e invitiamo a firmare.',
-  'ticker_emoji' : '⚖️',
-  'ticker_tema'  : 'RIFORMA ELETTORALE',
-  'ticker_testo' : 'Tre leggi di iniziativa popolare &mdash; sosteniamo la richiesta di voto di preferenza e voto disgiunto',
-  'body'         : BODY_VOTO_LIBEGUALE,
+  'categoria_hero': '\U0001F697 RC Auto',
+  'og_image'     : 'images/organigramma/paolo-neri.webp',
+  'h1'           : 'RC Auto: perch&eacute; a Napoli si paga di pi&ugrave;',
+  'sottotitolo'  : 'Stessa auto, stessa guida, prezzo diverso. Paolo Neri, del Comitato Direttivo, spiega la proposta di legge di Partecipazione Attiva: un premio legato a chi guida, non al codice postale.',
+  'meta_desc'    : 'A Napoli l&rsquo;RC Auto costa 599 euro, ad Aosta 342 (IVASS). Paolo Neri spiega la proposta di Partecipazione Attiva: un fondo perequativo verso la parit&agrave;.',
+  'card_cat'     : 'RC AUTO',
+  'card_title'   : 'RC Auto: perch&eacute; a Napoli si paga di pi&ugrave;',
+  'card_desc'    : 'Stessa auto, stessa guida, prezzo diverso: a Napoli 599 euro, ad Aosta 342. Paolo Neri spiega la proposta di legge del movimento, nel terzo dei sei appuntamenti di settembre sulla WebTV.',
+  'ticker_emoji' : '\U0001F697',
+  'ticker_tema'  : 'WEBTV',
+  'ticker_testo' : 'RC Auto: perch&eacute; a Napoli si paga di pi&ugrave; &mdash; Paolo Neri spiega la proposta di legge sulla WebTV',
+  'body'         : BODY_RCAUTO_PAOLO,
 }
 
 ART_REFERENDUM_EDUCAZIONE_AFFETTIVA_OLD = {

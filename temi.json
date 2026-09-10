@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🚗",
+      "tema": "WEBTV",
+      "testo": "RC Auto: perch&eacute; a Napoli si paga di pi&ugrave; &mdash; Paolo Neri spiega la proposta di legge sulla WebTV"
+    },
+    {
       "emoji": "⚖️",
       "tema": "RIFORMA ELETTORALE",
       "testo": "Tre leggi elettorali di iniziativa popolare &mdash; sosteniamo la richiesta di voto di preferenza e voto disgiunto"
@@ -14,11 +19,6 @@
       "emoji": "🕊️",
       "tema": "PACE",
       "testo": "Fuori l’Italia dalla guerra &mdash; sosteniamo l’appello alla mobilitazione nazionale di ottobre"
-    },
-    {
-      "emoji": "🎁",
-      "tema": "WEBTV",
-      "testo": "L’arte del dono &mdash; Stefano Francesco Piva sulla WebTV: il prezzo non misura il valore"
     },
     {
       "emoji": "🏘️",

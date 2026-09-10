@@ -242,7 +242,14 @@ def main():
     print(f"  🖼  {dove}  ({kb} KB)")
     if a.applica:
         url = "https://partecipazione-attiva.it/images/anteprime/" + nome
-        alt = a.alt or " — ".join(x for x in (a.occhiello.capitalize(), titolo) if x)
+        # ⛔ Qui c'era `a.occhiello.capitalize()`, che mette MINUSCOLO tutto
+        #    tranne la prima lettera: «STEFANO FRANCESCO PIVA · WEBTV» usciva
+        #    «Stefano francesco piva · webtv», e il 10/09 «Paolo neri · webtv».
+        #    Due volte in tre giorni, sul nome di una persona. Non c'e' un modo
+        #    automatico sicuro di rimettere le maiuscole (.title() darebbe
+        #    «Webtv»): si usa il testo COSI' COME LO SI PASSA. Per un alt
+        #    scritto bene si passa --alt.
+        alt = a.alt or " — ".join(x for x in (a.occhiello, titolo) if x)
         if aggancia(a.pagina, url, alt):
             print("  🔗 agganciata alla pagina")
         elif url in open(os.path.join(REPO, a.pagina), encoding="utf-8").read():
