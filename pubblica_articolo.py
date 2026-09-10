@@ -1678,6 +1678,8 @@ BODY_VOTO_LIBEGUALE = '''
 Le tre proposte <strong style="display:inline">non sono di Partecipazione Attiva</strong>. Le promuove l&rsquo;<strong style="display:inline">Associazione per la Rappresentanza &laquo;Voto LibEguale&raquo;</strong> (votolibeguale.it), che le ha depositate come leggi di iniziativa popolare sulla piattaforma del Ministero della Giustizia; la raccolta firme online &egrave; aperta dal <strong style="display:inline">15 novembre 2025</strong>. <strong style="display:inline">Il nostro ruolo &egrave; diffonderle e invitare a firmare</strong>: n&eacute; il movimento n&eacute; alcun suo dirigente ne sono promotori. Segnaliamo per chiarezza che <strong style="display:inline">Stefano Francesco Piva</strong>, del Direttivo, &egrave; iscritto a Voto LibEguale, e che il portavoce <strong style="display:inline">Luigi Spanu</strong> ha moderato un loro incontro pubblico nel dicembre 2025: entrambe le cose a titolo personale, non come posizione del movimento.
 </div>
 
+<img loading=lazy src="images/voto-libeguale-cover.webp" alt="Una mano segna la preferenza su una scheda elettorale rosa per la Camera dei Deputati" width="1400" height="787" style="width:100%;height:auto;border-radius:14px;margin:8px 0 28px">
+
 <h2>Di cosa si tratta</h2>
 
 <p>Sono <strong style="display:inline">tre distinte leggi di iniziativa popolare</strong> per modificare la legge elettorale di Camera e Senato (il Rosatellum). Ciascuna chiede <strong style="display:inline">50.000 firme</strong> per essere depositata in Parlamento, e si firma online sulla piattaforma <em>firmereferendum.giustizia.it</em> con SPID, CIE o CNS.</p>
@@ -1696,7 +1698,7 @@ Le tre proposte <strong style="display:inline">non sono di Partecipazione Attiva
 
 <div class="box-info">
 <strong>&#x1F4CA; I numeri al 10 settembre 2026</strong>
-Voto di preferenza e primarie: <strong style="display:inline">2.867 / 50.000</strong> (6%). Pluricandidature e soglie: <strong style="display:inline">4.831 / 50.000</strong> (10%). Voto congiunto: <strong style="display:inline">4.456 / 50.000</strong> (9%). Numeri letti direttamente sulla piattaforma del Ministero: non li aggiorniamo in automatico, il numero vero &egrave; sempre quello sulla pagina di firma.
+<p style="margin:14px 0 4px;font-weight:700;font-family:montserrat,sans-serif;font-size:.92em">Voto di preferenza e primarie &mdash; <span data-pa-cont="vle-num-preferenza">2.873 / 50.000 (5.7%)</span></p><span style="display:block;height:10px;border-radius:5px;background:#f0e6d3;overflow:hidden"><span style="display:block;height:100%;width:5.7%;background:#e8900a" data-pa-cont="vle-barra-preferenza"></span></span><p style="margin:14px 0 4px;font-weight:700;font-family:montserrat,sans-serif;font-size:.92em">Pluricandidature e soglie di sbarramento &mdash; <span data-pa-cont="vle-num-pluricandidature">4.837 / 50.000 (9.7%)</span></p><span style="display:block;height:10px;border-radius:5px;background:#f0e6d3;overflow:hidden"><span style="display:block;height:100%;width:9.7%;background:#e8900a" data-pa-cont="vle-barra-pluricandidature"></span></span><p style="margin:14px 0 4px;font-weight:700;font-family:montserrat,sans-serif;font-size:.92em">Voto congiunto obbligatorio &mdash; <span data-pa-cont="vle-num-congiunto">4.466 / 50.000 (8.9%)</span></p><span style="display:block;height:10px;border-radius:5px;background:#f0e6d3;overflow:hidden"><span style="display:block;height:100%;width:8.9%;background:#e8900a" data-pa-cont="vle-barra-congiunto"></span></span><p style="margin-top:14px;color:#666;font-size:.88em">Numeri letti direttamente sulla piattaforma del Ministero: non li aggiorniamo in automatico, il numero vero &egrave; sempre quello sulla pagina di firma.</p>
 </div>
 
 <h2>Perch&eacute; lo sosteniamo</h2>
@@ -1718,7 +1720,7 @@ ART = {
   'data_badge'   : '10 SETTEMBRE 2026',
   'lettura_min'  : 5,
   'categoria_hero': '⚖️ Riforma elettorale',
-  'og_image'     : 'LOGO-PA.webp',
+  'og_image'     : 'images/anteprime/voto-libeguale-tre-leggi-elettorale-anteprima.jpg',
   'h1'           : 'Tre leggi elettorali da firmare',
   'sottotitolo'  : 'L’Associazione Voto LibEguale ha depositato tre leggi di iniziativa popolare per il voto di preferenza, contro le pluricandidature e le soglie di sbarramento, e per il voto disgiunto. Partecipazione Attiva sostiene la richiesta di fondo e invita a firmare.',
   'meta_desc'    : 'Tre leggi di iniziativa popolare per voto di preferenza, niente pluricandidature e stop al voto congiunto. Non sono nostre: le sosteniamo e invitiamo a firmare.',
