@@ -1734,15 +1734,15 @@ ART = {
   'lettura_min'  : 5,
   'categoria_hero': '⚖️ Riforma elettorale',
   'og_image'     : 'images/anteprime/voto-libeguale-tre-leggi-elettorale-anteprima.jpg',
-  'h1'           : 'Tre leggi elettorali da firmare',
+  'h1'           : 'Tre leggi di iniziativa popolare da firmare',
   'sottotitolo'  : 'L’Associazione Voto LibEguale ha depositato tre leggi di iniziativa popolare per il voto di preferenza, contro le pluricandidature e le soglie di sbarramento, e per il voto disgiunto. Partecipazione Attiva sostiene la richiesta di fondo e invita a firmare.',
   'meta_desc'    : 'Tre leggi di iniziativa popolare per voto di preferenza, niente pluricandidature e stop al voto congiunto. Non sono nostre: le sosteniamo e invitiamo a firmare.',
   'card_cat'     : 'RIFORMA ELETTORALE',
-  'card_title'   : 'Tre leggi elettorali da firmare',
+  'card_title'   : 'Tre leggi di iniziativa popolare da firmare',
   'card_desc'    : 'Voto di preferenza, niente pluricandidature, stop al voto congiunto. Non sono nostre: le promuove Voto LibEguale, le sosteniamo e invitiamo a firmare.',
   'ticker_emoji' : '⚖️',
   'ticker_tema'  : 'RIFORMA ELETTORALE',
-  'ticker_testo' : 'Tre leggi elettorali di iniziativa popolare &mdash; sosteniamo la richiesta di voto di preferenza e voto disgiunto',
+  'ticker_testo' : 'Tre leggi di iniziativa popolare &mdash; sosteniamo la richiesta di voto di preferenza e voto disgiunto',
   'body'         : BODY_VOTO_LIBEGUALE,
 }
 
