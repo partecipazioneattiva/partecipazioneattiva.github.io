@@ -1,0 +1,34 @@
+---
+# Riallinea le firme delle tre leggi elettorali di Voto LibEguale.
+#
+# Gemello di firme-fuori-guerra.yml, stesso principio. Il cron interno di
+# GitHub (schedule:) e' pero' inaffidabile per intervalli brevi (misurato sul
+# gemello della Calabria: media 3 ore e mezza invece di 10 minuti). Per un
+# aggiornamento vicino al vero tempo reale, lo stesso Google Apps Script che
+# gia' richiama firme-fuori-guerra.yml ogni 5 minuti richiama anche questo.
+#
+# 10 settembre 2026 — chiesto da Fernando: le tre barre "autoaggiornanti come
+# sempre".
+name: Firme Voto LibEguale
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: firme-voto-libeguale
+  cancel-in-progress: false
+
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - name: Leggi l'API del Ministero e riallinea sito
+        run: |
+          git config user.email "webmaster.partecipazione.attiva@gmail.com"
+          git config user.name "Partecipazione Attiva"
+          python3 _tools/aggiorna_firme_voto_libeguale.py
