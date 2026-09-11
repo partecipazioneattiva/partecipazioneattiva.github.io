@@ -64,6 +64,8 @@ import sys
 import urllib.request
 from datetime import datetime
 
+from pubblica_contatore import pubblica
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGINA = 'fuori-italia-guerra-mobilitazione-nazionale.html'
 HOME = 'index.html'
@@ -238,25 +240,10 @@ def main():
     subprocess.run(['git', 'commit', '-q', '-m',
                     f'Appello "Fuori l\'Italia dalla guerra": {formato_it(adesioni)} adesioni'], check=True)
 
-    # Il cron della petizione Calabria gira ogni 10 minuti, questo ogni 5: ogni
-    # due giri su tre cadono nello stesso minuto e possono litigarsi il push
-    # (il remoto nel frattempo ha un commit che qui non c'e' ancora). Un solo
-    # ritentativo con rebase basta: i due script toccano file diversi (tranne
-    # index.html, dove pero' scrivono in punti distinti della card), non c'e'
-    # un vero conflitto di contenuto da risolvere a mano.
-    esito = subprocess.run(['git', 'push', '-q', 'origin', 'main'])
-    if esito.returncode != 0:
-        print('  · push respinto (probabile corsa con un altro aggiornamento), riprovo con rebase')
-        rb = subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'])
-        if rb.returncode != 0:
-            # index.html e' minificato su una riga sola: se la corsa ha toccato
-            # quella stessa riga (anche in un punto diverso), il rebase puo'
-            # non risolversi da solo. Non si tenta una fusione a mano qui: si
-            # abbandona e si lascia perdere questo giro, il prossimo (fra
-            # pochi minuti) riparte da capo con i dati freschi.
-            subprocess.run(['git', 'rebase', '--abort'])
-            stop('corsa con un altro aggiornamento: conflitto sulla home, riprovo al prossimo giro')
-        subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
+    # Gli altri contatori toccano la stessa index.html (una riga sola): se il
+    # push e' respinto, si riparte da capo sulla home appena pubblicata.
+    # Il perche' sta in pubblica_contatore.py (guasto dell'11/09/2026).
+    pubblica()
     print('  ✅ pubblicato')
 
 

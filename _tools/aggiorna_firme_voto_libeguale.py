@@ -40,6 +40,8 @@ import sys
 import urllib.request
 from datetime import datetime
 
+from pubblica_contatore import pubblica
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGINA = 'voto-libeguale-tre-leggi-elettorale.html'
 HOME = 'index.html'
@@ -193,15 +195,10 @@ def main():
     subprocess.run(['git', 'add'] + file_da_committare, check=True)
     subprocess.run(['git', 'commit', '-q', '-m', 'Voto LibEguale: aggiornate le firme delle tre leggi'], check=True)
 
-    esito = subprocess.run(['git', 'push', '-q', 'origin', 'main'])
-    if esito.returncode != 0:
-        print('  · push respinto (probabile corsa con un altro aggiornamento), riprovo con rebase')
-        rb = subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'])
-        if rb.returncode != 0:
-            subprocess.run(['git', 'rebase', '--abort'])
-            print('  ⛔ corsa con un altro aggiornamento: conflitto sulla home, riprovo al prossimo giro')
-            sys.exit(1)
-        subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
+    # Gli altri contatori toccano la stessa index.html (una riga sola): se il
+    # push e' respinto, si riparte da capo sulla home appena pubblicata.
+    # Il perche' sta in pubblica_contatore.py (guasto dell'11/09/2026).
+    pubblica()
     print('  ✅ pubblicato')
 
 

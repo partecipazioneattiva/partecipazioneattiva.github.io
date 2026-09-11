@@ -30,6 +30,8 @@ import sys
 import urllib.request
 from datetime import datetime
 
+from pubblica_contatore import pubblica
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def stop(motivo):
     print(f'  ⛔ {motivo} — non tocco niente')
@@ -180,15 +182,11 @@ def main():
     subprocess.run(['git', 'add', HOME, PAGINA], check=True)
     subprocess.run(['git', 'commit', '-q', '-m',
                     f'Referendum educazione affettiva: {formato_it(firme)} firme'], check=True)
-    # gli altri due contatori toccano la stessa index.html: un push respinto
-    # non e' un guasto, si riprova dopo aver riallineato
-    for tentativo in range(3):
-        if subprocess.run(['git', 'push']).returncode == 0:
-            print('  OK pubblicato')
-            return
-        print(f'  push respinto (tentativo {tentativo+1}/3): riallineo e riprovo')
-        subprocess.run(['git', 'pull', '--no-rebase', '--no-edit'], check=False)
-    stop('push respinto tre volte: guarda a mano')
+    # Gli altri contatori toccano la stessa index.html (una riga sola): se il
+    # push e' respinto, si riparte da capo sulla home appena pubblicata.
+    # Il perche' sta in pubblica_contatore.py (guasto dell'11/09/2026).
+    pubblica()
+    print('  OK pubblicato')
 
 
 if __name__ == '__main__':

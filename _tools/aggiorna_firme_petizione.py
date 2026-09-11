@@ -62,6 +62,8 @@ import sys
 import urllib.request
 from datetime import datetime
 
+from pubblica_contatore import pubblica
+
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGINA = 'sanita-calabria-petizione-comunita-competente.html'
 HOME = 'index.html'
@@ -243,20 +245,10 @@ def main():
         messaggio += f' (traguardo spostato da {traguardo_prima} a {obiettivo})'
     subprocess.run(['git', 'commit', '-q', '-m', messaggio], check=True)
 
-    # Dal 9/09/2026 anche l'appello "Fuori l'Italia dalla guerra" ha un cron
-    # gemello (ogni 5 minuti) che tocca la stessa index.html: un push respinto
-    # per corsa non e' piu' un caso raro. index.html e' minificata su una riga
-    # sola, quindi un rebase puo' non risolversi da solo se la corsa ha toccato
-    # la stessa riga: in quel caso si abbandona e si lascia perdere questo
-    # giro, il prossimo (fra dieci minuti) riparte da capo.
-    esito = subprocess.run(['git', 'push', '-q', 'origin', 'main'])
-    if esito.returncode != 0:
-        print('  · push respinto (probabile corsa con un altro aggiornamento), riprovo con rebase')
-        rb = subprocess.run(['git', 'pull', '--rebase', '-q', 'origin', 'main'])
-        if rb.returncode != 0:
-            subprocess.run(['git', 'rebase', '--abort'])
-            stop('corsa con un altro aggiornamento: conflitto sulla home, riprovo al prossimo giro')
-        subprocess.run(['git', 'push', '-q', 'origin', 'main'], check=True)
+    # Gli altri contatori toccano la stessa index.html (una riga sola): se il
+    # push e' respinto, si riparte da capo sulla home appena pubblicata.
+    # Il perche' sta in pubblica_contatore.py (guasto dell'11/09/2026).
+    pubblica()
     print('  ✅ pubblicato')
 
 
