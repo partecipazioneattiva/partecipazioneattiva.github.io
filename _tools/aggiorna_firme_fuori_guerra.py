@@ -42,8 +42,13 @@ cambia la costante a occhio.
 
 🟥 SI FERMA INVECE DI INDOVINARE, come lo strumento gemello per la petizione
 sanita' Calabria (`aggiorna_firme_petizione.py`): se l'API non risponde, se
-cambia formato, o se il numero letto e' assurdo (zero, o piu' del doppio
-dell'ultimo valore scritto nell'articolo), il programma non tocca niente.
+cambia formato, o se il numero letto e' assurdo (zero, piu' del triplo
+dell'ultimo valore scritto, o meno della meta'), il programma non tocca
+niente. Un calo PIU' CONTENUTO viene invece pubblicato: il sito ripulisce
+di tanto in tanto iscrizioni doppie o spam, ed e' un calo vero, non un
+errore di lettura (visto il 16/09/2026: sceso stabilmente da 8.303 a 8.286
+per oltre 8 ore, bloccando il job a ogni giro finche' non si e' allargata
+la soglia).
 
     python3 _tools/aggiorna_firme_fuori_guerra.py            # aggiorna e pubblica
     python3 _tools/aggiorna_firme_fuori_guerra.py --prova     # dice e basta
@@ -193,8 +198,11 @@ def main():
     if abs(adesioni - prima) == 0:
         print(f'  = fermo a {formato_it(adesioni)}: niente da cambiare')
         return
-    if adesioni < prima or adesioni > prima * 3 + 1000:
+    if adesioni < prima // 2 or adesioni > prima * 3 + 1000:
         stop(f'salto non credibile: {formato_it(prima)} → {formato_it(adesioni)}')
+    if adesioni < prima:
+        print(f'  ℹ️ calo rispetto all\'ultimo pubblicato ({formato_it(prima)} → {formato_it(adesioni)}): '
+              'probabile pulizia duplicati/spam sul sito, pubblico comunque')
 
     testo = sostituisci(pag,
                         r'\(\d{1,2} \w+ \d{4}\) la pagina indica <strong>[\d.]+ adesioni</strong>',
