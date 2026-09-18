@@ -6,7 +6,14 @@
     <description>Notizie, battaglie e proposte di Partecipazione Attiva</description>
     <language>it</language>
     <atom:link href="https://partecipazione-attiva.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Thu, 10 Sep 2026 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 18 Sep 2026 12:00:00 +0200</lastBuildDate>
+  <item>
+    <title>APE — Assemblea Popolare Ecumenica | Angelo Nicotra</title>
+    <link>https://partecipazione-attiva.it/ape.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/ape.html</guid>
+    <description>Con APE, Partecipazione Attiva propone un&amp;#x27;assemblea permanente di cittadini sorteggiati che obbliga le istituzioni a rispondere.</description>
+    <pubDate>Fri, 18 Sep 2026 12:00:00 +0200</pubDate>
+  </item>
   <item>
     <title>Tre leggi di iniziativa popolare da firmare</title>
     <link>https://partecipazione-attiva.it/voto-libeguale-tre-leggi-elettorale.html</link>
@@ -117,13 +124,6 @@
     <link>https://partecipazione-attiva.it/cavalleggeri-cielo-aperto.html</link>
     <guid isPermaLink="true">https://partecipazione-attiva.it/cavalleggeri-cielo-aperto.html</guid>
     <description>La proposta di Partecipazione Attiva al Comune di Napoli: un museo diffuso di street art a Cavalleggeri d&amp;#x27;Aosta, Fuorigrotta.</description>
-    <pubDate>Wed, 22 Jul 2026 12:00:00 +0200</pubDate>
-  </item>
-  <item>
-    <title>APE — Assemblea Popolare Ecumenica | Angelo Nicotra</title>
-    <link>https://partecipazione-attiva.it/ape.html</link>
-    <guid isPermaLink="true">https://partecipazione-attiva.it/ape.html</guid>
-    <description>Con APE, Partecipazione Attiva propone un&amp;#x27;assemblea permanente di cittadini sorteggiati che obbliga le istituzioni a rispondere.</description>
     <pubDate>Wed, 22 Jul 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
