@@ -107,7 +107,7 @@ def sostituisci_nel_marcato(testo, ancora, schema, nuovo, dove):
 
 
 PAGINA = 'referendum-educazione-affettiva-scuole.html'
-HOME = 'index.html'
+HOME = 'iniziative-popolari.html'
 API = ('https://referendumeducazioneaffettiva.it/wp-admin/admin-ajax.php'
        '?action=get_firme_live&nocache=')
 OBIETTIVO = 500000

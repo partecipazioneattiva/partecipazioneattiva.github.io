@@ -44,7 +44,7 @@ from pubblica_contatore import pubblica
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGINA = 'voto-libeguale-tre-leggi-elettorale.html'
-HOME = 'index.html'
+HOME = 'iniziative-popolari.html'
 FINTO_BROWSER = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
                  '(KHTML, like Gecko) Chrome/126 Safari/537.36')
 MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio',

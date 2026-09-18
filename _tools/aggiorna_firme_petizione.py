@@ -66,7 +66,7 @@ from pubblica_contatore import pubblica
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGINA = 'sanita-calabria-petizione-comunita-competente.html'
-HOME = 'index.html'
+HOME = 'iniziative-popolari.html'
 INDIRIZZO = 'https://www.change.org/p/per-una-compiuta-riforma-della-sanit%C3%A0-in-calabria'
 FINTO_BROWSER = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
                  '(KHTML, like Gecko) Chrome/126 Safari/537.36')

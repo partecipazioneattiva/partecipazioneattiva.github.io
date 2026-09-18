@@ -73,7 +73,7 @@ from pubblica_contatore import pubblica
 
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAGINA = 'fuori-italia-guerra-mobilitazione-nazionale.html'
-HOME = 'index.html'
+HOME = 'iniziative-popolari.html'
 API = 'https://fuorilitaliadallaguerra.org/api/index.php?limit=1&page=1'
 FINTO_BROWSER = ('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 '
                  '(KHTML, like Gecko) Chrome/126 Safari/537.36')

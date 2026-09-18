@@ -1,6 +1,15 @@
 {
   "articoli": [
     {
+      "slug": "pensattivo-progetto-ape-video.html",
+      "titolo": "PensAttivo racconta il Progetto APE",
+      "tema": "🐝 Progetto APE",
+      "tema_key": "progetto ape",
+      "data": "2026-09-18",
+      "img": "pensattivo-progetto-ape-card.jpg",
+      "sommario": "PensAttivo spiega in video il Progetto APE. Sintesi pubblica scaricabile e chiamata aperta a cittadini e associazioni per uno strumento che vincoli gl"
+    },
+    {
       "slug": "rcauto-paolo-neri.html",
       "titolo": "RC Auto: perché a Napoli si paga di più",
       "tema": "🚗 RC Auto",

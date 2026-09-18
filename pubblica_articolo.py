@@ -1797,7 +1797,7 @@ BODY_RCAUTO_PAOLO = r"""<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-width
 """
 
 
-ART = {
+ART_RCAUTO_PAOLO_OLD = {
   'slug'         : 'rcauto-paolo-neri.html',
   'autore'       : 'neri',
   'data_iso'     : '2026-09-10',
@@ -1816,6 +1816,63 @@ ART = {
   'ticker_tema'  : 'WEBTV',
   'ticker_testo' : 'RC Auto: perch&eacute; a Napoli si paga di pi&ugrave; &mdash; Paolo Neri spiega la proposta di legge sulla WebTV',
   'body'         : BODY_RCAUTO_PAOLO,
+}
+
+BODY_PENSATTIVO_APE_VIDEO = r"""<style>.pa-lead{font-size:1.12em!important;color:#8a4e00!important;font-weight:600}.pa-box{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:24px 28px;margin:28px 0}.pa-box h3{font-family:montserrat,sans-serif;color:#9c5b00;font-size:1em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px}.pa-dl{display:flex;align-items:center;gap:16px;border:2px solid #e8900a;border-radius:14px;padding:20px 22px;margin:30px 0;background:#fff8ee}.pa-dl .ico{flex:0 0 auto;width:46px;height:46px;border-radius:10px;background:#5f3500;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.72em;font-family:montserrat,sans-serif}.pa-dl .t{flex:1 1 auto;font-family:montserrat,sans-serif;font-size:.84em;color:#555;line-height:1.5}.pa-dl .t b{color:#8a4e00;display:block;margin-bottom:3px}.pa-dl a.btn{flex:0 0 auto;background:#e8900a;color:#2b1a00;text-decoration:none;padding:11px 20px;border-radius:50px;font-family:montserrat,sans-serif;font-weight:700;font-size:.84em}</style>
+
+<p class="pa-lead">Il volume completo esce presto. Nell&rsquo;attesa, PensAttivo &mdash; la mascotte del movimento &mdash; ne illustra a grandi linee il contenuto in undici minuti: il problema dell&rsquo;astensione, le radici storiche del sorteggio, come funzionano le direttive vincolanti, le tre leggi costituzionali e i costi.</p>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;margin:1.5em 0">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/KHBT1XlljnQ"
+    title="Il Progetto APE spiegato da PensAttivo"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<div class="pa-box">
+<h3>Perch&eacute; conta proprio in campagna elettorale</h3>
+<p>Ogni cinque anni gli elettori affidano un mandato, e per cinque anni non hanno pi&ugrave; voce: una promessa fatta per ottenere un voto, oggi, pu&ograve; essere ignorata a costo zero. &Egrave; il vuoto che l&rsquo;APE prova a colmare: le direttive delle assemblee sorteggiate sono vincolanti non nel senso che impongono una decisione, ma nel senso che chi le riceve &mdash; Governo, Regioni, Comuni &mdash; deve attuarle oppure motivare pubblicamente il rifiuto, con un voto a maggioranza assoluta. Proprio nei periodi elettorali, quando i programmi si moltiplicano, &egrave; pensato per restare acceso anche dopo il voto: un canale permanente che tiene gli eletti indirizzati verso quello che hanno promesso, o verso quello che i cittadini chiedono loro attraverso l&rsquo;Ufficio Popolare Territoriale.</p>
+</div>
+
+<div class="pa-dl">
+<div class="ico">PDF</div>
+<div class="t"><b>La sintesi pubblica del volume</b>7 pagine: il problema dell&rsquo;astensione, le radici storiche del sorteggio, come funziona l&rsquo;APE, le tre leggi costituzionali, il quadro dei costi, le domande frequenti e le criticit&agrave; dichiarate dagli stessi proponenti. Il volume completo &mdash; 207 pagine, con il testo integrale delle tre leggi costituzionali &mdash; &egrave; di prossima pubblicazione.</div>
+<a class="btn" href="documenti/APE_Sintesi_Pubblica.pdf" target="_blank" rel="noopener">Scarica la sintesi</a>
+</div>
+
+<h2>Una chiamata unitaria, non di Partecipazione Attiva</h2>
+<p>Siamo nella fase di massima diffusione: si parla a tutti i cittadini, e in particolare alle tante piccole associazioni &mdash; come lo &egrave; Partecipazione Attiva &mdash; che da sole pesano poco e insieme possono incidere. Per questo Partecipazione Attiva ha aperto una rete che invita singoli cittadini, associazioni, movimenti e comitati civici a condividere questi principi, con peso paritario per ogni soggetto aderente: nessuna gerarchia, nessuna propriet&agrave; del progetto. Non &egrave; la proposta di un movimento che chiede sostegno: &egrave; una chiamata a costruire insieme, da attivisti e sostenitori alla pari, uno strumento istituzionale vero attraverso cui i cittadini abbiano finalmente voce.</p>
+
+<p><a href="rete-ape.html" style="color:#9c5b00;font-weight:700">&rarr; Scopri la Rete APE e come aderire</a></p>
+
+<p style="margin-top:28px">Il progetto per esteso &mdash; il sorteggio, i tre livelli, il ciclo dell&rsquo;istanza, i costi dettagliati, cosa insegna il mondo &mdash; &egrave; sulla pagina dedicata: <a href="ape.html" style="color:#9c5b00;font-weight:700">APE &mdash; Assemblea Popolare Ecumenica</a>.</p>
+
+<p><em>Questo video &egrave; condotto da un personaggio animato con voce sintetica generata da intelligenza artificiale. Le idee e i numeri riportati vengono dal documento del progetto APE.</em></p>
+"""
+
+
+ART = {
+  'slug'         : 'pensattivo-progetto-ape-video.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-09-18',
+  'data_human'   : '18 settembre 2026',
+  'data_badge'   : '18 SETTEMBRE 2026',
+  'lettura_min'  : 4,
+  'categoria_hero': '\U0001F41D Progetto APE',
+  'og_image'     : 'images/pensattivo-progetto-ape-card.jpg',
+  'h1'           : 'PensAttivo racconta il Progetto APE',
+  'sottotitolo'  : 'In undici minuti, l&rsquo;Assemblea Popolare Ecumenica spiegata a grandi linee. Esce la sintesi pubblica del volume, e si apre la fase di massima diffusione: cittadini e piccole associazioni, alla pari, per uno strumento che tenga gli eletti fedeli a quanto promesso.',
+  'meta_desc'    : 'PensAttivo spiega in video il Progetto APE. Sintesi pubblica scaricabile e chiamata aperta a cittadini e associazioni per uno strumento che vincoli gli eletti.',
+  'card_cat'     : 'PROGETTO APE',
+  'card_title'   : 'PensAttivo racconta il Progetto APE: la chiamata &egrave; aperta',
+  'card_desc'    : 'PensAttivo racconta l&rsquo;APE in undici minuti. Esce la sintesi pubblica, e si apre la fase di massima diffusione: cittadini e associazioni, alla pari, per un vero strumento che tenga gli eletti fedeli al voto.',
+  'ticker_emoji' : '\U0001F41D',
+  'ticker_tema'  : 'PROGETTO APE',
+  'ticker_testo' : 'Il Progetto APE spiegato in video da PensAttivo &mdash; esce la sintesi pubblica, aperta la chiamata a cittadini e associazioni',
+  'body'         : BODY_PENSATTIVO_APE_VIDEO,
 }
 
 ART_REFERENDUM_EDUCAZIONE_AFFETTIVA_OLD = {
