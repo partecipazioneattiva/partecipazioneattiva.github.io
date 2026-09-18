@@ -313,14 +313,31 @@ lo faccio io.
   "vuoi che committi?". Finito il lavoro: committo e riferisco cosa ho
   fatto e cosa ho **verificato** (con la prova, non con un'impressione).
 
-  🟥 **ECCEZIONE `git push` — segnalata il 06/09/2026, DA SCIOGLIERE CON FERNANDO.**
-  Questa riga diceva anche «push» e «pusho». Ma `_MANUALI_CLAUDE/CLAUDE.md`
-  (26/08/2026) ordina l'opposto: *«git push — MAI in autonomia. Preparare tutto,
-  poi FERMARSI, mostrare a Fernando cosa sta per andare online e ATTENDERE il suo
-  "ok, pubblica"»*. **Due istruzioni di Fernando che si contraddicono.**
-  Finché non decide lui, vale **la più prudente**: si prepara tutto, si mostra,
-  si aspetta l'«ok, pubblica». Il push manda live un sito pubblico: fra due regole
-  in conflitto si sceglie quella che non può fare un danno irreversibile.
+  🟥 **`git push` sul sito — SCIOLTA il 16/09/2026, precisata lo stesso giorno.**
+  Detto da Fernando: *«decidere di pubblicare sul sito resta mia mentre
+  decidere nei lavori tecnici tipo creazione video perfetti valutare pro e
+  contro costi benefici resta tua che sei l'unica con le capacità di
+  farlo»*, poi, sul caso concreto del contatore "Fuori l'Italia dalla
+  guerra" (bug che bloccava un'automazione già approvata): *«questa non è
+  decisione di pubblicare ma aggiustamento tecnico, sempre tua
+  competenza»*.
+
+  **La linea di confine è fra DUE tipi di push**, non fra push e non-push:
+  - 🟢 **Aggiustamento tecnico di un'automazione già approvata** (correggere
+    un bug in uno script che già pubblica da solo — i quattro contatori
+    firme, `ruota_home.py`, ecc.) → **decido ed eseguo io**, push compreso.
+    Riferisco cosa ho fatto e verificato, non chiedo prima.
+  - 🔴 **Decisione editoriale di mettere online qualcosa di nuovo o diverso**
+    (un articolo, un contenuto, un cambio visibile che non è già in corso
+    d'automazione) → vale `_MANUALI_CLAUDE/CLAUDE.md` (26/08/2026): **MAI in
+    autonomia.** Preparo tutto, mi FERMO, mostro cosa sta per andare online
+    e **ATTENDO il suo «ok, pubblica»**.
+
+  Nel dubbio se un push sia aggiustamento o decisione editoriale: se sto solo
+  **restaurando un comportamento già in essere e già voluto** (l'automazione
+  esisteva, funzionava, si è rotta, la rimetto a posto), è tecnico. Se sto
+  **introducendo qualcosa che il sito non farebbe da solo** (nuovo testo,
+  nuova pagina, nuovo contenuto), è editoriale e si aspetta.
   ⛔ Ricordare anche le **pagine congelate** (regola B dell'altro file):
   `cavalleggeri-cielo-aperto.html`, `diritto-alla-casa.html`.
 - **Si chiede solo su risvolti legali o privacy**: dati personali degli iscritti,
