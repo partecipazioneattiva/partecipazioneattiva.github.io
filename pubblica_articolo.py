@@ -1854,7 +1854,7 @@ BODY_PENSATTIVO_APE_VIDEO = r"""<style>.pa-lead{font-size:1.12em!important;color
 """
 
 
-ART = {
+ART_PENSATTIVO_APE_VIDEO_OLD = {
   'slug'         : 'pensattivo-progetto-ape-video.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-09-18',
@@ -1873,6 +1873,64 @@ ART = {
   'ticker_tema'  : 'PROGETTO APE',
   'ticker_testo' : 'Il Progetto APE spiegato in video da PensAttivo &mdash; esce la sintesi pubblica, aperta la chiamata a cittadini e associazioni',
   'body'         : BODY_PENSATTIVO_APE_VIDEO,
+}
+
+BODY_SPANU_ANALFABETISMO = r"""<p>Il <strong>18 settembre 2026</strong> il nostro portavoce nazionale <strong>Luigi Spanu</strong> &egrave; intervenuto a un incontro live del <strong>Comitato Iniziative Popolari</strong> (presieduto da <strong>Mattia Orioli</strong>, al quale Partecipazione Attiva ha aderito), nel ciclo di incontri sulla legge elettorale iniziato a Genova e proseguito a luglio a Roma. Il tema della serata: <strong>analfabetismo elettorale e crisi dei partiti</strong>.</p>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;margin:1.5em 0">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/-aPNyfpepwY"
+    title="Spanu: Analfabetismo elettorale e crisi dei partiti — le due proposte di Partecipazione Attiva"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<p style="margin:0 0 1.5em"><a href="https://www.youtube.com/watch?v=-aPNyfpepwY" target="_blank" rel="noopener noreferrer" style="color:#9c5b00;font-weight:700">&#x25B6;&#xFE0E; Guarda il video sul canale del Comitato Iniziative Popolari &rarr;</a></p>
+
+<p>Spanu ha portato l&rsquo;analisi di Partecipazione Attiva sulle leggi elettorali che si sono succedute dal 1993 a oggi &mdash; che secondo la sua analisi hanno progressivamente tolto ai cittadini il diritto di scegliere direttamente i propri parlamentari &mdash; e ha presentato <strong>due proposte</strong> del movimento.</p>
+
+<h2>Riformare i partiti dall&rsquo;interno</h2>
+
+<p>La prima proposta &egrave; una <strong>legge di iniziativa popolare (LIP) per la riforma dei partiti</strong>, gi&agrave; segnalata &mdash; ha detto Spanu &mdash; dal presidente delle ACLI in un incontro precedente del ciclo. L&rsquo;obiettivo &egrave; impedire che nei partiti prevalga la leadership delle segreterie (quello che Spanu chiama <strong>&laquo;leaderismo&raquo;</strong> e <strong>&laquo;capocrazia&raquo;</strong>) a scapito della democrazia interna fra iscritti e attivisti.</p>
+
+<p>Il collegamento con l&rsquo;attualit&agrave;: la nuova legge elettorale approvata al Senato, ora in discussione alla Camera, mantiene le <strong>liste bloccate</strong> e la figura del capolista &mdash; che secondo Spanu rafforzano proprio quella capocrazia. Una riforma dei partiti che garantisca liste costruite in modo democratico, ha detto, &egrave; la condizione perch&eacute; la legge elettorale conti davvero qualcosa per gli iscritti.</p>
+
+<h2>L&rsquo;analfabetismo elettorale: una piattaforma nelle scuole</h2>
+
+<p>La seconda proposta riguarda quello che Spanu chiama <strong>analfabetismo elettorale</strong>: i cittadini conoscono le leggi elettorali solo a ridosso del voto, quando ormai &egrave; tardi per incidere. La proposta &egrave; una <strong>piattaforma educativa e formativa</strong>, da introdurre nelle scuole superiori come &laquo;palestra di impegno civico partecipativo&raquo;.</p>
+
+<p>Come modello, Spanu ha citato una buona pratica del movimento <strong>Pi&ugrave; Democrazia</strong> in Trentino sull&rsquo;alfabetizzazione elettorale, che si richiama ai principi del Consiglio d&rsquo;Europa sulla promozione della democrazia. Ha citato anche <strong>Decidim</strong>, la piattaforma open source per la partecipazione dei cittadini alle decisioni di Comuni e Regioni, nata al Comune di Barcellona e adottata in Italia &mdash; con il nome <strong>ParteciPa</strong> a livello nazionale (partecipa.gov.it) &mdash; dal Comune di Milano e dalle Regioni Emilia-Romagna, Puglia e Sicilia: uno strumento che esiste, ha detto Spanu, ma che le amministrazioni attivano solo se i cittadini lo chiedono &mdash; e per chiederlo bisogna prima sapere che esiste.</p>
+
+<div class="pa-box">
+<h3>L&rsquo;anteprima: il Progetto APE</h3>
+<p>Nella parte finale dell&rsquo;intervento, Spanu ha anticipato il <strong>Progetto APE</strong> (Assemblea Popolare Ecumenica), la proposta di riforma costituzionale di Partecipazione Attiva: tre leggi &mdash; istituzione dell&rsquo;APE, abolizione del Senato, referendum propositivo &mdash; pensate per affiancare la democrazia rappresentativa con uno strumento di democrazia diretta, senza sostituirla. Il progetto per esteso &egrave; sulla pagina dedicata: <a href="ape.html" style="color:#9c5b00;font-weight:700">APE &mdash; Assemblea Popolare Ecumenica</a>, raccontato anche in video da <a href="pensattivo-progetto-ape-video.html" style="color:#9c5b00;font-weight:700">PensAttivo</a>.</p>
+</div>
+
+<p><em>Il video &egrave; stato pubblicato dal canale YouTube del Comitato Iniziative Popolari. Il resoconto qui sopra riprende gli argomenti dell&rsquo;intervento di Luigi Spanu; per il ragionamento per esteso, con le sue parole, si rimanda al video integrale.</em></p>
+"""
+
+
+ART = {
+  'slug'         : 'spanu-analfabetismo-elettorale-crisi-partiti.html',
+  'autore'       : 'spanu',
+  'data_iso'     : '2026-09-19',
+  'data_human'   : '19 settembre 2026',
+  'data_badge'   : '19 SETTEMBRE 2026',
+  'lettura_min'  : 5,
+  'categoria_hero': '\U0001F4CB Resoconto — 18 settembre 2026',
+  'og_image'     : 'images/organigramma/luigi-spanu.webp',
+  'h1'           : 'Analfabetismo elettorale e crisi dei partiti',
+  'sottotitolo'  : 'Luigi Spanu, portavoce nazionale di Partecipazione Attiva, al Comitato Iniziative Popolari: le due proposte del movimento &mdash; una legge per la democrazia interna ai partiti, e una piattaforma educativa contro l&rsquo;analfabetismo elettorale.',
+  'meta_desc'    : 'Luigi Spanu, portavoce nazionale PA, al Comitato Iniziative Popolari: le due proposte del movimento contro la crisi dei partiti e l&rsquo;analfabetismo elettorale.',
+  'card_cat'     : 'RIFORMA ELETTORALE',
+  'card_title'   : 'Analfabetismo elettorale e crisi dei partiti',
+  'card_desc'    : 'Luigi Spanu al Comitato Iniziative Popolari presenta le due proposte di PA: una legge per la democrazia interna ai partiti, e una piattaforma educativa contro l&rsquo;analfabetismo elettorale.',
+  'ticker_emoji' : '\U0001F4CB',
+  'ticker_tema'  : 'INIZIATIVE POPOLARI',
+  'ticker_testo' : 'Spanu al Comitato Iniziative Popolari &mdash; le due proposte di PA contro la crisi dei partiti e l&rsquo;analfabetismo elettorale',
+  'body'         : BODY_SPANU_ANALFABETISMO,
 }
 
 ART_REFERENDUM_EDUCAZIONE_AFFETTIVA_OLD = {
