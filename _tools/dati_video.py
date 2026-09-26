@@ -17,6 +17,7 @@ su YouTube — e' testo nostro, non inventato qui.
     python3 _tools/dati_video.py --rileggi  # rilegge da YouTube anche cio' che e' in cache
 """
 import glob
+import html
 import json
 import os
 import re
@@ -56,7 +57,7 @@ def da_youtube(vid):
         m = re.search(pat, pag)
         return m.group(1) if m else ''
 
-    titolo = primo(r'<meta name="title" content="([^"]*)"')
+    titolo = html.unescape(primo(r'<meta name="title" content="([^"]*)"'))   # 26/09/2026: YouTube scrive &#39; e simili; nel JSON-LD niente entità
     if not titolo:
         return None
     desc = primo(r'"shortDescription":"((?:[^"\\]|\\.)*)"')

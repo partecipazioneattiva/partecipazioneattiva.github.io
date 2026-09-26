@@ -1912,7 +1912,72 @@ BODY_SPANU_ANALFABETISMO = r"""<p>Il <strong>18 settembre 2026</strong> il nostr
 """
 
 
+BODY_APE_DOPO_IL_VOTO = r'''<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-width:760px;margin:0 auto}.pa-yt button{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;position:relative;line-height:0}.pa-yt img,.pa-yt iframe{width:100%;aspect-ratio:16/9;height:auto;display:block;border:0;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)}.pa-yt-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}.pa-yt-play svg{width:78px;height:78px}.pa-yt button:hover .pa-yt-play svg,.pa-yt button:focus .pa-yt-play svg{width:88px;height:88px}.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.85em;color:#9c5b00;margin-top:14px;text-align:center;font-weight:700;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.5}.pa-trascr{margin:26px auto 0;max-width:760px;border:1px solid #f0e6d3;border-radius:12px;padding:12px 16px;background:#fffdf8}.pa-trascr summary{font-family:montserrat,sans-serif;font-weight:700;color:#8a4e00;cursor:pointer}.pa-trascr-testo{margin-top:12px;font-size:.95em;line-height:1.75}.pa-cta{display:block;max-width:420px;margin:30px auto;text-align:center;background:#e07b00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;padding:16px 22px;border-radius:12px;text-decoration:none}.pa-cta:hover{background:#c26a00}</style><style>.pa-lead{font-size:1.12em!important;color:#8a4e00!important;font-weight:600}.pa-box{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:24px 28px;margin:28px 0}.pa-box h3{font-family:montserrat,sans-serif;color:#9c5b00;font-size:1em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px}</style>
+
+<div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;margin:0 0 1.5em">
+  <iframe
+    src="https://www.youtube-nocookie.com/embed/tsJSC29VpAs"
+    title="E dopo il voto? La proposta APE spiegata: che cos’è e come funziona"
+    style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<p class="pa-lead">Si discute tanto di legge elettorale, cioè di come scegliamo chi ci rappresenta. Ma dopo il voto, per cinque anni, che cosa può fare un cittadino? Oggi una promessa elettorale si può ignorare a costo zero, e le proposte dei cittadini possono restare senza risposta.</p>
+
+<p>In questo video spieghiamo, con i documenti alla mano, l’<strong>APE – Assemblea Popolare Ecumenica</strong>: una proposta di riforma costituzionale ideata da <strong>Angelo Nicotra</strong>, presidente di Partecipazione Attiva. È pensata per chi non segue la politica tutti i giorni: ogni parola tecnica è spiegata, e c’è un esempio concreto.</p>
+
+<div class="pa-box">
+<h3>In breve</h3>
+<ul>
+<li><strong>Chi ne fa parte:</strong> cittadini comuni scelti per sorteggio dalle liste elettorali, con equilibrio di età, genere e territorio. Chi negli ultimi due anni è stato iscritto a un partito o ha avuto cariche politiche non può essere estratto. Chi accetta riceve un’indennità e permessi di lavoro retribuiti.</li>
+<li><strong>Com’è fatta:</strong> tre livelli alla pari – Comune, Regione, nazionale – per oltre 6.500 assemblee e più di 46.000 cittadini sorteggiati. In ogni Comune, uno sportello fisico e digitale dove chiunque può portare una proposta.</li>
+<li><strong>Come funziona:</strong> la proposta accolta diventa una direttiva. Chi la riceve deve attuarla, oppure respingerla con un voto a maggioranza assoluta e una motivazione pubblica. Entro un anno si verifica in pubblico l’attuazione.</li>
+<li><strong>Se nessuno risponde:</strong> dopo 120 giorni di silenzio di Governo o Camera, due terzi dei sorteggiati nazionali oppure 500.000 cittadini possono chiedere un referendum propositivo, valido senza quorum. Se passa, il Governo ha 180 giorni per attuare la proposta.</li>
+<li><strong>Cosa non è:</strong> non fa leggi, non governa, non sostituisce nessun organo. Si aggiunge alle istituzioni.</li>
+<li><strong>Il pacchetto:</strong> tre leggi costituzionali, tutte insieme o nessuna – crea le assemblee, abolisce il Senato, introduce il referendum propositivo. Il Senato costa oggi 541 milioni di euro l’anno; secondo le nostre stime il sistema delle assemblee ne costerebbe 252, con un risparmio prudenziale di circa 250 milioni.</li>
+</ul>
+</div>
+
+<p>Nel video diciamo anche i punti deboli che noi stessi riconosciamo: la tutela del posto di lavoro di chi viene sorteggiato, le rinunce, la preparazione di chi deve decidere su bilanci e sanità. Chi trova un errore, o una soluzione migliore, rende un servizio al progetto.</p>
+
+<p>L’abbiamo proposto noi, ma il progetto non è nostro: la <a href="rete-ape.html">Rete APE</a> è aperta a singoli cittadini, comitati, associazioni, movimenti e piccoli partiti, con lo stesso peso per ogni aderente. L’adesione è gratuita. Il libro di Angelo Nicotra sul progetto, <em>«Morte della democrazia delegativa, viva la democrazia partecipativa»</em>, è in preparazione.</p>
+
+<a class="pa-cta" href="rete-ape.html">Aderisci alla Rete APE</a>
+
+<p><strong>I documenti:</strong> la <a href="ape.html">proposta APE per intero</a>, <a href="pensattivo-progetto-ape-video.html">il Progetto APE raccontato da PensAttivo</a>, e per la legge elettorale la <a href="https://www.camera.it/leg19/126?idDocumento=2822&amp;leg=19" rel="noopener" target="_blank">scheda dell’A.C. 2822 sul sito della Camera</a>.</p>
+
+<details class="pa-trascr">
+<summary>Trascrizione del video</summary>
+<div class="pa-trascr-testo"><p>Buongiorno, qui è Partecipazione Attiva. Prima una cosa: la mia voce è fatta con l'intelligenza artificiale. I fatti no: vengono dai documenti, e ve li mostro uno per uno.</p><p>In queste settimane si parla molto di legge elettorale, cioè delle regole con cui votiamo i nostri rappresentanti. Il testo, approvato dalla Camera a luglio e modificato dal Senato, è tornato alla Camera il quindici settembre per l'ultimo passaggio. Tutto il dibattito ruota intorno a una domanda: come scegliamo chi ci rappresenta.</p><p>Quasi nessuno si fa la domanda successiva. Dopo il voto, che cosa può fare un cittadino? Per cinque anni, molto poco. Qualche strumento c'è: le petizioni, cioè richieste scritte al Parlamento; le proposte di legge scritte dai cittadini, con almeno cinquantamila firme; il referendum per cancellare una legge. Ma una proposta di legge dei cittadini obbliga il Parlamento a riceverla, non ad approvarla. Una promessa fatta in campagna elettorale, oggi, si può ignorare a costo zero.</p><p>Su questo vuoto lavora una proposta: l'APE, Assemblea Popolare Ecumenica. È una riforma costituzionale, cioè una modifica della Costituzione, ideata da Angelo Nicotra, presidente di Partecipazione Attiva. Ecumenica non ha niente di religioso: vuol dire aperta a tutti, senza distinzione di età, di ceto, di idee politiche.</p><p>Nicotra ha scritto anche un libro sul progetto, con tutti i dettagli e il testo completo della riforma. Si intitola «Morte della democrazia delegativa, viva la democrazia partecipativa», e si sta lavorando per farlo uscire presto.</p><p>Prima di tutto, che cosa non è. Non è un partito, e non presenta candidati. Non fa leggi, non governa, non prende il posto del Parlamento, delle Regioni o dei Comuni. Non è contro le istituzioni: si aggiunge a loro, come un canale permanente fra i cittadini e chi governa.</p><p>Come è fatta. Le assemblee sono formate da cittadini comuni, scelti non con le elezioni ma per sorteggio. Si estrae dalle liste elettorali, cioè fra tutti quelli che hanno diritto di voto, badando che ci sia il giusto equilibrio di età, di uomini e donne, di territori. Succede già con i giudici popolari dei processi in Corte d'Assise: nessuno fa campagna per diventarlo. Chi negli ultimi due anni è stato iscritto a un partito, o ha avuto cariche politiche, non può essere estratto.</p><p>Chi viene estratto può rinunciare. Chi accetta riceve un'indennità e ha diritto a permessi di lavoro pagati: così può partecipare anche chi lavora, e non solo chi ha tempo libero.</p><p>Le assemblee sono su tre livelli: una per il Comune, una per la Regione, una nazionale. In tutto, oltre seimilacinquecento assemblee, con più di quarantaseimila cittadini sorteggiati. Nessuna comanda sulle altre: ognuna parla alla sua istituzione, quella del Comune al sindaco e alla giunta, quella nazionale al Governo. In ogni Comune, poi, c'è uno sportello, fisico e digitale, dove qualunque cittadino può portare una proposta e ricevere una ricevuta.</p><p>Come funziona. Facciamo un esempio, inventato per capirci. Un gruppo di genitori chiede un attraversamento pedonale sicuro davanti alla scuola. I genitori portano la proposta allo sportello del Comune, e la proposta viene registrata in modo pubblico. L'assemblea del Comune la esamina; se la approva, la trasforma in una richiesta formale, che si chiama direttiva. A quel punto il Comune ha due strade. O la realizza, oppure la respinge: ma per respingerla deve votare a maggioranza assoluta, cioè con più della metà dei suoi componenti, e spiegare pubblicamente perché. Quello che oggi non esiste è proprio questo: non può più far finta di niente.</p><p>Per questo le direttive si chiamano vincolanti: non obbligano a dire sì, obbligano a rispondere. Se la proposta viene accolta, entro un anno l'istituzione deve dire in pubblico a che punto sono i lavori. I tempi sono fissati per legge: anche quando una proposta arriva a livello nazionale, ci vogliono al massimo centotrentacinque giorni.</p><p>Resta un caso: il Governo o la Camera che, per centoventi giorni, non fanno niente, né attuano la direttiva né spiegano il rifiuto. Allora si può chiedere un referendum propositivo, cioè un voto in cui sono i cittadini a decidere se quella proposta va fatta. Lo possono chiedere due terzi dei sorteggiati nazionali, oppure cinquecentomila cittadini con le loro firme. Vale senza quorum: non serve che vada a votare la metà degli elettori, conta il risultato di chi vota. Se il referendum passa, il Governo ha centottanta giorni per attuare la proposta.</p><p>C'è una parte che va detta per intero. La riforma sta in tre leggi costituzionali, che entrano in vigore tutte insieme o nessuna. La prima crea le assemblee, la seconda abolisce il Senato, la terza introduce il referendum propositivo. Resterebbe la sola Camera dei deputati, che continuerebbe a fare le leggi. Il Senato costa oggi cinquecentoquarantuno milioni di euro l'anno. Tutto il sistema delle assemblee, secondo le nostre stime, ne costerebbe duecentocinquantadue. Il risparmio, stimato con prudenza, è di circa duecentocinquanta milioni l'anno.</p><p>Un organo di garanzia controlla che i sorteggi siano regolari e che le risposte delle istituzioni siano serie. Dichiariamo anche i punti deboli: il posto di lavoro di chi viene sorteggiato, le tante rinunce, la preparazione di chi deve decidere su bilanci e sanità.</p><p>Chi porta avanti il progetto? L'abbiamo proposto noi, ma il progetto non è nostro. Abbiamo aperto una rete, la Rete APE, per cittadini singoli, comitati, associazioni, movimenti e piccoli partiti che non siedono in Parlamento. Ogni aderente pesa uguale, piccolo o grande che sia, e l'adesione è gratuita. Tra i principi scritti: nessuna distinzione di idee politiche, e nessun partito o potere economico che la controlli.</p><p>Oggi è soltanto una proposta. Per diventare realtà deve approvarla il Parlamento, con la procedura che serve per cambiare la Costituzione. La strada scelta è la proposta di legge dei cittadini: servono cinquantamila firme, e puntiamo a raccoglierne dieci volte tante.</p><p>Si può discutere tutto: il sorteggio, il costo, il Senato. Chi trova un errore, o una soluzione migliore, rende un servizio al progetto. Ma la domanda resta aperta, qualunque legge elettorale passi: tra un voto e l'altro, chi ascolta i cittadini? Se la proposta vi convince, aderite alla Rete APE: è gratuita. Trovate tutti i documenti sul nostro sito: l'indirizzo è scritto qui accanto. Grazie per l'ascolto.</p></div>
+</details>
+
+<p style="font-size:.88em;color:#666;margin-top:24px"><em>La voce del video è sintetica, generata con l’intelligenza artificiale. I fatti e i numeri vengono dai documenti del progetto APE e dagli atti della Camera dei deputati.</em></p>
+'''
+
 ART = {
+  'slug'         : 'ape-dopo-il-voto-video.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-09-26',
+  'data_human'   : '26 settembre 2026',
+  'data_badge'   : '26 SETTEMBRE 2026',
+  'lettura_min'  : 7,
+  'categoria_hero': '\U0001F41D Progetto APE',
+  'og_image'     : 'images/anteprime/ape-dopo-il-voto-anteprima.jpg',
+  'h1'           : 'E dopo il voto? La proposta APE spiegata',
+  'sottotitolo'  : 'Si discute di come scegliere chi ci rappresenta, poco di cosa possono fare i cittadini dopo. In sei minuti, con i documenti: che cos’è l’Assemblea Popolare Ecumenica, com’è fatta e come funziona.',
+  'meta_desc'    : 'E dopo il voto? Il video che spiega l’APE: cittadini sorteggiati su tre livelli, direttive a cui le istituzioni devono rispondere, referendum senza quorum.',
+  'card_cat'     : 'PROGETTO APE — VIDEO',
+  'card_title'   : 'E dopo il voto? La proposta APE spiegata',
+  'card_desc'    : 'In sei minuti, con i documenti alla mano: cittadini sorteggiati, istituzioni obbligate a rispondere, referendum senza quorum. E i punti deboli che riconosciamo.',
+  'ticker_emoji' : '\U0001F41D',
+  'ticker_tema'  : 'PROGETTO APE',
+  'ticker_testo' : 'E dopo il voto? Il video che spiega la proposta APE: che cos’è e come funziona',
+  'body'         : BODY_APE_DOPO_IL_VOTO,
+}
+
+ART_SPANU_ANALFABETISMO_OLD = {
   'slug'         : 'spanu-analfabetismo-elettorale-crisi-partiti.html',
   'autore'       : 'spanu',
   'data_iso'     : '2026-09-19',
