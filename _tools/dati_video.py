@@ -61,7 +61,7 @@ def da_youtube(vid):
     if not titolo:
         return None
     desc = primo(r'"shortDescription":"((?:[^"\\]|\\.)*)"')
-    desc = desc.encode().decode('unicode_escape') if desc else ''
+    desc = json.loads('"' + desc + '"') if desc else ''   # 28/09/2026: unicode_escape rompeva le accentate («cioÃ¨»)
     # Una frase basta: la descrizione lunga di YouTube ha link e hashtag.
     desc = re.split(r'(?<=[.!?])\s|\n', desc.strip())[0][:300].strip()
     return {
