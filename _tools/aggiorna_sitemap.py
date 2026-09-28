@@ -42,6 +42,10 @@ def main():
     applica = '--applica' in sys.argv
     xml = open(SITEMAP, encoding='utf-8').read()
     dentro = set(re.findall(r'<loc>[^<]*?/([^/<]+\.html)</loc>', xml))
+    # 28/09/2026: la home sta in sitemap come "/" (e' il suo canonical), non come index.html:
+    # senza questa riga lo strumento proponeva di aggiungerla una seconda volta, doppione.
+    if f'<loc>{SITO}</loc>' in xml:
+        dentro.add('index.html')
     mancanti = [n for n in pubbliche() if n not in dentro]
     fantasmi = [n for n in dentro if not os.path.exists(BASE + n)]
 
@@ -71,6 +75,7 @@ def main():
         stato = f'XML ROTTO: {e}'
     dopo = set(re.findall(r'<loc>[^<]*?/([^/<]+\.html)</loc>',
                           open(SITEMAP, encoding='utf-8').read()))
+    dopo.add('index.html') if f'<loc>{SITO}</loc>' in open(SITEMAP, encoding='utf-8').read() else None
     print(f'\nscritto: {len(dopo)} voci · {stato} · '
           f'pagine pubbliche fuori: {len([n for n in pubbliche() if n not in dopo])}')
 

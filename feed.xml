@@ -6,7 +6,14 @@
     <description>Notizie, battaglie e proposte di Partecipazione Attiva</description>
     <language>it</language>
     <atom:link href="https://partecipazione-attiva.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Sat, 26 Sep 2026 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 12:00:00 +0200</lastBuildDate>
+  <item>
+    <title>Educazione affettiva, raccolta chiusa</title>
+    <link>https://partecipazione-attiva.it/referendum-educazione-affettiva-scuole.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/referendum-educazione-affettiva-scuole.html</guid>
+    <description>Referendum per abrogare la legge 104/2026 sul consenso informato a scuola: raccolta chiusa il 24 settembre 2026 con 576.477 firme.</description>
+    <pubDate>Mon, 28 Sep 2026 12:00:00 +0200</pubDate>
+  </item>
   <item>
     <title>E dopo il voto? La proposta APE spiegata</title>
     <link>https://partecipazione-attiva.it/ape-dopo-il-voto-video.html</link>
@@ -25,7 +32,7 @@
     <title>PensAttivo racconta il Progetto APE</title>
     <link>https://partecipazione-attiva.it/pensattivo-progetto-ape-video.html</link>
     <guid isPermaLink="true">https://partecipazione-attiva.it/pensattivo-progetto-ape-video.html</guid>
-    <description>PensAttivo spiega in video il Progetto APE. Sintesi pubblica scaricabile e chiamata aperta a cittadini e associazioni per uno strumento che vincoli gli eletti.</description>
+    <description>PensAttivo spiega in video il Progetto APE: la sintesi pubblica da scaricare e una chiamata aperta a cittadini e associazioni.</description>
     <pubDate>Fri, 18 Sep 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
@@ -36,24 +43,17 @@
     <pubDate>Fri, 18 Sep 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
-    <title>Tre leggi di iniziativa popolare da firmare</title>
+    <title>Voto LibEguale: tre leggi da firmare</title>
     <link>https://partecipazione-attiva.it/voto-libeguale-tre-leggi-elettorale.html</link>
     <guid isPermaLink="true">https://partecipazione-attiva.it/voto-libeguale-tre-leggi-elettorale.html</guid>
     <description>Tre leggi di iniziativa popolare per voto di preferenza, niente pluricandidature e stop al voto congiunto. Non sono nostre: le sosteniamo e invitiamo a firmare.</description>
     <pubDate>Thu, 10 Sep 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
-    <title>Stabilicum al Senato: 700 emendamenti e il nodo ballottaggio</title>
+    <title>Stabilicum al Senato: 700 emendamenti</title>
     <link>https://partecipazione-attiva.it/stabilicum-senato-settembre2026.html</link>
     <guid isPermaLink="true">https://partecipazione-attiva.it/stabilicum-senato-settembre2026.html</guid>
     <description>Stabilicum al Senato: quasi 700 emendamenti, Aula il 9 settembre, voto finale il 15. Il nodo ballottaggio, le preferenze coi capilista bloccati.</description>
-    <pubDate>Thu, 10 Sep 2026 12:00:00 +0200</pubDate>
-  </item>
-  <item>
-    <title>Educazione affettiva a scuola: il referendum da firmare</title>
-    <link>https://partecipazione-attiva.it/referendum-educazione-affettiva-scuole.html</link>
-    <guid isPermaLink="true">https://partecipazione-attiva.it/referendum-educazione-affettiva-scuole.html</guid>
-    <description>Referendum per abrogare la legge 104/2026 sul consenso informato a scuola: come si firma, entro quando, e perché lo sosteniamo.</description>
     <pubDate>Thu, 10 Sep 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
@@ -106,7 +106,7 @@
     <pubDate>Wed, 19 Aug 2026 12:00:00 +0200</pubDate>
   </item>
   <item>
-    <title>Sanità in Calabria: la petizione da firmare</title>
+    <title>Sanità in Calabria, la petizione</title>
     <link>https://partecipazione-attiva.it/sanita-calabria-petizione-comunita-competente.html</link>
     <guid isPermaLink="true">https://partecipazione-attiva.it/sanita-calabria-petizione-comunita-competente.html</guid>
     <description>Comunità Competente chiede aziende ospedaliere e territoriali distinte in Calabria. Partecipazione Attiva sostiene la petizione e invita a firmarla.</description>

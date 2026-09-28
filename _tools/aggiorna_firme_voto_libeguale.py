@@ -141,19 +141,20 @@ def main():
             continue
         pct = round(sostenitori / quorum * 100, 1)
         formattato = formato_it(sostenitori)
+        pct_it = str(pct).replace('.', ',')   # 28/09/2026: nel testo la virgola italiana (6,2%); nelle barre CSS resta il punto
         print(f'  legge {legge["id"]}: {formattato} / {formato_it(quorum)} ({pct}%)')
 
         pag, ok1 = sostituisci_nel_marcato(pag, legge['art_num'],
-                            r'[\d.]+ / [\d.]+ \([\d.]+%\)',
-                            f'{formattato} / {formato_it(quorum)} ({pct}%)',
+                            r'[\d.]+ / [\d.]+ \([\d.,]+%\)',
+                            f'{formattato} / {formato_it(quorum)} ({pct_it}%)',
                             f'articolo, legge {legge["id"]}: numero')
         pag, ok2 = sostituisci_nel_marcato(pag, legge['art_barra'],
                             r'width:[\d.]+%',
                             f'width:{pct}%',
                             f'articolo, legge {legge["id"]}: barra')
         casa, ok3 = sostituisci_nel_marcato(casa, legge['card_txt'],
-                            r'[\d.]+%',
-                            f'{pct}%',
+                            r'[\d.,]+%',
+                            f'{pct_it}%',
                             f'home, legge {legge["id"]}: numero card')
         casa, ok4 = sostituisci_nel_marcato(casa, legge['card_barra'],
                             r'width:[\d.]+%',
