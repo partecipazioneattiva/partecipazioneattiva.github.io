@@ -32,3 +32,24 @@ jobs:
           git config user.email "webmaster.partecipazione.attiva@gmail.com"
           git config user.name "Partecipazione Attiva"
           python3 _tools/aggiorna_firme_fuori_guerra.py
+
+  # 28/09/2026 — la petizione Calabria girava solo col cron interno di GitHub, che
+  # la faceva partire ogni 3-6 ore invece che ogni 10 minuti (misurato: 8 giri in
+  # 48 ore). Questo flusso invece e' richiamato ogni 5 minuti dallo script Google:
+  # a giri alterni fa partire anche quello della petizione. Il GITHUB_TOKEN puo'
+  # avviare un workflow_dispatch (eccezione documentata alla regola anti-ricorsione).
+  # Autorizzato da Fernando il 28/09/2026 (regola di permesso aggiunta da lui).
+  richiama-petizione:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+    steps:
+      - name: Ogni 10 minuti, fai partire anche le firme Calabria
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ $(( 10#$(date -u +%M) % 10 )) -lt 5 ]; then
+            gh workflow run firme-petizione.yml -R "$GITHUB_REPOSITORY" && echo "petizione avviata"
+          else
+            echo "giro dispari: la petizione parte al prossimo"
+          fi
