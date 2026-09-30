@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🗳️",
+      "tema": "STABILICUM",
+      "testo": "Dalla parte della Costituzione: il convegno di Milano contro la nuova legge elettorale"
+    },
+    {
       "emoji": "🐝",
       "tema": "PROGETTO APE",
       "testo": "E dopo il voto? Il video che spiega la proposta APE: che cos’è e come funziona"
@@ -34,11 +39,6 @@
       "emoji": "🏘️",
       "tema": "TERRITORIO",
       "testo": "Antonio Cristiano gira i quartieri della Municipalità 10: segnalagli il problema del tuo quartiere, va a vederlo e lo pubblica"
-    },
-    {
-      "emoji": "🏛️",
-      "tema": "DAGLI ARCHIVI",
-      "testo": "nel 2023 alla Camera Spanu propose un progetto pilota del SIRE gestito dal MEF: il testo integrale dell’intervento"
     }
   ]
 }

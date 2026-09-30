@@ -6,7 +6,14 @@
     <description>Notizie, battaglie e proposte di Partecipazione Attiva</description>
     <language>it</language>
     <atom:link href="https://partecipazione-attiva.it/feed.xml" rel="self" type="application/rss+xml"/>
-    <lastBuildDate>Mon, 28 Sep 2026 12:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 30 Sep 2026 12:00:00 +0200</lastBuildDate>
+  <item>
+    <title>Stabilicum, allarme dei giuristi a Milano</title>
+    <link>https://partecipazione-attiva.it/stabilicum-convegno-milano.html</link>
+    <guid isPermaLink="true">https://partecipazione-attiva.it/stabilicum-convegno-milano.html</guid>
+    <description>Il convegno di Milano contro la nuova legge elettorale: le voci di Cuperlo, Gomez, Biondi, Giannini, Colombo e cosa dice davvero il testo.</description>
+    <pubDate>Wed, 30 Sep 2026 12:00:00 +0200</pubDate>
+  </item>
   <item>
     <title>Educazione affettiva, raccolta chiusa</title>
     <link>https://partecipazione-attiva.it/referendum-educazione-affettiva-scuole.html</link>

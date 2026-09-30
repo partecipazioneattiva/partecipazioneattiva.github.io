@@ -1956,7 +1956,93 @@ BODY_APE_DOPO_IL_VOTO = r'''<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-w
 <p style="font-size:.88em;color:#666;margin-top:24px"><em>La voce del video è sintetica, generata con l’intelligenza artificiale. I fatti e i numeri vengono dai documenti del progetto APE e dagli atti della Camera dei deputati.</em></p>
 '''
 
+BODY_STABILICUM_CONVEGNO_MILANO = r'''<p>Luned&igrave; <strong>28 settembre 2026</strong>, alla <strong>Camera del Lavoro di Milano</strong>, si &egrave; svolto il convegno <strong>&laquo;Dalla parte della Costituzione &ndash; contro una legge elettorale che cambia gli equilibri democratici&raquo;</strong>. Dalle 17 alle 19.30 hanno parlato pi&ugrave; di trenta ospiti: costituzionalisti, ex magistrati, giornalisti, storici e politici.</p>
+
+<p>L&rsquo;hanno convocato i costituzionalisti di <strong>Costituzione e Democrazia</strong>, la <strong>Fondazione Demo</strong> e <strong>Articolo 21</strong>, con il sostegno della <strong>Rete per un voto libero e uguale</strong>. La data non era casuale: nelle stesse ore la riforma tornava alla Camera per l&rsquo;ultima lettura.</p>
+
+<p>Il punto di partenza era l&rsquo;appello <em>&laquo;Torniamo alla Costituzione&raquo;</em>, firmato da <strong>160 costituzionalisti</strong>.</p>
+
+<p class="fonte"><em>Fonti: <a href="https://www.articolo21.org/2026/09/dalla-parte-della-costituzione-convegno-alla-camera-del-lavoro-di-milano-il-28-settembre/" target="_blank" rel="noopener noreferrer">Articolo 21, programma del convegno, 24 settembre 2026</a>; <a href="https://www.ilfattoquotidiano.it/2026/09/28/legge-elettorale-riforma-convegno-milano-notizie/8521146/" target="_blank" rel="noopener noreferrer">Simone Bauducco, Il Fatto Quotidiano, 28 settembre 2026</a>.</em></p>
+
+<h2>Le voci della sala</h2>
+
+<ul>
+<li><strong>Maria Agostina Cabiddu</strong>, costituzionalista: la legge elettorale &egrave; una legge ordinaria, ma sono le regole del gioco e <em>&laquo;dovrebbe essere condivisa&raquo;</em>.</li>
+<li><strong>Gianni Cuperlo</strong>, deputato Pd: l&rsquo;obbligo per le coalizioni di indicare prima del voto il nome del futuro premier <em>&laquo;mette chiaramente in discussione&raquo;</em> l&rsquo;articolo 92 della Costituzione.</li>
+<li><strong>Peter Gomez</strong>, direttore del sito del Fatto Quotidiano: se chi ha il 42,02% prende cento parlamentari in pi&ugrave; di chi ha il 42,01%, <em>&laquo;c&rsquo;&egrave; qualcosa che non torna&raquo;</em>.</li>
+<li><strong>Francesca Biondi</strong>, costituzionalista: la riforma spinge alla competizione <em>&laquo;tra personalit&agrave;, non tra proposte&raquo;</em>.</li>
+<li><strong>Massimo Giannini</strong>, giornalista: l&rsquo;obiettivo &egrave; una <em>&laquo;capocrazia&raquo;</em>.</li>
+<li><strong>Andrea Giorgis</strong>, costituzionalista e senatore Pd: <em>&laquo;un attacco al pluralismo&raquo;</em>.</li>
+<li><strong>Gherardo Colombo</strong>, ex magistrato: <em>&laquo;tutto dipender&agrave; dal Presidente del Consiglio e il Parlamento sar&agrave; svilito&raquo;</em>.</li>
+</ul>
+
+<p class="fonte"><em>Fonti: Il Fatto Quotidiano, 28 settembre 2026 (<a href="https://www.ilfattoquotidiano.it/2026/09/28/legge-elettorale-riforma-convegno-milano-notizie/8521146/" target="_blank" rel="noopener noreferrer">resoconto</a> e <a href="https://www.ilfattoquotidiano.it/2026/09/28/legge-elettorale-colombo-parlamento-notizie/8521171/" target="_blank" rel="noopener noreferrer">intervento di Colombo</a>); <a href="https://www.alanews.it/2026/09/28/politica/video/milano-alla-camera-del-lavoro-il-convegno-contro-la-legge-elettorale-ce-da-preoccuparsi" target="_blank" rel="noopener noreferrer">Alanews, video del 28 settembre 2026</a> (Cabiddu, Cuperlo).</em></p>
+
+<h2>E adesso: la strada della Consulta</h2>
+
+<p>I promotori vogliono portare la legge davanti alla <strong>Corte costituzionale</strong> prima delle prossime elezioni, per evitare che il nuovo Parlamento venga eletto con una legge in parte illegittima. La strada &egrave; quella gi&agrave; percorsa contro il Porcellum e l&rsquo;Italicum: una causa davanti al giudice civile, che pu&ograve; mandare la questione alla Consulta.</p>
+
+<p>Non tutti la vedono cos&igrave;: secondo <em>Libero</em>, l&rsquo;opposizione <em>&laquo;punta sui giudici&raquo;</em>.</p>
+
+<p class="fonte"><em>Fonti: Articolo 21, programma del convegno; <a href="https://www.liberoquotidiano.it/news/politica/49248189/contro-legge-elettorale-pd-gia-punta-giudici/" target="_blank" rel="noopener noreferrer">Fausto Carioti, Libero, 28 settembre 2026</a>.</em></p>
+
+<h2>Cosa dice davvero il testo</h2>
+
+<p>Dal dossier ufficiale dei Servizi Studi di Camera e Senato sull&rsquo;A.C. 2822-B (16 settembre 2026):</p>
+
+<ul>
+<li><strong>Premio fisso:</strong> 70 seggi alla Camera e 35 al Senato per chi arriva primo con almeno il <strong>42%</strong> dei voti, ma solo se vince in <strong>tutte e due le Camere</strong>. Altrimenti il premio non va a nessuno.</li>
+<li><strong>Tetto:</strong> 220 deputati su 400 e 113 senatori su 200.</li>
+<li><strong>Preferenze:</strong> fino a tre, ma il capolista resta bloccato.</li>
+<li><strong>Candidato premier:</strong> ogni forza politica lo indica nel programma; il nome non compare sulla scheda.</li>
+<li><strong>Firme:</strong> 6.000 per collegio per presentare una lista (oggi 1.500), con esenzioni per chi &egrave; gi&agrave; in Parlamento.</li>
+</ul>
+
+<p><strong>Da dove viene il &laquo;cento&raquo; di Gomez.</strong> Il premio vale 70 + 35 = <strong>105 seggi</strong>. Chi supera la soglia li prende tutti, chi si ferma un soffio sotto non ne prende nessuno.</p>
+
+<p><strong>Un controllo sul timore di Colombo.</strong> Per eleggere i cinque giudici della Consulta che spettano al Parlamento servono, dal quarto scrutinio, i <strong>tre quinti dei componenti</strong>: 360 voti su 600. Con il tetto della legge chi vince arriva al massimo a <strong>333</strong>: da solo non basta. Per i membri laici del Csm la regola &egrave; meno rigida: dal terzo scrutinio bastano i tre quinti <strong>dei votanti</strong>, non dei componenti. L&igrave; il peso di una maggioranza larga si sentirebbe di pi&ugrave;.</p>
+
+<p>La Camera riesamina solo le modifiche del Senato. Secondo l&rsquo;Ansa il voto finale &egrave; atteso verso l&rsquo;<strong>8 ottobre</strong>.</p>
+
+<p class="fonte"><em>Fonti: <a href="http://documenti.camera.it/leg19/dossier/Pdf/AC0469f.pdf" target="_blank" rel="noopener noreferrer">Servizi Studi di Camera e Senato, dossier A.C. 2822-B, 16 settembre 2026</a>, pp. 7-9; <a href="https://www.ansa.it/sito/notizie/politica/2026/09/23/legge-elettorale-da-domani-al-30-i-voti-in-commissione-poi-laula_b80acc4a-faf9-4a63-b8f7-c8cefab787fb.html" target="_blank" rel="noopener noreferrer">Ansa, 23 settembre 2026</a>; Costituzione, artt. 92 e 135; <a href="https://www.cortecostituzionale.it/documenti/download/pdf/CC_SS_fonti_lc_22111967_n_2_rev.pdf" target="_blank" rel="noopener noreferrer">legge costituzionale 2/1967, art. 3</a>; <a href="https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:legge:1958-03-24;195" target="_blank" rel="noopener noreferrer">legge 195/1958, art. 22</a>.</em></p>
+
+<h2>La nostra posizione</h2>
+
+<p>Seguiamo lo Stabilicum dall&rsquo;inizio. La nostra posizione l&rsquo;abbiamo scritta in tre punti, e il convegno di Milano li tocca tutti.</p>
+
+<p><strong>1. Il metodo.</strong> Non siamo contrari alla stabilit&agrave; di governo: &egrave; un obiettivo legittimo. Ma una legge elettorale &egrave; la regola con cui i cittadini esercitano la sovranit&agrave;, e <strong>non pu&ograve; essere scritta da una sola parte, a proprio vantaggio</strong> (<a href="stabilicum-nota-spanu-17lug2026.html">la nota del portavoce Luigi Spanu, 17 luglio</a>).</p>
+
+<p><strong>2. Chi sceglie gli eletti.</strong> Con il capolista bloccato, nella grande maggioranza dei collegi un partito elegge un solo deputato, e quel deputato &egrave; il capolista. Le tre preferenze, l&igrave;, non spostano nulla: sono <strong>l&rsquo;ombra di una preferenza</strong>. Il nome lo sceglie la segreteria, non chi vota (<a href="preferenze-stabilicum-luglio2026.html">La preferenza che non ti fa scegliere</a>).</p>
+
+<p><strong>3. Il criterio.</strong> Una legge elettorale &egrave; giusta solo se la accetteresti <strong>senza sapere in anticipo se vincerai o perderai</strong> (<a href="legge-elettorale-giusta.html">Una legge elettorale giusta</a>). Fra i cinque requisiti che ne derivano c&rsquo;&egrave; questo: chi vince non deve potersi impadronire <strong>da solo</strong> degli organi di garanzia.</p>
+
+<p>Su quest&rsquo;ultimo punto, con onest&agrave;: il timore espresso a Milano va misurato. Con il tetto di 333 parlamentari la maggioranza non arriva da sola ai 360 voti necessari per i giudici della Consulta: l&igrave; il nostro criterio regge. &Egrave; meno solido sul Csm, dove dal terzo scrutinio contano i votanti. E non regge sulle firme: lo Stabilicum le porta a 6.000 per collegio ed esenta chi &egrave; gi&agrave; in Parlamento. &Egrave; la direzione opposta a quella che sosteniamo.</p>
+
+<p>Per questo sosteniamo le tre leggi di iniziativa popolare di <strong>Voto LibEguale</strong>. Chiedono la preferenza vera, da 250 a 500 firme per presentare una lista e nessuna esenzione per i partiti gi&agrave; in Parlamento (<a href="voto-libeguale-tre-leggi-elettorale.html">Voto LibEguale: tre leggi da firmare</a>).</p>
+'''
+
 ART = {
+  'slug'         : 'stabilicum-convegno-milano.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-09-30',
+  'data_human'   : '30 settembre 2026',
+  'data_badge'   : '30 SETTEMBRE 2026',
+  'lettura_min'  : 5,
+  'categoria_hero': '\U0001F5F3\uFE0F Stabilicum',
+  'og_image'     : 'images/anteprime/stabilicum-convegno-milano-anteprima.jpg',
+  'h1'           : 'Stabilicum, allarme dei giuristi a Milano',
+  'sottotitolo'  : 'Lunedì 28 settembre, alla Camera del Lavoro di Milano, più di trenta tra costituzionalisti, ex magistrati e giornalisti contro la nuova legge elettorale. Cosa hanno detto, e cosa scrive davvero il testo.',
+  'meta_desc'    : 'Il convegno di Milano contro la nuova legge elettorale: le voci di Cuperlo, Gomez, Biondi, Giannini, Colombo e cosa dice davvero il testo.',
+  'card_cat'     : 'STABILICUM',
+  'card_title'   : 'Dalla parte della Costituzione: il convegno di Milano',
+  'card_desc'    : 'Costituzionalisti ed ex magistrati contro la nuova legge elettorale. Le loro voci e, accanto, cosa dice davvero il testo: premio del 42%, preferenze, firme.',
+  'ticker_emoji' : '\U0001F5F3\uFE0F',
+  'ticker_tema'  : 'STABILICUM',
+  'ticker_testo' : 'Dalla parte della Costituzione: il convegno di Milano contro la nuova legge elettorale',
+  'body'         : BODY_STABILICUM_CONVEGNO_MILANO,
+}
+
+ART_APE_DOPO_IL_VOTO_OLD = {
   'slug'         : 'ape-dopo-il-voto-video.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-09-26',

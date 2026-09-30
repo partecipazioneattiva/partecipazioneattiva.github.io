@@ -1,6 +1,15 @@
 {
   "articoli": [
     {
+      "slug": "stabilicum-convegno-milano.html",
+      "titolo": "Stabilicum, allarme dei giuristi a Milano",
+      "tema": "🗳️ Stabilicum",
+      "tema_key": "stabilicum",
+      "data": "2026-09-30",
+      "img": "stabilicum-convegno-milano-anteprima.jpg",
+      "sommario": "Il convegno di Milano contro la nuova legge elettorale: le voci di Cuperlo, Gomez, Biondi, Giannini, Colombo e cosa dice davvero il testo."
+    },
+    {
       "slug": "ape-dopo-il-voto-video.html",
       "titolo": "E dopo il voto? La proposta APE spiegata",
       "tema": "🐝 Progetto APE",
