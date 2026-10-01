@@ -1,6 +1,15 @@
 {
   "articoli": [
     {
+      "slug": "nasce-sito-ape.html",
+      "titolo": "Nasce il sito dell’APE, una casa di tutti",
+      "tema": "🐝 Progetto APE",
+      "tema_key": "progetto ape",
+      "data": "2026-10-01",
+      "img": "sito-ape-anteprima.jpg",
+      "sommario": "Il Progetto APE ha un sito suo, assembleapopolareecumenica.it: neutro e senza simboli, perché chi aderisce partecipa alla pari. Ecco perché."
+    },
+    {
       "slug": "stabilicum-convegno-milano.html",
       "titolo": "Stabilicum, allarme dei giuristi a Milano",
       "tema": "🗳️ Stabilicum",

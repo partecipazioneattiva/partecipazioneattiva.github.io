@@ -2021,7 +2021,62 @@ BODY_STABILICUM_CONVEGNO_MILANO = r'''<p>Luned&igrave; <strong>28 settembre 2026
 <p>Per questo sosteniamo le tre leggi di iniziativa popolare di <strong>Voto LibEguale</strong>. Chiedono la preferenza vera, da 250 a 500 firme per presentare una lista e nessuna esenzione per i partiti gi&agrave; in Parlamento (<a href="voto-libeguale-tre-leggi-elettorale.html">Voto LibEguale: tre leggi da firmare</a>).</p>
 '''
 
+BODY_SITO_APE = r'''<style>.pa-box{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:24px 28px;margin:28px 0}.pa-box h3{font-family:montserrat,sans-serif;color:#9c5b00;font-size:1em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px}.pa-cta{display:block;max-width:420px;margin:30px auto;text-align:center;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;padding:16px 22px;border-radius:12px;text-decoration:none}.pa-cta:hover{background:#6e3e00}</style>
+<p class="pa-lead">Da oggi il Progetto APE &ndash; Assemblea Popolare Ecumenica &ndash; ha una casa sua: <a href="https://www.assembleapopolareecumenica.it/"><strong>www.assembleapopolareecumenica.it</strong></a>.</p>
+
+<p>L&rsquo;APE &egrave; la proposta ideata da <strong>Angelo Nicotra</strong>, presidente di Partecipazione Attiva: un canale permanente attraverso cui i cittadini, sorteggiati e alla pari, possono obbligare le istituzioni ad ascoltare e a rispondere. Il nostro movimento l&rsquo;ha fatta propria e la porta avanti. Ma da oggi la proposta ha un indirizzo che non &egrave; il nostro, ed &egrave; una scelta voluta.</p>
+
+<h2>Perch&eacute; un sito a parte</h2>
+
+<p><strong>&laquo;Ecumenica&raquo; vuol dire aperta a tutti, senza distinzioni.</strong> L&rsquo;APE non &egrave; un partito e non appartiene a un partito. Chiede a ogni cittadino di partecipare con lo stesso peso degli altri. Un&rsquo;idea cos&igrave; non pu&ograve; abitare sotto il simbolo di uno solo, nemmeno sotto il nostro.</p>
+
+<p>Per questo il sito nuovo non porta i nostri colori n&eacute; il nostro marchio. &Egrave; uno spazio neutro, dove chiunque pu&ograve; riconoscersi: <strong>un&rsquo;unione d&rsquo;intenti, non di simboli, bandiere o ideologie</strong>. Chi aderisce alla Rete APE entra alla pari, che sia un singolo cittadino, un comitato, un&rsquo;associazione, un movimento o un partito. Conta quello che si vuole ottenere insieme, non da dove si arriva.</p>
+
+<div class="pa-box">
+<h3>Cosa cambia, e cosa no</h3>
+<ul>
+<li><strong>Cambia la casa:</strong> la proposta, i documenti e la Rete APE hanno ora un sito tutto loro.</li>
+<li><strong>Non cambia l&rsquo;impegno:</strong> Partecipazione Attiva resta tra i promotori della Rete APE e continuer&agrave; a parlarne anche qui.</li>
+<li><strong>Non cambiano i contenuti:</strong> i testi sono gli stessi, aggiornati insieme sui due siti.</li>
+</ul>
+</div>
+
+<h2>Cosa si trova sul sito</h2>
+
+<ul>
+<li>la proposta spiegata per intero, con il video di PensAttivo;</li>
+<li>la sintesi pubblica del volume e il documento integrale, da scaricare;</li>
+<li>la <strong>Rete APE</strong>, con il modulo per aderire online: gratuito, alla pari, con una conferma via email;</li>
+<li>un indirizzo di contatto dedicato: <a href="mailto:info@assembleapopolareecumenica.it">info@assembleapopolareecumenica.it</a>.</li>
+</ul>
+
+<a class="pa-cta" href="https://www.assembleapopolareecumenica.it/">Visita il sito dell&rsquo;APE</a>
+
+<p>Chi vuole aderire pu&ograve; farlo anche da qui, dalla pagina della <a href="rete-ape.html">Rete APE</a>: il modulo &egrave; lo stesso.</p>
+'''
+
 ART = {
+  'slug'         : 'nasce-sito-ape.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-10-01',
+  'data_human'   : '1 ottobre 2026',
+  'data_badge'   : '1 OTTOBRE 2026',
+  'lettura_min'  : 3,
+  'categoria_hero': '\U0001F41D Progetto APE',
+  'og_image'     : 'images/anteprime/sito-ape-anteprima.jpg',
+  'h1'           : 'Nasce il sito dell’APE, una casa di tutti',
+  'sottotitolo'  : 'Il Progetto APE ha un indirizzo suo, neutro e senza simboli: un’unione d’intenti in cui ogni cittadino, gruppo o movimento partecipa alla pari.',
+  'meta_desc'    : 'Il Progetto APE ha un sito suo, assembleapopolareecumenica.it: neutro e senza simboli, perché chi aderisce partecipa alla pari. Ecco perché.',
+  'card_cat'     : 'PROGETTO APE',
+  'card_title'   : 'Nasce il sito dell’APE, una casa di tutti',
+  'card_desc'    : 'Un indirizzo suo, neutro e senza simboli: un’unione d’intenti, non di bandiere, dove cittadini, gruppi e movimenti partecipano alla pari.',
+  'ticker_emoji' : '\U0001F41D',
+  'ticker_tema'  : 'PROGETTO APE',
+  'ticker_testo' : 'Nasce assembleapopolareecumenica.it, il sito dell’APE: una casa di tutti, senza simboli',
+  'body'         : BODY_SITO_APE,
+}
+
+ART_STABILICUM_MILANO_OLD = {
   'slug'         : 'stabilicum-convegno-milano.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-09-30',
