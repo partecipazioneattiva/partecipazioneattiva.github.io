@@ -100,6 +100,12 @@ def data_stampata(testo: str):
     return "%s-%02d-%02d" % (m.group(3), MESI[m.group(2).lower()], int(m.group(1)))
 
 
+ALTRO_SITO = {
+    "ape.html": "https://www.assembleapopolareecumenica.it/",
+    "rete-ape.html": "https://www.assembleapopolareecumenica.it/rete.html",
+}
+
+
 def controlla(nome: str):
     sorgente = open(os.path.join(RADICE, nome), encoding="utf-8").read()
     visibile = testo_visibile(sorgente)
@@ -115,6 +121,10 @@ def controlla(nome: str):
                           ("hreflang",  r'hreflang="it"\s+href="([^"]+)"')):
         m = re.search(rx, sorgente)
         if not m:
+            continue
+        # 01/10/2026: le pagine APE hanno la versione principale sul sito del progetto
+        # (assembleapopolareecumenica.it): canonical e hreflang puntano li' di proposito.
+        if etichetta in ("canonical", "hreflang") and m.group(1) == ALTRO_SITO.get(nome):
             continue
         base = os.path.basename(m.group(1).rstrip("/")) or "index.html"
         if base == SITO:
