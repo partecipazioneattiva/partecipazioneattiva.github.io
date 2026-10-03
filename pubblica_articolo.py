@@ -1834,7 +1834,7 @@ BODY_PENSATTIVO_APE_VIDEO = r"""<style>.pa-lead{font-size:1.12em!important;color
 
 <div class="pa-box">
 <h3>Perch&eacute; conta proprio in campagna elettorale</h3>
-<p>Ogni cinque anni gli elettori affidano un mandato, e per cinque anni non hanno pi&ugrave; voce: una promessa fatta per ottenere un voto, oggi, pu&ograve; essere ignorata a costo zero. &Egrave; il vuoto che l&rsquo;APE prova a colmare: le direttive delle assemblee sorteggiate sono vincolanti non nel senso che impongono una decisione, ma nel senso che chi le riceve &mdash; Governo, Regioni, Comuni &mdash; deve attuarle oppure motivare pubblicamente il rifiuto, con un voto a maggioranza assoluta. Proprio nei periodi elettorali, quando i programmi si moltiplicano, &egrave; pensato per restare acceso anche dopo il voto: un canale permanente che tiene gli eletti indirizzati verso quello che hanno promesso, o verso quello che i cittadini chiedono loro attraverso l&rsquo;Ufficio Popolare Territoriale.</p>
+<p>Ogni cinque anni gli elettori affidano un mandato, e per cinque anni non hanno pi&ugrave; voce: oggi chi ignora una promessa fatta per ottenere un voto non deve darne conto a nessuno. &Egrave; il vuoto che l&rsquo;APE prova a colmare: le direttive delle assemblee sorteggiate sono vincolanti non nel senso che impongono una decisione, ma nel senso che chi le riceve &mdash; Governo, Regioni, Comuni &mdash; deve attuarle oppure motivare pubblicamente il rifiuto, con un voto a maggioranza assoluta. Proprio nei periodi elettorali, quando i programmi si moltiplicano, &egrave; pensato per restare acceso anche dopo il voto: un canale permanente che tiene gli eletti indirizzati verso quello che hanno promesso, o verso quello che i cittadini chiedono loro attraverso l&rsquo;Ufficio Popolare Territoriale.</p>
 </div>
 
 <div class="pa-dl">
@@ -1924,7 +1924,7 @@ BODY_APE_DOPO_IL_VOTO = r'''<style>.pa-fig{margin:32px 0}.pa-yt{width:100%;max-w
   </iframe>
 </div>
 
-<p class="pa-lead">Si discute tanto di legge elettorale, cioè di come scegliamo chi ci rappresenta. Ma dopo il voto, per cinque anni, che cosa può fare un cittadino? Oggi una promessa elettorale si può ignorare a costo zero, e le proposte dei cittadini possono restare senza risposta.</p>
+<p class="pa-lead">Si discute tanto di legge elettorale, cioè di come scegliamo chi ci rappresenta. Ma dopo il voto, per cinque anni, che cosa può fare un cittadino? Oggi chi ignora una promessa elettorale o una proposta dei cittadini non deve darne conto a nessuno.</p>
 
 <p>In questo video spieghiamo, con i documenti alla mano, l’<strong>APE – Assemblea Popolare Ecumenica</strong>: una proposta di riforma costituzionale ideata da <strong>Angelo Nicotra</strong>, presidente di Partecipazione Attiva. È pensata per chi non segue la politica tutti i giorni: ogni parola tecnica è spiegata, e c’è un esempio concreto.</p>
 
