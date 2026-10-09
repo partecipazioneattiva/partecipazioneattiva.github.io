@@ -79,25 +79,19 @@ checklist prima del push e il registro delle trappole gia' pagate.
 Vale per chiunque legga questo file: Claude, un'altra IA o una persona.
 **Prima di scrivere uno script nuovo, guardare se esiste gia'** (manuale §17).
 
-## PRIMA DI FARE IL TG: leggere la procedura blindata
+## Il TG è SOSPESO (9 ottobre 2026)
 
-Anche il TG passa da questo repository (le card e il ticker), ma **si produce
-altrove**, e la sua procedura e' **imperativa**:
+Detto da Fernando: *«quel tg con animazione di pensattivo non si fa più»* e,
+alla domanda se si fermasse solo quello o tutto: *«si fermano tutti i tg»*.
 
-    ~/Desktop/SCRIPT/tg/PROCEDURA_BLINDATA.md
-
-Si esegue **così ogni volta, senza la minima modifica** (ordine di Fernando,
-01/08/2026). Accanto, `MANUALE_PIPELINE_TG.md` spiega il **perche'**: misure,
-prove fallite, registro delle modifiche. Entrambi sono raggiungibili anche da
-`_MANUALI_CLAUDE/` (sono collegamenti, non copie: **mai sostituirli con copie**).
-
-Le tre cose che si sbagliano piu' spesso, se non si legge:
-`python3` nudo non funziona (serve l'interprete dell'ambiente conda), **l'audio
-si consegna grezzo** (niente `--allinea`, `16`, `19`), e il **`reference_text`
-del copione si copia dal `.txt` accanto all'audio**, mai a memoria.
-
-⚠️ Quando si pubblica un TG, sul sito i posti da aggiornare sono **tre**:
-card in `webtv.html`, card nella home, voce del ticker.
+- **Non si produce e non si pubblica nessun TG.** Niente card in `webtv.html`,
+  niente card nella home, niente voce nel ticker.
+- Lo slot «ultima uscita» di `novita.json` e' **vuoto**: il ticker non mostra piu'
+  «NUOVO TG». Si riempie solo per una nuova uscita vera (video o notizia).
+- La procedura resta sul Mac (`~/Desktop/SCRIPT/tg/PROCEDURA_BLINDATA.md`,
+  `MANUALE_PIPELINE_TG.md`) e **vale se il TG riparte**: non si cancella niente.
+- **La rassegna stampa non e' del TG**: *«la rassegna stampa la fa cittadino
+  informato»*. Questo stop non la riguarda.
 
 ## ⛔ Le cartelle nuove nascono in `Claude IA`, non sulla Scrivania (13 agosto 2026)
 

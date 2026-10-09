@@ -15,15 +15,5 @@
     "testo": "una frase, non due"
   },
 
-  "ultima": {
-    "tipo": "TG",
-    "etichetta": "Nuovo TG",
-    "titolo": "PensAttivo News — edizione nazionale",
-    "data": "2026-07-28",
-    "link": "webtv.html",
-    "youtube_id": "bF0BjezVh4A",
-    "immagine": "",
-    "occhiello": "Partecipazione Attiva WebTV",
-    "testo": "Accise sul gasolio, l'ex Ilva fermata dai giudici, la rottamazione in scadenza: il notiziario visto da un alieno."
-  }
+  "ultima": {}
 }
