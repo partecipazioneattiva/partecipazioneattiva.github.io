@@ -2,6 +2,11 @@
   "voci": [
     {
       "emoji": "🐝",
+      "tema": "CONTROLLO CIVICO",
+      "testo": "Anche con la migliore legge elettorale, chi controlla davvero il potere? La proposta APE"
+    },
+    {
+      "emoji": "🐝",
       "tema": "PROGETTO APE",
       "testo": "Legge elettorale firmata: dopo il voto, quale voce hanno i cittadini? La proposta APE"
     },
@@ -34,11 +39,6 @@
       "emoji": "🕊️",
       "tema": "PACE",
       "testo": "Fuori l’Italia dalla guerra &mdash; sosteniamo l’appello alla mobilitazione nazionale di ottobre"
-    },
-    {
-      "emoji": "🏘️",
-      "tema": "TERRITORIO",
-      "testo": "Antonio Cristiano gira i quartieri della Municipalità 10: segnalagli il problema del tuo quartiere, va a vederlo e lo pubblica"
     }
   ]
 }

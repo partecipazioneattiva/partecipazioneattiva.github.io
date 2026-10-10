@@ -2139,7 +2139,219 @@ BODY_LEGGE_FIRMATA = r'''<style>.pa-cta{display:block;max-width:420px;margin:30p
 <p>Per approfondire la proposta o parlarne con altri: la <a href="rete-ape.html">Rete APE</a> ha una chat WhatsApp aperta a chi sostiene il progetto (<a href="https://chat.whatsapp.com/Kglv6h9DNnV5L3INuDhs7t" rel="noopener" target="_blank">entra qui</a>). Attenzione: il tuo numero di telefono sarà visibile agli altri partecipanti e l'ingresso viene approvato dagli amministratori.</p>
 '''
 
+BODY_CHI_CONTROLLA = r'''<style>.pa-fig figcaption{font-family:montserrat,sans-serif;font-size:.8em;color:#9c5b00;margin-top:10px;text-align:center}.pa-fonti{font-family:montserrat,sans-serif;font-size:.84em;color:#555;line-height:1.6}</style>
+<figure class="pa-fig" style="margin:0 0 30px"><img src="images/legge-elettorale-chi-controlla-il-potere.webp" alt="Illustrazione: cinque cittadini visti di spalle davanti a un palazzo istituzionale al tramonto, accanto a un'urna in cui una mano inserisce la scheda. Il titolo dice «Il voto è l'inizio. Poi serve verificare: stessi criteri per tutti». A destra le sei funzioni dell'Osservatorio civico degli impegni pubblici: registrare, collegare alle fonti, seguire, indicare lo stato, dare spazio alle spiegazioni, correggere in pubblico." loading="lazy" width="2000" height="1125" style="width:100%;height:auto;border-radius:14px;box-shadow:0 6px 20px rgba(0,0,0,.12)"><figcaption>Illustrazione a cura dell’Assemblea Popolare Ecumenica. Generata con l’intelligenza artificiale.</figcaption></figure>
+
+<p>La legge elettorale è importante. Stabilisce come si trasformano i voti in seggi, come vengono scelti i rappresentanti e quali maggioranze possono governare. Ma c’è una domanda che viene prima di ogni riforma e resta dopo ogni elezione: una volta scelti i rappresentanti, chi controlla che rispettino gli impegni presi con i cittadini?</p>
+
+<p>Il problema della democrazia non si esaurisce nella cabina elettorale. Comincia anche il giorno dopo, quando i programmi diventano decisioni, le promesse devono tradursi in provvedimenti e chi è stato eletto esercita il potere.</p>
+
+<p>Per questo una buona legge elettorale è necessaria, ma non basta. Senza cittadini capaci di verificare, confrontare e chiedere conto delle decisioni pubbliche, anche le regole elettorali migliori rischiano di lasciare un vuoto tra il voto e il controllo democratico.</p>
+
+<h2>Il mandato dei cittadini non è una delega in bianco</h2>
+
+<p>In Italia la Costituzione stabilisce, all’articolo 67, che ogni parlamentare rappresenta la Nazione ed esercita le proprie funzioni senza vincolo di mandato.</p>
+
+<p>È una garanzia importante: un parlamentare non è un semplice esecutore degli ordini del partito, né può essere giuridicamente costretto a votare sempre secondo le indicazioni ricevute. Deve poter valutare le decisioni e assumersi la responsabilità delle proprie scelte.</p>
+
+<p>Questo non significa, però, che i partiti non possano darsi regole, elaborare programmi o chiedere coerenza ai propri eletti. I partiti sono strumenti essenziali della partecipazione politica. La disciplina di gruppo può rendere possibile l’attuazione di un programma sottoposto agli elettori.</p>
+
+<p>La questione nasce quando la disciplina diventa un mezzo per impedire ogni dissenso, quando il confronto interno viene sostituito dall’obbedienza o quando le decisioni dei rappresentanti non vengono più spiegate ai cittadini.</p>
+
+<p>La libertà del parlamentare non deve diventare un alibi per sottrarsi alla responsabilità politica. Ma la coerenza con un programma non può trasformarsi nella rinuncia a pensare e valutare autonomamente.</p>
+
+<p>Il punto di equilibrio è questo: libertà di mandato, trasparenza delle decisioni e responsabilità pubblica.</p>
+
+<p class="pa-fonti">Fonte: <a href="https://www.senato.it/istituzione/la-costituzione/parte-ii/titolo-i/sezione-i/articolo-67" target="_blank" rel="noopener nofollow">Costituzione italiana, articolo 67 – Senato della Repubblica</a>.</p>
+
+<h2>Quando il dissenso diventa un problema per il partito</h2>
+
+<p>La storia parlamentare italiana offre diversi esempi delle tensioni tra autonomia dei rappresentanti e disciplina politica.</p>
+
+<p>Nel 2010, durante il conflitto interno al Popolo della Libertà, Gianfranco Fini e i suoi sostenitori entrarono in rotta di collisione con la leadership del partito. Nel 2014, il senatore del Partito Democratico Corradino Mineo fu sostituito nella commissione Affari costituzionali del Senato nel corso del confronto sulle riforme istituzionali. Nel 2015, durante l’iter dell’Italicum, il Partito Democratico sostituì alcuni componenti dissenzienti nelle commissioni parlamentari.</p>
+
+<p>Sono vicende differenti per contesto, responsabilità e conseguenze. Non vanno sovrapposte né usate per attribuire automaticamente torti o ragioni a una parte politica. Mostrano però un problema ricorrente: quanto spazio resta al dissenso quando un partito considera indispensabile approvare una decisione?</p>
+
+<p>Un partito ha il diritto di cercare una linea comune e di chiedere ai propri rappresentanti di rispettarla. Ma i cittadini hanno altrettanto diritto di conoscere le ragioni di una sostituzione, di un voto contrario o di un cambiamento di posizione.</p>
+
+<p>Se la discussione viene ridotta a un conflitto tra fedeltà e tradimento, il merito delle decisioni rischia di scomparire. E quando il merito scompare, il controllo democratico diventa più difficile.</p>
+
+<p class="pa-fonti">Fonti:</p>
+<ul class="pa-fonti">
+<li><a href="https://www.repubblica.it/politica/2014/06/11/news/pd_mineo_escluso_da_commissione_affari_costituzionali-88708545/" target="_blank" rel="noopener nofollow">La Repubblica, Corradino Mineo escluso dalla Commissione Affari costituzionali, 11 giugno 2014</a></li>
+<li><a href="https://www.ansa.it/sito/notizie/politica/2015/04/22/italicumaventino-opposizioni.-ma-renziavanti-su-tutto_2689f661-35ff-4430-9b71-1538fb4038da.html" target="_blank" rel="noopener nofollow">ANSA, Italicum e protesta delle opposizioni, 22 aprile 2015</a></li>
+</ul>
+
+<h2>Cambiare gruppo parlamentare: un diritto, ma anche una responsabilità</h2>
+
+<p>Un’altra questione riguarda il passaggio dei parlamentari da un gruppo all’altro.</p>
+
+<p>Secondo l’analisi di Openpolis, nella XVII legislatura, dal 2013 al 2018, si registrarono 569 cambi di gruppo che coinvolsero 348 parlamentari.</p>
+
+<p>Il dato non dimostra, da solo, che ogni cambio fosse ingiustificato. Possono esistere divergenze politiche reali, scissioni, cambiamenti di linea e conflitti di coscienza. L’articolo 67 tutela proprio l’autonomia dei parlamentari.</p>
+
+<p>Ma il numero pone una domanda legittima: quanto è rimasto riconoscibile, durante la legislatura, il rapporto tra il voto espresso dai cittadini e le scelte compiute dai loro rappresentanti?</p>
+
+<p>Chi cambia gruppo non perde automaticamente la legittimità del proprio mandato. Ha però una responsabilità politica: spiegare pubblicamente perché lo fa, quali divergenze sono intervenute e in che modo la nuova posizione si rapporta agli impegni assunti davanti agli elettori.</p>
+
+<p>La stessa regola deve valere per tutti, indipendentemente dal partito coinvolto. Non basta denunciare il trasformismo quando riguarda gli avversari e giustificare ogni scelta quando riguarda i propri.</p>
+
+<p class="pa-fonti">Fonte: <a href="https://www.openpolis.it/esercizi/i-cambi-di-gruppo/" target="_blank" rel="noopener nofollow">Openpolis, I cambi di gruppo</a>.</p>
+
+<h2>Le penali contro il dissenso risolvono il problema?</h2>
+
+<p>Nel Movimento 5 Stelle, soprattutto nelle prime fasi della sua esperienza parlamentare, la richiesta di rispettare gli impegni e le regole interne assunse forme particolarmente rigide.</p>
+
+<p>Nel 2018, il codice etico previsto per i candidati alle elezioni politiche contemplava, in determinate circostanze, una penale di 100.000 euro per chi avesse violato gli impegni indicati dal codice. Non si trattava di una regola universale applicabile indistintamente a ogni parlamentare, ma di una previsione legata a quello specifico codice e ai suoi destinatari.</p>
+
+<p>Nel giugno 2022, Open riferì che la penale da 100.000 euro non era mai stata applicata, neppure dopo la scissione legata a Luigi Di Maio. La questione va inoltre distinta dai meccanismi interni relativi alla restituzione di una parte degli emolumenti: erano strumenti differenti, con presupposti diversi.</p>
+
+<p>Al di là delle singole vicende, il problema è evidente. Si può chiedere a un candidato di assumere impegni politici e di rispettare regole organizzative. Ma quando una sanzione economica viene collegata al comportamento parlamentare, occorre interrogarsi sulla sua compatibilità con la libertà del mandato e sulla possibilità che diventi uno strumento di pressione.</p>
+
+<p>La questione è stata oggetto di analisi giuridiche anche in rapporto all’articolo 67 della Costituzione. Non è corretto trasformare ogni controversia in una sentenza definitiva sull’illegittimità di qualsiasi regola interna; è invece necessario distinguere gli impegni politici, le obbligazioni contrattuali e i limiti costituzionali.</p>
+
+<p>Una cosa, però, dovrebbe essere chiara: la coerenza politica si giudica soprattutto davanti ai cittadini, attraverso le scelte e le spiegazioni pubbliche, non soltanto attraverso una sanzione economica.</p>
+
+<p class="pa-fonti">Fonti:</p>
+<ul class="pa-fonti">
+<li><a href="https://www.open.online/2022/06/23/scissione-m5s-di-maio-multa/" target="_blank" rel="noopener nofollow">Open, 23 giugno 2022, sulla penale da 100.000 euro e la scissione del Movimento 5 Stelle</a></li>
+<li><a href="https://www.forumcostituzionale.it/wordpress/wp-content/uploads/2018/06/gianfrancesco.pdf" target="_blank" rel="noopener nofollow">Forum di Quaderni costituzionali, contributo sulla penale e l’articolo 67 della Costituzione</a></li>
+</ul>
+
+<h2>Il caso Draghi: quando la decisione degli iscritti incontra il Parlamento</h2>
+
+<p>Nel febbraio 2021, il Movimento 5 Stelle sottopose agli iscritti sulla piattaforma Rousseau la domanda relativa alla partecipazione a un governo guidato da Mario Draghi.</p>
+
+<p>I voti favorevoli furono 44.177, quelli contrari 30.360, per un totale di 74.537 votanti. La partecipazione corrispose a circa il 62% dei circa 119.500 aventi diritto. Il 59,3% favorevole, spesso citato nelle cronache, era quindi la percentuale calcolata sui votanti, non sull’intera platea degli aventi diritto.</p>
+
+<p>Il 17 febbraio, durante il voto di fiducia al Senato, 15 senatori del Movimento 5 Stelle votarono contro. Il giorno successivo furono annunciate le espulsioni.</p>
+
+<p>È una vicenda che mette in evidenza un conflitto difficile: da un lato, la volontà della maggioranza degli iscritti; dall’altro, l’autonomia costituzionale dei parlamentari e la loro responsabilità personale nel voto.</p>
+
+<p>La consultazione aveva espresso un orientamento politico degli iscritti. Non poteva cancellare, sul piano costituzionale, la libertà del mandato parlamentare. Allo stesso tempo, chi aveva votato contro una decisione sostenuta dalla maggioranza aveva il dovere politico di spiegare le proprie ragioni, così come il gruppo aveva il dovere di chiarire le ragioni delle sanzioni adottate.</p>
+
+<p>Nel dicembre 2021, il Consiglio di garanzia del Senato accolse i ricorsi di sei senatori espulsi: Barbara Lezzi, Elio Lannutti, Rosa Silvana Abate, Luisa Angrisani, Margherita Corrado e Fabio Di Micco. La vicenda riguardò anche l’assenza di un adeguato procedimento interno di secondo grado. Non è corretto presentarla come una decisione che avrebbe vietato in assoluto qualsiasi espulsione da un gruppo: il caso riguardava specifiche contestazioni e specifiche procedure.</p>
+
+<p>La lezione non è che una maggioranza non possa prendere decisioni, né che ogni dissenso sia necessariamente giusto. È che le regole interne devono essere chiare, le procedure devono consentire un ricorso effettivo e nessuna maggioranza politica può cancellare le garanzie costituzionali.</p>
+
+<p class="pa-fonti">Fonte: <a href="https://www.ilfattoquotidiano.it/2021/12/23/m5s-il-consiglio-di-garanzia-del-senato-reintegra-nel-gruppo-6-senatori-anti-draghi-lex-ministra-lezzi-continuero-a-dire-no-alla-fiducia/6435500/" target="_blank" rel="noopener nofollow">Il Fatto Quotidiano, 23 dicembre 2021, il reintegro dei sei senatori</a>.</p>
+
+<h2>Preferenze o liste bloccate: la scelta non elimina il problema</h2>
+
+<p>Quando si discute di legge elettorale, una delle questioni centrali è come vengono scelti gli eletti.</p>
+
+<p>Con le liste bloccate, l’ordine dei candidati è stabilito dal partito. Questo può rafforzare il controllo delle segreterie sulla selezione del personale politico e ridurre la possibilità per gli elettori di scegliere direttamente la persona da eleggere.</p>
+
+<p>Con le preferenze, invece, gli elettori possono indicare il candidato prescelto all’interno della lista. È una possibilità importante, ma non una garanzia automatica di maggiore democrazia.</p>
+
+<p>Le campagne personali possono richiedere risorse economiche significative. In alcuni contesti, reti di potere locale, clientele e scambi di favore possono condizionare la competizione. Il rischio di compravendita del voto non scompare semplicemente perché l’elettore può scrivere un nome sulla scheda.</p>
+
+<p>Non esiste, dunque, un meccanismo elettorale capace di risolvere da solo ogni problema. La scelta delle candidature, la trasparenza dei finanziamenti, la qualità dell’informazione, le regole sui conflitti d’interesse e il controllo dell’operato degli eletti contano quanto il modo in cui vengono assegnati i seggi.</p>
+
+<p>La domanda non dovrebbe essere soltanto: «Chi decide i nomi sulla scheda?». Dovrebbe essere anche: «Come possiamo verificare, durante tutta la legislatura, ciò che fanno le persone che abbiamo contribuito a eleggere?».</p>
+
+<h2>Il voto segreto e il limite delle accuse senza prove</h2>
+
+<p>Il problema della responsabilità politica emerge anche quando un voto parlamentare produce un risultato inatteso.</p>
+
+<p>Nell’aprile 2013, durante l’elezione del Presidente della Repubblica, Romano Prodi ottenne 395 voti al quarto scrutinio, un risultato inferiore alle attese di chi lo aveva sostenuto. La vicenda fu accompagnata da accuse e ricostruzioni sui cosiddetti “franchi tiratori”.</p>
+
+<p>Ma il voto era segreto. Non è quindi possibile identificare con certezza tutti coloro che votarono diversamente dalle indicazioni del proprio schieramento. Il numero di 101, spesso richiamato nelle ricostruzioni giornalistiche, non deve essere presentato come un conteggio certo e verificato dei responsabili.</p>
+
+<p>Questo episodio ricorda un principio essenziale: criticare una decisione è legittimo; attribuire responsabilità personali richiede prove. La trasparenza non consiste nel sostituire i fatti con sospetti, ma nel rendere distinguibili i fatti accertati, le ipotesi e le interpretazioni.</p>
+
+<p class="pa-fonti">Fonte: <a href="https://www.ansa.it/ansamed/it/notizie/stati/italia/2013/04/19/Quirinale-senza-esito-anche-4-voto_8582344.html" target="_blank" rel="noopener nofollow">ANSAmed, 19 aprile 2013, il quarto scrutinio per il Quirinale</a>.</p>
+
+<h2>Che cosa manca dopo le elezioni?</h2>
+
+<p>Abbiamo partiti che selezionano candidati, elezioni che assegnano seggi, gruppi parlamentari che organizzano il lavoro e istituzioni che approvano le decisioni. Tutto questo è necessario.</p>
+
+<p>Ma manca spesso uno strumento semplice, accessibile e continuativo che permetta ai cittadini di seguire il percorso che va dalle promesse alle decisioni effettive.</p>
+
+<p>Un programma elettorale può contenere decine o centinaia di impegni. Durante la legislatura, alcuni vengono attuati, altri modificati, altri abbandonati e altri ancora diventano impossibili per ragioni sopravvenute. Per capire che cosa è accaduto non basta una dichiarazione del partito, un post sui social o un titolo di giornale.</p>
+
+<p>Servono documenti, date, atti parlamentari, provvedimenti approvati e spiegazioni verificabili. Occorre distinguere ciò che è stato promesso da ciò che è stato fatto, ciò che è stato proposto da ciò che è stato approvato, ciò che dipende direttamente da un governo da ciò che richiede decisioni di altri soggetti.</p>
+
+<p>E soprattutto, lo stesso metodo deve essere applicato a tutti.</p>
+
+<p>Non soltanto al partito che non ci piace. Non soltanto all’amministrazione avversaria. Non soltanto quando emerge uno scandalo.</p>
+
+<p>Il controllo democratico è credibile soltanto se non cambia criterio a seconda di chi esercita il potere.</p>
+
+<h2>La proposta APE: un Osservatorio civico degli impegni pubblici</h2>
+
+<p>È da questa esigenza che nasce la proposta di un Osservatorio civico degli impegni pubblici, un possibile strumento promosso dall’Assemblea Popolare Ecumenica.</p>
+
+<p>Non un nuovo partito, non una classifica costruita per favorire una parte e nemmeno un tribunale parallelo. Un metodo di lavoro accessibile ai cittadini per verificare, con fonti pubbliche, il rapporto tra impegni dichiarati e decisioni effettive.</p>
+
+<p>L’Osservatorio dovrebbe:</p>
+
+<ul>
+<li><strong>Registrare</strong> gli impegni pubblici, indicando chi li ha assunti, quando e con quali parole.</li>
+<li><strong>Collegare</strong> ogni impegno alle fonti originali, come programmi elettorali, atti parlamentari, leggi, delibere e documenti istituzionali.</li>
+<li><strong>Seguire</strong> l’evoluzione delle decisioni, distinguendo gli annunci dalle proposte, le proposte dagli atti approvati e gli atti approvati dalla loro concreta attuazione.</li>
+<li><strong>Indicare lo stato di avanzamento</strong>, spiegando che cosa risulta realizzato, che cosa è ancora in corso, che cosa è stato modificato e che cosa non è stato attuato.</li>
+<li><strong>Dare spazio alle spiegazioni</strong>, comprese le ragioni addotte per un cambiamento di posizione o per il mancato raggiungimento di un obiettivo.</li>
+<li><strong>Correggere pubblicamente gli errori</strong>, mantenendo un metodo verificabile e consentendo a chiunque di controllare le fonti.</li>
+</ul>
+
+<p>Non sarebbe un servizio già esistente da dare per operativo: è una proposta da costruire, con criteri pubblici, verifiche documentali e risorse adeguate.</p>
+
+<p>Il suo valore non starebbe nel proclamare chi ha ragione, ma nel mettere i cittadini nelle condizioni di giudicare autonomamente.</p>
+
+<p>Un impegno non mantenuto non dimostra automaticamente malafede. Può essere cambiato il contesto, può essere mancata una maggioranza, può essere intervenuto un ostacolo reale. Ma ogni cambiamento dovrebbe poter essere ricostruito e spiegato. Allo stesso modo, un annuncio non dovrebbe essere presentato come un risultato già ottenuto.</p>
+
+<p>È così che si passa dalla propaganda alla verifica.</p>
+
+<h2>APE non serve a sostituire i cittadini, ma a renderli più liberi</h2>
+
+<p>La partecipazione non può limitarsi a scegliere ogni pochi anni chi governerà. Non significa neppure che i cittadini debbano occuparsi di ogni atto amministrativo o trasformarsi in esperti di diritto parlamentare.</p>
+
+<p>Significa poter accedere a informazioni comprensibili e verificabili, confrontare gli impegni con i risultati e porre domande precise a chi esercita responsabilità pubbliche.</p>
+
+<p>Significa anche riconoscere i risultati positivi, quando ci sono, senza negare i problemi; criticare gli errori senza inventare colpe; valutare le decisioni senza trasformare ogni confronto in uno scontro tra tifoserie.</p>
+
+<p>La democrazia non si rafforza chiedendo ai cittadini di fidarsi sempre. Si rafforza creando le condizioni perché possano controllare.</p>
+
+<p>Una legge elettorale può migliorare la rappresentanza, rendere più chiara la scelta degli eletti e favorire maggioranze più stabili. Ma non può garantire, da sola, che le promesse vengano mantenute, che le decisioni siano trasparenti o che il dissenso venga trattato correttamente.</p>
+
+<p>Per questo la discussione sulla legge elettorale deve accompagnarsi a una domanda più ampia: quali strumenti hanno i cittadini per seguire il potere dopo averlo affidato ai propri rappresentanti?</p>
+
+<p>È qui che la proposta APE trova il suo significato. Non nell’indicare un nuovo gruppo da sostenere contro gli altri, ma nel promuovere un metodo comune di verifica, valido per tutti e fondato su fatti documentabili.</p>
+
+<p><strong>APE diventa necessaria non perché ogni legge elettorale sia inevitabilmente sbagliata, ma perché nessuna legge elettorale può sostituire una cittadinanza attiva.</strong></p>
+
+<p>Il voto è un momento fondamentale della democrazia. Ma la democrazia non finisce quando si chiudono le urne: continua ogni volta che un cittadino può sapere che cosa è stato deciso, verificare che cosa è stato fatto e chiedere conto delle responsabilità.</p>
+
+<p>La domanda finale, allora, non è soltanto chi scegliamo. È come continuiamo a controllare, insieme, chi abbiamo scelto.</p>
+
+<p><em>Assemblea Popolare Ecumenica (APE) — Partecipare, verificare, chiedere conto.</em></p>
+
+<a class="pa-cta" href="rete-ape.html" style="display:block;max-width:420px;margin:30px auto;text-align:center;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;padding:16px 22px;border-radius:12px;text-decoration:none">Scopri la Rete APE</a>
+'''
+
 ART = {
+  'slug'         : 'legge-elettorale-chi-controlla-il-potere.html',
+  'autore'       : 'pa',
+  'data_iso'     : '2026-10-10',
+  'data_human'   : '10 ottobre 2026',
+  'data_badge'   : '10 OTTOBRE 2026',
+  'lettura_min'  : 11,
+  'categoria_hero': '\U0001F41D Progetto APE',
+  'og_image'     : 'images/anteprime/legge-elettorale-chi-controlla-il-potere-anteprima.jpg',
+  'h1'           : 'Anche con la migliore legge elettorale, chi controlla davvero il potere?',
+  'sottotitolo'  : 'Il voto sceglie i rappresentanti. Poi servono fatti, fonti e regole uguali per tutti: i casi, i dati e la proposta APE di un Osservatorio civico degli impegni pubblici.',
+  'meta_desc'    : 'Una buona legge elettorale non basta: dopo il voto chi controlla gli impegni presi? Casi, dati e la proposta APE di un Osservatorio civico.',
+  'card_cat'     : 'PROGETTO APE',
+  'card_title'   : 'Anche con la migliore legge elettorale, chi controlla davvero il potere?',
+  'card_desc'    : 'Il voto è l’inizio. Dissenso, cambi di gruppo, voto segreto: i fatti, e la proposta APE di un Osservatorio civico degli impegni pubblici.',
+  'ticker_emoji' : '\U0001F41D',
+  'ticker_tema'  : 'CONTROLLO CIVICO',
+  'ticker_testo' : 'Anche con la migliore legge elettorale, chi controlla davvero il potere? La proposta APE',
+  'body'         : BODY_CHI_CONTROLLA,
+}
+
+ART_LEGGE_FIRMATA_OLD = {
   'slug'         : 'legge-elettorale-firmata-voce-cittadini.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-10-10',
@@ -2389,14 +2601,14 @@ def pulisci_badge_vecchi(html, data_badge_oggi):
         if 'pulse-live' in seg and f'&#x1F195; {data_badge_oggi}' not in seg:
             seg = seg.replace(BADGE, '')
         return seg
-    return re.sub(r'<a (?![^>]*data-pa-pin)[^>]*data-pa-section="homepage-card".*?</a>', repl, html, flags=re.DOTALL)
+    return re.sub(r'(?<![\'"])<a (?![^>]*data-pa-pin)[^>]*data-pa-section="homepage-card".*?</a>', repl, html, flags=re.DOTALL)
 
 def aggiorna_index(a):
     html = open(IDX, encoding='utf-8').read()
     assert a['slug'] not in html, 'STOP: card gia presente (gia pubblicato?)'
     # 1) inserisci la nuova card PRIMA della prima card NON pinnata.
     #    Le card con data-pa-pin="1" (es. la Mappa) restano sempre in cima.
-    m = re.search(r'<a (?![^>]*data-pa-pin)[^>]*data-pa-section="homepage-card"', html)
+    m = re.search(r'(?<![\'"])<a (?![^>]*data-pa-pin)[^>]*data-pa-section="homepage-card"', html)  # lookbehind: salta la card dentro la stringa JS del feed APE (bug 10/10/2026)
     assert m, 'STOP: nessuna card homepage trovata'
     pos = m.start()
     html = html[:pos] + card_html(a) + html[pos:]
