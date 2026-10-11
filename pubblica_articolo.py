@@ -8,7 +8,7 @@
 #  per data + voce ticker + riga sitemap + 8 check. Idempotente (assert).
 #  NON tocca aggiorna_feed/pagefind/git: quelli restano nel comando di push.
 # ============================================================================
-import re, json, sys, os
+import subprocess, re, json, sys, os
 import html as html_mod
 
 BASE = os.path.dirname(os.path.abspath(__file__)) + '/'
@@ -2685,6 +2685,10 @@ def main():
     print(f'OK articolo: {a["slug"]} ({len(html)} char) - 8 check superati')
     aggiorna_index(a)
     print('OK index.html: card in cima + badge per-data')
+    # controllo del RISULTATO come lo vede il visitatore (11/10/2026: card doppie nella home): se fallisce, ci si ferma qui
+    r = subprocess.run(['/opt/homebrew/bin/python3', BASE + 'controllo_home.py'], capture_output=True, text=True)
+    assert r.returncode == 0, 'STOP: controllo_home.py ha trovato un difetto nella home:\n' + r.stdout[-600:] + r.stderr[-300:]
+    print('OK controllo_home.py: home senza doppioni')
     print('OK ' + aggiorna_temi(a))
     print('OK ' + aggiorna_sitemap(a))
     print('OK ' + aggiorna_trascrizioni(a))
