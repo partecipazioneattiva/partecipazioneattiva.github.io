@@ -2614,6 +2614,11 @@ def aggiorna_index(a):
     html = html[:pos] + card_html(a) + html[pos:]
     # 2) regola badge: togli il badge dalle card di giorni diversi da oggi
     html = pulisci_badge_vecchi(html, a['data_badge'])
+    # 3) guardia (11/10/2026): la card deve comparire UNA volta e FUORI da ogni <script> (il 10/10 era finita nel modello del feed APE
+    #    ed e' stata stampata una volta per ogni novita'). Se il modello cambia tipo di apice il filtro sopra non basta: qui si ferma tutto.
+    occ = [m.start() for m in re.finditer(r'href=["\']' + re.escape(a['slug']) + r'["\']', html)]
+    assert len(occ) == 1, f"STOP: la card {a['slug']} compare {len(occ)} volte in index.html (deve essere 1)"
+    assert html.rfind('<script', 0, occ[0]) <= html.rfind('</script>', 0, occ[0]), 'STOP: la card e\' finita DENTRO uno <script> (modello del feed)'
     open(IDX, 'w', encoding='utf-8').write(html)
 
 def aggiorna_temi(a):
