@@ -25,7 +25,7 @@
     var v=(j&&j.voci||[]).slice(0,2); if(!v.length) return;
     var html=v.map(function(x){
       var im=x.miniatura||x.immagine;
-      return '<a href="'+esc(x.url)+'" target="_blank" target="_blank" rel="noopener" data-pa-section="homepage-card" class="pa-apec" style="display:flex;align-items:stretch;border-radius:16px;overflow:hidden;background:rgba(255,255,255,.12);border:2px solid #ffd580;text-decoration:none;margin-bottom:14px">'
+      return '<a href="'+esc(x.url)+'" target="_blank" rel="noopener" data-pa-section="homepage-card" class="pa-apec" style="display:flex;align-items:stretch;border-radius:16px;overflow:hidden;background:rgba(255,255,255,.12);border:2px solid #ffd580;text-decoration:none;margin-bottom:14px">'
         +(im?'<div class="pa-apec-v" style="flex:0 0 clamp(104px,32%,140px);background:#123f63"><img src="'+esc(im)+'" alt="" width="420" height="540" loading="lazy" style="display:block;width:100%;height:auto"></div>':'')
         +(x.immagine?'<img class="pa-apec-o" src="'+esc(x.immagine)+'" alt="" width="1200" height="675" loading="lazy">':'')
         +'<div style="flex:1 1 0;min-width:0;padding:14px 16px;display:flex;flex-direction:column;justify-content:space-between;gap:10px;overflow-wrap:anywhere"><div>'
