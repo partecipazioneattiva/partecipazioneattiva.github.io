@@ -20,7 +20,7 @@ La nuova legge elettorale, il cosiddetto Stabilicum (le opposizioni lo chiamano 
 
 ## Cosa non cambia, e cosa resta aperto
 
-Il testo è contestato dalle opposizioni. Come avevamo spiegato nel nostro articolo sui profili di costituzionalità, i nodi sono quelli già bocciati dalla Corte nel 2014 (sentenza n. 1) e nel 2017 (sentenza n. 35): l'ampiezza del premio, il peso dei voti alle liste sotto soglia, la scelta degli eletti. Che la legge sia in Gazzetta non significa che sia al riparo da un ricorso: la parola passa, eventualmente, alla Corte costituzionale. Non è detto che arrivi, né come finirebbe.
+Il testo è contestato dalle opposizioni. Come avevamo spiegato nel nostro articolo sui profili di costituzionalità, i nodi sono quelli già bocciati dalla Corte nel 2014 (sentenza n. 1) e nel 2017 (sentenza n. 35): l'ampiezza del premio, il peso dei voti alle liste sotto soglia, la scelta degli eletti. Che la legge sia stata promulgata non significa che sia al riparo da un ricorso. Secondo [Il Fatto Quotidiano](https://www.ilfattoquotidiano.it/2026/10/09/legge-elettorale-consulta-amoroso-tempi-notizie/8532391/) e [Avvenire](https://www.avvenire.it/politica/legge-elettorale-gia-pronti-i-ricorsi-la-consulta-a-febbraio_113973), i ricorsi sono pronti e dovrebbero essere depositati a fine ottobre, all'entrata in vigore. I punti contestati sono il premio di maggioranza, le firme richieste ai nuovi partiti, la parità di genere tra i capilista e il premio al Senato. Le stime parlano di una decisione della Consulta a febbraio; il presidente Amoroso ha detto che la Corte può dimezzare i tempi. Se la Corte accoglierà i ricorsi, e quando, non è dato saperlo.
 
 Per il testo ufficiale e le eventuali modifiche dell'ultimo minuto, fa fede la Gazzetta Ufficiale.
 
