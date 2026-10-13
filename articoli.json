@@ -1,6 +1,24 @@
 {
   "articoli": [
     {
+      "slug": "legge-elettorale-chi-controlla-il-potere.html",
+      "titolo": "Anche con la migliore legge elettorale, chi controlla davvero il potere?",
+      "tema": "🐝 Progetto APE",
+      "tema_key": "progetto ape",
+      "data": "2026-10-10",
+      "img": "legge-elettorale-chi-controlla-il-potere-anteprima.jpg",
+      "sommario": "Una buona legge elettorale non basta: dopo il voto chi controlla gli impegni presi? Casi, dati e la proposta APE di un Osservatorio civico."
+    },
+    {
+      "slug": "legge-elettorale-firmata-voce-cittadini.html",
+      "titolo": "La legge elettorale è stata firmata. Ma tra un’elezione e l’altra, quale voce hanno i cittadini?",
+      "tema": "🐝 Progetto APE",
+      "tema_key": "progetto ape",
+      "data": "2026-10-10",
+      "img": "legge-elettorale-firmata-anteprima.jpg",
+      "sommario": "La nuova legge elettorale è stata promulgata. Tra un’elezione e l’altra, quale voce hanno i cittadini? I fatti sulla legge e la proposta APE."
+    },
+    {
       "slug": "nasce-sito-ape.html",
       "titolo": "Nasce il sito dell’APE, una casa di tutti",
       "tema": "🐝 Progetto APE",
