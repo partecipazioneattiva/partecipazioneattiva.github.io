@@ -1349,7 +1349,7 @@ BODY_STABILICUM_SENATO = '''
 <strong>&#x1F534; Aggiornamento del 10 settembre &mdash; il Senato ha bocciato le preferenze pure</strong><br><br>
 L&#8217;Aula del Senato ha respinto, con <strong>68 s&igrave; e 99 no</strong>, il subemendamento a prima firma del senatore dem <strong>Dario Parrini</strong> che voleva sopprimere i capilista bloccati e introdurre il voto di preferenza puro per tutti i candidati. Sulla proposta il governo si era rimesso all&#8217;Aula; il centrodestra ha votato compatto contro. Dai banchi delle opposizioni sono partiti cori di &laquo;Vergogna!&raquo;. Restano quindi in piedi, salvo nuovi emendamenti prima del voto finale del 15 settembre, i <strong>capilista bloccati</strong> con preferenza limitata a partire dal secondo nome &mdash; la formula descritta pi&ugrave; sotto.
 <p class="fonte" style="margin-top:10px"><em>Fonte: diretta parlamentare, Il Messaggero, 10 settembre 2026.</em></p>
-<p style="margin-top:6px">&rarr; <a href="voto-libeguale-tre-leggi-elettorale.html">La preferenza vera resta chiesta dalle tre leggi di iniziativa popolare di Voto LibEguale</a></p>
+<p style="margin-top:6px">&rarr; La preferenza vera resta chiesta dalle tre leggi di iniziativa popolare di Voto LibEguale</p>
 </div>
 
 <div class="box-info">
@@ -2018,7 +2018,7 @@ BODY_STABILICUM_CONVEGNO_MILANO = r'''<p>Luned&igrave; <strong>28 settembre 2026
 
 <p>Su quest&rsquo;ultimo punto, con onest&agrave;: il timore espresso a Milano va misurato. Con il tetto di 333 parlamentari la maggioranza non arriva da sola ai 360 voti necessari per i giudici della Consulta: l&igrave; il nostro criterio regge. &Egrave; meno solido sul Csm, dove dal terzo scrutinio contano i votanti. E non regge sulle firme: lo Stabilicum le porta a 6.000 per collegio ed esenta chi &egrave; gi&agrave; in Parlamento. &Egrave; la direzione opposta a quella che sosteniamo.</p>
 
-<p>Per questo sosteniamo le tre leggi di iniziativa popolare di <strong>Voto LibEguale</strong>. Chiedono la preferenza vera, da 250 a 500 firme per presentare una lista e nessuna esenzione per i partiti gi&agrave; in Parlamento (<a href="voto-libeguale-tre-leggi-elettorale.html">Voto LibEguale: tre leggi da firmare</a>).</p>
+<p>Per questo sosteniamo le tre leggi di iniziativa popolare di <strong>Voto LibEguale</strong>. Chiedono la preferenza vera, da 250 a 500 firme per presentare una lista e nessuna esenzione per i partiti gi&agrave; in Parlamento (Voto LibEguale: tre leggi da firmare).</p>
 '''
 
 BODY_SITO_APE = r'''<style>.pa-box{background:#fff8ee;border:2px solid #ffd580;border-radius:16px;padding:24px 28px;margin:28px 0}.pa-box h3{font-family:montserrat,sans-serif;color:#9c5b00;font-size:1em;font-weight:800;text-transform:uppercase;letter-spacing:.5px;margin:0 0 10px}.pa-cta{display:block;max-width:420px;margin:30px auto;text-align:center;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;padding:16px 22px;border-radius:12px;text-decoration:none}.pa-cta:hover{background:#6e3e00}</style>
