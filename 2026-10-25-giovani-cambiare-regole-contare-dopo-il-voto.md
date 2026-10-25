@@ -6,7 +6,7 @@ tags: [giovani, partecipazione, APE, Assemblea Popolare Ecumenica, Serbia, democ
 
 *Dalla mobilitazione alla partecipazione: che cosa insegna il caso serbo e che cosa propone l'Assemblea Popolare Ecumenica.*
 
-**Nota di trasparenza.** L'APE è una proposta di Partecipazione Attiva, il movimento che cura il sito. Questo articolo distingue le previsioni del progetto dai risultati che restano da dimostrare.
+**Nota di trasparenza.** L'APE è una proposta dei suoi promotori, descritta qui sulla base del loro documento. Questo articolo distingue le previsioni del progetto dai risultati che restano da dimostrare.
 
 ## Una forza collettiva può cambiare il corso delle cose
 
@@ -38,7 +38,7 @@ La questione non è concludere che chi non vota voglia necessariamente un nuovo 
 
 ## Che cosa propone l'APE
 
-L'Assemblea Popolare Ecumenica (APE) è una proposta di Partecipazione Attiva. La proposta viene descritta qui sulla base del [documento integrale pubblicato dai promotori](documenti/APE_Assemblea_Popolare_Ecumenica_v7.0.pdf) (v7.0); le cifre economiche e gli effetti attesi non sono presentati come risultati già verificati da un soggetto indipendente.
+L'Assemblea Popolare Ecumenica (APE) è una proposta di riforma. Viene descritta qui sulla base del [documento integrale pubblicato dai promotori](documenti/APE_Assemblea_Popolare_Ecumenica_v7.0.pdf) (v7.0); le cifre economiche e gli effetti attesi non sono presentati come risultati già verificati da un soggetto indipendente.
 
 L'APE non è oggi un'istituzione operativa e non sostituisce il Parlamento: è una proposta di riforma costituzionale. Prevede assemblee di cittadini sorteggiati a tre livelli — comunale (APEC), regionale (APER) e nazionale (APEN) — con criteri di distribuzione per età, genere e territorio. Il progetto prevede almeno il 40% di donne e almeno il 15% di persone sotto i 35 anni; il mandato durerebbe tre anni e la stessa persona potrebbe essere sorteggiata al massimo due volte.
 
