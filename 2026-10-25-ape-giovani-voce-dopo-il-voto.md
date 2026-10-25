@@ -35,15 +35,13 @@ Un organo indipendente di garanzia verifica i sorteggi e segnala le inadempienze
 
 L'esperienza francese della Convention Citoyenne (2019-2020) mostra il rischio: raccogliere la voce dei cittadini e poi disattenderla fa crollare la fiducia. L'APE prova a rispondere con l'obbligo di motivare il rifiuto.
 
-## Perché oggi attrae poco, e perché va detto
-
-Un articolo onesto non si ferma ai punti di forza.
+## I limiti, detti chiaramente
 
 - **È un pacchetto costituzionale.** Le tre leggi (istituzione dell'APE, abolizione del Senato, referendum propositivo) entrano in vigore insieme: «o tutte e tre, o nessuna». Legarla all'abolizione del Senato sposta il dibattito su un tema istituzionale molto più ampio.
 - **Il sorteggio non è una porta d'ingresso.** Un giovane motivato non può «entrare nell'APE»: può essere estratto, oppure depositare un'istanza. Chi vuole agire adesso trova poco da fare.
 - **I costi sono stime dei proponenti.** Il documento indica circa 252 milioni di euro l'anno a regime, contro i 541 milioni che oggi costa il Senato, e un risparmio netto prudenziale di 250-260 milioni. Sono cifre del movimento, non verificate da terzi.
 - **La quota del 15% di under 35** andrebbe confrontata con il loro peso reale tra gli elettori: non lo abbiamo verificato.
-- **Il testo è tecnico.** La pagina richiede dieci minuti di lettura e un linguaggio da costituzionalisti.
+- **Il testo è tecnico.** La pagina richiede dieci minuti di lettura e un linguaggio da addetti ai lavori: per un ventenne, è un ostacolo prima ancora del merito.
 
 Il documento integrale dedica spazio alle obiezioni più dure e alle criticità dichiarate dagli stessi proponenti: chi vuole giudicare deve leggere anche quelle.
 
@@ -55,12 +53,6 @@ Sono ipotesi di lavoro, non fatti:
 - **Un gesto concreto da compiere.** Raccogliere istanze, seguire le risposte delle istituzioni, partecipare a un'assemblea simulata.
 - **Un linguaggio che parte dal problema** («chi decide sul tuo affitto?») e solo dopo arriva allo strumento.
 
-## La domanda che resta aperta
-
-Il caso serbo ci dice che un movimento giovanile può arrivare alle urne. Non ci dice ancora cosa accadrà dopo. L'APE prova a rispondere a una domanda diversa: **come far sì che la partecipazione non finisca il giorno in cui sono eletti i rappresentanti.**
-
-Non è l'unica risposta possibile, e non dimostra da sola di funzionare in Italia. È però una proposta concreta, con un costo dichiarato, obiezioni pubbliche e un meccanismo di verifica, e come tale si può discutere, migliorare o contestare.
-
 ## Un'idea aperta a tutti
 
 L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE](rete-ape.html) è presentata come una chiamata unitaria. Perché l'apertura sia autentica e non uno slogan, dovrebbe reggersi su quattro condizioni:
@@ -71,5 +63,11 @@ L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE]
 - **Il progetto può cambiare.** Se l'esperienza mostra che una regola funziona male, va rivista. Passando di mano, l'APE potrebbe assumere una forma diversa da quella attuale.
 
 I giovani potrebbero dare un contributo decisivo: provarla su un problema che sentono, cambiarla dove non regge, proporre un primo passo concreto. È un'ipotesi, e non c'è modo di sapere in anticipo se si avvererà: sarà la partecipazione a dimostrarlo, non questo articolo.
+
+## La domanda che resta aperta
+
+Il caso serbo ci dice che un movimento giovanile può arrivare alle urne. Non ci dice ancora cosa accadrà dopo. L'APE prova a rispondere a una domanda diversa: **come far sì che la partecipazione non finisca il giorno in cui sono eletti i rappresentanti.**
+
+Non è l'unica risposta possibile, e non dimostra da sola di funzionare in Italia. È però una proposta concreta, con un costo dichiarato, obiezioni pubbliche e un meccanismo di verifica, e come tale si può discutere, migliorare o contestare.
 
 *Per approfondire: la [pagina del progetto APE](ape.html), il documento integrale in PDF (20 pagine) e la sintesi pubblica (7 pagine), scaricabili da lì.*
