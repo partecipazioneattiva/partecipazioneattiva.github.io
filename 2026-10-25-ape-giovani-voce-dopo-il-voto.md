@@ -61,4 +61,8 @@ Il caso serbo ci dice che un movimento giovanile può arrivare alle urne. Non ci
 
 Non è l'unica risposta possibile, e non dimostra da sola di funzionare in Italia. È però una proposta concreta, con un costo dichiarato, obiezioni pubbliche e un meccanismo di verifica, e come tale si può discutere, migliorare o contestare.
 
+## Un'idea di tutti
+
+L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE](/rete-ape.html) è presentata come una chiamata unitaria, aperta a chiunque voglia portarla avanti. Per questo i giovani possono renderla efficace più di chiunque altro: provarla su un problema che sentono, cambiarla dove non regge, proporre un primo passo concreto. Non basta però che l'idea sia di tutti: serve qualcuno che se ne prenda il lavoro. E va messo in conto che, passando di mano, l'APE potrebbe cambiare forma.
+
 *Per approfondire: la [pagina del progetto APE](/ape.html), il documento integrale in PDF (20 pagine) e la sintesi pubblica (7 pagine), scaricabili da lì.*
