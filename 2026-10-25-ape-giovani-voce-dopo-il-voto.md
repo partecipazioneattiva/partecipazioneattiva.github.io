@@ -14,7 +14,7 @@ Vincere un'elezione dà una legittimazione temporanea. Non dice come i cittadini
 
 Nella democrazia italiana si vota, si affida un mandato e fino al voto successivo la partecipazione è, di fatto, sospesa. Alle politiche del 25 settembre 2022 il 39,84% degli aventi diritto non è andato a votare: il minimo storico della Repubblica. Secondo il documento del movimento questo non è apatia, ma il rifiuto di un sistema percepito come distante.
 
-L'[APE, Assemblea Popolare Ecumenica](/ape.html), non propone di sostituire il Parlamento. Propone di aggiungere un organo di cittadini che indichi la direzione tra un'elezione e l'altra e a cui le istituzioni siano obbligate a rispondere.
+L'[APE, Assemblea Popolare Ecumenica](ape.html), non propone di sostituire il Parlamento. Propone di aggiungere un organo di cittadini che indichi la direzione tra un'elezione e l'altra e a cui le istituzioni siano obbligate a rispondere.
 
 ## Come funzionerebbe
 
@@ -63,7 +63,7 @@ Non è l'unica risposta possibile, e non dimostra da sola di funzionare in Itali
 
 ## Un'idea aperta a tutti
 
-L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE](/rete-ape.html) è presentata come una chiamata unitaria. Perché l'apertura sia autentica e non uno slogan, dovrebbe reggersi su quattro condizioni:
+L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE](rete-ape.html) è presentata come una chiamata unitaria. Perché l'apertura sia autentica e non uno slogan, dovrebbe reggersi su quattro condizioni:
 
 - **Nessuno ne è proprietario.** Nemmeno il movimento che l'ha elaborata.
 - **La partecipazione è concreta.** Servono occasioni reali per proporre modifiche, discuterle e sperimentare soluzioni, non solo per aderire.
@@ -72,4 +72,4 @@ L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE]
 
 I giovani potrebbero dare un contributo decisivo: provarla su un problema che sentono, cambiarla dove non regge, proporre un primo passo concreto. È un'ipotesi, e non c'è modo di sapere in anticipo se si avvererà: sarà la partecipazione a dimostrarlo, non questo articolo.
 
-*Per approfondire: la [pagina del progetto APE](/ape.html), il documento integrale in PDF (20 pagine) e la sintesi pubblica (7 pagine), scaricabili da lì.*
+*Per approfondire: la [pagina del progetto APE](ape.html), il documento integrale in PDF (20 pagine) e la sintesi pubblica (7 pagine), scaricabili da lì.*
