@@ -18,7 +18,7 @@ Quando le persone si organizzano, però, cambia qualcosa. Una richiesta isolata 
 
 Il caso serbo offre un esempio recente di questa possibilità. Le proteste studentesche sono iniziate dopo il crollo della pensilina della stazione ferroviaria di Novi Sad, il 1° novembre 2024, che ha provocato 16 morti. La tragedia ha alimentato manifestazioni contro la corruzione e contro il funzionamento delle istituzioni. La mobilitazione si è protratta nel tempo e il movimento studentesco si è misurato anche sul terreno elettorale.
 
-Il 25 ottobre 2026, dopo le elezioni parlamentari, Aleksandar Vučić ha riconosciuto la sconfitta del proprio schieramento sulla base di un campione di risultati, come riportano, tra gli altri, [Euronews](https://www.euronews.com/2026/10/25/vucic-concedes-defeat-in-pivotal-serbian-elections-says-student-movement-has-won) e l'agenzia bulgara [BTA](https://www.bta.bg/en/news/balkans/1232575-former-serbian-president-vucic-concedes-defeat-in-serbia-s-snap-parliamentary-el). Al momento della dichiarazione, i risultati ufficiali definitivi non erano ancora stati certificati. La giornata elettorale è stata inoltre accompagnata da segnalazioni di pressioni e irregolarità. Secondo l'organizzazione di osservazione CRTA, riportata da [Il Post](https://www.ilpost.it/2026/10/25/elezioni-in-serbia-risultati/), irregolarità, in prevalenza pressioni su elettori, componenti dei seggi e osservatori, sono state segnalate nel 29% dei seggi. Questo dato descrive quanto rilevato dagli osservatori: da solo, non dimostra che il risultato complessivo sia stato alterato.
+Il 25 ottobre 2026, dopo le elezioni parlamentari, Aleksandar Vučić ha riconosciuto la sconfitta del proprio schieramento sulla base di un campione di risultati, come riportano, tra gli altri, [Euronews](https://www.euronews.com/2026/10/25/vucic-concedes-defeat-in-pivotal-serbian-elections-says-student-movement-has-won) e l'agenzia bulgara [BTA](https://www.bta.bg/en/news/balkans/1232575-former-serbian-president-vucic-concedes-defeat-in-serbia-s-snap-parliamentary-el). Al momento della dichiarazione, i risultati ufficiali definitivi non erano ancora stati certificati. La giornata elettorale è stata inoltre accompagnata da segnalazioni di pressioni e irregolarità. Secondo CRTA, l'organizzazione serba di osservazione elettorale, che ha seguito un campione di circa 500 seggi, sono state rilevate pressioni su elettori e componenti dei seggi: [Il Post](https://www.ilpost.it/2026/10/25/elezioni-in-serbia-risultati/) riporta il 29% dei seggi, mentre le rilevazioni del pomeriggio parlavano di circa un seggio su tre ([Al Jazeera](https://www.aljazeera.com/news/2026/10/25/serbia-voter-turnout-highest-in-decades-as-students-oppose-longtime-leader)). Sono state segnalate anche violazioni procedurali (18% dei seggi) e problemi relativi all'integrità del voto (17%), secondo [European Western Balkans](https://europeanwesternbalkans.com/2026/10/25/crta-reports-widespread-violations-of-ballot-secrecy-and-voting-irregularities/). I dati cambiano a seconda del momento della giornata e della fonte, e vanno aggiornati con il rapporto finale di CRTA. Documentano criticità nella giornata elettorale, ma non dimostrano da soli che il risultato complessivo sia stato alterato.
 
 La lezione, quindi, non è semplicemente che «i giovani uniti vincono». Una mobilitazione può trasformarsi in forza politica quando riesce a costruire consenso, organizzarsi e trovare un canale per incidere sulle decisioni. Ma il contesto serbo è diverso da quello italiano e non offre una ricetta da trasferire automaticamente.
 
@@ -112,11 +112,9 @@ Se queste possibilità esistono, sarebbe utile renderle facilmente accessibili. 
 
 Chi non condivide una parte dell'APE dovrebbe poterlo dire senza essere considerato un avversario. E dovrebbe poter capire che cosa succede alla sua osservazione. Altrimenti l'invito alla partecipazione rischia di tradursi, nella pratica, soprattutto in una richiesta di adesione.
 
-## Se i giovani arrivano a governare, chi li aiuta a correggere gli errori?
+## Se un movimento nato dalla protesta arriva a governare, chi lo aiuta a correggere gli errori?
 
-La vicenda serba può essere letta anche da un'altra prospettiva. Quando una generazione si unisce attorno a obiettivi comuni, può riuscire a trasformare una protesta in una forza politica capace di conquistare il consenso necessario per governare. Per ora è uno scenario, non un fatto: i risultati ufficiali non sono ancora stati certificati e un governo non c'è.
-
-Sarebbe un passaggio importante: non più soltanto giovani che chiedono agli altri di cambiare le cose, ma cittadini che si assumono direttamente la responsabilità delle decisioni.
+La vicenda serba può essere letta anche da un'altra prospettiva. Quando una generazione riesce a mobilitare una parte ampia della società, può trasformare la protesta in una forza politica capace di conquistare il consenso necessario per governare. La lista sostenuta dal movimento studentesco serbo si trova ora davanti a questa possibilità: tradurre le richieste di cambiamento in decisioni concrete e assumersi la responsabilità dei risultati. Per ora è uno scenario, non un fatto: i risultati ufficiali non sono ancora stati certificati e un governo non c'è. La lista, inoltre, comprendeva candidati con profili diversi, non soltanto giovani studenti.
 
 Ma proprio qui comincia una nuova sfida.
 
@@ -128,7 +126,7 @@ Che cosa succede in quel momento?
 
 Il governo può riconoscere l'errore e correggersi. Ma può anche essere tentato di difendere la propria decisione per non ammettere di aver sbagliato, perdere consenso o deludere chi lo ha sostenuto. E chi aveva creduto nel cambiamento può passare dall'entusiasmo alla delusione, fino a convincersi che non ci sia nulla da fare.
 
-La risposta tradizionale della democrazia è aspettare le elezioni successive. I cittadini possono confermare il governo oppure mandarlo a casa. È un potere fondamentale, ma interviene periodicamente: nel frattempo, le decisioni producono conseguenze e gli errori possono accumularsi.
+Le elezioni successive restano il principale momento in cui i cittadini possono confermare o cambiare il proprio giudizio politico complessivo su chi governa. Ma non sono l'unico strumento di controllo, né sempre il più tempestivo per affrontare un singolo errore: esistono già il Parlamento, la magistratura, gli organi di controllo e altri strumenti. La domanda è se sia possibile affiancare agli strumenti esistenti un meccanismo più continuo, capace di far emergere i problemi, chiedere risposte pubbliche e favorire la correzione delle decisioni prima che i loro effetti si accumulino.
 
 Esiste però una domanda ulteriore: **possiamo costruire una democrazia capace non soltanto di cambiare chi governa, ma anche di aiutare chi governa a correggersi?**
 
@@ -150,21 +148,23 @@ Resta inoltre una distinzione importante: la procedura di richiamo politico prev
 
 La vera sfida, dunque, non è trovare un gruppo di persone che non sbagli mai. È costruire istituzioni che rendano più difficile ignorare gli errori, più facile riconoscerli e più concreta la possibilità di correggerli.
 
-Se i giovani riuscissero a conquistare il governo in Serbia, avrebbero l'opportunità di dimostrare che un movimento collettivo può trasformare la protesta in responsabilità. Ma la qualità della democrazia si misurerebbe anche nella capacità di ascoltare i cittadini quando le cose non vanno come previsto.
+Se la lista studentesca riuscisse a governare in Serbia, avrebbe l'opportunità di dimostrare che un movimento collettivo può trasformare la protesta in responsabilità. Ma la qualità della democrazia si misurerebbe anche nella capacità di ascoltare i cittadini quando le cose non vanno come previsto.
 
 **Un cambiamento democratico maturo non promette che chi governa non sbaglierà. Si preoccupa che nessuno, una volta arrivato al potere, diventi incapace di correggersi.**
 
 ## Non basta unirsi: bisogna poter incidere
 
-La vicenda serba ricorda che l'organizzazione collettiva può cambiare il peso politico di una generazione. Non garantisce, però, che dopo il voto le promesse vengano mantenute o che i cittadini conservino un ruolo nelle decisioni. Per questo, accanto alla mobilitazione, conta la costruzione di regole democratiche che rendano la partecipazione continuativa e verificabile.
+La vicenda serba mostra quanto una mobilitazione collettiva possa cambiare gli equilibri politici. Ma conquistare il governo è soltanto una parte della sfida: occorre anche tradurre le promesse in risultati, riconoscere gli errori e correggerli quando le soluzioni adottate non funzionano.
 
-Per i giovani, la questione principale è questa: contare non soltanto il giorno del voto. Per chi promuove l'APE, l'Assemblea Popolare Ecumenica è il traguardo verso cui lavorare: lo strumento che renderebbe stabile, accessibile e verificabile quella possibilità. Un traguardo, non una soluzione già dimostrata: non è l'unica proposta possibile e non ha ancora dimostrato di funzionare in Italia. Presenta costi stimati nel documento del progetto, questioni giuridiche e organizzative da approfondire e un pacchetto di riforme che merita di essere esaminato nel suo insieme.
+È qui che l'APE propone di intervenire. Non promette di eliminare gli errori né dimostra già di poter garantire decisioni migliori. Propone un sistema nel quale le assemblee di cittadini possano formulare direttive, le istituzioni debbano rispondere secondo procedure definite e, nei casi previsti, si possa arrivare a un referendum propositivo.
 
-Non occorre condividerla per discuterla. Anzi, se l'obiettivo è rendere la partecipazione più democratica, il progetto deve dimostrare di saper accogliere anche le critiche rivolte a se stesso. La sua credibilità dipenderà non soltanto dalle regole che propone per le istituzioni, ma anche dal modo in cui i cofondatori e la Rete APE permetteranno ai cittadini di esaminarle, contestarle e migliorarle.
+Per i giovani, la questione non è soltanto riuscire a cambiare chi governa. È poter contribuire a stabilire regole che consentano ai cittadini di continuare a incidere anche dopo le elezioni, qualunque sia la forza politica al governo.
 
-Ai giovani non si dovrebbe chiedere di crederci sulla parola. Si dovrebbe dare loro la possibilità di studiare la proposta, confrontarla con alternative, suggerire modifiche e verificarne i risultati. Se non la ritengono convincente, devono poterlo dire. Se vi vedono un'opportunità, devono poter contribuire a renderla più solida.
+L'APE è il progetto collettivo verso cui i suoi cofondatori lavorano per dare forma a questa possibilità: un traguardo, non una soluzione già dimostrata. La sua credibilità dipenderà anche dalla capacità di accogliere critiche, rendere comprensibili le proprie regole, verificare i costi e permettere ai cittadini di proporre modifiche.
 
-La domanda, quindi, non è soltanto che cosa la politica possa fare per i giovani. È anche quali regole i giovani, insieme agli altri cittadini, vogliano contribuire a costruire per una democrazia nella quale le persone non siano chiamate a contare soltanto il giorno del voto.
+Non occorre condividerla per discuterla. Chi la ritiene convincente dovrebbe poter contribuire a renderla più solida; chi la considera sbagliata dovrebbe poterlo dire e spiegare perché.
+
+Una democrazia matura non promette che chi governa non sbaglierà. Costruisce strumenti affinché nessuno, una volta arrivato al potere, diventi incapace di riconoscere i propri errori e correggersi.
 
 ## Fonti e documenti
 
@@ -172,5 +172,6 @@ La domanda, quindi, non è soltanto che cosa la politica possa fare per i giovan
 - [Istat, Annuario statistico italiano 2023, capitolo 11](https://www.istat.it/storage/ASI/2023/capitoli/C11.pdf): affluenza alle elezioni politiche del 2022.
 - [Euronews, 25 ottobre 2026](https://www.euronews.com/2026/10/25/vucic-concedes-defeat-in-pivotal-serbian-elections-says-student-movement-has-won) e [BTA, 25 ottobre 2026](https://www.bta.bg/en/news/balkans/1232575-former-serbian-president-vucic-concedes-defeat-in-serbia-s-snap-parliamentary-el): dichiarazione di Vučić.
 - [Il Post, 25 ottobre 2026](https://www.ilpost.it/2026/10/25/elezioni-in-serbia-risultati/): risultati delle elezioni in Serbia e segnalazioni di CRTA.
+- [Al Jazeera, 25 ottobre 2026](https://www.aljazeera.com/news/2026/10/25/serbia-voter-turnout-highest-in-decades-as-students-oppose-longtime-leader) e [European Western Balkans, 25 ottobre 2026](https://europeanwesternbalkans.com/2026/10/25/crta-reports-widespread-violations-of-ballot-secrecy-and-voting-irregularities/): affluenza e rilevazioni di CRTA.
 
 *Nota sulle cifre economiche. I costi dell'APE e il confronto con il Senato sono riportati come dati del documento del progetto. Il confronto richiede una verifica contabile indipendente prima di essere utilizzato come dimostrazione di un risparmio effettivo.*
