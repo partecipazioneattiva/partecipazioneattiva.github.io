@@ -14,7 +14,9 @@ Prima di ragionare su cosa significhi, mettiamo in fila cosa sappiamo e cosa no.
 
 **Segnalato da osservatori indipendenti.** CRTA, organizzazione che osserva le elezioni, parla di irregolarità nel 29 per cento dei seggi: soprattutto pressioni su elettori, membri delle commissioni locali e osservatori, più alcuni casi di voto di scambio. Ci sono stati anche episodi di violenza: osservatori della Lista studentesca picchiati a Pančevo, due giornalisti aggrediti a Pavlovac.
 
-**Ancora non c'è.** Né percentuali né seggi ufficiali. L'ammissione è una dichiarazione di parte, non un risultato. Non sappiamo se la maggioranza sarà piena o se servirà una coalizione, né come avverrà il passaggio di poteri: Vučić, dimesso a settembre da presidente per candidarsi premier, resta l'uomo più potente del Paese.
+**Confermato da più fonti.** L'ammissione di Vučić la riportano anche [Euronews](https://www.euronews.com/2026/10/25/vucic-concedes-defeat-in-pivotal-serbian-elections-says-student-movement-has-won) e l'agenzia bulgara [BTA](https://www.bta.bg/en/news/balkans/1232575-former-serbian-president-vucic-concedes-defeat-in-serbia-s-snap-parliamentary-el). Secondo [Novinite](https://www.novinite.com/articles/241255/Vucic+Concedes+Serbia+Election+Defeat+as+Student+List+Claims+135-140+Seats), Vučić ha stimato per la Lista degli studenti tra i 135 e i 140 seggi su 250 (la maggioranza è a 126). È una **stima sua**, basata su un campione, non un conteggio ufficiale.
+
+**Ancora non c'è.** Il risultato ufficiale. Il primo conteggio della Commissione elettorale, secondo quanto riportato, si basava su 203 seggi su 8.392 e dava alla lista di Vučić il 54,21%: una fotografia parziale, in contrasto con le stime successive, che non permette conclusioni. Non sappiamo come avverrà il passaggio di poteri: Vučić, dimesso a settembre da presidente per candidarsi premier, resta l'uomo più potente del Paese.
 
 Un sondaggio di luglio, CRTA con Stanford, dava la lista al 44,9% contro il 35,7% dell'SNS. Era un sondaggio, e il governo lo contestava. Oggi la fonte più forte è la dichiarazione dello stesso Vučić, ma i numeri verificati arriveranno dalla Commissione.
 
@@ -47,7 +49,7 @@ Non abbiamo trovato fonti sulla fine formale del movimento: l'idea che «si sia 
 
 ## E i giovani italiani, come sono davvero?
 
-Spesso si racconta una gioventù divisa fra chi è in difficoltà e annoiato e chi è aggressivo. È un'immagine che i media amplificano perché fa notizia. I dati, per quanto parziali, dicono qualcosa di più sfumato:
+Spesso si racconta una gioventù divisa fra chi è in difficoltà e annoiato e chi è aggressivo. È un'immagine che i media amplificano perché fa notizia. I dati, per quanto parziali, dicono qualcosa di più sfumato. Nota: i numeri che seguono li riportano articoli di seconda mano e non ho potuto consultare i rapporti originali, quindi periodo di riferimento e definizione degli indicatori andrebbero ricontrollati prima di citarli come dati ufficiali:
 
 - Secondo il [59° Rapporto Censis](https://www.money.it/dal-voto-ai-comizi-tutte-le-forme-di-partecipazione-che-in-italia-stanno-scomparendo), tra i 20-24enni la quota che si informa regolarmente di politica è scesa dal 47,7% al 36,2% in vent'anni. L'unica forma di partecipazione in controtendenza sono i cortei: il 6,2% dei 20-24enni vi partecipa, quasi il doppio della media nazionale.
 - Nel 2022 la partecipazione elettorale dei giovani è stata del 60,1%, contro il 63,9% del totale ([Forum Disuguaglianze e Diversità](https://www.forumdisuguaglianzediversita.org/wp-content/uploads/2026/05/PREOCCUPAZIONI-CONSAPEVOLEZZE-E-IMPEGNO.x13837.pdf)). Lo stesso documento indica che sui referendum la partecipazione giovanile può superare la media.
