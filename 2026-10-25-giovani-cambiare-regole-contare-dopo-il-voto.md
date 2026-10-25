@@ -112,15 +112,47 @@ Se queste possibilità esistono, sarebbe utile renderle facilmente accessibili. 
 
 Chi non condivide una parte dell'APE dovrebbe poterlo dire senza essere considerato un avversario. E dovrebbe poter capire che cosa succede alla sua osservazione. Altrimenti l'invito alla partecipazione rischia di tradursi, nella pratica, soprattutto in una richiesta di adesione.
 
-## Se i giovani governano: un correttore, non un tribunale
+## Se i giovani arrivano a governare, chi li aiuta a correggere gli errori?
 
-C'è una seconda lettura del caso serbo. Se i risultati ufficiali confermassero la maggioranza della lista studentesca, i giovani uniti non sarebbero più soltanto una forza di protesta: potrebbero governare. Per ora è un'ipotesi, perché la dichiarazione di Vučić non è un risultato certificato e un governo non c'è ancora. Ma la domanda si pone già: che cosa accade se chi ha vinto promettendo un cambiamento non riesce a realizzarlo, oppure sbaglia, magari in buona fede?
+La vicenda serba può essere letta anche da un'altra prospettiva. Quando una generazione si unisce attorno a obiettivi comuni, può riuscire a trasformare una protesta in una forza politica capace di conquistare il consenso necessario per governare. Per ora è uno scenario, non un fatto: i risultati ufficiali non sono ancora stati certificati e un governo non c'è.
 
-In una democrazia la risposta classica è il voto successivo: i cittadini giudicano alle elezioni seguenti. È una risposta lenta, che arriva dopo gli errori e non aiuta a correggerli mentre accadono. Il rischio, per chi governa e per chi l'ha votato, è che la delusione si trasformi in sfiducia generale prima che qualcuno abbia potuto rimettere il lavoro in carreggiata.
+Sarebbe un passaggio importante: non più soltanto giovani che chiedono agli altri di cambiare le cose, ma cittadini che si assumono direttamente la responsabilità delle decisioni.
 
-È qui che l'APE, nel modello proposto, potrebbe svolgere una funzione di autocorrezione. Le sue procedure non dipendono da chi governa: la verifica semestrale dell'attuazione del programma, le direttive con l'obbligo di attuarle o di motivare pubblicamente il rifiuto, la possibilità del referendum. Un governo nato da un movimento giovanile avrebbe così un canale per ricevere indicazioni dai cittadini mentre governa, e i cittadini uno per segnalare che qualcosa non funziona, senza aspettare la scadenza del mandato. In questo senso l'APE non sarebbe un tribunale che punisce gli errori, ma un meccanismo che permette di vederli e correggerli in tempo.
+Ma proprio qui comincia una nuova sfida.
 
-Due cautele, per onestà. La prima: questa funzione è un'interpretazione degli strumenti proposti, non un risultato dimostrato; il documento descrive meccanismi di controllo sul governo, non una sperimentazione su governi nati da movimenti. La seconda: le stesse regole vincolerebbero anche un governo che sbaglia in buona fede, o che ha buone ragioni per non attuare una direttiva. La «deroga motivata» serve proprio a questo, ma resta da verificare se, in pratica, il confronto fra un governo con un mandato elettorale e un'assemblea sorteggiata sia equilibrato, o se rischi di trasformarsi in un conflitto fra due legittimazioni.
+**Vincere le elezioni non significa automaticamente saper governare. E avere ragione nel denunciare un problema non significa necessariamente possedere la soluzione migliore.**
+
+Un movimento può nascere da una protesta legittima, raccogliere aspettative molto alte e arrivare al governo con l'intenzione sincera di migliorare la vita delle persone. Poi, però, può incontrare difficoltà che non aveva previsto. Può scoprire che alcune promesse sono più complicate da mantenere del previsto, che una misura produce conseguenze negative o che una decisione, presa in buona fede, si rivela sbagliata.
+
+Che cosa succede in quel momento?
+
+Il governo può riconoscere l'errore e correggersi. Ma può anche essere tentato di difendere la propria decisione per non ammettere di aver sbagliato, perdere consenso o deludere chi lo ha sostenuto. E chi aveva creduto nel cambiamento può passare dall'entusiasmo alla delusione, fino a convincersi che non ci sia nulla da fare.
+
+La risposta tradizionale della democrazia è aspettare le elezioni successive. I cittadini possono confermare il governo oppure mandarlo a casa. È un potere fondamentale, ma interviene periodicamente: nel frattempo, le decisioni producono conseguenze e gli errori possono accumularsi.
+
+Esiste però una domanda ulteriore: **possiamo costruire una democrazia capace non soltanto di cambiare chi governa, ma anche di aiutare chi governa a correggersi?**
+
+È qui che l'Assemblea Popolare Ecumenica può essere letta in una prospettiva diversa: non soltanto come uno strumento per dare più voce ai cittadini, ma come un possibile meccanismo di autocorrezione democratica.
+
+Nel modello proposto dall'APE, le assemblee di cittadini sorteggiati potrebbero formulare direttive sulle questioni pubbliche. Le istituzioni interessate dovrebbero attuarle oppure respingerle attraverso una deroga motivata, rendendo pubbliche le ragioni della decisione. A livello nazionale, nei casi e con le procedure previsti dal progetto, potrebbe inoltre essere attivato un referendum propositivo. La verifica semestrale del programma di governo dovrebbe consentire di esaminare l'attuazione degli impegni e individuare eventuali scostamenti.
+
+Questi strumenti, se introdotti nella forma prevista dal progetto e se funzionassero come auspicato, potrebbero creare un confronto più continuo tra cittadini e istituzioni. Un problema potrebbe emergere, essere discusso e ricevere una risposta senza dover attendere necessariamente la successiva campagna elettorale.
+
+Non significherebbe che ogni decisione del governo debba essere sottoposta a un voto popolare, né che un'assemblea di cittadini abbia sempre ragione. Significherebbe provare a costruire un sistema nel quale le decisioni possano essere esaminate, le criticità rese visibili e le istituzioni chiamate a spiegare pubblicamente le proprie scelte.
+
+L'APE, in questa prospettiva, non sarebbe un tribunale incaricato di punire chi sbaglia. Sarebbe un tentativo di introdurre un meccanismo istituzionale di controllo, confronto e correzione della rotta.
+
+Questo vale anche quando gli errori sono commessi in buona fede. Anzi, è proprio in quel caso che la possibilità di correggersi diventa particolarmente importante: riconoscere un errore non dovrebbe essere una condanna politica, ma una responsabilità normale di chi esercita il potere.
+
+Naturalmente, si tratta di una funzione possibile, non di un risultato già dimostrato. L'APE è una proposta di riforma e non abbiamo ancora la prova che i suoi meccanismi garantirebbero decisioni migliori. Bisognerebbe verificare come bilanciare il mandato di un governo eletto con le direttive di assemblee sorteggiate, come evitare conflitti istituzionali e come assicurare che anche le decisioni delle assemblee siano informate, trasparenti e criticabili.
+
+Resta inoltre una distinzione importante: la procedura di richiamo politico prevista dal progetto riguarda ripetute violazioni delle direttive, non il semplice fatto di aver commesso un errore in buona fede. La funzione di autocorrezione passerebbe soprattutto dalla verifica, dal confronto e dagli obblighi di risposta, non da una sanzione automatica.
+
+La vera sfida, dunque, non è trovare un gruppo di persone che non sbagli mai. È costruire istituzioni che rendano più difficile ignorare gli errori, più facile riconoscerli e più concreta la possibilità di correggerli.
+
+Se i giovani riuscissero a conquistare il governo in Serbia, avrebbero l'opportunità di dimostrare che un movimento collettivo può trasformare la protesta in responsabilità. Ma la qualità della democrazia si misurerebbe anche nella capacità di ascoltare i cittadini quando le cose non vanno come previsto.
+
+**Un cambiamento democratico maturo non promette che chi governa non sbaglierà. Si preoccupa che nessuno, una volta arrivato al potere, diventi incapace di correggersi.**
 
 ## Non basta unirsi: bisogna poter incidere
 
