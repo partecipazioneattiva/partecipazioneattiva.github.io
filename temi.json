@@ -1,6 +1,11 @@
 {
   "voci": [
     {
+      "emoji": "🎬",
+      "tema": "WEBTV",
+      "testo": "«Popolo sovrano»: Antonio Cristiano da Piazza Cavour, a Napoli"
+    },
+    {
       "emoji": "🐝",
       "tema": "PROGETTO APE",
       "testo": "Legge elettorale firmata: dopo il voto, quale voce hanno i cittadini? La proposta APE"
@@ -19,11 +24,6 @@
       "emoji": "📋",
       "tema": "INIZIATIVE POPOLARI",
       "testo": "Spanu al Comitato Iniziative Popolari &mdash; le due proposte di PA contro la crisi dei partiti e l&rsquo;analfabetismo elettorale"
-    },
-    {
-      "emoji": "🚗",
-      "tema": "WEBTV",
-      "testo": "RC Auto: perch&eacute; a Napoli si paga di pi&ugrave; &mdash; Paolo Neri spiega la proposta di legge sulla WebTV"
     },
     {
       "emoji": "🏘️",

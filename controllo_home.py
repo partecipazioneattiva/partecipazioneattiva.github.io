@@ -51,7 +51,10 @@ tdoppi = sorted({t for t in tit if tit.count(t) > 1})
 if tdoppi: err.append('titoli DOPPI: ' + '; '.join(t[:50] for t in tdoppi))
 feed = [c for c in card if c['feed']]
 if len(feed) > 2: err.append(f'le card del feed APE sono {len(feed)}, il massimo e\' 2')
-if sum(c['badge'] for c in card if not c['pin']) > 1: err.append('piu\' di un badge «Ultimo aggiornamento» fra le card non fissate')
+# 25/10/2026: due novità DELLO STESSO GIORNO (es. spot del giorno + articolo) hanno entrambe il badge, ed è corretto.
+# Si segnala solo il badge rimasto su una card di un giorno DIVERSO dalle altre badgiate (residuo di ieri).
+_bad=[c for c in card if c['badge'] and not c['pin']]
+if len({c['data'] for c in _bad}) > 1: err.append('badge «Ultimo aggiornamento» su card di giorni diversi (residuo di un giorno passato)')
 if errori_js: err.append('errori JavaScript nella pagina: ' + ' | '.join(errori_js)[:200])
 
 print(f'{url}: {len(card)} card, {len(feed)} dal feed APE, {sum(c["badge"] for c in card)} badge')

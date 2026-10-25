@@ -2330,7 +2330,62 @@ BODY_CHI_CONTROLLA = r'''<style>.pa-fig figcaption{font-family:montserrat,sans-s
 <a class="pa-cta" href="rete-ape.html" style="display:block;max-width:420px;margin:30px auto;text-align:center;background:#8a4e00;color:#fff;font-family:montserrat,sans-serif;font-weight:700;padding:16px 22px;border-radius:12px;text-decoration:none">Scopri la Rete APE</a>
 '''
 
+BODY_POPOLO_SOVRANO = r'''<p><strong>«Non è che possiamo fare una politica solamente per le categorie privilegiate.»</strong> Antonio Cristiano parla da <strong>Piazza Cavour, a Napoli</strong>, davanti a uno spazio che doveva diventare un parco giochi gratuito. Cinque minuti, un solo ragionamento: chi vive nei quartieri si sente ascoltato da chi decide?</p>
+
+<h2>&#127916; Il video</h2>
+<div style="max-width:420px;margin:0 auto 26px"><video controls preload="metadata" playsinline poster="images/popolo-sovrano-antonio-poster.webp" style="width:100%;display:block;border-radius:14px;box-shadow:0 8px 26px rgba(0,0,0,.18);background:#000"><source src="video/popolo-sovrano-antonio-cristiano.mp4" type="video/mp4">Il tuo browser non supporta il video.</video></div>
+
+<h2>Che cosa dice, in cinque punti</h2>
+<ol>
+<li><strong>I quartieri.</strong> In una zona &laquo;pi&ugrave; chic&raquo; lo spazio sarebbe curato; in citt&agrave;, dice, c&rsquo;&egrave; &laquo;un attacco da parte delle istituzioni contro le classi meno agiate&raquo;.</li>
+<li><strong>La RC Auto.</strong> Da quindici anni a Napoli costa cifre che definisce sbalorditive; racconta che molti, per difendersi, comprano auto di poco valore e le intestano ad agenzie in Polonia per poi noleggiarle.</li>
+<li><strong>Lobby e sanit&agrave;.</strong> Secondo lui la politica aiuta &laquo;solo le lobby&raquo;; porta l&rsquo;esempio delle file nella sanit&agrave; pubblica e dell&rsquo;intramoenia.</li>
+<li><strong>Parcheggi e paletti.</strong> Nel Rione Sanit&agrave; i vicoletti sono stretti: il Comune mette paletti che, dice, costano dai 150 ai 300 euro l&rsquo;uno, senza aver pensato a parcheggi alternativi.</li>
+<li><strong>Banche.</strong> Le definisce &laquo;super tutelate&raquo; e dice che i conti correnti in Italia costano pi&ugrave; che in tutta Europa.</li>
+</ol>
+
+<p>La conclusione &egrave; un appello: proteste <strong>pacifiche, giuste, equilibrate e moderate</strong>, e una politica che faccia &laquo;una presa di coscienza&raquo;, perch&eacute; &laquo;la corda non si pu&ograve; tirare troppo&raquo; e una politica pi&ugrave; equilibrata evita &laquo;feriti, morti&raquo;. Chi &egrave; d&rsquo;accordo, chiede, scriva un commento e condivida il video.</p>
+
+<div class="box-info"><strong>Una precisazione.</strong> Questo &egrave; il parere personale di Antonio Cristiano. Le cifre che cita (paletti, RC Auto, conti correnti) sono sue e <strong>non sono state verificate da Partecipazione Attiva</strong>.</div>
+
+<h2>Che cosa facciamo noi</h2>
+<p>Le lamentele restano lamentele finch&eacute; nessuno le mette in fila. Partecipazione Attiva mette in rete cittadini e associazioni, dal quartiere alla legge: <strong>iscriversi &egrave; gratis</strong>, e sulla <strong>Mappa</strong> ogni persona e associazione diventa visibile a chi vive vicino.</p>
+<p><a class="btn-iscr" href="index.html#iscriviti" style="display:inline-block;padding:13px 28px;border-radius:50px;font-weight:700;text-decoration:none;margin:4px 8px 4px 0">Iscriviti, &egrave; gratis</a> <a href="mappa.html" style="display:inline-block;padding:13px 28px;border-radius:50px;font-weight:700;text-decoration:none;border:2px solid #c25f00;color:#9c5b00;margin:4px 0">Mettiti sulla Mappa</a></p>
+
+<details><summary><strong>Trascrizione completa</strong></summary>
+<p>Ecco qua, ci troviamo a Piazza Cavour, qua doveva essere praticamente un parco giochi e invece avete visto come stiamo combinati. Adesso se lo stesso posto non stava dove sta il Rione Sanità ma stava in un posto più chic sarebbe stato tutto bello, curato, perché là ci sono le classi privilegiate. Insomma, noi stiamo vivendo a Napoli e anche nelle altre città un momento storico dove c'è proprio un attacco da parte delle istituzioni contro le classi meno agiate e soprattutto a Napoli.</p>
+<p>Facciamo per esempio un esempio. Qua dovrebbe venire un parco gioco, gratuito ovviamente, per tutti i cittadini, già tutto intorno, già ci sono le strisce blu, perché ovviamente le categorie che hanno la possibilità economica si devono fermare proprio vicino al parco e le categorie meno privilegiate devono stare indietro. Insomma, per farvi un altro esempio, da 15 anni l'RC Auto a Napoli è salita, con dei prezzi sbalorditivi.</p>
+<p>Che cosa ha dovuto fare questo popolo per legittima difesa? Ha dovuto praticamente comprare le auto, ovviamente serve auto di poco valore, intestarle alle agenzie in Polonia per poi noleggiare le stesse da loro. Vedete un po' questo popolo che cosa è costretto a fare? Allora io invito proprio le istituzioni a tener conto di questo, perché le persone sono stanche, non è che possiamo fare una politica solamente per le categorie privilegiate, qua c'è una tendenza politica ad aiutare solo le lobby, lo facciamo con le guerre aiutando i fornitori di armi Lo facciamo con la sanità facendo in modo che chi non ha i soldi non si può curare nelle sanità pubbliche o che deve attendere delle file enormi ed è costretto ad andare nelle cliniche o in molti casi deve pagare l'azienda privata tipo come l'intramoenia all'interno delle strutture pubbliche pagate dai cittadini cioè mi sembra un po' esagerato questo modo di gestire una comunità, una civiltà praticamente.</p>
+<p>Come si può immaginare che il popolo possa accettare tutta una serie di umiliazioni? Come è possibile? Io credo che non sia possibile. Faccio un altro esempio. Questo quartiere qua dietro, che si chiama Rione Sanità, è stato costruito quando l'auto non stava neanche nell'immaginazione. Quindi i vicoletti sono stretti. Che fa il Comune? Piazza, i paletti per non far parcheggiare e un povero Cristo che deve tornare a casa, magari ha giusto i soldi per mettere la benzina, non può neanche più parcheggiare.</p>
+<p>Ma prima di mettere i paletti, che costano dai 150 ai 300 euro ogni paletto a noi comunità. Vi siete preoccupati di fare i parcheggi alternativi? No, non vi siete preoccupati. È perché giustamente le classi privilegiate hanno il loro garage, non hanno problemi. Il problema è che gira e rigira va sempre alla categoria meno agiata. E poi di cosa vogliamo parlare? delle banche che sono super tutelate: pensa che hanno fatto l'obbligo del POS all'interno dei negozi perché le società bancarie ogni trasferimento economico ci devono guadagnare.</p>
+<p>Abbiamo i conti correnti che costano di più di tutta l'Europa, ma secondo voi è normale. Ora dico io, è giustissimo che esistano delle manifestazioni soprattutto per l'energia elettrica che è salita a dei prezzi esagerati, il caro benzina che rende la vita ai trasportatori impossibile, le proteste ci devono essere, ovviamente devono essere delle proteste pacifiche, giuste, equilibrate, moderate, però è anche giusto che voi politici iniziasse a fare una presa di coscienza cioè la corda non si può tirare troppo a favore solo delle classi privilegiate ok, lo dico da misero sociologo che sono perché quando uno dà troppo vantaggio alle classi agiate poi succedono le rivoluzioni e ci sono feriti, morti, cose che si possono anche evitare facendo una politica più equilibrata che dia la dovuta dignità a tutti i cittadini.</p>
+<p>Se siete d'accordo a queste parole si può anche protestare facendo un semplice commento sotto e condividendo questo video. Può darsi che qualche politico inizia ad avere una presa di coscienza. Ciao.</p>
+</details>
+'''
+
 ART = {
+  'slug'         : 'popolo-sovrano-antonio-cristiano.html',
+  'autore'       : 'cristiano',
+  'data_iso'     : '2026-10-25',
+  'data_human'   : '25 ottobre 2026',
+  'data_badge'   : '25 OTTOBRE 2026',
+  'lettura_min'  : 5,
+  'categoria_hero': '\U0001F3AC Partecipazione Attiva WebTV',
+  'og_image'     : 'images/anteprime/popolo-sovrano-antonio-anteprima.jpg',
+  'h1'           : '«Popolo sovrano»: Antonio da Piazza Cavour',
+  'sottotitolo'  : 'Parco giochi mancato, paletti, RC Auto, sanità e banche: il parere di Antonio Cristiano e il suo appello a una politica per tutti.',
+  'meta_desc'    : 'Antonio Cristiano da Piazza Cavour, Napoli: parco giochi mancato, paletti, RC Auto, sanità e banche. Un appello per una politica per tutti. Video.',
+  'card_cat'     : 'WEBTV',
+  'card_title'   : '«Popolo sovrano»: Antonio da Piazza Cavour',
+  'card_desc'    : 'Una politica per tutti, non solo per i privilegiati: il video di Antonio Cristiano da Napoli. Iscriviti e mettiti sulla Mappa.',
+  'ticker_emoji' : '\U0001F3AC',
+  'ticker_tema'  : 'WEBTV',
+  'ticker_testo' : '«Popolo sovrano»: Antonio Cristiano da Piazza Cavour, a Napoli',
+  'body'         : BODY_POPOLO_SOVRANO,
+}
+
+
+ART_CHI_CONTROLLA_OLD = {
   'slug'         : 'legge-elettorale-chi-controlla-il-potere.html',
   'autore'       : 'pa',
   'data_iso'     : '2026-10-10',
