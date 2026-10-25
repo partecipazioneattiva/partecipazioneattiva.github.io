@@ -61,8 +61,15 @@ Il caso serbo ci dice che un movimento giovanile può arrivare alle urne. Non ci
 
 Non è l'unica risposta possibile, e non dimostra da sola di funzionare in Italia. È però una proposta concreta, con un costo dichiarato, obiezioni pubbliche e un meccanismo di verifica, e come tale si può discutere, migliorare o contestare.
 
-## Un'idea di tutti
+## Un'idea aperta a tutti
 
-L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE](/rete-ape.html) è presentata come una chiamata unitaria, aperta a chiunque voglia portarla avanti. Per questo i giovani possono renderla efficace più di chiunque altro: provarla su un problema che sentono, cambiarla dove non regge, proporre un primo passo concreto. Non basta però che l'idea sia di tutti: serve qualcuno che se ne prenda il lavoro. E va messo in conto che, passando di mano, l'APE potrebbe cambiare forma.
+L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE](/rete-ape.html) è presentata come una chiamata unitaria. Perché l'apertura sia autentica e non uno slogan, dovrebbe reggersi su quattro condizioni:
+
+- **Nessuno ne è proprietario.** Nemmeno il movimento che l'ha elaborata.
+- **La partecipazione è concreta.** Servono occasioni reali per proporre modifiche, discuterle e sperimentare soluzioni, non solo per aderire.
+- **L'autonomia è garantita.** Chi contribuisce non deve iscriversi a un'organizzazione né condividerne tutte le posizioni.
+- **Il progetto può cambiare.** Se l'esperienza mostra che una regola funziona male, va rivista. Passando di mano, l'APE potrebbe assumere una forma diversa da quella attuale.
+
+I giovani potrebbero dare un contributo decisivo: provarla su un problema che sentono, cambiarla dove non regge, proporre un primo passo concreto. È un'ipotesi, e non c'è modo di sapere in anticipo se si avvererà: sarà la partecipazione a dimostrarlo, non questo articolo.
 
 *Per approfondire: la [pagina del progetto APE](/ape.html), il documento integrale in PDF (20 pagine) e la sintesi pubblica (7 pagine), scaricabili da lì.*
