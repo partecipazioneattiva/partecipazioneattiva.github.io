@@ -112,6 +112,16 @@ Se queste possibilità esistono, sarebbe utile renderle facilmente accessibili. 
 
 Chi non condivide una parte dell'APE dovrebbe poterlo dire senza essere considerato un avversario. E dovrebbe poter capire che cosa succede alla sua osservazione. Altrimenti l'invito alla partecipazione rischia di tradursi, nella pratica, soprattutto in una richiesta di adesione.
 
+## Se i giovani governano: un correttore, non un tribunale
+
+C'è una seconda lettura del caso serbo. Se i risultati ufficiali confermassero la maggioranza della lista studentesca, i giovani uniti non sarebbero più soltanto una forza di protesta: potrebbero governare. Per ora è un'ipotesi, perché la dichiarazione di Vučić non è un risultato certificato e un governo non c'è ancora. Ma la domanda si pone già: che cosa accade se chi ha vinto promettendo un cambiamento non riesce a realizzarlo, oppure sbaglia, magari in buona fede?
+
+In una democrazia la risposta classica è il voto successivo: i cittadini giudicano alle elezioni seguenti. È una risposta lenta, che arriva dopo gli errori e non aiuta a correggerli mentre accadono. Il rischio, per chi governa e per chi l'ha votato, è che la delusione si trasformi in sfiducia generale prima che qualcuno abbia potuto rimettere il lavoro in carreggiata.
+
+È qui che l'APE, nel modello proposto, potrebbe svolgere una funzione di autocorrezione. Le sue procedure non dipendono da chi governa: la verifica semestrale dell'attuazione del programma, le direttive con l'obbligo di attuarle o di motivare pubblicamente il rifiuto, la possibilità del referendum. Un governo nato da un movimento giovanile avrebbe così un canale per ricevere indicazioni dai cittadini mentre governa, e i cittadini uno per segnalare che qualcosa non funziona, senza aspettare la scadenza del mandato. In questo senso l'APE non sarebbe un tribunale che punisce gli errori, ma un meccanismo che permette di vederli e correggerli in tempo.
+
+Due cautele, per onestà. La prima: questa funzione è un'interpretazione degli strumenti proposti, non un risultato dimostrato; il documento descrive meccanismi di controllo sul governo, non una sperimentazione su governi nati da movimenti. La seconda: le stesse regole vincolerebbero anche un governo che sbaglia in buona fede, o che ha buone ragioni per non attuare una direttiva. La «deroga motivata» serve proprio a questo, ma resta da verificare se, in pratica, il confronto fra un governo con un mandato elettorale e un'assemblea sorteggiata sia equilibrato, o se rischi di trasformarsi in un conflitto fra due legittimazioni.
+
 ## Non basta unirsi: bisogna poter incidere
 
 La vicenda serba ricorda che l'organizzazione collettiva può cambiare il peso politico di una generazione. Non garantisce, però, che dopo il voto le promesse vengano mantenute o che i cittadini conservino un ruolo nelle decisioni. Per questo, accanto alla mobilitazione, conta la costruzione di regole democratiche che rendano la partecipazione continuativa e verificabile.
