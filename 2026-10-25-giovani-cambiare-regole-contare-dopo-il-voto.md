@@ -24,7 +24,7 @@ La lezione, quindi, non è semplicemente che «i giovani uniti vincono». Una mo
 
 C'è anche una distinzione fondamentale: conquistare consenso alle elezioni non significa aver risolto i problemi che hanno portato le persone in piazza. Il voto può cambiare chi governa; non garantisce, da solo, che i cittadini continuino a incidere sulle decisioni successive.
 
-È qui che comincia la domanda che riguarda anche l'Italia: come si può partecipare alle scelte pubbliche non soltanto il giorno del voto, ma anche tra un'elezione e l'altra?
+È qui che comincia la domanda che riguarda anche l'Italia, e prima di tutti i giovani: come si può partecipare alle scelte pubbliche non soltanto il giorno del voto, ma anche tra un'elezione e l'altra?
 
 ## La democrazia non è soltanto contare i voti
 
@@ -116,7 +116,7 @@ Chi non condivide una parte dell'APE dovrebbe poterlo dire senza essere consider
 
 La vicenda serba ricorda che l'organizzazione collettiva può cambiare il peso politico di una generazione. Non garantisce, però, che dopo il voto le promesse vengano mantenute o che i cittadini conservino un ruolo nelle decisioni. Per questo, accanto alla mobilitazione, conta la costruzione di regole democratiche che rendano la partecipazione continuativa e verificabile.
 
-L'APE è una delle proposte che cercano di affrontare questo problema. Non è l'unica possibile e non ha ancora dimostrato di funzionare in Italia. Presenta costi stimati nel documento del progetto, questioni giuridiche e organizzative da approfondire e un pacchetto di riforme che merita di essere esaminato nel suo insieme.
+Per i giovani, la questione principale è questa: contare non soltanto il giorno del voto. Per chi promuove l'APE, l'Assemblea Popolare Ecumenica è il traguardo verso cui lavorare: lo strumento che renderebbe stabile, accessibile e verificabile quella possibilità. Un traguardo, non una soluzione già dimostrata: non è l'unica proposta possibile e non ha ancora dimostrato di funzionare in Italia. Presenta costi stimati nel documento del progetto, questioni giuridiche e organizzative da approfondire e un pacchetto di riforme che merita di essere esaminato nel suo insieme.
 
 Non occorre condividerla per discuterla. Anzi, se l'obiettivo è rendere la partecipazione più democratica, il progetto deve dimostrare di saper accogliere anche le critiche rivolte a se stesso. La sua credibilità dipenderà non soltanto dalle regole che propone per le istituzioni, ma anche dal modo in cui i cofondatori e la Rete APE permetteranno ai cittadini di esaminarle, contestarle e migliorarle.
 
