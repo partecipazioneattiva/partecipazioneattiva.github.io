@@ -1,5 +1,5 @@
 ---
-title: "Dopo il voto, chi ci ascolta? Cosa può offrire l'APE ai giovani che chiedono voce"
+title: "Dopo il voto, chi ci ascolta? Cosa propone l'APE, cosa non garantisce e come discuterla"
 date: 2026-10-25
 tags: [APE, Assemblea Popolare Ecumenica, giovani, partecipazione, sorteggio, democrazia partecipativa, Serbia]
 ---
@@ -10,9 +10,11 @@ Vincere un'elezione dà una legittimazione temporanea. Non dice come i cittadini
 
 *Avvertenza di trasparenza: l'APE è la proposta di Partecipazione Attiva, il movimento che cura questo sito. Qui la descriviamo, ne diciamo i punti deboli e lasciamo al lettore il giudizio.*
 
+Per orientarsi, conviene tenere distinte tre cose. **Il problema:** come continuare a contare tra un'elezione e l'altra. **La proposta:** il modello istituzionale dell'APE, descritto qui sulla base del [documento integrale v7.0](documenti/APE_Assemblea_Popolare_Ecumenica_v7.0.pdf). **Ciò che resta da dimostrare:** fattibilità, costi, efficacia e possibilità di partecipare concretamente prima di una riforma.
+
 ## Il problema che l'APE vuole risolvere
 
-Nella democrazia italiana si vota, si affida un mandato e fino al voto successivo la partecipazione è, di fatto, sospesa. Alle politiche del 25 settembre 2022 il 39,84% degli aventi diritto non è andato a votare: il minimo storico della Repubblica. Secondo il documento del movimento questo non è apatia, ma il rifiuto di un sistema percepito come distante.
+Nella democrazia italiana si vota, si affida un mandato e fino al voto successivo la partecipazione è, di fatto, sospesa. Il documento dell'APE indica che alle politiche del 25 settembre 2022 il 39,84% degli aventi diritto non ha votato (oltre 20 milioni di persone), il minimo storico della Repubblica. **Questo numero va ricontrollato sulla fonte ufficiale (Ministero dell'Interno):** il documento non ne indica la definizione, e un'altra fonte consultata per questo lavoro, il Forum Disuguaglianze e Diversità, parla di un'affluenza complessiva del 63,9%, cioè circa il 36% di non votanti. La differenza potrebbe dipendere da come si contano, per esempio, gli elettori residenti all'estero; è un'ipotesi da verificare, non una spiegazione accertata. Va poi tenuta distinta un'altra cosa: che il documento interpreti questo dato come rifiuto consapevole di un sistema percepito come distante è una lettura dei proponenti. Il dato dice quanti non hanno votato, non perché.
 
 L'[APE, Assemblea Popolare Ecumenica](ape.html), non propone di sostituire il Parlamento. Propone di aggiungere un organo di cittadini che indichi la direzione tra un'elezione e l'altra e a cui le istituzioni siano obbligate a rispondere.
 
@@ -20,8 +22,9 @@ L'[APE, Assemblea Popolare Ecumenica](ape.html), non propone di sostituire il Pa
 
 - **Sorteggio, non elezione.** I componenti sono estratti dalle liste elettorali, con stratificazione per età, genere e territorio: almeno il 40% di donne e almeno il 15% di under 35. Il mandato dura tre anni e si può essere sorteggiati al massimo due volte nella vita.
 - **Tre livelli:** comunale (APEC), regionale (APER) e nazionale (APEN), ognuno con il suo interlocutore: Comune, Regione, Governo.
-- **Direttive con obbligo di risposta.** Chi le riceve deve attuarle oppure respingerle con un voto a maggioranza assoluta e una motivazione pubblica. Non sono leggi e non obbligano i privati.
-- **Referendum propositivo come ultima istanza.** Se per 120 giorni la Camera o il Governo non attuano né motivano il rifiuto, il referendum può essere chiesto dai due terzi dell'APEN o da 500.000 cittadini, senza quorum di partecipazione.
+- **Direttive con obbligo di risposta.** L'istituzione che riceve una direttiva deve attuarla oppure respingerla con una «deroga motivata»: una deliberazione a maggioranza assoluta con motivazione pubblica. Le direttive non sono leggi e non obbligano i privati.
+- **Cosa succede se non risponde.** Il referendum propositivo si apre se entro 120 giorni dalla trasmissione di una direttiva la Camera non la attua né delibera una deroga motivata (o se la Corte costituzionale dichiara priva di fondamento la deroga votata). Lo possono chiedere l'APEN con i due terzi dei componenti, entro sessanta giorni, oppure 500.000 elettori; lo indice il Presidente della Repubblica entro novanta giorni, dopo la verifica dell'organo di garanzia e il giudizio di ammissibilità della Corte costituzionale. È valido senza quorum. Se vince il sì, Governo e Camera hanno 180 giorni per attuare la direttiva e non possono più ricorrere alla deroga; se vince il no, la direttiva decade e non può essere riproposta in forma sostanzialmente identica prima di dodici mesi. Sono esclusi leggi tributarie e di bilancio, amnistia e indulto, ratifica dei trattati e quesiti contrari ai diritti fondamentali.
+- **Verifica sul Governo.** L'APEN controlla ogni sei mesi l'attuazione del programma elettorale. Se il Governo, tre o più volte nella stessa legislatura, adotta provvedimenti in contrasto con le direttive senza usare la deroga, l'APEN può deliberare con i due terzi una mozione di sfiducia: non fa cadere il Governo, ma apre una consultazione presso il Presidente della Repubblica.
 - **Indennità e permessi di lavoro** per chi è sorteggiato, altrimenti l'assemblea rischierebbe di rappresentare solo chi può permettersi di partecipare gratis.
 
 Un organo indipendente di garanzia verifica i sorteggi e segnala le inadempienze.
@@ -33,13 +36,13 @@ Un organo indipendente di garanzia verifica i sorteggi e segnala le inadempienze
 3. **Prevede una quota di giovani** e un'indennità, per non escludere chi non ha tempo o reddito.
 4. **Ha un meccanismo di chiusura:** non si ferma all'ascolto, perché l'inerzia delle istituzioni apre la strada al referendum.
 
-L'esperienza francese della Convention Citoyenne (2019-2020) mostra il rischio: raccogliere la voce dei cittadini e poi disattenderla fa crollare la fiducia. L'APE prova a rispondere con l'obbligo di motivare il rifiuto.
+Il documento dell'APE legge l'esperienza francese della Convention Citoyenne (2019-2020) come un caso in cui raccogliere la voce dei cittadini senza obbligo di risposta ha prodotto delusione, e propone di rispondere con l'obbligo di motivare il rifiuto. Questa è la lettura dei proponenti: non abbiamo qui verificato né quante proposte furono recepite né cosa dissero i partecipanti, due cose che andrebbero tenute distinte prima di trarne una regola generale.
 
 ## I limiti, detti chiaramente
 
 - **È un pacchetto costituzionale.** Le tre leggi (istituzione dell'APE, abolizione del Senato, referendum propositivo) entrano in vigore insieme: «o tutte e tre, o nessuna». Legarla all'abolizione del Senato sposta il dibattito su un tema istituzionale molto più ampio.
 - **Il sorteggio non è una porta d'ingresso.** Un giovane motivato non può «entrare nell'APE»: può essere estratto, oppure depositare un'istanza. Chi vuole agire adesso trova poco da fare.
-- **I costi sono stime dei proponenti.** Il documento indica circa 252 milioni di euro l'anno a regime, contro i 541 milioni che oggi costa il Senato, e un risparmio netto prudenziale di 250-260 milioni. Sono cifre del movimento, non verificate da terzi.
+- **I costi sono stime dei proponenti.** L'Allegato A del documento calcola 252,11 milioni di euro l'anno a regime, voce per voce: la quota maggiore, 197,35 milioni, è per un funzionario in ognuno dei 7.894 Comuni (25.000 euro lordi ciascuno). Contro questi si pone un costo del Senato di 541 milioni, da cui un risparmio teorico di 289 milioni e uno «prudenziale» di 250-260. Il documento consultato non indica la fonte e l'anno del dato sul Senato, e il margine prudenziale (15%) è una scelta dei proponenti: sono cifre non verificate da terzi.
 - **La quota del 15% di under 35** andrebbe confrontata con il loro peso reale tra gli elettori: non lo abbiamo verificato.
 - **Il testo è tecnico.** La pagina richiede dieci minuti di lettura e un linguaggio da addetti ai lavori: per un ventenne, è un ostacolo prima ancora del merito.
 
@@ -49,20 +52,22 @@ Il documento integrale dedica spazio alle obiezioni più dure e alle criticità 
 
 Sono ipotesi di lavoro, non fatti:
 
-- **Un banco di prova piccolo.** Un'assemblea sorteggiata su una sola questione locale, come la casa o i trasporti, prima di chiedere una riforma costituzionale. Se e come sia possibile a livello comunale va verificato giuridicamente.
+- **Un banco di prova più piccolo.** Il documento prevede già una sperimentazione di un mandato completo, tre anni, in tre Regioni (Lombardia, Lazio e Sicilia), seguita da una valutazione indipendente di sei mesi. Si potrebbe pensare a qualcosa di ancora più piccolo, come un'assemblea sorteggiata su una sola questione locale (la casa, i trasporti). Va però detto che un esperimento locale non avrebbe i poteri costituzionali previsti dal progetto, come l'obbligo di risposta delle istituzioni e il referendum: sarebbe un esperimento partecipativo, non una prova completa dell'APE. Se e come sia possibile a livello comunale va verificato giuridicamente.
 - **Un gesto concreto da compiere.** Raccogliere istanze, seguire le risposte delle istituzioni, partecipare a un'assemblea simulata.
 - **Un linguaggio che parte dal problema** («chi decide sul tuo affitto?») e solo dopo arriva allo strumento.
 
-## Un'idea aperta a tutti
+## Un'idea aperta a tutti: i principi e ciò che c'è oggi
 
-L'APE non è nata per un gruppo di età né per un solo movimento: la [Rete APE](rete-ape.html) è presentata come una chiamata unitaria. Perché l'apertura sia autentica e non uno slogan, dovrebbe reggersi su quattro condizioni:
+L'APE non è nata per un gruppo di età né per un solo movimento. Perché l'apertura sia autentica e non uno slogan, dovrebbe reggersi su quattro condizioni:
 
 - **Nessuno ne è proprietario.** Nemmeno il movimento che l'ha elaborata.
 - **La partecipazione è concreta.** Servono occasioni reali per proporre modifiche, discuterle e sperimentare soluzioni, non solo per aderire.
 - **L'autonomia è garantita.** Chi contribuisce non deve iscriversi a un'organizzazione né condividerne tutte le posizioni.
-- **Il progetto può cambiare.** Se l'esperienza mostra che una regola funziona male, va rivista. Passando di mano, l'APE potrebbe assumere una forma diversa da quella attuale.
+- **Il progetto può cambiare.** Se l'esperienza mostra che una regola funziona male, va rivista.
 
-I giovani potrebbero dare un contributo decisivo: provarla su un problema che sentono, cambiarla dove non regge, proporre un primo passo concreto. È un'ipotesi, e non c'è modo di sapere in anticipo se si avvererà: sarà la partecipazione a dimostrarlo, non questo articolo.
+Sono principi, e vanno distinti da ciò che è disponibile oggi. Dalla pagina della [Rete APE](rete-ape.html) risulta che si può aderire, come cittadino singolo o come associazione, firmando il Patto fondativo (gratuito e alla pari) ed entrando nell'Albo dei co-fondatori, oppure chiedere di entrare nella chat WhatsApp della Rete, con approvazione degli amministratori e numero di telefono visibile agli altri partecipanti. La Rete dichiara peso paritario per tutti gli aderenti e trasparenza totale. Aderire non dà un posto nelle assemblee, che sono sorteggiate.
+
+Non abbiamo trovato, nelle pagine consultate, una procedura per proporre modifiche al testo del progetto, né un modo di contribuire senza aderire al Patto. Se esistono, andrebbero indicati; se non esistono, sono ancora un obiettivo e non un fatto. Quanto ai giovani: potrebbero dare un contributo decisivo, ma è un'ipotesi e non c'è modo di saperlo in anticipo. Lo dirà la partecipazione, non questo articolo.
 
 ## La domanda che resta aperta
 
