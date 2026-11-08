@@ -64,6 +64,8 @@ def controlla(oggi=None):
     home = open(HOME, encoding='utf-8').read()
     banner = re.findall(
         r'<a class=?"?pa-invito"?\s+href="([^"]+)"[^>]*>(.*?)</a>', home, re.S)
+    banner += re.findall(
+        r'<a class="?pa-inv-link"?\s+href="([^"]+)"[^>]*>(.*?)</a>', home, re.S)
     if not banner:
         print('nessun banner pa-invito nella home')
         return 0
