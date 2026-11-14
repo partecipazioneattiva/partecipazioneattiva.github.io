@@ -2363,7 +2363,7 @@ BODY_POPOLO_SOVRANO = r'''<p><strong>«Non è che possiamo fare una politica sol
 </details>
 '''
 
-BODY_RAI_VOTO_LIBERO = r'''<p><strong>Luigi Spanu</strong>, portavoce di Partecipazione Attiva, ha promosso il <strong>12 novembre 2026</strong> un incontro online sulla qualit&agrave; della nostra democrazia: un confronto fra realt&agrave; che lavorano per un servizio pubblico radiotelevisivo libero e per un voto davvero libero e uguale. Qui sotto riportiamo due testi: la <strong>nota introduttiva</strong> letta da Spanu prima di dare la parola agli ospiti e la <strong>nota post-incontro</strong> della dott.ssa <strong>Rosanna Oliva De Conciliis</strong>, relatrice dell&rsquo;evento, che ci ha chiesto di pubblicarla.</p>
+BODY_RAI_VOTO_LIBERO = r'''<p><strong>Luigi Spanu</strong>, portavoce di Partecipazione Attiva, ha promosso il <strong>12 novembre 2026</strong> un incontro online sulla qualit&agrave; della nostra democrazia: un confronto fra realt&agrave; che lavorano per un servizio pubblico radiotelevisivo libero e per un voto davvero libero e uguale. Qui sotto riportiamo due testi: la <strong>nota introduttiva</strong> letta da Spanu prima di dare la parola agli ospiti e la <strong>nota post-incontro</strong> della dott.ssa <strong>Rosanna Oliva de Conciliis</strong>, relatrice dell&rsquo;evento, che ci ha chiesto di pubblicarla.</p>
 
 <div class="box-info" style="border-left-color:#8a4e00"><strong>&#128196; Come leggere questa pagina</strong> I due testi sono riportati come ci sono stati consegnati, con le parole dei rispettivi autori. <strong>Sono le loro considerazioni:</strong> Partecipazione Attiva le pubblica e non ha verificato una per una le date e le circostanze che citano. Il testo del Regolamento europeo richiamato &egrave; consultabile su <a href="https://eur-lex.europa.eu/eli/reg/2024/1083/oj" target="_blank" rel="noopener nofollow" style="color:#9c5b00;font-weight:700">EUR-Lex &rarr;</a></div>
 
@@ -2387,12 +2387,12 @@ BODY_RAI_VOTO_LIBERO = r'''<p><strong>Luigi Spanu</strong>, portavoce di Parteci
 <li>siano sottoposti a un monitoraggio sul rispetto dei principi dell&rsquo;art. 5, che deve essere affidato a uno o pi&ugrave; <strong>organismi indipendenti</strong>.</li>
 </ul>
 
-<h2>La nota post-incontro della dott.ssa Rosanna Oliva De Conciliis</h2>
+<h2>La nota post-incontro della dott.ssa Rosanna Oliva de Conciliis</h2>
 <p>Ho partecipato con grande piacere all&rsquo;incontro online organizzato il 12 novembre da Luigi Spanu, Portavoce di Partecipazione Attiva &mdash; associazione impegnata per una politica trasparente e partecipata nel solco della Costituzione &mdash; un prezioso momento di confronto tra realt&agrave; attive per la qualit&agrave; della nostra democrazia.</p>
 <p>A nome dell&rsquo;associazione <strong>Aspettare stanca</strong>, dal 2006 impegnata su questo obiettivo e forti della recente esperienza nella <strong>Rete per un voto libero e uguale</strong>, ho ribadito che un voto davvero libero e paritario non dipende solo dalla formula elettorale, ma anche dalle cosiddette &laquo;leggi di contorno&raquo; (par condicio, regole sui sondaggi, trasparenza) e soprattutto da un <strong>Servizio pubblico radiotelevisivo libero dalla propaganda di parte</strong>.</p>
 <p>Nel ricordare con affetto e gratitudine la senatrice <strong>Valeria Fedeli</strong> per le norme di garanzia di genere nelle elezioni europee, ho richiamato l&rsquo;impegno comune con <strong>Donatella Martini</strong> (DonneinQuota e Gruppo per una RAI libera e democratica) per denunciare la grave paralisi che da tempo blocca la <strong>Commissione di vigilanza RAI</strong>.</p>
 <p>Grazie a Luigi Spanu e a Partecipazione Attiva per aver raccolto questa proposta e aver aperto uno spazio di dialogo cos&igrave; necessario!</p>
-<p><a href="https://www.facebook.com/share/p/1J9Sk47s71/" target="_blank" rel="noopener nofollow" style="color:#9c5b00;font-weight:700">La nota originale sulla pagina Facebook della dott.ssa Oliva De Conciliis &rarr;</a></p>
+<p><a href="https://www.facebook.com/share/p/1J9Sk47s71/" target="_blank" rel="noopener nofollow" style="color:#9c5b00;font-weight:700">La nota originale sulla pagina Facebook della dott.ssa Oliva de Conciliis &rarr;</a></p>
 
 <h2>Che cosa facciamo noi</h2>
 <p>Un servizio pubblico libero e un voto libero e uguale si difendono insieme, e da soli non si difende nulla. Partecipazione Attiva mette in rete cittadini e associazioni, dal quartiere alla legge: <strong>iscriversi &egrave; gratis</strong>, e sulla <strong>Mappa</strong> ogni persona e associazione diventa visibile a chi vive vicino.</p>
@@ -2409,14 +2409,14 @@ ART = {
   'categoria_hero': '\U0001F4E1 Servizio pubblico',
   'og_image'     : 'images/anteprime/rai-voto-libero-incontro-12-novembre-anteprima.jpg',
   'h1'           : 'RAI e voto libero: l\u2019incontro del 12 novembre',
-  'sottotitolo'  : 'La nota introduttiva di Luigi Spanu su RAI e autonomia differenziata e la nota post-incontro della dott.ssa Rosanna Oliva De Conciliis.',
-  'meta_desc'    : 'Incontro online del 12 novembre: la nota di Luigi Spanu su RAI ed European Media Freedom Act e quella di Rosanna Oliva De Conciliis (Aspettare stanca).',
+  'sottotitolo'  : 'La nota introduttiva di Luigi Spanu su RAI e autonomia differenziata e la nota post-incontro della dott.ssa Rosanna Oliva de Conciliis.',
+  'meta_desc'    : 'Incontro online del 12 novembre: la nota di Luigi Spanu su RAI ed European Media Freedom Act e quella di Rosanna Oliva de Conciliis (Aspettare stanca).',
   'card_cat'     : 'SERVIZIO PUBBLICO',
   'card_title'   : 'RAI e voto libero: l\u2019incontro del 12 novembre',
-  'card_desc'    : 'Le note di Luigi Spanu e di Rosanna Oliva De Conciliis: RAI, European Media Freedom Act e un voto davvero libero e uguale.',
+  'card_desc'    : 'Le note di Luigi Spanu e di Rosanna Oliva de Conciliis: RAI, European Media Freedom Act e un voto davvero libero e uguale.',
   'ticker_emoji' : '\U0001F4E1',
   'ticker_tema'  : 'SERVIZIO PUBBLICO',
-  'ticker_testo' : 'RAI e voto libero: le note di Spanu e di Oliva De Conciliis dopo l\u2019incontro del 12 novembre',
+  'ticker_testo' : 'RAI e voto libero: le note di Spanu e di Oliva de Conciliis dopo l\u2019incontro del 12 novembre',
   'body'         : BODY_RAI_VOTO_LIBERO,
 }
 
