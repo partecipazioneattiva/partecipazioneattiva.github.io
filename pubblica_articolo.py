@@ -2363,7 +2363,65 @@ BODY_POPOLO_SOVRANO = r'''<p><strong>«Non è che possiamo fare una politica sol
 </details>
 '''
 
+BODY_RAI_VOTO_LIBERO = r'''<p><strong>Luigi Spanu</strong>, portavoce di Partecipazione Attiva, ha promosso il <strong>12 novembre 2026</strong> un incontro online sulla qualit&agrave; della nostra democrazia: un confronto fra realt&agrave; che lavorano per un servizio pubblico radiotelevisivo libero e per un voto davvero libero e uguale. Qui sotto riportiamo due testi: la <strong>nota introduttiva</strong> letta da Spanu prima di dare la parola agli ospiti e la <strong>nota post-incontro</strong> della dott.ssa <strong>Rosanna Oliva De Conciliis</strong>, relatrice dell&rsquo;evento, che ci ha chiesto di pubblicarla.</p>
+
+<div class="box-info" style="border-left-color:#8a4e00"><strong>&#128196; Come leggere questa pagina</strong> I due testi sono riportati come ci sono stati consegnati, con le parole dei rispettivi autori. <strong>Sono le loro considerazioni:</strong> Partecipazione Attiva le pubblica e non ha verificato una per una le date e le circostanze che citano. Il testo del Regolamento europeo richiamato &egrave; consultabile su <a href="https://eur-lex.europa.eu/eli/reg/2024/1083/oj" target="_blank" rel="noopener nofollow" style="color:#9c5b00;font-weight:700">EUR-Lex &rarr;</a></div>
+
+<h2>La nota introduttiva di Luigi Spanu</h2>
+<p><em>Prima di dare la parola agli ospiti, vorrei leggervi una breve nota introduttiva.</em></p>
+<p>In queste settimane, in Parlamento, si decidono due intese:</p>
+<ul>
+<li>la prima riguarda la <strong>riforma della RAI</strong> (CdA nominato a maggioranza politica, decadenza automatica, canone usato come leva);</li>
+<li>la seconda le intese sull&rsquo;<strong>autonomia differenziata</strong> (CdM n. 192 del 14 ottobre, con Liguria, Lombardia, Piemonte e Veneto).</li>
+</ul>
+<p>Due riforme che sembrano distanti, ma hanno lo stesso effetto: frammentare ci&ograve; che la Costituzione vuole unitario &ndash; l&rsquo;informazione indipendente (art. 21), il servizio pubblico (art. 43), l&rsquo;unit&agrave; della Repubblica (art. 5).</p>
+<p>L&rsquo;Europa ce lo ha gi&agrave; detto con chiarezza: il <strong>Regolamento 2024/1083 &ndash; European Media Freedom Act</strong> &ndash; all&rsquo;art. 5 impone che il servizio pubblico sia indipendente, stabile e sottratto alla spartizione politica. La riforma in discussione va esattamente nella direzione opposta.</p>
+<p>Quindi l&rsquo;indipendenza della RAI non &egrave; un&rsquo;opinione: &egrave; un obbligo di legge europea, direttamente applicabile in Italia dall&rsquo;8 agosto 2025.</p>
+<p><strong>Dall&rsquo;8 agosto 2025 la RAI &egrave; fuori legge.</strong></p>
+<p>L&rsquo;art. 5 impone che i media di servizio pubblico siano:</p>
+<ul>
+<li><strong>editorialmente e funzionalmente indipendenti</strong>;</li>
+<li>forniscano una <strong>pluralit&agrave; di informazioni in modo imparziale</strong>;</li>
+<li>abbiano vertici nominati con criteri stabiliti prima, con procedure trasparenti, aperte, effettive e non discriminatorie;</li>
+<li>prevedano anche <strong>risorse adeguate, sostenibili e prevedibili</strong>, per garantire la pianificazione pluriennale;</li>
+<li>siano sottoposti a un monitoraggio sul rispetto dei principi dell&rsquo;art. 5, che deve essere affidato a uno o pi&ugrave; <strong>organismi indipendenti</strong>.</li>
+</ul>
+
+<h2>La nota post-incontro della dott.ssa Rosanna Oliva De Conciliis</h2>
+<p>Ho partecipato con grande piacere all&rsquo;incontro online organizzato il 12 novembre da Luigi Spanu, Portavoce di Partecipazione Attiva &mdash; associazione impegnata per una politica trasparente e partecipata nel solco della Costituzione &mdash; un prezioso momento di confronto tra realt&agrave; attive per la qualit&agrave; della nostra democrazia.</p>
+<p>A nome dell&rsquo;associazione <strong>Aspettare stanca</strong>, dal 2006 impegnata su questo obiettivo e forti della recente esperienza nella <strong>Rete per un voto libero e uguale</strong>, ho ribadito che un voto davvero libero e paritario non dipende solo dalla formula elettorale, ma anche dalle cosiddette &laquo;leggi di contorno&raquo; (par condicio, regole sui sondaggi, trasparenza) e soprattutto da un <strong>Servizio pubblico radiotelevisivo libero dalla propaganda di parte</strong>.</p>
+<p>Nel ricordare con affetto e gratitudine la senatrice <strong>Valeria Fedeli</strong> per le norme di garanzia di genere nelle elezioni europee, ho richiamato l&rsquo;impegno comune con <strong>Donatella Martini</strong> (DonneinQuota e Gruppo per una RAI libera e democratica) per denunciare la grave paralisi che da tempo blocca la <strong>Commissione di vigilanza RAI</strong>.</p>
+<p>Grazie a Luigi Spanu e a Partecipazione Attiva per aver raccolto questa proposta e aver aperto uno spazio di dialogo cos&igrave; necessario!</p>
+<p><a href="https://www.facebook.com/share/p/1J9Sk47s71/" target="_blank" rel="noopener nofollow" style="color:#9c5b00;font-weight:700">La nota originale sulla pagina Facebook della dott.ssa Oliva De Conciliis &rarr;</a></p>
+
+<h2>Che cosa facciamo noi</h2>
+<p>Un servizio pubblico libero e un voto libero e uguale si difendono insieme, e da soli non si difende nulla. Partecipazione Attiva mette in rete cittadini e associazioni, dal quartiere alla legge: <strong>iscriversi &egrave; gratis</strong>, e sulla <strong>Mappa</strong> ogni persona e associazione diventa visibile a chi vive vicino.</p>
+<p><a class="btn-iscr" href="index.html#iscriviti" style="display:inline-block;padding:13px 28px;border-radius:50px;font-weight:700;text-decoration:none;margin:4px 8px 4px 0">Iscriviti, &egrave; gratis</a> <a href="mappa.html" style="display:inline-block;padding:13px 28px;border-radius:50px;font-weight:700;text-decoration:none;border:2px solid #c25f00;color:#9c5b00;margin:4px 0">Mettiti sulla Mappa</a></p>
+'''
+
 ART = {
+  'slug'         : 'rai-voto-libero-incontro-12-novembre.html',
+  'autore'       : 'spanu',
+  'data_iso'     : '2026-11-14',
+  'data_human'   : '14 novembre 2026',
+  'data_badge'   : '14 NOVEMBRE 2026',
+  'lettura_min'  : 3,
+  'categoria_hero': '\U0001F4E1 Servizio pubblico',
+  'og_image'     : 'images/anteprime/rai-voto-libero-incontro-12-novembre-anteprima.jpg',
+  'h1'           : 'RAI e voto libero: l\u2019incontro del 12 novembre',
+  'sottotitolo'  : 'La nota introduttiva di Luigi Spanu su RAI e autonomia differenziata e la nota post-incontro della dott.ssa Rosanna Oliva De Conciliis.',
+  'meta_desc'    : 'Incontro online del 12 novembre: la nota di Luigi Spanu su RAI ed European Media Freedom Act e quella di Rosanna Oliva De Conciliis (Aspettare stanca).',
+  'card_cat'     : 'SERVIZIO PUBBLICO',
+  'card_title'   : 'RAI e voto libero: l\u2019incontro del 12 novembre',
+  'card_desc'    : 'Le note di Luigi Spanu e di Rosanna Oliva De Conciliis: RAI, European Media Freedom Act e un voto davvero libero e uguale.',
+  'ticker_emoji' : '\U0001F4E1',
+  'ticker_tema'  : 'SERVIZIO PUBBLICO',
+  'ticker_testo' : 'RAI e voto libero: le note di Spanu e di Oliva De Conciliis dopo l\u2019incontro del 12 novembre',
+  'body'         : BODY_RAI_VOTO_LIBERO,
+}
+
+
+ART_POPOLO_SOVRANO_OLD = {
   'slug'         : 'popolo-sovrano-antonio-cristiano.html',
   'autore'       : 'cristiano',
   'data_iso'     : '2026-10-25',
