@@ -172,16 +172,16 @@
 <span style="font-size:.8em;color:#6c6c6c">Movimento Popolare dei Cittadini Italiani</span>
 </div>
 </div>
-<p style="color:#555;margin-top:20px">Tutti i co-fondatori sono nell&#8217;<a href="https://www.assembleapopolareecumenica.it/albo.html">Albo dei co-fondatori</a>. Vuoi esserci anche tu?</p>
+<p style="color:#555;margin-top:20px">Tutti i Costruttori sono nell&#8217;<a href="https://www.assembleapopolareecumenica.it/albo.html">Albo dei Costruttori</a>. Vuoi esserci anche tu?</p>
 </div>
 
 <h2>Come aderire</h2>
-<p>L&#8217;adesione &#232; gratuita e paritaria. Chi aderisce firma il <a href="https://www.assembleapopolareecumenica.it/patto.html">Patto fondativo</a> ed entra nell&#8217;<a href="https://www.assembleapopolareecumenica.it/albo.html">Albo dei co-fondatori</a>, pubblicato in ordine alfabetico, senza primi e senza ultimi. Compila il modulo: ti arriva un&#8217;email, e con la conferma la tua firma &#232; valida.</p>
+<p>L&#8217;adesione &#232; gratuita e paritaria. Chi aderisce firma il <a href="https://www.assembleapopolareecumenica.it/patto.html">Patto fondativo</a> ed entra nell&#8217;<a href="https://www.assembleapopolareecumenica.it/albo.html">Albo dei Costruttori</a>, pubblicato in ordine alfabetico, senza primi e senza ultimi. Compila il modulo: ti arriva un&#8217;email, e con la conferma la tua firma &#232; valida.</p>
 
 <p><strong>Documenti da scaricare:</strong> <a href="documenti/Rete_APE_Patto_fondativo.pdf" download>Patto fondativo</a> &middot; <a href="documenti/Rete_APE_Modulo_adesione.pdf" download>Modulo di adesione (PDF compilabile)</a> &middot; <a href="documenti/Rete_APE_Lettera_adesione_associazioni.pdf" download>Lettera alle associazioni</a> &middot; <a href="documenti/APE_Volantino_A4.pdf" download>Volantino A4</a>. Tutti i documenti sono anche in <a href="documenti.html">Documenti ufficiali</a>.</p>
 
 <form id="aderisci" class="ra-modulo" novalidate>
-  <h3>Firma il Patto e diventa co-fondatore</h3>
+  <h3>Firma il Patto e diventa Costruttore del progetto APE</h3>
   <p class="ra-nota">Non aderisci a un progetto: lo fondi. Gratuito e alla pari. Ti arriva un&rsquo;email: con la conferma la tua firma &egrave; valida.</p>
   <p class="ra-nota"><strong>Chi entra nelle Assemblee.</strong> Aderire alla Rete non d&agrave; un posto nelle Assemblee e non cambia la probabilit&agrave; di essere estratti. I componenti sono estratti a sorte con una estrazione pubblica tra tutti i cittadini iscritti nelle liste elettorali, non da un registro di volontari; il sorteggio &egrave; stratificato per genere, et&agrave; e territorio. Possono essere estratti i maggiorenni che hanno i requisiti dell&rsquo;articolo 6 della Legge A: tra questi, non essere stati iscritti o militanti attivi di partiti, movimenti o liste civiche strutturate nei ventiquattro mesi precedenti e non avere incarichi di governo o di nomina politica. I requisiti sono autocertificati e verificati d&rsquo;ufficio. Chi &egrave; estratto pu&ograve; rifiutare entro 15 giorni. <a href="ape.html">Come funziona il sorteggio</a></p>
 
@@ -223,7 +223,7 @@
   <label class="ra-spunta"><input type="checkbox" id="ra-consenso" required>
     <span>Acconsento al trattamento dei dati per l&rsquo;adesione alla Rete APE. So che aderire esprime un&rsquo;opinione politica. <a href="https://partecipazione-attiva.it/privacy.html">Informativa</a></span></label>
   <label class="ra-spunta"><input type="checkbox" id="ra-elenco">
-    <span>Acconsento alla pubblicazione del nome, o della denominazione, e del Comune nell&rsquo;<a href="https://www.assembleapopolareecumenica.it/albo.html"><strong>Albo dei co-fondatori</strong></a> <span class="ra-facolt">(facoltativo)</span></span></label>
+    <span>Acconsento alla pubblicazione del nome, o della denominazione, e del Comune nell&rsquo;<a href="https://www.assembleapopolareecumenica.it/albo.html"><strong>Albo dei Costruttori</strong></a> <span class="ra-facolt">(facoltativo)</span></span></label>
 
   <button type="submit" id="ra-invia">Firmo il Patto</button>
   <p id="ra-esito" role="status" aria-live="polite"></p>
@@ -269,7 +269,7 @@
     dire('Sto confermando la tua adesione…',true);
     fetch(F,{method:'POST',headers:{'content-type':'application/json',apikey:K,authorization:'Bearer '+K},body:JSON.stringify({conferma:cod})})
     .then(function(r){return r.json()}).then(function(j){
-      if(j.ok){dire('Firma confermata: ora sei co-fondatore della Rete APE. Grazie! Il riquadro verde in cima alla pagina ti porta nella chat della Rete.',true);setTimeout(function(){var ch=document.getElementById('chat-rete');if(ch)ch.scrollIntoView({behavior:'smooth',block:'center'})},2500)}
+      if(j.ok){dire('Firma confermata: ora sei Costruttore del progetto APE. Grazie! Il riquadro verde in cima alla pagina ti porta nella chat della Rete.',true);setTimeout(function(){var ch=document.getElementById('chat-rete');if(ch)ch.scrollIntoView({behavior:'smooth',block:'center'})},2500)}
       else dire('Il collegamento di conferma non è valido.',false)})
     .catch(function(){dire('Connessione non riuscita. Riapri il collegamento fra poco.',false)});
     f.scrollIntoView();
