@@ -2399,7 +2399,85 @@ BODY_RAI_VOTO_LIBERO = r'''<p><strong>Luigi Spanu</strong>, portavoce di Parteci
 <p><a class="btn-iscr" href="index.html#iscriviti" style="display:inline-block;padding:13px 28px;border-radius:50px;font-weight:700;text-decoration:none;margin:4px 8px 4px 0">Iscriviti, &egrave; gratis</a> <a href="mappa.html" style="display:inline-block;padding:13px 28px;border-radius:50px;font-weight:700;text-decoration:none;border:2px solid #c25f00;color:#9c5b00;margin:4px 0">Mettiti sulla Mappa</a></p>
 '''
 
+BODY_ASSEMBLEA_AEA = r'''<p>Si &egrave; tenuta <strong>venerd&igrave; 13 novembre 2026 a Roma</strong>, presso la <strong>Fondazione Matteotti</strong>, la <strong>V Assemblea confederale di Autonomie e Ambiente (AeA)</strong>, sul tema <strong>&laquo;Autonomie europee: la cura degli estremismi&raquo;</strong>. Partecipazione Attiva era presente con il suo portavoce, <strong>Luigi Spanu</strong>, che ne d&agrave; conto in questa pagina.</p>
+
+<figure class="pa-fig"><img src="images/assemblea-autonomie-ambiente-13-novembre-2026.webp" width="1600" height="900" alt="Foto di gruppo dei partecipanti alla V Assemblea confederale di Autonomie e Ambiente, Roma, Fondazione Matteotti, 13 novembre 2026" loading="lazy"><figcaption>Le delegazioni presenti alla Fondazione Matteotti, Roma, 13 novembre 2026.</figcaption></figure>
+
+<h2>Come si &egrave; svolta</h2>
+<p>Una <strong>sessione pubblica dalle 11:00 alle 14:00</strong> e una <strong>sessione pomeridiana riservata ai delegati</strong>. Tema centrale: il contrasto a nazionalismi, populismi ed estremismi attraverso le autonomie locali, la partecipazione territoriale e la cooperazione europea, con un approfondimento pomeridiano sull&rsquo;impegno per la pace.</p>
+<p>Erano presenti le forze e i movimenti della rete Autonomie e Ambiente, delegazioni come <strong>Union Valdôtaine</strong> e <strong>Partecipazione Attiva</strong>, attivisti per la democrazia e realt&agrave; civiche e territoriali italiane ed europee (tra cui Valle d&rsquo;Aosta, Toscana, Romagna, Occitania, Friuli-Venezia Giulia, Veneto, Lombardia e Campania).</p>
+
+<h2>Il video dell&rsquo;assemblea</h2>
+<p>L&rsquo;intervento di Luigi Spanu &egrave; a circa <strong>2:40:00</strong> dall&rsquo;inizio della registrazione.</p>
+<div style="position:relative;width:100%;aspect-ratio:16/9;margin:18px 0;border-radius:14px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.12)"><iframe src="https://www.youtube-nocookie.com/embed/CrLwch_snvI?start=9600&amp;rel=0" title="V Assemblea confederale di Autonomie e Ambiente, Roma, 13 novembre 2026" width="100%" height="100%" style="position:absolute;inset:0;border:0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+<p><a href="https://youtu.be/CrLwch_snvI" target="_blank" rel="noopener" style="color:#9c5b00;font-weight:700">Guarda l&rsquo;assemblea completa su YouTube &rarr;</a></p>
+
+<h2>Le delegazioni ritratte nella foto</h2>
+<p><em>Da sinistra a destra, dal basso verso l&rsquo;alto.</em></p>
+<ul>
+<li>Luigi Spanu (Partecipazione Attiva &ndash; Roma)</li>
+<li>Thomas Agnolli (attivista del Comitato Iniziative Popolari &ndash; Veneto)</li>
+<li>Lorenzo Giovenali (attivista per la democrazia &ndash; Lombardia)</li>
+<li>Enrico Bocca (Lombardia Civica)</li>
+<li>Alessandro Citarella (Comitato Charta di Melfi, Meridionalisti Democratici, Autonomia Napolitana)</li>
+<li>Riccardo Galimberti (OraToscana, RiBella Firenze)</li>
+<li>Enrico Chiapparoli (Lombardia Civica)</li>
+<li>Lidia Silvia Fancello (Sardigna Pro S&rsquo;Europa)</li>
+<li>Fr&eacute;d&eacute;ric Piccoli (Union Valdôtaine)</li>
+<li>Mauro Vaiani (OraToscana, Civici di Prato per le autonomie)</li>
+<li>Milian Racca (Liberi Elettori Piemonte)</li>
+<li>Sabrina Tomasi (Sardegna chiama Sardegna &ndash; SCS)</li>
+<li>Larentu Argiolas (Sardegna chiama Sardegna &ndash; SCS)</li>
+<li>Roberto Visentin (Patto per l&rsquo;Autonomia)</li>
+<li>Giovanni Poggiali (M.A.R. Movimento per l&rsquo;Autonomia della Romagna, Rum&acirc;gna Unida)</li>
+</ul>
+
+<h3>Delegati collegati da remoto (in ordine alfabetico)</h3>
+<ul>
+<li>Andrea Acquarone (autonomista della Liguria)</li>
+<li>Samuele Albonetti (Rum&acirc;gna Unida)</li>
+<li>Davide Cappelli (M.A.R. Movimento per l&rsquo;Autonomia della Romagna)</li>
+<li>Marcantonio Farris Sotgiu (Sardigna Pro S&rsquo;Europa)</li>
+<li>Diego Genta (Movement Arpitania)</li>
+<li>Gino Giammarino (Comitato Charta di Melfi)</li>
+<li>Andrea Isoardi (Assemblada Occitana Valadas)</li>
+<li>Marco Lo Dico (Siciliani Liberi)</li>
+<li>Alfonso Nobile (Siciliani Liberi)</li>
+<li>Mattia Pepino (Assemblada Occitana Valadas)</li>
+<li>Stefano Pesaresi (Rum&acirc;gna Unida)</li>
+<li>Paolo Vinardi (Movement Arpitania)</li>
+</ul>
+
+<p>Qui il <a href="pa-assemblea-autonomie-ambiente-2026.html" style="color:#9c5b00;font-weight:700">nostro annuncio della partecipazione di PA all&rsquo;assemblea</a>.</p>
+
+<h2>Che cosa facciamo noi</h2>
+<p>Partecipazione Attiva mette in rete cittadini e associazioni, dal quartiere alla legge: <strong>iscriversi &egrave; gratis</strong>, e sulla <strong>Mappa</strong> ogni persona e associazione pu&ograve; farsi trovare.</p>
+<p><a class="btn-iscr" href="index.html#iscriviti" style="display:inline-block;padding:13px 28px;border-radius:50px;font-weight:700;text-decoration:none;margin:4px 8px 4px 0">Iscriviti, &egrave; gratis</a> <a href="mappa.html" style="display:inline-block;padding:13px 28px;border-radius:50px;font-weight:700;text-decoration:none;margin:4px 0;border:2px solid #9c5b00;color:#9c5b00">Vai alla Mappa</a></p>
+'''
+
 ART = {
+  'slug'         : 'assemblea-autonomie-ambiente-13-novembre-2026.html',
+  'autore'       : 'spanu',
+  'data_iso'     : '2026-11-26',
+  'data_human'   : '26 novembre 2026',
+  'data_badge'   : '26 NOVEMBRE 2026',
+  'lettura_min'  : 3,
+  'categoria_hero': '\U0001F91D Incontri',
+  'og_image'     : 'images/anteprime/assemblea-autonomie-ambiente-13-novembre-anteprima.jpg',
+  'h1'           : 'V Assemblea di Autonomie e Ambiente: il resoconto e il video',
+  'sottotitolo'  : 'Roma, Fondazione Matteotti, 13 novembre 2026: \u00abAutonomie europee: la cura degli estremismi\u00bb. Le delegazioni presenti e il video completo.',
+  'meta_desc'    : 'V Assemblea confederale di Autonomie e Ambiente, Roma, 13 novembre 2026: le delegazioni presenti, il tema e il video con l\u2019intervento di Luigi Spanu.',
+  'card_cat'     : 'INCONTRI',
+  'card_title'   : 'V Assemblea di Autonomie e Ambiente: il resoconto e il video',
+  'card_desc'    : 'Roma, 13 novembre: autonomie europee contro gli estremismi. Le delegazioni, la foto di gruppo e il video con l\u2019intervento di Spanu.',
+  'ticker_emoji' : '\U0001F91D',
+  'ticker_tema'  : 'INCONTRI',
+  'ticker_testo' : 'V Assemblea di Autonomie e Ambiente a Roma: il resoconto e il video con l\u2019intervento di Spanu',
+  'body'         : BODY_ASSEMBLEA_AEA,
+}
+
+
+ART_RAI_VOTO_LIBERO_OLD = {
   'slug'         : 'rai-voto-libero-incontro-12-novembre.html',
   'autore'       : 'spanu',
   'data_iso'     : '2026-11-14',
